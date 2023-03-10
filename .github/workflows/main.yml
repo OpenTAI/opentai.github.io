@@ -1,0 +1,30 @@
+name: Publish GitHub Pages
+
+on:
+  push:
+    branches: 
+     - main
+
+jobs:
+  publish-gpr:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.0.0]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org
+      - name: Install dependencies 📦️
+        run: yarn install
+      - name: build
+        run: |
+           yarn build
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GH_PAGES_TOKEN }}
+          BRANCH: gh-pages
+          folder: dist
