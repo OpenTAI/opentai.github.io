@@ -1,0 +1,41 @@
+.lessonResources {
+    padding-top: 3.9rem;
+
+    .content {
+        width: 69rem;
+        margin: 0 auto;
+        height: calc(90vh - 6rem);
+        overflow-x: auto;
+    }
+
+    .content::-webkit-scrollbar {
+        background: rgba(0, 0, 0, 0);
+        width: 10px;
+    }
+
+    .content::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: rgb(217, 217, 217);
+    }
+
+    .content::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    :global(.markdown-body a) {
+        color: #5B8DFC !important;
+    }
+
+    @media screen and (min-width: 1200px) {
+        .content {
+            width: 883.2px;
+            height: calc(90vh - 76.8px);
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .lessonResources {
+        padding-top: 50px;
+    }
+}

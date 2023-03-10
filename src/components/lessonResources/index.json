@@ -1,0 +1,49 @@
+{
+    "lessonResources": [
+        {
+            "number": 1,
+            "name": "人工智能概要",
+            "resoucesSum": 2,
+            "download": [
+                {
+                    "name": "课件",
+                    "address": "https://www.baidu.com/"
+                },
+                {
+                    "name": "代码",
+                    "address": "https://www.baidu.com/"
+                }
+            ]
+        },
+        {
+            "number": 2,
+            "name": "什么是机器学习",
+            "resoucesSum": 2,
+            "download": [
+                {
+                    "name": "课件",
+                    "address": "https://www.baidu.com/"
+                },
+                {
+                    "name": "代码",
+                    "address": "https://www.baidu.com/"
+                }
+            ]
+        },
+        {
+            "number": 3,
+            "name": "机器视觉",
+            "resoucesSum": 2,
+            "download": [
+                {
+                    "name": "课件",
+                    "address": "https://www.baidu.com/"
+                },
+                {
+                    "name": "代码",
+                    "address": "https://www.baidu.com/"
+                }
+            ]
+        }
+    ]
+}

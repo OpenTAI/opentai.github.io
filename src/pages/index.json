@@ -1,0 +1,269 @@
+{
+    "lessons": [
+        {
+            "lessonName": "课程",
+            "lessonDetail": "人工智能是21世纪最令人兴奋的学科领域之一。经过70多年的起伏发展，人工智能技术已深入人们生产生活的方方面面，人类社会在不久的将来也会全面进入人工智能时代。本课程将从人工智能的发展历史出发，介绍人工智能的代表性研究方向，包括计算机视觉、自然语言处理、金融科技、科学智能等。此外，本课程会配备示例项目，包括系外行星检测、寻找走失儿童、帮助盲人识字、虚假新闻检测等，给学生展示如何使用人工智能进行科学发现和解决社会问题，帮学生建立对人工智能的兴趣和社会责任感。",
+            "lessonButton": "了解更多",
+            "lessonFeature": [
+                "复旦大学任课教师/团队",
+                "大量真实场景实例项目",
+                "每次 3 课时，12 次课，共 36 学时"
+            ],
+            "lessonImg": "quote.png",
+            "link": "https://www.csdn.net/"
+        },
+        {
+            "lessonName": "课程简介",
+            "lessonDetail": "人工智能是21世纪最令人兴奋的学科领域之一。经过70多年的起伏发展，人工智能技术已深入人们生产生活的方方面面，人类社会在不久的将来也会全面进入人工智能时代。本课程将从人工智能的发展历史出发，介绍人工智能的代表性研究方向，包括计算机视觉、自然语言处理、金融科技、科学智能等。此外，本课程会配备示例项目，包括系外行星检测、寻找走失儿童、帮助盲人识字、虚假新闻检测等，给学生展示如何使用人工智能进行科学发现和解决社会问题，帮学生建立对人工智能的兴趣和社会责任感。",
+            "lessonButton": "了解更多",
+            "lessonFeature": [
+                "复旦大学任课教师/团队",
+                "大量真实场景实例项目",
+                "每次 3 课时，12 次课，共 36 学时"
+            ],
+            "lessonImg": "quote.png",
+            "link": "https://www.csdn.net/"
+        },
+        {
+            "lessonName": "课程简介",
+            "lessonDetail": "人工智能是21世纪最令人兴奋的学科领域之一。经过70多年的起伏发展，人工智能技术已深入人们生产生活的方方面面，人类社会在不久的将来也会全面进入人工智能时代。本课程将从人工智能的发展历史出发，介绍人工智能的代表性研究方向，包括计算机视觉、自然语言处理、金融科技、科学智能等。此外，本课程会配备示例项目，包括系外行星检测、寻找走失儿童、帮助盲人识字、虚假新闻检测等，给学生展示如何使用人工智能进行科学发现和解决社会问题，帮学生建立对人工智能的兴趣和社会责任感。",
+            "lessonButton": "了解更多",
+            "lessonFeature": [
+                "复旦大学任课教师/团队",
+                "大量真实场景实例项目",
+                "每次 3 课时，12 次课，共 36 学时"
+            ],
+            "lessonImg": "quote.png",
+            "link": ""
+        }
+    ],
+    "projects": [
+        {
+            "projectName": "系外行星检测",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "寻找走失儿童",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "",
+            "link": "https://www.csdn.net/"
+        },
+        {
+            "projectName": "帮助盲人识字",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "带你认识ChatGPT",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "情感倾向分析",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "金融风险检测",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "学习隐藏的规律",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "真假人脸识别",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "打开人工智能的黑盒子",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "能让你“隐身”的对抗补丁",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        }
+    ],
+    "process": [
+        {
+            "number": 1,
+            "itemName": "人工智能概要",
+            "itemAuthor": "马兴军"
+        },
+        {
+            "number": 2,
+            "itemName": "什么是机器学习？",
+            "itemAuthor": "马兴军"
+        },
+        {
+            "number": 3,
+            "itemName": "计算机视觉：让机器学会看世界。",
+            "itemAuthor": "马兴军"
+        },
+        {
+            "number": 4,
+            "itemName": "文字识别：让机器学会“读”书。",
+            "itemAuthor": "陈智能"
+        },
+        {
+            "number": 5,
+            "itemName": "自然语言处理：让机器理解人类语言。",
+            "itemAuthor": "张奇"
+        },
+        {
+            "number": 6,
+            "itemName": "讨论班：畅想人工智能",
+            "itemAuthor": "马兴军"
+        },
+        {
+            "number": 7,
+            "itemName": "人工智能与心理学：不能说的秘密。",
+            "itemAuthor": "曲文"
+        },
+        {
+            "number": 8,
+            "itemName": "人工智能与金融：大数据不说谎。",
+            "itemAuthor": "叶广楠"
+        },
+        {
+            "number": 9,
+            "itemName": "人工智能与科学：加速科学发现。",
+            "itemAuthor": "欧阳万里"
+        },
+        {
+            "number": 10,
+            "itemName": "人工智能生成与伪造：潘多拉的魔盒？",
+            "itemAuthor": "吴祖煊"
+        },
+        {
+            "number": 11,
+            "itemName": "人工智能可视化：让智能看得见。",
+            "itemAuthor": "陈思明"
+        }
+    ],
+    "lastProcess": {
+        "number": 12,
+        "itemName": "可信人工智能：人工智能信得过么？",
+        "itemAuthor": "马兴军"
+    },
+    "exams": [
+        {
+            "icon": "icon.png",
+            "title": "结业报告",
+            "details": [
+                "<b>1. 主题： </b><br />请以“人工智能造福社会”为主体写一份研究计划，规划一件你最想使用人工智能做的对社会和他人有益的事情。",
+                "<b>2. 要求： </b><br />(1) 题目自拟，不少于800字。<br />(2) 章节包括：摘要、选题介绍、实验计划、预期结果<br />(3) 如试卷有抄袭内容，或与其他同学答卷内容雷同，期末考试成绩判0分。"
+            ]
+        },
+        {
+            "icon": "icon.png",
+            "title": "成绩评价",
+            "details": [
+                "<b>1. P： </b>综合成绩须不低于60分。",
+                "<b>2. NP： </b>综合成绩低于60分。"
+            ]
+        }
+    ],
+    "schedule": {
+        "title": "2023 年春季上课日期和时段：",
+        "locationTitle": "上课地点",
+        "date": [
+            "每周日下午13:30 - 16:00",
+            " ",
+            "第一次：2月26日（周日）",
+            "第二次：3月5日（周日）",
+            "第三次：3月12日（周日）",
+            "第四次：3月19日（周日）",
+            "第五次：3月26日（周日）",
+            "第六次：4月2日（周日）"
+        ],
+        "duration": "复旦大学邯郸校区第六教学楼 301"
+    },
+    "teachers": [
+        {
+            "figure": "profile1.png",
+            "teacherName": "马兴军",
+            "jobTitle": "复旦大学计算机学院青年研究员"
+        },
+        {
+            "figure": "profile2.png",
+            "teacherName": "欧阳万里",
+            "jobTitle": "上海人工智能实验室教授"
+        },
+        {
+            "figure": "profile3.png",
+            "teacherName": "张奇",
+            "jobTitle": "复旦大学计算机学院教授"
+        },
+        {
+            "figure": "profile4.png",
+            "teacherName": "陈智能",
+            "jobTitle": "复旦大学计算机学院青年研究员"
+        },
+        {
+            "figure": "profile5.png",
+            "teacherName": "吴祖煊",
+            "jobTitle": "复旦大学计算机学院青年副研究员"
+        },
+        {
+            "figure": "profile6.png",
+            "teacherName": "叶广楠",
+            "jobTitle": "复旦大学计算机学院研究员"
+        },
+        {
+            "figure": "profile7.png",
+            "teacherName": "陈思明",
+            "jobTitle": "复旦大学大数据学院青年研究员"
+        },
+        {
+            "figure": "profile8.png",
+            "teacherName": "曲文",
+            "jobTitle": "复旦大学社会科学高等研究院青年副研究员"
+        }
+    ]
+}
