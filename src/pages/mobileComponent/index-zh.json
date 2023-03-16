@@ -1,0 +1,205 @@
+{
+    "carousel": {   
+        "title": "OpenTAI - 信任是智能的终极形式",
+        "detail": "加入社区，构建稳健、安全、可解释、隐私保护且无偏见的 AI 技术",
+        "viewMore": "查看更多"
+    },
+    "mission": {
+        "projects": 10,
+        "datasets": 1,
+        "algorithms": 30,
+        "contributors": 20,
+        "forks": 0,
+        "stars": 0
+    },
+    "news": [
+        {
+            "title": "人工智能前沿思想与科学洞察",
+            "detail": "人工智能前沿思想与。科学洞察人工智能前沿思想与科学洞察人工智能前沿思想与科学洞察，人工智能前沿思想与科学洞察",
+            "learnMore": "查看全部"
+        },
+        {
+            "title": "人工智能前沿思想与科学洞察人工智能前沿思想与科学洞察",
+            "detail": "人工智能前沿思想与。科学洞察人工智能前沿思想与科学洞察人工智能前沿思想与科学洞察，人工智能前沿思想与科学洞察",
+            "learnMore": "查看全部"
+        },
+        {
+            "title": "人工智能前沿思想与科学洞察",
+            "detail": "人工智能前沿思想与。科学洞察人工智能前沿思想与科学洞察人工智能前沿思想与科学洞察，人工智能前沿思想与科学洞察",
+            "learnMore": "查看全部"
+        }
+    ],
+    "projects": [
+        {
+            "projectName": "系外行星检测",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectLeaderBoard": "排行榜",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "寻找走失儿童",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectLeaderBoard": "排行榜",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "",
+            "link": "https://www.csdn.net/"
+        },
+        {
+            "projectName": "帮助盲人识字",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectLeaderBoard": "排行榜",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "带你认识ChatGPT",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectLeaderBoard": "排行榜",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "情感倾向分析",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectLeaderBoard": "排行榜",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "金融风险检测",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectLeaderBoard": "排行榜",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "学习隐藏的规律",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectLeaderBoard": "排行榜",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "真假人脸识别",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectLeaderBoard": "排行榜",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "打开人工智能的黑盒子",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectLeaderBoard": "排行榜",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        },
+        {
+            "projectName": "能让你“隐身”的对抗补丁能让你“隐身”的对抗补丁",
+            "projectDescription": "Adversarial attacks and defenses.Adversarial attacks and defenses.",
+            "projectReadMore": "查看详情",
+            "projectLeaderBoard": "排行榜",
+            "projectIcon": "projectIcon.png",
+            "projectBackground": "projectBackground.png",
+            "markdown": "projects/projectDetail1.md",
+            "link": ""
+        }
+    ],
+    "datasets": [
+        {
+            "datasetsName": "系外行星检测",
+            "datasetsBackground": "datasets1.png",
+            "link": "https://www.csdn.net/"
+        },
+        {
+            "datasetsName": "系外行星检测",
+            "datasetsBackground": "datasets1.png",
+            "link": "https://www.csdn.net/"
+        },
+        {
+            "datasetsName": "系外行星检测",
+            "datasetsBackground": "datasets1.png",
+            "link": "https://www.csdn.net/"
+        }
+    ],
+    "contributors": [
+        {
+            "contributorsName": "Jenny Wilson",
+            "contributorsImg": "contributor1.png",
+            "contributorsTitle": "Organizer"
+        },
+        {
+            "contributorsName": "Darrell Steward",
+            "contributorsImg": "contributor2.png",
+            "contributorsTitle": "Organizer"
+        },
+        {
+            "contributorsName": "Bessie Cooper",
+            "contributorsImg": "contributor3.png",
+            "contributorsTitle": "Organizer"
+        },
+        {
+            "contributorsName": "Arlene McCoy",
+            "contributorsImg": "contributor4.png",
+            "contributorsTitle": "Organizer"
+        },
+        {
+            "contributorsName": "Brooklyn Simmons",
+            "contributorsImg": "contributor5.png",
+            "contributorsTitle": "Product Designer"
+        },
+        {
+            "contributorsName": "Jerome Bell",
+            "contributorsImg": "contributor6.png",
+            "contributorsTitle": "Organizer"
+        },
+        {
+            "contributorsName": "Dianne Russell",
+            "contributorsImg": "contributor7.png",
+            "contributorsTitle": "Organizer"
+        },
+        {
+            "contributorsName": "Kristin Watson",
+            "contributorsImg": "contributor8.png",
+            "contributorsTitle": "Organizer"
+        },
+        {
+            "contributorsName": "Eleanor Pena",
+            "contributorsImg": "contributor9.png",
+            "contributorsTitle": "Organizer"
+        }
+    ],
+    "committees": [
+        {
+            "contributorsName": "Yu-gang Jiang",
+            "contributorsImg": "contributor3.png",
+            "contributorsTitle": "Organizer"
+        }
+    ]
+}

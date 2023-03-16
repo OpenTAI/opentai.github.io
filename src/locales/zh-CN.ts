@@ -5,7 +5,7 @@ export default {
     leaderboards: "排行",
     seminars: "课程",
     ourMission: "我们的使命",
-    missionDes: "OpenTAI 是一个开源平台，用于支持 Trustworthy AI 不断发展的研究，在这里可以快速实施新兴主题，可以轻松测试新想法，可以对称地评估攻击/防御。",
+    missionDes: "OpenTAI 是一个开源平台，用于支持 Trustworthy AI 不断发展的研究，在这里可以快速探索新课题，可以轻松测试新想法，可以对称地评估攻击/防御。",
     projectUnit: "项目",
     datasets: "数据集",
     algorithms: "算法",
