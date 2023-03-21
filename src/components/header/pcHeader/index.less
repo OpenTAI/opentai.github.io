@@ -1,0 +1,75 @@
+.container {
+    background: url("@/assets/img/header.jpg") 50% 0% no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+
+    .head {
+        width: 39.75rem;
+        margin: 0 auto;
+        padding: 2.13rem 0 3.5rem;
+    }
+
+    .languageLogo {
+        width: 2.38rem;
+        height: 2.25rem;
+        position: absolute;
+        top: 2.56rem;
+        right: 6.06rem;
+        cursor: pointer;
+    }
+
+    .logo {
+        width: 11.31rem;
+        height: 2.94rem;
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .guide {
+        display: flex;
+        justify-content: space-between;
+        width: 39.75rem;
+        margin: 1.31rem auto;
+    }
+
+    .guideName {
+        font-size: 1rem;
+        font-family: "MiSans-Demibold";
+        font-weight: 800;
+        color: @fontColorWhite;
+        cursor: pointer;
+    }
+
+    @media screen and (min-width: 1440px) {
+        .head {
+            width: 636px;
+            margin: 0 auto;
+            padding: 34px 0 56px;
+        }
+
+        .languageLogo {
+            width: 38px;
+            height: 36px;
+            top: 41px;
+            right: 97px;
+        }
+
+        .logo {
+            width: 181px;
+            height: 47px;
+        }
+
+        .guide {
+            width: 636px;
+            margin: 21px auto;
+        }
+
+        .guideName {
+            font-size: 16px;
+        }
+    }
+}

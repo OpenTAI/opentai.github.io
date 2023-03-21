@@ -1,7 +1,5 @@
-import English from '@/assets/img/English.png';
-import Chinese from '@/assets/img/Chinese.png';
+
 import learnMore from '@/assets/img/learnMore.png';
-import logo from '@/assets/img/logo.png';
 import closeIcon from '@/assets/img/closeIcon.png';
 import dots from '@/assets/img/dots.png';
 import { Carousel } from 'antd';
@@ -10,13 +8,15 @@ import dataZh from './index-zh.json';
 import { Modal } from 'antd';
 import styles from './index.less';
 import React, { useState, useEffect } from 'react';
-import { getLocale, setLocale, useIntl } from 'umi';
+import { useIntl, connect } from 'umi';
 import LessonResources from '@/components/lessonResources';
 import TeacherTeam from '@/components/teacherTeam';
 import ClassDetail from '@/components/classDetail';
 import ProjectDetail from '@/components/projectDetail';
+import PcFooter from '@/components/footer/pcFooter';
+import PcHeader from '@/components/header/pcHeader';
 
-const DesktopComponent = () => {
+const DesktopComponent = ({ global: { language } }) => {
   const intl = useIntl();
 
   const [lessonModalOpen, setLessonModalOpen] = useState(false);
@@ -25,18 +25,13 @@ const DesktopComponent = () => {
   const [projectDetailOpen, setProjectDetailOpen] = useState(false);
   const [projectUrl, setProjectUrl] = useState("");
   const [isProjectDetailMarkdown, setIsProjectDetailMarkdown] = useState(true);
-  const [language, setLanguage] = useState(getLocale());
   const [data, setData] = useState(dataZh);
-  const [languageLogo, setLanguageLogo] = useState(Chinese);
-  // let data = {};
 
   useEffect(() => {
     if (language === "zh-CN") {
       setData(dataZh);
-      setLanguageLogo(Chinese);
     } else {
       setData(dataEn);
-      setLanguageLogo(English);
     }
   }, [language]);
 
@@ -66,58 +61,11 @@ const DesktopComponent = () => {
     }
   }
 
-  const changeLan = () => {
-    if (language === "zh-CN") {
-      setLanguage("en-US");
-      setLocale("en-US", false);
-    } else {
-      setLanguage("zh-CN");
-      setLocale("zh-CN", false);
-    }
-  }
-
   const { carousel, mission, news, projects, datasets, contributors, committees } = data;
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <img className={styles.languageLogo} src={languageLogo} onClick={changeLan} />
-        <div className={styles.head}>
-          <div className={styles.title}>
-            <img src={logo} className={styles.logo} />
-          </div>
-          <div className={styles.guide}>
-            <div
-              className={styles.guideName}
-              onClick={() => setClassDetailOpen(!classDetailOpen)}
-            >
-              {intl.formatMessage({ id: "home" })}
-            </div>
-            <div
-              className={styles.guideName}
-              onClick={() => scrollToProjects()}
-            >
-              {intl.formatMessage({ id: "projects" })}
-            </div>
-            <div
-              className={styles.guideName}
-              onClick={() => setLessonModalOpen(!lessonModalOpen)}
-            >
-              {intl.formatMessage({ id: "demos" })}
-            </div>
-            <div
-              className={styles.guideName}
-              onClick={() => setTeacherTeamOpen(!teacherTeamOpen)}
-            >
-              {intl.formatMessage({ id: "leaderboards" })}
-            </div>
-            <div
-              className={styles.guideName}
-              onClick={() => setTeacherTeamOpen(!teacherTeamOpen)}
-            >
-              {intl.formatMessage({ id: "seminars" })}
-            </div>
-          </div>
-        </div>
+        <PcHeader />
         <div className={styles.carousel}>
           <Carousel>
             {carousel.map((item, index) => {
@@ -294,52 +242,7 @@ const DesktopComponent = () => {
         <div className={styles.text}>{intl.formatMessage({ id: "welcome" })}</div>
         <div className={styles.button} onClick={() => turnToRegistrationPage()}>{intl.formatMessage({ id: "join" })}</div>
       </div>
-      <div className={styles.footer}>
-        <div className={styles.topFooter}>
-          <img className={styles.footerLogo} src={logo} />
-          <div className={styles.catalogs}>
-            <div
-              className={styles.catalog}
-              onClick={() => setClassDetailOpen(!classDetailOpen)}
-            >
-              {intl.formatMessage({ id: "home" })}
-            </div>
-            <div
-              className={styles.catalog}
-              onClick={() => scrollToProjects()}
-            >
-              {intl.formatMessage({ id: "projects" })}
-            </div>
-            <div
-              className={styles.catalog}
-              onClick={() => setLessonModalOpen(!lessonModalOpen)}
-            >
-              {intl.formatMessage({ id: "demos" })}
-            </div>
-            <div
-              className={styles.catalog}
-              onClick={() => setTeacherTeamOpen(!teacherTeamOpen)}
-            >
-              {intl.formatMessage({ id: "leaderboards" })}
-            </div>
-            <div
-              className={styles.catalog}
-              onClick={() => setTeacherTeamOpen(!teacherTeamOpen)}
-            >
-              {intl.formatMessage({ id: "seminars" })}
-            </div>
-          </div>
-          <img className={styles.footerLanguageLogo} src={languageLogo} onClick={changeLan} />
-        </div>
-        <div className={styles.line} />
-        <div className={styles.copyrightAndPolicy}>
-          <div className={styles.copyright}>© Copyright 2023, All Rights Reserved</div>
-          <div className={styles.policy}>
-            <div>Privacy Policy</div>
-            <div>Terms & Conditions</div>
-          </div>
-        </div>
-      </div>
+      <PcFooter />
       <div>
         <div>
           <Modal
@@ -386,4 +289,6 @@ const DesktopComponent = () => {
   );
 }
 
-export default DesktopComponent;
+export default connect(({ global }) => ({
+  global
+}))(DesktopComponent);
