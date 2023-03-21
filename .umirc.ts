@@ -3,7 +3,10 @@ import { defineConfig } from "umi";
 export default defineConfig({
   title: "OpenTAI",
   routes: [
+    { path: '/homepage', redirect: '/' },
     { path: "/", component: "index" },
+    { path: "/riskDemo", component: "riskDemo" },
+    { path: "/evaluation", component: "evaluation" },
   ],
   npmClient: 'yarn',
   lessLoader: {
@@ -20,8 +23,12 @@ export default defineConfig({
   ],
   links: [{ rel: 'icon', href: '/favicon.ico' }],
   plugins: [
-    '@umijs/plugins/dist/locale'
+    '@umijs/plugins/dist/locale',
+    '@umijs/plugins/dist/model',
+    '@umijs/plugins/dist/dva'
   ],
+  model: {},
+  dva:{},
   locale: {
     default: 'zh-CN',
     baseNavigator: true,

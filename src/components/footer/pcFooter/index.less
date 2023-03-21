@@ -1,0 +1,122 @@
+.container {
+    .footer {
+        width: 100%;
+        height: 20.44rem;
+        background: @fontColorBlack;
+
+        .topFooter {
+            display: flex;
+            padding-top: 4rem;
+            width: 81rem;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        .footerLogo {
+            height: 2.38rem;
+            width: 9.13rem;
+        }
+
+        .footerLanguageLogo {
+            width: 2.38rem;
+            height: 2.25rem;
+            cursor: pointer;
+        }
+
+        .catalogs {
+            display: flex;
+            justify-content: space-between;
+            width: 45rem;
+        }
+
+        .catalog {
+            color: @fontColorWhite;
+            font-size: 1rem;
+            font-family: "MiSans-Regular";
+            font-weight: 500;
+            cursor: pointer;
+            width: 8rem;
+            text-align: center;
+        }
+
+        .line {
+            width: 81rem;
+            height: 0rem;
+            border: 0.06rem solid @fontColorWhite;
+            opacity: 0.2;
+            margin: 2.3rem auto;
+        }
+
+        .copyrightAndPolicy {
+            color: @fontColorWhite;
+            font-size: 1rem;
+            font-family: "MiSans-Regular";
+            display: flex;
+            justify-content: space-between;
+            width: 81rem;
+            margin: 0 auto;
+        }
+
+        .copyright {
+            margin-left: 4.13rem;
+        }
+
+        .policy {
+            display: flex;
+            margin-right: 1.87rem;
+            width: 18.31rem;
+            justify-content: space-between;
+        }
+    }
+
+    @media screen and (min-width: 1600px) {
+        .footer {
+            height: 327px;
+
+            .topFooter {
+                padding-top: 64px;
+                width: 1296px;
+            }
+
+            .footerLogo {
+                height: 38px;
+                width: 146px;
+            }
+
+            .footerLanguageLogo {
+                width: 38px;
+                height: 36px;
+            }
+
+            .catalogs {
+                width: 720px;
+            }
+
+            .catalog {
+                font-size: 16px;
+                width: 128px;
+            }
+
+            .line {
+                width: 1296px;
+                border: 1px solid @fontColorWhite;
+                margin: 37px auto;
+            }
+
+            .copyrightAndPolicy {
+                font-size: 16px;
+                width: 1296px;
+            }
+
+            .copyright {
+                margin-left: 66px;
+            }
+
+            .policy {
+                margin-right: 30px;
+                width: 293px;
+            }
+        }
+    }
+}

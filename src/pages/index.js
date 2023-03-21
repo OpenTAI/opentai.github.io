@@ -1,6 +1,7 @@
 import styles from './index.less';
 import React, { useState, useEffect, createContext, useContext } from 'react';
-import { setLocale } from 'umi';
+import { setLocale, getLocale } from 'umi';
+import { connect } from 'dva';
 import DesktopComponent from './desktopComponent';
 import MobileComponent from './mobileComponent';
 
@@ -16,13 +17,6 @@ const ViewportProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    const language = (navigator.language || navigator.browserLanguage).toLowerCase();
-    if (language === "zh") {
-      setLocale('zh-CN');
-    } else {
-      setLocale('en-US');
-    }
-
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
@@ -46,7 +40,17 @@ const HomeComponent = () => {
   return width < breakpoint ? <MobileComponent /> : <DesktopComponent />;
 }
 
-const Homepage = () => {
+const Homepage = ({ dispatch }) => {
+  useEffect(() => {
+    
+    const language = ( localStorage.getItem("umi_locale") || navigator.language || navigator.browserLanguage).toLowerCase();
+    if (language === "zh" || language === "zh-cn") {
+      setLocale('zh-CN');
+    } else {
+      setLocale('en-US');
+    }
+    dispatch({type: "global/changeLan", payload: {language: getLocale()}});
+  }, [])
 
   return (
     <ViewportProvider>
@@ -55,4 +59,6 @@ const Homepage = () => {
   );
 }
 
-export default Homepage;
+export default connect(({ global }) => ({
+  global
+}))(Homepage);
