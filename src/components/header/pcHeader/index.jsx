@@ -7,7 +7,44 @@ import logo from '@/assets/img/logo.png';
 
 const PcHeader = ({ global: { language }, dispatch }) => {
     const [languageLogo, setLanguageLogo] = useState(Chinese);
+    const [actived, setActived] = useState([1, 0, 0, 0, 0]);
     const intl = useIntl();
+
+    const headData = [
+        {
+            name: "home",
+            onClick: () => history.push("/homepage"),
+        },
+        {
+            name: "projects",
+            onClick: null,
+        },
+        {
+            name: "demos",
+            onClick: null,
+        },
+        {
+            name: "leaderboards",
+            onClick: () => history.push("/riskDemo"),
+        },
+        {
+            name: "seminars",
+            onClick: () => history.push("/evaluation"),
+        },
+    ]
+
+    useEffect(() => {
+        let newActived = [0, 0, 0, 0, 0];
+        const location = window.location.pathname.toLowerCase();
+        if (location === "/" || location === "/homepage") {
+            newActived[0] = 1;
+        } else if (location === "/riskdemo") {
+            newActived[3] = 1;
+        } else if (location === "/evaluation") {
+            newActived[4] = 1;
+        }
+        setActived(newActived);
+    }, []);
 
     useEffect(() => {
         if (language === "zh-CN") {
@@ -27,18 +64,6 @@ const PcHeader = ({ global: { language }, dispatch }) => {
         }
     };
 
-    const turnToHomepage = () => {
-        history.push("/homepage");
-    }
-
-    const turnToRiskDemo = () => {
-        history.push("/riskDemo");
-    }
-
-    const turnToEvaluation = () => {
-        history.push("/evaluation");
-    }
-
     return (
         <div className={styles.container}>
             <img className={styles.languageLogo} src={languageLogo} onClick={changeLan} />
@@ -47,36 +72,16 @@ const PcHeader = ({ global: { language }, dispatch }) => {
                     <img src={logo} className={styles.logo} />
                 </div>
                 <div className={styles.guide}>
-                    <div
-                        className={styles.guideName}
-                        onClick={turnToHomepage}
-                    >
-                        {intl.formatMessage({ id: "home" })}
-                    </div>
-                    <div
-                        className={styles.guideName}
-                        onClick={() => scrollToProjects()}
-                    >
-                        {intl.formatMessage({ id: "projects" })}
-                    </div>
-                    <div
-                        className={styles.guideName}
-                        onClick={() => setLessonModalOpen(!lessonModalOpen)}
-                    >
-                        {intl.formatMessage({ id: "demos" })}
-                    </div>
-                    <div
-                        className={styles.guideName}
-                        onClick={turnToRiskDemo}
-                    >
-                        {intl.formatMessage({ id: "leaderboards" })}
-                    </div>
-                    <div
-                        className={styles.guideName}
-                        onClick={turnToEvaluation}
-                    >
-                        {intl.formatMessage({ id: "seminars" })}
-                    </div>
+                    {headData.map((item, index) => {
+                        return (
+                            <div
+                                className={actived[index] === 1 ? styles.guideNameActived : styles.guideName}
+                                onClick={item.onClick}
+                            >
+                                {intl.formatMessage({ id: item.name })}
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </div>

@@ -80,7 +80,7 @@ const PcFooter = ({ global: { language }, dispatch }) => {
                 </div>
                 <div className={styles.line} />
                 <div className={styles.copyrightAndPolicy}>
-                    <div className={styles.copyright}>© Copyright 2023, All Rights Reserved</div>
+                    <div>© Copyright 2023, All Rights Reserved</div>
                     <div className={styles.policy}>
                         <div>Privacy Policy</div>
                         <div>Terms & Conditions</div>
