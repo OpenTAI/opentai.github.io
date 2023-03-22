@@ -7,7 +7,7 @@
     .head {
         width: 39.75rem;
         margin: 0 auto;
-        padding: 2.13rem 0 3.5rem;
+        padding: 2rem 0 2rem;
     }
 
     .languageLogo {
@@ -33,7 +33,7 @@
         display: flex;
         justify-content: space-between;
         width: 39.75rem;
-        margin: 1.31rem auto;
+        margin: 1.31rem auto 0;
     }
 
     .guideName {
@@ -42,13 +42,24 @@
         font-weight: 800;
         color: @fontColorWhite;
         cursor: pointer;
+        padding-bottom: 4px;
+    }
+
+    .guideNameActived {
+        font-size: 1rem;
+        font-family: "MiSans-Demibold";
+        font-weight: 800;
+        color: @fontColorWhite;
+        cursor: pointer;
+        padding-bottom: 4px;
+        border-bottom: 0.25rem solid @themeColor;
     }
 
     @media screen and (min-width: 1440px) {
         .head {
             width: 636px;
             margin: 0 auto;
-            padding: 34px 0 56px;
+            padding: 32px 0 32px;
         }
 
         .languageLogo {
@@ -65,11 +76,16 @@
 
         .guide {
             width: 636px;
-            margin: 21px auto;
+            margin: 21px auto 0;
         }
 
         .guideName {
             font-size: 16px;
+        }
+
+        .guideNameActived {
+            font-size: 16px;
+            border-bottom: 4px solid @themeColor;
         }
     }
 }
