@@ -10,7 +10,7 @@ import dataZh from './index-zh.json';
 import { Modal } from 'antd';
 import styles from './index.less';
 import React, { useState, useEffect } from 'react';
-import { getLocale, setLocale, useIntl } from 'umi';
+import { getLocale, setLocale, useIntl, history } from 'umi';
 import LessonResources from '@/components/lessonResources';
 import TeacherTeam from '@/components/teacherTeam';
 import ClassDetail from '@/components/classDetail';
@@ -28,7 +28,29 @@ const MobileComponent = () => {
   const [language, setLanguage] = useState(getLocale());
   const [data, setData] = useState(dataZh);
   const [languageLogo, setLanguageLogo] = useState(Chinese);
-  // let data = {};
+
+  const headData = [
+    {
+      name: "home",
+      onClick: () => history.push("/homepage"),
+    },
+    {
+      name: "projects",
+      onClick: null,
+    },
+    {
+      name: "demos",
+      onClick: null,
+    },
+    {
+      name: "leaderboards",
+      onClick: () => history.push("/riskDemo"),
+    },
+    {
+      name: "seminars",
+      onClick: () => history.push("/evaluation"),
+    },
+  ];
 
   useEffect(() => {
     if (language === "zh-CN") {
@@ -39,10 +61,6 @@ const MobileComponent = () => {
       setLanguageLogo(English);
     }
   }, [language]);
-
-  const scrollToProjects = () => {
-    document.getElementById("projects")?.scrollIntoView();
-  }
 
   const turnToRegistrationPage = () => {
     window.open("https://mp.weixin.qq.com/s/NWPxQwqgE0xBGBg7lr1yzQ");
@@ -58,12 +76,6 @@ const MobileComponent = () => {
     setIsProjectDetailMarkdown(false);
     setProjectDetailOpen(true);
     setProjectUrl(url);
-  }
-
-  const openLessonLink = (url) => {
-    if (url !== "") {
-      window.open(url);
-    }
   }
 
   const changeLan = () => {
@@ -86,36 +98,16 @@ const MobileComponent = () => {
             <img src={logo} className={styles.logo} />
           </div>
           <div className={styles.guide}>
-            <div
-              className={styles.guideName}
-              onClick={() => setClassDetailOpen(!classDetailOpen)}
-            >
-              {intl.formatMessage({ id: "home" })}
-            </div>
-            <div
-              className={styles.guideName}
-              onClick={() => scrollToProjects()}
-            >
-              {intl.formatMessage({ id: "projects" })}
-            </div>
-            <div
-              className={styles.guideName}
-              onClick={() => setLessonModalOpen(!lessonModalOpen)}
-            >
-              {intl.formatMessage({ id: "demos" })}
-            </div>
-            <div
-              className={styles.guideName}
-              onClick={() => setTeacherTeamOpen(!teacherTeamOpen)}
-            >
-              {intl.formatMessage({ id: "leaderboards" })}
-            </div>
-            <div
-              className={styles.guideName}
-              onClick={() => setTeacherTeamOpen(!teacherTeamOpen)}
-            >
-              {intl.formatMessage({ id: "seminars" })}
-            </div>
+            {headData.map((item, index) => {
+              return (
+                <div
+                  className={styles.guideName}
+                  onClick={item.onClick}
+                >
+                  {intl.formatMessage({ id: item.name })}
+                </div>
+              )
+            })}
           </div>
         </div>
         <div className={styles.carousel}>
@@ -292,36 +284,16 @@ const MobileComponent = () => {
           <img className={styles.footerLanguageLogo} src={languageLogo} onClick={changeLan} />
         </div>
         <div className={styles.catalogs}>
-          <div
-            className={styles.catalog}
-            onClick={() => setClassDetailOpen(!classDetailOpen)}
-          >
-            {intl.formatMessage({ id: "home" })}
-          </div>
-          <div
-            className={styles.catalog}
-            onClick={() => scrollToProjects()}
-          >
-            {intl.formatMessage({ id: "projects" })}
-          </div>
-          <div
-            className={styles.catalog}
-            onClick={() => setLessonModalOpen(!lessonModalOpen)}
-          >
-            {intl.formatMessage({ id: "demos" })}
-          </div>
-          <div
-            className={styles.catalog}
-            onClick={() => setTeacherTeamOpen(!teacherTeamOpen)}
-          >
-            {intl.formatMessage({ id: "leaderboards" })}
-          </div>
-          <div
-            className={styles.catalog}
-            onClick={() => setTeacherTeamOpen(!teacherTeamOpen)}
-          >
-            {intl.formatMessage({ id: "seminars" })}
-          </div>
+        {headData.map((item, index) => {
+              return (
+                <div
+                  className={styles.catalog}
+                  onClick={item.onClick}
+                >
+                  {intl.formatMessage({ id: item.name })}
+                </div>
+              )
+            })}
         </div>
         <div className={styles.line} />
         <div className={styles.copyrightAndPolicy}>
