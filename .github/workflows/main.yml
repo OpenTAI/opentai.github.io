@@ -28,3 +28,12 @@ jobs:
           token: ${{ secrets.GH_PAGES_TOKEN }}
           BRANCH: gh-pages
           folder: dist
+          
+      - name: create 404 HTML
+        uses: "finnp/create-file-action@gh-pages"
+        env:
+          FILE_NAME: "404.html"
+          FILE_DATA: "file content"
+        with:
+          token: ${{ secrets.GH_PAGES_TOKEN }}
+          BRANCH: gh-pages
