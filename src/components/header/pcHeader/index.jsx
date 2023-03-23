@@ -31,7 +31,7 @@ const PcHeader = ({ global: { language }, dispatch }) => {
             name: "seminars",
             onClick: () => history.push("/evaluation"),
         },
-    ]
+    ];
 
     useEffect(() => {
         let newActived = [0, 0, 0, 0, 0];
