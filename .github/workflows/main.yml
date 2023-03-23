@@ -30,7 +30,7 @@ jobs:
           folder: dist
           
       - name: create 404 HTML
-        uses: "finnp/create-file-action@gh-pages"
+        uses: "finnp/create-file-action@master"
         env:
           FILE_NAME: "404.html"
           FILE_DATA: "file content"
