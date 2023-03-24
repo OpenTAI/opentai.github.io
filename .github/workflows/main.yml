@@ -28,4 +28,14 @@ jobs:
           token: ${{ secrets.GH_PAGES_TOKEN }}
           BRANCH: gh-pages
           folder: dist
-          clean: false
+          
+      - name: delete local gh-pages branch
+      - run: |
+          git branch -d gh-pages
+      
+      - name: create 404.html
+        uses: planetoftheweb/copy-to-branches@v1.2
+        env:
+          branches: gh-pages
+          key: main
+          files: 404.html
