@@ -28,9 +28,18 @@ jobs:
           token: ${{ secrets.GH_PAGES_TOKEN }}
           BRANCH: gh-pages
           folder: dist
+      
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_PAGES_TOKEN }}
+      - run: |
+          git config Kristen github-actions
+          git config kristenhu@ssw.com.au github-actions@github.com
+          git add 404.html
+          git commit -m "添加404.html以阻止GitHub Page子路由跳转报错"
+          git push origin gh-pages    
+    
           
-      - name: create 404 HTML
-        uses: "finnp/create-file-action@master"
         env:
           FILE_NAME: "404.html"
           FILE_DATA: "file content"
