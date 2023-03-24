@@ -34,6 +34,3 @@ jobs:
         env:
           FILE_NAME: "404.html"
           FILE_DATA: "file content"
-        with:
-          token: ${{ secrets.GH_PAGES_TOKEN }}
-          BRANCH: gh-pages
