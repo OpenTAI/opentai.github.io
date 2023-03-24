@@ -30,7 +30,7 @@ jobs:
           folder: dist
           
       - name: delete local gh-pages branch
-      - run: |
+        run: |
           git branch -d gh-pages
       
       - name: create 404.html
