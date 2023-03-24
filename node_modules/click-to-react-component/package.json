@@ -1,0 +1,49 @@
+{
+  "type": "module",
+  "name": "click-to-react-component",
+  "version": "1.0.8",
+  "description": "Option+Click your React components in your browser to open the source file in VS Code",
+  "exports": "./src/index.js",
+  "types": "src/types.d.ts",
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericclemmons/click-to-component.git"
+  },
+  "keywords": [
+    "react",
+    "vue",
+    "dx",
+    "vscode",
+    "devtools"
+  ],
+  "author": "Eric Clemmons <eric@smarterspam.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericclemmons/click-to-component/issues"
+  },
+  "homepage": "https://github.com/ericclemmons/click-to-component#readme",
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "dependencies": {
+    "@floating-ui/react-dom-interactions": "^0.3.1",
+    "htm": "^3.1.0",
+    "react-merge-refs": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.6",
+    "@types/react-reconciler": "^0.26.6",
+    "eslint": "^8.0.0",
+    "eslint-config-react-app": "^7.0.1"
+  },
+  "scripts": {
+    "build": "echo \"Fuck build tools\"",
+    "dev": "pnpm run build",
+    "lint": "tsc -p ./jsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "readme": "# <ClickToComponent />\n\n[![npm](https://img.shields.io/npm/v/click-to-react-component)](https://www.npmjs.com/package/click-to-react-component)\n[![Release](https://github.com/ericclemmons/click-to-component/actions/workflows/release.yml/badge.svg)](https://github.com/ericclemmons/click-to-component/actions/workflows/release.yml)\n\n<kbd>Option+Click</kbd> a Component in the browser to **instantly** goto the source in your editor.\n\n![Next.js Demo](next.gif)\n\n## Features\n\n- <kbd>Option+Click</kbd> opens the immediate Component's source\n- <kbd>Option+Right-click</kbd> opens a context menu with the parent Components' `props`, `fileName`, `columnNumber`, and `lineNumber`\n\n  > ![props](props.png)\n\n- Works with frameworks like [Next.js](https://nextjs.org/),\n  [Create React App](https://create-react-app.dev/),\n  & [Vite](https://github.com/vitejs/vite/tree/main/packages/plugin-react)\n  that use [@babel/plugin-transform-react-jsx-source](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-react-jsx-source)\n- Supports `vscode` & `vscode-insiders`' [URL handling](https://code.visualstudio.com/docs/editor/command-line#_opening-vs-code-with-urls)\n- Automatically **tree-shaken** from `production` builds\n- Keyboard navigation in context menu (e.g. <kbd>←</kbd>, <kbd>→</kbd>, <kbd>⏎</kbd>)\n- More context & faster than using React DevTools:\n\n  > ![React DevTools](devtools.png)\n\n## Installation\n\n<details>\n<summary>npm</summary>\n\n```shell\nnpm install click-to-react-component\n```\n\n</details>\n\n<details>\n<summary>pnpm</summary>\n\n```shell\npnpm add click-to-react-component\n```\n\n</details>\n\n<details>\n<summary>yarn</summary>\n\n```shell\nyarn add click-to-react-component\n```\n\n</details>\n\nEven though `click-to-react-component` is added to `dependencies`, [tree-shaking](https://esbuild.github.io/api/#tree-shaking) will remove `click-to-react-component` from `production` builds.\n\n## Usage\n\n<details>\n<summary>Create React App</summary>\n\n[/src/index.js](https://github.com/ericclemmons/click-to-component/blob/main/apps/cra/src/index.js#L11)\n\n```diff\n+import { ClickToComponent } from 'click-to-react-component';\n import React from 'react';\n import ReactDOM from 'react-dom/client';\n import './index.css';\n@@ -8,7 +7,6 @@ import reportWebVitals from './reportWebVitals';\n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n   <React.StrictMode>\n+    <ClickToComponent />\n     <App />\n   </React.StrictMode>\n );\n```\n\n> ![Create React App Demo](cra.gif)\n\n</details>\n\n<details>\n<summary>Next.js</summary>\n\n[pages/\\_app.tsx](https://github.com/ericclemmons/click-to-component/blob/main/apps/next/pages/_app.tsx#L8)\n\n```diff\n+import { ClickToComponent } from 'click-to-react-component'\n import type { AppProps } from 'next/app'\n import '../styles/globals.css'\n\n function MyApp({ Component, pageProps }: AppProps) {\n   return (\n     <>\n+      <ClickToComponent />\n       <Component {...pageProps} />\n     </>\n   )\n```\n\n> ![Next.js Demo](next.gif)\n\n</details>\n\n<details>\n<summary>Vite</summary>\n\n```diff\n+import { ClickToComponent } from \"click-to-react-component\";\nimport React from \"react\";\nimport ReactDOM from \"react-dom/client\";\nimport App from \"./App\";\nimport \"./index.css\";\n\nReactDOM.createRoot(document.getElementById(\"root\")!).render(\n  <React.StrictMode>\n    <App />\n+   <ClickToComponent />\n  </React.StrictMode>\n);\n```\n\n> ![Vite Demo](vite.gif)\n\n</details>\n\n### `editor`\n\nBy default, clicking will deafult `editor` to [`vscode`](https://code.visualstudio.com/).\n\nIf, like me, you use [`vscode-insiders`](https://code.visualstudio.com/insiders/), you can set `editor` explicitly:\n\n```diff\n-<ClickToComponent />\n+<ClickToComponent editor=\"vscode-insiders\" />\n```\n\n## Run Locally\n\nClone the project\n\n```shell\ngh repo clone ericclemmons/click-to-component\n```\n\nGo to the project directory\n\n```shell\ncd click-to-component\n```\n\nInstall dependencies\n\n```shell\npnpm install\n```\n\nRun one of the examples:\n\n<details>\n<summary>Create React App</summary>\n\n```shell\ncd apps/cra\npnpm start\n```\n\n</details>\n\n<details>\n<summary>Next.js</summary>\n\n```shell\ncd apps/next\npnpm dev\n```\n\n</details>\n"
+}

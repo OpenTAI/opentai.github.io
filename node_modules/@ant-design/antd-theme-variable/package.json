@@ -1,0 +1,26 @@
+{
+  "name": "@ant-design/antd-theme-variable",
+  "version": "1.0.0",
+  "description": "antd 默认的 less 变量合集，配置到 config 的 theme 中能保证原来的项目跑起来",
+  "main": "dist/default-theme.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenshuai2144/antd-theme-variable.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenshuai2144/antd-theme-variable/issues"
+  },
+  "homepage": "https://github.com/chenshuai2144/antd-theme-variable#readme",
+  "devDependencies": {
+    "antd": "^4.22.2",
+    "less": "^4.1.3"
+  }
+}

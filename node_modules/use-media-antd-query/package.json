@@ -1,0 +1,31 @@
+{
+  "name": "use-media-antd-query",
+  "version": "1.1.0",
+  "description": "An antd compatible media query hooks",
+  "repository": "https://github.com/chenshuai2144/useMediaQuery",
+  "license": "MIT",
+  "files": [
+    "/lib",
+    "/es"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "father-build",
+    "prepublishOnly": "npm run test && npm run build && np --no-cleanup --yolo --no-publish"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.1",
+    "father-build": "^1.19.1",
+    "np": "^5.2.1",
+    "typescript": "^3.3.3"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0"
+  },
+  "authors": {
+    "name": "chenshuai2144",
+    "email": "qixian.cs@outlook.com"
+  }
+}
