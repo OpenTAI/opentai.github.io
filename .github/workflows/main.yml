@@ -32,7 +32,7 @@ jobs:
       - name: delete local gh-pages branch
         run: |
           git branch -d gh-pages
-          git branch -d main
+          git clean -xdf
       
       - name: create 404.html
         uses: planetoftheweb/copy-to-branches@v1.2
