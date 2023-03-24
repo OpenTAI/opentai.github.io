@@ -33,8 +33,8 @@ jobs:
         with:
           token: ${{ secrets.GH_PAGES_TOKEN }}
       - run: |
-          git config Kristen github-actions
-          git config kristenhu@ssw.com.au github-actions@github.com
+          git config user.name Kristen
+          git config user.email kristenhu@ssw.com.au
           git add 404.html
           git commit -m "添加404.html以阻止GitHub Page子路由跳转报错"
           git push origin gh-pages    
