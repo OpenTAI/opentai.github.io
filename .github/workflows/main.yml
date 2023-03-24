@@ -28,11 +28,4 @@ jobs:
           token: ${{ secrets.GH_PAGES_TOKEN }}
           BRANCH: gh-pages
           folder: dist
-      
-      - name: add 404.html
-        uses: planetoftheweb/copy-to-branches@v1.2
-        env:
-          branches: gh-pages
-          key: main
-          files: 404.html
-        
+          clean: false
