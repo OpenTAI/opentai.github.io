@@ -213,9 +213,9 @@ const DesktopComponent = ({ global: { language } }) => {
               <>
                 <div className={styles.contributor}>
                   <Popover overlayInnerStyle={{paddingTop: "1px"}} content={
-                    <div style={{width: "130px", height: "54px", textAlign: "center"}}>
-                      <p style={{color: "#12022F", fontSize: "1.13rem", fontFamily: "MiSans-Regular", lineHeight:"1.13rem"}}>{item.contributorsName}</p>
-                      <p style={{color: "#A1A1AA", fontSize: "1rem", fontFamily: "MiSans-Regular", lineHeight:"1.13rem"}}>{item.contributorsTitle}</p>
+                    <div style={{minWidth: "130px", minHeight: "54px", textAlign: "center"}}>
+                      <p style={{color: "#12022F", fontSize: "18px", fontFamily: "MiSans-Regular", lineHeight:"18px"}}>{item.contributorsName}</p>
+                      <p style={{color: "#A1A1AA", fontSize: "16px", fontFamily: "MiSans-Regular", lineHeight:"7px"}}>{item.contributorsTitle}</p>
                     </div>
                   }>
                     <img className={styles.contributorsImg} src={`${require("@/assets/img/contributors/" + item.contributorsImg)}`} />
