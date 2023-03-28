@@ -4,7 +4,7 @@ import learnMore from '@/assets/img/learnMore.png';
 import logo from '@/assets/img/logo.png';
 import closeIcon from '@/assets/img/closeIcon.png';
 import dots from '@/assets/img/dots.png';
-import { Carousel } from 'antd';
+import { Popover } from 'antd';
 import dataEn from './index-en.json';
 import dataZh from './index-zh.json';
 import { Modal } from 'antd';
@@ -244,24 +244,29 @@ const MobileComponent = () => {
         <div className={styles.subHeaders}>{intl.formatMessage({ id: "meetTheContributors" })}</div>
         <div className={styles.Des}>{intl.formatMessage({ id: "contributorsDes" })}</div>
         <div className={styles.contributors}>
-          {/* {contributors.map((item) => {
+        {contributors.map((item) => {
             return (
               <>
                 <div className={styles.contributor}>
-                  <img className={styles.contributorsImg} src={`${require("@/assets/img/contributors/" + item.contributorsImg)}`} />
-                  <div className={styles.contributorsName}>{item.contributorsName}</div>
-                  <div className={styles.contributorsTitle}>{item.contributorsTitle}</div>
+                  <Popover overlayInnerStyle={{paddingTop: "1px"}} content={
+                    <div style={{width: "130px", height: "54px", textAlign: "center"}}>
+                      <p style={{color: "#12022F", fontSize: "18px", fontFamily: "MiSans-Regular", lineHeight:"18px"}}>{item.contributorsName}</p>
+                      <p style={{color: "#A1A1AA", fontSize: "16px", fontFamily: "MiSans-Regular", lineHeight:"7px"}}>{item.contributorsTitle}</p>
+                    </div>
+                  }>
+                    <img className={styles.contributorsImg} src={`${require("@/assets/img/contributors/" + item.contributorsImg)}`} />
+                  </Popover>
                 </div>
               </>
             )
-          })} */}
+          })}
         </div>
       </div>
       <div className={styles.bodyCommittee}>
         <div className={styles.subHeaders}>{intl.formatMessage({ id: "steeringCommittee" })}</div>
         <div className={styles.Des}>{intl.formatMessage({ id: "committeeDes" })}</div>
         <div className={styles.committees}>
-          {/* {committees.map((item) => {
+          {committees.map((item) => {
             return (
               <>
                 <div className={styles.committee}>
@@ -271,7 +276,7 @@ const MobileComponent = () => {
                 </div>
               </>
             )
-          })} */}
+          })}
         </div>
       </div>
       <div className={styles.regist}>
