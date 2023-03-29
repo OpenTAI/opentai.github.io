@@ -17,7 +17,7 @@ body {
     .head {
         // width: 39.75rem;
         margin: 0 auto;
-        padding: 5.88rem 0 9.25rem;
+        padding: 5.88rem 0 12rem;
     }
 
     .languageLogo {
@@ -41,21 +41,28 @@ body {
 
     .guide {
         display: flex;
-        justify-content: space-between;
-        width: 78rem;
-        margin: 7.8rem auto 0;
+        margin: 4.3rem auto 0;
+        height: 13rem;
+        flex-wrap: wrap;
+        align-content: space-between;
     }
 
     .guideName {
-        font-size: 2.4rem;
-        font-family: "MiSans-Bold";
-        font-weight: 800;
+        width: 30rem;
+        text-align: center;
+        font-size: 3.36rem;
+        // margin: 1.78rem 0;
+        height: 4rem;
+        font-family: "MiSans-Medium";
+        font-weight: 500;
         color: @fontColorWhite;
         cursor: pointer;
     }
 
-    .carousel {
-        // padding-top: 1.25rem;
+    .downArrow {
+        width: 1.44rem;
+        height: 1.2rem;
+        margin: 0 0 0.5rem 1rem;
     }
 
     .childrenCarsel {
@@ -95,7 +102,7 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 15.6rem;
+            margin-top: 10rem;
             font-family: "MiSans-bold";
             cursor: pointer;
         }
@@ -545,10 +552,9 @@ body {
 
         .topFooter {
             display: flex;
-            padding-top: 7rem;
-            width: 81.75rem;
+            padding-top: 5rem;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             margin: 0 auto;
         }
 
@@ -589,17 +595,17 @@ body {
 
         .copyrightAndPolicy {
             color: @fontColorWhite;
-            font-size: 2.4rem;
+            font-size: 2.88rem;
             font-family: "MiSans-Regular";
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0 auto;
+            margin: 6.6rem auto 0;
         }
 
         .policy {
             display: flex;
-            width: 43rem;
+            width: 57rem;
             margin-top: 6rem;
             justify-content: space-between;
         }
@@ -615,36 +621,29 @@ body {
         font-weight: 600;
         cursor: pointer;
     }
+}
 
-    // :global(.ant-carousel .slick-dots li.slick-active button) {
-    //     background: @themeColor;
-    //     width: 2.75rem;
-    //     height: 0.94rem;
-    //     border-radius: 1.75rem;
-    //     opacity: 1;
-    // }
+.dropdownMenu {
+    width: 25.45rem;
+    height: 24rem;
 
-    // :global(.ant-carousel .slick-dots li button) {
-    //     opacity: 0.6;
-    //     width: 0.94rem;
-    //     height: 0.94rem;
-    //     border-radius: 1.75rem;
-    // }
+    :global{
+        .ant-dropdown-menu{ 
+            background: rgba(255,255,255,0.95);
+        }
 
-    // :global(.ant-carousel .slick-dots li.slick-active) {
-    //     width: 2.75rem;
-    //     margin: 0 0.25rem;
-    // }
+        .ant-dropdown-menu-item {
+            height: 12rem;
+            font: 3.36rem "MiSans-Bold";
+            color: @fontColorNormal !important;
+        }
 
-    // :global(.ant-carousel .slick-dots-bottom) {
-    //     bottom: 1.88rem;
-    //     margin: 0.88rem 0;
-    // }
-
-    // :global(.ant-carousel .slick-dots li) {
-    //     margin: 0 0.25rem;
-    //     width: 1rem;
-    // }
+        .ant-dropdown-menu-item-active {
+            height: 12rem;
+            font: 3.36rem "MiSans-Bold";
+            color: rgba(#12022F, 0.6) !important;
+        }
+    }
 }
 
 .closeIcon {

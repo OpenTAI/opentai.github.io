@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import styles from './index.less';
 import { setLocale, useIntl, connect, history } from 'umi';
 import logo from '@/assets/img/logo.png';
+import downArrow from '@/assets/img/downArrow.png';
+import { Dropdown } from 'antd';
 
 const PcHeader = ({ global: { language }, dispatch }) => {
     const [languageLogo, setLanguageLogo] = useState(Chinese);
@@ -17,19 +19,67 @@ const PcHeader = ({ global: { language }, dispatch }) => {
         },
         {
             name: "projects",
-            onClick: null,
+            onClick: () => {
+                if (document.getElementById("projects") !== null) {
+                    document.querySelector('#projects').scrollIntoView({
+                        behavior: "smooth"
+                    })
+                } else {
+                    history.push("/homepage");
+                    setTimeout(() => {
+                        document.querySelector('#projects').scrollIntoView({
+                            behavior: "smooth"
+                        })
+                    }, 500);
+                }
+            },
         },
         {
             name: "demos",
             onClick: null,
+            menuItem: [
+                {
+                    key: '1',
+                    label: (
+                        <a target="_blank" onClick={() => history.push("/riskDemo")}>
+                            {intl.formatMessage({ id: "riskDemo" })}
+                        </a>
+                    ),
+                },
+                {
+                    key: '2',
+                    label: (
+                        <a target="_blank" onClick={() => history.push("/evaluation")}>
+                            {intl.formatMessage({ id: "evaluation" })}
+                        </a>
+                    ),
+                }
+            ]
         },
         {
             name: "leaderboards",
-            onClick: () => history.push("/riskDemo"),
+            onClick: null,
+        },
+        {
+            name: "datasets",
+            onClick: () => {
+                if (document.getElementById("datasets") !== null) {
+                    document.querySelector('#datasets').scrollIntoView({
+                        behavior: "smooth"
+                    })
+                } else {
+                    history.push("/homepage");
+                    setTimeout(() => {
+                        document.querySelector('#datasets').scrollIntoView({
+                            behavior: "smooth"
+                        })
+                    }, 500);
+                }
+            },
         },
         {
             name: "seminars",
-            onClick: () => history.push("/evaluation"),
+            onClick: () => window.open("https://fudanhighai.github.io/"),
         },
     ];
 
@@ -38,10 +88,8 @@ const PcHeader = ({ global: { language }, dispatch }) => {
         const location = window.location.pathname.toLowerCase();
         if (location === "/" || location === "/homepage") {
             newActived[0] = 1;
-        } else if (location === "/riskdemo") {
-            newActived[3] = 1;
-        } else if (location === "/evaluation") {
-            newActived[4] = 1;
+        } else if (location === "/riskdemo" || location === "/evaluation") {
+            newActived[2] = 1;
         }
         setActived(newActived);
     }, []);
@@ -74,12 +122,24 @@ const PcHeader = ({ global: { language }, dispatch }) => {
                 <div className={styles.guide}>
                     {headData.map((item, index) => {
                         return (
-                            <div
-                                className={actived[index] === 1 ? styles.guideNameActived : styles.guideName}
-                                onClick={item.onClick}
-                            >
-                                {intl.formatMessage({ id: item.name })}
-                            </div>
+                            item.menuItem?.length > 0 ?
+                                <div>
+                                    <Dropdown overlayClassName={styles.dropdownMenu} menu={{ items: item.menuItem }}>
+                                        <div
+                                            className={actived[index] === 1 ? styles.guideNameActived : styles.guideName}
+                                            onClick={item.onClick}
+                                        >
+                                            {intl.formatMessage({ id: item.name })}
+                                            <img className={styles.downArrow} src={downArrow} />
+                                        </div>
+                                    </Dropdown>
+                                </div> :
+                                <div
+                                    className={actived[index] === 1 ? styles.guideNameActived : styles.guideName}
+                                    onClick={item.onClick}
+                                >
+                                    {intl.formatMessage({ id: item.name })}
+                                </div>
                         )
                     })}
                 </div>
