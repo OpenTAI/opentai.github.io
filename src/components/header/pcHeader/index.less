@@ -5,7 +5,6 @@
     position: relative;
 
     .head {
-        width: 39.75rem;
         margin: 0 auto;
         padding: 2rem 0 2rem;
     }
@@ -32,7 +31,7 @@
     .guide {
         display: flex;
         justify-content: space-between;
-        width: 39.75rem;
+        width: 46.88rem;
         margin: 1.31rem auto 0;
     }
 
@@ -43,6 +42,11 @@
         color: @fontColorWhite;
         cursor: pointer;
         padding-bottom: 4px;
+        border-bottom: 0.25rem solid rgba(0, 0, 0, 0);
+    }
+
+    .guideName:hover {
+        border-bottom: 0.25rem solid @themeColor;
     }
 
     .guideNameActived {
@@ -55,9 +59,14 @@
         border-bottom: 0.25rem solid @themeColor;
     }
 
+    .downArrow {
+        width: 0.44rem;
+        height: 0.38rem;
+        margin: 0 0 0.1rem 0.5rem;
+    }
+
     @media screen and (min-width: 1440px) {
         .head {
-            width: 636px;
             margin: 0 auto;
             padding: 32px 0 32px;
         }
@@ -75,7 +84,7 @@
         }
 
         .guide {
-            width: 636px;
+            width: 750px;
             margin: 21px auto 0;
         }
 
@@ -86,6 +95,55 @@
         .guideNameActived {
             font-size: 16px;
             border-bottom: 4px solid @themeColor;
+        }
+
+        .downArrow {
+            width: 7px;
+            height: 6px;
+            margin: 0 0 1.6px 8px;
+        }
+    }
+}
+
+.dropdownMenu {
+    width: 7.94rem;
+    height: 6.94rem;
+
+    :global{
+        .ant-dropdown-menu{ 
+            background: rgba(255,255,255,0.95);
+        }
+
+        .ant-dropdown-menu-item {
+            height: 3.2rem;
+            font: 1rem "MiSans-Bold";
+            color: @fontColorNormal !important;
+        }
+
+        .ant-dropdown-menu-item-active {
+            height: 3.2rem;
+            font: 1rem "MiSans-Bold";
+            color: rgba(#12022F, 0.6) !important;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .dropdownMenu {
+        width: 127px;
+        height: 111px;
+    
+        :global{
+    
+            .ant-dropdown-menu-item {
+                height: 51.2px;
+                font: 16px "MiSans-Bold";
+            }
+    
+            .ant-dropdown-menu-item-active {
+                height: 51.2px;
+                font: 16px "MiSans-Bold";
+            }
         }
     }
 }

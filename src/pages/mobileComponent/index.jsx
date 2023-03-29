@@ -15,6 +15,8 @@ import LessonResources from '@/components/lessonResources';
 import TeacherTeam from '@/components/teacherTeam';
 import ClassDetail from '@/components/classDetail';
 import ProjectDetail from '@/components/projectDetail';
+import downArrow from '@/assets/img/downArrow.png';
+import { Dropdown } from 'antd';
 
 const MobileComponent = () => {
   const intl = useIntl();
@@ -36,19 +38,67 @@ const MobileComponent = () => {
     },
     {
       name: "projects",
-      onClick: null,
+      onClick: () => {
+        if (document.getElementById("projects") !== null) {
+          document.querySelector('#projects').scrollIntoView({
+            behavior: "smooth"
+          })
+        } else {
+          history.push("/homepage");
+          setTimeout(() => {
+            document.querySelector('#projects').scrollIntoView({
+              behavior: "smooth"
+            })
+          }, 500);
+        }
+      },
     },
     {
       name: "demos",
       onClick: null,
+      menuItem: [
+        {
+          key: '1',
+          label: (
+            <a target="_blank" onClick={() => history.push("/riskDemo")}>
+              {intl.formatMessage({ id: "riskDemo" })}
+            </a>
+          ),
+        },
+        {
+          key: '2',
+          label: (
+            <a target="_blank" onClick={() => history.push("/evaluation")}>
+              {intl.formatMessage({ id: "evaluation" })}
+            </a>
+          ),
+        }
+      ]
     },
     {
       name: "leaderboards",
-      onClick: () => history.push("/riskDemo"),
+      onClick: null,
+    },
+    {
+      name: "datasets",
+      onClick: () => {
+        if (document.getElementById("datasets") !== null) {
+          document.querySelector('#datasets').scrollIntoView({
+            behavior: "smooth"
+          })
+        } else {
+          history.push("/homepage");
+          setTimeout(() => {
+            document.querySelector('#datasets').scrollIntoView({
+              behavior: "smooth"
+            })
+          }, 500);
+        }
+      },
     },
     {
       name: "seminars",
-      onClick: () => history.push("/evaluation"),
+      onClick: () => window.open("https://fudanhighai.github.io/"),
     },
   ];
 
@@ -98,7 +148,7 @@ const MobileComponent = () => {
             <img src={logo} className={styles.logo} />
           </div>
           <div className={styles.guide}>
-            {headData.map((item, index) => {
+            {/* {headData.map((item, index) => {
               return (
                 <div
                   className={styles.guideName}
@@ -106,6 +156,28 @@ const MobileComponent = () => {
                 >
                   {intl.formatMessage({ id: item.name })}
                 </div>
+              )
+            })} */}
+            {headData.map((item, index) => {
+              return (
+                item.menuItem?.length > 0 ?
+                  <div>
+                    <Dropdown overlayClassName={styles.dropdownMenu} menu={{ items: item.menuItem }}>
+                      <div
+                        className={styles.guideName}
+                        onClick={item.onClick}
+                      >
+                        {intl.formatMessage({ id: item.name })}
+                        <img className={styles.downArrow} src={downArrow} />
+                      </div>
+                    </Dropdown>
+                  </div> :
+                  <div
+                    className={styles.guideName}
+                    onClick={item.onClick}
+                  >
+                    {intl.formatMessage({ id: item.name })}
+                  </div>
               )
             })}
           </div>
@@ -201,7 +273,6 @@ const MobileComponent = () => {
       </div>
       <div className={styles.bodyProject} id="projects">
         <div className={styles.subHeaders}>{intl.formatMessage({ id: "projectsTitle" })}</div>
-        {/* <div className={styles.Des}>{intl.formatMessage({ id: "projectsDes" })}</div> */}
         <div className={styles.projects}>
           {projects.map((item) => {
             return (
@@ -221,7 +292,7 @@ const MobileComponent = () => {
           })}
         </div>
       </div>
-      <div className={styles.bodyDatasets}>
+      <div className={styles.bodyDatasets} id="datasets">
         <div className={styles.subHeaders}>{intl.formatMessage({ id: "datasetsTitle" })}</div>
         <div className={styles.datasets}>
           {datasets.map((item) => {
@@ -244,14 +315,14 @@ const MobileComponent = () => {
         <div className={styles.subHeaders}>{intl.formatMessage({ id: "meetTheContributors" })}</div>
         <div className={styles.Des}>{intl.formatMessage({ id: "contributorsDes" })}</div>
         <div className={styles.contributors}>
-        {contributors.map((item) => {
+          {contributors.map((item) => {
             return (
               <>
                 <div className={styles.contributor}>
-                  <Popover overlayInnerStyle={{paddingTop: "1px"}} content={
-                    <div style={{minWidth: "130px", minHeight: "54px", textAlign: "center"}}>
-                      <p style={{color: "#12022F", fontSize: "18px", fontFamily: "MiSans-Regular", lineHeight:"18px"}}>{item.contributorsName}</p>
-                      <p style={{color: "#A1A1AA", fontSize: "16px", fontFamily: "MiSans-Regular", lineHeight:"7px"}}>{item.contributorsTitle}</p>
+                  <Popover overlayInnerStyle={{ paddingTop: "1px" }} content={
+                    <div style={{ minWidth: "130px", minHeight: "54px", textAlign: "center" }}>
+                      <p style={{ color: "#12022F", fontSize: "18px", fontFamily: "MiSans-Regular", lineHeight: "18px" }}>{item.contributorsName}</p>
+                      <p style={{ color: "#A1A1AA", fontSize: "16px", fontFamily: "MiSans-Regular", lineHeight: "7px" }}>{item.contributorsTitle}</p>
                     </div>
                   }>
                     <img className={styles.contributorsImg} src={`${require("@/assets/img/contributors/" + item.contributorsImg)}`} />
@@ -286,28 +357,15 @@ const MobileComponent = () => {
       <div className={styles.footer}>
         <div className={styles.topFooter}>
           <img className={styles.footerLogo} src={logo} />
-          <img className={styles.footerLanguageLogo} src={languageLogo} onClick={changeLan} />
         </div>
-        <div className={styles.catalogs}>
-        {headData.map((item, index) => {
-              return (
-                <div
-                  className={styles.catalog}
-                  onClick={item.onClick}
-                >
-                  {intl.formatMessage({ id: item.name })}
-                </div>
-              )
-            })}
-        </div>
-        <div className={styles.line} />
         <div className={styles.copyrightAndPolicy}>
-          <div>© Copyright 2023, All Rights Reserved</div>
+          <div>{intl.formatMessage({ id: "copyright" })}</div>
           <div className={styles.policy}>
-            <div>Privacy Policy</div>
-            <div>Terms & Conditions</div>
+            <div>{intl.formatMessage({ id: "privacyPolicy" })}</div>
+            <div>{intl.formatMessage({ id: "terms" })}</div>
           </div>
         </div>
+        <div className={styles.line} />
       </div>
       <div>
         <div>

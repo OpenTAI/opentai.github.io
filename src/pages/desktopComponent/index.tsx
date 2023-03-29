@@ -185,7 +185,7 @@ const DesktopComponent = ({ global: { language } }) => {
           })}
         </div>
       </div>
-      <div className={styles.bodyDatasets}>
+      <div className={styles.bodyDatasets} id="datasets">
         <div className={styles.subHeaders}>{intl.formatMessage({ id: "datasetsTitle" })}</div>
         <div className={styles.datasets}>
           {datasets.map((item) => {
