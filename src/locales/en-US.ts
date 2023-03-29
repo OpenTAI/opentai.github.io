@@ -23,5 +23,8 @@ export default {
     steeringCommittee: "Steering Committee",
     committeeDes: "We need more specialized datasets to conduct TAI research.",
     welcome: "Welcome to join the OpenTAI community!",
-    join: "Join Us"
+    join: "Join Us",
+    copyright: "© Copyright 2022, All Rights Reserved",
+    privacyPolicy: "Privacy Policy",
+    terms: "Terms & Conditions"
 };
