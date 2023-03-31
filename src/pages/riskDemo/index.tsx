@@ -46,7 +46,7 @@ const RiskDemo = ({ global: { language } }) => {
 
     return (
         <>
-            <PcHeader />
+            <PcHeader setRiskRoute={setRoute} />
             <iframe style={{ border: "none" }} height={iframeHeight} width={"100%"} src={`https://tech.openeglab.org.cn${route}&lang=${lang}`} />
             <PcFooter />
         </>

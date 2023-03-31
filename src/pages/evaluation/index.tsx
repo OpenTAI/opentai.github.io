@@ -9,7 +9,6 @@ const Evaluation = ({ global: { language } }) => {
     const [iframeHeight, setIframeHeight] = useState(1200);
 
     useEffect(() => {
-        window.removeEventListener('message', (e) => { }, false);
     }, [])
 
     useEffect(() => {
@@ -50,7 +49,7 @@ const Evaluation = ({ global: { language } }) => {
 
     return (
         <>
-            <PcHeader />
+            <PcHeader setEvalRoute={setRoute} />
             <iframe style={{ border: "none" }} height={iframeHeight} width={"100%"} src={`https://tech.openeglab.org.cn${route}&lang=${lang}`} />
             <PcFooter />
         </>
