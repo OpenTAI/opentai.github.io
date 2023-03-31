@@ -177,7 +177,7 @@ const DesktopComponent = ({ global: { language } }) => {
                   </div>
                   <div className={styles.description}>{item.projectDescription}</div>
                   <div className={styles.projectFooter}>
-                    <div className={styles.readMore} onClick={() => { item.markdown !== "" ? openProjectDetail(item.markdown) : openProjectLink(item.link) }}>{item.projectReadMore}</div>
+                    <div className={styles.readMore} onClick={() => null}>{item.projectReadMore}</div>
                   </div>
                 </div>
               </>
