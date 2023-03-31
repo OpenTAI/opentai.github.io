@@ -7,7 +7,7 @@ import logo from '@/assets/img/logo.png';
 import downArrow from '@/assets/img/downArrow.png';
 import { Dropdown } from 'antd';
 
-const PcHeader = ({ global: { language }, dispatch }) => {
+const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }) => {
     const [languageLogo, setLanguageLogo] = useState(Chinese);
     const [actived, setActived] = useState([1, 0, 0, 0, 0]);
     const intl = useIntl();
@@ -41,7 +41,18 @@ const PcHeader = ({ global: { language }, dispatch }) => {
                 {
                     key: '1',
                     label: (
-                        <a target="_blank" onClick={() => history.push("/riskDemo")}>
+                        <a
+                            target="_blank"
+                            onClick={
+                                () => {
+                                    if(setRiskRoute){ 
+                                        setRiskRoute("/main/dss?");
+                                    }
+                                    localStorage.setItem("riskRoute", "/main/dss?");
+                                    history.push("/riskDemo");
+                                }
+                            }
+                        >
                             {intl.formatMessage({ id: "riskDemo" })}
                         </a>
                     ),
@@ -49,7 +60,18 @@ const PcHeader = ({ global: { language }, dispatch }) => {
                 {
                     key: '2',
                     label: (
-                        <a target="_blank" onClick={() => history.push("/evaluation")}>
+                        <a
+                            target="_blank"
+                            onClick={
+                                () => {
+                                    if(setEvalRoute) {
+                                        setEvalRoute("/main/eval?");
+                                    }
+                                    localStorage.setItem("evalRoute", "/main/eval?");
+                                    history.push("/evaluation");
+                                }
+                            }
+                        >
                             {intl.formatMessage({ id: "evaluation" })}
                         </a>
                     ),
