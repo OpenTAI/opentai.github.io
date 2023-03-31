@@ -13,7 +13,6 @@ const Evaluation = ({ global: { language } }) => {
     }, [])
 
     useEffect(() => {
-        console.log(route);
         const defaultLang = (language || localStorage.getItem("umi_locale") || navigator.language).toLowerCase();
         if (defaultLang === "zh" || defaultLang === "zh-cn") {
             setLang("zh");

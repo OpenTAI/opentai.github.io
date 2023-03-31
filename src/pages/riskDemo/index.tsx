@@ -22,9 +22,7 @@ const RiskDemo = ({ global: { language } }) => {
             setIframeHeight(e.data.height + 10);
         } else if (e.data.type === "urlChange") {
             let url = e.data.url;
-            console.log(url);
             let redirectUrl = url.match(/(?<=).+(?=lang)/);
-            console.log(redirectUrl);
             if (url.indexOf("dss") >= 0) {
                 if (redirectUrl === null) {
                     if (url !== route) {
