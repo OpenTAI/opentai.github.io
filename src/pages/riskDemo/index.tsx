@@ -4,12 +4,12 @@ import PcFooter from "@/components/footer/pcFooter";
 import { connect } from 'umi';
 
 const RiskDemo = ({ global: { language } }) => {
-    const [route, setRoute] = useState(localStorage.getItem("riskRoute") || "/main/dss");
+    const [route, setRoute] = useState(localStorage.getItem("riskRoute") || "/main/dss?");
     const [lang, setLang] = useState("");
     const [iframeHeight, setIframeHeight] = useState(1200);
 
     useEffect(() => {
-        const defaultLang = ( language || localStorage.getItem("umi_locale") || navigator.language).toLowerCase();
+        const defaultLang = (language || localStorage.getItem("umi_locale") || navigator.language).toLowerCase();
         if (defaultLang === "zh" || defaultLang === "zh-cn") {
             setLang("zh");
         } else {
@@ -22,16 +22,25 @@ const RiskDemo = ({ global: { language } }) => {
             setIframeHeight(e.data.height + 10);
         } else if (e.data.type === "urlChange") {
             let url = e.data.url;
-            let redirectUrl = url.match(/[^?]+(?=\?)/);
-            if (redirectUrl === null) {
-                if (url !== route) {
-                    setRoute(url);
-                    localStorage.setItem("riskRoute", url);
-                }
-            }else if (redirectUrl !== null && redirectUrl?.length > 0) {
-                if(redirectUrl[0] !== route) {
-                    setRoute(redirectUrl[0]);
-                    localStorage.setItem("riskRoute", redirectUrl[0]);
+            console.log(url);
+            let redirectUrl = url.match(/(?<=).+(?=lang)/);
+            console.log(redirectUrl);
+            if (url.indexOf("dss") >= 0) {
+                if (redirectUrl === null) {
+                    if (url !== route) {
+                        if (url.match(/[^?]+(?=\?)/)?.length > 0) {
+                            setRoute(url);
+                            localStorage.setItem("riskRoute", url);
+                        } else {
+                            setRoute(`${url}?`);
+                            localStorage.setItem("riskRoute", `${url}?`);
+                        }
+                    }
+                } else if (redirectUrl !== null && redirectUrl?.length > 0) {
+                    if (redirectUrl[0] !== route) {
+                        setRoute(redirectUrl[0]);
+                        localStorage.setItem("riskRoute", redirectUrl[0]);
+                    }
                 }
             }
         }
@@ -40,7 +49,7 @@ const RiskDemo = ({ global: { language } }) => {
     return (
         <>
             <PcHeader />
-            <iframe style={{ border: "none" }} height={iframeHeight} width={"100%"} src={`https://tech.openeglab.org.cn${route}?lang=${lang}`} />
+            <iframe style={{ border: "none" }} height={iframeHeight} width={"100%"} src={`https://tech.openeglab.org.cn${route}&lang=${lang}`} />
             <PcFooter />
         </>
     )

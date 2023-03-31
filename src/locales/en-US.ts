@@ -1,7 +1,7 @@
 export default {
     home: "Home",
     projects: "Projects",
-    demos: "Demos",
+    tools: "Tools",
     riskDemo: "Risk Demo",
     evaluation: "Evaluation",
     leaderboards: "Leaderboards",

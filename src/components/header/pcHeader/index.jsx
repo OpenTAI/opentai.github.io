@@ -35,7 +35,7 @@ const PcHeader = ({ global: { language }, dispatch }) => {
             },
         },
         {
-            name: "demos",
+            name: "tools",
             onClick: null,
             menuItem: [
                 {
