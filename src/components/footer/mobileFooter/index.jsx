@@ -3,15 +3,17 @@ import styles from './index.less';
 import { useIntl } from 'umi';
 import logo from '@/assets/img/logo.png';
 
-const PcFooter = ({ }) => {
+const MobileFooter = ({ }) => {
     const intl = useIntl();
 
     return (
         <div className={styles.container}>
             <div className={styles.footer}>
                 <div className={styles.topFooter}>
-                    <div className={styles.copyright}>{intl.formatMessage({ id: "copyright" })}</div>
                     <img className={styles.footerLogo} src={logo} />
+                </div>
+                <div className={styles.copyrightAndPolicy}>
+                    <div>{intl.formatMessage({ id: "copyright" })}</div>
                     <div className={styles.policy}>
                         <div>{intl.formatMessage({ id: "privacyPolicy" })}</div>
                         <div>{intl.formatMessage({ id: "terms" })}</div>
@@ -23,4 +25,4 @@ const PcFooter = ({ }) => {
     )
 }
 
-export default PcFooter;
+export default MobileFooter;

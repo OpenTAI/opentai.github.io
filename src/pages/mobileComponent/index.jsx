@@ -15,8 +15,8 @@ import LessonResources from '@/components/lessonResources';
 import TeacherTeam from '@/components/teacherTeam';
 import ClassDetail from '@/components/classDetail';
 import ProjectDetail from '@/components/projectDetail';
-import downArrow from '@/assets/img/downArrow.png';
-import { Dropdown } from 'antd';
+import MobileHeader from '@/components/header/mobileHeader';
+import MobileFooter from '@/components/footer/mobileFooter';
 
 const MobileComponent = () => {
   const intl = useIntl();
@@ -142,46 +142,7 @@ const MobileComponent = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <img className={styles.languageLogo} src={languageLogo} onClick={changeLan} />
-        <div className={styles.head}>
-          <div className={styles.title}>
-            <img src={logo} className={styles.logo} />
-          </div>
-          <div className={styles.guide}>
-            {/* {headData.map((item, index) => {
-              return (
-                <div
-                  className={styles.guideName}
-                  onClick={item.onClick}
-                >
-                  {intl.formatMessage({ id: item.name })}
-                </div>
-              )
-            })} */}
-            {headData.map((item, index) => {
-              return (
-                item.menuItem?.length > 0 ?
-                  <div>
-                    <Dropdown overlayClassName={styles.dropdownMenu} menu={{ items: item.menuItem }}>
-                      <div
-                        className={styles.guideName}
-                        onClick={item.onClick}
-                      >
-                        {intl.formatMessage({ id: item.name })}
-                        <img className={styles.downArrow} src={downArrow} />
-                      </div>
-                    </Dropdown>
-                  </div> :
-                  <div
-                    className={styles.guideName}
-                    onClick={item.onClick}
-                  >
-                    {intl.formatMessage({ id: item.name })}
-                  </div>
-              )
-            })}
-          </div>
-        </div>
+        <MobileHeader />
         <div className={styles.carousel}>
           <div className={styles.childrenCarsel}>
             <div className={styles.title}>
@@ -354,19 +315,7 @@ const MobileComponent = () => {
         <div className={styles.text}>{intl.formatMessage({ id: "welcome" })}</div>
         <div className={styles.button} onClick={() => turnToRegistrationPage()}>{intl.formatMessage({ id: "join" })}</div>
       </div>
-      <div className={styles.footer}>
-        <div className={styles.topFooter}>
-          <img className={styles.footerLogo} src={logo} />
-        </div>
-        <div className={styles.copyrightAndPolicy}>
-          <div>{intl.formatMessage({ id: "copyright" })}</div>
-          <div className={styles.policy}>
-            <div>{intl.formatMessage({ id: "privacyPolicy" })}</div>
-            <div>{intl.formatMessage({ id: "terms" })}</div>
-          </div>
-        </div>
-        <div className={styles.line} />
-      </div>
+      <MobileFooter />
       <div>
         <div>
           <Modal
