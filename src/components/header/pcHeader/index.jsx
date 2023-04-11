@@ -101,7 +101,7 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
         },
         {
             name: "seminars",
-            onClick: () => window.open("https://fudanhighai.github.io/"),
+            onClick: () => window.open("http://highschool.opentai.org/"),
         },
     ];
 

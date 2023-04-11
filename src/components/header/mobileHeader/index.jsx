@@ -101,7 +101,7 @@ const MobileHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRou
         },
         {
           name: "seminars",
-          onClick: () => window.open("https://fudanhighai.github.io/"),
+          onClick: () => window.open("http://highschool.opentai.org/"),
         },
       ];
 
