@@ -4,7 +4,7 @@ import PcFooter from "@/components/footer/pcFooter";
 import MobileHeader from "@/components/header/mobileHeader";
 import MobileFooter from "@/components/footer/mobileFooter";
 import { connect } from 'umi';
-
+import styles from './index.less';
 
 const viewportContext = createContext({});
 
@@ -15,6 +15,7 @@ const ViewportProvider = ({ children }) => {
   const handleWindowResize = () => {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
+    setScale((window.innerWidth-10)/1600);
   }
 
   useEffect(() => {
@@ -52,6 +53,7 @@ const Evaluation = ({ global: { language } }) => {
     const [route, setRoute] = useState(localStorage.getItem("evalRoute") || "/main/eval?");
     const [lang, setLang] = useState("");
     const [iframeHeight, setIframeHeight] = useState(1200);
+    const [scale, setScale] = useState(window.innerWidth > 1600 ? 1 : (window.innerWidth-10)/1600);
 
     useEffect(() => {
     }, [])
@@ -93,9 +95,11 @@ const Evaluation = ({ global: { language } }) => {
     }, false);
 
     return (
-        <ViewportProvider>
+        <ViewportProvider setScale={setScale}>
             <HeaderComponent setEvalRoute={setRoute} />
-            <iframe style={{ border: "none" }} height={iframeHeight} width={"100%"} src={`https://tech.openeglab.org.cn${route}&lang=${lang}`} />
+            <div  style={{height: iframeHeight*scale}} className={styles.webBody}>
+            <iframe className={styles.webIframe} style={{transform: `scale(${scale})`}} height={iframeHeight} width={1600}  src={`https://tech.openeglab.org.cn${route}&lang=${lang}`} />
+            </div>
             <FooterComponent />
         </ViewportProvider>
     )
