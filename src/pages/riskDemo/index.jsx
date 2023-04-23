@@ -16,7 +16,9 @@ const ViewportProvider = ({ children, setScale }) => {
     const handleWindowResize = () => {
         setWidth(window.innerWidth);
         setHeight(window.innerHeight);
-        setScale(window.innerWidth > 1600 ? 1 : ((window.innerWidth - 10) / 1600));
+        if (navigator.userAgent.toLowerCase().indexOf('mobile') === -1) {
+            setScale(window.innerWidth > 1600 ? 1 : ((window.innerWidth - 10) / 1600));
+        }
     }
 
     useEffect(() => {
