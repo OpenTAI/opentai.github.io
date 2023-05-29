@@ -34,6 +34,7 @@
         height: 13rem;
         flex-wrap: wrap;
         align-content: space-between;
+        justify-content: space-evenly;
     }
 
     .guideName {
@@ -41,16 +42,17 @@
         text-align: center;
         font-size: 3.36rem;
         height: 4rem;
-        font-family: "MiSans-Medium";
-        font-weight: 500;
+        font-family: "MiSans-Regular";
         color: @fontColorWhite;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .downArrow {
-        width: 1.44rem;
-        height: 1.2rem;
-        margin: 0 0 0.5rem 1rem;
+        width: 3.36rem;
+        height: 3.36rem;
     }
 }
 
@@ -65,13 +67,13 @@
 
         .ant-dropdown-menu-item {
             height: 12rem;
-            font: 3.36rem "MiSans-Bold";
+            font: 3.36rem "MiSans-Regular";
             color: @fontColorNormal !important;
         }
 
         .ant-dropdown-menu-item-active {
             height: 12rem;
-            font: 3.36rem "MiSans-Bold";
+            font: 3.36rem "MiSans-Regular";
             color: rgba(#12022F, 0.6) !important;
         }
     }
