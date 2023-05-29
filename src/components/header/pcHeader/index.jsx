@@ -9,14 +9,9 @@ import { Dropdown } from 'antd';
 
 const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }) => {
     const [languageLogo, setLanguageLogo] = useState(Chinese);
-    const [actived, setActived] = useState([1, 0, 0, 0, 0]);
     const intl = useIntl();
 
     const headData = [
-        {
-            name: "home",
-            onClick: () => history.push("/homepage"),
-        },
         {
             name: "projects",
             onClick: () => {
@@ -45,7 +40,7 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
                             target="_blank"
                             onClick={
                                 () => {
-                                    if(setRiskRoute){ 
+                                    if (setRiskRoute) {
                                         setRiskRoute("/main/dss?");
                                     }
                                     localStorage.setItem("riskRoute", "/main/dss?");
@@ -64,7 +59,7 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
                             target="_blank"
                             onClick={
                                 () => {
-                                    if(setEvalRoute) {
+                                    if (setEvalRoute) {
                                         setEvalRoute("/main/eval?");
                                     }
                                     localStorage.setItem("evalRoute", "/main/eval?");
@@ -106,17 +101,6 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
     ];
 
     useEffect(() => {
-        let newActived = [0, 0, 0, 0, 0];
-        const location = window.location.pathname.toLowerCase();
-        if (location === "/" || location === "/homepage") {
-            newActived[0] = 1;
-        } else if (location === "/riskdemo" || location === "/evaluation") {
-            newActived[2] = 1;
-        }
-        setActived(newActived);
-    }, []);
-
-    useEffect(() => {
         if (language === "zh-CN") {
             setLanguageLogo(Chinese);
         } else {
@@ -136,19 +120,17 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
 
     return (
         <div className={styles.container}>
-            <img className={styles.languageLogo} src={languageLogo} onClick={changeLan} />
             <div className={styles.head}>
-                <div className={styles.title}>
-                    <img src={logo} className={styles.logo} />
-                </div>
+                <img src={logo} className={styles.logo} />
                 <div className={styles.guide}>
                     {headData.map((item, index) => {
                         return (
-                            item.menuItem?.length > 0 ?
+                            <>
+                            {item.menuItem?.length > 0 ?
                                 <div>
                                     <Dropdown overlayClassName={styles.dropdownMenu} menu={{ items: item.menuItem }}>
                                         <div
-                                            className={actived[index] === 1 ? styles.guideNameActived : styles.guideName}
+                                            className={styles.guideName}
                                             onClick={item.onClick}
                                         >
                                             {intl.formatMessage({ id: item.name })}
@@ -157,14 +139,18 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
                                     </Dropdown>
                                 </div> :
                                 <div
-                                    className={actived[index] === 1 ? styles.guideNameActived : styles.guideName}
+                                    className={styles.guideName}
                                     onClick={item.onClick}
                                 >
                                     {intl.formatMessage({ id: item.name })}
-                                </div>
+                                    <img className={styles.downArrow} src={downArrow} />
+                                </div>}
+                                {index < headData.length -1 && <div className={styles.line}></div>}
+                            </>
                         )
                     })}
                 </div>
+                <img className={styles.languageLogo} src={languageLogo} onClick={changeLan} />
             </div>
         </div>
     )

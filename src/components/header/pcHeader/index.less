@@ -1,19 +1,19 @@
 .container {
-    background: url("@/assets/img/header.jpg") 50% 0% no-repeat;
-    background-size: cover;
+    background: #000;
     width: 100%;
     position: relative;
 
     .head {
         margin: 0 auto;
-        padding: 2rem 0 2rem;
+        padding: 2rem 0 1.8rem;
+        display: flex;
     }
 
     .languageLogo {
         width: 2.38rem;
         height: 2.25rem;
         position: absolute;
-        top: 2.56rem;
+        top: 2.31rem;
         right: 6.06rem;
         cursor: pointer;
     }
@@ -21,92 +21,82 @@
     .logo {
         width: 11.31rem;
         height: 2.94rem;
-    }
-
-    .title {
-        display: flex;
-        justify-content: center;
+        margin-left:4.31rem;
     }
 
     .guide {
         display: flex;
         justify-content: space-between;
-        width: 46.88rem;
-        margin: 1.31rem auto 0;
+        width: 46rem;
+        margin: 1rem 0 0 5.94rem;
+        align-items: center;
     }
 
     .guideName {
         font-size: 1rem;
-        font-family: "MiSans-Demibold";
-        font-weight: 800;
+        font-family: "MiSans-Regular";
         color: @fontColorWhite;
         cursor: pointer;
-        padding-bottom: 4px;
-        border-bottom: 0.25rem solid rgba(0, 0, 0, 0);
+        display: flex;
+        align-items: center;
     }
 
     .guideName:hover {
-        border-bottom: 0.25rem solid @themeColor;
-    }
-
-    .guideNameActived {
-        font-size: 1rem;
-        font-family: "MiSans-Demibold";
-        font-weight: 800;
-        color: @fontColorWhite;
-        cursor: pointer;
-        padding-bottom: 4px;
-        border-bottom: 0.25rem solid @themeColor;
+        text-decoration: underline 1px;
+        text-underline-offset: 4px;
     }
 
     .downArrow {
-        width: 0.44rem;
-        height: 0.38rem;
-        margin: 0 0 0.1rem 0.5rem;
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .line {
+        width: 0px;
+        height: 0.75rem;
+        border: 1px solid rgba(255,255,255,0.7);
     }
 
     @media screen and (min-width: 1440px) {
         .head {
-            margin: 0 auto;
-            padding: 32px 0 32px;
+            padding: 32px 0 28.8px;
         }
 
         .languageLogo {
             width: 38px;
             height: 36px;
-            top: 41px;
+            top: 37px;
             right: 97px;
         }
 
         .logo {
             width: 181px;
             height: 47px;
+            margin-left: 69px;
         }
 
         .guide {
-            width: 750px;
-            margin: 21px auto 0;
+            width: 736px;
+            margin: 16px 0 0 95px;
         }
 
         .guideName {
             font-size: 16px;
         }
 
-        .guideNameActived {
-            font-size: 16px;
-            border-bottom: 4px solid @themeColor;
+        .downArrow {
+            width: 20px;
+            height: 20px;
         }
 
-        .downArrow {
-            width: 7px;
-            height: 6px;
-            margin: 0 0 1.6px 8px;
+        .line {
+            height: 12px;
         }
     }
 }
 
 .dropdownMenu {
-    width: 7.94rem;
+    width: 9.44rem;
     height: 6.94rem;
 
     :global{
@@ -116,14 +106,14 @@
 
         .ant-dropdown-menu-item {
             height: 3.2rem;
-            font: 0.875rem "MiSans-Bold" !important;
-            color: @fontColorNormal !important;
+            font: 0.875rem "MiSans-Regular" !important;
+            color: #000 !important;
         }
 
         .ant-dropdown-menu-item-active {
             height: 3.2rem;
-            font: 0.875rem "MiSans-Bold" !important;
-            color: rgba(#12022F, 0.6) !important;
+            font: 0.875rem "MiSans-Regular" !important;
+            color: rgba(#000, 0.6) !important;
         }
     }
 }
