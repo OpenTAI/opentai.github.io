@@ -14,10 +14,6 @@ const MobileHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRou
 
     const headData = [
         {
-          name: "home",
-          onClick: () => history.push("/homepage"),
-        },
-        {
           name: "projects",
           onClick: () => {
             if (document.getElementById("projects") !== null) {
@@ -161,6 +157,7 @@ const MobileHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRou
                                     onClick={item.onClick}
                                 >
                                     {intl.formatMessage({ id: item.name })}
+                                    <img className={styles.downArrow} src={downArrow} />
                                 </div>
                         )
                     })}
