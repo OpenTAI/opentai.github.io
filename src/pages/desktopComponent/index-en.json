@@ -1,28 +1,35 @@
 {
-    "carousel": [
+    "header": {
+        "title": "SAFETY · ROBUSTNESS · EXPLAINABILITY · PRIVACY · FAIRNESS",
+        "detail": "Open Trustworthy AI : Trust is the ultimate form of intelligence.",
+        "viewMore": "View More"
+    },
+    "updates": [
         {
-            "title": "Open Trustworthy Artificial Intelligence -  Trust is the ultimate form of intelligence.",
-            "detail": "Join the community to build AI technologies that are robust, secure, explainable, privacy-preserving, and free of bias.",
-            "viewMore": "View More"
+            "title": "Frontier thoughts on AI and scientific insights",
+            "subtitle": "AI",
+            "content": "Laborious was can, nor some from all teachings because ever example extremely exercise rationally know, it pain explorer avoids no.",
+            "time": "2024 Feb 25 | by OpenTAI",
+            "img": "latestUpdates1.png"
         },
         {
-            "title": "Open Trustworthy Artificial Intelligence -  Trust is the ultimate form of intelligence.",
-            "detail": "Join the community to build AI technologies that are robust, secure, explainable, privacy-preserving, and free of bias.",
-            "viewMore": "View More"
+            "title": "Frontier thoughts on AI and scientific insights",
+            "subtitle": "AI",
+            "content": "Laborious was can, nor some from all teachings because ever example extremely exercise rationally know, it pain explorer avoids no.",
+            "time": "2024 Feb 25 | by OpenTAI",
+            "img": "latestUpdates2.png"
         },
         {
-            "title": "Open Trustworthy Artificial Intelligence -  Trust is the ultimate form of intelligence.",
-            "detail": "Join the community to build AI technologies that are robust, secure, explainable, privacy-preserving, and free of bias.",
-            "viewMore": "View More"
+            "title": "Frontier thoughts on AI and scientific insights",
+            "subtitle": "AI",
+            "content": "Laborious was can, nor some from all teachings because ever example extremely exercise rationally know, it pain explorer avoids no.",
+            "time": "2024 Feb 25 | by OpenTAI",
+            "img": "latestUpdates3.png"
         }
     ],
     "mission": {
-        "projects": 10,
-        "datasets": 1,
-        "algorithms": 30,
-        "contributors": 20,
-        "forks": 0,
-        "stars": 0
+        "title": "Our mission",
+        "content": "OpenTAI is an open source platform to support the ever-growing research in Trustworthy AI, a place where emerging topics can be quickly implemented, new ideas can be easily tested, and attacks/defenses can be symmetrically evaluated."
     },
     "news": [
         {
@@ -44,10 +51,10 @@
     "projects": [
         {
             "projectName": "系外行星检测",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "Learn More",
+            "projectDescription": "Adversarial attacks and defenses.Adversarial attacks and defenses.Adversarial attacks and defenses.Adversarial attacks and defenses.",
+            "projectReadMore": "Learn More >",
             "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
+            "projectIcon": "projectIcon1.png",
             "projectBackground": "projectBackground.png",
             "markdown": "projects/projectDetail1.md",
             "link": ""
@@ -57,7 +64,7 @@
             "projectDescription": "Adversarial attacks and defenses.",
             "projectReadMore": "Learn More",
             "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
+            "projectIcon": "projectIcon1.png",
             "projectBackground": "projectBackground.png",
             "markdown": "",
             "link": "https://www.csdn.net/"
@@ -67,7 +74,7 @@
             "projectDescription": "Adversarial attacks and defenses.",
             "projectReadMore": "Learn More",
             "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
+            "projectIcon": "projectIcon1.png",
             "projectBackground": "projectBackground.png",
             "markdown": "projects/projectDetail1.md",
             "link": ""

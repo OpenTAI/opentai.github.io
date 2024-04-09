@@ -13,7 +13,7 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
 
     const headData = [
         {
-            name: "projects",
+            name: "home",
             onClick: () => {
                 if (document.getElementById("projects") !== null) {
                     document.querySelector('#projects').scrollIntoView({
@@ -30,55 +30,55 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
             },
         },
         {
-            name: "tools",
+            name: "research",
             onClick: null,
-            menuItem: [
-                {
-                    key: '1',
-                    label: (
-                        <a
-                            target="_blank"
-                            onClick={
-                                () => {
-                                    if (setRiskRoute) {
-                                        setRiskRoute("/main/dss?");
-                                    }
-                                    localStorage.setItem("riskRoute", "/main/dss?");
-                                    history.push("/riskDemo");
-                                }
-                            }
-                        >
-                            {intl.formatMessage({ id: "riskDemo" })}
-                        </a>
-                    ),
-                },
-                {
-                    key: '2',
-                    label: (
-                        <a
-                            target="_blank"
-                            onClick={
-                                () => {
-                                    if (setEvalRoute) {
-                                        setEvalRoute("/main/eval?");
-                                    }
-                                    localStorage.setItem("evalRoute", "/main/eval?");
-                                    history.push("/evaluation");
-                                }
-                            }
-                        >
-                            {intl.formatMessage({ id: "evaluation" })}
-                        </a>
-                    ),
-                }
-            ]
-        },
-        {
-            name: "leaderboards",
-            onClick: null,
+            // menuItem: [
+            //     {
+            //         key: '1',
+            //         label: (
+            //             <a
+            //                 target="_blank"
+            //                 onClick={
+            //                     () => {
+            //                         if (setRiskRoute) {
+            //                             setRiskRoute("/main/dss?");
+            //                         }
+            //                         localStorage.setItem("riskRoute", "/main/dss?");
+            //                         history.push("/riskDemo");
+            //                     }
+            //                 }
+            //             >
+            //                 {intl.formatMessage({ id: "riskDemo" })}
+            //             </a>
+            //         ),
+            //     },
+            //     {
+            //         key: '2',
+            //         label: (
+            //             <a
+            //                 target="_blank"
+            //                 onClick={
+            //                     () => {
+            //                         if (setEvalRoute) {
+            //                             setEvalRoute("/main/eval?");
+            //                         }
+            //                         localStorage.setItem("evalRoute", "/main/eval?");
+            //                         history.push("/evaluation");
+            //                     }
+            //                 }
+            //             >
+            //                 {intl.formatMessage({ id: "evaluation" })}
+            //             </a>
+            //         ),
+            //     }
+            // ]
         },
         {
             name: "datasets",
+            onClick: null,
+        },
+        {
+            name: "evaluations",
             onClick: () => {
                 if (document.getElementById("datasets") !== null) {
                     document.querySelector('#datasets').scrollIntoView({
@@ -95,7 +95,7 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
             },
         },
         {
-            name: "seminars",
+            name: "community",
             onClick: () => window.open("http://highschool.opentai.org/"),
         },
     ];
@@ -119,14 +119,20 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
     };
 
     return (
-        <div className={styles.container}>
-            <div className={styles.head}>
-                <img src={logo} className={styles.logo} />
-                <div className={styles.guide}>
+        <div className="w-full relative">
+            <div className="flex py-6 px-20 justify-between items-center">
+                <img src={logo} className="w-28 object-contain" />
+                <div className="flex w-128 justify-between">
                     {headData.map((item, index) => {
                         return (
                             <>
-                            {item.menuItem?.length > 0 ?
+                                <div
+                                    className="text-base text-white cursor-pointer flex items-center font-semibold"
+                                    onClick={item.onClick}
+                                >
+                                    {intl.formatMessage({ id: item.name })}
+                                </div>
+                                {/* {item.menuItem?.length > 0 ?
                                 <div>
                                     <Dropdown overlayClassName={styles.dropdownMenu} menu={{ items: item.menuItem }}>
                                         <div
@@ -134,7 +140,6 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
                                             onClick={item.onClick}
                                         >
                                             {intl.formatMessage({ id: item.name })}
-                                            <img className={styles.downArrow} src={downArrow} />
                                         </div>
                                     </Dropdown>
                                 </div> :
@@ -143,14 +148,12 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
                                     onClick={item.onClick}
                                 >
                                     {intl.formatMessage({ id: item.name })}
-                                    <img className={styles.downArrow} src={downArrow} />
-                                </div>}
-                                {index < headData.length -1 && <div className={styles.line}></div>}
+                                </div>} */}
                             </>
                         )
                     })}
                 </div>
-                <img className={styles.languageLogo} src={languageLogo} onClick={changeLan} />
+                <img className="w-7 h-7 mr-20" src={languageLogo} onClick={changeLan} />
             </div>
         </div>
     )

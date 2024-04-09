@@ -3,7 +3,7 @@ export default {
     projects: "Projects",
     tools: "Tools",
     riskDemo: "Risk Demo",
-    evaluation: "Evaluation",
+    evaluations: "Evaluations",
     leaderboards: "Leaderboards",
     seminars: "Seminars",
     ourMission: "Our Mission",
@@ -26,5 +26,8 @@ export default {
     join: "Join Us",
     copyright: "© Copyright 2022, All Rights Reserved",
     privacyPolicy: "Privacy Policy",
-    terms: "Terms & Conditions"
+    terms: "Terms & Conditions",
+    latestUpdates: "Latest updates",
+    viewMore: "View more",
+    researchTitle: "Research"
 };

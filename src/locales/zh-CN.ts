@@ -3,14 +3,14 @@ export default {
     projects: "项目",
     tools: "工具",
     riskDemo: "风险展示",
-    evaluation: "评测框架",
+    evaluations: "评测框架",
     leaderboards: "排行榜",
     seminars: "讲座",
     ourMission: "我们的使命",
     missionDes: "OpenTAI 是一个开源平台，用于支持 Trustworthy AI 不断发展的研究，在这里可以快速探索新课题，可以轻松测试新想法，可以对称地评估攻击/防御。",
     projectUnit: "项目",
     datasets: "数据集",
-    algorithms: "算法",
+    algorithms: "算projectsTitle法",
     contributors: "贡献者",
     forks: "复刻",
     stars: "GitHub 星星",
@@ -26,5 +26,8 @@ export default {
     join: "加入",
     copyright: "© Copyright 2022, All Rights Reserved",
     privacyPolicy: "隐私保护",
-    terms: "使用条款"
+    terms: "使用条款",
+    latestUpdates: "Latest updates",
+    viewMore: "View more",
+    researchTitle: "Research"
 };

@@ -37,19 +37,19 @@ const HomeComponent = () => {
   const { width } = useViewport();
   const breakpoint = 415;
 
-  return width < breakpoint ? <MobileComponent /> : <DesktopComponent />;
+  return width < breakpoint ? <DesktopComponent /> : <DesktopComponent />;
 }
 
 const Homepage = ({ dispatch }) => {
   useEffect(() => {
-    
-    const language = ( localStorage.getItem("umi_locale") || navigator.language || navigator.browserLanguage).toLowerCase();
+
+    const language = (localStorage.getItem("umi_locale") || navigator.language || navigator.browserLanguage).toLowerCase();
     if (language === "zh" || language === "zh-cn") {
       setLocale('zh-CN');
     } else {
       setLocale('en-US');
     }
-    dispatch({type: "global/changeLan", payload: {language: getLocale()}});
+    dispatch({ type: "global/changeLan", payload: { language: getLocale() } });
   }, [])
 
   return (
