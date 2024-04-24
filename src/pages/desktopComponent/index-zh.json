@@ -49,72 +49,74 @@
         }
     ],
     "projects": [
-        {
-            "projectName": "系外行星检测",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "查看详情",
-            "projectLeaderBoard": "排行榜",
-            "projectIcon": "projectIcon1.png",
-            "projectBackground": "projectBackground.png",
-            "markdown": "projects/projectDetail1.md",
-            "link": ""
-        },
-        {
-            "projectName": "寻找走失儿童",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "查看详情",
-            "projectLeaderBoard": "排行榜",
-            "projectIcon": "projectIcon1.png",
-            "projectBackground": "projectBackground.png",
-            "markdown": "",
-            "link": "https://www.csdn.net/"
-        },
-        {
-            "projectName": "帮助盲人识字",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "查看详情",
-            "projectLeaderBoard": "排行榜",
-            "projectIcon": "projectIcon1.png",
-            "projectBackground": "projectBackground.png",
-            "markdown": "projects/projectDetail1.md",
-            "link": ""
-        },
-        {
-            "projectName": "带你认识ChatGPT",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "查看详情",
-            "projectLeaderBoard": "排行榜",
-            "projectIcon": "projectIcon.png",
-            "projectBackground": "projectBackground.png",
-            "markdown": "projects/projectDetail1.md",
-            "link": ""
-        },
-        {
-            "projectName": "情感倾向分析",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "查看详情",
-            "projectLeaderBoard": "排行榜",
-            "projectIcon": "projectIcon.png",
-            "projectBackground": "projectBackground.png",
-            "markdown": "projects/projectDetail1.md",
-            "link": ""
-        },
-        {
-            "projectName": "金融风险检测",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "查看详情",
-            "projectLeaderBoard": "排行榜",
-            "projectIcon": "projectIcon.png",
-            "projectBackground": "projectBackground.png",
-            "markdown": "projects/projectDetail1.md",
-            "link": ""
-        },
-        {
+        [
+            {
+                "projectName": "系外行星检测",
+                "projectDescription": "Adversarial attacks and defenses.Adversarial attacks and defenses.Adversarial attacks and defenses.Adversarial attacks and defenses.",
+                "projectReadMore": "Learn More >",
+                "projectLeaderBoard": "Leader Board",
+                "projectIcon": "projectIcon1.png",
+                "projectBackground": "projectBackground.png",
+                "markdown": "projects/projectDetail1.md",
+                "link": ""
+            },
+            {
+                "projectName": "寻找走失儿童",
+                "projectDescription": "Adversarial attacks and defenses.",
+                "projectReadMore": "Learn More >",
+                "projectLeaderBoard": "Leader Board",
+                "projectIcon": "projectIcon1.png",
+                "projectBackground": "projectBackground.png",
+                "markdown": "",
+                "link": "https://www.csdn.net/"
+            },
+            {
+                "projectName": "帮助盲人识字",
+                "projectDescription": "Adversarial attacks and defenses.",
+                "projectReadMore": "Learn More >",
+                "projectLeaderBoard": "Leader Board",
+                "projectIcon": "projectIcon1.png",
+                "projectBackground": "projectBackground.png",
+                "markdown": "projects/projectDetail1.md",
+                "link": ""
+            },
+            {
+                "projectName": "带你认识ChatGPT",
+                "projectDescription": "Adversarial attacks and defenses.",
+                "projectReadMore": "Learn More >",
+                "projectLeaderBoard": "Leader Board",
+                "projectIcon": "projectIcon1.png",
+                "projectBackground": "projectBackground.png",
+                "markdown": "projects/projectDetail1.md",
+                "link": ""
+            },
+            {
+                "projectName": "情感倾向分析",
+                "projectDescription": "Adversarial attacks and defenses.",
+                "projectReadMore": "Learn More >",
+                "projectLeaderBoard": "Leader Board",
+                "projectIcon": "projectIcon1.png",
+                "projectBackground": "projectBackground.png",
+                "markdown": "projects/projectDetail1.md",
+                "link": ""
+            },
+            {
+                "projectName": "金融风险检测",
+                "projectDescription": "Adversarial attacks and defenses.",
+                "projectReadMore": "Learn More >",
+                "projectLeaderBoard": "Leader Board",
+                "projectIcon": "projectIcon1.png",
+                "projectBackground": "projectBackground.png",
+                "markdown": "projects/projectDetail1.md",
+                "link": ""
+            }
+        ],
+        [{
             "projectName": "学习隐藏的规律",
             "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "查看详情",
-            "projectLeaderBoard": "排行榜",
-            "projectIcon": "projectIcon.png",
+            "projectReadMore": "Learn More >",
+            "projectLeaderBoard": "Leader Board",
+            "projectIcon": "projectIcon1.png",
             "projectBackground": "projectBackground.png",
             "markdown": "projects/projectDetail1.md",
             "link": ""
@@ -122,9 +124,9 @@
         {
             "projectName": "真假人脸识别",
             "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "查看详情",
-            "projectLeaderBoard": "排行榜",
-            "projectIcon": "projectIcon.png",
+            "projectReadMore": "Learn More >",
+            "projectLeaderBoard": "Leader Board",
+            "projectIcon": "projectIcon1.png",
             "projectBackground": "projectBackground.png",
             "markdown": "projects/projectDetail1.md",
             "link": ""
@@ -132,201 +134,200 @@
         {
             "projectName": "打开人工智能的黑盒子",
             "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "查看详情",
-            "projectLeaderBoard": "排行榜",
-            "projectIcon": "projectIcon.png",
+            "projectReadMore": "Learn More >",
+            "projectLeaderBoard": "Leader Board",
+            "projectIcon": "projectIcon1.png",
             "projectBackground": "projectBackground.png",
             "markdown": "projects/projectDetail1.md",
             "link": ""
         },
         {
-            "projectName": "能让你“隐身”的对抗补丁能让你“隐身”的对抗补丁",
-            "projectDescription": "Adversarial attacks and defenses.Adversarial attacks and defenses.",
-            "projectReadMore": "查看详情",
-            "projectLeaderBoard": "排行榜",
-            "projectIcon": "projectIcon.png",
+            "projectName": "能让你“隐身”的对抗补丁",
+            "projectDescription": "Adversarial attacks and defenses.",
+            "projectReadMore": "Learn More >",
+            "projectLeaderBoard": "Leader Board",
+            "projectIcon": "projectIcon1.png",
             "projectBackground": "projectBackground.png",
             "markdown": "projects/projectDetail1.md",
             "link": ""
-        }
+        }]
     ],
     "datasets": [
         {
             "datasetsName": "系外行星检测",
-            "datasetsBackground": "datasets1.png",
-            "link": "https://www.csdn.net/"
+            "datasetsBackground": "datasets2.png",
+            "des": "But actual has painful explain born and pain no dislikes of praising.But actual has painful explain born and pain no dislikes of praising.",
+            "subTitle": "DEEPFAKE"
         },
         {
             "datasetsName": "系外行星检测",
-            "datasetsBackground": "datasets1.png",
-            "link": "https://www.csdn.net/"
+            "datasetsBackground": "datasets2.png",
+            "des": "But actual has painful explain born and pain no dislikes of praising.",
+            "subTitle": "DEEPFAKE"
         },
         {
             "datasetsName": "系外行星检测",
-            "datasetsBackground": "datasets1.png",
-            "link": "https://www.csdn.net/"
+            "datasetsBackground": "datasets2.png",
+            "des": "But actual has painful explain born and pain no dislikes of praising.",
+            "subTitle": "DEEPFAKE"
+        },
+        {
+            "datasetsName": "系外行星检测",
+            "datasetsBackground": "datasets2.png",
+            "des": "But actual has painful explain born and pain no dislikes of praising.",
+            "subTitle": "DEEPFAKE"
         }
     ],
     "contributors": [
         {
-            "contributorsName": "马兴军",
+            "contributorsName": "张伟",
             "contributorsImg": "contributor1.png",
-            "contributorsTitle": "贡献者"
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
+            "contributorsName": "Joseph Moore",
             "contributorsImg": "contributor2.png",
-            "contributorsTitle": "贡献者"
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
+            "contributorsName": "韦泽",
             "contributorsImg": "contributor3.png",
-            "contributorsTitle": "贡献者"
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
+            "contributorsName": "郭青郭青",
             "contributorsImg": "contributor4.png",
-            "contributorsTitle": "贡献者"
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
+            "contributorsName": "James Allen",
             "contributorsImg": "contributor5.png",
-            "contributorsTitle": "贡献者"
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
+            "contributorsName": "SummerDream",
             "contributorsImg": "contributor6.png",
-            "contributorsTitle": "贡献者"
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor7.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "张伟",
+            "contributorsImg": "contributor1.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor8.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "Joseph Moore",
+            "contributorsImg": "contributor2.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor9.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "韦泽",
+            "contributorsImg": "contributor3.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor10.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "郭青郭青",
+            "contributorsImg": "contributor4.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor11.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "James Allen",
+            "contributorsImg": "contributor5.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor12.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "SummerDream",
+            "contributorsImg": "contributor6.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor13.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "张伟",
+            "contributorsImg": "contributor1.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor14.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "Joseph Moore",
+            "contributorsImg": "contributor2.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor15.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "韦泽",
+            "contributorsImg": "contributor3.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor16.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "郭青郭青",
+            "contributorsImg": "contributor4.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor17.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "James Allen",
+            "contributorsImg": "contributor5.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor18.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "SummerDream",
+            "contributorsImg": "contributor6.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor19.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "张伟",
+            "contributorsImg": "contributor1.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor20.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "Joseph Moore",
+            "contributorsImg": "contributor2.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor21.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "韦泽",
+            "contributorsImg": "contributor3.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor22.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "郭青郭青",
+            "contributorsImg": "contributor4.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor23.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "James Allen",
+            "contributorsImg": "contributor5.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor24.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "SummerDream",
+            "contributorsImg": "contributor6.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor25.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "张伟",
+            "contributorsImg": "contributor1.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor26.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "Joseph Moore",
+            "contributorsImg": "contributor2.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor27.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "韦泽",
+            "contributorsImg": "contributor3.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor28.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "郭青郭青",
+            "contributorsImg": "contributor4.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor29.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "James Allen",
+            "contributorsImg": "contributor5.png",
+            "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor30.png",
-            "contributorsTitle": "贡献者"
-        },
-        {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor31.png",
-            "contributorsTitle": "贡献者"
-        },
-        {
-            "contributorsName": "马兴军",
-            "contributorsImg": "contributor32.png",
-            "contributorsTitle": "贡献者"
+            "contributorsName": "SummerDream",
+            "contributorsImg": "contributor6.png",
+            "contributorsTitle": "Contributor"
         }
     ],
     "committees": [

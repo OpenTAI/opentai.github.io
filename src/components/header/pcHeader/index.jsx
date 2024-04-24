@@ -4,16 +4,30 @@ import React, { useState, useEffect } from 'react';
 import styles from './index.less';
 import { setLocale, useIntl, connect, history } from 'umi';
 import logo from '@/assets/img/logo.png';
+import menu from '@/assets/img/menu.png';
+import closeIcon from '@/assets/img/closeIcon.png';
 import downArrow from '@/assets/img/downArrow.png';
-import { Dropdown } from 'antd';
+import { Drawer, Collapse } from 'antd';
 
 const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }) => {
     const [languageLogo, setLanguageLogo] = useState(Chinese);
     const intl = useIntl();
+    const [drawerOpen, setDrawerOpen] = useState(false);
+
+    const { Panel } = Collapse;
+
+    const text = (
+        <p className='text-white'
+        >
+            A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found
+            as a welcome guest in many households across the world.
+        </p>
+    );
 
     const headData = [
         {
             name: "home",
+            children: null,
             onClick: () => {
                 if (document.getElementById("projects") !== null) {
                     document.querySelector('#projects').scrollIntoView({
@@ -30,7 +44,14 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
             },
         },
         {
-            name: "research",
+            name: "projects",
+            children:
+                <div className='text-white text-base pb-3'>
+                    <div className='py-1'>Project Name #1</div>
+                    <div className='py-1'>Project Name #2</div>
+                    <div className='py-1'>Project Name #3</div>
+                    <div className='py-1'>Project Name #4</div>
+                </div>,
             onClick: null,
             // menuItem: [
             //     {
@@ -74,11 +95,25 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
             // ]
         },
         {
-            name: "datasets",
+            name: "demos",
+            children:
+                <div className='text-white text-base pb-3'>
+                    <div className='py-1'>Demos #1</div>
+                    <div className='py-1'>Demos #2</div>
+                    <div className='py-1'>Demos #3</div>
+                    <div className='py-1'>Demos #4</div>
+                </div>,
             onClick: null,
         },
         {
-            name: "evaluations",
+            name: "leaderboards",
+            children:
+                <div className='text-white text-base pb-3'>
+                    <div className='py-1'>Demos #1</div>
+                    <div className='py-1'>Demos #2</div>
+                    <div className='py-1'>Demos #3</div>
+                    <div className='py-1'>Demos #4</div>
+                </div>,
             onClick: () => {
                 if (document.getElementById("datasets") !== null) {
                     document.querySelector('#datasets').scrollIntoView({
@@ -95,8 +130,20 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
             },
         },
         {
-            name: "community",
+            name: "datasets",
+            children:
+                <div className='text-white text-base pb-3'>
+                    <div className='py-1'>Demos #1</div>
+                    <div className='py-1'>Demos #2</div>
+                    <div className='py-1'>Demos #3</div>
+                    <div className='py-1'>Demos #4</div>
+                </div>,
             onClick: () => window.open("http://highschool.opentai.org/"),
+        },
+        {
+            name: "seminars",
+            children: null,
+            onClick: null,
         },
     ];
 
@@ -118,44 +165,93 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
         }
     };
 
+    const onOpen = () => {
+        setDrawerOpen(true);
+    }
+
+    const onClose = () => {
+        setDrawerOpen(false);
+    }
+
+    const collapseIcon = (panel) => {
+        const arr = ["0", "5"]
+        if (arr.indexOf(panel?.panelKey) == -1) {
+            if (panel?.isActive) {
+                return (<div className='w-4 h-4 bg-squareMinus bg-contain' />)
+            } else {
+                return (<div className='w-4 h-4 bg-squarePlus bg-contain' />)
+            }
+        } else {
+            return (<div className='w-4 h-4 bg-squareArrow bg-contain' />)
+        }
+    }
+
     return (
-        <div className="w-full relative">
-            <div className="flex py-6 px-20 justify-between items-center">
-                <img src={logo} className="w-28 object-contain" />
-                <div className="flex w-128 justify-between">
-                    {headData.map((item, index) => {
-                        return (
-                            <>
-                                <div
-                                    className="text-base text-white cursor-pointer flex items-center font-semibold"
-                                    onClick={item.onClick}
-                                >
-                                    {intl.formatMessage({ id: item.name })}
-                                </div>
-                                {/* {item.menuItem?.length > 0 ?
-                                <div>
-                                    <Dropdown overlayClassName={styles.dropdownMenu} menu={{ items: item.menuItem }}>
-                                        <div
-                                            className={styles.guideName}
-                                            onClick={item.onClick}
-                                        >
-                                            {intl.formatMessage({ id: item.name })}
-                                        </div>
-                                    </Dropdown>
-                                </div> :
-                                <div
-                                    className={styles.guideName}
-                                    onClick={item.onClick}
-                                >
-                                    {intl.formatMessage({ id: item.name })}
-                                </div>} */}
-                            </>
-                        )
-                    })}
+        <>
+            <div className="w-full relative">
+                <div className="flex py-6 px-4 sm:px-20 justify-between items-center">
+                    <img src={logo} className="w-28 object-contain" />
+                    <div className="hidden sm:flex w-128 justify-between">
+                        {headData.map((item, index) => {
+                            return (
+                                <>
+                                    <div
+                                        className="text-base text-white cursor-pointer flex items-center font-semibold"
+                                        onClick={item.onClick}
+                                    >
+                                        {intl.formatMessage({ id: item.name })}
+                                    </div>
+                                </>
+                            )
+                        })}
+                    </div>
+                    <img className="hidden sm:block w-7 h-7 mr-20 hover:cursor-pointer" src={languageLogo} onClick={changeLan} />
+                    <img className="block sm:hidden h-5 w-6" src={menu} onClick={onOpen} />
                 </div>
-                <img className="w-7 h-7 mr-20" src={languageLogo} onClick={changeLan} />
             </div>
-        </div>
+            <Drawer
+                title={null}
+                onClose={onClose}
+                open={drawerOpen}
+                width={"100%"}
+                maskClosable={false}
+                style={{ background: "#000" }}
+                bodyStyle={{ padding: "15px", position: "relative" }}
+                closeIcon={null}
+                headerStyle={{ display: "none" }}
+            >
+                <div className="flex items-center justify-between mb-7">
+                    <img src={logo} className="w-28" />
+                    <img src={closeIcon} className="w-5 h-5" onClick={onClose} />
+                </div>
+                <div className={styles.collapse}>
+                    <Collapse bordered={false} accordion expandIconPosition="end" ghost expandIcon={(item) => collapseIcon(item)}>
+                        {headData.map((item, index) => {
+                            return (
+                                <>
+                                    <div className='w-full h-[2px] bg-white'></div>
+                                    <Panel
+                                        header={
+                                            <div>
+                                                <div className='py-4 text-white font-semibold text-xl'>
+                                                    {intl.formatMessage({ id: item.name })}
+                                                </div>
+                                            </div>
+                                        }
+                                        key={index}
+                                        collapsible={item.children === null ? "disabled" : null}
+                                    >
+                                        {item.children}
+                                    </Panel>
+                                </>
+                            )
+                        })}
+                    </Collapse>
+                    <div className='w-full h-[2px] bg-white'></div>
+                </div>
+                <img className="w-7 h-7 absolute bottom-6 right-4" src={languageLogo} onClick={changeLan} />
+            </Drawer>
+        </>
     )
 }
 
