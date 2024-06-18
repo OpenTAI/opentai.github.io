@@ -13,6 +13,7 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
     const [languageLogo, setLanguageLogo] = useState(Chinese);
     const intl = useIntl();
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [background, setBackground] = useState('light-black');
 
     const { Panel } = Collapse;
 
@@ -155,6 +156,12 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
         }
     }, [language]);
 
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const changeLan = () => {
         if (language === "zh-CN") {
             dispatch({ type: "global/changeLan", payload: { language: "en-US" } });
@@ -186,10 +193,21 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
         }
     }
 
+    const handleScroll = () => {
+        let scrollTop = document.documentElement.scrollTop;
+        if (scrollTop > 64) {
+            setBackground('deep-sky');
+            setTextColor('deep-sky');
+        } else {
+            setBackground('light-black');
+            setTextColor('white');
+        }
+    };
+
     return (
         <>
-            <div className="w-full relative">
-                <div className="flex py-6 px-4 sm:px-20 justify-between items-center">
+            <div className="fixed w-full z-20">
+                <div className={`flex py-6 px-4 sm:px-20 justify-between items-center bg-${background}`}>
                     <img src={logo} className="w-28 object-contain" />
                     <div className="hidden sm:flex w-128 justify-between">
                         {headData.map((item, index) => {

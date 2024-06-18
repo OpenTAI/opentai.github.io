@@ -30,13 +30,13 @@ module.exports = {
       },
       backgroundImage: {
         'header': "url('@/assets/img/header1.png')",
-        'arrowLeft':"url('@/assets/img/arrowLeft.png')",
-        'arrowRight':"url('@/assets/img/arrowRight.png')",
-        'arrowLeftHighlight':"url('@/assets/img/arrowLeftHighlight.png')",
-        'arrowRightHighlight':"url('@/assets/img/arrowRightHighlight.png')",
-        'squareArrow':"url('@/assets/img/squareArrow.png')",
-        'squarePlus':"url('@/assets/img/squarePlus.png')",
-        'squareMinus':"url('@/assets/img/squareMinus.png')",
+        'arrowLeft': "url('@/assets/img/arrowLeft.png')",
+        'arrowRight': "url('@/assets/img/arrowRight.png')",
+        'arrowLeftHighlight': "url('@/assets/img/arrowLeftHighlight.png')",
+        'arrowRightHighlight': "url('@/assets/img/arrowRightHighlight.png')",
+        'squareArrow': "url('@/assets/img/squareArrow.png')",
+        'squarePlus': "url('@/assets/img/squarePlus.png')",
+        'squareMinus': "url('@/assets/img/squareMinus.png')",
       },
       lineHeight: {
         '18': "4.5rem"
@@ -46,7 +46,8 @@ module.exports = {
         'deep-grey': "#727272",
         'light-grey': "#EDEDED",
         'deep-black': "#141414",
-        'bg-greyB': "#F1F1F1"
+        'bg-greyB': "#F1F1F1",
+        'light-black': "rgba(0,0,0,0.3)"
       }
     }
   }
