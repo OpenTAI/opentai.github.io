@@ -76,9 +76,6 @@ const DesktopComponent = ({ global: { language } }) => {
         <PcHeader />
         <div className="pt-32 sm:pt-44">
           <div className="mx-2 sm:mx-20">
-            <div className="text-center sm:text-left min-w-6 sm:text-xl text-xs text-white font-semibold"  data-aos="fade-up" data-aos-duration="1000">
-              {header.title}
-            </div>
             <div className="text-center sm:text-left text-[40px] sm:text-6xl text-white sm:w-168 font-extralight leading-[46px] sm:leading-18 pt-5 sm:pt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
               {header.detail}
             </div>

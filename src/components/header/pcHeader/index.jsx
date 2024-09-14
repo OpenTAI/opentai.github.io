@@ -13,7 +13,8 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
     const [languageLogo, setLanguageLogo] = useState(Chinese);
     const intl = useIntl();
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const [background, setBackground] = useState('light-black');
+    const [background, setBackground] = useState('bg-light-black');
+    const [opacity, setOpacity] = useState(30);
 
     const { Panel } = Collapse;
 
@@ -196,18 +197,16 @@ const PcHeader = ({ global: { language }, dispatch, setEvalRoute, setRiskRoute }
     const handleScroll = () => {
         let scrollTop = document.documentElement.scrollTop;
         if (scrollTop > 64) {
-            setBackground('deep-sky');
-            setTextColor('deep-sky');
+            setBackground('bg-deep-sky');
         } else {
-            setBackground('light-black');
-            setTextColor('white');
+            setBackground('bg-light-black');
         }
     };
 
     return (
         <>
             <div className="fixed w-full z-20">
-                <div className={`flex py-6 px-4 sm:px-20 justify-between items-center bg-${background}`}>
+                <div className={`flex py-6 px-4 sm:px-20 justify-between items-center ${background} `}>
                     <img src={logo} className="w-28 object-contain" />
                     <div className="hidden sm:flex w-128 justify-between">
                         {headData.map((item, index) => {
