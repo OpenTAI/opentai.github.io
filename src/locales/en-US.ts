@@ -1,9 +1,10 @@
 export default {
     home: "Home",
     projects: "Projects",
+    demos: "Demos",
     tools: "Tools",
     riskDemo: "Risk Demo",
-    evaluation: "Evaluation",
+    evaluations: "Evaluations",
     leaderboards: "Leaderboards",
     seminars: "Seminars",
     ourMission: "Our Mission",
@@ -21,10 +22,14 @@ export default {
     meetTheContributors: "Meet the Contributors",
     contributorsDes: "We welcome all contributions. Feel free to contact us if you are interested.",
     steeringCommittee: "Steering Committee",
-    committeeDes: "We need more specialized datasets to conduct TAI research.",
-    welcome: "Welcome to join the OpenTAI community!",
+    committeeDes1: "Are you ready to start a project?",
+    committeeDes2: "Welcome to join the OpenTAI community!",
+    welcome: "hello@opentai.com",
     join: "Join Us",
-    copyright: "© Copyright 2022, All Rights Reserved",
+    copyright: "Copyright © 2024 Fudan Uni",
     privacyPolicy: "Privacy Policy",
-    terms: "Terms & Conditions"
+    terms: "Terms & Conditions",
+    latestUpdates: "Latest updates",
+    viewMore: "View more",
+    researchTitle: "Research"
 };

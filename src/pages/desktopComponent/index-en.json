@@ -1,28 +1,35 @@
 {
-    "carousel": [
+    "header": {
+        "title": "SAFETY · ROBUSTNESS · EXPLAINABILITY · PRIVACY · FAIRNESS",
+        "detail": "Open Trustworthy AI : Trust is the ultimate form of intelligence.",
+        "viewMore": "View More"
+    },
+    "updates": [
         {
-            "title": "Open Trustworthy Artificial Intelligence -  Trust is the ultimate form of intelligence.",
-            "detail": "Join the community to build AI technologies that are robust, secure, explainable, privacy-preserving, and free of bias.",
-            "viewMore": "View More"
+            "title": "Frontier thoughts on AI and scientific insights",
+            "subtitle": "AI",
+            "content": "Laborious was can, nor some from all teachings because ever example extremely exercise rationally know, it pain explorer avoids no.",
+            "time": "2024 Feb 25 | by OpenTAI",
+            "img": "latestUpdates1.png"
         },
         {
-            "title": "Open Trustworthy Artificial Intelligence -  Trust is the ultimate form of intelligence.",
-            "detail": "Join the community to build AI technologies that are robust, secure, explainable, privacy-preserving, and free of bias.",
-            "viewMore": "View More"
+            "title": "Frontier thoughts on AI and scientific insights",
+            "subtitle": "AI",
+            "content": "Laborious was can, nor some from all teachings because ever example extremely exercise rationally know, it pain explorer avoids no.",
+            "time": "2024 Feb 25 | by OpenTAI",
+            "img": "latestUpdates2.png"
         },
         {
-            "title": "Open Trustworthy Artificial Intelligence -  Trust is the ultimate form of intelligence.",
-            "detail": "Join the community to build AI technologies that are robust, secure, explainable, privacy-preserving, and free of bias.",
-            "viewMore": "View More"
+            "title": "Frontier thoughts on AI and scientific insights",
+            "subtitle": "AI",
+            "content": "Laborious was can, nor some from all teachings because ever example extremely exercise rationally know, it pain explorer avoids no.",
+            "time": "2024 Feb 25 | by OpenTAI",
+            "img": "latestUpdates3.png"
         }
     ],
     "mission": {
-        "projects": 10,
-        "datasets": 1,
-        "algorithms": 30,
-        "contributors": 20,
-        "forks": 0,
-        "stars": 0
+        "title": "Our mission",
+        "content": "OpenTAI is an open source platform to support the ever-growing research in Trustworthy AI, a place where emerging topics can be quickly implemented, new ideas can be easily tested, and attacks/defenses can be symmetrically evaluated."
     },
     "news": [
         {
@@ -42,72 +49,74 @@
         }
     ],
     "projects": [
-        {
-            "projectName": "系外行星检测",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "Learn More",
-            "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
-            "projectBackground": "projectBackground.png",
-            "markdown": "projects/projectDetail1.md",
-            "link": ""
-        },
-        {
-            "projectName": "寻找走失儿童",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "Learn More",
-            "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
-            "projectBackground": "projectBackground.png",
-            "markdown": "",
-            "link": "https://www.csdn.net/"
-        },
-        {
-            "projectName": "帮助盲人识字",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "Learn More",
-            "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
-            "projectBackground": "projectBackground.png",
-            "markdown": "projects/projectDetail1.md",
-            "link": ""
-        },
-        {
-            "projectName": "带你认识ChatGPT",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "Learn More",
-            "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
-            "projectBackground": "projectBackground.png",
-            "markdown": "projects/projectDetail1.md",
-            "link": ""
-        },
-        {
-            "projectName": "情感倾向分析",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "Learn More",
-            "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
-            "projectBackground": "projectBackground.png",
-            "markdown": "projects/projectDetail1.md",
-            "link": ""
-        },
-        {
-            "projectName": "金融风险检测",
-            "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "Learn More",
-            "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
-            "projectBackground": "projectBackground.png",
-            "markdown": "projects/projectDetail1.md",
-            "link": ""
-        },
-        {
+        [
+            {
+                "projectName": "系外行星检测",
+                "projectDescription": "Adversarial attacks and defenses.Adversarial attacks and defenses.Adversarial attacks and defenses.Adversarial attacks and defenses.",
+                "projectReadMore": "Learn More >",
+                "projectLeaderBoard": "Leader Board",
+                "projectIcon": "projectIcon1.png",
+                "projectBackground": "projectBackground.png",
+                "markdown": "projects/projectDetail1.md",
+                "link": ""
+            },
+            {
+                "projectName": "寻找走失儿童",
+                "projectDescription": "Adversarial attacks and defenses.",
+                "projectReadMore": "Learn More >",
+                "projectLeaderBoard": "Leader Board",
+                "projectIcon": "projectIcon1.png",
+                "projectBackground": "projectBackground.png",
+                "markdown": "",
+                "link": "https://www.csdn.net/"
+            },
+            {
+                "projectName": "帮助盲人识字",
+                "projectDescription": "Adversarial attacks and defenses.",
+                "projectReadMore": "Learn More >",
+                "projectLeaderBoard": "Leader Board",
+                "projectIcon": "projectIcon1.png",
+                "projectBackground": "projectBackground.png",
+                "markdown": "projects/projectDetail1.md",
+                "link": ""
+            },
+            {
+                "projectName": "带你认识ChatGPT",
+                "projectDescription": "Adversarial attacks and defenses.",
+                "projectReadMore": "Learn More >",
+                "projectLeaderBoard": "Leader Board",
+                "projectIcon": "projectIcon1.png",
+                "projectBackground": "projectBackground.png",
+                "markdown": "projects/projectDetail1.md",
+                "link": ""
+            },
+            {
+                "projectName": "情感倾向分析",
+                "projectDescription": "Adversarial attacks and defenses.",
+                "projectReadMore": "Learn More >",
+                "projectLeaderBoard": "Leader Board",
+                "projectIcon": "projectIcon1.png",
+                "projectBackground": "projectBackground.png",
+                "markdown": "projects/projectDetail1.md",
+                "link": ""
+            },
+            {
+                "projectName": "金融风险检测",
+                "projectDescription": "Adversarial attacks and defenses.",
+                "projectReadMore": "Learn More >",
+                "projectLeaderBoard": "Leader Board",
+                "projectIcon": "projectIcon1.png",
+                "projectBackground": "projectBackground.png",
+                "markdown": "projects/projectDetail1.md",
+                "link": ""
+            }
+        ],
+        [{
             "projectName": "学习隐藏的规律",
             "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "Learn More",
+            "projectReadMore": "Learn More >",
             "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
+            "projectIcon": "projectIcon1.png",
             "projectBackground": "projectBackground.png",
             "markdown": "projects/projectDetail1.md",
             "link": ""
@@ -115,9 +124,9 @@
         {
             "projectName": "真假人脸识别",
             "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "Learn More",
+            "projectReadMore": "Learn More >",
             "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
+            "projectIcon": "projectIcon1.png",
             "projectBackground": "projectBackground.png",
             "markdown": "projects/projectDetail1.md",
             "link": ""
@@ -125,9 +134,9 @@
         {
             "projectName": "打开人工智能的黑盒子",
             "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "Learn More",
+            "projectReadMore": "Learn More >",
             "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
+            "projectIcon": "projectIcon1.png",
             "projectBackground": "projectBackground.png",
             "markdown": "projects/projectDetail1.md",
             "link": ""
@@ -135,190 +144,189 @@
         {
             "projectName": "能让你“隐身”的对抗补丁",
             "projectDescription": "Adversarial attacks and defenses.",
-            "projectReadMore": "Learn More",
+            "projectReadMore": "Learn More >",
             "projectLeaderBoard": "Leader Board",
-            "projectIcon": "projectIcon.png",
+            "projectIcon": "projectIcon1.png",
             "projectBackground": "projectBackground.png",
             "markdown": "projects/projectDetail1.md",
             "link": ""
-        }
+        }]
     ],
     "datasets": [
         {
             "datasetsName": "系外行星检测",
-            "datasetsBackground": "datasets1.png",
-            "link": "https://www.csdn.net/"
+            "datasetsBackground": "datasets2.png",
+            "des": "But actual has painful explain born and pain no dislikes of praising.But actual has painful explain born and pain no dislikes of praising.",
+            "subTitle": "DEEPFAKE"
         },
         {
             "datasetsName": "系外行星检测",
-            "datasetsBackground": "datasets1.png",
-            "link": "https://www.csdn.net/"
+            "datasetsBackground": "datasets2.png",
+            "des": "But actual has painful explain born and pain no dislikes of praising.",
+            "subTitle": "DEEPFAKE"
         },
         {
             "datasetsName": "系外行星检测",
-            "datasetsBackground": "datasets1.png",
-            "link": "https://www.csdn.net/"
+            "datasetsBackground": "datasets2.png",
+            "des": "But actual has painful explain born and pain no dislikes of praising.",
+            "subTitle": "DEEPFAKE"
+        },
+        {
+            "datasetsName": "系外行星检测",
+            "datasetsBackground": "datasets2.png",
+            "des": "But actual has painful explain born and pain no dislikes of praising.",
+            "subTitle": "DEEPFAKE"
         }
     ],
     "contributors": [
         {
-            "contributorsName": "Arlene McCoy",
+            "contributorsName": "张伟",
             "contributorsImg": "contributor1.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
+            "contributorsName": "Joseph Moore",
             "contributorsImg": "contributor2.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
+            "contributorsName": "韦泽",
             "contributorsImg": "contributor3.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
+            "contributorsName": "郭青郭青",
             "contributorsImg": "contributor4.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
+            "contributorsName": "James Allen",
             "contributorsImg": "contributor5.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
+            "contributorsName": "SummerDream",
             "contributorsImg": "contributor6.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor7.png",
+            "contributorsName": "张伟",
+            "contributorsImg": "contributor1.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor8.png",
+            "contributorsName": "Joseph Moore",
+            "contributorsImg": "contributor2.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor9.png",
+            "contributorsName": "韦泽",
+            "contributorsImg": "contributor3.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor10.png",
+            "contributorsName": "郭青郭青",
+            "contributorsImg": "contributor4.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor11.png",
+            "contributorsName": "James Allen",
+            "contributorsImg": "contributor5.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor12.png",
+            "contributorsName": "SummerDream",
+            "contributorsImg": "contributor6.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor13.png",
+            "contributorsName": "张伟",
+            "contributorsImg": "contributor1.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor14.png",
+            "contributorsName": "Joseph Moore",
+            "contributorsImg": "contributor2.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor15.png",
+            "contributorsName": "韦泽",
+            "contributorsImg": "contributor3.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor16.png",
+            "contributorsName": "郭青郭青",
+            "contributorsImg": "contributor4.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor17.png",
+            "contributorsName": "James Allen",
+            "contributorsImg": "contributor5.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor18.png",
+            "contributorsName": "SummerDream",
+            "contributorsImg": "contributor6.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor19.png",
+            "contributorsName": "张伟",
+            "contributorsImg": "contributor1.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor20.png",
+            "contributorsName": "Joseph Moore",
+            "contributorsImg": "contributor2.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor21.png",
+            "contributorsName": "韦泽",
+            "contributorsImg": "contributor3.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor22.png",
+            "contributorsName": "郭青郭青",
+            "contributorsImg": "contributor4.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor23.png",
+            "contributorsName": "James Allen",
+            "contributorsImg": "contributor5.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor24.png",
+            "contributorsName": "SummerDream",
+            "contributorsImg": "contributor6.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor25.png",
+            "contributorsName": "张伟",
+            "contributorsImg": "contributor1.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor26.png",
+            "contributorsName": "Joseph Moore",
+            "contributorsImg": "contributor2.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor27.png",
+            "contributorsName": "韦泽",
+            "contributorsImg": "contributor3.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor28.png",
+            "contributorsName": "郭青郭青",
+            "contributorsImg": "contributor4.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor29.png",
+            "contributorsName": "James Allen",
+            "contributorsImg": "contributor5.png",
             "contributorsTitle": "Contributor"
         },
         {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor30.png",
-            "contributorsTitle": "Contributor"
-        },
-        {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor31.png",
-            "contributorsTitle": "Contributor"
-        },
-        {
-            "contributorsName": "Arlene McCoy",
-            "contributorsImg": "contributor32.png",
+            "contributorsName": "SummerDream",
+            "contributorsImg": "contributor6.png",
             "contributorsTitle": "Contributor"
         }
     ],

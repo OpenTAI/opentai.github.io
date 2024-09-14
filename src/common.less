@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @fontColorNormal: #12022F;
 @fontColorWhite: #FFFFFF;
 @fontColorGray: #594D6D;
@@ -13,12 +17,11 @@
 
 body {
   min-width: 320px;
-  max-width: 1600px;
   margin: 0 auto;
 }
 
 html{
-  font-size:calc(100vw/90);
+  // font-size:calc(100vw/90);
 }
 
 @font-face {
@@ -49,4 +52,9 @@ html{
 @font-face {
   font-family: 'MiSans-Medium';
   src: url('./assets/font/MiSans-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'PingFang-Regular';
+  src: url('./assets/font/PingFang-Regular.ttf');
 }
