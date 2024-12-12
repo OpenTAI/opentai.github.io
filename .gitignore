@@ -7,3 +7,6 @@
 /src/.umi-test
 /dist
 .swc
+
+node_modules
+.env
