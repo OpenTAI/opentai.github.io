@@ -1,0 +1,90 @@
+{
+  "header": {
+    "nameen": "openTAI",
+    "namezh": "openTAI",
+    "detailTitleen": "Open Trustworthy AI :",
+    "detailContenten": "Trust is the ultimate form of intelligence.",
+    "viewMoreen": "View More",
+    "displayData": [
+      {
+        "labelen": "Projects",
+        "labelzh": "项目",
+        "value": "102"
+      },
+      {
+        "labelen": "Datasets",
+        "labelzh": "Datasets",
+        "value": "23,323"
+      },
+      {
+        "labelen": "Contributers",
+        "labelzh": "Contributers",
+        "value": "30"
+      }
+    ],
+    "nav": [
+      {
+        "href": "/#",
+        "labelen": "Home",
+        "labelzh": "主页"
+      },
+      {
+        "href": "/#researches",
+        "labelen": "Research",
+        "labelzh": "Research"
+      },
+      {
+        "href": "/#BenchMarks",
+        "labelen": "Benchmarks",
+        "labelzh": "Benchmarks"
+      },
+      {
+        "href": "/#datasets",
+        "labelen": "Datasets",
+        "labelzh": "数据集"
+      },
+      {
+        "href": "/#Tools",
+        "labelen": "Tools",
+        "labelzh": "Tools"
+      }
+    ]
+  },
+  "footer": {
+    "homeurl": "https://opentai.github.io/",
+    "nav": [
+      {
+        "href": "https://opentai.github.io/",
+        "label": "Home"
+      },
+      {
+        "href": "/#researches",
+        "label": "Research"
+      },
+      {
+        "href": "/#BenchMarks",
+        "label": "Benchmark"
+      },
+      {
+        "href": "/#datasets",
+        "label": "Datasets"
+      },
+      {
+        "href": "/#Tools",
+        "label": "Tools"
+      }
+    ],
+    "social": {
+      "facebook": "https://www.baidu.com",
+      "twitter": "/",
+      "linkedin": "/"
+    },
+    "copyright": "Copyright © 2024 Fudan Uni",
+    "terms": "Terms & Conditions"
+  },
+  "theme": {
+    "color": "blue",
+    "font": "sans",
+    "darkMode": "system"
+  }
+}

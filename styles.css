@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "PingFang-Regular";
+  src: url("./assets/font/PingFang-Regular.ttf");
+}
+
+.bg-light-black {
+  background-color: #0000004d;
+}
+
+.bg-deep-sky {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 37 99 / var(--tw-bg-opacity));
+}
+
+.text-deep-sky {
+  --tw-text-opacity: 1;
+  color: rgb(0 37 99 / var(--tw-text-opacity));
+}
+
+.text-deep-grey {
+  --tw-text-opacity: 1;
+  color: rgb(114 114 114 / var(--tw-text-opacity));
+}

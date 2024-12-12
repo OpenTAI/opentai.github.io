@@ -1,45 +1,142 @@
-/** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: [
-    './src/pages/**/*.jsx',
-    './src/pages/**/*.tsx',
-    './src/components/**/*.jsx',
-    './src/layouts/**/*.jsx',
-  ],
+  mode: "jit",
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      'base-blue': '#002563',
+      'base-grey': '#697883',
+      'light-blue': '#718EB0',
+      'base-black': '#061237',
+      'light-grey': '	#FAFBFC',
+      'light-green': '#F6FBFA',
+      'des-blue': '#2C4673',
+      'table-bg': '#F8F9FA',
+      'table-blue': '#f0f8ff',
+      black: colors.black,
+      white: colors.white,
+      teal: colors.cyan,
+      green: colors.emerald,
+      red: colors.rose,
+      purple: colors.purple,
+      pink: colors.pink,
+      yellow: colors.yellow,
+      gray: {
+        50: "#F6F6F9",
+        100: "#EDECF3",
+        150: "#E6E3EF",
+        200: "#E1DDEC",
+        250: "#C9C5D5",
+        300: "#b2adbe",
+        400: "#918c9e",
+        500: "#716c7f",
+        600: "#565165",
+        700: "#433e52",
+        800: "#363145",
+        900: "#252336",
+        1000: "#1c1b2e",
+      },
+      blue: {
+        50: "#DCEEFF",
+        100: "#B4DBFF",
+        200: "#85C5FE",
+        300: "#4EABFE",
+        400: "#2296fe",
+        500: "#0084FF",
+        600: "#0574e4",
+        700: "#0D5DBD",
+        800: "#144696",
+        900: "#1D2C6C",
+        1000: "#241748",
+      },
+      orange: {
+        200: "#EB7752",
+        300: "#EA6C45",
+        400: "#E85C30",
+        500: "#EC4815",
+        600: "#DC4419",
+        700: "#D04017",
+        800: "#C1360F",
+      },
+    },
+    screens: {
+      sm: "600px",
+      md: "900px",
+      lg: "1200px",
+      xl: "1500px",
+      "2xl": "1800px",
+    },
+    backgroundImage: {
+      'header': "url('./assets/img/header1.png')",
+      'arrowLeft': "url('./assets/img/arrowLeft.png')",
+      'arrowRight': "url('./assets/img/arrowRight.png')",
+      'arrowLeftHighlight': "url('./assets/img/arrowLeftHighlight.png')",
+      'arrowRightHighlight': "url('./assets/img/arrowRightHighlight.png')",
+      'squareArrow': "url('./assets/img/squareArrow.png')",
+      'squarePlus': "url('./assets/img/squarePlus.png')",
+      'squareMinus': "url('./assets/img/squareMinus.png')",
+    },
+    // fontSize: {
+    //   xs: ".875rem",
+    //   sm: "1rem",
+    //   base: "1.125rem",
+    //   lg: "1.25rem",
+    //   xl: "1.5rem",
+    //   "2xl": "1.75rem",
+    //   "3xl": "2rem",
+    //   "4xl": "2.5rem",
+    //   "5xl": "3.25rem",
+    //   "6xl": "3.75rem",
+    //   "7xl": "5rem",
+    //   "8xl": "6rem",
+    // },
     extend: {
-      fontFamily: {
-        'sans': ["-apple-system", "BlinkMacSystemFont", "PingFang-Regular", ...defaultTheme.fontFamily.sans]
+      textDecoration: ["active"],
+      opacity: {
+        7: ".075",
+        15: ".15",
+      },
+      maxWidth: {
+        "8xl": "86rem",
       },
       spacing: {
         '19': "4.75rem",
         '22': "5.5rem",
+        '33': "8.25em",
         '74': "18.5rem",
         '101': "25.25rem",
         '108': "27rem",
         '128': "32rem",
+        '144': "36rem",
         '168': "42rem",
+        '191': "47.75rem",
         '210': "52.5rem",
         '225': "56.25rem",
+        '233': "58.25rem",
         '175': "43.75rem",
+        '208': '52rem',
         '240': "60rem",
+        '255': "63.75rem",
         '320': "80rem",
         '360': "90rem"
       },
-      backgroundImage: {
-        'header': "url('@/assets/img/header1.png')",
-        'arrowLeft': "url('@/assets/img/arrowLeft.png')",
-        'arrowRight': "url('@/assets/img/arrowRight.png')",
-        'arrowLeftHighlight': "url('@/assets/img/arrowLeftHighlight.png')",
-        'arrowRightHighlight': "url('@/assets/img/arrowRightHighlight.png')",
-        'squareArrow': "url('@/assets/img/squareArrow.png')",
-        'squarePlus': "url('@/assets/img/squarePlus.png')",
-        'squareMinus': "url('@/assets/img/squareMinus.png')",
+      zIndex: {
+        "-1": "-1",
+      },
+      fontFamily: {
+        sans: ["-apple-system", "BlinkMacSystemFont", "PingFang-Regular", ...defaultTheme.fontFamily.sans],
       },
       lineHeight: {
-        '18': "4.5rem"
+        '14': '3.5rem',
+        '18': '4.5rem'
+      },
+      fontSize: {
+        '5sm': '2.5rem'
       },
       'colors': {
         'deep-sky': "#002563",
@@ -47,8 +144,13 @@ module.exports = {
         'light-grey': "#EDEDED",
         'deep-black': "#141414",
         'bg-greyB': "#F1F1F1",
+        'blue': "#718EB0",
         'light-black': "rgba(0,0,0,0.3)"
       }
-    }
-  }
-}
+    },
+  },
+  variants: {
+    extend: { typography: ["tint", "dark", "primary"] },
+  },
+  plugins: [require("@tailwindcss/typography")],
+};
