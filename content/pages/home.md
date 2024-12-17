@@ -5,7 +5,7 @@ blocks:
     viewMoreen: View more
     updates:
       - titleen: Introducing VisionSafety Platform
-        subtitleen: Benchmark
+        subtitleen: '#Vision'
         contenten: >-
           As the safety of vision models remains a cornerstone of AI research,
           we are proud to launch the VisionSafety Platform. This innovative
