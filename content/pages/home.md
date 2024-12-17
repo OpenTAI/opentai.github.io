@@ -1,15 +1,20 @@
 ---
 title: 对抗评测平台
 blocks:
-  - titleen: Latest updates
+  - titleen: Latest news
     viewMoreen: View more
     updates:
-      - titleen: Frontier thoughts on AI and scientific insights
-        subtitleen: AI
-        contenten: >
-          Laborious was can, nor some from all teachings because ever example
-          extremely exercise rationally know, it pain explorer avoids no.
-        timeen: 2024 Feb 25 | by OpenTAI-Testttt
+      - titleen: Introducing VisionSafety Platform
+        subtitleen: Benchmark
+        contenten: >-
+          As the safety of vision models remains a cornerstone of AI research,
+          we are proud to launch the VisionSafety Platform. This innovative
+          platform is designed to evaluate the safety of vision models through
+          the creation of more powerful, transferable adversarial attacks,
+          alongside the release of million-scale, real-world adversarial
+          datasets. This initiative marks a significant step forward in
+          enhancing the security and resilience of vision-based AI systems.
+        timeen: 2024 Dec 17 | by Vision Team
         img: /uploads/latestUpdates1.png
       - titleen: Frontier thoughts on AI and scientific insights
         subtitleen: GPT
