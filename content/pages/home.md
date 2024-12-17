@@ -38,7 +38,7 @@ blocks:
           information to generate human-like text. But is this mere pattern
           matching, or is there a deeper intelligence at play? This intriguing
           debate challenges us to explore the true nature of these models. Join
-          us to share your thoughts on LLMs!
+          the conversation and share your insights on LLMs!
         timeen: 2024 Dec 17 | by Language Team
         img: /uploads/latestUpdates3.png
     _template: updates
