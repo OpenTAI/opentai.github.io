@@ -14,21 +14,32 @@ blocks:
           alongside the release of million-scale, real-world adversarial
           datasets. This initiative marks a significant step forward in
           enhancing the security and resilience of vision-based AI systems.
-        timeen: 2024 Dec 17 | by Vision Team
+        timeen: 2024 Dec 4 | by Vision Team
         img: /uploads/latestUpdates1.png
-      - titleen: Frontier thoughts on AI and scientific insights
+      - titleen: >-
+          Launching the Multimodal Safety Research Project: Tackling New Risks
+          in AI
         subtitleen: '#Multimodal'
-        contenten: >
-          Laborious was can, nor some from all teachings because ever example
-          extremely exercise rationally know, it pain explorer avoids no.
-        timeen: 2024 Feb 25 | by OpenTAI
+        contenten: >-
+          The rise of multimodal AI presents significant new risks. In response,
+          we are launching the Multimodal Safety Research Project, which aims to
+          drive community-led research on securing multimodal AI systems. This
+          initiative seeks not only to build safe and secure multimodal models
+          but also to develop techniques that prevent these systems from being
+          misused or turning harmful.
+        timeen: 2024 Dec 17 | by Multimodal Team
         img: /uploads/latestUpdates2.png
-      - titleen: Frontier thoughts on AI and scientific insights
-        subtitleen: ALGORITHMS
-        contenten: >
-          Laborious was can, nor some from all teachings because ever example
-          extremely exercise rationally know, it pain explorer avoids no.
-        timeen: 2024 Feb 25 | by OpenTAI
+      - titleen: Do We Truly Understand Large Language Models?
+        subtitleen: '#Language'
+        contenten: >-
+          As LLMs revolutionize technology, a crucial question emerges: Do we
+          really understand how they work? Often described as sophisticated
+          next-token predictors, LLMs excel in compressing vast amounts of
+          information to generate human-like text. But is this mere pattern
+          matching, or is there a deeper intelligence at play? This intriguing
+          debate challenges us to explore the true nature of these models. Join
+          us to share your thoughts on LLMs!
+        timeen: 2024 Dec 17 | by Language Team
         img: /uploads/latestUpdates3.png
     _template: updates
   - title: Our mission
