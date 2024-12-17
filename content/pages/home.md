@@ -146,6 +146,10 @@ blocks:
         desc: A safety dataset of 100K questions used by the DeepSafe benchmark.
         subTitle: LLM
         datasetsBackground: /uploads/datasets2.png
+      - datasetsName: VLJailbreak
+        desc: A multimodal jailbreak dataset used by the VLJailbreakBench.
+        subTitle: Multimodal
+        datasetsBackground: /uploads/datasets2.png
     _template: datasets
   - titleen: Tools
     titlezh: Tools
