@@ -9,7 +9,7 @@ blocks:
         contenten: >
           Laborious was can, nor some from all teachings because ever example
           extremely exercise rationally know, it pain explorer avoids no.
-        timeen: 2024 Feb 25 | by OpenTAI
+        timeen: 2024 Feb 25 | by OpenTAI-Testttt
         img: /uploads/latestUpdates1.png
       - titleen: Frontier thoughts on AI and scientific insights
         subtitleen: GPT
@@ -98,46 +98,30 @@ blocks:
     items:
       - benchMarkName: Vision Safety
         description: >-
-          Adversarial attacks and defenses.Adversarial attacks and
-          defenses.Adversarial attacks and defenses.Adversarial attacks and
-          defenses.
-        subTitle: 'world''s #1 benchmark'
+          This benchmark provides a variety of robustness evaluation datasets,
+          algorithms and tools, and provides benchmarks under multiple vision
+          tasks.
+        subTitle: 'Adversarial Robustness: Ensuring AI''s Robust Perception of Reality'
         learnMore: Learn More >
-        benchMarksImg: /uploads/BenchMarks2.png
+        benchMarksImg: /uploads/eye-acc.png
         tags:
-          - tagName: LLM1
-          - tagName: DEEPFAKE
+          - tagName: cc1m
+          - tagName: wild-deepfake
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
     items:
-      - datasetsName: 系外行星检测
-        desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
-        subTitle: DEEPFAKE
+      - datasetsName: CC1M-Adv-C/F
+        desc: 'Two million-scale adversarial images datasets. '
+        subTitle: Transfer Attack
         datasetsBackground: /uploads/datasets2.png
-      - datasetsName: 系外行星检测
-        desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
-        subTitle: DEEPFAKE
+      - datasetsName: AdvPatch-1K
+        desc: The first physical-world adversarial T-shirt dataset.
+        subTitle: Physical Attack
         datasetsBackground: /uploads/datasets2.png
-      - datasetsName: 系外行星检测
-        desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
-        subTitle: DEEPFAKE
-        datasetsBackground: /uploads/datasets2.png
-      - datasetsName: 系外行星检测
-        desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
-        subTitle: DEEPFAKE
+      - datasetsName: Wild-Deepfake
+        desc: 'WildDeepfake is a dataset of 7,314 face sequences.'
+        subTitle: Deepfake
         datasetsBackground: /uploads/datasets2.png
     _template: datasets
   - titleen: Tools
@@ -154,6 +138,11 @@ blocks:
           - img: /uploads/tag2.png
           - img: /uploads/tag3.png
           - img: /uploads/tag4.png
+      - name: BlackdoorLLM
+        description: A Comprehensive Benchmark for Adversarial Attacks on Vision Models
+        learnMore: Learn More >
+        img: /uploads/BenchMarks2.png
+        tagsImage: []
     _template: tools
   - titleen: Partners
     titlezh: Partners
