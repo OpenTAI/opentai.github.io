@@ -152,7 +152,7 @@ blocks:
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: X-Transfer
         desc: A universal adversarial perturbation dataset for vision and VLMs.
-        subTitle: DEEPFAKE
+        subTitle: Multimodal
         datasetsBackground: /uploads/datasets2.png
     _template: datasets
   - titleen: Tools
