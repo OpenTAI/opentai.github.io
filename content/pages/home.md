@@ -129,15 +129,17 @@ blocks:
     titlezh: Datasets
     items:
       - datasetsName: CC1M-Adv-C/F
-        desc: 'Two million-scale adversarial images datasets. '
+        desc: Two million-scale adversarial image datasets.
         subTitle: Transfer Attack
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: AdvPatch-1K
-        desc: The first physical-world adversarial T-shirt dataset.
+        desc: 'A adversarial T-shirt dataset of 1,131  images from 20 participants.'
         subTitle: Physical Attack
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: Wild-Deepfake
-        desc: 'WildDeepfake is a dataset of 7,314 face sequences.'
+        desc: >-
+          WildDeepfake is a dataset of 7,314 face sequences from 707 deepfake
+          videos.
         subTitle: Deepfake
         datasetsBackground: /uploads/datasets2.png
     _template: datasets
