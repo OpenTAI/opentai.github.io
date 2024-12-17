@@ -42,12 +42,11 @@ blocks:
         timeen: 2024 Dec 17 | by Language Team
         img: /uploads/latestUpdates3.png
     _template: updates
-  - title: Our mission
+  - title: Our Mission
     body: >
-      OpenTAI is an open source platform to support the ever-growing research in
-      Trustworthy AI, a place where emerging topics can be quickly implemented,
-      new ideas can be easily tested, and attacks/defenses can be symmetrically
-      evaluated.
+      OpenTAI is an open-source platform that drives cutting-edge Trustworthy AI
+      research and fosters open collaboration to build a secure and equitable AI
+      future.
     _template: content
   - titleen: Research
     titlezh: Research
