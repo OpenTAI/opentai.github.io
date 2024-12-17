@@ -121,7 +121,7 @@ blocks:
         benchMarksImg: /uploads/eye-acc.png
         tags:
           - tagName: Vision
-          - tagName: Datasets
+          - tagName: Transfer Attacks
           - tagName: LLM
     _template: benchMarks
   - titleen: Datasets
