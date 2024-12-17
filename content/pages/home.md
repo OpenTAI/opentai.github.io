@@ -111,26 +111,17 @@ blocks:
   - titleen: Datasets
     titlezh: Datasets
     items:
-      - datasetsName: 系外行星检测
-        desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
-        subTitle: DEEPFAKE
+      - datasetsName: CC1M-Adv-C/F
+        desc: 'Two million-scale adversarial images datasets. '
+        subTitle: Transfer Attack
         datasetsBackground: /uploads/datasets2.png
-      - datasetsName: 系外行星检测
-        desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
-        subTitle: DEEPFAKE
+      - datasetsName: AdvPatch-1K
+        desc: The first physical-world adversarial T-shirt dataset.
+        subTitle: Physical Attack
         datasetsBackground: /uploads/datasets2.png
-      - datasetsName: 系外行星检测
-        desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
-        subTitle: DEEPFAKE
+      - datasetsName: Wild-Deepfake
+        desc: 'WildDeepfake is a dataset of 7,314 face sequences.'
+        subTitle: Deepfake
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: 系外行星检测
         desc: >-
