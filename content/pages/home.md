@@ -136,19 +136,16 @@ blocks:
         desc: 'A adversarial T-shirt dataset of 1,131  images from 20 participants.'
         subTitle: Physical Attack
         datasetsBackground: /uploads/datasets2.png
-      - datasetsName: Wild-Deepfake
+      - datasetsName: WildDeepfake
         desc: >-
           WildDeepfake is a dataset of 7,314 face sequences from 707 deepfake
           videos.
         subTitle: Deepfake
         datasetsBackground: /uploads/datasets2.png
-      - datasetsName: 系外行星检测
-        desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
-        subTitle: DEEPFAKE
-        datasetsBackground: ''
+      - datasetsName: DeepSafe
+        desc: A safety dataset of 100K questions used by the DeepSafe benchmark.
+        subTitle: LLM
+        datasetsBackground: /uploads/datasets2.png
     _template: datasets
   - titleen: Tools
     titlezh: Tools
