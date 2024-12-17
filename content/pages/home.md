@@ -123,7 +123,7 @@ blocks:
         tags:
           - tagName: vision
           - tagName: adversarial
-          - tagName: large-scale
+          - tagName: million-scale
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
