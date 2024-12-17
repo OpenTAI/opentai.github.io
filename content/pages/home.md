@@ -17,7 +17,7 @@ blocks:
         timeen: 2024 Dec 17 | by Vision Team
         img: /uploads/latestUpdates1.png
       - titleen: Frontier thoughts on AI and scientific insights
-        subtitleen: GPT
+        subtitleen: '#Multimodal'
         contenten: >
           Laborious was can, nor some from all teachings because ever example
           extremely exercise rationally know, it pain explorer avoids no.
