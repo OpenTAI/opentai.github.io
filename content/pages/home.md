@@ -98,15 +98,15 @@ blocks:
     items:
       - benchMarkName: Vision Safety
         description: >-
-          Adversarial attacks and defenses.Adversarial attacks and
-          defenses.Adversarial attacks and defenses.Adversarial attacks and
-          defenses.
-        subTitle: 'world''s #1 benchmark'
+          This benchmark provides a variety of robustness evaluation datasets,
+          algorithms and tools, and provides benchmarks under multiple vision
+          tasks.
+        subTitle: 'Adversarial Robustness: Ensuring AI''s Robust Perception of Reality'
         learnMore: Learn More >
-        benchMarksImg: /uploads/BenchMarks2.png
+        benchMarksImg: /uploads/eye-acc.png
         tags:
-          - tagName: LLM1
-          - tagName: DEEPFAKE
+          - tagName: cc1m
+          - tagName: wild-deepfake
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
