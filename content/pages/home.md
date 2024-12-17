@@ -147,8 +147,12 @@ blocks:
         subTitle: LLM
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: VLJailbreak
-        desc: A multimodal jailbreak dataset used by the VLJailbreakBench.
+        desc: A multimodal jailbreak dataset for VLMs used by the VLJailbreakBench.
         subTitle: Multimodal
+        datasetsBackground: /uploads/datasets2.png
+      - datasetsName: X-Transfer
+        desc: A universal adversarial perturbation dataset for vision and VLMs.
+        subTitle: DEEPFAKE
         datasetsBackground: /uploads/datasets2.png
     _template: datasets
   - titleen: Tools
