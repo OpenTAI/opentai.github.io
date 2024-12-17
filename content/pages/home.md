@@ -111,7 +111,7 @@ blocks:
   - titleen: Benchmarks
     titlezh: Benchmarks
     items:
-      - benchMarkName: Vision Safety
+      - benchMarkName: VisionSafety
         description: >-
           This benchmark provides a variety of robustness evaluation datasets,
           algorithms and tools, and provides benchmarks under multiple vision
@@ -120,8 +120,9 @@ blocks:
         learnMore: Learn More >
         benchMarksImg: /uploads/eye-acc.png
         tags:
-          - tagName: CC1M-Adv-C/F
-          - tagName: AdvPatch-1K
+          - tagName: Vision
+          - tagName: Datasets
+          - tagName: LLM
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
