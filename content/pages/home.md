@@ -142,6 +142,13 @@ blocks:
           videos.
         subTitle: Deepfake
         datasetsBackground: /uploads/datasets2.png
+      - datasetsName: 系外行星检测
+        desc: >-
+          But actual has painful explain born and pain no dislikes of
+          praising.But actual has painful explain born and pain no dislikes of
+          praising.
+        subTitle: DEEPFAKE
+        datasetsBackground: ''
     _template: datasets
   - titleen: Tools
     titlezh: Tools
