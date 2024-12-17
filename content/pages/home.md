@@ -113,16 +113,17 @@ blocks:
     items:
       - benchMarkName: VisionSafety
         description: >-
-          This benchmark provides a variety of robustness evaluation datasets,
-          algorithms and tools, and provides benchmarks under multiple vision
-          tasks.
-        subTitle: 'Adversarial Robustness: Ensuring AI''s Robust Perception of Reality'
+          This platform provides datasets, algorithms, and tools needed for
+          large-scale and transferable adversarial robustness evaluation of
+          computer vision models.  Every vision model deserves thorough and
+          scalable adversarial evaluations before real-world deployment.
+        subTitle: 'An Adversarial Evaluation Platform for Computer Vision Models '
         learnMore: Learn More >
         benchMarksImg: /uploads/eye-acc.png
         tags:
-          - tagName: Vision
-          - tagName: Transfer Attacks
-          - tagName: LLM
+          - tagName: vision
+          - tagName: transfer attacks
+          - tagName: million-scale
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
