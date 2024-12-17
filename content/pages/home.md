@@ -122,8 +122,8 @@ blocks:
         benchMarksImg: /uploads/eye-acc.png
         tags:
           - tagName: vision
-          - tagName: transfer attacks
-          - tagName: million-scale
+          - tagName: adversarial
+          - tagName: large-scale
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
