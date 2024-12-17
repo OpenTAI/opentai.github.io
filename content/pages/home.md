@@ -105,8 +105,8 @@ blocks:
         learnMore: Learn More >
         benchMarksImg: /uploads/eye-acc.png
         tags:
-          - tagName: cc1m
-          - tagName: wild-deepfake
+          - tagName: CC1M-Adv-C/F
+          - tagName: AdvPatch-1K
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
