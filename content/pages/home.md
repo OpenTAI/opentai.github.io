@@ -208,26 +208,13 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
-      - name: Joseph Moore
-      - name: 张伟
-      - name: David Davis
-      - name: Mark Thompson
-      - name: 周阳
-      - name: Joseph Moore
-      - name: 张伟
-      - name: David Davis
-      - name: Mark Thompson
-      - name: 周阳
-      - name: Joseph Moore
-      - name: 张伟
-      - name: David Davis
-      - name: Mark Thompson
-      - name: 周阳
-      - name: Joseph Moore
-      - name: 张伟
-      - name: David Davis
-      - name: Mark Thompson
-      - name: 周阳
+      - name: Xingjun Ma
+      - name: Weijie Zheng
+      - name: Yong Xie
+      - name: Zhixiang Wang
+      - name: Hanxun Huang
+      - name: Bojia Zi
+      - name: Yugang Jiang
     _template: contributors
 ---
 
