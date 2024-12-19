@@ -124,6 +124,24 @@ blocks:
           - tagName: vision
           - tagName: adversarial
           - tagName: million-scale
+      - benchMarkName: Vision Safety
+        description: >-
+          Adversarial attacks and defenses.Adversarial attacks and
+          defenses.Adversarial attacks and defenses.Adversarial attacks and
+          defenses.
+        subTitle: 'world''s #1 benchmark'
+        learnMore: Learn More >
+        benchMarksImg: /BenchMarks2.png
+        tags: []
+      - benchMarkName: Vision Safety
+        description: >-
+          Adversarial attacks and defenses.Adversarial attacks and
+          defenses.Adversarial attacks and defenses.Adversarial attacks and
+          defenses.
+        subTitle: 'world''s #1 benchmark'
+        learnMore: Learn More >
+        benchMarksImg: /BenchMarks2.png
+        tags: []
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
@@ -169,7 +187,7 @@ blocks:
           - img: /uploads/tag2.png
           - img: /uploads/tag3.png
           - img: /uploads/tag4.png
-      - name: BlackdoorLLM
+      - name: taiadviadv
         description: A Comprehensive Benchmark for Adversarial Attacks on Vision Models
         learnMore: Learn More >
         img: /uploads/BenchMarks2.png
