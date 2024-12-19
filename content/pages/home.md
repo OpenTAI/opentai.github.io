@@ -187,7 +187,7 @@ blocks:
           - img: /uploads/tag2.png
           - img: /uploads/tag3.png
           - img: /uploads/tag4.png
-      - name: taiadviadv
+      - name: taiadv.vision
         description: A Comprehensive Benchmark for Adversarial Attacks on Vision Models
         learnMore: Learn More >
         img: /uploads/BenchMarks2.png
