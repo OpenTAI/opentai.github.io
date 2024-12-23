@@ -11,6 +11,7 @@ import closeIcon from "../../assets/img/closeIcon.png";
 // import Chinese from "../../assets/img/Chinese.png";
 import Image from "next/image";
 import { Drawer, Collapse } from "antd";
+import { ImageLink } from "../util/image-link";
 
 export const Header = ({
   data,
@@ -111,7 +112,14 @@ export const Header = ({
         <div
           className={`flex py-6 px-4 sm:px-20 justify-between items-center ${background} `}
         >
-          <Image className="w-28 object-contain" src={logo} alt="" />
+          <ImageLink
+            className="w-28 object-contain"
+            src={logo}
+            target="_self"
+            width={112}
+            height={30}
+            href={data.homeurl}
+          />
           <div className="hidden sm:flex w-128 justify-between">
             {data.nav.map((item, index) => {
               return (

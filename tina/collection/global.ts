@@ -26,6 +26,11 @@ const Global: Collection = {
         },
         {
           type: "string",
+          label: "Home URL",
+          name: "homeurl",
+        },
+        {
+          type: "string",
           label: "DetailTitle-En",
           name: "detailTitleen",
         },

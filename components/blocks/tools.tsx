@@ -8,17 +8,20 @@ import Image from "next/image";
 import { basePath } from "../util/url-helper";
 import { Carousel } from "antd";
 import { useRef } from "react";
+import { useRouter } from "next/router";
 // import { read } from "fs";
 
 export const ToolsItem = ({
   data,
   index,
-  // language,
-}: {
+}: // language,
+{
   data: PageBlocksToolsItems;
   index: number;
   language: string;
 }) => {
+  const router = useRouter();
+
   return (
     <>
       <div
@@ -27,6 +30,7 @@ export const ToolsItem = ({
         data-aos-duration="1000"
         data-aos-delay={index * 100}
         key={index}
+        onClick={() => (data.link ? router.push(data.link) : null)}
       >
         <div className="w-56">
           <Image
@@ -55,20 +59,21 @@ export const ToolsItem = ({
           </p>
 
           <div className="mt-4 flex pb-4 max-h-16 h-16 flex-wrap">
-            {data.tagsImage?.length &&
-              data.tagsImage.map((tag, index) => {
-                return (
-                  <Image
-                    className="mr-1 mb-1 max-h-6 w-auto"
-                    src={tag.img}
-                    alt=""
-                    key={index}
-                    width={300}
-                    height={300}
-                    data-tina-field={tinaField(tag, "img")}
-                  />
-                );
-              })}
+            {data.tagsImage?.length
+              ? data.tagsImage.map((tag, index) => {
+                  return (
+                    <Image
+                      className="mr-1 mb-1 max-h-6 w-auto"
+                      src={tag.img}
+                      alt=""
+                      key={index}
+                      width={300}
+                      height={300}
+                      data-tina-field={tinaField(tag, "img")}
+                    />
+                  );
+                })
+              : null}
           </div>
           <div className="mt-1 text-deep-black font-semibold text-base">
             <div
@@ -215,6 +220,11 @@ export const toolsBlockSchema = {
           type: "string",
           label: "Learn More",
           name: "learnMore",
+        },
+        {
+          type: "string",
+          label: "Link",
+          name: "link",
         },
         {
           type: "image",

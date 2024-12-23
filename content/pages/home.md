@@ -10,6 +10,7 @@ blocks:
           Laborious was can, nor some from all teachings because ever example
           extremely exercise rationally know, it pain explorer avoids no.
         timeen: 2024 Feb 25 | by OpenTAI
+        href: 'https://www.baidu.com'
         img: /uploads/latestUpdates1.png
       - titleen: Frontier thoughts on AI and scientific insights
         subtitleen: GPT

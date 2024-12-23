@@ -8,16 +8,19 @@ import Image from "next/image";
 import { basePath } from "../util/url-helper";
 import { Carousel } from "antd";
 import { useRef } from "react";
+import { useRouter } from "next/router";
 
 export const DatasetsItem = ({
   data,
   index,
-  // language,
-}: {
+}: // language,
+{
   data: PageBlocksDatasetsItems;
   index: number;
   language: string;
 }) => {
+  const router = useRouter();
+
   return (
     <>
       <div
@@ -26,6 +29,7 @@ export const DatasetsItem = ({
         data-aos-duration="1000"
         data-aos-delay={index * 100}
         key={index}
+        onClick={() => (data.link ? router.push(data.link) : null)}
       >
         {/* <img
         className="w-full"
@@ -189,6 +193,11 @@ export const datasetBlockSchema = {
           type: "string",
           label: "SubTitle",
           name: "subTitle",
+        },
+        {
+          type: "string",
+          label: "Link",
+          name: "link",
         },
         {
           type: "image",

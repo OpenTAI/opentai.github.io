@@ -8,17 +8,20 @@ import Image from "next/image";
 import { basePath } from "../util/url-helper";
 import { Carousel } from "antd";
 import { useRef } from "react";
+import { useRouter } from "next/router";
 // import { read } from "fs";
 
 export const BenchMarksItem = ({
   data,
   index,
-  // language,
-}: {
+}: // language,
+{
   data: PageBlocksBenchMarksItems;
   index: number;
   language: string;
 }) => {
+  const router = useRouter();
+
   return (
     <>
       <div
@@ -27,6 +30,7 @@ export const BenchMarksItem = ({
         data-aos-duration="1000"
         data-aos-delay={index * 100}
         key={index}
+        onClick={() => (data.link ? router.push(data.link) : null)}
       >
         <div className="flex items-center space-x-4 bg-bg-greyB p-4 rounded">
           <Image
@@ -38,33 +42,48 @@ export const BenchMarksItem = ({
             data-tina-field={tinaField(data, "benchMarksImg")}
           />
           <div>
-            <h1 className="text-lg font-semibold text-gray-900"  data-tina-field={tinaField(data, "benchMarkName")}>
+            <h1
+              className="text-lg font-semibold text-gray-900"
+              data-tina-field={tinaField(data, "benchMarkName")}
+            >
               {data.benchMarkName}
             </h1>
-            <p className="text-sm text-gray-500"  data-tina-field={tinaField(data, "subTitle")}>{data.subTitle}</p>
+            <p
+              className="text-sm text-gray-500"
+              data-tina-field={tinaField(data, "subTitle")}
+            >
+              {data.subTitle}
+            </p>
           </div>
         </div>
 
         <div className="px-4 pt-4">
-          <p className="mt-4 text-sm text-gray-500 font-light"  data-tina-field={tinaField(data, "description")}>
+          <p
+            className="mt-4 text-sm text-gray-500 font-light"
+            data-tina-field={tinaField(data, "description")}
+          >
             {data.description}
           </p>
 
           <div className="mt-4 flex space-x-2 pb-4">
-            {data.tags?.length &&
-              data.tags.map((tag, index) => {
-                return (
-                  <span
-                    key={index}
-                    className="px-3 py-1 bg-blue text-sm font-light text-white rounded"
-                    data-tina-field={tinaField(tag, "tagName")}
-                  >
-                    {tag.tagName}
-                  </span>
-                );
-              })}
+            {data.tags?.length
+              ? data.tags.map((tag, index) => {
+                  return (
+                    <span
+                      key={index}
+                      className="px-3 py-1 bg-blue text-sm font-light text-white rounded"
+                      data-tina-field={tinaField(tag, "tagName")}
+                    >
+                      {tag.tagName}
+                    </span>
+                  );
+                })
+              : null}
           </div>
-          <div className="mt-1 text-deep-black font-semibold text-base"  data-tina-field={tinaField(data, "learnMore")}>
+          <div
+            className="mt-1 text-deep-black font-semibold text-base"
+            data-tina-field={tinaField(data, "learnMore")}
+          >
             <div onClick={() => null}>{data.learnMore}</div>
           </div>
         </div>
@@ -96,7 +115,10 @@ export const BenchMarks = ({
   return (
     <div className="w-full bg-bg-greyB">
       <div className="pt-20 pb-16 px-6 xl:max-w-360 mx-auto" id="BenchMarks">
-        <div className="text-3xl font-bold text-center mb-8"  data-tina-field={tinaField(data, "titleen")}>
+        <div
+          className="text-3xl font-bold text-center mb-8"
+          data-tina-field={tinaField(data, "titleen")}
+        >
           {data[`title${language}`]}
         </div>
         <Carousel dots={false} ref={carouselRef}>
@@ -206,6 +228,11 @@ export const benchMarksBlockSchema = {
           type: "string",
           label: "Learn More",
           name: "learnMore",
+        },
+        {
+          type: "string",
+          label: "Link",
+          name: "link",
         },
         {
           type: "image",

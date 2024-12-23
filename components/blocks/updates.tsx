@@ -7,6 +7,7 @@ import { tinaField } from "tinacms/dist/react";
 import Image from "next/image";
 import { basePath } from "../util/url-helper";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const Update = ({
   data,
@@ -17,6 +18,8 @@ export const Update = ({
   index: number;
   language: string;
 }) => {
+  const router = useRouter();
+
   return (
     <>
       <div
@@ -24,6 +27,7 @@ export const Update = ({
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-delay={index * 100}
+        onClick={() => (data.href ? router.push(data.href) : null)}
       >
         <Image
           className="mb-4 w-full"
@@ -37,14 +41,28 @@ export const Update = ({
           className="mb-4 w-full"
           src={require(`/assets/img/updates/${data.img}`)}
         /> */}
-        <div className="text-xs font-semibold my-3" data-tina-field={tinaField(data, "subtitleen")} >
+        <div
+          className="text-xs font-semibold my-3"
+          data-tina-field={tinaField(data, "subtitleen")}
+        >
           {data[`subtitle${language}`]}
         </div>
-        <a className="text-deep-sky text-base hover:underline" data-tina-field={tinaField(data, "titleen")}>
+        <a
+          className="text-deep-sky text-base hover:underline"
+          data-tina-field={tinaField(data, "titleen")}
+        >
           {data[`title${language}`]}
         </a>
-        <div className="text-base my-3"  data-tina-field={tinaField(data, "contenten")}>{data[`content${language}`]}</div>
-        <div className="text-sm font-semibold pb-3"  data-tina-field={tinaField(data, "timeen")}>
+        <div
+          className="text-base my-3"
+          data-tina-field={tinaField(data, "contenten")}
+        >
+          {data[`content${language}`]}
+        </div>
+        <div
+          className="text-sm font-semibold pb-3"
+          data-tina-field={tinaField(data, "timeen")}
+        >
           {data[`time${language}`]}
         </div>
       </div>
@@ -62,11 +80,15 @@ export const Updates = ({
   return (
     <div className="mt-12 px-6 xl:max-w-360 mx-auto">
       <div className="flex justify-between">
-        <div className="text-2xl font-bold" data-tina-field={tinaField(data, "titleen")}
+        <div
+          className="text-2xl font-bold"
+          data-tina-field={tinaField(data, "titleen")}
         >
           {data[`title${language}`]}
         </div>
-        <div className="text-xl text-deep-sky underline cursor-pointer hover:text-black" data-tina-field={tinaField(data, "viewMoreen")}
+        <div
+          className="text-xl text-deep-sky underline cursor-pointer hover:text-black"
+          data-tina-field={tinaField(data, "viewMoreen")}
         >
           <Link href="/newslist">{data[`viewMore${language}`]}</Link>
         </div>
@@ -190,6 +212,11 @@ export const updatesBlockSchema = {
           type: "string",
           label: "Time-Zh",
           name: "timezh",
+        },
+        {
+          type: "string",
+          label: "Href",
+          name: "href",
         },
         {
           type: "image",

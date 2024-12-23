@@ -8,16 +8,19 @@ import Image from "next/image";
 import { basePath } from "../util/url-helper";
 import { Carousel } from "antd";
 import { useRef } from "react";
+import { useRouter } from "next/router";
 
 export const ProjectItem = ({
   data,
   index,
-  // language,
-}: {
+}: // language,
+{
   data: PageBlocksProjectItems;
   index: number;
   language: string;
 }) => {
+  const router = useRouter();
+
   return (
     <>
       <div
@@ -26,6 +29,7 @@ export const ProjectItem = ({
         data-aos-duration="1000"
         data-aos-delay={index * 100}
         key={index}
+        onClick={() => (data.link ? router.push(data.link) : null)}
       >
         <div className="hover:invert px-12 pt-8 pb-12">
           {/* <img
@@ -41,13 +45,22 @@ export const ProjectItem = ({
             alt=""
             data-tina-field={tinaField(data, "projectIcon")}
           />
-          <div className="mt-6 text-deep-black text-lg font-semibold" data-tina-field={tinaField(data, "projectName")}>
+          <div
+            className="mt-6 text-deep-black text-lg font-semibold"
+            data-tina-field={tinaField(data, "projectName")}
+          >
             {data.projectName}
           </div>
-          <div className="h-19 text-deep-black text-base line-clamp-3" data-tina-field={tinaField(data, "projectDescription")}>
+          <div
+            className="h-19 text-deep-black text-base line-clamp-3"
+            data-tina-field={tinaField(data, "projectDescription")}
+          >
             {data.projectDescription}
           </div>
-          <div className="mt-1 text-deep-black font-semibold text-base" data-tina-field={tinaField(data, "projectReadMore")}>
+          <div
+            className="mt-1 text-deep-black font-semibold text-base"
+            data-tina-field={tinaField(data, "projectReadMore")}
+          >
             <div onClick={() => null}>{data.projectReadMore}</div>
           </div>
         </div>
@@ -79,14 +92,20 @@ export const Project = ({
   return (
     <div className="bg-light-grey w-full">
       <div className="py-16 px-6 xl:max-w-360 mx-auto" id="researches">
-        <div className="text-3xl font-bold text-center mb-8"  data-tina-field={tinaField(data, "titleen")}>
+        <div
+          className="text-3xl font-bold text-center mb-8"
+          data-tina-field={tinaField(data, "titleen")}
+        >
           {data[`title${language}`]}
         </div>
         <div>
           <Carousel dots={false} ref={carouselRef}>
             {itemsCardArr.map((cardArr, index) => {
               return (
-                <div className="!grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" key={index}>
+                <div
+                  className="!grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                  key={index}
+                >
                   {cardArr?.length &&
                     cardArr.map((item, index) => {
                       return (
