@@ -15,7 +15,7 @@ blocks:
           datasets. This initiative marks a significant step forward in
           enhancing the security and resilience of vision-based AI systems.
         timeen: 2024 Dec 4 | by Vision Team
-        href: 'https://www.baidu.com'
+        href: ''
         img: /uploads/latestUpdates1.png
       - titleen: >-
           Launching the Multimodal Safety Research Project: Tackling New Risks
@@ -132,7 +132,7 @@ blocks:
           defenses.
         subTitle: 'world''s #1 benchmark'
         learnMore: Learn More >
-        benchMarksImg: /BenchMarks2.png
+        benchMarksImg: /uploads/BenchMarks2.png
         tags: []
       - benchMarkName: Vision Safety
         description: >-
@@ -141,7 +141,7 @@ blocks:
           defenses.
         subTitle: 'world''s #1 benchmark'
         learnMore: Learn More >
-        benchMarksImg: /BenchMarks2.png
+        benchMarksImg: /uploads/BenchMarks2.png
         tags: []
     _template: benchMarks
   - titleen: Datasets
