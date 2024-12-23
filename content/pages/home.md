@@ -1,38 +1,53 @@
 ---
 title: 对抗评测平台
 blocks:
-  - titleen: Latest updates
+  - titleen: Latest news
     viewMoreen: View more
     updates:
-      - titleen: Frontier thoughts on AI and scientific insights
-        subtitleen: AI
-        contenten: >
-          Laborious was can, nor some from all teachings because ever example
-          extremely exercise rationally know, it pain explorer avoids no.
-        timeen: 2024 Feb 25 | by OpenTAI
+      - titleen: Introducing VisionSafety Platform
+        subtitleen: '#Vision'
+        contenten: >-
+          As the safety of vision models remains a cornerstone of AI research,
+          we are proud to launch the VisionSafety Platform. This innovative
+          platform is designed to evaluate the safety of vision models through
+          the creation of more powerful, transferable adversarial attacks,
+          alongside the release of million-scale, real-world adversarial
+          datasets. This initiative marks a significant step forward in
+          enhancing the security and resilience of vision-based AI systems.
+        timeen: 2024 Dec 4 | by Vision Team
         href: 'https://www.baidu.com'
         img: /uploads/latestUpdates1.png
-      - titleen: Frontier thoughts on AI and scientific insights
-        subtitleen: GPT
-        contenten: >
-          Laborious was can, nor some from all teachings because ever example
-          extremely exercise rationally know, it pain explorer avoids no.
-        timeen: 2024 Feb 25 | by OpenTAI
+      - titleen: >-
+          Launching the Multimodal Safety Research Project: Tackling New Risks
+          in AI
+        subtitleen: '#Multimodal'
+        contenten: >-
+          The rise of multimodal AI presents significant new risks. In response,
+          we are launching the Multimodal Safety Research Project, which aims to
+          drive community-led research on securing multimodal AI systems. This
+          initiative seeks not only to build safe and secure multimodal models
+          but also to develop techniques that prevent these systems from being
+          misused or turning harmful.
+        timeen: 2024 Dec 17 | by Multimodal Team
         img: /uploads/latestUpdates2.png
-      - titleen: Frontier thoughts on AI and scientific insights
-        subtitleen: ALGORITHMS
-        contenten: >
-          Laborious was can, nor some from all teachings because ever example
-          extremely exercise rationally know, it pain explorer avoids no.
-        timeen: 2024 Feb 25 | by OpenTAI
+      - titleen: Do We Truly Understand Large Language Models?
+        subtitleen: '#Language'
+        contenten: >-
+          As LLMs revolutionize technology, a crucial question emerges: Do we
+          really understand how they work? Often described as sophisticated
+          next-token predictors, LLMs excel in compressing vast amounts of
+          information to generate human-like text. But is this mere pattern
+          matching, or is there a deeper intelligence at play? This intriguing
+          debate challenges us to explore the true nature of these models. Join
+          the conversation and share your insights!
+        timeen: 2024 Dec 17 | by Language Team
         img: /uploads/latestUpdates3.png
     _template: updates
-  - title: Our mission
+  - title: Our Mission
     body: >
-      OpenTAI is an open source platform to support the ever-growing research in
-      Trustworthy AI, a place where emerging topics can be quickly implemented,
-      new ideas can be easily tested, and attacks/defenses can be symmetrically
-      evaluated.
+      OpenTAI is an open-source platform that drives cutting-edge Trustworthy AI
+      research and fosters open collaboration to build a secure and equitable AI
+      future.
     _template: content
   - titleen: Research
     titlezh: Research
@@ -97,6 +112,19 @@ blocks:
   - titleen: Benchmarks
     titlezh: Benchmarks
     items:
+      - benchMarkName: VisionSafety
+        description: >-
+          This platform provides datasets, algorithms, and tools needed for
+          large-scale and transferable adversarial robustness evaluation of
+          computer vision models.  Every vision model deserves thorough and
+          scalable adversarial evaluations before real-world deployment.
+        subTitle: 'An Adversarial Evaluation Platform for Computer Vision Models '
+        learnMore: Learn More >
+        benchMarksImg: /uploads/eye-acc.png
+        tags:
+          - tagName: vision
+          - tagName: adversarial
+          - tagName: million-scale
       - benchMarkName: Vision Safety
         description: >-
           Adversarial attacks and defenses.Adversarial attacks and
@@ -104,41 +132,46 @@ blocks:
           defenses.
         subTitle: 'world''s #1 benchmark'
         learnMore: Learn More >
-        benchMarksImg: /uploads/BenchMarks2.png
-        tags:
-          - tagName: LLM1
-          - tagName: DEEPFAKE
+        benchMarksImg: /BenchMarks2.png
+        tags: []
+      - benchMarkName: Vision Safety
+        description: >-
+          Adversarial attacks and defenses.Adversarial attacks and
+          defenses.Adversarial attacks and defenses.Adversarial attacks and
+          defenses.
+        subTitle: 'world''s #1 benchmark'
+        learnMore: Learn More >
+        benchMarksImg: /BenchMarks2.png
+        tags: []
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
     items:
-      - datasetsName: 系外行星检测
-        desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
-        subTitle: DEEPFAKE
+      - datasetsName: CC1M-Adv-C/F
+        desc: Two million-scale adversarial image datasets.
+        subTitle: Transfer Attack
         datasetsBackground: /uploads/datasets2.png
-      - datasetsName: 系外行星检测
-        desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
-        subTitle: DEEPFAKE
+      - datasetsName: AdvPatch-1K
+        desc: 'A adversarial T-shirt dataset of 1,131  images from 20 participants.'
+        subTitle: Physical Attack
         datasetsBackground: /uploads/datasets2.png
-      - datasetsName: 系外行星检测
+      - datasetsName: WildDeepfake
         desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
-        subTitle: DEEPFAKE
+          WildDeepfake is a dataset of 7,314 face sequences from 707 deepfake
+          videos.
+        subTitle: Deepfake
         datasetsBackground: /uploads/datasets2.png
-      - datasetsName: 系外行星检测
-        desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
-        subTitle: DEEPFAKE
+      - datasetsName: DeepSafe
+        desc: A safety dataset of 100K questions used by the DeepSafe benchmark.
+        subTitle: LLM
+        datasetsBackground: /uploads/datasets2.png
+      - datasetsName: VLJailbreak
+        desc: A multimodal jailbreak dataset for VLMs used by the VLJailbreakBench.
+        subTitle: Multimodal
+        datasetsBackground: /uploads/datasets2.png
+      - datasetsName: X-Transfer
+        desc: A universal adversarial perturbation dataset for vision and VLMs.
+        subTitle: Multimodal
         datasetsBackground: /uploads/datasets2.png
     _template: datasets
   - titleen: Tools
@@ -155,6 +188,11 @@ blocks:
           - img: /uploads/tag2.png
           - img: /uploads/tag3.png
           - img: /uploads/tag4.png
+      - name: taiadv.vision
+        description: A Comprehensive Benchmark for Adversarial Attacks on Vision Models
+        learnMore: Learn More >
+        img: /uploads/BenchMarks2.png
+        tagsImage: []
     _template: tools
   - titleen: Partners
     titlezh: Partners
@@ -171,26 +209,13 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
-      - name: Joseph Moore
-      - name: 张伟
-      - name: David Davis
-      - name: Mark Thompson
-      - name: 周阳
-      - name: Joseph Moore
-      - name: 张伟
-      - name: David Davis
-      - name: Mark Thompson
-      - name: 周阳
-      - name: Joseph Moore
-      - name: 张伟
-      - name: David Davis
-      - name: Mark Thompson
-      - name: 周阳
-      - name: Joseph Moore
-      - name: 张伟
-      - name: David Davis
-      - name: Mark Thompson
-      - name: 周阳
+      - name: Xingjun Ma
+      - name: Weijie Zheng
+      - name: Yong Xie
+      - name: Zhixiang Wang
+      - name: Hanxun Huang
+      - name: Bojia Zi
+      - name: Yugang Jiang
     _template: contributors
 ---
 
