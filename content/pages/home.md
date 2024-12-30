@@ -152,7 +152,7 @@ blocks:
           defenses.
         subTitle: 'world''s #1 benchmark'
         learnMore: Learn More >
-        benchMarksImg: /BenchMarks2.png
+        benchMarksImg: /uploads/BenchMarks2.png
         tags: []
       - benchMarkName: Vision Safety
         description: >-
@@ -161,7 +161,7 @@ blocks:
           defenses.
         subTitle: 'world''s #1 benchmark'
         learnMore: Learn More >
-        benchMarksImg: /BenchMarks2.png
+        benchMarksImg: /uploads/BenchMarks2.png
         tags: []
     _template: benchMarks
   - titleen: Datasets
