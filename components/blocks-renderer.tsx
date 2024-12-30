@@ -13,6 +13,7 @@ import { Tools } from "./blocks/tools";
 import { Contributors } from "./blocks/contributors";
 import { Partners } from "./blocks/partners";
 import { NewsList } from "./blocks/newsList";
+import { Carousel } from "./blocks/carousel";
 
 export const Blocks = (props) => {
   return (
@@ -58,8 +59,10 @@ const Block = (block) => {
       return <Contributors data={block} language={block.language} />;
     case "PageBlocksPartners":
       return <Partners data={block} language={block.language} />;
-      case "PageBlocksNewsList":
-        return <NewsList data={block} language={block.language} />;
+    case "PageBlocksNewsList":
+      return <NewsList data={block} language={block.language} />;
+    case "PageBlocksCarousel":
+      return <Carousel data={block} language={block.language} />;
     default:
       return null;
   }

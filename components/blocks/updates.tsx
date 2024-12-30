@@ -78,7 +78,7 @@ export const Updates = ({
   language: string;
 }) => {
   return (
-    <div className="mt-12 px-6 xl:max-w-360 mx-auto">
+    <div className="mt-16 px-6 xl:max-w-360 mx-auto">
       <div className="flex justify-between">
         <div
           className="text-2xl font-bold"

@@ -96,6 +96,11 @@ module.exports = {
     //   "8xl": "6rem",
     // },
     extend: {
+      aspectRatio: {
+        '3/4': '3 / 4',
+        '16/9': '16 / 9',
+        '2/1': '2 / 1',
+      },
       textDecoration: ["active"],
       opacity: {
         7: ".075",

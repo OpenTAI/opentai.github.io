@@ -13,6 +13,7 @@ import { toolsBlockSchema } from "../../components/blocks/tools";
 import { contributorsBlockSchema } from "../../components/blocks/contributors";
 import { partnersBlockSchema } from "../../components/blocks/partners";
 import { newsListBlockSchema } from "../../components/blocks/newsList";
+import { carouselBlockSchema } from "../../components/blocks/carousel";
 
 const Page: Collection = {
   label: "Pages",
@@ -71,6 +72,8 @@ const Page: Collection = {
         partnersBlockSchema,
         // @ts-ignore
         newsListBlockSchema,
+        // @ts-ignore
+        carouselBlockSchema,
         /* eslint-enable */
         repositoriesBlockSchema,
         contentBlockSchema,

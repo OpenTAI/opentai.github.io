@@ -1,6 +1,26 @@
 ---
 title: 对抗评测平台
 blocks:
+  - items:
+      - type:
+          - dark
+        title: 'Open Trustworthy AI :'
+        subtitle: Trust is the ultimate form of intelligence.
+        link: ''
+        bgImg: /uploads/header1.png
+      - type:
+          - dark
+        title: 'Open Trustworthy AI :'
+        subtitle: Trust is the ultimate form of intelligence.
+        link: ''
+        bgImg: /uploads/header1.png
+      - type:
+          - dark
+        title: 'Open Trustworthy AI :'
+        subtitle: Trust is the ultimate form of intelligence.
+        link: ''
+        bgImg: /uploads/header1.png
+    _template: carousel
   - titleen: Latest news
     viewMoreen: View more
     updates:
@@ -15,7 +35,7 @@ blocks:
           datasets. This initiative marks a significant step forward in
           enhancing the security and resilience of vision-based AI systems.
         timeen: 2024 Dec 4 | by Vision Team
-        href: 'https://www.baidu.com'
+        href: ''
         img: /uploads/latestUpdates1.png
       - titleen: >-
           Launching the Multimodal Safety Research Project: Tackling New Risks
