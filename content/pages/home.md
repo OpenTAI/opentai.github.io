@@ -88,11 +88,10 @@ blocks:
         projectReadMore: Learn More >
         link: ''
         projectIcon: /uploads/projectIcon1.png
-      - projectName: 情感倾向分析
+      - projectName: 'Safety Arena: A Data Free Safety Evaluation Platform'
         projectDescription: >-
-          Adversarial attacks and defenses.Adversarial attacks and
-          defenses.Adversarial attacks and defenses.Adversarial attacks and
-          defenses.
+          Building an open platform for automated safety evaluation of LLMs
+          against themselves.
         projectReadMore: Learn More >
         link: ''
         projectIcon: /uploads/projectIcon1.png
