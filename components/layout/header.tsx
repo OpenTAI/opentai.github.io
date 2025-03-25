@@ -41,10 +41,10 @@ export const Header = ({
   useEffect(() => {
     if (location.pathname !== "/") {
       setShowBG(false);
-      // setBackground("bg-deep-sky");
+      setBackground("bg-deep-sky");
     } else {
       setShowBG(true);
-      // setBackground("bg-light-black");
+      setBackground("bg-light-black");
     }
   }, []);
 
@@ -80,16 +80,16 @@ export const Header = ({
   const handleScroll = () => {
     let scrollTop = document.documentElement.scrollTop;
     if (scrollTop > 64) {
-      // setBackground("bg-deep-sky");
+      setBackground("bg-deep-sky");
       // setTextColor("white");
       // setIcon(logoWhite);
       // setMenuIcon(menuWhite);
     } else {
-      // if (showBG) {
-      //   setBackground("bg-light-black");
-      // } else {
-      //   setBackground("bg-deep-sky");
-      // }
+      if (showBG) {
+        setBackground("bg-light-black");
+      } else {
+        setBackground("bg-deep-sky");
+      }
       // setTextColor("base-blue");
       // setIcon(logo);
       // setMenuIcon(menu);
@@ -107,7 +107,7 @@ export const Header = ({
   // };
 
   return (
-    <div className={`${showBG ? "" : ""}`}>
+    <div className={`${showBG ? "bg-header h-175 lg:h-225" : ""}`}>
       <div className="fixed w-full z-20">
         <div
           className={`flex py-6 px-4 sm:px-20 justify-between items-center ${background} `}
@@ -151,7 +151,7 @@ export const Header = ({
           />
         </div>
       </div>
-      {/* {showBG ? (
+      {showBG ? (
         <div className="pt-32 sm:pt-56">
           <div className="mx-2 sm:mx-20 flex items-center justify-center">
             <div
@@ -187,7 +187,7 @@ export const Header = ({
             </div>
           </div>
         </div>
-      ) : null} */}
+      ) : null}
 
       {/* <Container size="custom" className="py-0 relative z-10 max-w-8xl">
         <div className="flex items-center justify-between gap-6">

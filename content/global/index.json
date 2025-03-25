@@ -3,26 +3,9 @@
     "nameen": "openTAI",
     "namezh": "openTAI",
     "homeurl": "https://opentai.github.io/",
-    "detailTitleen": "Open Trustworthy AI :",
+    "detailTitleen": "Open Trustworthy AI",
     "detailContenten": "Trust is the ultimate form of intelligence.",
     "viewMoreen": "View More",
-    "displayData": [
-      {
-        "labelen": "Projects",
-        "labelzh": "项目",
-        "value": "102"
-      },
-      {
-        "labelen": "Datasets",
-        "labelzh": "Datasets",
-        "value": "23,323"
-      },
-      {
-        "labelen": "Contributers",
-        "labelzh": "Contributers",
-        "value": "30"
-      }
-    ],
     "nav": [
       {
         "href": "/#",
@@ -84,7 +67,6 @@
     "terms": "Terms & Conditions"
   },
   "theme": {
-    "color": "blue",
     "font": "sans",
     "darkMode": "system"
   }

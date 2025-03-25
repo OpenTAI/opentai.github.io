@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"node_modules/tinacms/dist/index.mjs -> webfontloader\":{\"id\":\"node_modules/tinacms/dist/index.mjs -> webfontloader\",\"files\":[\"static/chunks/node_modules_webfontloader_webfontloader_js.js\"]}}"
