@@ -1,26 +1,6 @@
 ---
 title: 对抗评测平台
 blocks:
-  - items:
-      - type:
-          - dark
-        title: 'Open Trustworthy AI :'
-        subtitle: Trust is the ultimate form of intelligence.
-        link: ''
-        bgImg: /uploads/header1.png
-      - type:
-          - dark
-        title: 'Open Trustworthy AI :'
-        subtitle: Trust is the ultimate form of intelligence.
-        link: ''
-        bgImg: /uploads/header1.png
-      - type:
-          - dark
-        title: 'Open Trustworthy AI :'
-        subtitle: Trust is the ultimate form of intelligence.
-        link: ''
-        bgImg: /uploads/header1.png
-    _template: carousel
   - titleen: Latest news
     viewMoreen: View more
     updates:
