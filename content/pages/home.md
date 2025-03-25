@@ -97,7 +97,7 @@ blocks:
         projectIcon: /uploads/projectIcon1.png
     _template: project
   - titleen: Benchmarks
-    titlezh: Benchmarks
+    titlezh: 安全基准
     items:
       - benchMarkName: Vision Safety
         description: >-
