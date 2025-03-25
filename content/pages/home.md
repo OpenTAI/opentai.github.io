@@ -213,13 +213,13 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
-      - name: Bojia Zi
+      - name: Yu-Gang Jiang
       - name: Xingjun Ma
       - name: Weijie Zheng
       - name: Yong Xie
       - name: Zhixiang Wang
+      - name: Bojia Zi
       - name: Hanxun Huang
-      - name: Yugang Jiang
     _template: contributors
 ---
 
