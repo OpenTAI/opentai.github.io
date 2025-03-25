@@ -119,7 +119,7 @@ blocks:
           large-scale and transferable adversarial robustness evaluation of
           computer vision models.  Every vision model deserves thorough and
           scalable adversarial evaluations before real-world deployment.
-        subTitle: 'An Adversarial Evaluation Platform for Computer Vision Models '
+        subTitle: 'An Adversarial Robustness Evaluation Platform for Vision Models '
         learnMore: Learn More >
         link: www.baidu.com
         benchMarksImg: /uploads/eye-acc.png
