@@ -99,7 +99,7 @@ blocks:
   - titleen: Benchmarks
     titlezh: Benchmarks
     items:
-      - benchMarkName: VisionSafety
+      - benchMarkName: Vision Safety
         description: >-
           This platform provides datasets, algorithms, and tools needed for
           large-scale and transferable adversarial robustness evaluation of
