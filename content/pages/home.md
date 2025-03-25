@@ -204,7 +204,7 @@ blocks:
         img: /uploads/partner2.png
       - name: Harvard University
         img: /uploads/partner3.png
-      - name: Yale University
+      - name: Yale University123
         img: /uploads/partner4.png
     _template: partners
   - titleen: Contributors
