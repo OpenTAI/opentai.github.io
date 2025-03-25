@@ -125,12 +125,11 @@ blocks:
         subTitle: 'An Automated Safety Evaluation Platform for Language Models '
         learnMore: Learn More >
         benchMarksImg: /uploads/language icon.png
-        tags: []
+        tags:
+          - tagName: language
+            bgColor: '#23B2F5'
       - benchMarkName: Multimodal Safety
-        description: >-
-          Adversarial attacks and defenses.Adversarial attacks and
-          defenses.Adversarial attacks and defenses.Adversarial attacks and
-          defenses.
+        description: ''
         subTitle: A safety evaluation platform for vision-language models
         learnMore: Learn More >
         benchMarksImg: /uploads/vision language icon.png
