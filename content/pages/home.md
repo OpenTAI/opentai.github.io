@@ -161,8 +161,8 @@ blocks:
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: CC1M-Adv-C/F
         desc: >-
-          Two million-scale adversarial image datasets for white-box and
-          transferable adversarial robustness evaluations.
+          Two million-scale adversarial image datasets for large-scale
+          evaluations.
         subTitle: ' Vision | Adversarial'
         link: 'https://github.com/treeman2000/CC1M-Adv-CF'
         datasetsBackground: /uploads/cc1m adv.png
