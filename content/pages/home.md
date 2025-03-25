@@ -128,7 +128,7 @@ blocks:
           - tagName: language
             bgColor: '#F5A623'
           - tagName: safety
-            bgColor: '#4A90E2'
+            bgColor: '#2C65A8'
           - tagName: automatic
             bgColor: '#417505'
       - benchMarkName: MultimodalSafety
