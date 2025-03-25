@@ -210,7 +210,6 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
-      - name: Zhenyun Yin
       - name: Yu-Gang Jiang
       - name: Xingjun Ma
       - name: Zuxuan Wu
@@ -226,11 +225,12 @@ blocks:
       - name: Xin Wang
       - name: Yunhao Chen
       - name: Henyuan Xu
-      - name: Ruofan Wang
-      - name: Teng Li
-      - name: Juncheng Li
       - name: Yifan Ding
       - name: Kun Zhai
+      - name: Ruofan Wang
+      - name: Juncheng Li
+      - name: Teng Li
+      - name: Zhenyun Yin
     _template: contributors
 ---
 
