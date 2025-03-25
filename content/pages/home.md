@@ -72,7 +72,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://github.com/roywang021/IDEATOR'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Detecting Backdoor Attacks From Real-World Datasets
+      - projectName: Backdoor Data Detection
         projectDescription: >-
           Developing simple but effective backdoor data detection and filtering
           methods for real-world large-scale datasets.
