@@ -153,9 +153,7 @@ blocks:
     titlezh: Datasets
     items:
       - datasetsName: VLBreakBench
-        desc: >-
-          A multimodal jailbreak dataset for safety evaluation of multimodal
-          large language models.
+        desc: A multimodal jailbreak dataset for multimodal large language models.
         subTitle: Multimodal | Jailbreak
         link: 'https://github.com/roywang021/IDEATOR'
         datasetsBackground: /uploads/datasets2.png
