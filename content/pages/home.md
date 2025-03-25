@@ -210,7 +210,7 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
-      - name: Kun Zhai
+      - name: Juncheng Li
       - name: Yu-Gang Jiang
       - name: Xingjun Ma
       - name: Zuxuan Wu
@@ -228,6 +228,7 @@ blocks:
       - name: Ruofan Wang
       - name: Teng Li
       - name: Yifan Ding
+      - name: Kun Zhai
       - name: Henyuan Xu
     _template: contributors
 ---
