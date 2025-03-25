@@ -6,6 +6,17 @@ blocks:
     viewMoreen: Read More
     viewMorezh: 了解更多
     updates:
+      - titleen: Launching the Multimodal Safety Project
+        subtitleen: '#Multimodal'
+        contenten: >-
+          The rise of multimodal AI presents significant new risks. In response,
+          we are launching the Multimodal Safety Research Project, which aims to
+          drive community-led research on securing multimodal AI systems. This
+          initiative seeks not only to build safe and secure multimodal models
+          but also to develop techniques that prevent these systems from being
+          misused or turning harmful.
+        timeen: 2024 March 20
+        img: /uploads/latestUpdates2.png
       - titleen: Introducing VisionSafety Platform
         subtitleen: '#Vision'
         contenten: >-
@@ -19,28 +30,18 @@ blocks:
         timeen: 2024 Dec 4
         href: ''
         img: /uploads/latestUpdates1.png
-      - titleen: Launching the Multimodal Safety Project
-        subtitleen: '#Multimodal'
-        contenten: >-
-          The rise of multimodal AI presents significant new risks. In response,
-          we are launching the Multimodal Safety Research Project, which aims to
-          drive community-led research on securing multimodal AI systems. This
-          initiative seeks not only to build safe and secure multimodal models
-          but also to develop techniques that prevent these systems from being
-          misused or turning harmful.
-        timeen: 2024 March 20
-        img: /uploads/latestUpdates2.png
-      - titleen: Do We Truly Understand Large Language Models?
+      - titleen: Our New Survey Reveals Critical Safety Challenges in Large Models
         subtitleen: '#Language'
         contenten: >-
-          As LLMs revolutionize technology, a crucial question emerges: Do we
-          really understand how they work? Often described as sophisticated
-          next-token predictors, LLMs excel in compressing vast amounts of
-          information to generate human-like text. But is this mere pattern
-          matching, or is there a deeper intelligence at play? This intriguing
-          debate challenges us to explore the true nature of these models. Join
-          the conversation and share your insights!
-        timeen: 2024 Dec 17 | by Language Team
+          In our latest study "Safety at Scale: A Comprehensive Survey of Large
+          Model Safety", we systematically analyze security threats facing
+          today's large AI models. We identify key vulnerabilities across
+          multiple model types and review defense strategies. Our findings
+          highlight the urgent need for robust safety measures and collaborative
+          efforts to ensure trustworthy AI development. The complete survey is
+          now available.
+        timeen: '2025 Feb 2 '
+        href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
         img: /uploads/latestUpdates3.png
     _template: updates
   - title: Our Mission
