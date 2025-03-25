@@ -135,10 +135,12 @@ blocks:
         learnMore: Learn More >
         benchMarksImg: /uploads/vision language icon.png
         tags:
-          - tagName: jailbreak
-            bgColor: '#BD10E0'
           - tagName: multimodal
             bgColor: '#F8E71C'
+          - tagName: jailbreak
+            bgColor: '#BD10E0'
+          - tagName: automatic
+            bgColor: '#B8E986'
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
