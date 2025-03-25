@@ -69,8 +69,8 @@ blocks:
         projectIcon: /uploads/projectIcon1.png
       - projectName: Red Teaming Vision-Language Models
         projectDescription: >-
-          Automating multimodal jailbreak generation against VLMs using
-          themselves, with the assistance of text-to-image diffusion models.
+          Jailbreaking VLMs using themselves, with the assistance of
+          text-to-image diffusion models.
         projectReadMore: Learn More >
         link: 'https://github.com/roywang021/IDEATOR'
         projectIcon: /uploads/projectIcon1.png
