@@ -213,6 +213,7 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
+      - name: Xin Wang
       - name: Yifan Ding
       - name: Yifeng Gao
       - name: Yu-Gang Jiang
