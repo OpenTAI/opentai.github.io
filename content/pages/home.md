@@ -9,8 +9,8 @@ blocks:
       - titleen: Our New Survey Reveals Safety Risks in Large Models
         subtitleen: '#Language'
         contenten: >-
-          Our latest survey "Safety at Scale: A Comprehensive Survey of Large
-          Model Safety" systematically analyzes safety threats facing today's
+          In our latest survey "Safety at Scale: A Comprehensive Survey of Large
+          Model Safety", we systematically analyze safety threats facing today's
           large AI models. We identify key vulnerabilities across vision,
           language, and multimodal large models. Our findings highlight the
           urgent need for robust safety measures and collaborative efforts to
