@@ -213,6 +213,7 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
+      - name: Henyuan Xu
       - name: Yunhao Chen
       - name: Ruofan Wang
       - name: Xin Wang
