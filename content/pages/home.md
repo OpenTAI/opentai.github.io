@@ -98,13 +98,13 @@ blocks:
   - titleen: Benchmarks
     titlezh: 安全评测基准
     items:
-      - benchMarkName: Vision Safety
+      - benchMarkName: VisionSafety
         description: >-
           Our platform provides datasets, algorithms, and tools needed for
           large-scale and transferable adversarial robustness evaluation of
           vision models.  We believe every model should undergo rigorous and
           scalable adversarial testing before deployment.
-        subTitle: 'An Adversarial Robustness Evaluation Platform for Vision Models '
+        subTitle: 'An Adversarial Evaluation Platform for Vision Models '
         learnMore: Learn More >
         link: 'https://opentai.org/VisionSafety'
         benchMarksImg: /uploads/vision icon.png
@@ -115,7 +115,7 @@ blocks:
             bgColor: '#9013FE'
           - tagName: million-scale
             bgColor: '#417505'
-      - benchMarkName: Language Safety
+      - benchMarkName: LanguageSafety
         description: >-
           Working on an open platform for comprehensive LLM safety evaluation.
           Featuring: (1) Configurable human intervention templates; (2)
@@ -131,7 +131,7 @@ blocks:
             bgColor: '#F8E71C'
           - tagName: automatic
             bgColor: '#B8E986'
-      - benchMarkName: Multimodal Safety
+      - benchMarkName: MultimodalSafety
         description: >-
           An open platform for automated safety evaluation of vision-language
           models, featuring black-box testing and adversarial frameworks to
