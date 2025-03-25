@@ -152,31 +152,26 @@ blocks:
   - titleen: Datasets
     titlezh: Datasets
     items:
+      - datasetsName: VLJailbreak
+        desc: A multimodal jailbreak dataset for VLMs used by the VLJailbreakBench.
+        subTitle: Multimodal
+        datasetsBackground: /uploads/datasets2.png
       - datasetsName: CC1M-Adv-C/F
         desc: Two million-scale adversarial image datasets.
         subTitle: Transfer Attack
         datasetsBackground: /uploads/datasets2.png
-      - datasetsName: AdvPatch-1K
-        desc: 'A adversarial T-shirt dataset of 1,131  images from 20 participants.'
+      - datasetsName: AdvT-shirt-1K
+        desc: >-
+          A physical-world adversarial T-shirt dataset for adversarial
+          robustness evaluation.
         subTitle: Physical Attack
+        link: 'https://github.com/Wwangb/AdvT-shirt-1K'
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: WildDeepfake
         desc: >-
           WildDeepfake is a dataset of 7,314 face sequences from 707 deepfake
           videos.
         subTitle: Deepfake
-        datasetsBackground: /uploads/datasets2.png
-      - datasetsName: DeepSafe
-        desc: A safety dataset of 100K questions used by the DeepSafe benchmark.
-        subTitle: LLM
-        datasetsBackground: /uploads/datasets2.png
-      - datasetsName: VLJailbreak
-        desc: A multimodal jailbreak dataset for VLMs used by the VLJailbreakBench.
-        subTitle: Multimodal
-        datasetsBackground: /uploads/datasets2.png
-      - datasetsName: X-Transfer
-        desc: A universal adversarial perturbation dataset for vision and VLMs.
-        subTitle: Multimodal
         datasetsBackground: /uploads/datasets2.png
     _template: datasets
   - titleen: Tools
