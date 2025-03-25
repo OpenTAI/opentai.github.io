@@ -200,8 +200,8 @@ blocks:
         tagsImage: []
       - name: BlackdoorVLM
         description: >-
-          A Comprehensive Benchmark for Backdoor Attacks on Vision-Language
-          Models. Coming soon — stay tuned!
+          A toolkit (and benchmark) for backdoor attacks on vision-language
+          models. Coming soon—stay tuned!
         learnMore: Learn More >
         img: /uploads/backdoorVLM.png
         tagsImage:
