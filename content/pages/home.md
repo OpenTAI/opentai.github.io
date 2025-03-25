@@ -174,9 +174,7 @@ blocks:
         link: 'https://github.com/Wwangb/AdvT-shirt-1K'
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: WildDeepfake
-        desc: >-
-          A dataset of 7,314 face sequences from 707 real-world deepfake
-          videos. 
+        desc: 'A dataset of 7,314 face sequences from 707 deepfake videos. '
         subTitle: Deepfake
         link: 'https://github.com/OpenTAI/wild-deepfake'
         datasetsBackground: /uploads/wilddeepfake.jpeg
