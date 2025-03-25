@@ -210,7 +210,7 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
-      - name: Juncheng Li
+      - name: Zhenyun Yin
       - name: Yu-Gang Jiang
       - name: Xingjun Ma
       - name: Zuxuan Wu
@@ -221,15 +221,16 @@ blocks:
       - name: Weijie Zheng
       - name: Yong Xie
       - name: Yifeng Gao
+      - name: Bojia Zi
       - name: Zhixiang Wang
       - name: Xin Wang
       - name: Yunhao Chen
-      - name: Bojia Zi
+      - name: Henyuan Xu
       - name: Ruofan Wang
       - name: Teng Li
+      - name: Juncheng Li
       - name: Yifan Ding
       - name: Kun Zhai
-      - name: Henyuan Xu
     _template: contributors
 ---
 
