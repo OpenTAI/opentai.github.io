@@ -120,6 +120,7 @@ blocks:
           scalable adversarial evaluations before real-world deployment.
         subTitle: 'An Adversarial Evaluation Platform for Computer Vision Models '
         learnMore: Learn More >
+        link: www.baidu.com
         benchMarksImg: /uploads/eye-acc.png
         tags:
           - tagName: vision
