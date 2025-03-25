@@ -175,10 +175,11 @@ blocks:
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: WildDeepfake
         desc: >-
-          WildDeepfake is a dataset of 7,314 face sequences from 707 deepfake
-          videos.
+          A dataset of 7,314 face sequences from 707 real-world deepfake
+          videos. 
         subTitle: Deepfake
-        datasetsBackground: /uploads/datasets2.png
+        link: 'https://github.com/OpenTAI/wild-deepfake'
+        datasetsBackground: /uploads/wilddeepfake.jpeg
     _template: datasets
   - titleen: Tools
     titlezh: Tools
