@@ -152,9 +152,12 @@ blocks:
   - titleen: Datasets
     titlezh: Datasets
     items:
-      - datasetsName: VLJailbreak
-        desc: A multimodal jailbreak dataset for VLMs used by the VLJailbreakBench.
-        subTitle: Multimodal
+      - datasetsName: VLBreak
+        desc: >-
+          A multimodal jailbreak dataset for safety evaluation of multimodal
+          large language models.
+        subTitle: Multimodal | Jailbreak
+        link: 'https://github.com/roywang021/IDEATOR'
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: CC1M-Adv-C/F
         desc: >-
