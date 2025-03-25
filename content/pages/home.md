@@ -80,7 +80,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://hanxunh.github.io/Detect-CLIP-Backdoor-Samples/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Fairness at Scale
+      - projectName: A Comprehensive Fairness Benchmark
         projectDescription: >-
           Developing a comprehensive scenario-based benchmark for fairness
           evaluations across multilingual, multicultural, and multimodal
