@@ -170,7 +170,7 @@ blocks:
           robustness evaluation.
         subTitle: Vision | Physical Attack
         link: 'https://github.com/Wwangb/AdvT-shirt-1K'
-        datasetsBackground: /uploads/advtshirt.png
+        datasetsBackground: /uploads/advtshirt.jpeg
       - datasetsName: WildDeepfake
         desc: 'A dataset of 7,314 face sequences from 707 deepfake videos. '
         subTitle: Deepfake
