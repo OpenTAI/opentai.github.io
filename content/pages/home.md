@@ -101,10 +101,10 @@ blocks:
     items:
       - benchMarkName: Vision Safety
         description: >-
-          This platform provides datasets, algorithms, and tools needed for
+          Our platform provides datasets, algorithms, and tools needed for
           large-scale and transferable adversarial robustness evaluation of
-          computer vision models.  Every vision model deserves thorough and
-          scalable adversarial evaluations before real-world deployment.
+          vision models.  We believe every model should undergo rigorous and
+          scalable adversarial testing before deployment.
         subTitle: 'An Adversarial Robustness Evaluation Platform for Vision Models '
         learnMore: Learn More >
         link: 'https://opentai.org/VisionSafety'
