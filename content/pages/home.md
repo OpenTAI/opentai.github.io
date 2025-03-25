@@ -16,7 +16,7 @@ blocks:
           alongside the release of million-scale, real-world adversarial
           datasets. This initiative marks a significant step forward in
           enhancing the security and resilience of vision-based AI systems.
-        timeen: 2024 Dec 4 | by Vision Team
+        timeen: 2024 Dec 4
         href: ''
         img: /uploads/latestUpdates1.png
       - titleen: Launching the Multimodal Safety Project
