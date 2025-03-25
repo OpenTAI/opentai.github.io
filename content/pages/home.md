@@ -67,13 +67,12 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://github.com/roywang021/UMK'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: 寻找走失儿童
+      - projectName: Red Teaming Vision-Language Models
         projectDescription: >-
-          Adversarial attacks and defenses.Adversarial attacks and
-          defenses.Adversarial attacks and defenses.Adversarial attacks and
-          defenses.
+          Automating multimodal jailbreak generation against VLMs using
+          themselves, with the assistance of text-to-image diffusion models.
         projectReadMore: Learn More >
-        link: ''
+        link: 'https://github.com/roywang021/IDEATOR'
         projectIcon: /uploads/projectIcon1.png
       - projectName: 帮助盲人识字
         projectDescription: >-
