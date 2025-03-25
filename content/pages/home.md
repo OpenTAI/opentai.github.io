@@ -126,15 +126,17 @@ blocks:
         learnMore: Learn More >
         benchMarksImg: /uploads/language icon.png
         tags: []
-      - benchMarkName: Vision Safety
+      - benchMarkName: Multimodal Safety
         description: >-
           Adversarial attacks and defenses.Adversarial attacks and
           defenses.Adversarial attacks and defenses.Adversarial attacks and
           defenses.
-        subTitle: 'world''s #1 benchmark'
+        subTitle: A safety evaluation platform for vision-language models
         learnMore: Learn More >
-        benchMarksImg: /uploads/BenchMarks2.png
-        tags: []
+        benchMarksImg: /uploads/vision language icon.png
+        tags:
+          - tagName: multimodal
+            bgColor: '#F8E71C'
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
