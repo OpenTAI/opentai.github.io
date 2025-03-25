@@ -19,17 +19,6 @@ blocks:
         timeen: '2025 Feb 2 '
         href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
         img: /uploads/latestUpdates3.png
-      - titleen: Launching the Multimodal Safety Project
-        subtitleen: '#Multimodal'
-        contenten: >-
-          The rise of multimodal AI presents significant new risks. In response,
-          we are launching the Multimodal Safety Research Project, which aims to
-          drive community-led research on securing multimodal AI systems. This
-          initiative seeks not only to build safe and secure multimodal models
-          but also to develop techniques that prevent these systems from being
-          misused or turning harmful.
-        timeen: 2024 March 20
-        img: /uploads/latestUpdates2.png
       - titleen: Introducing VisionSafety Platform
         subtitleen: '#Vision'
         contenten: >-
@@ -42,7 +31,18 @@ blocks:
           enhancing the security and resilience of vision-based AI systems.
         timeen: 2024 Dec 4
         href: 'https://opentai.org/VisionSafety'
-        img: /uploads/vision safety.png
+        img: /uploads/visionsafety.png
+      - titleen: Launching the Multimodal Safety Project
+        subtitleen: '#Multimodal'
+        contenten: >-
+          The rise of multimodal AI presents significant new risks. In response,
+          we are launching the Multimodal Safety Research Project, which aims to
+          drive community-led research on securing multimodal AI systems. This
+          initiative seeks not only to build safe and secure multimodal models
+          but also to develop techniques that prevent these systems from being
+          misused or turning harmful.
+        timeen: 2024 March 20
+        img: /uploads/latestUpdates2.png
     _template: updates
   - title: Our Mission
     body: >
