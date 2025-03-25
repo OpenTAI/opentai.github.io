@@ -180,9 +180,10 @@ blocks:
     items:
       - name: BlackdoorLLM
         description: >-
-          A Comprehensive Benchmark for Backdoor Attacks on Large Language
-          Models
+          A comprehensive toolkit (and benchmark) for backdoor attacks on large
+          language models.
         learnMore: Learn More >
+        link: 'https://github.com/bboylyg/BackdoorLLM'
         img: /uploads/Tools2.png
         tagsImage:
           - img: /uploads/tag1.png
@@ -190,7 +191,9 @@ blocks:
           - img: /uploads/tag3.png
           - img: /uploads/tag4.png
       - name: taiadv.vision
-        description: A Comprehensive Benchmark for Adversarial Attacks on Vision Models
+        description: >-
+          An open-source toolkit implementing state-of-the-art adversarial
+          attacks and defenses for vision models.
         learnMore: Learn More >
         img: /uploads/BenchMarks2.png
         tagsImage: []
