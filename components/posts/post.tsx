@@ -115,7 +115,7 @@ export const Post = (props: PostType) => {
         >
           <span
             className={`bg-clip-text bg-gradient-to-r ${
-              titleColorClasses[theme.color]
+              titleColorClasses['blue']
             }`}
           >
             {props.title}

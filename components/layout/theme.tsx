@@ -63,7 +63,6 @@ export const Theme = ({ data, children }) => {
   return (
     <ThemeContext.Provider
       value={{
-        color,
         font,
         darkMode,
       }}
