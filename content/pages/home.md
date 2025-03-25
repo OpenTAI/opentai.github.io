@@ -195,8 +195,8 @@ blocks:
         img: /uploads/BenchMarks2.png
         tagsImage: []
     _template: tools
-  - titleen: Partners
-    titlezh: Partners
+  - titleen: Collaborating Institutions
+    titlezh: 合作单位
     items:
       - name: Fudan University
         img: /uploads/partner1.png
