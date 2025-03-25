@@ -80,11 +80,11 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://hanxunh.github.io/Detect-CLIP-Backdoor-Samples/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: 带你认识ChatGPT
+      - projectName: Fairness at Scale
         projectDescription: >-
-          Adversarial attacks and defenses.Adversarial attacks and
-          defenses.Adversarial attacks and defenses.Adversarial attacks and
-          defenses.
+          Developing a comprehensive scenario-based benchmark for fairness
+          evaluations across multilingual, multicultural, and multimodal
+          contexts.
         projectReadMore: Learn More >
         link: ''
         projectIcon: /uploads/projectIcon1.png
