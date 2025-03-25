@@ -11,6 +11,29 @@ import { useRef } from "react";
 import { useRouter } from "next/router";
 // import { read } from "fs";
 
+const colorPalettes = [
+  {
+    name: 'Silver Lake Blue',
+    value: '718EB0'
+  },
+  {
+    name: 'Delft Blue',
+    value: '1D2F6F'
+  },
+  {
+    name: 'Saffron',
+    value: 'FAC748'
+  },
+  {
+    name: 'Lavender blush',
+    value: 'F9E9EC'
+  },
+  {
+    name: 'Tickle me pink',
+    value: 'F88DAD'
+  },
+]
+
 export const BenchMarksItem = ({
   data,
   index,
@@ -72,6 +95,9 @@ export const BenchMarksItem = ({
                     <span
                       key={index}
                       className="px-3 py-1 bg-blue text-sm font-light text-white rounded"
+                      style={{
+                        backgroundColor: tag.bgColor
+                      }}
                       data-tina-field={tinaField(tag, "tagName")}
                     >
                       {tag.tagName}
@@ -261,6 +287,16 @@ export const benchMarksBlockSchema = {
               label: "Tag Name",
               name: "tagName",
             },
+            {
+              type: "string",
+              label: "Backgroud Color",
+              name: 'bgColor',
+              ui: {
+                component: 'color',
+                colorFormat: 'hex',
+                widget: 'sketch',
+              },
+            }
           ],
         },
       ],

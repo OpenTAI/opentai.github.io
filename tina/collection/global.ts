@@ -59,6 +59,11 @@ const Global: Collection = {
           label: "ViewMore-zh",
           name: "viewMorezh",
         },
+        {
+          type: "string",
+          label: "View More Link",
+          name: "viewMoreLink",
+        },
         // {
         //   type: "object",
         //   label: "Display Data",

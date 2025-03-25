@@ -58,7 +58,7 @@ blocks:
           defenses.Adversarial attacks and defenses.Adversarial attacks and
           defenses.
         projectReadMore: Learn More >
-        link: ''
+        link: 'https://www.baidu.com'
         projectIcon: /uploads/projectIcon1.png
       - projectName: 系外行星检测11
         projectDescription: >-
@@ -124,8 +124,11 @@ blocks:
         benchMarksImg: /uploads/eye-acc.png
         tags:
           - tagName: vision
+            bgColor: '#3F53CD'
           - tagName: adversarial
+            bgColor: '#9013FE'
           - tagName: million-scale
+            bgColor: '#417505'
       - benchMarkName: Vision Safety
         description: >-
           Adversarial attacks and defenses.Adversarial attacks and

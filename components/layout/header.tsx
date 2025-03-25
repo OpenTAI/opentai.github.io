@@ -12,6 +12,7 @@ import closeIcon from "../../assets/img/closeIcon.png";
 import Image from "next/image";
 import { Drawer, Collapse } from "antd";
 import { ImageLink } from "../util/image-link";
+import { useRouter } from "next/router";
 
 export const Header = ({
   data,
@@ -31,6 +32,7 @@ export const Header = ({
   const [showBG, setShowBG] = useState(true);
 
   const { Panel } = Collapse;
+  const router = useRouter();
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -182,6 +184,7 @@ export const Header = ({
               data-aos-duration="1000"
               data-aos-delay="1000"
               data-tina-field={tinaField(data, "viewMoreen")}
+              onClick={() => (data.viewMoreLink ? router.push(data.viewMoreLink) : null)}
             >
               {data[`viewMore${language}`]}
             </div>
