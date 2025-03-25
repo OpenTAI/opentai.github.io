@@ -102,7 +102,7 @@ blocks:
         description: >-
           Our open-source platform provides datasets, algorithms, and tools for
           scalable adversarial evaluation of vision models. Now available for
-          community use.
+          community use - we welcome your feedback and contributions!
         subTitle: 'An Adversarial Evaluation Platform for Vision Models '
         learnMore: Learn More >
         link: 'https://opentai.org/VisionSafety'
