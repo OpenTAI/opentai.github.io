@@ -213,14 +213,16 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
-      - name: Zuxuan Wu
+      - name: Joseph Moore
+      - name: Yige Li
       - name: Yu-Gang Jiang
       - name: Xingjun Ma
+      - name: Zuxuan Wu
+      - name: Hanxun Huang
       - name: Weijie Zheng
       - name: Yong Xie
       - name: Zhixiang Wang
       - name: Bojia Zi
-      - name: Hanxun Huang
     _template: contributors
 ---
 
