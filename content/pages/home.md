@@ -46,9 +46,9 @@ blocks:
     _template: updates
   - title: Our Mission
     body: >
-      OpenTAI is an open-source platform that drives cutting-edge Trustworthy AI
-      research and fosters open collaboration to build a secure and equitable AI
-      future.
+      OpenTAI is an open-source research platform where global communities
+      collaborate to advance Trustworthy AI – developing safe, equitable, and
+      transformative AI for humanity's benefit.
     _template: content
   - titleen: Research
     titlezh: Research
