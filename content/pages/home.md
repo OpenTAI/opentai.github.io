@@ -213,12 +213,13 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
-      - name: Xiang Zheng
-      - name: Yige Li
+      - name: Jiaming Zhang
       - name: Yu-Gang Jiang
       - name: Xingjun Ma
       - name: Zuxuan Wu
       - name: Hanxun Huang
+      - name: Yige Li
+      - name: Xiang Zheng
       - name: Weijie Zheng
       - name: Yong Xie
       - name: Zhixiang Wang
