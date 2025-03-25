@@ -19,16 +19,15 @@ blocks:
         timeen: '2025 Feb 2 '
         href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
         img: /uploads/safetysurvey.png
-      - titleen: Introducing VisionSafety Platform
+      - titleen: Introducing the VisionSafety Platform
         subtitleen: '#Vision'
         contenten: >-
-          As the safety of vision models remains a cornerstone of AI research,
-          we are excited to launch the VisionSafety Platform. This innovative
-          platform is designed to evaluate the safety of vision models through
-          the creation of more powerful, transferable adversarial attacks,
-          alongside the release of million-scale, real-world adversarial
-          datasets. This initiative marks a significant step forward in
-          enhancing the security and resilience of vision-based AI systems.
+          The safety of vision models is critical to trustworthy AI. We proudly
+          launch the VisionSafety Platform—a cutting-edge initiative to
+          rigorously evaluate model robustness through highly transferable
+          adversarial attacks and million-scale adversarial datasets. This
+          platform represents a major leap forward in securing vision-based AI
+          systems against emerging threats.
         timeen: 2024 Dec 4
         href: 'https://opentai.org/VisionSafety'
         img: /uploads/visionsafety.png
