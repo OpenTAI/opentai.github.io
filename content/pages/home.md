@@ -28,7 +28,7 @@ blocks:
           initiative seeks not only to build safe and secure multimodal models
           but also to develop techniques that prevent these systems from being
           misused or turning harmful.
-        timeen: 2025 March 20
+        timeen: 2024 March 20
         img: /uploads/latestUpdates2.png
       - titleen: Do We Truly Understand Large Language Models?
         subtitleen: '#Language'
