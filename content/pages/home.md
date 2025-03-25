@@ -135,6 +135,8 @@ blocks:
         learnMore: Learn More >
         benchMarksImg: /uploads/vision language icon.png
         tags:
+          - tagName: jailbreak
+            bgColor: '#4A90E2'
           - tagName: multimodal
             bgColor: '#F8E71C'
     _template: benchMarks
