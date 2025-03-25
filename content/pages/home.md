@@ -177,7 +177,7 @@ blocks:
         desc: 'A dataset of 7,314 face sequences from 707 deepfake videos. '
         subTitle: Deepfake
         link: 'https://github.com/OpenTAI/wild-deepfake'
-        datasetsBackground: /uploads/wilddeepfake.jpeg
+        datasetsBackground: /uploads/wilddeepfake.png
     _template: datasets
   - titleen: Tools
     titlezh: Tools
