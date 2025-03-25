@@ -210,6 +210,7 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
+      - name: Teng Li
       - name: Yu-Gang Jiang
       - name: Xingjun Ma
       - name: Zuxuan Wu
