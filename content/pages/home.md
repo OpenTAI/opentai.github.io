@@ -6,7 +6,7 @@ blocks:
     viewMoreen: Read More >
     viewMorezh: 了解更多 >
     updates:
-      - titleen: Our New Survey Reveals Safety Risks in Large Models
+      - titleen: 'Survey Launch: ''Safety at Scale'''
         subtitleen: '#Language'
         contenten: >-
           In our latest survey "Safety at Scale: A Comprehensive Survey of Large
