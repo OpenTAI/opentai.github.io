@@ -137,7 +137,7 @@ blocks:
           An open platform for automated safety evaluation of vision-language
           models, featuring black-box testing and adversarial frameworks to
           assess vulnerabilities against text, image, and multimodal jailbreak
-          prompts.
+          prompts. Coming soon—stay tuned for new AI safety tools!
         subTitle: A safety evaluation platform for vision-language models
         learnMore: Learn More >
         benchMarksImg: /uploads/vision language icon.png
