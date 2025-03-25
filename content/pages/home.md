@@ -55,8 +55,7 @@ blocks:
       - projectName: Black-box Multimodal Jailbreak Defense
         projectDescription: >-
           Leveraging reinforcement learning to train a defensive suffix
-          generator to safeguard vision-language models against multimodal
-          jailbreak inputs.
+          generator to safeguard VLMs against multimodal jailbreak inputs.
         projectReadMore: Learn More >
         link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
         projectIcon: /uploads/projectIcon1.png
