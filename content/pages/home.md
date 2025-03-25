@@ -213,6 +213,7 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
+      - name: Zuxuan Wu
       - name: Yu-Gang Jiang
       - name: Xingjun Ma
       - name: Weijie Zheng
