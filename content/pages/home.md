@@ -65,7 +65,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://github.com/roywang021/UMK'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Red Teaming Vision-Language Models
+      - projectName: Red Teaming VLMs
         projectDescription: >-
           Jailbreaking VLMs using themselves, with the assistance of
           text-to-image diffusion models.
@@ -79,7 +79,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://hanxunh.github.io/Detect-CLIP-Backdoor-Samples/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: A Comprehensive Fairness Benchmark
+      - projectName: Fairness Benchmark
         projectDescription: >-
           Developing a comprehensive scenario-based benchmark for fairness
           evaluations across multilingual, multicultural, and multimodal
