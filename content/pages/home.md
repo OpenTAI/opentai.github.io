@@ -6,6 +6,19 @@ blocks:
     viewMoreen: Read More
     viewMorezh: 了解更多
     updates:
+      - titleen: Our New Survey Reveals Critical Safety Challenges in Large Models
+        subtitleen: '#Language'
+        contenten: >-
+          In our latest study "Safety at Scale: A Comprehensive Survey of Large
+          Model Safety", we systematically analyze security threats facing
+          today's large AI models. We identify key vulnerabilities across
+          multiple model types and review defense strategies. Our findings
+          highlight the urgent need for robust safety measures and collaborative
+          efforts to ensure trustworthy AI development. The complete survey is
+          now available.
+        timeen: '2025 Feb 2 '
+        href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
+        img: /uploads/latestUpdates3.png
       - titleen: Launching the Multimodal Safety Project
         subtitleen: '#Multimodal'
         contenten: >-
@@ -21,28 +34,15 @@ blocks:
         subtitleen: '#Vision'
         contenten: >-
           As the safety of vision models remains a cornerstone of AI research,
-          we are proud to launch the VisionSafety Platform. This innovative
+          we are excited to launch the VisionSafety Platform. This innovative
           platform is designed to evaluate the safety of vision models through
           the creation of more powerful, transferable adversarial attacks,
           alongside the release of million-scale, real-world adversarial
           datasets. This initiative marks a significant step forward in
           enhancing the security and resilience of vision-based AI systems.
         timeen: 2024 Dec 4
-        href: ''
-        img: /uploads/latestUpdates1.png
-      - titleen: Our New Survey Reveals Critical Safety Challenges in Large Models
-        subtitleen: '#Language'
-        contenten: >-
-          In our latest study "Safety at Scale: A Comprehensive Survey of Large
-          Model Safety", we systematically analyze security threats facing
-          today's large AI models. We identify key vulnerabilities across
-          multiple model types and review defense strategies. Our findings
-          highlight the urgent need for robust safety measures and collaborative
-          efforts to ensure trustworthy AI development. The complete survey is
-          now available.
-        timeen: '2025 Feb 2 '
-        href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
-        img: /uploads/latestUpdates3.png
+        href: 'https://opentai.org/VisionSafety'
+        img: /uploads/vision safety.png
     _template: updates
   - title: Our Mission
     body: >
