@@ -1,8 +1,10 @@
 ---
 title: OpenTAI.org
 blocks:
-  - titleen: Latest news
-    viewMoreen: View more
+  - titleen: News
+    titlezh: 新闻
+    viewMoreen: Read More
+    viewMorezh: 了解更多
     updates:
       - titleen: Introducing VisionSafety Platform
         subtitleen: '#Vision'
