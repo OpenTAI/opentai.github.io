@@ -19,9 +19,7 @@ blocks:
         timeen: 2024 Dec 4 | by Vision Team
         href: ''
         img: /uploads/latestUpdates1.png
-      - titleen: >-
-          Launching the Multimodal Safety Research Project: Tackling New Risks
-          in AI
+      - titleen: Launching the Multimodal Safety Project
         subtitleen: '#Multimodal'
         contenten: >-
           The rise of multimodal AI presents significant new risks. In response,
@@ -30,7 +28,7 @@ blocks:
           initiative seeks not only to build safe and secure multimodal models
           but also to develop techniques that prevent these systems from being
           misused or turning harmful.
-        timeen: 2024 Dec 17 | by Multimodal Team
+        timeen: 2025 March 20
         img: /uploads/latestUpdates2.png
       - titleen: Do We Truly Understand Large Language Models?
         subtitleen: '#Language'
