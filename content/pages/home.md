@@ -152,7 +152,7 @@ blocks:
   - titleen: Datasets
     titlezh: Datasets
     items:
-      - datasetsName: VLBreak
+      - datasetsName: VLBreakBench
         desc: >-
           A multimodal jailbreak dataset for safety evaluation of multimodal
           large language models.
