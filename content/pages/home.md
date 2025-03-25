@@ -195,7 +195,7 @@ blocks:
         img: /uploads/BenchMarks2.png
         tagsImage: []
     _template: tools
-  - titleen: Collaborating Institutions
+  - titleen: Collaboratings
     titlezh: 合作单位
     items:
       - name: Fudan University
@@ -204,7 +204,7 @@ blocks:
         img: /uploads/partner2.png
       - name: Harvard University
         img: /uploads/partner3.png
-      - name: Yale University123
+      - name: Yale University
         img: /uploads/partner4.png
     _template: partners
   - titleen: Contributors
