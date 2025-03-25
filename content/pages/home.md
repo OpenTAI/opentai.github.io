@@ -73,11 +73,10 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://github.com/roywang021/IDEATOR'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: 帮助盲人识字
+      - projectName: Detecting Backdoor Attacks From Real-World Datasets
         projectDescription: >-
-          Adversarial attacks and defenses.Adversarial attacks and
-          defenses.Adversarial attacks and defenses.Adversarial attacks and
-          defenses.
+          Developing simple but effective backdoor data detection and filtering
+          methods for real-world large-scale datasets.
         projectReadMore: Learn More >
         link: ''
         projectIcon: /uploads/projectIcon1.png
