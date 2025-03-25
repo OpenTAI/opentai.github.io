@@ -58,7 +58,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: White-box Multimodal Jailbreak Attacks
+      - projectName: Multimodal Jailbreak Attack
         projectDescription: >-
           Exploring text-image dual optimization to craft more powerful
           white-box jailbreak attacks against vision-language models.
