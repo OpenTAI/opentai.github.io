@@ -107,8 +107,8 @@ blocks:
           scalable adversarial evaluations before real-world deployment.
         subTitle: 'An Adversarial Robustness Evaluation Platform for Vision Models '
         learnMore: Learn More >
-        link: www.baidu.com
-        benchMarksImg: /uploads/eye-acc.png
+        link: 'https://opentai.org/VisionSafety'
+        benchMarksImg: /uploads/vision icon.png
         tags:
           - tagName: vision
             bgColor: '#3F53CD'
