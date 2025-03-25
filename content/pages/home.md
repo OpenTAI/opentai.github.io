@@ -213,12 +213,6 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
-      - name: Henyuan Xu
-      - name: Yunhao Chen
-      - name: Ruofan Wang
-      - name: Xin Wang
-      - name: Yifan Ding
-      - name: Yifeng Gao
       - name: Yu-Gang Jiang
       - name: Xingjun Ma
       - name: Zuxuan Wu
@@ -228,8 +222,14 @@ blocks:
       - name: Jiaming Zhang
       - name: Weijie Zheng
       - name: Yong Xie
+      - name: Yifeng Gao
       - name: Zhixiang Wang
+      - name: Xin Wang
+      - name: Yunhao Chen
       - name: Bojia Zi
+      - name: Ruofan Wang
+      - name: Yifan Ding
+      - name: Henyuan Xu
     _template: contributors
 ---
 
