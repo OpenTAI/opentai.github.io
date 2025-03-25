@@ -52,7 +52,7 @@ blocks:
   - titleen: Research
     titlezh: Research
     items:
-      - projectName: Black-box Defense Against Multimodal Jailbreak Attacks
+      - projectName: Black-box Multimodal Jailbreak Defense
         projectDescription: >-
           Leveraging reinforcement learning to train a defensive suffix
           generator to safeguard vision-language models against multimodal
