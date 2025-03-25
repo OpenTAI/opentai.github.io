@@ -116,14 +116,15 @@ blocks:
             bgColor: '#9013FE'
           - tagName: million-scale
             bgColor: '#417505'
-      - benchMarkName: Vision Safety
+      - benchMarkName: Language Safety
         description: >-
-          Adversarial attacks and defenses.Adversarial attacks and
-          defenses.Adversarial attacks and defenses.Adversarial attacks and
-          defenses.
-        subTitle: 'world''s #1 benchmark'
+          Working on an open platform for comprehensive LLM safety evaluation.
+          Featuring: (1) Configurable human intervention templates; (2)
+          Automated adversarial testing where LLMs debate to uncover hidden
+          vulnerabilities. Coming soon—stay tuned for new AI safety tools!
+        subTitle: Towards automated benchmarking
         learnMore: Learn More >
-        benchMarksImg: /uploads/BenchMarks2.png
+        benchMarksImg: /uploads/language icon.png
         tags: []
       - benchMarkName: Vision Safety
         description: >-
