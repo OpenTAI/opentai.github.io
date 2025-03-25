@@ -52,13 +52,13 @@ blocks:
   - titleen: Research
     titlezh: Research
     items:
-      - projectName: 系外行星检测
+      - projectName: Black-box Defense Against Multimodal Jailbreak Attacks
         projectDescription: >-
-          Adversarial attacks and defenses.Adversarial attacks and
-          defenses.Adversarial attacks and defenses.Adversarial attacks and
-          defenses.
+          Leveraging reinforcement learning to train a defensive suffix
+          generator to safeguard vision-language models against multimodal
+          jailbreak inputs.
         projectReadMore: Learn More >
-        link: 'https://www.baidu.com'
+        link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
         projectIcon: /uploads/projectIcon1.png
       - projectName: 系外行星检测11
         projectDescription: >-
@@ -85,14 +85,6 @@ blocks:
         link: ''
         projectIcon: /uploads/projectIcon1.png
       - projectName: 带你认识ChatGPT
-        projectDescription: >-
-          Adversarial attacks and defenses.Adversarial attacks and
-          defenses.Adversarial attacks and defenses.Adversarial attacks and
-          defenses.
-        projectReadMore: Learn More >
-        link: ''
-        projectIcon: /uploads/projectIcon1.png
-      - projectName: 情感倾向分析
         projectDescription: >-
           Adversarial attacks and defenses.Adversarial attacks and
           defenses.Adversarial attacks and defenses.Adversarial attacks and
