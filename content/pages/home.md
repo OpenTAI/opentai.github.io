@@ -11,10 +11,10 @@ blocks:
         contenten: >-
           Our latest survey "Safety at Scale: A Comprehensive Survey of Large
           Model Safety" systematically analyzes safety threats facing today's
-          large AI models. We identify key vulnerabilities across multiple model
-          types and review existing defense strategies. Our findings highlight
-          the urgent need for robust safety measures and collaborative efforts
-          to ensure trustworthy AI development. 
+          large AI models. We identify key vulnerabilities across VFMs, LLMs,
+          VLPs, VLMs and diffusion models. Our findings highlight the urgent
+          need for robust safety measures and collaborative efforts to ensure
+          trustworthy AI development. 
         timeen: '2025 Feb 2 '
         href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
         img: /uploads/safetysurvey.png
