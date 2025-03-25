@@ -78,7 +78,7 @@ blocks:
           Developing simple but effective backdoor data detection and filtering
           methods for real-world large-scale datasets.
         projectReadMore: Learn More >
-        link: ''
+        link: 'https://hanxunh.github.io/Detect-CLIP-Backdoor-Samples/'
         projectIcon: /uploads/projectIcon1.png
       - projectName: 带你认识ChatGPT
         projectDescription: >-
