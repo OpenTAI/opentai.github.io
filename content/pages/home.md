@@ -195,6 +195,7 @@ blocks:
           An open-source toolkit implementing state-of-the-art adversarial
           attacks and defenses for vision models.
         learnMore: Learn More >
+        link: 'https://github.com/OpenTAI/taiadv'
         img: /uploads/BenchMarks2.png
         tagsImage: []
       - name: BlackdoorVLM
