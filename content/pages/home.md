@@ -1,5 +1,5 @@
 ---
-title: 对抗评测平台
+title: OpenTAI.org
 blocks:
   - titleen: Latest news
     viewMoreen: View more
