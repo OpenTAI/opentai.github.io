@@ -128,6 +128,8 @@ blocks:
         tags:
           - tagName: language
             bgColor: '#23B2F5'
+          - tagName: safety
+            bgColor: '#F8E71C'
       - benchMarkName: Multimodal Safety
         description: ''
         subTitle: A safety evaluation platform for vision-language models
