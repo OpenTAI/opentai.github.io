@@ -60,13 +60,12 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: 系外行星检测11
+      - projectName: White-box Multimodal Jailbreak Attacks
         projectDescription: >-
-          Adversarial attacks and defenses.Adversarial attacks and
-          defenses.Adversarial attacks and defenses.Adversarial attacks and
-          defenses.
+          Exploring text-image dual optimization to craft more powerful
+          white-box jailbreak attacks against vision-language models.
         projectReadMore: Learn More >
-        link: ''
+        link: 'https://github.com/roywang021/UMK'
         projectIcon: /uploads/projectIcon1.png
       - projectName: 寻找走失儿童
         projectDescription: >-
