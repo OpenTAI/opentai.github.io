@@ -157,9 +157,12 @@ blocks:
         subTitle: Multimodal
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: CC1M-Adv-C/F
-        desc: Two million-scale adversarial image datasets.
-        subTitle: Transfer Attack
-        datasetsBackground: /uploads/datasets2.png
+        desc: >-
+          Two million-scale adversarial image datasets for white-box and
+          transferable adversarial robustness evaluations.
+        subTitle: ' Vision | Adversarial'
+        link: 'https://github.com/treeman2000/CC1M-Adv-CF'
+        datasetsBackground: /uploads/cc1m adv.png
       - datasetsName: AdvT-shirt-1K
         desc: >-
           A physical-world adversarial T-shirt dataset for adversarial
