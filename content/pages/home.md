@@ -6,16 +6,15 @@ blocks:
     viewMoreen: Read More
     viewMorezh: 了解更多
     updates:
-      - titleen: Our New Survey Reveals Critical Safety Challenges in Large Models
+      - titleen: Our New Survey Reveals Safety Risks in Large Models
         subtitleen: '#Language'
         contenten: >-
-          In our latest study "Safety at Scale: A Comprehensive Survey of Large
-          Model Safety", we systematically analyze security threats facing
-          today's large AI models. We identify key vulnerabilities across
-          multiple model types and review defense strategies. Our findings
-          highlight the urgent need for robust safety measures and collaborative
-          efforts to ensure trustworthy AI development. The complete survey is
-          now available.
+          Our latest survey "Safety at Scale: A Comprehensive Survey of Large
+          Model Safety" systematically analyzes safety threats facing today's
+          large AI models. We identify key vulnerabilities across multiple model
+          types and review existing defense strategies. Our findings highlight
+          the urgent need for robust safety measures and collaborative efforts
+          to ensure trustworthy AI development. 
         timeen: '2025 Feb 2 '
         href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
         img: /uploads/safetysurvey.png
