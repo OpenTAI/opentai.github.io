@@ -213,7 +213,7 @@ blocks:
   - titleen: Contributors
     titlezh: Contributors
     items:
-      - name: Joseph Moore
+      - name: Xiang Zheng
       - name: Yige Li
       - name: Yu-Gang Jiang
       - name: Xingjun Ma
