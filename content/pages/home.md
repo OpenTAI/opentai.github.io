@@ -3,8 +3,8 @@ title: OpenTAI.org
 blocks:
   - titleen: News
     titlezh: 新闻
-    viewMoreen: Read More
-    viewMorezh: 了解更多
+    viewMoreen: Read More >
+    viewMorezh: 了解更多 >
     updates:
       - titleen: Our New Survey Reveals Safety Risks in Large Models
         subtitleen: '#Language'
