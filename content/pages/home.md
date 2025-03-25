@@ -126,11 +126,11 @@ blocks:
         benchMarksImg: /uploads/language icon.png
         tags:
           - tagName: language
-            bgColor: '#23B2F5'
+            bgColor: '#F5A623'
           - tagName: safety
-            bgColor: '#F8E71C'
+            bgColor: '#4A90E2'
           - tagName: automatic
-            bgColor: '#B8E986'
+            bgColor: '#417505'
       - benchMarkName: MultimodalSafety
         description: >-
           An open platform for automated safety evaluation of vision-language
@@ -142,11 +142,11 @@ blocks:
         benchMarksImg: /uploads/vision language icon.png
         tags:
           - tagName: multimodal
-            bgColor: '#F8E71C'
+            bgColor: '#8B572A'
           - tagName: jailbreak
-            bgColor: '#BD10E0'
+            bgColor: '#9013FE'
           - tagName: automatic
-            bgColor: '#B8E986'
+            bgColor: '#417505'
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
