@@ -168,7 +168,7 @@ blocks:
         desc: >-
           A physical-world adversarial T-shirt dataset for adversarial
           robustness evaluation.
-        subTitle: Physical Attack
+        subTitle: Vision | Physical Attack
         link: 'https://github.com/Wwangb/AdvT-shirt-1K'
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: WildDeepfake
