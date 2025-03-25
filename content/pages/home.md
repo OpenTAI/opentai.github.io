@@ -201,7 +201,8 @@ blocks:
         learnMore: Learn More >
         img: /uploads/backdoorVLM.png
         tagsImage:
-          - img: /uploads/tag4.png
+          - {}
+          - img: /uploads/tag3.png
     _template: tools
   - titleen: Collaborating Institutions
     titlezh: 合作单位
