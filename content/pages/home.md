@@ -6,16 +6,15 @@ blocks:
     viewMoreen: Read More >
     viewMorezh: 了解更多 >
     updates:
-      - titleen: 'Survey Launch: ''Safety at Scale'''
+      - titleen: Releasing Large Model Safety Survey
         subtitleen: '#Language'
         contenten: >-
-          In our latest survey "Safety at Scale: A Comprehensive Survey of Large
-          Model Safety", we systematically analyze safety threats facing today's
-          large AI models. We identify key vulnerabilities across vision,
-          language, and multimodal large models. Our findings highlight the
-          urgent need for robust safety measures and collaborative efforts to
-          ensure trustworthy AI development. The complete survey is now
-          available.
+          Our latest survey "Safety at Scale: A Comprehensive Survey of Large
+          Model Safety" systematically analyzes safety threats facing today's
+          large AI models, covering VFMs, LLMs, VLPs, VLMs, and T2I Diffusion
+          models. Our findings highlight the current landscape of AI safety
+          research and the urgent need for robust safety measures and
+          collaborative efforts to ensure trustworthy AI development.
         timeen: '2025 Feb 2 '
         href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
         img: /uploads/safetysurvey.png
