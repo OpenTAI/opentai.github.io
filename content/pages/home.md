@@ -18,7 +18,7 @@ blocks:
           now available.
         timeen: '2025 Feb 2 '
         href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
-        img: /uploads/latestUpdates3.png
+        img: /uploads/safetysurvey.png
       - titleen: Introducing VisionSafety Platform
         subtitleen: '#Vision'
         contenten: >-
