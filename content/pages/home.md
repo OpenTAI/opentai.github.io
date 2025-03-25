@@ -122,7 +122,7 @@ blocks:
           Featuring: (1) Configurable human intervention templates; (2)
           Automated adversarial testing where LLMs debate to uncover hidden
           vulnerabilities. Coming soon—stay tuned for new AI safety tools!
-        subTitle: Towards automated benchmarking
+        subTitle: 'An Automated Safety Evaluation Platform for Language Models '
         learnMore: Learn More >
         benchMarksImg: /uploads/language icon.png
         tags: []
