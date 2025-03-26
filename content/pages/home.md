@@ -231,10 +231,8 @@ blocks:
         img: ''
       - name: Fudan University
         img: ''
-      - name: Fudan University
-        img: ''
-      - name: ByteDance
-        img: /uploads/collaborators /ByteDance.svg.png
+      - name: NTU
+        img: /uploads/collaborators /Nanyang_Technological_University.png
       - name: UniMelb
         img: /uploads/collaborators /The_University_of_Melbourne.png
       - name: SMU
@@ -245,6 +243,8 @@ blocks:
           /Hong_Kong_University_of_Science_and_Technology.png
       - name: CUHK
         img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen.png'
+      - name: ByteDance
+        img: /uploads/collaborators /ByteDance.svg.png
     _template: partners
   - titleen: Contributors
     titlezh: Contributors
