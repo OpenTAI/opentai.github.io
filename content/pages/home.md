@@ -243,7 +243,7 @@ blocks:
       - name: UC Santa Cruz
         img: '/uploads/collaborators /University of California, Santa Cruz.png'
       - name: ByteDance
-        img: /uploads/collaborators /ByteDance.svg.png
+        img: /uploads/collaborators /ByteDance2.png
       - name: UoWM
         img: /uploads/collaborators /University of Wisconsin - Madison.png
       - name: UoAuck
