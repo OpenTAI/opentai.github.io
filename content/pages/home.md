@@ -213,8 +213,8 @@ blocks:
     items:
       - name: Fudan University
         img: ''
-      - name: Fudan University
-        img: ''
+      - name: Griffith
+        img: /uploads/collaborators /Griffith University New.png
       - name: UYSD
         img: /uploads/collaborators /The_University_of_Sydney.png
       - name: SHJT
