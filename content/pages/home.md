@@ -221,50 +221,50 @@ blocks:
         img: /uploads/collaborators /Singapore_Management_University.png
       - name: UIUC
         img: /uploads/collaborators /University_of_lllinois_Urbana-Champaign.png
+      - name: Duke
+        img: /uploads/collaborators /Duke_University_logo.svg.png
       - name: Oxford
         img: /uploads/collaborators /University_of_Oxford.png
       - name: Purdue
         img: /uploads/collaborators /Purdue_University.png
-      - name: Duke
-        img: /uploads/collaborators /Duke_University_logo.svg.png
+      - name: NTU
+        img: /uploads/collaborators /Nanyang_Technological_University.png
+      - name: UYSD
+        img: /uploads/collaborators /The_University_of_Sydney.png
       - name: UoM Amherst
         img: /uploads/collaborators /University of Massachusetts Amherst.png
       - name: UC Santa Cruz
         img: '/uploads/collaborators /University of California, Santa Cruz.png'
+      - name: ByteDance
+        img: /uploads/collaborators /ByteDance.svg.png
+      - name: UoWM
+        img: /uploads/collaborators /University of Wisconsin - Madison.png
+      - name: UoAuck
+        img: /uploads/collaborators /University of Auckland.png
       - name: CISPA
         img: >-
           /uploads/collaborators /CISPA Helmholtz Center for Information
           Security.png
-      - name: UoWM
-        img: /uploads/collaborators /University of Wisconsin - Madison.png
       - name: Virginia Tech
         img: /uploads/collaborators /Virginia Tech logo.png
       - name: Sea AI Lab
         img: /uploads/collaborators /sea_AI_lab.png
-      - name: Griffith
-        img: /uploads/collaborators /Griffith University New.png
-      - name: UYSD
-        img: /uploads/collaborators /The_University_of_Sydney.png
-      - name: CUHK-SZ
-        img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen.png'
-      - name: UoTokyo
-        img: /uploads/collaborators /The_University_of_Tokyo.png
-      - name: MBZUAI
-        img: /uploads/collaborators /MBZUAI.png
       - name: RIKEN
         img: /uploads/collaborators /RIKEN.png
-      - name: UoAuck
-        img: /uploads/collaborators /University of Auckland.png
-      - name: NTU
-        img: /uploads/collaborators /Nanyang_Technological_University.png
+      - name: UoTokyo
+        img: /uploads/collaborators /The_University_of_Tokyo.png
       - name: HKUST
         img: >-
           /uploads/collaborators
           /Hong_Kong_University_of_Science_and_Technology.png
+      - name: Griffith
+        img: /uploads/collaborators /Griffith University New.png
+      - name: MBZUAI
+        img: /uploads/collaborators /MBZUAI.png
       - name: CUHK
         img: /uploads/collaborators /The_Chinese_University_of_Hong_Kong.png
-      - name: ByteDance
-        img: /uploads/collaborators /ByteDance.svg.png
+      - name: CUHK-SZ
+        img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen.png'
     _template: partners
   - titleen: Contributors
     titlezh: Contributors
