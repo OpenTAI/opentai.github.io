@@ -88,7 +88,7 @@ blocks:
         projectReadMore: Learn More >
         link: ''
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Detecting Backdoors in Web-scale Datasets
+      - projectName: Detecting Backdoors in Real-world Datasets
         projectDescription: >-
           Developing simple but effective backdoor data detection and filtering
           methods for real-world large-scale datasets.
