@@ -29,7 +29,7 @@ export const ProjectItem = ({
         data-aos-duration="1000"
         data-aos-delay={index * 100}
         key={index}
-        onClick={() => (data.link ? router.push(data.link) : null)}
+        onClick={() => (data.link ? window.open(data.link) : null)}
       >
         <div className="hover:invert px-12 pt-8 pb-12">
           {/* <img

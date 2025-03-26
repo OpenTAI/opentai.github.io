@@ -27,7 +27,7 @@ export const Update = ({
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-delay={index * 100}
-        onClick={() => (data.href ? router.push(data.href) : null)}
+        onClick={() => (data.href ? window.open(data.href) : null)}
       >
         <Image
           className="mb-4 w-full"

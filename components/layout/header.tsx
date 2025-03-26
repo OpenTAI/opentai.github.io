@@ -184,7 +184,7 @@ export const Header = ({
               data-aos-duration="1000"
               data-aos-delay="1000"
               data-tina-field={tinaField(data, "viewMoreen")}
-              onClick={() => (data.viewMoreLink ? router.push(data.viewMoreLink) : null)}
+              onClick={() => (data.viewMoreLink ? window.open(data.viewMoreLink) : null)}
             >
               {data[`viewMore${language}`]}
             </div>
