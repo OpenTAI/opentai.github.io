@@ -233,7 +233,7 @@ blocks:
       - name: Oxford
         img: /uploads/collaborators /University_of_Oxford.png
       - name: Purdue
-        img: /uploads/collaborators /Purdue_University.png
+        img: /uploads/collaborators /Purdue_University2.png
       - name: NTU
         img: /uploads/collaborators /Nanyang_Technological_University.png
       - name: UYSD
