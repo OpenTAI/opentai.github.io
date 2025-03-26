@@ -211,6 +211,30 @@ blocks:
   - titleen: Collaborating Institutions
     titlezh: 合作单位
     items:
+      - name: Fudan University
+        img: ''
+      - name: Fudan University
+        img: ''
+      - name: Fudan University
+        img: ''
+      - name: Fudan University
+        img: ''
+      - name: Fudan University
+        img: ''
+      - name: Fudan University
+        img: ''
+      - name: Fudan University
+        img: ''
+      - name: Fudan University
+        img: ''
+      - name: Fudan University
+        img: ''
+      - name: Fudan University
+        img: ''
+      - name: Fudan University
+        img: ''
+      - name: ByteDance
+        img: /uploads/collaborators /ByteDance.svg.png
       - name: UniMelb
         img: /uploads/collaborators /The_University_of_Melbourne.png
       - name: SMU
