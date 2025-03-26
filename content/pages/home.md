@@ -211,8 +211,8 @@ blocks:
   - titleen: Collaborating Institutions
     titlezh: 合作单位
     items:
-      - name: Fudan University
-        img: ''
+      - name: UC Santa Cruz
+        img: '/uploads/collaborators /University of California, Santa Cruz.png'
       - name: Griffith
         img: /uploads/collaborators /Griffith University New.png
       - name: UYSD
