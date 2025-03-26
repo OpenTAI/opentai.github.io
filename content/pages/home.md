@@ -51,12 +51,12 @@ blocks:
   - titleen: Research
     titlezh: Research
     items:
-      - projectName: LLM Auditing
+      - projectName: Multimodal Jailbreak Defense
         projectDescription: >-
-          Leveraging reinforcement learning with curiosity reward to black-box
-          audit commercial LLMs
+          Leveraging reinforcement learning to train a defensive suffix
+          generator to safeguard VLMs against multimodal jailbreak inputs.
         projectReadMore: Learn More >
-        link: 'https://github.com/x-zheng16/CALM'
+        link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
         projectIcon: /uploads/projectIcon1.png
       - projectName: Red Teaming VLMs
         projectDescription: >-
@@ -65,12 +65,12 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://github.com/roywang021/IDEATOR'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Multimodal Jailbreak Defense
+      - projectName: Multimodal Jailbreak Attack
         projectDescription: >-
-          Leveraging reinforcement learning to train a defensive suffix
-          generator to safeguard VLMs against multimodal jailbreak inputs.
+          Exploring text-image dual optimization to craft more powerful
+          white-box jailbreak attacks against vision-language models.
         projectReadMore: Learn More >
-        link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
+        link: 'https://github.com/roywang021/UMK'
         projectIcon: /uploads/projectIcon1.png
       - projectName: Backdoor Data Detection
         projectDescription: >-
@@ -78,13 +78,6 @@ blocks:
           methods for real-world large-scale datasets.
         projectReadMore: Learn More >
         link: 'https://hanxunh.github.io/Detect-CLIP-Backdoor-Samples/'
-        projectIcon: /uploads/projectIcon1.png
-      - projectName: Multimodal Jailbreak Attack
-        projectDescription: >-
-          Exploring text-image dual optimization to craft more powerful
-          white-box jailbreak attacks against vision-language models.
-        projectReadMore: Learn More >
-        link: 'https://github.com/roywang021/UMK'
         projectIcon: /uploads/projectIcon1.png
       - projectName: Fairness Benchmark
         projectDescription: >-
@@ -100,6 +93,13 @@ blocks:
           embodied agents.
         projectReadMore: Learn More >
         link: ''
+        projectIcon: /uploads/projectIcon1.png
+      - projectName: LLM Auditing
+        projectDescription: >-
+          Leveraging reinforcement learning with curiosity reward to black-box
+          audit commercial LLMs
+        projectReadMore: Learn More >
+        link: 'https://github.com/x-zheng16/CALM'
         projectIcon: /uploads/projectIcon1.png
     _template: project
   - titleen: Benchmarks
