@@ -222,10 +222,10 @@ blocks:
   - titleen: Collaborating Institutions
     titlezh: 合作单位
     items:
-      - name: Tsinghua
-        img: /uploads/collaborators /Tsinghua_University.png
       - name: UniMelb
         img: /uploads/collaborators /The_University_of_Melbourne.png
+      - name: Tsinghua
+        img: /uploads/collaborators /Tsinghua_University.png
       - name: SMU
         img: /uploads/collaborators /Singapore_Management_University.png
       - name: UIUC
