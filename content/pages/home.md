@@ -221,8 +221,8 @@ blocks:
         img: ''
       - name: Fudan University
         img: ''
-      - name: Fudan University
-        img: ''
+      - name: Oxford
+        img: /uploads/collaborators /University_of_Oxford.png
       - name: UoTokyo
         img: /uploads/collaborators /The_University_of_Tokyo.png
       - name: MBZUAI
