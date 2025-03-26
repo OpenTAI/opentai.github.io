@@ -245,6 +245,8 @@ blocks:
         img: >-
           /uploads/collaborators /CISPA Helmholtz Center for Information
           Security.png
+      - name: CUHK
+        img: /uploads/collaborators /The_Chinese_University_of_Hong_Kong.png
       - name: Virginia Tech
         img: /uploads/collaborators /Virginia Tech logo.png
       - name: Sea AI Lab
@@ -261,8 +263,6 @@ blocks:
         img: /uploads/collaborators /Griffith University New.png
       - name: MBZUAI
         img: /uploads/collaborators /MBZUAI.png
-      - name: CUHK
-        img: /uploads/collaborators /The_Chinese_University_of_Hong_Kong.png
       - name: CUHK-SZ
         img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen.png'
     _template: partners
