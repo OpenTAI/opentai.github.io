@@ -7,7 +7,7 @@ blocks:
     viewMorezh: 了解更多 >
     updates:
       - titleen: Releasing Large Model Safety Survey
-        subtitleen: '#Language'
+        subtitleen: '#Survey'
         contenten: >-
           Our latest survey "Safety at Scale: A Comprehensive Survey of Large
           Model Safety" systematically analyzes safety threats facing today's
