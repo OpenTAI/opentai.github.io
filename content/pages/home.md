@@ -57,7 +57,7 @@ blocks:
           audit commercial LLMs
         projectReadMore: Learn More >
         link: 'https://github.com/x-zheng16/CALM'
-        projectIcon: /projectIcon1.png
+        projectIcon: /uploads/projectIcon1.png
       - projectName: Red Teaming VLMs
         projectDescription: >-
           Jailbreaking VLMs using themselves, with the assistance of
@@ -253,7 +253,7 @@ blocks:
           /uploads/collaborators /CISPA Helmholtz Center for Information
           Security.png
       - name: CUHK
-        img: /uploads/collaborators /The_Chinese_University_of_Hong_Kong.png
+        img: /uploads/collaborators /The_Chinese_University_of_Hong_Kong2.png
       - name: Virginia Tech
         img: /uploads/collaborators /Virginia Tech logo.png
       - name: Sea AI Lab
