@@ -54,7 +54,7 @@ export const Update = ({
           {data[`title${language}`]}
         </a>
         <div
-          className="text-base my-3"
+          className="text-base my-3 text-justify"
           data-tina-field={tinaField(data, "contenten")}
         >
           {data[`content${language}`]}

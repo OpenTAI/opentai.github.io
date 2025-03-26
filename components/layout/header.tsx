@@ -109,7 +109,7 @@ export const Header = ({
   // };
 
   return (
-    <div className={`${showBG ? "bg-header h-175 lg:h-225" : ""}`}>
+    <div className={`${showBG ? "bg-header2 h-175 lg:h-225 bg-cover" : ""}`}>
       <div className="fixed w-full z-20">
         <div
           className={`flex py-6 px-4 sm:px-20 justify-between items-center ${background} `}

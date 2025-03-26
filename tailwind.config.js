@@ -73,6 +73,7 @@ module.exports = {
     },
     backgroundImage: {
       'header': "url('./assets/img/header1.png')",
+      'header2': "url('./assets/img/header2.png')",
       'arrowLeft': "url('./assets/img/arrowLeft.png')",
       'arrowRight': "url('./assets/img/arrowRight.png')",
       'arrowLeftHighlight': "url('./assets/img/arrowLeftHighlight.png')",

@@ -63,9 +63,9 @@ export const Footer = ({ data }) => {
               <Image className="h-4 w-4" src={LinkedIn} alt="" />
             </a>
           </div>
-          <div className="flex flex-col items-center text-white text-sm font-medium sm:flex-row sm:w-96 sm:justify-between">
+          <div className="flex flex-col items-center text-white text-sm font-medium sm:flex-row sm:justify-between">
             {data.copyright && (
-              <div data-tina-field={tinaField(data, "copyright")}>
+              <div data-tina-field={tinaField(data, "copyright")} className="mr-16">
                 {data.copyright}
               </div>
             )}
