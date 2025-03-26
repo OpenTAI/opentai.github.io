@@ -213,8 +213,8 @@ blocks:
     items:
       - name: Fudan University
         img: ''
-      - name: Fudan University
-        img: ''
+      - name: Virginia Tech
+        img: /uploads/collaborators /Virginia Tech logo.png
       - name: Tsinghua
         img: /uploads/collaborators /Tsinghua_University.png
       - name: Sea AI Lab
