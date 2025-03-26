@@ -228,12 +228,12 @@ blocks:
         img: /uploads/collaborators /The_University_of_Melbourne.png
       - name: SMU
         img: /uploads/collaborators /Singapore_Management_University.png
-      - name: SHJT
-        img: /uploads/collaborators /Shanghai Jiao Tong University.png
       - name: UIUC
         img: /uploads/collaborators /University_of_lllinois_Urbana-Champaign2.png
       - name: Duke
         img: /uploads/collaborators /Duke_University2.png
+      - name: SHJT
+        img: /uploads/collaborators /Shanghai Jiao Tong University.png
       - name: Oxford
         img: /uploads/collaborators /University_of_Oxford.png
       - name: Purdue
