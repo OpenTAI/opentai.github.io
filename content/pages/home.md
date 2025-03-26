@@ -266,30 +266,5 @@ blocks:
       - name: CUHK-SZ
         img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen.png'
     _template: partners
-  - titleen: Contributors
-    titlezh: Contributors
-    items:
-      - name: Yu-Gang Jiang
-      - name: Xingjun Ma
-      - name: Zuxuan Wu
-      - name: Hanxun Huang
-      - name: Yige Li
-      - name: Xiang Zheng
-      - name: Jiaming Zhang
-      - name: Weijie Zheng
-      - name: Yong Xie
-      - name: Yifeng Gao
-      - name: Bojia Zi
-      - name: Zhixiang Wang
-      - name: Xin Wang
-      - name: Yunhao Chen
-      - name: Henyuan Xu
-      - name: Yifan Ding
-      - name: Kun Zhai
-      - name: Ruofan Wang
-      - name: Juncheng Li
-      - name: Teng Li
-      - name: Zhenyun Yin
-    _template: contributors
 ---
 
