@@ -265,12 +265,12 @@ blocks:
         img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen2.png'
       - name: UoTokyo
         img: /uploads/collaborators /The_University_of_Tokyo.png
+      - name: Griffith
+        img: /uploads/collaborators /Griffith University New.png
       - name: HKUST
         img: >-
           /uploads/collaborators
           /Hong_Kong_University_of_Science_and_Technology.png
-      - name: Griffith
-        img: /uploads/collaborators /Griffith University New.png
       - name: MBZUAI
         img: /uploads/collaborators /MBZUAI.png
     _template: partners
