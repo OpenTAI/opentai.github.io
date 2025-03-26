@@ -223,8 +223,8 @@ blocks:
         img: ''
       - name: Fudan University
         img: ''
-      - name: Fudan University
-        img: ''
+      - name: UoTokyo
+        img: /uploads/collaborators /The_University_of_Tokyo.png
       - name: MBZUAI
         img: /uploads/collaborators /MBZUAI.png
       - name: RIKEN
