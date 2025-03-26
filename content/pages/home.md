@@ -271,7 +271,7 @@ blocks:
       - name: MBZUAI
         img: /uploads/collaborators /MBZUAI.png
       - name: CUHK-SZ
-        img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen.png'
+        img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen2.png'
     _template: partners
 ---
 
