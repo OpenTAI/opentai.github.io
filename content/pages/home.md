@@ -252,7 +252,7 @@ blocks:
       - name: CISPA
         img: >-
           /uploads/collaborators /CISPA Helmholtz Center for Information
-          Security.png
+          Security2.png
       - name: CUHK
         img: /uploads/collaborators /The_Chinese_University_of_Hong_Kong2.png
       - name: Virginia Tech
