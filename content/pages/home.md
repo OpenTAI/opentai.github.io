@@ -87,7 +87,7 @@ blocks:
         projectReadMore: Learn More >
         link: ''
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Auto Safety Arena
+      - projectName: Safety Arena
         projectDescription: >-
           Building an open platform for automated safety evaluation of LLMs
           against themselves.
