@@ -72,13 +72,6 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Multimodal Jailbreak Attack
-        projectDescription: >-
-          Exploring text-image dual optimization to craft more powerful
-          white-box jailbreak attacks against vision-language models.
-        projectReadMore: Learn More >
-        link: 'https://github.com/roywang021/UMK'
-        projectIcon: /uploads/projectIcon1.png
       - projectName: Fairness Benchmark
         projectDescription: >-
           Developing a comprehensive scenario-based benchmark for fairness
@@ -100,6 +93,13 @@ blocks:
           methods for real-world large-scale datasets.
         projectReadMore: Learn More >
         link: 'https://hanxunh.github.io/Detect-CLIP-Backdoor-Samples/'
+        projectIcon: /uploads/projectIcon1.png
+      - projectName: Multimodal Jailbreak Attack
+        projectDescription: >-
+          Exploring text-image dual optimization to craft more powerful
+          white-box jailbreak attacks against vision-language models.
+        projectReadMore: Learn More >
+        link: 'https://github.com/roywang021/UMK'
         projectIcon: /uploads/projectIcon1.png
     _template: project
   - titleen: Benchmarks
