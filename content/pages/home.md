@@ -196,7 +196,7 @@ blocks:
           attacks and defenses for vision models.
         learnMore: Learn More >
         link: 'https://github.com/OpenTAI/taiadv'
-        img: /uploads/BenchMarks2.png
+        img: /uploads/taiadv.vision.png
         tagsImage: []
       - name: BlackdoorVLM
         description: >-
