@@ -51,20 +51,13 @@ blocks:
   - titleen: Research
     titlezh: Research
     items:
-      - projectName: Multimodal Jailbreak Defense
+      - projectName: LLM Auditing
         projectDescription: >-
-          Leveraging reinforcement learning to train a defensive suffix
-          generator to safeguard VLMs against multimodal jailbreak inputs.
+          Leveraging reinforcement learning with curiosity reward to black-box
+          audit commercial LLMs
         projectReadMore: Learn More >
-        link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
-        projectIcon: /uploads/projectIcon1.png
-      - projectName: Multimodal Jailbreak Attack
-        projectDescription: >-
-          Exploring text-image dual optimization to craft more powerful
-          white-box jailbreak attacks against vision-language models.
-        projectReadMore: Learn More >
-        link: 'https://github.com/roywang021/UMK'
-        projectIcon: /uploads/projectIcon1.png
+        link: 'https://github.com/x-zheng16/CALM'
+        projectIcon: /projectIcon1.png
       - projectName: Red Teaming VLMs
         projectDescription: >-
           Jailbreaking VLMs using themselves, with the assistance of
@@ -72,12 +65,26 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://github.com/roywang021/IDEATOR'
         projectIcon: /uploads/projectIcon1.png
+      - projectName: Multimodal Jailbreak Defense
+        projectDescription: >-
+          Leveraging reinforcement learning to train a defensive suffix
+          generator to safeguard VLMs against multimodal jailbreak inputs.
+        projectReadMore: Learn More >
+        link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
+        projectIcon: /uploads/projectIcon1.png
       - projectName: Backdoor Data Detection
         projectDescription: >-
           Developing simple but effective backdoor data detection and filtering
           methods for real-world large-scale datasets.
         projectReadMore: Learn More >
         link: 'https://hanxunh.github.io/Detect-CLIP-Backdoor-Samples/'
+        projectIcon: /uploads/projectIcon1.png
+      - projectName: Multimodal Jailbreak Attack
+        projectDescription: >-
+          Exploring text-image dual optimization to craft more powerful
+          white-box jailbreak attacks against vision-language models.
+        projectReadMore: Learn More >
+        link: 'https://github.com/roywang021/UMK'
         projectIcon: /uploads/projectIcon1.png
       - projectName: Fairness Benchmark
         projectDescription: >-
@@ -87,20 +94,13 @@ blocks:
         projectReadMore: Learn More >
         link: ''
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Safety Arena
-        projectDescription: >-
-          Building an open platform for automated safety evaluation of LLMs
-          against themselves.
-        projectReadMore: Learn More >
-        link: ''
-        projectIcon: /uploads/projectIcon1.png
       - projectName: Embodied Safety
         projectDescription: >-
           Building an open platform for scenario based safety evaluation of
           embodied agents.
         projectReadMore: Learn More >
         link: ''
-        projectIcon: /projectIcon1.png
+        projectIcon: /uploads/projectIcon1.png
     _template: project
   - titleen: Benchmarks
     titlezh: 安全评测基准
