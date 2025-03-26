@@ -17,7 +17,7 @@ blocks:
           collaborative efforts to ensure trustworthy AI development.
         timeen: '2025 Feb 2 '
         href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
-        img: /uploads/safetysurvey.png
+        img: /uploads/safetysurvey.jpg
       - titleen: Introducing the VisionSafety Platform
         subtitleen: '#Vision'
         contenten: >-
@@ -184,7 +184,7 @@ blocks:
         desc: 'A dataset of 7,314 face sequences from 707 deepfake videos. '
         subTitle: Deepfake
         link: 'https://github.com/OpenTAI/wild-deepfake'
-        datasetsBackground: /uploads/wilddeepfake.png
+        datasetsBackground: /uploads/wilddeepfake.jpg
     _template: datasets
   - titleen: Tools
     titlezh: Tools
