@@ -215,8 +215,8 @@ blocks:
         img: ''
       - name: Fudan University
         img: ''
-      - name: Fudan University
-        img: ''
+      - name: Tsinghua
+        img: /uploads/collaborators /Tsinghua_University.png
       - name: Sea AI Lab
         img: /uploads/collaborators /sea_AI_lab.png
       - name: UC Santa Cruz
