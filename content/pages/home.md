@@ -230,7 +230,7 @@ blocks:
       - name: UIUC
         img: /uploads/collaborators /University_of_lllinois_Urbana-Champaign2.png
       - name: Duke
-        img: /uploads/collaborators /Duke_University_logo.svg.png
+        img: /uploads/collaborators /Duke_University2.png
       - name: Oxford
         img: /uploads/collaborators /University_of_Oxford.png
       - name: Purdue
