@@ -227,8 +227,8 @@ blocks:
         img: ''
       - name: Fudan University
         img: ''
-      - name: Fudan University
-        img: ''
+      - name: RIKEN
+        img: /uploads/collaborators /RIKEN.png
       - name: UoAuck
         img: /uploads/collaborators /University of Auckland.png
       - name: NTU
