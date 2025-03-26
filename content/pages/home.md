@@ -211,8 +211,8 @@ blocks:
   - titleen: Collaborating Institutions
     titlezh: 合作单位
     items:
-      - name: Fudan University
-        img: ''
+      - name: UoWM
+        img: /uploads/collaborators /University of Wisconsin - Madison.png
       - name: Duke
         img: /uploads/collaborators /Duke_University_logo.svg.png
       - name: Purdue
