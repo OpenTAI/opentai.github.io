@@ -225,8 +225,8 @@ blocks:
         img: ''
       - name: Fudan University
         img: ''
-      - name: Fudan University
-        img: ''
+      - name: MBZUAI
+        img: /uploads/collaborators /MBZUAI.png
       - name: RIKEN
         img: /uploads/collaborators /RIKEN.png
       - name: UoAuck
