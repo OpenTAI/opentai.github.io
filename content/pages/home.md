@@ -215,8 +215,10 @@ blocks:
         img: /uploads/collaborators /The_University_of_Melbourne.png
       - name: SMU
         img: /uploads/collaborators /Singapore_Management_University.png
-      - name: Harvard University
-        img: /uploads/partner3.png
+      - name: HKUST
+        img: >-
+          /uploads/collaborators
+          /Hong_Kong_University_of_Science_and_Technology.png
       - name: Yale University
         img: /uploads/partner4.png
     _template: partners
