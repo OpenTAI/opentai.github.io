@@ -213,8 +213,8 @@ blocks:
     items:
       - name: UniMelb
         img: /uploads/collaborators /The_University_of_Melbourne.png
-      - name: Peking University
-        img: /uploads/partner2.png
+      - name: SMU
+        img: /uploads/collaborators /Singapore_Management_University.png
       - name: Harvard University
         img: /uploads/partner3.png
       - name: Yale University
