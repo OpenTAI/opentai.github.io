@@ -211,8 +211,8 @@ blocks:
   - titleen: Collaborating Institutions
     titlezh: 合作单位
     items:
-      - name: Fudan University
-        img: /uploads/partner1.png
+      - name: UniMelb
+        img: /uploads/collaborators /The_University_of_Melbourne.png
       - name: Peking University
         img: /uploads/partner2.png
       - name: Harvard University
