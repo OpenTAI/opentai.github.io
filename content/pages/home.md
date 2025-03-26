@@ -213,8 +213,8 @@ blocks:
     items:
       - name: Fudan University
         img: ''
-      - name: Fudan University
-        img: ''
+      - name: Duke
+        img: /uploads/collaborators /Duke_University_logo.svg.png
       - name: Purdue
         img: /uploads/collaborators /Purdue_University.png
       - name: UoM Amherst
