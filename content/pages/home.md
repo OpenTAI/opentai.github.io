@@ -45,9 +45,12 @@ blocks:
   - title: Advancing Trustworthy AI Through Open Collaboration
     body: >
       OpenTAI is an open platform where researchers collaborate to accelerate
-      practical Trustworthy AI solutions. We prioritize tools, datasets, and
-      platforms over papers, bridging research with real-world impact to foster
-      ethical, robust, and beneficial AI.
+      practical Trustworthy AI solutions. We prioritize tools, benchmarks, and
+      platforms over papers, bridging research with real-world impact.
+
+
+      > We welcome all researchers to promote their Trustworthy AI work on this
+      platform. Free of charge, forever.
     _template: content
   - titleen: Research
     titlezh: Research
