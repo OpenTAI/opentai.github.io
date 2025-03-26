@@ -215,8 +215,8 @@ blocks:
         img: ''
       - name: Fudan University
         img: ''
-      - name: Fudan University
-        img: ''
+      - name: Purdue
+        img: /uploads/collaborators /Purdue_University.png
       - name: UoM Amherst
         img: /uploads/collaborators /University of Massachusetts Amherst.png
       - name: CISPA
