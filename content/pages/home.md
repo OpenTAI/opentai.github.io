@@ -94,6 +94,13 @@ blocks:
         projectReadMore: Learn More >
         link: ''
         projectIcon: /uploads/projectIcon1.png
+      - projectName: Embodied Safety
+        projectDescription: >-
+          Building an open platform for scenario based safety evaluation of
+          embodied agents.
+        projectReadMore: Learn More >
+        link: ''
+        projectIcon: /projectIcon1.png
     _template: project
   - titleen: Benchmarks
     titlezh: 安全评测基准
