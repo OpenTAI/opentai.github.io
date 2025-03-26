@@ -69,7 +69,7 @@ export const Partners = ({
 
 const defaultPartners = {
   name: "Fudan University",
-  img: null,
+  img: '',
 };
 
 export const partnersBlockSchema = {
