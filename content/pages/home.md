@@ -211,6 +211,14 @@ blocks:
   - titleen: Collaborating Institutions
     titlezh: 合作单位
     items:
+      - name: Fudan University
+        img: ''
+      - name: Fudan University
+        img: ''
+      - name: Fudan University
+        img: ''
+      - name: UoM Amherst
+        img: /uploads/collaborators /University of Massachusetts Amherst.png
       - name: CISPA
         img: >-
           /uploads/collaborators /CISPA Helmholtz Center for Information
