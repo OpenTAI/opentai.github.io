@@ -261,6 +261,8 @@ blocks:
         img: /uploads/collaborators /sea_AI_lab.png
       - name: RIKEN
         img: /uploads/collaborators /RIKEN.png
+      - name: CUHK-SZ
+        img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen2.png'
       - name: UoTokyo
         img: /uploads/collaborators /The_University_of_Tokyo.png
       - name: HKUST
@@ -271,8 +273,6 @@ blocks:
         img: /uploads/collaborators /Griffith University New.png
       - name: MBZUAI
         img: /uploads/collaborators /MBZUAI.png
-      - name: CUHK-SZ
-        img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen2.png'
     _template: partners
 ---
 
