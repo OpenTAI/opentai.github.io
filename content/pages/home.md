@@ -211,38 +211,42 @@ blocks:
   - titleen: Collaborating Institutions
     titlezh: 合作单位
     items:
+      - name: Tsinghua
+        img: /uploads/collaborators /Tsinghua_University.png
+      - name: SHJT
+        img: /uploads/collaborators /Shanghai Jiao Tong University.png
+      - name: UniMelb
+        img: /uploads/collaborators /The_University_of_Melbourne.png
+      - name: SMU
+        img: /uploads/collaborators /Singapore_Management_University.png
       - name: UIUC
         img: /uploads/collaborators /University_of_lllinois_Urbana-Champaign.png
-      - name: UoWM
-        img: /uploads/collaborators /University of Wisconsin - Madison.png
-      - name: Duke
-        img: /uploads/collaborators /Duke_University_logo.svg.png
+      - name: Oxford
+        img: /uploads/collaborators /University_of_Oxford.png
       - name: Purdue
         img: /uploads/collaborators /Purdue_University.png
+      - name: Duke
+        img: /uploads/collaborators /Duke_University_logo.svg.png
       - name: UoM Amherst
         img: /uploads/collaborators /University of Massachusetts Amherst.png
+      - name: UC Santa Cruz
+        img: '/uploads/collaborators /University of California, Santa Cruz.png'
       - name: CISPA
         img: >-
           /uploads/collaborators /CISPA Helmholtz Center for Information
           Security.png
+      - name: UoWM
+        img: /uploads/collaborators /University of Wisconsin - Madison.png
       - name: Virginia Tech
         img: /uploads/collaborators /Virginia Tech logo.png
-      - name: Tsinghua
-        img: /uploads/collaborators /Tsinghua_University.png
       - name: Sea AI Lab
         img: /uploads/collaborators /sea_AI_lab.png
-      - name: UC Santa Cruz
-        img: '/uploads/collaborators /University of California, Santa Cruz.png'
       - name: Griffith
         img: /uploads/collaborators /Griffith University New.png
       - name: UYSD
         img: /uploads/collaborators /The_University_of_Sydney.png
-      - name: SHJT
-        img: /uploads/collaborators /Shanghai Jiao Tong University.png
       - name: CUHK-SZ
         img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen.png'
-      - name: Oxford
-        img: /uploads/collaborators /University_of_Oxford.png
       - name: UoTokyo
         img: /uploads/collaborators /The_University_of_Tokyo.png
       - name: MBZUAI
@@ -253,16 +257,12 @@ blocks:
         img: /uploads/collaborators /University of Auckland.png
       - name: NTU
         img: /uploads/collaborators /Nanyang_Technological_University.png
-      - name: UniMelb
-        img: /uploads/collaborators /The_University_of_Melbourne.png
-      - name: SMU
-        img: /uploads/collaborators /Singapore_Management_University.png
       - name: HKUST
         img: >-
           /uploads/collaborators
           /Hong_Kong_University_of_Science_and_Technology.png
       - name: CUHK
-        img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen.png'
+        img: /uploads/collaborators /The_Chinese_University_of_Hong_Kong.png
       - name: ByteDance
         img: /uploads/collaborators /ByteDance.svg.png
     _template: partners
