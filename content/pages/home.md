@@ -211,6 +211,8 @@ blocks:
   - titleen: Collaborating Institutions
     titlezh: 合作单位
     items:
+      - name: UIUC
+        img: /uploads/collaborators /University_of_lllinois_Urbana-Champaign.png
       - name: UoWM
         img: /uploads/collaborators /University of Wisconsin - Madison.png
       - name: Duke
