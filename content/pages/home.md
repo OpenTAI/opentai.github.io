@@ -224,12 +224,12 @@ blocks:
     items:
       - name: Tsinghua
         img: /uploads/collaborators /Tsinghua_University.png
-      - name: SHJT
-        img: /uploads/collaborators /Shanghai Jiao Tong University.png
       - name: UniMelb
         img: /uploads/collaborators /The_University_of_Melbourne.png
       - name: SMU
         img: /uploads/collaborators /Singapore_Management_University.png
+      - name: SHJT
+        img: /uploads/collaborators /Shanghai Jiao Tong University.png
       - name: UIUC
         img: /uploads/collaborators /University_of_lllinois_Urbana-Champaign2.png
       - name: Duke
