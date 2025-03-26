@@ -219,8 +219,8 @@ blocks:
         img: >-
           /uploads/collaborators
           /Hong_Kong_University_of_Science_and_Technology.png
-      - name: Yale University
-        img: /uploads/partner4.png
+      - name: CUHK
+        img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen.png'
     _template: partners
   - titleen: Contributors
     titlezh: Contributors
