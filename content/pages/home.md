@@ -229,8 +229,8 @@ blocks:
         img: ''
       - name: Fudan University
         img: ''
-      - name: Fudan University
-        img: ''
+      - name: UoAuck
+        img: /uploads/collaborators /University of Auckland.png
       - name: NTU
         img: /uploads/collaborators /Nanyang_Technological_University.png
       - name: UniMelb
