@@ -211,8 +211,10 @@ blocks:
   - titleen: Collaborating Institutions
     titlezh: 合作单位
     items:
-      - name: Fudan University
-        img: ''
+      - name: CISPA
+        img: >-
+          /uploads/collaborators /CISPA Helmholtz Center for Information
+          Security.png
       - name: Virginia Tech
         img: /uploads/collaborators /Virginia Tech logo.png
       - name: Tsinghua
