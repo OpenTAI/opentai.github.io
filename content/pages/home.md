@@ -42,11 +42,12 @@ blocks:
         timeen: 2024 March 20
         img: /uploads/latestUpdates2.png
     _template: updates
-  - title: Our Mission
+  - title: Advancing Trustworthy AI Through Open Collaboration
     body: >
-      OpenTAI is an open-source research platform where global communities
-      collaborate to advance Trustworthy AI – developing safe, equitable, and
-      transformative AI for humanity's benefit.
+      OpenTAI is an open platform where researchers collaborate to accelerate
+      practical Trustworthy AI solutions. We prioritize tools, datasets, and
+      platforms over papers, bridging research with real-world impact to foster
+      ethical, robust, and beneficial AI.
     _template: content
   - titleen: Research
     titlezh: Research
@@ -227,7 +228,7 @@ blocks:
       - name: SMU
         img: /uploads/collaborators /Singapore_Management_University.png
       - name: UIUC
-        img: /uploads/collaborators /University_of_lllinois_Urbana-Champaign.png
+        img: /uploads/collaborators /University_of_lllinois_Urbana-Champaign2.png
       - name: Duke
         img: /uploads/collaborators /Duke_University_logo.svg.png
       - name: Oxford
