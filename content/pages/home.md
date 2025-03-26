@@ -217,10 +217,10 @@ blocks:
         img: ''
       - name: Fudan University
         img: ''
-      - name: Fudan University
-        img: ''
-      - name: Fudan University
-        img: ''
+      - name: SHJT
+        img: /uploads/collaborators /Shanghai Jiao Tong University.png
+      - name: CUHK-SZ
+        img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen.png'
       - name: Oxford
         img: /uploads/collaborators /University_of_Oxford.png
       - name: UoTokyo
