@@ -245,7 +245,7 @@ export const toolsBlockSchema = {
                 label: item?.tagName,
               };
             },
-            defaultItem: { ...iconSchema },
+            defaultItem: { img: "/uploads/tag1.png" },
           },
           fields: [
             {
