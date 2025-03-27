@@ -119,7 +119,6 @@ blocks:
         link: 'https://opentai.org/VisionSafety'
         benchMarksImg: /uploads/vision icon.png
         tags:
-          - tagName: LLM
           - tagName: vision
             bgColor: '#3F53CD'
           - tagName: adversarial
