@@ -172,7 +172,7 @@ blocks:
           evaluations.
         subTitle: ' Vision | Adversarial'
         link: 'https://github.com/treeman2000/CC1M-Adv-CF'
-        datasetsBackground: /uploads/cc1m adv 2.jpg
+        datasetsBackground: /uploads/未标题-1.jpg
       - datasetsName: AdvT-shirt-1K
         desc: >-
           A physical-world adversarial T-shirt dataset for adversarial
