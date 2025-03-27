@@ -7,7 +7,7 @@ blocks:
     viewMorezh: 了解更多 >
     updates:
       - titleen: Releasing Large Model Safety Survey
-        subtitleen: '#Language'
+        subtitleen: '#Survey'
         contenten: >-
           Our latest survey "Safety at Scale: A Comprehensive Survey of Large
           Model Safety" systematically analyzes safety threats facing today's
@@ -17,7 +17,7 @@ blocks:
           collaborative efforts to ensure trustworthy AI development.
         timeen: '2025 Feb 2 '
         href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
-        img: /uploads/safetysurvey.png
+        img: /uploads/safetysurvey.jpg
       - titleen: Introducing the VisionSafety Platform
         subtitleen: '#Vision'
         contenten: >-
@@ -42,29 +42,19 @@ blocks:
         timeen: 2024 March 20
         img: /uploads/latestUpdates2.png
     _template: updates
-  - title: Our Mission
+  - title: Advancing Trustworthy AI Through Open Collaboration
     body: >
-      OpenTAI is an open-source research platform where global communities
-      collaborate to advance Trustworthy AI – developing safe, equitable, and
-      transformative AI for humanity's benefit.
+      OpenTAI is an open platform where researchers collaborate to accelerate
+      practical Trustworthy AI solutions. We prioritize tools, benchmarks, and
+      platforms over papers, bridging research with real-world impact.
+
+
+      > We welcome all researchers to promote their Trustworthy AI work on this
+      platform. Free of charge, forever.
     _template: content
   - titleen: Research
     titlezh: Research
     items:
-      - projectName: Multimodal Jailbreak Defense
-        projectDescription: >-
-          Leveraging reinforcement learning to train a defensive suffix
-          generator to safeguard VLMs against multimodal jailbreak inputs.
-        projectReadMore: Learn More >
-        link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
-        projectIcon: /uploads/projectIcon1.png
-      - projectName: Multimodal Jailbreak Attack
-        projectDescription: >-
-          Exploring text-image dual optimization to craft more powerful
-          white-box jailbreak attacks against vision-language models.
-        projectReadMore: Learn More >
-        link: 'https://github.com/roywang021/UMK'
-        projectIcon: /uploads/projectIcon1.png
       - projectName: Red Teaming VLMs
         projectDescription: >-
           Jailbreaking VLMs using themselves, with the assistance of
@@ -72,12 +62,19 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://github.com/roywang021/IDEATOR'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Backdoor Data Detection
+      - projectName: LLM Auditing
         projectDescription: >-
-          Developing simple but effective backdoor data detection and filtering
-          methods for real-world large-scale datasets.
+          Leveraging reinforcement learning with curiosity reward to black-box
+          audit commercial LLMs
         projectReadMore: Learn More >
-        link: 'https://hanxunh.github.io/Detect-CLIP-Backdoor-Samples/'
+        link: 'https://github.com/x-zheng16/CALM'
+        projectIcon: /uploads/projectIcon1.png
+      - projectName: Multimodal Jailbreak Defense
+        projectDescription: >-
+          Leveraging reinforcement learning to train a defensive suffix
+          generator to safeguard VLMs against multimodal jailbreak inputs.
+        projectReadMore: Learn More >
+        link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
         projectIcon: /uploads/projectIcon1.png
       - projectName: Fairness Benchmark
         projectDescription: >-
@@ -87,12 +84,26 @@ blocks:
         projectReadMore: Learn More >
         link: ''
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Auto Safety Arena
+      - projectName: Embodied Safety
         projectDescription: >-
-          Building an open platform for automated safety evaluation of LLMs
-          against themselves.
+          Building an open platform for scenario based safety evaluation of
+          embodied agents.
         projectReadMore: Learn More >
         link: ''
+        projectIcon: /uploads/projectIcon1.png
+      - projectName: Detecting Backdoors in Real-world Datasets
+        projectDescription: >-
+          Developing simple but effective backdoor data detection and filtering
+          methods for real-world large-scale datasets.
+        projectReadMore: Learn More >
+        link: 'https://hanxunh.github.io/Detect-CLIP-Backdoor-Samples/'
+        projectIcon: /uploads/projectIcon1.png
+      - projectName: Multimodal Jailbreak Attack
+        projectDescription: >-
+          Exploring text-image dual optimization to craft more powerful
+          white-box jailbreak attacks against vision-language models.
+        projectReadMore: Learn More >
+        link: 'https://github.com/roywang021/UMK'
         projectIcon: /uploads/projectIcon1.png
     _template: project
   - titleen: Benchmarks
@@ -153,15 +164,15 @@ blocks:
       - datasetsName: VLBreakBench
         desc: A multimodal jailbreak dataset for multimodal large language models.
         subTitle: Multimodal | Jailbreak
-        link: 'https://github.com/roywang021/IDEATOR'
-        datasetsBackground: /uploads/datasets2.png
+        link: 'https://roywang021.github.io/VLBreakBench/'
+        datasetsBackground: /uploads/VLBreakBench.png
       - datasetsName: CC1M-Adv-C/F
         desc: >-
           Two million-scale adversarial image datasets for large-scale
           evaluations.
         subTitle: ' Vision | Adversarial'
         link: 'https://github.com/treeman2000/CC1M-Adv-CF'
-        datasetsBackground: /uploads/cc1m adv.png
+        datasetsBackground: /uploads/cc1m adv 2.jpg
       - datasetsName: AdvT-shirt-1K
         desc: >-
           A physical-world adversarial T-shirt dataset for adversarial
@@ -173,7 +184,7 @@ blocks:
         desc: 'A dataset of 7,314 face sequences from 707 deepfake videos. '
         subTitle: Deepfake
         link: 'https://github.com/OpenTAI/wild-deepfake'
-        datasetsBackground: /uploads/wilddeepfake.png
+        datasetsBackground: /uploads/wilddeepfake.jpg
     _template: datasets
   - titleen: Tools
     titlezh: Tools
@@ -196,7 +207,7 @@ blocks:
           attacks and defenses for vision models.
         learnMore: Learn More >
         link: 'https://github.com/OpenTAI/taiadv'
-        img: /uploads/BenchMarks2.png
+        img: /uploads/taiadv.vision.png
         tagsImage: []
       - name: BlackdoorVLM
         description: >-
@@ -211,39 +222,60 @@ blocks:
   - titleen: Collaborating Institutions
     titlezh: 合作单位
     items:
-      - name: Fudan University
-        img: /uploads/partner1.png
-      - name: Peking University
-        img: /uploads/partner2.png
-      - name: Harvard University
-        img: /uploads/partner3.png
-      - name: Yale University
-        img: /uploads/partner4.png
+      - name: UniMelb
+        img: /uploads/collaborators /The_University_of_Melbourne.png
+      - name: Tsinghua
+        img: /uploads/collaborators /Tsinghua_University.png
+      - name: SMU
+        img: /uploads/collaborators /Singapore_Management_University.png
+      - name: UIUC
+        img: /uploads/collaborators /University_of_lllinois_Urbana-Champaign2.png
+      - name: Duke
+        img: /uploads/collaborators /Duke_University2.png
+      - name: SHJT
+        img: /uploads/collaborators /Shanghai Jiao Tong University.png
+      - name: Oxford
+        img: /uploads/collaborators /University_of_Oxford.png
+      - name: Purdue
+        img: /uploads/collaborators /Purdue_University2.png
+      - name: NTU
+        img: /uploads/collaborators /Nanyang_Technological_University.png
+      - name: UYSD
+        img: /uploads/collaborators /The_University_of_Sydney.png
+      - name: UoM Amherst
+        img: /uploads/collaborators /University of Massachusetts Amherst.png
+      - name: UC Santa Cruz
+        img: '/uploads/collaborators /University of California, Santa Cruz.png'
+      - name: ByteDance
+        img: /uploads/collaborators /ByteDance2.png
+      - name: UoWM
+        img: /uploads/collaborators /University of Wisconsin - Madison.png
+      - name: UoAuck
+        img: /uploads/collaborators /University of Auckland.png
+      - name: CISPA
+        img: >-
+          /uploads/collaborators /CISPA Helmholtz Center for Information
+          Security2.png
+      - name: CUHK
+        img: /uploads/collaborators /The_Chinese_University_of_Hong_Kong2.png
+      - name: Virginia Tech
+        img: /uploads/collaborators /Virginia Tech logo.png
+      - name: Sea AI Lab
+        img: /uploads/collaborators /sea_AI_lab.png
+      - name: RIKEN
+        img: /uploads/collaborators /RIKEN.png
+      - name: CUHK-SZ
+        img: '/uploads/collaborators /Chinese University of Hong Kong, Shenzhen2.png'
+      - name: UoTokyo
+        img: /uploads/collaborators /The_University_of_Tokyo.png
+      - name: Griffith
+        img: /uploads/collaborators /Griffith University New.png
+      - name: HKUST
+        img: >-
+          /uploads/collaborators
+          /Hong_Kong_University_of_Science_and_Technology.png
+      - name: MBZUAI
+        img: /uploads/collaborators /MBZUAI.png
     _template: partners
-  - titleen: Contributors
-    titlezh: Contributors
-    items:
-      - name: Yu-Gang Jiang
-      - name: Xingjun Ma
-      - name: Zuxuan Wu
-      - name: Hanxun Huang
-      - name: Yige Li
-      - name: Xiang Zheng
-      - name: Jiaming Zhang
-      - name: Weijie Zheng
-      - name: Yong Xie
-      - name: Yifeng Gao
-      - name: Bojia Zi
-      - name: Zhixiang Wang
-      - name: Xin Wang
-      - name: Yunhao Chen
-      - name: Henyuan Xu
-      - name: Yifan Ding
-      - name: Kun Zhai
-      - name: Ruofan Wang
-      - name: Juncheng Li
-      - name: Teng Li
-      - name: Zhenyun Yin
-    _template: contributors
 ---
 
