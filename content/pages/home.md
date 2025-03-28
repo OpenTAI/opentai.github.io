@@ -105,7 +105,7 @@ blocks:
   - titleen: Benchmarks
     titlezh: 安全评测基准
     items:
-      - benchMarkName: VisionSafety
+      - benchMarkName: Vision Safety Bench
         description: >-
           Our open-source platform provides datasets, algorithms, and tools for
           scalable adversarial evaluation of vision models. Now available for
@@ -121,12 +121,12 @@ blocks:
             bgColor: '#9013FE'
           - tagName: million-scale
             bgColor: '#417505'
-      - benchMarkName: Reward Model Benchmark
+      - benchMarkName: Reward Model Bench
         description: >-
           A reward model benchmark for evaluating the effectiveness of alignment
           in large language models. The benchmark consists of 49 real-world
           scenarios and both pairwise and Best-of-N (BoN) evaluations.
-        subTitle: 'An Automated Safety Evaluation Platform for Language Models '
+        subTitle: A Reward Model Benchmark for LLM Alignment Evaluation
         learnMore: Learn More >
         link: 'https://github.com/Zhou-Zoey/RMB-Reward-Model-Benchmark'
         benchMarksImg: /uploads/language icon.png
@@ -137,12 +137,8 @@ blocks:
             bgColor: '#2C65A8'
           - tagName: automatic
             bgColor: '#417505'
-      - benchMarkName: MultimodalSafety
-        description: >-
-          An open platform for automated safety evaluation of vision-language
-          models, featuring black-box testing and adversarial frameworks to
-          assess vulnerabilities against text, image, and multimodal jailbreak
-          prompts. Coming soon—stay tuned!
+      - benchMarkName: VLBreak Bench
+        description: A Jailbreak Safety Evaluation Platform for Vision-Language Models
         subTitle: A safety evaluation platform for vision-language models
         learnMore: Learn More >
         benchMarksImg: /uploads/vision language icon.png
