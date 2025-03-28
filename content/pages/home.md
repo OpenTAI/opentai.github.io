@@ -39,7 +39,7 @@ blocks:
           initiative seeks not only to build safe and secure multimodal models
           but also to develop techniques that prevent these systems from being
           misused or turning harmful.
-        timeen: 2024 Aug 17
+        timeen: 'Sep 1, 2024'
         img: /uploads/latestUpdates2.png
     _template: updates
   - title: Advancing Trustworthy AI Through Open Collaboration
