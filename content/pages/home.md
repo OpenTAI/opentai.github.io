@@ -188,8 +188,8 @@ blocks:
         tagsImage:
           - img: /uploads/tag1.png
           - img: /uploads/tag2.png
-          - img: /uploads/tag3.png
           - img: /uploads/tag4.png
+          - img: /uploads/tag3.png
       - name: taiadv.vision
         description: >-
           An open-source toolkit implementing state-of-the-art adversarial
@@ -197,7 +197,8 @@ blocks:
         learnMore: Learn More >
         link: 'https://github.com/OpenTAI/taiadv'
         img: /uploads/taiadv.vision.png
-        tagsImage: []
+        tagsImage:
+          - img: /uploads/Python.png
       - name: TextFlint
         description: >-
           A multilingual robustness evaluation toolkit for natural language
