@@ -138,9 +138,14 @@ blocks:
           - tagName: automatic
             bgColor: '#417505'
       - benchMarkName: VLBreak Bench
-        description: A Jailbreak Safety Evaluation Platform for Vision-Language Models
-        subTitle: A safety evaluation platform for vision-language models
+        description: >-
+          VLBreakBench evaluates VLMs through two tiers: a base set (1 jailbreak
+          pair per query) and a challenge set (3 pairs per query), covering 12
+          safety topics and 46 subcategories (916 harmful queries), totaling
+          3,654 jailbreak samples.
+        subTitle: A Multimodal Jailbreak Benchmark for Vision-Language Models
         learnMore: Learn More >
+        link: 'https://roywang021.github.io/VLBreakBench/'
         benchMarksImg: /uploads/vision language icon.png
         tags:
           - tagName: multimodal
