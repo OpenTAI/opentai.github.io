@@ -198,6 +198,7 @@ blocks:
         link: 'https://github.com/OpenTAI/taiadv'
         img: /uploads/taiadv.vision.png
         tagsImage:
+          - img: /uploads/MIT.png
           - img: /uploads/Python.png
       - name: TextFlint
         description: >-
