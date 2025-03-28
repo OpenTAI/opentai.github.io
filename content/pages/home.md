@@ -205,12 +205,13 @@ blocks:
         link: 'https://github.com/OpenTAI/taiadv'
         img: /uploads/taiadv.vision.png
         tagsImage: []
-      - name: BlackdoorVLM
+      - name: TextFlint
         description: >-
-          A toolkit (and benchmark) for backdoor attacks on vision-language
-          models. Coming soon—stay tuned!
+          A multilingual robustness evaluation toolkit for natural language
+          processing. 
         learnMore: Learn More >
-        img: /uploads/backdoorVLM.png
+        link: 'https://github.com/textflint/textflint'
+        img: /uploads/textflint-removebg.png
         tagsImage:
           - img: /uploads/tag4.png
           - img: /uploads/tag3.png
