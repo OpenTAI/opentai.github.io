@@ -209,6 +209,7 @@ blocks:
         link: 'https://github.com/textflint/textflint'
         img: /uploads/textflint-removebg.png
         tagsImage:
+          - img: /uploads/GitHubButton.png
           - img: /uploads/arxiv.png
           - img: /uploads/tag4.png
           - img: /uploads/MIT.png
