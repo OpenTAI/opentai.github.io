@@ -27,7 +27,7 @@ blocks:
           adversarial attacks and million-scale adversarial datasets. This
           platform represents a major leap forward in securing vision-based AI
           systems against emerging threats.
-        timeen: 2024 Dec 4
+        timeen: 2024 Dec 24
         href: 'https://opentai.org/VisionSafety'
         img: /uploads/visionsafety.png
       - titleen: Launching the Multimodal Safety Project
