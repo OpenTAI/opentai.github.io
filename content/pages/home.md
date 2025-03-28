@@ -61,14 +61,14 @@ blocks:
       - projectName: LLM Auditing
         projectDescription: >-
           Leveraging reinforcement learning with curiosity reward to black-box
-          audit commercial LLMs
+          audit commercial large language models.
         projectReadMore: Learn More >
         link: 'https://github.com/x-zheng16/CALM'
         projectIcon: /uploads/projectIcon1.png
       - projectName: Multimodal Jailbreak Defense
         projectDescription: >-
-          Leveraging reinforcement learning to train a defensive suffix
-          generator to safeguard VLMs against multimodal jailbreak inputs.
+          Leveraging reinforcement learning to train a defense model to
+          safeguard large models against multimodal jailbreaks.
         projectReadMore: Learn More >
         link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
         projectIcon: /uploads/projectIcon1.png
