@@ -15,7 +15,7 @@ blocks:
           models. Our findings highlight the current landscape of AI safety
           research and the urgent need for robust safety measures and
           collaborative efforts to ensure trustworthy AI development.
-        timeen: '2025 Feb 2 '
+        timeen: 2025 Feb 13
         href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
         img: /uploads/safetysurvey.jpg
       - titleen: Introducing the VisionSafety Platform
