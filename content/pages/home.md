@@ -133,9 +133,9 @@ blocks:
         tags:
           - tagName: LLM
             bgColor: '#F5A623'
-          - tagName: alignment
+          - tagName: reward model
             bgColor: '#2C65A8'
-          - tagName: automatic
+          - tagName: alignment
             bgColor: '#417505'
       - benchMarkName: VLBreakBench
         description: >-
