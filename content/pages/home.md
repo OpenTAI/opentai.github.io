@@ -149,11 +149,11 @@ blocks:
         benchMarksImg: /uploads/vision language icon.png
         tags:
           - tagName: multimodal
-            bgColor: '#8B572A'
-          - tagName: jailbreak
             bgColor: '#9013FE'
-          - tagName: automatic
-            bgColor: '#417505'
+          - tagName: jailbreak
+            bgColor: '#D0021B'
+          - tagName: safety
+            bgColor: '#4A4A4A'
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
