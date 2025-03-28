@@ -216,7 +216,7 @@ blocks:
           - img: /uploads/tag4.png
           - img: /uploads/tag3.png
     _template: tools
-  - titleen: Collaborating Institutions
+  - titleen: Institutions of Collaborators
     titlezh: 合作单位
     items:
       - name: UniMelb
