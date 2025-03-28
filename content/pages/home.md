@@ -75,7 +75,7 @@ blocks:
       - projectName: Super Attacks
         projectDescription: >-
           Exploring large-scale pre-training or surrogate scaling to generate
-          scalable and highly-transferable attacks.
+          scalable, targeted, and highly-transferable attacks.
         projectReadMore: Learn More >
         link: 'https://jiamingzhang94.github.io/anyattack/'
         projectIcon: /uploads/projectIcon1.png
