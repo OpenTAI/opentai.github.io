@@ -72,7 +72,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Super Attacks
+      - projectName: Super Adversarial Attacks
         projectDescription: >-
           Exploring large-scale pre-training or surrogate scaling to generate
           scalable, targeted, and highly-transferable attacks.
