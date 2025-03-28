@@ -137,7 +137,7 @@ blocks:
             bgColor: '#2C65A8'
           - tagName: automatic
             bgColor: '#417505'
-      - benchMarkName: VLBreak Bench
+      - benchMarkName: VLBreakBench
         description: >-
           VLBreakBench evaluates VLMs through two tiers: a base set (1 jailbreak
           pair per query) and a challenge set (3 pairs per query), covering 12
