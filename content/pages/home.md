@@ -213,8 +213,9 @@ blocks:
         link: 'https://github.com/textflint/textflint'
         img: /uploads/textflint-removebg.png
         tagsImage:
+          - img: /uploads/tag1.png
           - img: /uploads/tag4.png
-          - img: /uploads/tag3.png
+          - img: /uploads/arxiv.png
     _template: tools
   - titleen: Institutions of Our Collaborators
     titlezh: 合作单位
