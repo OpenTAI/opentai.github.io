@@ -131,7 +131,7 @@ blocks:
         link: 'https://github.com/Zhou-Zoey/RMB-Reward-Model-Benchmark'
         benchMarksImg: /uploads/language icon.png
         tags:
-          - tagName: language
+          - tagName: LLM
             bgColor: '#F5A623'
           - tagName: alignment
             bgColor: '#2C65A8'
