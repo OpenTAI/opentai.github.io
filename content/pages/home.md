@@ -53,8 +53,8 @@ blocks:
     items:
       - projectName: Red Teaming VLMs
         projectDescription: >-
-          Jailbreaking VLMs using themselves, with the assistance of
-          text-to-image diffusion models.
+          Jailbreaking vision-language models using themselves, with the
+          assistance of text-to-image diffusion models.
         projectReadMore: Learn More >
         link: 'https://github.com/roywang021/IDEATOR'
         projectIcon: /uploads/projectIcon1.png
