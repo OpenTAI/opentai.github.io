@@ -198,8 +198,9 @@ blocks:
         link: 'https://github.com/OpenTAI/taiadv'
         img: /uploads/taiadv.vision.png
         tagsImage:
-          - img: /uploads/MIT.png
+          - img: /uploads/GitHubButton.png
           - img: /uploads/Python.png
+          - img: /uploads/MIT.png
       - name: TextFlint
         description: >-
           A multilingual robustness evaluation toolkit for natural language
