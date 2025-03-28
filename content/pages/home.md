@@ -121,19 +121,19 @@ blocks:
             bgColor: '#9013FE'
           - tagName: million-scale
             bgColor: '#417505'
-      - benchMarkName: LanguageSafety
+      - benchMarkName: Reward Model Benchmark
         description: >-
-          Working on an open platform for comprehensive LLM safety evaluation.
-          Featuring: (1) Configurable human intervention templates; (2)
-          Automated adversarial testing where LLMs debate to uncover hidden
-          vulnerabilities. Coming soon—stay tuned!
+          A reward model benchmark for evaluating the effectiveness of alignment
+          in large language models. The benchmark consists of 49 real-world
+          scenarios and both pairwise and Best-of-N (BoN) evaluations.
         subTitle: 'An Automated Safety Evaluation Platform for Language Models '
         learnMore: Learn More >
+        link: 'https://github.com/Zhou-Zoey/RMB-Reward-Model-Benchmark'
         benchMarksImg: /uploads/language icon.png
         tags:
           - tagName: language
             bgColor: '#F5A623'
-          - tagName: safety
+          - tagName: alignment
             bgColor: '#2C65A8'
           - tagName: automatic
             bgColor: '#417505'
