@@ -80,13 +80,6 @@ blocks:
         projectReadMore: Learn More >
         link: ''
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Embodied Safety
-        projectDescription: >-
-          Building an open platform for scenario based safety evaluation of
-          embodied agents.
-        projectReadMore: Learn More >
-        link: ''
-        projectIcon: /uploads/projectIcon1.png
       - projectName: Detecting Backdoors in Real-world Datasets
         projectDescription: >-
           Developing simple but effective backdoor data detection and filtering
