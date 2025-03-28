@@ -79,7 +79,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://jiamingzhang94.github.io/anyattack/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Detecting Backdoors in Real-world Datasets
+      - projectName: Real-world Backdoor Detection
         projectDescription: >-
           Developing simple but effective backdoor data detection and filtering
           methods for real-world large-scale datasets.
