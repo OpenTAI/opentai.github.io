@@ -72,13 +72,12 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Fairness Benchmark
+      - projectName: Super Attacks
         projectDescription: >-
-          Developing a comprehensive scenario-based benchmark for fairness
-          evaluations across multilingual, multicultural, and multimodal
-          contexts.
+          Exploring large-scale pre-training or surrogate scaling to generate
+          scalable and highly-transferable attacks.
         projectReadMore: Learn More >
-        link: ''
+        link: 'https://jiamingzhang94.github.io/anyattack/'
         projectIcon: /uploads/projectIcon1.png
       - projectName: Detecting Backdoors in Real-world Datasets
         projectDescription: >-
