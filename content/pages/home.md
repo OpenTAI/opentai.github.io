@@ -15,7 +15,7 @@ blocks:
           models. Our findings highlight the current landscape of AI safety
           research and the urgent need for robust safety measures and
           collaborative efforts to ensure trustworthy AI development.
-        timeen: 2025 Feb 13
+        timeen: 'Feb 13, 2025'
         href: 'https://github.com/xingjunm/Awesome-Large-Model-Safety'
         img: /uploads/safetysurvey.jpg
       - titleen: Introducing the VisionSafety Platform
@@ -27,7 +27,7 @@ blocks:
           adversarial attacks and million-scale adversarial datasets. This
           platform represents a major leap forward in securing vision-based AI
           systems against emerging threats.
-        timeen: 2024 Dec 24
+        timeen: 'Dec 24, 2024'
         href: 'https://opentai.org/VisionSafety'
         img: /uploads/visionsafety.png
       - titleen: Launching the Multimodal Safety Project
