@@ -13,8 +13,8 @@ blocks:
           Vision-Language-Action models, featuring 100 real-world tasks with
           natural language instructions. Designed to assess both action and
           language capabilities, it supports development of more robust AI
-          systems. Join us in advancing embodied AI research through this
-          community-driven initiative.
+          systems. Join us in advancing trustworthy Embodied AI research through
+          this community-driven initiative.
         img: latestUpdates1.png
       - titleen: Releasing Large Model Safety Survey
         subtitleen: '#Survey'
