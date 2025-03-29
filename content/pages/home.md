@@ -97,7 +97,7 @@ blocks:
   - titleen: Benchmarks
     titlezh: 安全评测基准
     items:
-      - benchMarkName: Vision Safety Bench
+      - benchMarkName: VisionSafety Bench
         description: >-
           Our open-source platform provides datasets, algorithms, and tools for
           scalable adversarial evaluation of vision models. Now available for
@@ -150,6 +150,11 @@ blocks:
   - titleen: Datasets
     titlezh: Datasets
     items:
+      - datasetsName: VLABench
+        desc: 'VLABench is a comprehensive, open-source benchmark for VLA models.'
+        subTitle: Vision-Language-Action
+        link: 'https://vlabench.github.io/'
+        datasetsBackground: /uploads/VLABench.png
       - datasetsName: VLBreakBench
         desc: A multimodal jailbreak dataset for multimodal large language models.
         subTitle: Multimodal | Jailbreak
