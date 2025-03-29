@@ -130,23 +130,6 @@ blocks:
             bgColor: '#2C65A8'
           - tagName: alignment
             bgColor: '#417505'
-      - benchMarkName: VLABench
-        description: >-
-          VLABench is a comprehensive, open-source benchmark designed to
-          evaluate VLA models on universal language-conditioned manipulation
-          tasks through diverse, knowledge-driven challenges requiring
-          multi-step reasoning and real-world generalization.
-        subTitle: A Comprehensive Bechmark for VLA models
-        learnMore: Learn More >
-        link: 'https://vlabench.github.io/'
-        benchMarksImg: /uploads/vision language icon.png
-        tags:
-          - tagName: Embodied AI
-            bgColor: '#3D64DC'
-          - tagName: Manipulation
-            bgColor: '#A4D517'
-          - tagName: VLA
-            bgColor: '#AA67DC'
       - benchMarkName: VLBreakBench
         description: >-
           VLBreakBench evaluates VLMs through two tiers: a base set (1 jailbreak
@@ -164,6 +147,23 @@ blocks:
             bgColor: '#D0021B'
           - tagName: safety
             bgColor: '#4A4A4A'
+      - benchMarkName: VLABench
+        description: >-
+          VLABench is a comprehensive, open-source benchmark designed to
+          evaluate VLA models on universal language-conditioned manipulation
+          tasks through diverse, knowledge-driven challenges requiring
+          multi-step reasoning and real-world generalization.
+        subTitle: A Comprehensive Bechmark for VLA models
+        learnMore: Learn More >
+        link: 'https://vlabench.github.io/'
+        benchMarksImg: /uploads/vision language icon.png
+        tags:
+          - tagName: Embodied AI
+            bgColor: '#3D64DC'
+          - tagName: Manipulation
+            bgColor: '#A4D517'
+          - tagName: VLA
+            bgColor: '#AA67DC'
     _template: benchMarks
   - titleen: Datasets
     titlezh: Datasets
