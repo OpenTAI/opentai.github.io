@@ -161,11 +161,11 @@ blocks:
   - titleen: Datasets
     titlezh: Datasets
     items:
-      - datasetsName: VLABench
-        desc: 'VLABench is a comprehensive, open-source benchmark for VLA models.'
-        subTitle: Vision-Language-Action
-        link: 'https://vlabench.github.io/'
-        datasetsBackground: /uploads/VLABench.png
+      - datasetsName: Human2Robot
+        desc: VR-collected human-robot aligned demonstration episodes.
+        subTitle: Embodied AI
+        link: 'https://arxiv.org/abs/2502.16587'
+        datasetsBackground: /uploads/h2r dataset.jpg
       - datasetsName: VLBreakBench
         desc: A multimodal jailbreak dataset for multimodal large language models.
         subTitle: Multimodal | Jailbreak
