@@ -113,7 +113,7 @@ blocks:
             bgColor: '#9013FE'
           - tagName: million-scale
             bgColor: '#417505'
-      - benchMarkName: Reward Model Bench
+      - benchMarkName: RewardModel Bench
         description: >-
           A reward model benchmark for evaluating the effectiveness of alignment
           in large language models. The benchmark consists of 49 real-world
