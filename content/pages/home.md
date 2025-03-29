@@ -15,7 +15,7 @@ blocks:
           language capabilities, it supports development of more robust AI
           systems. Join us in advancing trustworthy Embodied AI research through
           this community-driven initiative.
-        timeen: 'Mar 1st, 2025'
+        timeen: 'Mar 1, 2025'
         href: 'https://vlabench.github.io/'
         img: /uploads/latestUpdates3.png
       - titleen: Releasing Large Model Safety Survey
