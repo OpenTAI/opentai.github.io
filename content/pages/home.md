@@ -52,7 +52,7 @@ blocks:
   - titleen: Research
     titlezh: Research
     items:
-      - projectName: Red Teaming VLMs
+      - projectName: VLM Red Teaming
         projectDescription: >-
           Jailbreaking vision-language models using themselves, with the
           assistance of text-to-image diffusion models.
