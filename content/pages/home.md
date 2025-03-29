@@ -95,7 +95,7 @@ blocks:
         projectIcon: /uploads/projectIcon1.png
     _template: project
   - titleen: Benchmarks
-    titlezh: 安全评测基准
+    titlezh: 评测基准
     items:
       - benchMarkName: VLABench
         description: >-
