@@ -97,6 +97,17 @@ blocks:
   - titleen: Benchmarks
     titlezh: 安全评测基准
     items:
+      - benchMarkName: VLABench
+        description: >-
+          VLABench is a comprehensive, open-source benchmark designed to
+          evaluate VLA models on universal language-conditioned manipulation
+          tasks through diverse, knowledge-driven challenges requiring
+          multi-step reasoning and real-world generalization.
+        subTitle: A Comprehensive Bechmark for VLA models
+        learnMore: Learn More >
+        link: 'https://vlabench.github.io/'
+        benchMarksImg: /uploads/VLABench.png
+        tags: []
       - benchMarkName: VisionSafety Bench
         description: >-
           Our open-source platform provides datasets, algorithms, and tools for
