@@ -144,7 +144,7 @@ blocks:
           - tagName: Embodied AI
             bgColor: '#3D64DC'
           - tagName: Manipulation
-            bgColor: '#8917D5'
+            bgColor: '#A4D517'
       - benchMarkName: VLBreakBench
         description: >-
           VLBreakBench evaluates VLMs through two tiers: a base set (1 jailbreak
