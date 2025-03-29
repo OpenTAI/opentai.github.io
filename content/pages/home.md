@@ -142,7 +142,7 @@ blocks:
         benchMarksImg: /uploads/vision language icon.png
         tags:
           - tagName: Embodied AI
-            bgColor: ''
+            bgColor: '#3D64DC'
           - tagName: Manipulation
             bgColor: '#8917D5'
       - benchMarkName: VLBreakBench
