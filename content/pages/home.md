@@ -166,11 +166,6 @@ blocks:
         subTitle: Embodied AI
         link: 'https://arxiv.org/abs/2502.16587'
         datasetsBackground: /uploads/h2r dataset.jpg
-      - datasetsName: VLBreakBench
-        desc: A multimodal jailbreak dataset for multimodal large language models.
-        subTitle: Multimodal | Jailbreak
-        link: 'https://roywang021.github.io/VLBreakBench/'
-        datasetsBackground: /uploads/VLBreakBench.png
       - datasetsName: CC1M-Adv-C/F
         desc: >-
           Two million-scale adversarial image datasets for large-scale
@@ -190,6 +185,11 @@ blocks:
         subTitle: Deepfake
         link: 'https://github.com/OpenTAI/wild-deepfake'
         datasetsBackground: /uploads/wilddeepfake.jpg
+      - datasetsName: VLBreakBench
+        desc: A multimodal jailbreak dataset for multimodal large language models.
+        subTitle: Multimodal | Jailbreak
+        link: 'https://roywang021.github.io/VLBreakBench/'
+        datasetsBackground: /uploads/VLBreakBench.png
     _template: datasets
   - titleen: Tools
     titlezh: Tools
