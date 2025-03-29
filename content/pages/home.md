@@ -42,17 +42,6 @@ blocks:
         timeen: 'Dec 24, 2024'
         href: 'https://opentai.org/VisionSafety'
         img: /uploads/visionsafety.png
-      - titleen: Launching the Multimodal Safety Project
-        subtitleen: '#Multimodal'
-        contenten: >-
-          The rise of multimodal AI presents significant new risks. In response,
-          we are launching the Multimodal Safety Research Project, which aims to
-          drive community-led research on securing multimodal AI systems. This
-          initiative seeks not only to build safe and secure multimodal models
-          but also to develop techniques that prevent these systems from being
-          misused or turning harmful.
-        timeen: 'Sep 1, 2024'
-        img: /uploads/latestUpdates2.png
     _template: updates
   - title: Advancing Trustworthy AI Through Open Collaboration
     body: >
@@ -84,7 +73,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Super Adversarial Attacks
+      - projectName: AnyAttacks
         projectDescription: >-
           Exploring large-scale pre-training or surrogate scaling to generate
           scalable, targeted, and highly-transferable attacks.
