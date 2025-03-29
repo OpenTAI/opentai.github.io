@@ -240,6 +240,8 @@ blocks:
   - titleen: Institutions of Our Collaborators
     titlezh: 合作单位
     items:
+      - name: Fudan University
+        img: /uploads/collaborators /Fudan_University.png
       - name: UniMelb
         img: /uploads/collaborators /The_University_of_Melbourne.png
       - name: Tsinghua
