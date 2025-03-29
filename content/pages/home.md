@@ -168,11 +168,6 @@ blocks:
   - titleen: Datasets
     titlezh: Datasets
     items:
-      - datasetsName: Human2Robot
-        desc: VR-collected human-robot aligned demonstration episodes.
-        subTitle: Embodied AI
-        link: 'https://arxiv.org/abs/2502.16587'
-        datasetsBackground: /uploads/h2r dataset.jpg
       - datasetsName: CC1M-Adv-C/F
         desc: >-
           Two million-scale adversarial image datasets for large-scale
@@ -197,6 +192,11 @@ blocks:
         subTitle: Multimodal | Jailbreak
         link: 'https://roywang021.github.io/VLBreakBench/'
         datasetsBackground: /uploads/VLBreakBench.png
+      - datasetsName: Human2Robot
+        desc: VR-collected human-robot aligned demonstration episodes.
+        subTitle: Embodied AI
+        link: 'https://arxiv.org/abs/2502.16587'
+        datasetsBackground: /uploads/h2r dataset.jpg
     _template: datasets
   - titleen: Tools
     titlezh: Tools
@@ -266,8 +266,6 @@ blocks:
         img: /uploads/collaborators /University of Massachusetts Amherst.png
       - name: UC Santa Cruz
         img: '/uploads/collaborators /University of California, Santa Cruz.png'
-      - name: ByteDance
-        img: /uploads/collaborators /ByteDance2.png
       - name: UoWM
         img: /uploads/collaborators /University of Wisconsin - Madison.png
       - name: UoAuck
@@ -280,8 +278,6 @@ blocks:
         img: /uploads/collaborators /The_Chinese_University_of_Hong_Kong2.png
       - name: Virginia Tech
         img: /uploads/collaborators /Virginia Tech logo.png
-      - name: Sea AI Lab
-        img: /uploads/collaborators /sea_AI_lab.png
       - name: RIKEN
         img: /uploads/collaborators /RIKEN.png
       - name: CUHK-SZ
