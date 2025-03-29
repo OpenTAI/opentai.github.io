@@ -145,6 +145,8 @@ blocks:
             bgColor: '#3D64DC'
           - tagName: Manipulation
             bgColor: '#A4D517'
+          - tagName: VLA
+            bgColor: '#AA67DC'
       - benchMarkName: VLBreakBench
         description: >-
           VLBreakBench evaluates VLMs through two tiers: a base set (1 jailbreak
