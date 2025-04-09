@@ -160,6 +160,11 @@ blocks:
         subTitle: Vision | GenAI
         link: 'https://omnisvg.github.io/'
         datasetsBackground: /uploads/OmniSVG.jpg
+      - datasetsName: Human2Robot
+        desc: VR-collected human-robot aligned demonstration episodes.
+        subTitle: Embodied AI
+        link: 'https://arxiv.org/abs/2502.16587'
+        datasetsBackground: /uploads/h2r dataset.jpg
       - datasetsName: CC1M-Adv-C/F
         desc: >-
           Two million-scale adversarial image datasets for large-scale
@@ -174,21 +179,16 @@ blocks:
         subTitle: Vision | Physical Attack
         link: 'https://github.com/Wwangb/AdvT-shirt-1K'
         datasetsBackground: /uploads/advtshirt.jpeg
-      - datasetsName: WildDeepfake
-        desc: 'A dataset of 7,314 face sequences from 707 deepfake videos. '
-        subTitle: Deepfake
-        link: 'https://github.com/OpenTAI/wild-deepfake'
-        datasetsBackground: /uploads/wilddeepfake.jpg
       - datasetsName: VLBreakBench
         desc: A multimodal jailbreak dataset for multimodal large language models.
         subTitle: Multimodal | Jailbreak
         link: 'https://roywang021.github.io/VLBreakBench/'
         datasetsBackground: /uploads/VLBreakBench.png
-      - datasetsName: Human2Robot
-        desc: VR-collected human-robot aligned demonstration episodes.
-        subTitle: Embodied AI
-        link: 'https://arxiv.org/abs/2502.16587'
-        datasetsBackground: /uploads/h2r dataset.jpg
+      - datasetsName: WildDeepfake
+        desc: 'A dataset of 7,314 face sequences from 707 deepfake videos. '
+        subTitle: Deepfake
+        link: 'https://github.com/OpenTAI/wild-deepfake'
+        datasetsBackground: /uploads/wilddeepfake.jpg
     _template: datasets
   - titleen: Tools
     titlezh: Tools
