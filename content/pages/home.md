@@ -52,7 +52,7 @@ blocks:
   - titleen: Research
     titlezh: Research
     items:
-      - projectName: 'IDEATOR: Red Team VLM'
+      - projectName: 'IDEATOR: Red Team VLMs'
         projectDescription: >-
           Jailbreaking vision-language models using themselves, with the
           assistance of text-to-image diffusion models.
