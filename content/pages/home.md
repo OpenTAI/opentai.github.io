@@ -59,7 +59,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://github.com/roywang021/IDEATOR'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: LLM Auditing
+      - projectName: 'CALM: LLM Auditing'
         projectDescription: >-
           Leveraging reinforcement learning with curiosity reward to black-box
           audit commercial large language models.
@@ -73,14 +73,14 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://vinsonzyh.github.io/BlueSuffix-website.github.io/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: AnyAttack
+      - projectName: 'AnyAttack: Large-scale & Transferable Adv. Attack'
         projectDescription: >-
           Exploring large-scale pre-training or surrogate scaling to generate
           scalable, targeted, and highly-transferable attacks.
         projectReadMore: Learn More >
         link: 'https://jiamingzhang94.github.io/anyattack/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Real-world Backdoor Detection
+      - projectName: 'DAO: Backdoor Detection in CLIP'
         projectDescription: >-
           Developing simple but effective backdoor data detection and filtering
           methods for real-world large-scale datasets.
