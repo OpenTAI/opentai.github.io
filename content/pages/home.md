@@ -66,7 +66,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://github.com/x-zheng16/CALM'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: BlueSuffix
+      - projectName: 'BlueSuffix: RL-based Multimodal Jailbreak Defense'
         projectDescription: >-
           Leveraging reinforcement learning to train a defense model to
           safeguard large models against multimodal jailbreaks.
@@ -87,7 +87,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://hanxunh.github.io/Detect-CLIP-Backdoor-Samples/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Multimodal Jailbreak Attack
+      - projectName: 'UMK: Multimodal VLM Jailbreak'
         projectDescription: >-
           Exploring text-image dual optimization to craft more powerful
           white-box jailbreak attacks against vision-language models.
