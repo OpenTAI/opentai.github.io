@@ -151,6 +151,15 @@ blocks:
   - titleen: Datasets
     titlezh: Datasets
     items:
+      - datasetsName: OmniSVG-2M
+        desc: >-
+          A large-scale SVG dataset with 2M
+
+          SVG samples covering website icons, illustrations, graphic designs,
+          anime character.
+        subTitle: Vision | GenAI
+        link: 'https://omnisvg.github.io/'
+        datasetsBackground: /uploads/OmniSVG.jpg
       - datasetsName: CC1M-Adv-C/F
         desc: >-
           Two million-scale adversarial image datasets for large-scale
