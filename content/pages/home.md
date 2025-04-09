@@ -87,7 +87,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://hanxunh.github.io/Detect-CLIP-Backdoor-Samples/'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: 'UMK: Multimodal VLM Jailbreak'
+      - projectName: 'Universal Master Key (UMK): Multimodal Jailbreak Attack'
         projectDescription: >-
           Exploring text-image dual optimization to craft more powerful
           white-box jailbreak attacks against vision-language models.
