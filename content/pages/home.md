@@ -66,7 +66,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://github.com/x-zheng16/CALM'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: Multimodal Jailbreak Defense
+      - projectName: BlueSuffix
         projectDescription: >-
           Leveraging reinforcement learning to train a defense model to
           safeguard large models against multimodal jailbreaks.
