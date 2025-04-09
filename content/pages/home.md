@@ -159,7 +159,7 @@ blocks:
           anime character.
         subTitle: Vision | GenAI
         link: 'https://omnisvg.github.io/'
-        datasetsBackground: /uploads/OmniSVG-2M-2.jpg
+        datasetsBackground: /uploads/OmniSVG-2M-3.jpg
       - datasetsName: Human2Robot
         desc: VR-collected human-robot aligned demonstration episodes.
         subTitle: Embodied AI
