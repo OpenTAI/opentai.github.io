@@ -59,7 +59,7 @@ blocks:
         projectReadMore: Learn More >
         link: 'https://github.com/roywang021/IDEATOR'
         projectIcon: /uploads/projectIcon1.png
-      - projectName: 'CALM: LLM Auditing'
+      - projectName: 'CALM: RL-based LLM Auditing'
         projectDescription: >-
           Leveraging reinforcement learning with curiosity reward to black-box
           audit commercial large language models.
