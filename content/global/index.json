@@ -42,7 +42,7 @@
     "homeurl": "https://opentai.github.io/",
     "nav": [
       {
-        "href": "https://opentai.github.io/",
+        "href": "home",
         "label": "Home"
       },
       {
@@ -60,6 +60,10 @@
       {
         "href": "/#Tools",
         "label": "Tools"
+      },
+      {
+        "href": "mailto:xingjunma@fudan.edu.cn",
+        "label": "Contact Us"
       }
     ],
     "social": {
