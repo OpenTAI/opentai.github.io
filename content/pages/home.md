@@ -73,7 +73,7 @@ blocks:
           praising.But actual has painful explain born and pain no dislikes of
           praising.
         subTitle: DEEPFAKE
-        datasetsBackground: /uploads/DAVID-XR model.png
+        datasetsBackground: /uploads/datasets2.png
       - datasetsName: SAMA
         desc: >-
           SAMA is a multi-turn referential grounded
