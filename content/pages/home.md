@@ -188,10 +188,8 @@ blocks:
     titlezh: Datasets
     items:
       - datasetsName: DAVID-X
-        desc: >-
-          DAVID-X is a dataset of AI-generated videos with fine-grained,
-          defect-level temporal–spatial annotations and written rationales.
-        subTitle: A Fine-Grained Annotated Dataset of AI-Generated Videos
+        desc: AI-generated videos with fine-grained defect annotations.
+        subTitle: AI-Generated Content Detection
         link: ''
         datasetsBackground: /uploads/DAVID-X.png
       - datasetsName: OmniSVG-2M
@@ -212,7 +210,7 @@ blocks:
         desc: >-
           A physical-world adversarial T-shirt dataset for adversarial
           robustness evaluation.
-        subTitle: Vision | Physical Attack
+        subTitle: Safety | Physical-world Attack
         link: 'https://github.com/Wwangb/AdvT-shirt-1K'
         datasetsBackground: /uploads/advtshirt.jpeg
       - datasetsName: VLBreakBench
