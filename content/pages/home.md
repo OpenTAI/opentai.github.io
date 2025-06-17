@@ -60,7 +60,7 @@ blocks:
           temporal–spatial localization, and natural language explanations
           powered by the DAVID-X dataset.
         subTitle: AI-Generated Video Detection with Explainable Reasoning and Grounding
-        datasetsBackground: /uploads/DAVID-XR1.jpg
+        datasetsBackground: /uploads/DAVID-XR1.png
       - datasetsName: SafeVid
         desc: >-
           SafeVid is a framework for training safety-aligned Video Large
