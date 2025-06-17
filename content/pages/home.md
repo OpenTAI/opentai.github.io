@@ -60,7 +60,7 @@ blocks:
           temporal–spatial localization, and natural language explanations
           powered by the DAVID-X dataset.
         subTitle: AI-Generated Video Detection with Explainable Reasoning and Grounding
-        datasetsBackground: /uploads/DAVID-XR.png
+        datasetsBackground: /uploads/DAVID-XR model.png
       - datasetsName: SafeVid
         desc: >-
           SafeVid is a framework for training safety-aligned Video Large
@@ -73,7 +73,7 @@ blocks:
           praising.But actual has painful explain born and pain no dislikes of
           praising.
         subTitle: DEEPFAKE
-        datasetsBackground: /uploads/datasets2.png
+        datasetsBackground: /uploads/DAVID-XR model.png
       - datasetsName: SAMA
         desc: >-
           SAMA is a multi-turn referential grounded
