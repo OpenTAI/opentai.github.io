@@ -74,7 +74,7 @@ blocks:
         desc: >-
           SafeVid is a framework for training safety-aligned Video Large
           Multimodal Models using a large-scale safety preference dataset.
-        subTitle: DEEPFAKE
+        subTitle: Safety-aligned Video Large Multimodal Model
         datasetsBackground: /datasets2.png
     _template: datasets
   - titleen: Research
