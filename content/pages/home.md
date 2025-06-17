@@ -60,20 +60,20 @@ blocks:
           temporal–spatial localization, and natural language explanations
           powered by the DAVID-X dataset.
         subTitle: AI-Generated Video Detection with Explainable Reasoning and Grounding
-        datasetsBackground: /uploads/DAVID-XR1.png
+        datasetsBackground: /uploads/DAVID-XR.png
       - datasetsName: SafeVid
         desc: >-
           SafeVid is a framework for training safety-aligned Video Large
           Multimodal Models using a large-scale safety preference dataset.
         subTitle: Safety-aligned Video Large Multimodal Model
-        datasetsBackground: /datasets2.png
+        datasetsBackground: /uploads/datasets2.png
       - datasetsName: OmniSVG
         desc: >-
           But actual has painful explain born and pain no dislikes of
           praising.But actual has painful explain born and pain no dislikes of
           praising.
         subTitle: DEEPFAKE
-        datasetsBackground: /datasets2.png
+        datasetsBackground: /uploads/datasets2.png
       - datasetsName: SAMA
         desc: >-
           SAMA is a multi-turn referential grounded
@@ -82,7 +82,7 @@ blocks:
           understanding in videos by jointly tackling video referring
           understanding, grounding, and multi-turn dialogue.
         subTitle: Multi-Turn Referential Grounded Video Chat
-        datasetsBackground: /datasets2.png
+        datasetsBackground: /uploads/datasets2.png
     _template: datasets
   - titleen: Research
     titlezh: Research
