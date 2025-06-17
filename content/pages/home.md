@@ -52,6 +52,15 @@ blocks:
   - titleen: Large Models
     titlezh: 大模型
     items:
+      - datasetsName: DAVID XR1
+        desc: >-
+          DAVID-XR1 is a video–language model that brings interpretable,
+          fine-grained, and trustworthy AI-generated video detection to reality,
+          offering not just binary decisions but detailed defect categorization,
+          temporal–spatial localization, and natural language explanations
+          powered by the DAVID-X dataset.
+        subTitle: AI-Generated Video Detection
+        datasetsBackground: /datasets2.png
       - datasetsName: 系外行星检测
         desc: >-
           But actual has painful explain born and pain no dislikes of
