@@ -56,19 +56,19 @@ blocks:
         desc: >-
           An AI video detection model with defect categorization,
           temporal–spatial localization, and reasoning explanations.
-        subTitle: AI-Generated Video Detection
+        subTitle: AI-Generated Video Detection Model
         datasetsBackground: /uploads/DAVID-XR model.png
       - datasetsName: SafeVid
         desc: >-
           SafeVid is a framework for training safety-aligned Video Large
           Multimodal Models using a large-scale safety preference dataset.
-        subTitle: Safety-aligned Video Large Multimodal Model
+        subTitle: Safety-aligned Video-Language Model
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: OmniSVG
         desc: >-
           OmniSVG is a unified SVG generation model that leverages VLMs to
           generate high-quality and complex SVGs.
-        subTitle: An SVG Generation Model
+        subTitle: SVG Generation Model
         link: 'https://omnisvg.github.io/'
         datasetsBackground: /uploads/OmniSVG-2M-3.jpg
       - datasetsName: SAMA
