@@ -59,7 +59,7 @@ blocks:
           offering not just binary decisions but detailed defect categorization,
           temporal–spatial localization, and natural language explanations
           powered by the DAVID-X dataset.
-        subTitle: AI-Generated Video Detection with Explainable Reasoning and Grounding
+        subTitle: AI-Generated Video Detection with Explainable Reasoning
         datasetsBackground: /uploads/DAVID-XR model.png
       - datasetsName: SafeVid
         desc: >-
@@ -72,8 +72,9 @@ blocks:
           But actual has painful explain born and pain no dislikes of
           praising.But actual has painful explain born and pain no dislikes of
           praising.
-        subTitle: DEEPFAKE
-        datasetsBackground: /uploads/datasets2.png
+        subTitle: An SVG Generation Model
+        link: 'https://omnisvg.github.io/'
+        datasetsBackground: /uploads/OmniSVG-2M-3.jpg
       - datasetsName: SAMA
         desc: >-
           SAMA is a multi-turn referential grounded
