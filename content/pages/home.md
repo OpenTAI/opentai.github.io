@@ -49,6 +49,7 @@ blocks:
       practical Trustworthy AI solutions. We prioritize tools, benchmarks, and
       platforms over papers, bridging research with real-world impact.
     _template: content
+  - _template: datasets
   - titleen: Research
     titlezh: Research
     items:
