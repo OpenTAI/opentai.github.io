@@ -54,12 +54,9 @@ blocks:
     items:
       - datasetsName: DAVID XR1
         desc: >-
-          DAVID-XR1 is a video–language model that brings interpretable,
-          fine-grained, and trustworthy AI-generated video detection to reality,
-          offering not just binary decisions but detailed defect categorization,
-          temporal–spatial localization, and natural language explanations
-          powered by the DAVID-X dataset.
-        subTitle: AI-Generated Video Detection with Explainable Reasoning
+          An AI video detection model with defect categorization,
+          temporal–spatial localization, and reasoning explanations.
+        subTitle: AI-Generated Video Detection
         datasetsBackground: /uploads/DAVID-XR model.png
       - datasetsName: SafeVid
         desc: >-
