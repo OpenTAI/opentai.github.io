@@ -61,7 +61,7 @@ blocks:
           powered by the DAVID-X dataset.
         subTitle: AI-Generated Video Detection
         datasetsBackground: /datasets2.png
-      - datasetsName: 系外行星检测
+      - datasetsName: SafeVid
         desc: >-
           But actual has painful explain born and pain no dislikes of
           praising.But actual has painful explain born and pain no dislikes of
