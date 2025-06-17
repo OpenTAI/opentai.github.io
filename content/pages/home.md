@@ -69,9 +69,8 @@ blocks:
         datasetsBackground: /uploads/datasets2.png
       - datasetsName: OmniSVG
         desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
+          OmniSVG is a unified SVG generation model that leverages VLMs to
+          generate high-quality and complex SVGs.
         subTitle: An SVG Generation Model
         link: 'https://omnisvg.github.io/'
         datasetsBackground: /uploads/OmniSVG-2M-3.jpg
