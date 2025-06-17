@@ -52,6 +52,15 @@ blocks:
   - titleen: Large Models
     titlezh: 大模型
     items:
+      - datasetsName: SAMA
+        desc: >-
+          SAMA is a multi-turn referential grounded
+
+          video chat model that advances fine-grained spatio-temporal
+          understanding in videos by jointly tackling video referring
+          understanding, grounding, and multi-turn dialogue
+        subTitle: Multi-Turn Referential Grounded Video Chat
+        datasetsBackground: /datasets2.png
       - datasetsName: DAVID XR1
         desc: >-
           DAVID-XR1 is a video–language model that brings interpretable,
