@@ -49,7 +49,17 @@ blocks:
       practical Trustworthy AI solutions. We prioritize tools, benchmarks, and
       platforms over papers, bridging research with real-world impact.
     _template: content
-  - _template: datasets
+  - titleen: Large Models
+    titlezh: 大模型
+    items:
+      - datasetsName: 系外行星检测
+        desc: >-
+          But actual has painful explain born and pain no dislikes of
+          praising.But actual has painful explain born and pain no dislikes of
+          praising.
+        subTitle: DEEPFAKE
+        datasetsBackground: /datasets2.png
+    _template: datasets
   - titleen: Research
     titlezh: Research
     items:
