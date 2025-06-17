@@ -58,8 +58,8 @@ blocks:
 
           video chat model that advances fine-grained spatio-temporal
           understanding in videos by jointly tackling video referring
-          understanding, grounding, and multi-turn dialogue
-        subTitle: A Video Chat Model
+          understanding, grounding, and multi-turn dialogue.
+        subTitle: Multi-Turn Referential Grounded Video Chat
         datasetsBackground: /datasets2.png
       - datasetsName: DAVID XR1
         desc: >-
@@ -72,9 +72,8 @@ blocks:
         datasetsBackground: /datasets2.png
       - datasetsName: SafeVid
         desc: >-
-          But actual has painful explain born and pain no dislikes of
-          praising.But actual has painful explain born and pain no dislikes of
-          praising.
+          SafeVid is a framework for training safety-aligned Video Large
+          Multimodal Models using a large-scale safety preference dataset.
         subTitle: DEEPFAKE
         datasetsBackground: /datasets2.png
     _template: datasets
