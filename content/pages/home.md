@@ -186,6 +186,13 @@ blocks:
   - titleen: Datasets
     titlezh: Datasets
     items:
+      - datasetsName: DAVID-X
+        desc: >-
+          DAVID-X is a dataset of AI-generated videos with fine-grained,
+          defect-level temporal–spatial annotations and written rationales.
+        subTitle: A Fine-Grained Annotated Dataset of AI-Generated Videos
+        link: ''
+        datasetsBackground: /uploads/DAVID-X.png
       - datasetsName: OmniSVG-2M
         desc: >-
           A large-scale SVG dataset with 2M
