@@ -189,7 +189,7 @@ blocks:
     items:
       - datasetsName: DAVID-X
         desc: AI-generated videos with fine-grained defect annotations.
-        subTitle: AI-Generated Content Detection
+        subTitle: AI Detection
         link: ''
         datasetsBackground: /uploads/DAVID-X.png
       - datasetsName: OmniSVG-2M
