@@ -68,7 +68,7 @@ blocks:
           offering not just binary decisions but detailed defect categorization,
           temporal–spatial localization, and natural language explanations
           powered by the DAVID-X dataset.
-        subTitle: AI-Generated Video Detection
+        subTitle: AI-Generated Video Detection with Explainable Reasoning and Grounding
         datasetsBackground: /datasets2.png
       - datasetsName: SafeVid
         desc: >-
