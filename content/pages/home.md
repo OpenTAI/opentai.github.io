@@ -79,6 +79,7 @@ blocks:
           understanding in videos by jointly tackling video referring
           understanding, grounding, and multi-turn dialogue.
         subTitle: Multi-Turn Referential Grounded Video Chat
+        link: 'https://arxiv.org/abs/2505.18812'
         datasetsBackground: /uploads/datasets2.png
     _template: datasets
   - titleen: Research
