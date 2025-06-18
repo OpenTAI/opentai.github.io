@@ -63,7 +63,7 @@ blocks:
           SafeVid is a framework for training safety-aligned Video Large
           Multimodal Models using a large-scale safety preference dataset.
         subTitle: Safety-aligned Video-Language Model
-        datasetsBackground: /uploads/datasets2.png
+        datasetsBackground: /uploads/safevid.png
       - datasetsName: OmniSVG
         desc: >-
           OmniSVG is a unified SVG generation model that leverages VLMs to
