@@ -127,6 +127,53 @@ blocks:
         link: 'https://github.com/roywang021/UMK'
         projectIcon: /uploads/projectIcon1.png
     _template: project
+  - titleen: Datasets
+    titlezh: Datasets
+    items:
+      - datasetsName: DAVID-X
+        desc: AI-generated videos with fine-grained defect annotations.
+        subTitle: AI Detection
+        link: ''
+        datasetsBackground: /uploads/DAVID-X.png
+      - datasetsName: OmniSVG-2M
+        desc: >-
+          A large-scale SVG dataset with 2M
+
+          SVG samples covering website icons, illustrations, graphic designs,
+          anime character.
+        subTitle: Vision | GenAI
+        link: 'https://omnisvg.github.io/'
+        datasetsBackground: /uploads/OmniSVG-2M-3.jpg
+      - datasetsName: Human2Robot
+        desc: VR-collected human-robot aligned demonstration episodes.
+        subTitle: Embodied AI
+        link: 'https://arxiv.org/abs/2502.16587'
+        datasetsBackground: /uploads/h2r dataset.jpg
+      - datasetsName: AdvT-shirt-1K
+        desc: >-
+          A physical-world adversarial T-shirt dataset for adversarial
+          robustness evaluation.
+        subTitle: Safety | Physical-world Attack
+        link: 'https://github.com/Wwangb/AdvT-shirt-1K'
+        datasetsBackground: /uploads/advtshirt.jpeg
+      - datasetsName: VLBreakBench
+        desc: A multimodal jailbreak dataset for multimodal large language models.
+        subTitle: Multimodal | Jailbreak
+        link: 'https://roywang021.github.io/VLBreakBench/'
+        datasetsBackground: /uploads/VLBreakBench.png
+      - datasetsName: CC1M-Adv-C/F
+        desc: >-
+          Two million-scale adversarial image datasets for large-scale
+          evaluations.
+        subTitle: ' Vision | Adversarial'
+        link: 'https://github.com/treeman2000/CC1M-Adv-CF'
+        datasetsBackground: /uploads/未标题-1.jpg
+      - datasetsName: WildDeepfake
+        desc: 'A dataset of 7,314 face sequences from 707 deepfake videos. '
+        subTitle: Deepfake
+        link: 'https://github.com/OpenTAI/wild-deepfake'
+        datasetsBackground: /uploads/wilddeepfake.jpg
+    _template: datasets
   - titleen: Benchmarks
     titlezh: 评测基准
     items:
@@ -180,53 +227,6 @@ blocks:
           - tagName: safety
             bgColor: '#4A4A4A'
     _template: benchMarks
-  - titleen: Datasets
-    titlezh: Datasets
-    items:
-      - datasetsName: DAVID-X
-        desc: AI-generated videos with fine-grained defect annotations.
-        subTitle: AI Detection
-        link: ''
-        datasetsBackground: /uploads/DAVID-X.png
-      - datasetsName: OmniSVG-2M
-        desc: >-
-          A large-scale SVG dataset with 2M
-
-          SVG samples covering website icons, illustrations, graphic designs,
-          anime character.
-        subTitle: Vision | GenAI
-        link: 'https://omnisvg.github.io/'
-        datasetsBackground: /uploads/OmniSVG-2M-3.jpg
-      - datasetsName: Human2Robot
-        desc: VR-collected human-robot aligned demonstration episodes.
-        subTitle: Embodied AI
-        link: 'https://arxiv.org/abs/2502.16587'
-        datasetsBackground: /uploads/h2r dataset.jpg
-      - datasetsName: AdvT-shirt-1K
-        desc: >-
-          A physical-world adversarial T-shirt dataset for adversarial
-          robustness evaluation.
-        subTitle: Safety | Physical-world Attack
-        link: 'https://github.com/Wwangb/AdvT-shirt-1K'
-        datasetsBackground: /uploads/advtshirt.jpeg
-      - datasetsName: VLBreakBench
-        desc: A multimodal jailbreak dataset for multimodal large language models.
-        subTitle: Multimodal | Jailbreak
-        link: 'https://roywang021.github.io/VLBreakBench/'
-        datasetsBackground: /uploads/VLBreakBench.png
-      - datasetsName: CC1M-Adv-C/F
-        desc: >-
-          Two million-scale adversarial image datasets for large-scale
-          evaluations.
-        subTitle: ' Vision | Adversarial'
-        link: 'https://github.com/treeman2000/CC1M-Adv-CF'
-        datasetsBackground: /uploads/未标题-1.jpg
-      - datasetsName: WildDeepfake
-        desc: 'A dataset of 7,314 face sequences from 707 deepfake videos. '
-        subTitle: Deepfake
-        link: 'https://github.com/OpenTAI/wild-deepfake'
-        datasetsBackground: /uploads/wilddeepfake.jpg
-    _template: datasets
   - titleen: Tools
     titlezh: Tools
     items:
