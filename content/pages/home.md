@@ -135,6 +135,7 @@ blocks:
           A large-scale preference dataset with 350K video query-response pairs
           generated via LLMs using safety-focused adversarial prompts.
         subTitle: Video | Safety Alignment
+        link: 'https://huggingface.co/datasets/yxwang/SafeVid-350K'
         datasetsBackground: /uploads/SafeVid-350k.png
       - datasetsName: DAVID-X
         desc: AI-generated videos with fine-grained defect annotations.
