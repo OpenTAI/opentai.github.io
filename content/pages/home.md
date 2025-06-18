@@ -130,6 +130,12 @@ blocks:
   - titleen: Datasets
     titlezh: Datasets
     items:
+      - datasetsName: SafeVid-350k
+        desc: >-
+          A large-scale preference dataset with 350K video query-response pairs
+          generated via LLMs using safety-focused adversarial prompts.
+        subTitle: Video | Safety Alignment
+        datasetsBackground: /uploads/SafeVid-350k.png
       - datasetsName: DAVID-X
         desc: AI-generated videos with fine-grained defect annotations.
         subTitle: AI Detection
