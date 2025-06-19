@@ -57,6 +57,7 @@ blocks:
           An AI video detection model with defect categorization,
           temporal–spatial localization, and reasoning explanations.
         subTitle: AI-Generated Video Detection Model
+        link: 'https://arxiv.org/abs/2506.14827'
         datasetsBackground: /uploads/DAVID-XR model.png
       - datasetsName: SafeVid
         desc: >-
