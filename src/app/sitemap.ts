@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { benchmarkDetails, collectionOrder } from "@/data/site";
-
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://opentai.org";
+import { SITE_URL } from "@/lib/site-url";
 
 export const dynamic = "force-static";
 
@@ -16,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return routes.map((route) => ({
-    url: `${BASE}${route}`,
+    url: `${SITE_URL}${route}`,
     changeFrequency: route === "" ? "daily" : "weekly",
     priority: route === "" ? 1 : 0.7,
   }));

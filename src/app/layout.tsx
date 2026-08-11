@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { siteBrand } from "@/data/site";
+import { SITE_URL, isProduction } from "@/lib/site-url";
 import "./globals.css";
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://opentai.org";
+const BASE = SITE_URL;
 const DESCRIPTION =
   "One platform that collects all the open-source resources for trustworthy AI — benchmarks, models, datasets, tools, papers, and leaderboards.";
 
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
     url: BASE,
     images: [{ url: "/brand/logo.png", width: 256, height: 256, alt: siteBrand.name }],
   },
+  robots: isProduction ? undefined : { index: false, follow: false },
   twitter: {
     card: "summary",
     title: `${siteBrand.name} — ${siteBrand.tagline}`,
