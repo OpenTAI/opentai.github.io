@@ -29,15 +29,32 @@ const PENDING_HINT: Record<string, string> = {
   Leaderboard: "A scored submission table for this benchmark.",
 };
 
-function Panel({ children, title }: { children: React.ReactNode; title: string }) {
+function Panel({
+  children,
+  source,
+  title,
+}: {
+  children: React.ReactNode;
+  source?: string;
+  title: string;
+}) {
   return (
-    <div className="subpage-main-table-card">
+    <section className="subpage-main-table-card flex flex-col">
       <h2 className="mb-5 text-[1.4rem] font-semibold tracking-[-0.04em] text-[#111827]">
         {title}
       </h2>
-      {children}
-    </div>
+      <div className="flex-1">{children}</div>
+      {source ? (
+        <p className="mt-5 border-t border-[#f2f4f8] pt-4 text-xs text-[#98a2b3]">
+          Source: {source}
+        </p>
+      ) : null}
+    </section>
   );
+}
+
+function Empty({ children }: { children: React.ReactNode }) {
+  return <p className="text-sm text-[#98a2b3]">{children}</p>;
 }
 
 export default async function BenchmarkDetailPage({
@@ -49,20 +66,21 @@ export default async function BenchmarkDetailPage({
   const detail = benchmarkDetails[slug];
   if (!detail) notFound();
 
-  const facts: [string, string][] = [
-    detail.repo ? (["Repository", detail.repo] as [string, string]) : null,
-    detail.language ? (["Language", detail.language] as [string, string]) : null,
-    detail.license ? (["Licence", detail.license] as [string, string]) : null,
-    detail.stars !== undefined
-      ? (["Stars", detail.stars.toLocaleString()] as [string, string])
-      : null,
-    detail.forks !== undefined
-      ? (["Forks", detail.forks.toLocaleString()] as [string, string])
-      : null,
-    detail.updated ? (["Last push", detail.updated] as [string, string]) : null,
-  ].filter(Boolean) as [string, string][];
+  const facts = (
+    [
+      ["Repository", detail.repo],
+      ["Language", detail.language],
+      ["Licence", detail.license],
+      ["Stars", detail.stars?.toLocaleString()],
+      ["Forks", detail.forks?.toLocaleString()],
+      ["Last push", detail.updated],
+    ] as [string, string | undefined][]
+  ).filter((entry): entry is [string, string] => Boolean(entry[1]));
 
-  const adversarial = detail.category === "Robustness";
+  const onSiteLeaderboard = detail.category === "Robustness";
+  const pending = detail.pending.filter(
+    (field) => !(field === "Leaderboard" && onSiteLeaderboard),
+  );
 
   return (
     <SiteShell sectionLabel="Benchmarks">
@@ -85,6 +103,12 @@ export default async function BenchmarkDetailPage({
             </span>
           ))}
         </div>
+
+        {detail.note ? (
+          <div className="rounded-[18px] border border-[#fde68a] bg-[#fffbeb] px-5 py-4">
+            <p className="text-sm leading-6 text-[#92400e]">{detail.note}</p>
+          </div>
+        ) : null}
 
         <section className="grid gap-4 xl:grid-cols-[1.15fr_0.85fr] xl:items-start">
           <Panel title="Description">
@@ -111,21 +135,23 @@ export default async function BenchmarkDetailPage({
                   ))}
                 </dl>
               ) : (
-                <p className="text-sm text-[#98a2b3]">No public repository recorded.</p>
+                <Empty>No public repository recorded.</Empty>
               )}
-              <div className="mt-5 flex flex-wrap gap-2">
-                {detail.resources.map((resource) => (
-                  <Link
-                    key={resource.href}
-                    className="subpage-resource-pill transition hover:border-[#c7d2fe] hover:text-[#4338ca]"
-                    href={resource.href}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    {resource.label}
-                  </Link>
-                ))}
-              </div>
+              {detail.resources.length ? (
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {detail.resources.map((resource) => (
+                    <Link
+                      key={resource.href}
+                      className="subpage-resource-pill transition hover:border-[#c7d2fe] hover:text-[#4338ca]"
+                      href={resource.href}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      {resource.label}
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
             </Panel>
 
             <Panel title="Papers">
@@ -144,45 +170,91 @@ export default async function BenchmarkDetailPage({
                   </p>
                 </div>
               ) : (
-                <p className="text-sm text-[#98a2b3]">No paper recorded for this benchmark.</p>
+                <Empty>No paper recorded for this benchmark.</Empty>
               )}
             </Panel>
           </div>
         </section>
 
-        <Panel title="Leaderboard">
-          {adversarial ? (
-            <div className="space-y-3">
-              <p className="text-sm leading-6 text-[#475467]">
-                Adversarial robustness results for this evaluation are published on the
-                leaderboard: {leaderboards.tables.map((table) => table.label).join(" and ")} across{" "}
-                {leaderboards.tables.reduce((total, table) => total + table.boards.length, 0)}{" "}
-                boards.
-              </p>
-              <Link className="site-cta inline-flex" href="/leaderboard">
-                Open leaderboard
-              </Link>
-            </div>
-          ) : (
-            <p className="text-sm text-[#98a2b3]">
-              No scored submissions recorded for this benchmark yet.
-            </p>
-          )}
-        </Panel>
+        <section className="grid gap-4 xl:grid-cols-2 xl:items-start">
+          <Panel source={detail.dataset?.source} title="Dataset">
+            {detail.dataset ? (
+              <p className="text-sm leading-7 text-[#475467]">{detail.dataset.text}</p>
+            ) : (
+              <Empty>Not recorded yet.</Empty>
+            )}
+          </Panel>
 
-        <section className="subpage-main-table-card">
-          <div className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
-            <h2 className="text-[1.4rem] font-semibold tracking-[-0.04em] text-[#111827]">
-              Needs curation
-            </h2>
-            <span className="rounded-full border border-[#fde68a] bg-[#fffbeb] px-3 py-1 text-xs font-semibold uppercase tracking-[0.06em] text-[#b45309]">
-              Not recorded
-            </span>
-          </div>
-          <ul className="grid gap-2.5 sm:grid-cols-2">
-            {detail.pending
-              .filter((field) => !(adversarial && field === "Leaderboard"))
-              .map((field) => (
+          <Panel source={detail.metrics?.source} title="Metrics">
+            {detail.metrics ? (
+              <ul className="space-y-3">
+                {detail.metrics.items.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm leading-7 text-[#475467]">
+                    <span aria-hidden="true" className="mt-0.5 shrink-0 text-[#4f46e5]">
+                      ·
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <Empty>Not recorded yet.</Empty>
+            )}
+          </Panel>
+
+          <Panel source={detail.baselines?.source} title="Baselines">
+            {detail.baselines ? (
+              <p className="text-sm leading-7 text-[#475467]">{detail.baselines.text}</p>
+            ) : (
+              <Empty>Not recorded yet.</Empty>
+            )}
+          </Panel>
+
+          <Panel source={detail.externalLeaderboard?.source} title="Leaderboard">
+            {onSiteLeaderboard ? (
+              <div className="space-y-4">
+                <p className="text-sm leading-7 text-[#475467]">
+                  Adversarial robustness results for this evaluation are published on this site:{" "}
+                  {leaderboards.tables.map((table) => table.label).join(" and ")} across{" "}
+                  {leaderboards.tables.reduce((total, table) => total + table.boards.length, 0)}{" "}
+                  boards.
+                </p>
+                <Link className="site-cta inline-flex" href="/leaderboard">
+                  Open leaderboard
+                </Link>
+              </div>
+            ) : detail.externalLeaderboard ? (
+              <div className="space-y-4">
+                <p className="text-sm leading-7 text-[#475467]">
+                  This benchmark maintains its own public leaderboard.
+                </p>
+                <Link
+                  className="home-secondary-cta inline-flex"
+                  href={detail.externalLeaderboard.url}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {detail.externalLeaderboard.label} →
+                </Link>
+              </div>
+            ) : (
+              <Empty>No scored submissions recorded for this benchmark yet.</Empty>
+            )}
+          </Panel>
+        </section>
+
+        {pending.length ? (
+          <section className="subpage-main-table-card">
+            <div className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
+              <h2 className="text-[1.4rem] font-semibold tracking-[-0.04em] text-[#111827]">
+                Still missing
+              </h2>
+              <span className="rounded-full border border-[#fde68a] bg-[#fffbeb] px-3 py-1 text-xs font-semibold uppercase tracking-[0.06em] text-[#b45309]">
+                Not recorded
+              </span>
+            </div>
+            <ul className="grid gap-2.5 sm:grid-cols-2">
+              {pending.map((field) => (
                 <li
                   key={field}
                   className="rounded-[18px] border border-dashed border-[#e3e8f2] bg-[#fafbfe] px-5 py-4"
@@ -191,12 +263,9 @@ export default async function BenchmarkDetailPage({
                   <p className="mt-1 text-xs leading-5 text-[#98a2b3]">{PENDING_HINT[field]}</p>
                 </li>
               ))}
-          </ul>
-          <p className="mt-5 text-sm leading-6 text-[#98a2b3]">
-            These fields are part of the benchmark page spec but cannot be read reliably from a
-            repository or an abstract — they have to be filled in by hand.
-          </p>
-        </section>
+            </ul>
+          </section>
+        ) : null}
       </SimplePage>
     </SiteShell>
   );

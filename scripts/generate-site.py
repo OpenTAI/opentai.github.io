@@ -8,6 +8,7 @@ DATA = HERE / "data"
 HOME = json.load(open(DATA / "home.json"))
 LEADERBOARDS = json.load(open(DATA / "leaderboards.json"))
 NAMED_BENCH = json.load(open(DATA / "benchmarks.json"))
+CURATION = json.load(open(DATA / "benchmark-curation.json"))
 AWESOME = json.load(open(DATA / "awesome-papers.json")) if (DATA / "awesome-papers.json").exists() else []
 PAPER_LINKS = json.load(open(DATA / "paper-links.json")) if (DATA / "paper-links.json").exists() else {}
 IMG = json.load(open(DATA / "img_map.json"))
@@ -389,6 +390,11 @@ bench_rows = [
     for b in B[5]["items"]
 ]
 
+VERIFIED_FROM_README = {
+    # name -> (arXiv id, venue), both quoted verbatim in the project's own README
+    "RewardModel Bench": ("2410.09893", "ICLR 2025"),
+}
+
 # Benchmarks named in the OpenTAI spec, resolved to verified public sources.
 for name, rec in NAMED_BENCH.items():
     g, a = rec.get("github"), rec.get("arxiv")
@@ -407,6 +413,13 @@ for name, rec in NAMED_BENCH.items():
 
 for row in bench_rows:
     row["slug"] = slugify(row["name"])
+    extra = VERIFIED_FROM_README.get(row["name"])
+    if extra:
+        aid, venue = extra
+        row["venue"] = row["venue"] or venue
+        url = f"https://arxiv.org/abs/{aid}"
+        if not any(r["href"] == url for r in row["resources"]):
+            row["resources"].insert(0, {"label": "arXiv", "href": url})
 
 tool_rows = [
     build_row(
@@ -481,9 +494,20 @@ def build_bench_details():
             "homepage": (g or {}).get("homepage"),
             "pending": pending,
         }
-        # None of these four can be read reliably from a repository or an
-        # abstract, so every benchmark starts with all of them outstanding.
-        pending.extend(["Dataset", "Metrics", "Baselines", "Leaderboard"])
+
+        cur = CURATION.get(row["slug"], {})
+        detail = details[row["slug"]]
+        detail["dataset"] = cur.get("dataset")
+        detail["metrics"] = cur.get("metrics")
+        detail["baselines"] = cur.get("baselines")
+        detail["externalLeaderboard"] = cur.get("leaderboard")
+        detail["note"] = cur.get("note")
+        # Only list what is genuinely still missing after curation.
+        cur = CURATION.get(row["slug"], {})
+        for field, key in (("Dataset", "dataset"), ("Metrics", "metrics"),
+                           ("Baselines", "baselines"), ("Leaderboard", "leaderboard")):
+            if not cur.get(key):
+                pending.append(field)
     return details
 
 
@@ -686,6 +710,9 @@ export type SubpageConfig = {
   tableRows: readonly SubpageTableRow[];
 };
 
+export type CuratedText = { text: string; source: string };
+export type CuratedList = { items: readonly string[]; source: string };
+
 export type BenchmarkDetail = {
   slug: string;
   name: string;
@@ -708,6 +735,11 @@ export type BenchmarkDetail = {
   forks?: number;
   updated?: string;
   homepage?: string;
+  dataset?: CuratedText;
+  metrics?: CuratedList;
+  baselines?: CuratedText;
+  externalLeaderboard?: { url: string; label: string; source: string };
+  note?: string;
   pending: readonly string[];
 };
 

@@ -84,9 +84,19 @@ npm --prefix ~/Projects/opentai-web run dev
 3. **宁缺毋滥**：查不到的一律留空并标注，不填占位内容。所以你会看到不少 `NOT BUILT YET` / `Needs curation` —— 这是故意的。
 4. **死链剔除**而不是保留。
 
+### 补充：benchmark 详情页已填满（Phase 3-A）
+
+逐个读了 7 个仓库的 README 和论文摘要，把 Dataset / Metrics / Baselines / Leaderboard 填进 8 个详情页 —— **26 个字段，每个都在页面上标了来源**（Project README / Paper abstract / Current OpenTAI site）。
+
+- **4 个全满**：HarmBench、JailbreakBench、SafetyBench、AgentDojo（都接上了各自的官方 leaderboard）
+- 顺带查实 **RewardModel Bench = RMB，arXiv 2410.09893，ICLR 2025** —— 之前没抓到，从它自己的 README 里确认的
+- `VLBreakBench` 只填了能证实的 Dataset，页面顶部黄条说明「链接 404、仓库无法核实」
+- `OpenTAI/VisionSafety` 的 README 是 TinaCMS 网站模板 —— **那是平台官网仓库，不是评测代码**，页面上已注明
+
 ## 四、还没做
 
 - 邮件 agent（独立后端项目，不属于网站）
 - 移动端导航 9 项是横向滚动，没做汉堡菜单
 - 571 篇论文只有 arXiv 链接，没有代码链接
 - Privacy / Fairness / Explainability / AI Ethics / Cybersecurity 五个 benchmark 分类是空的
+- MM-SafetyBench / RMB / VisionSafety 没有官方 leaderboard 可接

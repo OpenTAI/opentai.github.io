@@ -70,6 +70,9 @@ export type SubpageConfig = {
   tableRows: readonly SubpageTableRow[];
 };
 
+export type CuratedText = { text: string; source: string };
+export type CuratedList = { items: readonly string[]; source: string };
+
 export type BenchmarkDetail = {
   slug: string;
   name: string;
@@ -92,6 +95,11 @@ export type BenchmarkDetail = {
   forks?: number;
   updated?: string;
   homepage?: string;
+  dataset?: CuratedText;
+  metrics?: CuratedList;
+  baselines?: CuratedText;
+  externalLeaderboard?: { url: string; label: string; source: string };
+  note?: string;
   pending: readonly string[];
 };
 
@@ -434,11 +442,24 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     forks: 0,
     updated: "2026-01-14",
     pending: [
-      "Dataset",
-      "Metrics",
-      "Baselines",
       "Leaderboard",
     ],
+    dataset: {
+      text: "Evaluated against domain-specific datasets for five vision tasks together with OpenTAI's own CC1M-Adv-C/F million-scale adversarial datasets, both of which are listed in the Datasets collection.",
+      source: "Current OpenTAI site",
+    },
+    metrics: {
+      items: [
+        "Black-box setting: adversarial safety on a domain dataset and on CC1M-Adv",
+        "White-box setting: clean accuracy and robust accuracy",
+      ],
+      source: "Current OpenTAI site (leaderboard columns)",
+    },
+    baselines: {
+      text: "The top-10 most downloaded or cited models for each of five vision tasks, plus robust models on CIFAR-10, CIFAR-100, ImageNet-1k and CC1M — 77 scored entries in total.",
+      source: "Current OpenTAI site (leaderboards)",
+    },
+    note: "The linked repository OpenTAI/VisionSafety contains the platform's website, not the evaluation code.",
   },
   "rewardmodel-bench": {
     slug: "rewardmodel-bench",
@@ -446,7 +467,12 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     category: "Alignment",
     subtitle: "A Reward Model Benchmark for LLM Alignment Evaluation",
     description: "A reward model benchmark for evaluating the effectiveness of alignment in large language models. The benchmark consists of 49 real-world scenarios and both pairwise and Best-of-N (BoN) evaluations.",
+    venue: "ICLR 2025",
     resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2410.09893",
+      },
       {
         label: "GitHub",
         href: "https://github.com/Zhou-Zoey/RMB-Reward-Model-Benchmark",
@@ -477,11 +503,23 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     forks: 4,
     updated: "2025-03-25",
     pending: [
-      "Dataset",
-      "Metrics",
-      "Baselines",
       "Leaderboard",
     ],
+    dataset: {
+      text: "Over 49 real-world scenarios split across helpfulness and harmlessness goals, shipped in the repository's RMB_dataset directory as pairwise and Best-of-N test sets.",
+      source: "Project README",
+    },
+    metrics: {
+      items: [
+        "Pairwise preference accuracy",
+        "Best-of-N (BoN) evaluation, intended to reflect how well a reward model guides alignment optimisation",
+      ],
+      source: "Project README",
+    },
+    baselines: {
+      text: "The evaluation script ships with reward models including ArmoRM-Llama3-8B, Eurus-RM-7b, Starling-RM-34B, internlm2-7b/20b-reward and tulu-v2.5-13b-preference-mix-rm.",
+      source: "Project README (run_rm.sh)",
+    },
   },
   vlbreakbench: {
     slug: "vlbreakbench",
@@ -497,11 +535,15 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "safety",
     ],
     pending: [
-      "Dataset",
       "Metrics",
       "Baselines",
       "Leaderboard",
     ],
+    dataset: {
+      text: "3,654 jailbreak samples built from 916 harmful queries across 12 safety topics and 46 subcategories, split into a base set with one jailbreak pair per query and a challenge set with three.",
+      source: "Current OpenTAI site",
+    },
+    note: "The project page linked from the current OpenTAI site returns 404, and no repository under this name could be verified. Metrics, baselines and code are unavailable until the team provides a working source.",
   },
   harmbench: {
     slug: "harmbench",
@@ -556,12 +598,27 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     forks: 153,
     updated: "2024-08-16",
     homepage: "https://harmbench.org",
-    pending: [
-      "Dataset",
-      "Metrics",
-      "Baselines",
-      "Leaderboard",
-    ],
+    pending: [],
+    dataset: {
+      text: "Harmful behaviours grouped into standard, contextual and copyright categories, evaluated against both text and multimodal models. HarmBench 1.0 additionally ships precomputed test cases and adversarial training code.",
+      source: "Project README and official results page",
+    },
+    metrics: {
+      items: [
+        "Attack success rate, scored by HarmBench's own classifier models rather than string matching",
+        "Three released classifiers: standard/contextual behaviours, multimodal behaviours, and a validation classifier",
+      ],
+      source: "Project README (Classifiers)",
+    },
+    baselines: {
+      text: "A large-scale comparison of 18 red teaming methods against 33 target LLMs and defenses, plus an adversarial training method introduced alongside the benchmark.",
+      source: "Paper abstract",
+    },
+    externalLeaderboard: {
+      url: "https://www.harmbench.org/results",
+      label: "Official baseline results",
+      source: "Project website",
+    },
   },
   jailbreakbench: {
     slug: "jailbreakbench",
@@ -617,12 +674,27 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     forks: 76,
     updated: "2025-04-04",
     homepage: "https://jailbreakbench.github.io",
-    pending: [
-      "Dataset",
-      "Metrics",
-      "Baselines",
-      "Leaderboard",
-    ],
+    pending: [],
+    dataset: {
+      text: "JBB-Behaviors — 200 distinct benign and misuse behaviours, curated with reference to OpenAI's usage policies and partly sourced from AdvBench and HarmBench. The paper describes the original 100-behaviour misuse set.",
+      source: "Project README and paper abstract",
+    },
+    metrics: {
+      items: [
+        "Attack success rate under a clearly defined threat model, with fixed system prompts and chat templates",
+        "Scored by jailbreak and refusal judges shipped with the package",
+      ],
+      source: "Project README and paper abstract",
+    },
+    baselines: {
+      text: "An evolving repository of submitted jailbreak artifacts — adversarial prompts from prior attacks — so new algorithms can be compared against a stable reference.",
+      source: "Project README",
+    },
+    externalLeaderboard: {
+      url: "https://jailbreakbench.github.io/",
+      label: "Official JailbreakBench leaderboard",
+      source: "Project README",
+    },
   },
   safetybench: {
     slug: "safetybench",
@@ -673,12 +745,27 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     stars: 297,
     forks: 14,
     updated: "2025-07-28",
-    pending: [
-      "Dataset",
-      "Metrics",
-      "Baselines",
-      "Leaderboard",
-    ],
+    pending: [],
+    dataset: {
+      text: "11,435 multiple-choice questions across 7 categories of safety concern, in both Chinese and English. A Chinese subset downsamples 300 questions per category with highly sensitive keywords removed. Five worked examples per category are provided for few-shot prompting. Test answers were fully open-sourced in July 2025.",
+      source: "Project README and paper abstract",
+    },
+    metrics: {
+      items: [
+        "Multiple-choice accuracy, evaluated zero-shot and five-shot",
+        "Chain-of-thought evaluation is deliberately not part of the default protocol",
+      ],
+      source: "Project README",
+    },
+    baselines: {
+      text: "25 popular Chinese and English LLMs evaluated in both zero-shot and few-shot settings.",
+      source: "Paper abstract",
+    },
+    externalLeaderboard: {
+      url: "https://llmbench.ai/safety",
+      label: "Official leaderboards (Chinese, English, Chinese subset)",
+      source: "Project README",
+    },
   },
   agentdojo: {
     slug: "agentdojo",
@@ -738,12 +825,27 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     forks: 191,
     updated: "2026-06-02",
     homepage: "https://agentdojo.spylab.ai/",
-    pending: [
-      "Dataset",
-      "Metrics",
-      "Baselines",
-      "Leaderboard",
-    ],
+    pending: [],
+    dataset: {
+      text: "97 realistic agent tasks — managing an email client, navigating e-banking, making travel bookings — together with 629 security test cases. Organised into suites such as workspace, and designed to be extended rather than frozen.",
+      source: "Paper abstract and project README",
+    },
+    metrics: {
+      items: [
+        "Whether the agent completes the benign task, and whether prompt injection breaks its security properties",
+        "Reported per suite, per model, per attack and per defense combination",
+      ],
+      source: "Project README (results page)",
+    },
+    baselines: {
+      text: "Attack and defense paradigms from the literature ship with the package — for example a tool-filter defense and a tool-knowledge attack, selectable from the benchmark script.",
+      source: "Project README",
+    },
+    externalLeaderboard: {
+      url: "https://agentdojo.spylab.ai/results/",
+      label: "Official results page",
+      source: "Project README",
+    },
   },
   "mm-safetybench": {
     slug: "mm-safetybench",
@@ -794,11 +896,23 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     forks: 6,
     updated: "2024-10-15",
     pending: [
-      "Dataset",
-      "Metrics",
-      "Baselines",
       "Leaderboard",
     ],
+    dataset: {
+      text: "5,040 text-image pairs across 13 scenarios, from illegal activity and hate speech through to legal, financial, and health advice. Each question comes in three image variants: a Stable Diffusion image, a typographic image, and a combined SD+typography image. A tiny subset list is provided to reduce evaluation cost.",
+      source: "Project README and paper abstract",
+    },
+    metrics: {
+      items: [
+        "Whether the model complies with a query-relevant image manipulation, measured per scenario",
+        "Each question is evaluated in all three image variants and answers are collected into a per-scenario answer file",
+      ],
+      source: "Project README (Evaluation)",
+    },
+    baselines: {
+      text: "12 state-of-the-art multimodal models analysed in the paper, alongside a prompting strategy proposed to improve resilience.",
+      source: "Paper abstract",
+    },
   },
 };
 
@@ -1617,6 +1731,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         subtitle: "A Reward Model Benchmark for LLM Alignment Evaluation",
         note: "A reward model benchmark for evaluating the effectiveness of alignment in large language models. The benchmark consists of 49 real-world scenarios and both pairwise and Best-of-N (BoN) evaluations.",
         type: "Alignment",
+        venue: "ICLR 2025",
         stars: 48,
         updated: "2025-03-25",
         tags: [
@@ -1640,6 +1755,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         meta: "Zhou-Zoey/RMB-Reward-Model-Benchmark · 4 forks · since 2024",
         resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2410.09893",
+          },
           {
             label: "GitHub",
             href: "https://github.com/Zhou-Zoey/RMB-Reward-Model-Benchmark",

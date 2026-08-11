@@ -45,6 +45,7 @@ python3 scripts/generate-site.py       # rebuild src/data/site.ts
 | `scripts/data/home.json` | Entry names, descriptions, links, tags, images — from `OpenTAI/opentai.github.io` → `content/pages/home.md` |
 | `scripts/data/leaderboards.json` | 77 scored leaderboard rows — from the same repo's `content/pages/leaderboards.md` |
 | `scripts/data/awesome.md` | The survey bibliography from `xingjunm/Awesome-Large-Model-Safety` |
+| `scripts/data/benchmark-curation.json` | Hand-curated Dataset / Metrics / Baselines / Leaderboard per benchmark, each field tagged with the source it was read from |
 | GitHub REST API | Stars, forks, language, licence, last-push, topics |
 | arXiv API | Authors, posting dates, abstracts, primary category |
 | Hugging Face API | Download counts, likes, licence, size category |
@@ -58,6 +59,8 @@ python3 scripts/generate-site.py       # rebuild src/data/site.ts
 - Papers get an arXiv link only on a near-exact title match.
 - Anything that cannot be verified is left empty and labelled, never filled in
   with a plausible placeholder.
+- Hand-curated benchmark fields carry a `source` string that is rendered on the
+  page. If you add one, read it out of a primary source and say which.
 
 Category groupings and page copy are **authored** for this rebuild — they are
 the part most in need of review, and live near the top of
@@ -78,6 +81,10 @@ site.
 
 - `OSWorld-Safety` and `ToolSafetyBench` are named in the spec but have no
   public repository under those names; they are not published here.
+- `OpenTAI/VisionSafety` contains the VisionSafety platform's website, not its
+  evaluation code. The benchmark page says so.
+- `VLBreakBench` has no working link and no verifiable repository, so only its
+  dataset description — taken from the current OpenTAI site — is published.
 - The current site lists the toolkit as `BlackdoorLLM`; the repository is
   `bboylyg/BackdoorLLM`. The site's spelling was kept.
 - `content/pages/newslist.md` upstream contains one item whose body is
