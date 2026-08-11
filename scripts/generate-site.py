@@ -17,6 +17,8 @@ GH = dict(META["github"])
 GH.update(json.load(open(DATA / "metadata_extra.json")))
 GH.pop("VLBreakBench", None)  # name mismatch, not confident it is the right repo
 GH["Universal Master Key (UMK)"] = GH.pop("UMK")
+if "BlackdoorLLM" in GH:
+    GH["BackdoorLLM"] = GH.pop("BlackdoorLLM")
 AX = META["arxiv"]
 HF = META["huggingface"]
 
@@ -329,13 +331,18 @@ BENCH_TAXONOMY = [
 
 def slugify(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+# The current OpenTAI site misspells this toolkit; the repository is
+# bboylyg/BackdoorLLM. Confirmed with the team on 2026-08-11 to use the
+# repository's actual name.
+NAME_CORRECTIONS = {"BlackdoorLLM": "BackdoorLLM"}
+
 TOOL_TYPE = {
-    "BlackdoorLLM": "Backdoor",
+    "BackdoorLLM": "Backdoor",
     "taiadv.vision": "Adversarial",
     "TextFlint": "Robustness Evaluation",
 }
 TOOL_TAGS = {
-    "BlackdoorLLM": ["backdoor", "LLM"],
+    "BackdoorLLM": ["backdoor", "LLM"],
     "taiadv.vision": ["adversarial", "vision"],
     "TextFlint": ["NLP", "robustness"],
 }
@@ -421,13 +428,13 @@ for row in bench_rows:
         if not any(r["href"] == url for r in row["resources"]):
             row["resources"].insert(0, {"label": "arXiv", "href": url})
 
-tool_rows = [
-    build_row(
-        clean(t["name"]), None, clean(t["description"]), TOOL_TYPE[clean(t["name"])],
-        clean(t["link"]), TOOL_TAGS[clean(t["name"])], img(t["img"]),
+tool_rows = []
+for t in B[6]["items"]:
+    name = NAME_CORRECTIONS.get(clean(t["name"]), clean(t["name"]))
+    tool_rows.append(
+        build_row(name, None, clean(t["description"]), TOOL_TYPE[name],
+                  clean(t["link"]), TOOL_TAGS[name], img(t["img"]))
     )
-    for t in B[6]["items"]
-]
 
 MODEL_TYPE = {
     "DAVID XR1": "Detection",

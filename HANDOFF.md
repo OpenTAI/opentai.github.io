@@ -23,7 +23,7 @@ npm --prefix ~/Projects/opentai-web run dev
 
 - **`OSWorld-Safety` 和 `ToolSafetyBench` 查无此仓库。** 按这两个名字在 GitHub 上找不到公开仓库；`xlang-ai/OSWorld` 描述里也不含 "OSWorld-Safety"。没有臆造，这两条没收录。
 - **现在线上站有个死链。** `https://roywang021.github.io/VLBreakBench/` 返回 **404**。我把它从构建里剔除了，页面显示「upstream link unavailable」，不带 404 上线。
-- **`BlackdoorLLM` 是拼写错误**，实际仓库是 `bboylyg/BackdoorLLM`（Backdoor 不是 Blackdoor）。保留了他们的写法没擅自改。
+- ~~`BlackdoorLLM` 拼写错误~~ → 2026-08-11 确认按实际仓库名改为 **BackdoorLLM**。
 - `content/pages/newslist.md` 里唯一那条新闻，正文是 **lorem ipsum 假文**，没搬。
 
 ---
@@ -92,6 +92,25 @@ npm --prefix ~/Projects/opentai-web run dev
 - 顺带查实 **RewardModel Bench = RMB，arXiv 2410.09893，ICLR 2025** —— 之前没抓到，从它自己的 README 里确认的
 - `VLBreakBench` 只填了能证实的 Dataset，页面顶部黄条说明「链接 404、仓库无法核实」
 - `OpenTAI/VisionSafety` 的 README 是 TinaCMS 网站模板 —— **那是平台官网仓库，不是评测代码**，页面上已注明
+
+## 待办：中文版（已批准方向，未开工）
+
+约 1730 词 / 138 条文案 + 27 个界面标签需要翻译。工期估算：
+
+| 阶段 | 工时 |
+| --- | --- |
+| i18n 基础设施（`[locale]` 路由、切换器、字符串层，页面 20 → ~40） | 0.5–1 天 |
+| 数据层双语化（生成器每个可翻字段变 `{en, zh}`） | 0.5 天 |
+| 翻译初稿 | 0.5 天 |
+| 双语全路由验证（中文字密度不同，卡片布局要调） | 0.5 天 |
+
+**合计约 2–2.5 天**，另需团队审校译文。
+
+开工前要确认的两件事：
+
+1. **长期成本**：开双语后，每加一条资源、每改一句描述都要写两遍。
+2. **范围**：571 篇论文标题、arXiv 摘要、作者名、资源名保持英文，实际是「中文界面 + 中文描述 + 英文专业内容」。
+3. **先问**：原站数据里有 `titlezh` 字段，但 `header.tsx` 的语言切换器被整段注释掉了 —— 有人做过一半放弃了，值得问清原因。
 
 ## 四、还没做
 

@@ -2491,7 +2491,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
     ],
     tableRows: [
       {
-        name: "BlackdoorLLM",
+        name: "BackdoorLLM",
         note: "A comprehensive toolkit (and benchmark) for backdoor attacks on large language models.",
         type: "Backdoor",
         venue: "NeurIPS 2025",
