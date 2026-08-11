@@ -17,7 +17,7 @@ npm run dev
 
 | Route | Contents |
 | --- | --- |
-| `/` | Discover — site-wide search, newsletter signup, trending, latest releases, news |
+| `/` | Discover — site-wide search, newsletter signup, trending, latest releases |
 | `/benchmarks` | Flagship collection, 10-category taxonomy |
 | `/benchmarks/[slug]` | Per-benchmark page: description, code, papers, leaderboard, curation gaps |
 | `/models` | Guard models, safety-aligned models, detectors, agents |

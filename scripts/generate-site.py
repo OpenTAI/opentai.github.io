@@ -814,7 +814,12 @@ parts.append(block("navItems", "Pill[]", [
     {"label": "About", "href": "/about"},
 ]))
 parts.append(block("mission", "{ title: string; body: string }", mission))
-parts.append(block("newsItems", "NewsItem[]", news))
+parts.append(
+    "// Retained but not rendered: the News section was dropped from Discover on\n"
+    "// 2026-08-11 at the OpenTAI team's request — 'Latest releases' already covers\n"
+    "// new papers and model releases. Re-add <DiscoverNews /> to bring it back.\n"
+    + block("newsItems", "NewsItem[]", news)
+)
 parts.append(block("largeModels", "ModelCard[]", models))
 parts.append(block("partners", "Partner[]", partners))
 parts.append(block("homeCategoryCards", "HomeCategoryCard[]", HOME_CARDS))

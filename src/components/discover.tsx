@@ -1,9 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   collectionOrder,
   homeCategoryCards,
-  newsItems,
   siteBrand,
   subpageConfigs,
   SubpageTableRow,
@@ -182,46 +180,6 @@ export function DiscoverLatest() {
               ))}
             </ul>
           </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-export function DiscoverNews() {
-  return (
-    <section className="mx-auto mt-16 max-w-[1380px] space-y-7">
-      <SectionHeading icon="◎" title="News" />
-      <div className="grid gap-4 lg:grid-cols-3">
-        {newsItems.map((item) => (
-          <a
-            key={item.title}
-            className="home-info-panel flex flex-col overflow-hidden transition hover:shadow-[0_18px_44px_rgba(15,23,42,0.10)]"
-            href={item.href}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <div className="relative h-[176px] w-full bg-[#f4f6fb]">
-              <Image
-                alt=""
-                className="object-cover"
-                fill
-                sizes="(max-width: 1024px) 100vw, 33vw"
-                src={item.image}
-              />
-            </div>
-            <div className="flex flex-1 flex-col gap-3 p-6">
-              <div className="flex items-center gap-3">
-                <span className="subpage-row-tag">{item.tag}</span>
-                <span className="text-sm text-[#98a2b3]">{item.date}</span>
-              </div>
-              <h3 className="text-[1.15rem] font-semibold leading-7 tracking-[-0.03em] text-[#101828]">
-                {item.title}
-              </h3>
-              <p className="text-sm leading-6 text-[#667085]">{item.body}</p>
-              <span className="mt-auto pt-2 text-sm font-medium text-[#5260ff]">Read more →</span>
-            </div>
-          </a>
         ))}
       </div>
     </section>

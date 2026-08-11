@@ -198,6 +198,9 @@ export const mission: { title: string; body: string } = {
   body: "OpenTAI is an open platform where researchers collaborate to accelerate practical Trustworthy AI solutions. We prioritize tools, benchmarks, and platforms over papers, bridging research with real-world impact.",
 };
 
+// Retained but not rendered: the News section was dropped from Discover on
+// 2026-08-11 at the OpenTAI team's request — 'Latest releases' already covers
+// new papers and model releases. Re-add <DiscoverNews /> to bring it back.
 export const newsItems: NewsItem[] = [
   {
     title: "Introducing VLABench",

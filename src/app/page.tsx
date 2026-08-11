@@ -2,7 +2,6 @@ import {
   DiscoverCollections,
   DiscoverHero,
   DiscoverLatest,
-  DiscoverNews,
   DiscoverSubscribe,
   DiscoverTrending,
 } from "@/components/discover";
@@ -16,7 +15,6 @@ export default function Discover() {
         <DiscoverSubscribe />
         <DiscoverTrending />
         <DiscoverLatest />
-        <DiscoverNews />
         <DiscoverCollections />
       </div>
     </SiteShell>
