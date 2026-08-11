@@ -1,0 +1,188 @@
+{
+  "HarmBench": {
+    "name": "HarmBench",
+    "github": {
+      "repo": "centerforaisafety/HarmBench",
+      "stars": 1027,
+      "forks": 153,
+      "language": "Jupyter Notebook",
+      "license": "MIT",
+      "pushedAt": "2024-08-16",
+      "createdAt": "2024-02-02",
+      "topics": [],
+      "description": "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
+      "homepage": "https://harmbench.org",
+      "archived": false
+    },
+    "arxiv": {
+      "arxivId": "2402.04249",
+      "title": "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
+      "authors": [
+        "Mantas Mazeika",
+        "Long Phan",
+        "Xuwang Yin",
+        "Andy Zou",
+        "Zifan Wang",
+        "Norman Mu",
+        "Elham Sakhaee",
+        "Nathaniel Li",
+        "Steven Basart",
+        "Bo Li",
+        "David Forsyth",
+        "Dan Hendrycks"
+      ],
+      "authorCount": 12,
+      "published": "2024-02-06",
+      "abstract": "Automated red teaming holds substantial promise for uncovering and mitigating the risks associated with the malicious use of large language models (LLMs), yet the field lacks a standardized evaluation framework to rigorously assess new methods. To address this issue, we introduce HarmBench, a standardized evaluation framework for automated red teaming. We identify several desirable properties previously unaccounted for in red teaming evaluations and systematically design HarmBench to meet these criteria. Using HarmBench, we conduct a large-scale comparison of 18 red teaming methods and 33 target LLMs and defenses, yielding novel insights. We also introduce a highly efficient adversarial training method that greatly enhances LLM robustness across a wide range of attacks, demonstrating how HarmBench enables codevelopment of attacks and defenses. We open source HarmBench at https://github.com/centerforaisafety/HarmBench.",
+      "primaryCategory": "cs.LG",
+      "comment": "Website: https://www.harmbench.org"
+    }
+  },
+  "JailbreakBench": {
+    "name": "JailbreakBench",
+    "github": {
+      "repo": "JailbreakBench/jailbreakbench",
+      "stars": 651,
+      "forks": 76,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2025-04-04",
+      "createdAt": "2023-11-13",
+      "topics": [],
+      "description": "JailbreakBench: An Open Robustness Benchmark for Jailbreaking Language Models [NeurIPS 2024 Datasets and Benchmarks Track]",
+      "homepage": "https://jailbreakbench.github.io",
+      "archived": false
+    },
+    "arxiv": {
+      "arxivId": "2404.01318",
+      "title": "JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large Language Models",
+      "authors": [
+        "Patrick Chao",
+        "Edoardo Debenedetti",
+        "Alexander Robey",
+        "Maksym Andriushchenko",
+        "Francesco Croce",
+        "Vikash Sehwag",
+        "Edgar Dobriban",
+        "Nicolas Flammarion",
+        "George J. Pappas",
+        "Florian Tramer",
+        "Hamed Hassani",
+        "Eric Wong"
+      ],
+      "authorCount": 12,
+      "published": "2024-03-28",
+      "abstract": "Jailbreak attacks cause large language models (LLMs) to generate harmful, unethical, or otherwise objectionable content. Evaluating these attacks presents a number of challenges, which the current collection of benchmarks and evaluation techniques do not adequately address. First, there is no clear standard of practice regarding jailbreaking evaluation. Second, existing works compute costs and success rates in incomparable ways. And third, numerous works are not reproducible, as they withhold adversarial prompts, involve closed-source code, or rely on evolving proprietary APIs. To address these challenges, we introduce JailbreakBench, an open-sourced benchmark with the following components: (1) an evolving repository of state-of-the-art adversarial prompts, which we refer to as jailbreak artifacts; (2) a jailbreaking dataset comprising 100 behaviors -- both original and sourced from prior work (Zou et al., 2023; Mazeika et al., 2023, 2024) -- which align with OpenAI's usage policies; (3) a standardized evaluation framework at https://github.com/JailbreakBench/jailbreakbench that includes a clearly defined threat model, system prompts, chat templates, and scoring functions; and (4) a leaderboard at https://jailbreakbench.github.io/ that tracks the performance of attacks and defenses for various LLMs. We have carefully considered the potential ethical implications of releasing this benchmark, and believe that it will be a net positive for the community.",
+      "primaryCategory": null,
+      "comment": "The camera-ready version of JailbreakBench v1.0 (accepted at NeurIPS 2024 Datasets and Benchmarks Track): more attack artifacts, more test-time defenses, a more accurate jailbreak judge (Llama-3-70B with a custom prompt), a larger dataset of human preferences for selecting a jailbreak judge (300 examples), an over-refusal evaluation dataset, a semantic refusal judge based on Llama-3-8B"
+    }
+  },
+  "SafetyBench": {
+    "name": "SafetyBench",
+    "github": {
+      "repo": "thu-coai/SafetyBench",
+      "stars": 297,
+      "forks": 14,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2025-07-28",
+      "createdAt": "2023-09-05",
+      "topics": [],
+      "description": "Official github repo for SafetyBench, a comprehensive benchmark to evaluate LLMs' safety. [ACL 2024]",
+      "homepage": null,
+      "archived": false
+    },
+    "arxiv": {
+      "arxivId": "2309.07045",
+      "title": "SafetyBench: Evaluating the Safety of Large Language Models",
+      "authors": [
+        "Zhexin Zhang",
+        "Leqi Lei",
+        "Lindong Wu",
+        "Rui Sun",
+        "Yongkang Huang",
+        "Chong Long",
+        "Xiao Liu",
+        "Xuanyu Lei",
+        "Jie Tang",
+        "Minlie Huang"
+      ],
+      "authorCount": 10,
+      "published": "2023-09-13",
+      "abstract": "With the rapid development of Large Language Models (LLMs), increasing attention has been paid to their safety concerns. Consequently, evaluating the safety of LLMs has become an essential task for facilitating the broad applications of LLMs. Nevertheless, the absence of comprehensive safety evaluation benchmarks poses a significant impediment to effectively assess and enhance the safety of LLMs. In this work, we present SafetyBench, a comprehensive benchmark for evaluating the safety of LLMs, which comprises 11,435 diverse multiple choice questions spanning across 7 distinct categories of safety concerns. Notably, SafetyBench also incorporates both Chinese and English data, facilitating the evaluation in both languages. Our extensive tests over 25 popular Chinese and English LLMs in both zero-shot and few-shot settings reveal a substantial performance advantage for GPT-4 over its counterparts, and there is still significant room for improving the safety of current LLMs. We also demonstrate that the measured safety understanding abilities in SafetyBench are correlated with safety generation abilities. Data and evaluation guidelines are available at \\url{https://github.com/thu-coai/SafetyBench}{https://github.com/thu-coai/SafetyBench}. Submission entrance and leaderboard are available at \\url{https://llmbench.ai/safety}{https://llmbench.ai/safety}.",
+      "primaryCategory": null,
+      "comment": "ACL 2024 Main Conference"
+    }
+  },
+  "AgentDojo": {
+    "name": "AgentDojo",
+    "github": {
+      "repo": "ethz-spylab/agentdojo",
+      "stars": 735,
+      "forks": 191,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2026-06-02",
+      "createdAt": "2024-02-29",
+      "topics": [
+        "benchmark",
+        "large-language-models",
+        "prompt-injection",
+        "security"
+      ],
+      "description": "A Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents.",
+      "homepage": "https://agentdojo.spylab.ai/",
+      "archived": false
+    },
+    "arxiv": {
+      "arxivId": "2406.13352",
+      "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+      "authors": [
+        "Edoardo Debenedetti",
+        "Jie Zhang",
+        "Mislav Balunović",
+        "Luca Beurer-Kellner",
+        "Marc Fischer",
+        "Florian Tramèr"
+      ],
+      "authorCount": 6,
+      "published": "2024-06-19",
+      "abstract": "AI agents aim to solve complex tasks by combining text-based reasoning with external tool calls. Unfortunately, AI agents are vulnerable to prompt injection attacks where data returned by external tools hijacks the agent to execute malicious tasks. To measure the adversarial robustness of AI agents, we introduce AgentDojo, an evaluation framework for agents that execute tools over untrusted data. To capture the evolving nature of attacks and defenses, AgentDojo is not a static test suite, but rather an extensible environment for designing and evaluating new agent tasks, defenses, and adaptive attacks. We populate the environment with 97 realistic tasks (e.g., managing an email client, navigating an e-banking website, or making travel bookings), 629 security test cases, and various attack and defense paradigms from the literature. We find that AgentDojo poses a challenge for both attacks and defenses: state-of-the-art LLMs fail at many tasks (even in the absence of attacks), and existing prompt injection attacks break some security properties but not all. We hope that AgentDojo can foster research on new design principles for AI agents that solve common tasks in a reliable and robust manner.. We release the code for AgentDojo at https://github.com/ethz-spylab/agentdojo.",
+      "primaryCategory": null,
+      "comment": "Updated version after fixing a bug in the Llama implementation and updating the travel suite"
+    }
+  },
+  "MM-SafetyBench": {
+    "name": "MM-SafetyBench",
+    "github": {
+      "repo": "isXinLiu/MM-SafetyBench",
+      "stars": 217,
+      "forks": 6,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2024-10-15",
+      "createdAt": "2023-11-28",
+      "topics": [],
+      "description": "Accepted by ECCV 2024",
+      "homepage": null,
+      "archived": false
+    },
+    "arxiv": {
+      "arxivId": "2311.17600",
+      "title": "MM-SafetyBench: A Benchmark for Safety Evaluation of Multimodal Large Language Models",
+      "authors": [
+        "Xin Liu",
+        "Yichen Zhu",
+        "Jindong Gu",
+        "Yunshi Lan",
+        "Chao Yang",
+        "Yu Qiao"
+      ],
+      "authorCount": 6,
+      "published": "2023-11-29",
+      "abstract": "The security concerns surrounding Large Language Models (LLMs) have been extensively explored, yet the safety of Multimodal Large Language Models (MLLMs) remains understudied. In this paper, we observe that Multimodal Large Language Models (MLLMs) can be easily compromised by query-relevant images, as if the text query itself were malicious. To address this, we introduce MM-SafetyBench, a comprehensive framework designed for conducting safety-critical evaluations of MLLMs against such image-based manipulations. We have compiled a dataset comprising 13 scenarios, resulting in a total of 5,040 text-image pairs. Our analysis across 12 state-of-the-art models reveals that MLLMs are susceptible to breaches instigated by our approach, even when the equipped LLMs have been safety-aligned. In response, we propose a straightforward yet effective prompting strategy to enhance the resilience of MLLMs against these types of attacks. Our work underscores the need for a concerted effort to strengthen and enhance the safety measures of open-source MLLMs against potential malicious exploits. The resource is available at https://github.com/isXinLiu/MM-SafetyBench",
+      "primaryCategory": null,
+      "comment": null
+    }
+  }
+}

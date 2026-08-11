@@ -1,0 +1,31 @@
+{
+  "name": "opentai-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "data:metadata": "python3 scripts/fetch-metadata.py",
+    "data:benchmarks": "python3 scripts/fetch-benchmarks.py",
+    "data:papers": "python3 scripts/parse-awesome.py && python3 scripts/resolve-paper-links.py",
+    "data:generate": "python3 scripts/generate-site.py",
+    "check:links": "python3 scripts/check-links.py"
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

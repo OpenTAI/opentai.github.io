@@ -1,0 +1,92 @@
+{
+  "AnyAttack": {
+    "repo": "jiamingzhang94/AnyAttack",
+    "stars": 74,
+    "forks": 10,
+    "language": "Python",
+    "license": null,
+    "pushedAt": "2025-08-07",
+    "createdAt": "2024-10-05",
+    "topics": [],
+    "description": "CVPR 2025 - Anyattack: Towards Large-scale Self-supervised Adversarial Attacks on Vision-language Models",
+    "archived": false
+  },
+  "DAO": {
+    "repo": "HanxunH/Detect-CLIP-Backdoor-Samples",
+    "stars": 23,
+    "forks": 3,
+    "language": "Jupyter Notebook",
+    "license": "MIT",
+    "pushedAt": "2025-02-26",
+    "createdAt": "2025-01-23",
+    "topics": [
+      "backdoor",
+      "backdoor-attack",
+      "backdoor-attacks",
+      "backdoors",
+      "clip",
+      "contrastive-language-image-pretraining",
+      "contrastive-learning",
+      "deep",
+      "deep-learning",
+      "detection",
+      "iclr",
+      "iclr2025",
+      "outlier-detection",
+      "poisoning-attack",
+      "poisoning-defenses",
+      "pytorch",
+      "safety"
+    ],
+    "description": "[ICLR2025] Detecting Backdoor Samples in Contrastive Language Image Pretraining",
+    "archived": false
+  },
+  "BlueSuffix": {
+    "repo": "Vinsonzyh/BlueSuffix",
+    "stars": 31,
+    "forks": 5,
+    "language": "Python",
+    "license": null,
+    "pushedAt": "2025-11-02",
+    "createdAt": "2024-12-19",
+    "topics": [],
+    "description": "[ICLR 2025] BlueSuffix: Reinforced Blue Teaming for Vision-Language Models Against Jailbreak Attacks",
+    "archived": false
+  },
+  "OmniSVG-2M": {
+    "repo": "OmniSVG/OmniSVG",
+    "stars": 2579,
+    "forks": 102,
+    "language": "Python",
+    "license": "Apache-2.0",
+    "pushedAt": "2026-03-01",
+    "createdAt": "2025-04-07",
+    "topics": [],
+    "description": "[NeurIPS 2025] OmniSVG is the first family of end-to-end multimodal SVG generators that leverage pre-trained Vision-Language Models (VLMs), capable of generating complex and detailed SVGs, from simple icons to intricate anime characters.",
+    "archived": false
+  },
+  "VLBreakBench": {
+    "repo": "roywang021/VLJailbreakBench",
+    "stars": 0,
+    "forks": 0,
+    "language": "JavaScript",
+    "license": null,
+    "pushedAt": "2025-09-11",
+    "createdAt": "2025-03-25",
+    "topics": [],
+    "description": null,
+    "archived": false
+  },
+  "VisionSafety Bench": {
+    "repo": "OpenTAI/VisionSafety",
+    "stars": 4,
+    "forks": 0,
+    "language": "TypeScript",
+    "license": "Apache-2.0",
+    "pushedAt": "2026-01-14",
+    "createdAt": "2024-08-29",
+    "topics": [],
+    "description": null,
+    "archived": false
+  }
+}

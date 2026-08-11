@@ -1,0 +1,239 @@
+{
+  "github": {
+    "IDEATOR": {
+      "repo": "roywang021/IDEATOR",
+      "stars": 18,
+      "forks": 1,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2025-07-11",
+      "createdAt": "2025-01-25",
+      "topics": [],
+      "description": "Code for ICCV2025 paper——IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves",
+      "archived": false
+    },
+    "CALM": {
+      "repo": "x-zheng16/CALM",
+      "stars": 5,
+      "forks": 2,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2025-03-18",
+      "createdAt": "2024-12-28",
+      "topics": [
+        "auditing",
+        "curiosity",
+        "large-language-models"
+      ],
+      "description": "[AAAI 25] CALM: Curiosity-Driven Auditing for LLMs",
+      "archived": false
+    },
+    "UMK": {
+      "repo": "roywang021/UMK",
+      "stars": 34,
+      "forks": 1,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2024-12-30",
+      "createdAt": "2024-07-18",
+      "topics": [],
+      "description": "Code for ACM MM2024 paper: White-box Multimodal Jailbreaks Against Large Vision-Language Models",
+      "archived": false
+    },
+    "AdvT-shirt-1K": {
+      "repo": "Wwangb/AdvT-shirt-1K",
+      "stars": 15,
+      "forks": 0,
+      "language": null,
+      "license": null,
+      "pushedAt": "2025-08-07",
+      "createdAt": "2024-11-21",
+      "topics": [],
+      "description": "AdvT-shirt-1K A Physical-world Adversarial T-shirt Dataset for Adversarial Robustness Evaluation",
+      "archived": false
+    },
+    "CC1M-Adv-C/F": {
+      "repo": "treeman2000/CC1M-Adv-CF",
+      "stars": 2,
+      "forks": 0,
+      "language": null,
+      "license": null,
+      "pushedAt": "2024-12-04",
+      "createdAt": "2024-11-18",
+      "topics": [],
+      "description": null,
+      "archived": false
+    },
+    "WildDeepfake": {
+      "repo": "OpenTAI/wild-deepfake",
+      "stars": 241,
+      "forks": 24,
+      "language": null,
+      "license": null,
+      "pushedAt": "2025-12-10",
+      "createdAt": "2019-10-28",
+      "topics": [],
+      "description": "deepfake dataset collected on the web for deepfake detection",
+      "archived": false
+    },
+    "BlackdoorLLM": {
+      "repo": "bboylyg/BackdoorLLM",
+      "stars": 322,
+      "forks": 47,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2026-03-13",
+      "createdAt": "2024-08-21",
+      "topics": [
+        "attack",
+        "backdoor",
+        "defense",
+        "llms",
+        "llms-benchmarking"
+      ],
+      "description": "[NeurIPS 2025] BackdoorLLM: A Comprehensive Benchmark for Backdoor Attacks and Defenses on Large Language Models",
+      "archived": false
+    },
+    "taiadv.vision": {
+      "repo": "OpenTAI/taiadv",
+      "stars": 10,
+      "forks": 0,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2025-10-11",
+      "createdAt": "2022-01-19",
+      "topics": [],
+      "description": "Adversarial Attack and Defense Toolbox and Benchmark",
+      "archived": false
+    },
+    "TextFlint": {
+      "repo": "textflint/textflint",
+      "stars": 652,
+      "forks": 97,
+      "language": "Python",
+      "license": "GPL-3.0",
+      "pushedAt": "2022-09-27",
+      "createdAt": "2021-03-06",
+      "topics": [
+        "adversarial-samples",
+        "attack",
+        "data-augmentation",
+        "model-robustness",
+        "robustness-analysis",
+        "subpopulation",
+        "text-augmentation",
+        "text-transformations",
+        "transformation"
+      ],
+      "description": "Unified Multilingual Robustness Evaluation Toolkit for Natural Language Processing",
+      "archived": false
+    },
+    "RewardModel Bench": {
+      "repo": "Zhou-Zoey/RMB-Reward-Model-Benchmark",
+      "stars": 48,
+      "forks": 4,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2025-03-25",
+      "createdAt": "2024-10-08",
+      "topics": [],
+      "description": null,
+      "archived": false
+    }
+  },
+  "arxiv": {
+    "Human2Robot": {
+      "arxivId": "2502.16587",
+      "title": "Human2Robot: Learning Robot Actions from Paired Human-Robot Videos",
+      "authors": [
+        "Sicheng Xie",
+        "Haidong Cao",
+        "Zejia Weng",
+        "Zhen Xing",
+        "Haoran Chen",
+        "Shiwei Shen",
+        "Jiaqi Leng",
+        "Zuxuan Wu",
+        "Yu-Gang Jiang"
+      ],
+      "authorCount": 9,
+      "published": "2025-02-23",
+      "updated": "2025-11-15",
+      "primaryCategory": "cs.RO",
+      "comment": null
+    },
+    "DAVID XR1": {
+      "arxivId": "2506.14827",
+      "title": "DAVID-XR1: Detecting AI-Generated Videos with Explainable Reasoning",
+      "authors": [
+        "Yifeng Gao",
+        "Yifan Ding",
+        "Hongyu Su",
+        "Juncheng Li",
+        "Yunhan Zhao",
+        "Lin Luo",
+        "Zixing Chen",
+        "Li Wang",
+        "Xin Wang",
+        "Yixu Wang",
+        "Xingjun Ma",
+        "Yu-Gang Jiang"
+      ],
+      "authorCount": 12,
+      "published": "2025-06-13",
+      "updated": "2025-06-13",
+      "primaryCategory": "cs.CV",
+      "comment": null
+    },
+    "SafeVid": {
+      "arxivId": "2505.11926",
+      "title": "SafeVid: Toward Safety Aligned Video Large Multimodal Models",
+      "authors": [
+        "Yixu Wang",
+        "Jiaxin Song",
+        "Yifeng Gao",
+        "Xin Wang",
+        "Yang Yao",
+        "Yan Teng",
+        "Xingjun Ma",
+        "Yingchun Wang",
+        "Yu-Gang Jiang"
+      ],
+      "authorCount": 9,
+      "published": "2025-05-17",
+      "updated": "2025-05-17",
+      "primaryCategory": "cs.CV",
+      "comment": null
+    },
+    "SAMA": {
+      "arxivId": "2505.18812",
+      "title": "SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models",
+      "authors": [
+        "Ye Sun",
+        "Hao Zhang",
+        "Henghui Ding",
+        "Tiehua Zhang",
+        "Xingjun Ma",
+        "Yu-Gang Jiang"
+      ],
+      "authorCount": 6,
+      "published": "2025-05-24",
+      "updated": "2025-10-24",
+      "primaryCategory": "cs.CV",
+      "comment": "NeurIPS 2025"
+    }
+  },
+  "huggingface": {
+    "SafeVid-350k": {
+      "dataset": "yxwang/SafeVid-350K",
+      "downloads": 47,
+      "likes": 6,
+      "lastModified": "2025-11-27",
+      "tags": [
+        "language:en",
+        "license:cc-by-nc-sa-4.0",
+        "size_categories:100K<n<1M"
+      ]
+    }
+  }
+}
