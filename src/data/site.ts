@@ -43,6 +43,9 @@ export type SubpageCategoryCard = {
 export type SubpageTableRow = {
   name: string;
   slug?: string;
+  domain?: string;
+  property?: string;
+  citationOnly?: boolean;
   subtitle?: string;
   note: string;
   type: string;
@@ -393,20 +396,13 @@ export const homeCategoryCards: HomeCategoryCard[] = [
     accent: "orange",
     icon: "◇",
   },
-  {
-    title: "Papers",
-    description: "Papers, surveys, tutorials, and code links.",
-    href: "/papers",
-    accent: "pink",
-    icon: "◈",
-  },
 ];
 
 export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   "visionsafety-bench": {
     slug: "visionsafety-bench",
     name: "VisionSafety Bench",
-    category: "Robustness",
+    category: "Vision & Multimodal",
     subtitle: "An Adversarial Evaluation Platform for Vision Models",
     description: "Our open-source platform provides datasets, algorithms, and tools for scalable adversarial evaluation of vision models. Now available for community use - we welcome your feedback and contributions!",
     resources: [
@@ -434,6 +430,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
+      "robustness",
       "vision",
       "adversarial",
       "million-scale",
@@ -467,7 +464,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   "rewardmodel-bench": {
     slug: "rewardmodel-bench",
     name: "RewardModel Bench",
-    category: "Alignment",
+    category: "LLMs",
     subtitle: "A Reward Model Benchmark for LLM Alignment Evaluation",
     description: "A reward model benchmark for evaluating the effectiveness of alignment in large language models. The benchmark consists of 49 real-world scenarios and both pairwise and Best-of-N (BoN) evaluations.",
     venue: "ICLR 2025",
@@ -496,9 +493,9 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
+      "alignment",
       "llm",
       "reward model",
-      "alignment",
     ],
     repo: "Zhou-Zoey/RMB-Reward-Model-Benchmark",
     language: "Python",
@@ -527,14 +524,14 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   vlbreakbench: {
     slug: "vlbreakbench",
     name: "VLBreakBench",
-    category: "Multimodal Safety",
+    category: "Vision & Multimodal",
     subtitle: "A Multimodal Jailbreak Benchmark for Vision-Language Models",
     description: "VLBreakBench evaluates VLMs through two tiers: a base set (1 jailbreak pair per query) and a challenge set (3 pairs per query), covering 12 safety topics and 46 subcategories (916 harmful queries), totaling 3,654 jailbreak samples.",
     resources: [],
     stats: [],
     tags: [
-      "multimodal",
       "jailbreak",
+      "multimodal",
       "safety",
     ],
     pending: [
@@ -551,7 +548,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   harmbench: {
     slug: "harmbench",
     name: "HarmBench",
-    category: "LLM Safety",
+    category: "LLMs",
     description: "Automated red teaming holds substantial promise for uncovering and mitigating the risks associated with the malicious use of large language models (LLMs), yet the field lacks a standardized evaluation framework to rigorously assess new methods. To address this issue, we introduce HarmBench, a standardized evaluation framework for automated red teaming.",
     abstract: "Automated red teaming holds substantial promise for uncovering and mitigating the risks associated with the malicious use of large language models (LLMs), yet the field lacks a standardized evaluation framework to rigorously assess new methods. To address this issue, we introduce HarmBench, a standardized evaluation framework for automated red teaming. We identify several desirable properties previously unaccounted for in red teaming evaluations and systematically design HarmBench to meet these criteria. Using HarmBench, we conduct a large-scale comparison of 18 red teaming methods and 33 target LLMs and defenses, yielding novel insights. We also introduce a highly efficient adversarial training method that greatly enhances LLM robustness across a wide range of attacks, demonstrating how HarmBench enables codevelopment of attacks and defenses. We open source HarmBench at https://github.com/centerforaisafety/HarmBench.",
     resources: [
@@ -582,7 +579,9 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "2024-02-06",
       },
     ],
-    tags: [],
+    tags: [
+      "jailbreak",
+    ],
     authors: [
       "Mantas Mazeika",
       "Long Phan",
@@ -626,7 +625,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   jailbreakbench: {
     slug: "jailbreakbench",
     name: "JailbreakBench",
-    category: "LLM Safety",
+    category: "LLMs",
     description: "JailbreakBench: An Open Robustness Benchmark for Jailbreaking Language Models [NeurIPS 2024 Datasets and Benchmarks Track]",
     abstract: "Jailbreak attacks cause large language models (LLMs) to generate harmful, unethical, or otherwise objectionable content. Evaluating these attacks presents a number of challenges, which the current collection of benchmarks and evaluation techniques do not adequately address. First, there is no clear standard of practice regarding jailbreaking evaluation. Second, existing works compute costs and success rates in incomparable ways. And third, numerous works are not reproducible, as they withhold adversarial prompts, involve closed-source code, or rely on evolving proprietary APIs. To address these challenges, we introduce JailbreakBench, an open-sourced benchmark with the following components: (1) an evolving repository of state-of-the-art adversarial prompts, which we refer to as jailbreak artifacts; (2) a jailbreaking dataset comprising 100 behaviors -- both original and sourced from prior work (Zou et al., 2023; Mazeika et al., 2023, 2024) -- which align with OpenAI's usage policies; (3) a standardized evaluation framework at https://github.com/JailbreakBench/jailbreakbench that includes a clearly defined threat model, system prompts, chat templates, and scoring functions; and (4) a leaderboard at https://jailbreakbench.github.io/ that tracks the performance of attacks and defenses for various LLMs. We have carefully considered the potential ethical implications of releasing this benchmark, and believe that it will be a net positive for the community.",
     venue: "NeurIPS 2024",
@@ -658,7 +657,9 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "2024-03-28",
       },
     ],
-    tags: [],
+    tags: [
+      "jailbreak",
+    ],
     authors: [
       "Patrick Chao",
       "Edoardo Debenedetti",
@@ -702,7 +703,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   safetybench: {
     slug: "safetybench",
     name: "SafetyBench",
-    category: "LLM Safety",
+    category: "LLMs",
     description: "Official github repo for SafetyBench, a comprehensive benchmark to evaluate LLMs' safety. [ACL 2024]",
     abstract: "With the rapid development of Large Language Models (LLMs), increasing attention has been paid to their safety concerns. Consequently, evaluating the safety of LLMs has become an essential task for facilitating the broad applications of LLMs. Nevertheless, the absence of comprehensive safety evaluation benchmarks poses a significant impediment to effectively assess and enhance the safety of LLMs. In this work, we present SafetyBench, a comprehensive benchmark for evaluating the safety of LLMs, which comprises 11,435 diverse multiple choice questions spanning across 7 distinct categories of safety concerns. Notably, SafetyBench also incorporates both Chinese and English data, facilitating the evaluation in both languages. Our extensive tests over 25 popular Chinese and English LLMs in both zero-shot and few-shot settings reveal a substantial performance advantage for GPT-4 over its counterparts, and there is still significant room for improving the safety of current LLMs. We also demonstrate that the measured safety understanding abilities in SafetyBench are correlated with safety generation abilities. Data and evaluation guidelines are available at \\url{https://github.com/thu-coai/SafetyBench}{https://github.com/thu-coai/SafetyBench}. Submission entrance and leaderboard are available at \\url{https://llmbench.ai/safety}{https://llmbench.ai/safety}.",
     venue: "ACL 2024",
@@ -773,7 +774,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   agentdojo: {
     slug: "agentdojo",
     name: "AgentDojo",
-    category: "Agent Safety",
+    category: "Agents",
     description: "A Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents.",
     abstract: "AI agents aim to solve complex tasks by combining text-based reasoning with external tool calls. Unfortunately, AI agents are vulnerable to prompt injection attacks where data returned by external tools hijacks the agent to execute malicious tasks. To measure the adversarial robustness of AI agents, we introduce AgentDojo, an evaluation framework for agents that execute tools over untrusted data. To capture the evolving nature of attacks and defenses, AgentDojo is not a static test suite, but rather an extensible environment for designing and evaluating new agent tasks, defenses, and adaptive attacks. We populate the environment with 97 realistic tasks (e.g., managing an email client, navigating an e-banking website, or making travel bookings), 629 security test cases, and various attack and defense paradigms from the literature. We find that AgentDojo poses a challenge for both attacks and defenses: state-of-the-art LLMs fail at many tasks (even in the absence of attacks), and existing prompt injection attacks break some security properties but not all. We hope that AgentDojo can foster research on new design principles for AI agents that solve common tasks in a reliable and robust manner.. We release the code for AgentDojo at https://github.com/ethz-spylab/agentdojo.",
     resources: [
@@ -853,7 +854,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   "mm-safetybench": {
     slug: "mm-safetybench",
     name: "MM-SafetyBench",
-    category: "Multimodal Safety",
+    category: "Vision & Multimodal",
     description: "Accepted by ECCV 2024",
     abstract: "The security concerns surrounding Large Language Models (LLMs) have been extensively explored, yet the safety of Multimodal Large Language Models (MLLMs) remains understudied. In this paper, we observe that Multimodal Large Language Models (MLLMs) can be easily compromised by query-relevant images, as if the text query itself were malicious. To address this, we introduce MM-SafetyBench, a comprehensive framework designed for conducting safety-critical evaluations of MLLMs against such image-based manipulations. We have compiled a dataset comprising 13 scenarios, resulting in a total of 5,040 text-image pairs. Our analysis across 12 state-of-the-art models reveals that MLLMs are susceptible to breaches instigated by our approach, even when the equipped LLMs have been safety-aligned. In response, we propose a straightforward yet effective prompting strategy to enhance the resilience of MLLMs against these types of attacks. Our work underscores the need for a concerted effort to strengthen and enhance the safety measures of open-source MLLMs against potential malicious exploits. The resource is available at https://github.com/isXinLiu/MM-SafetyBench",
     venue: "ECCV 2024",
@@ -916,6 +917,812 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       text: "12 state-of-the-art multimodal models analysed in the paper, alongside a prompting strategy proposed to improve resilience.",
       source: "Paper abstract",
     },
+  },
+  "benchmarking-and-defending-against-indirect-prompt-injection-attacks-on-large-language-models": {
+    slug: "benchmarking-and-defending-against-indirect-prompt-injection-attacks-on-large-language-models",
+    name: "Benchmarking and defending against indirect prompt injection attacks on large language models",
+    category: "Agents",
+    description: "Benchmarking and defending against indirect prompt injection attacks on large language models",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2312.14197",
+      },
+    ],
+    stats: [],
+    tags: [
+      "prompt injection",
+    ],
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "identifying-the-risks-of-lm-agents-with-an-lm-emulated-sandbox": {
+    slug: "identifying-the-risks-of-lm-agents-with-an-lm-emulated-sandbox",
+    name: "Identifying the risks of lm agents with an lm-emulated sandbox",
+    category: "Agents",
+    description: "Identifying the risks of lm agents with an lm-emulated sandbox",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2309.15817",
+      },
+    ],
+    stats: [],
+    tags: [],
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  injecagent: {
+    slug: "injecagent",
+    name: "Injecagent",
+    category: "Agents",
+    description: "Benchmarking indirect prompt injections in tool-integrated large language model agents",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/uiuc-kang-lab/InjecAgent",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "157",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2024-07",
+      },
+    ],
+    tags: [
+      "prompt injection",
+    ],
+    repo: "uiuc-kang-lab/InjecAgent",
+    license: "MIT",
+    language: "Python",
+    stars: 157,
+    forks: 30,
+    updated: "2024-07-02",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  agentharm: {
+    slug: "agentharm",
+    name: "Agentharm",
+    category: "Agents",
+    description: "A benchmark for measuring harmfulness of llm agents",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/AIEvals/AgentHarm",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "1",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2026-01",
+      },
+    ],
+    tags: [
+      "harmful content",
+    ],
+    repo: "AIEvals/AgentHarm",
+    language: "Python",
+    stars: 1,
+    forks: 0,
+    updated: "2026-01-16",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  redcode: {
+    slug: "redcode",
+    name: "Redcode",
+    category: "Agents",
+    description: "Risky code execution and generation benchmark for code agents",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/kyxiaxiang/redcode",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "45",
+      },
+      {
+        label: "Language",
+        value: "TypeScript",
+      },
+      {
+        label: "Updated",
+        value: "2026-04",
+      },
+    ],
+    tags: [
+      "cybersecurity",
+    ],
+    repo: "kyxiaxiang/redcode",
+    language: "TypeScript",
+    stars: 45,
+    forks: 24,
+    updated: "2026-04-01",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "vpi-bench": {
+    slug: "vpi-bench",
+    name: "Vpi-bench",
+    category: "Agents",
+    description: "Visual prompt injection attacks for computer-use agents",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2506.02456",
+      },
+    ],
+    stats: [],
+    tags: [
+      "prompt injection",
+    ],
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "r-judge": {
+    slug: "r-judge",
+    name: "R-judge",
+    category: "Agents",
+    description: "Benchmarking safety risk awareness for llm agents",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/Lordog/R-Judge",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "109",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2026-01",
+      },
+    ],
+    tags: [],
+    repo: "Lordog/R-Judge",
+    language: "Python",
+    stars: 109,
+    forks: 10,
+    updated: "2026-01-11",
+    homepage: "https://arxiv.org/abs/2401.10019",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "salad-bench": {
+    slug: "salad-bench",
+    name: "Salad-bench",
+    category: "Agents",
+    description: "A hierarchical and comprehensive safety benchmark for large language models",
+    venue: "ACL 2024",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/OpenSafetyLab/SALAD-BENCH",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "176",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2025-03",
+      },
+    ],
+    tags: [],
+    repo: "OpenSafetyLab/SALAD-BENCH",
+    license: "Apache-2.0",
+    language: "Python",
+    stars: 176,
+    forks: 15,
+    updated: "2025-03-08",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "sg-bench": {
+    slug: "sg-bench",
+    name: "Sg-bench",
+    category: "Agents",
+    description: "Evaluating llm safety generalization across diverse tasks and prompt types",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/MurrayTom/SG-Bench",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "26",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2024-11",
+      },
+    ],
+    tags: [],
+    repo: "MurrayTom/SG-Bench",
+    license: "GPL-3.0",
+    language: "Python",
+    stars: 26,
+    forks: 3,
+    updated: "2024-11-29",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  chemsafetybench: {
+    slug: "chemsafetybench",
+    name: "Chemsafetybench",
+    category: "Agents",
+    description: "Benchmarking llm safety on chemistry domain",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2411.16736",
+      },
+    ],
+    stats: [],
+    tags: [],
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  toolsword: {
+    slug: "toolsword",
+    name: "Toolsword",
+    category: "Agents",
+    description: "Unveiling safety issues of large language models in tool learning across three stages",
+    venue: "ACL 2024",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/Junjie-Ye/ToolSword",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "15",
+      },
+      {
+        label: "Updated",
+        value: "2024-09",
+      },
+    ],
+    tags: [],
+    repo: "Junjie-Ye/ToolSword",
+    license: "Apache-2.0",
+    stars: 15,
+    forks: 0,
+    updated: "2024-09-12",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  privacylens: {
+    slug: "privacylens",
+    name: "Privacylens",
+    category: "Agents",
+    description: "Evaluating privacy norm awareness of language models in action",
+    venue: "NeurIPS 2024",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/SALT-NLP/PrivacyLens",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "48",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2025-03",
+      },
+    ],
+    tags: [
+      "privacy",
+      "language-model-agent",
+      "language-model-evaluation",
+      "large-language-model",
+      "neurips-2024",
+    ],
+    repo: "SALT-NLP/PrivacyLens",
+    license: "MIT",
+    language: "Python",
+    stars: 48,
+    forks: 10,
+    updated: "2025-03-04",
+    homepage: "https://salt-nlp.github.io/PrivacyLens",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  safebench: {
+    slug: "safebench",
+    name: "Safebench",
+    category: "Agents",
+    description: "A benchmarking platform for safety evaluation of autonomous vehicles",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/trust-ai/SafeBench",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "155",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2024-02",
+      },
+    ],
+    tags: [],
+    repo: "trust-ai/SafeBench",
+    license: "MIT",
+    language: "Python",
+    stars: 155,
+    forks: 29,
+    updated: "2024-02-23",
+    homepage: "https://safebench.github.io",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "agent-security-bench": {
+    slug: "agent-security-bench",
+    name: "Agent security bench",
+    category: "Agents",
+    description: "Formalizing and benchmarking attacks and defenses in llm-based agents",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/agiresearch/ASB",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "280",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2026-04",
+      },
+    ],
+    tags: [],
+    repo: "agiresearch/ASB",
+    license: "MIT",
+    language: "Python",
+    stars: 280,
+    forks: 29,
+    updated: "2026-04-16",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  safeagentbench: {
+    slug: "safeagentbench",
+    name: "Safeagentbench",
+    category: "Agents",
+    description: "A benchmark for safe task planning of embodied llm agents",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/shengyin1224/SafeAgentBench",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "75",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2025-02",
+      },
+    ],
+    tags: [],
+    repo: "shengyin1224/SafeAgentBench",
+    language: "Python",
+    stars: 75,
+    forks: 5,
+    updated: "2025-02-25",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "agent-safetybench": {
+    slug: "agent-safetybench",
+    name: "Agent-safetybench",
+    category: "Agents",
+    description: "Evaluating the safety of llm agents",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/thu-coai/Agent-SafetyBench",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "157",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2025-08",
+      },
+    ],
+    tags: [],
+    repo: "thu-coai/Agent-SafetyBench",
+    license: "MIT",
+    language: "Python",
+    stars: 157,
+    forks: 10,
+    updated: "2025-08-11",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "dissecting-adversarial-robustness-of-multimodal-lm-agents": {
+    slug: "dissecting-adversarial-robustness-of-multimodal-lm-agents",
+    name: "Dissecting adversarial robustness of multimodal lm agents",
+    category: "Agents",
+    description: "Dissecting adversarial robustness of multimodal lm agents",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2406.12814",
+      },
+    ],
+    stats: [],
+    tags: [
+      "robustness",
+    ],
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "st-webagentbench": {
+    slug: "st-webagentbench",
+    name: "St-webagentbench",
+    category: "Agents",
+    description: "A benchmark for evaluating safety and trustworthiness in web agents",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/segev-shlomov/ST-WebAgentBench",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "25",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2026-03",
+      },
+    ],
+    tags: [],
+    repo: "segev-shlomov/ST-WebAgentBench",
+    license: "NOASSERTION",
+    language: "Python",
+    stars: 25,
+    forks: 6,
+    updated: "2026-03-12",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  haicosystem: {
+    slug: "haicosystem",
+    name: "Haicosystem",
+    category: "Agents",
+    description: "An ecosystem for sandboxing safety risks in human-ai interactions",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/XuhuiZhou/HAICosystem",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "14",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2025-06",
+      },
+    ],
+    tags: [
+      "ai-safety",
+      "multi-agent",
+      "social-interactions",
+    ],
+    repo: "XuhuiZhou/HAICosystem",
+    language: "Python",
+    stars: 14,
+    forks: 1,
+    updated: "2025-06-01",
+    homepage: "https://haicosystem.org",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  wasp: {
+    slug: "wasp",
+    name: "Wasp",
+    category: "Agents",
+    description: "Benchmarking web agent security against prompt injection attacks",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/facebookresearch/wasp",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "98",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2026-04",
+      },
+    ],
+    tags: [
+      "prompt injection",
+    ],
+    repo: "facebookresearch/wasp",
+    license: "NOASSERTION",
+    language: "Python",
+    stars: 98,
+    forks: 15,
+    updated: "2026-04-13",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "refusal-trained-llms-are-easily-jailbroken-as-browser-agents": {
+    slug: "refusal-trained-llms-are-easily-jailbroken-as-browser-agents",
+    name: "Refusal-trained llms are easily jailbroken as browser agents",
+    category: "Agents",
+    description: "Refusal-trained llms are easily jailbroken as browser agents",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2410.13886",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  safearena: {
+    slug: "safearena",
+    name: "Safearena",
+    category: "Agents",
+    description: "Evaluating the safety of autonomous web agents",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/McGill-NLP/safearena",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "24",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2025-04",
+      },
+    ],
+    tags: [],
+    repo: "McGill-NLP/safearena",
+    language: "Python",
+    stars: 24,
+    forks: 7,
+    updated: "2025-04-23",
+    homepage: "https://safearena.github.io",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  openagentsafety: {
+    slug: "openagentsafety",
+    name: "Openagentsafety",
+    category: "Agents",
+    description: "A comprehensive framework for evaluating real-world ai agent safety",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/Open-Agent-Safety/OpenAgentSafety",
+      },
+    ],
+    stats: [
+      {
+        label: "Stars",
+        value: "32",
+      },
+      {
+        label: "Language",
+        value: "Python",
+      },
+      {
+        label: "Updated",
+        value: "2026-08",
+      },
+    ],
+    tags: [],
+    repo: "Open-Agent-Safety/OpenAgentSafety",
+    license: "MIT",
+    language: "Python",
+    stars: 32,
+    forks: 17,
+    updated: "2026-08-10",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
   },
 };
 
@@ -1608,83 +2415,35 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
     sectionTitle: "Benchmark categories",
     categories: [
       {
-        title: "LLM Safety",
-        detail: "Harmful-behaviour, jailbreak, and safety-knowledge evaluation for language models.",
+        title: "LLMs",
+        detail: "Safety, jailbreak and alignment evaluation for language models.",
         accent: "pink",
         filters: [
-          "LLM Safety",
+          "LLMs",
         ],
       },
       {
-        title: "Agent Safety",
-        detail: "Prompt injection, tool misuse, and environment safety for LLM agents.",
+        title: "Agents",
+        detail: "Prompt injection, tool misuse and environment safety for LLM agents.",
         accent: "orange",
         filters: [
-          "Agent Safety",
+          "Agents",
         ],
       },
       {
-        title: "Multimodal Safety",
-        detail: "Jailbreak and safety evaluation for vision-language models.",
-        accent: "violet",
-        filters: [
-          "Multimodal Safety",
-        ],
-      },
-      {
-        title: "Robustness",
-        detail: "Adversarial and distribution-shift robustness for vision models.",
-        accent: "blue",
-        filters: [
-          "Robustness",
-        ],
-      },
-      {
-        title: "Privacy",
-        detail: "Memorisation, extraction, and privacy-leakage evaluation.",
+        title: "Embodied AI",
+        detail: "Safety evaluation for perception, planning and robot control.",
         accent: "green",
         filters: [
-          "Privacy",
+          "Embodied AI",
         ],
       },
       {
-        title: "Fairness",
-        detail: "Bias and disparate-impact evaluation across groups.",
+        title: "Vision & Multimodal",
+        detail: "Jailbreak and robustness evaluation for vision-language models.",
         accent: "violet",
         filters: [
-          "Fairness",
-        ],
-      },
-      {
-        title: "Explainability",
-        detail: "Faithfulness and interpretability of model explanations.",
-        accent: "blue",
-        filters: [
-          "Explainability",
-        ],
-      },
-      {
-        title: "Alignment",
-        detail: "Reward models, preference data quality, and alignment evaluation.",
-        accent: "green",
-        filters: [
-          "Alignment",
-        ],
-      },
-      {
-        title: "AI Ethics",
-        detail: "Value alignment, moral reasoning, and policy compliance.",
-        accent: "orange",
-        filters: [
-          "AI Ethics",
-        ],
-      },
-      {
-        title: "Cybersecurity",
-        detail: "Offensive and defensive security capability evaluation.",
-        accent: "pink",
-        filters: [
-          "Cybersecurity",
+          "Vision & Multimodal",
         ],
       },
     ],
@@ -1693,10 +2452,11 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "VisionSafety Bench",
         subtitle: "An Adversarial Evaluation Platform for Vision Models",
         note: "Our open-source platform provides datasets, algorithms, and tools for scalable adversarial evaluation of vision models. Now available for community use - we welcome your feedback and contributions!",
-        type: "Robustness",
+        type: "Vision & Multimodal",
         stars: 4,
         updated: "2026-01-14",
         tags: [
+          "robustness",
           "vision",
           "adversarial",
           "million-scale",
@@ -1728,19 +2488,21 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         image: "/media/vision-icon.png",
         slug: "visionsafety-bench",
+        domain: "Vision & Multimodal",
+        property: "Robustness",
       },
       {
         name: "RewardModel Bench",
         subtitle: "A Reward Model Benchmark for LLM Alignment Evaluation",
         note: "A reward model benchmark for evaluating the effectiveness of alignment in large language models. The benchmark consists of 49 real-world scenarios and both pairwise and Best-of-N (BoN) evaluations.",
-        type: "Alignment",
+        type: "LLMs",
         venue: "ICLR 2025",
         stars: 48,
         updated: "2025-03-25",
         tags: [
+          "alignment",
           "llm",
           "reward model",
-          "alignment",
         ],
         stats: [
           {
@@ -1769,15 +2531,17 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         image: "/media/language-icon.png",
         slug: "rewardmodel-bench",
+        domain: "LLMs",
+        property: "Alignment",
       },
       {
         name: "VLBreakBench",
         subtitle: "A Multimodal Jailbreak Benchmark for Vision-Language Models",
         note: "VLBreakBench evaluates VLMs through two tiers: a base set (1 jailbreak pair per query) and a challenge set (3 pairs per query), covering 12 safety topics and 46 subcategories (916 harmful queries), totaling 3,654 jailbreak samples.",
-        type: "Multimodal Safety",
+        type: "Vision & Multimodal",
         tags: [
-          "multimodal",
           "jailbreak",
+          "multimodal",
           "safety",
         ],
         stats: [],
@@ -1785,15 +2549,19 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         resources: [],
         image: "/media/vision-language-icon.png",
         slug: "vlbreakbench",
+        domain: "Vision & Multimodal",
+        property: "Jailbreak",
       },
       {
         name: "HarmBench",
         note: "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
-        type: "LLM Safety",
+        type: "LLMs",
         stars: 1027,
         updated: "2024-08-16",
         posted: "2024-02-06",
-        tags: [],
+        tags: [
+          "jailbreak",
+        ],
         stats: [
           {
             label: "Stars",
@@ -1824,16 +2592,20 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           },
         ],
         slug: "harmbench",
+        domain: "LLMs",
+        property: "Jailbreak",
       },
       {
         name: "JailbreakBench",
         note: "JailbreakBench: An Open Robustness Benchmark for Jailbreaking Language Models [NeurIPS 2024 Datasets and Benchmarks Track]",
-        type: "LLM Safety",
+        type: "LLMs",
         venue: "NeurIPS 2024",
         stars: 651,
         updated: "2025-04-04",
         posted: "2024-03-28",
-        tags: [],
+        tags: [
+          "jailbreak",
+        ],
         stats: [
           {
             label: "Stars",
@@ -1864,11 +2636,13 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           },
         ],
         slug: "jailbreakbench",
+        domain: "LLMs",
+        property: "Jailbreak",
       },
       {
         name: "SafetyBench",
         note: "Official github repo for SafetyBench, a comprehensive benchmark to evaluate LLMs' safety. [ACL 2024]",
-        type: "LLM Safety",
+        type: "LLMs",
         venue: "ACL 2024",
         stars: 297,
         updated: "2025-07-28",
@@ -1900,11 +2674,12 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           },
         ],
         slug: "safetybench",
+        domain: "LLMs",
       },
       {
         name: "AgentDojo",
         note: "A Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents.",
-        type: "Agent Safety",
+        type: "Agents",
         stars: 735,
         updated: "2026-06-02",
         posted: "2024-06-19",
@@ -1944,11 +2719,12 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           },
         ],
         slug: "agentdojo",
+        domain: "Agents",
       },
       {
         name: "MM-SafetyBench",
         note: "Accepted by ECCV 2024",
-        type: "Multimodal Safety",
+        type: "Vision & Multimodal",
         venue: "ECCV 2024",
         stars: 217,
         updated: "2024-10-15",
@@ -1980,6 +2756,664 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           },
         ],
         slug: "mm-safetybench",
+        domain: "Vision & Multimodal",
+      },
+      {
+        name: "Benchmarking and defending against indirect prompt injection attacks on large language models",
+        note: "Benchmarking and defending against indirect prompt injection attacks on large language models",
+        type: "Agents",
+        tags: [
+          "prompt injection",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2312.14197",
+          },
+        ],
+        citationOnly: true,
+        slug: "benchmarking-and-defending-against-indirect-prompt-injection-attacks-on-large-language-models",
+        domain: "Agents",
+        property: "Prompt Injection",
+      },
+      {
+        name: "Identifying the risks of lm agents with an lm-emulated sandbox",
+        note: "Identifying the risks of lm agents with an lm-emulated sandbox",
+        type: "Agents",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2309.15817",
+          },
+        ],
+        citationOnly: true,
+        slug: "identifying-the-risks-of-lm-agents-with-an-lm-emulated-sandbox",
+        domain: "Agents",
+      },
+      {
+        name: "Injecagent",
+        note: "Benchmarking indirect prompt injections in tool-integrated large language model agents",
+        type: "Agents",
+        stars: 157,
+        updated: "2024-07-02",
+        tags: [
+          "prompt injection",
+        ],
+        stats: [
+          {
+            label: "Stars",
+            value: "157",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2024-07",
+          },
+        ],
+        meta: "uiuc-kang-lab/InjecAgent · MIT · 30 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/uiuc-kang-lab/InjecAgent",
+          },
+        ],
+        slug: "injecagent",
+        domain: "Agents",
+        property: "Prompt Injection",
+      },
+      {
+        name: "Agentharm",
+        note: "A benchmark for measuring harmfulness of llm agents",
+        type: "Agents",
+        stars: 1,
+        updated: "2026-01-16",
+        tags: [
+          "harmful content",
+        ],
+        stats: [
+          {
+            label: "Stars",
+            value: "1",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2026-01",
+          },
+        ],
+        meta: "AIEvals/AgentHarm",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/AIEvals/AgentHarm",
+          },
+        ],
+        slug: "agentharm",
+        domain: "Agents",
+        property: "Harmful Content",
+      },
+      {
+        name: "Redcode",
+        note: "Risky code execution and generation benchmark for code agents",
+        type: "Agents",
+        stars: 45,
+        updated: "2026-04-01",
+        tags: [
+          "cybersecurity",
+        ],
+        stats: [
+          {
+            label: "Stars",
+            value: "45",
+          },
+          {
+            label: "Language",
+            value: "TypeScript",
+          },
+          {
+            label: "Updated",
+            value: "2026-04",
+          },
+        ],
+        meta: "kyxiaxiang/redcode · 24 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/kyxiaxiang/redcode",
+          },
+        ],
+        slug: "redcode",
+        domain: "Agents",
+        property: "Cybersecurity",
+      },
+      {
+        name: "Vpi-bench",
+        note: "Visual prompt injection attacks for computer-use agents",
+        type: "Agents",
+        tags: [
+          "prompt injection",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2506.02456",
+          },
+        ],
+        citationOnly: true,
+        slug: "vpi-bench",
+        domain: "Agents",
+        property: "Prompt Injection",
+      },
+      {
+        name: "R-judge",
+        note: "Benchmarking safety risk awareness for llm agents",
+        type: "Agents",
+        stars: 109,
+        updated: "2026-01-11",
+        tags: [],
+        stats: [
+          {
+            label: "Stars",
+            value: "109",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2026-01",
+          },
+        ],
+        meta: "Lordog/R-Judge · 10 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/Lordog/R-Judge",
+          },
+        ],
+        slug: "r-judge",
+        domain: "Agents",
+      },
+      {
+        name: "Salad-bench",
+        note: "A hierarchical and comprehensive safety benchmark for large language models",
+        type: "Agents",
+        venue: "ACL 2024",
+        stars: 176,
+        updated: "2025-03-08",
+        tags: [],
+        stats: [
+          {
+            label: "Stars",
+            value: "176",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2025-03",
+          },
+        ],
+        meta: "OpenSafetyLab/SALAD-BENCH · Apache-2.0 · 15 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/OpenSafetyLab/SALAD-BENCH",
+          },
+        ],
+        slug: "salad-bench",
+        domain: "Agents",
+      },
+      {
+        name: "Sg-bench",
+        note: "Evaluating llm safety generalization across diverse tasks and prompt types",
+        type: "Agents",
+        stars: 26,
+        updated: "2024-11-29",
+        tags: [],
+        stats: [
+          {
+            label: "Stars",
+            value: "26",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2024-11",
+          },
+        ],
+        meta: "MurrayTom/SG-Bench · GPL-3.0 · 3 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/MurrayTom/SG-Bench",
+          },
+        ],
+        slug: "sg-bench",
+        domain: "Agents",
+      },
+      {
+        name: "Chemsafetybench",
+        note: "Benchmarking llm safety on chemistry domain",
+        type: "Agents",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2411.16736",
+          },
+        ],
+        citationOnly: true,
+        slug: "chemsafetybench",
+        domain: "Agents",
+      },
+      {
+        name: "Toolsword",
+        note: "Unveiling safety issues of large language models in tool learning across three stages",
+        type: "Agents",
+        venue: "ACL 2024",
+        stars: 15,
+        updated: "2024-09-12",
+        tags: [],
+        stats: [
+          {
+            label: "Stars",
+            value: "15",
+          },
+          {
+            label: "Updated",
+            value: "2024-09",
+          },
+        ],
+        meta: "Junjie-Ye/ToolSword · Apache-2.0",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/Junjie-Ye/ToolSword",
+          },
+        ],
+        slug: "toolsword",
+        domain: "Agents",
+      },
+      {
+        name: "Privacylens",
+        note: "Evaluating privacy norm awareness of language models in action",
+        type: "Agents",
+        venue: "NeurIPS 2024",
+        stars: 48,
+        updated: "2025-03-04",
+        tags: [
+          "privacy",
+          "language-model-agent",
+          "language-model-evaluation",
+          "large-language-model",
+          "neurips-2024",
+        ],
+        stats: [
+          {
+            label: "Stars",
+            value: "48",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2025-03",
+          },
+        ],
+        meta: "SALT-NLP/PrivacyLens · MIT · 10 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/SALT-NLP/PrivacyLens",
+          },
+        ],
+        slug: "privacylens",
+        domain: "Agents",
+        property: "Privacy",
+      },
+      {
+        name: "Safebench",
+        note: "A benchmarking platform for safety evaluation of autonomous vehicles",
+        type: "Agents",
+        stars: 155,
+        updated: "2024-02-23",
+        tags: [],
+        stats: [
+          {
+            label: "Stars",
+            value: "155",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2024-02",
+          },
+        ],
+        meta: "trust-ai/SafeBench · MIT · 29 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/trust-ai/SafeBench",
+          },
+        ],
+        slug: "safebench",
+        domain: "Agents",
+      },
+      {
+        name: "Agent security bench",
+        note: "Formalizing and benchmarking attacks and defenses in llm-based agents",
+        type: "Agents",
+        stars: 280,
+        updated: "2026-04-16",
+        tags: [],
+        stats: [
+          {
+            label: "Stars",
+            value: "280",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2026-04",
+          },
+        ],
+        meta: "agiresearch/ASB · MIT · 29 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/agiresearch/ASB",
+          },
+        ],
+        slug: "agent-security-bench",
+        domain: "Agents",
+      },
+      {
+        name: "Safeagentbench",
+        note: "A benchmark for safe task planning of embodied llm agents",
+        type: "Agents",
+        stars: 75,
+        updated: "2025-02-25",
+        tags: [],
+        stats: [
+          {
+            label: "Stars",
+            value: "75",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2025-02",
+          },
+        ],
+        meta: "shengyin1224/SafeAgentBench · 5 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/shengyin1224/SafeAgentBench",
+          },
+        ],
+        slug: "safeagentbench",
+        domain: "Agents",
+      },
+      {
+        name: "Agent-safetybench",
+        note: "Evaluating the safety of llm agents",
+        type: "Agents",
+        stars: 157,
+        updated: "2025-08-11",
+        tags: [],
+        stats: [
+          {
+            label: "Stars",
+            value: "157",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2025-08",
+          },
+        ],
+        meta: "thu-coai/Agent-SafetyBench · MIT · 10 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/thu-coai/Agent-SafetyBench",
+          },
+        ],
+        slug: "agent-safetybench",
+        domain: "Agents",
+      },
+      {
+        name: "Dissecting adversarial robustness of multimodal lm agents",
+        note: "Dissecting adversarial robustness of multimodal lm agents",
+        type: "Agents",
+        tags: [
+          "robustness",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2406.12814",
+          },
+        ],
+        citationOnly: true,
+        slug: "dissecting-adversarial-robustness-of-multimodal-lm-agents",
+        domain: "Agents",
+        property: "Robustness",
+      },
+      {
+        name: "St-webagentbench",
+        note: "A benchmark for evaluating safety and trustworthiness in web agents",
+        type: "Agents",
+        stars: 25,
+        updated: "2026-03-12",
+        tags: [],
+        stats: [
+          {
+            label: "Stars",
+            value: "25",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2026-03",
+          },
+        ],
+        meta: "segev-shlomov/ST-WebAgentBench · NOASSERTION · 6 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/segev-shlomov/ST-WebAgentBench",
+          },
+        ],
+        slug: "st-webagentbench",
+        domain: "Agents",
+      },
+      {
+        name: "Haicosystem",
+        note: "An ecosystem for sandboxing safety risks in human-ai interactions",
+        type: "Agents",
+        stars: 14,
+        updated: "2025-06-01",
+        tags: [
+          "ai-safety",
+          "multi-agent",
+          "social-interactions",
+        ],
+        stats: [
+          {
+            label: "Stars",
+            value: "14",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2025-06",
+          },
+        ],
+        meta: "XuhuiZhou/HAICosystem · 1 fork",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/XuhuiZhou/HAICosystem",
+          },
+        ],
+        slug: "haicosystem",
+        domain: "Agents",
+      },
+      {
+        name: "Wasp",
+        note: "Benchmarking web agent security against prompt injection attacks",
+        type: "Agents",
+        stars: 98,
+        updated: "2026-04-13",
+        tags: [
+          "prompt injection",
+        ],
+        stats: [
+          {
+            label: "Stars",
+            value: "98",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2026-04",
+          },
+        ],
+        meta: "facebookresearch/wasp · NOASSERTION · 15 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/facebookresearch/wasp",
+          },
+        ],
+        slug: "wasp",
+        domain: "Agents",
+        property: "Prompt Injection",
+      },
+      {
+        name: "Refusal-trained llms are easily jailbroken as browser agents",
+        note: "Refusal-trained llms are easily jailbroken as browser agents",
+        type: "Agents",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2410.13886",
+          },
+        ],
+        citationOnly: true,
+        slug: "refusal-trained-llms-are-easily-jailbroken-as-browser-agents",
+        domain: "Agents",
+        property: "Jailbreak",
+      },
+      {
+        name: "Safearena",
+        note: "Evaluating the safety of autonomous web agents",
+        type: "Agents",
+        stars: 24,
+        updated: "2025-04-23",
+        tags: [],
+        stats: [
+          {
+            label: "Stars",
+            value: "24",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2025-04",
+          },
+        ],
+        meta: "McGill-NLP/safearena · 7 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/McGill-NLP/safearena",
+          },
+        ],
+        slug: "safearena",
+        domain: "Agents",
+      },
+      {
+        name: "Openagentsafety",
+        note: "A comprehensive framework for evaluating real-world ai agent safety",
+        type: "Agents",
+        stars: 32,
+        updated: "2026-08-10",
+        tags: [],
+        stats: [
+          {
+            label: "Stars",
+            value: "32",
+          },
+          {
+            label: "Language",
+            value: "Python",
+          },
+          {
+            label: "Updated",
+            value: "2026-08",
+          },
+        ],
+        meta: "Open-Agent-Safety/OpenAgentSafety · MIT · 17 forks",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/Open-Agent-Safety/OpenAgentSafety",
+          },
+        ],
+        slug: "openagentsafety",
+        domain: "Agents",
       },
     ],
   },
@@ -2600,275 +4034,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
     ],
   },
-  papers: {
-    slug: "papers",
-    breadcrumb: [
-      "Discover",
-      "Papers",
-    ],
-    title: "Papers",
-    heroIcon: "◈",
-    description: "Papers, surveys, and tutorials on attacking, defending, auditing, and detecting failure modes in large models — each with public code.",
-    overview: "Venues are taken from the projects' own repository descriptions and arXiv comments, never inferred.",
-    tableTitle: "Papers with code",
-    sectionTitle: "Research areas",
-    categories: [
-      {
-        title: "Attack & Red Teaming",
-        detail: "Probing frontier models for exploitable failure modes.",
-        accent: "pink",
-        filters: [
-          "Red Teaming",
-          "Jailbreak Attack",
-          "Adversarial Attack",
-        ],
-      },
-      {
-        title: "Defense",
-        detail: "Hardening multimodal models against jailbreak prompts.",
-        accent: "green",
-        filters: [
-          "Jailbreak Defense",
-        ],
-      },
-      {
-        title: "Auditing",
-        detail: "Systematic auditing of large language model behaviour.",
-        accent: "blue",
-        filters: [
-          "Model Auditing",
-        ],
-      },
-      {
-        title: "Detection",
-        detail: "Finding poisoned or backdoored samples in training data.",
-        accent: "violet",
-        filters: [
-          "Backdoor Detection",
-        ],
-      },
-    ],
-    tableRows: [
-      {
-        name: "IDEATOR",
-        subtitle: "Red Team VLMs",
-        note: "Jailbreaking vision-language models using themselves, with the assistance of text-to-image diffusion models.",
-        type: "Red Teaming",
-        venue: "ICCV 2025",
-        stars: 18,
-        updated: "2025-07-11",
-        tags: [
-          "red teaming",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "18",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-07",
-          },
-        ],
-        meta: "roywang021/IDEATOR · 1 fork · since 2025",
-        resources: [
-          {
-            label: "GitHub",
-            href: "https://github.com/roywang021/IDEATOR",
-          },
-        ],
-      },
-      {
-        name: "CALM",
-        subtitle: "RL-based LLM Auditing",
-        note: "Leveraging reinforcement learning with curiosity reward to black-box audit commercial large language models.",
-        type: "Model Auditing",
-        venue: "AAAI 2025",
-        stars: 5,
-        updated: "2025-03-18",
-        tags: [
-          "model auditing",
-          "auditing",
-          "curiosity",
-          "large-language-models",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "5",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-03",
-          },
-        ],
-        meta: "x-zheng16/CALM · 2 forks · since 2024",
-        resources: [
-          {
-            label: "GitHub",
-            href: "https://github.com/x-zheng16/CALM",
-          },
-        ],
-      },
-      {
-        name: "BlueSuffix",
-        subtitle: "RL-based Multimodal Jailbreak Defense",
-        note: "Leveraging reinforcement learning to train a defense model to safeguard large models against multimodal jailbreaks.",
-        type: "Jailbreak Defense",
-        venue: "ICLR 2025",
-        stars: 31,
-        updated: "2025-11-02",
-        tags: [
-          "jailbreak defense",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "31",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-11",
-          },
-        ],
-        meta: "Vinsonzyh/BlueSuffix · 5 forks · since 2024",
-        resources: [
-          {
-            label: "Project page",
-            href: "https://vinsonzyh.github.io/BlueSuffix-website.github.io/",
-          },
-          {
-            label: "GitHub",
-            href: "https://github.com/Vinsonzyh/BlueSuffix",
-          },
-        ],
-      },
-      {
-        name: "AnyAttack",
-        subtitle: "Large-scale Self-supervised Adversarial Attack",
-        note: "Exploring large-scale pre-training or surrogate scaling to generate scalable, targeted, and highly-transferable attacks.",
-        type: "Adversarial Attack",
-        venue: "CVPR 2025",
-        stars: 74,
-        updated: "2025-08-07",
-        tags: [
-          "adversarial attack",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "74",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-08",
-          },
-        ],
-        meta: "jiamingzhang94/AnyAttack · 10 forks · since 2024",
-        resources: [
-          {
-            label: "Project page",
-            href: "https://jiamingzhang94.github.io/anyattack/",
-          },
-          {
-            label: "GitHub",
-            href: "https://github.com/jiamingzhang94/AnyAttack",
-          },
-        ],
-      },
-      {
-        name: "DAO",
-        subtitle: "Backdoor Detection in CLIP Training Data",
-        note: "Developing simple but effective backdoor data detection and filtering methods for real-world large-scale datasets.",
-        type: "Backdoor Detection",
-        venue: "ICLR 2025",
-        stars: 23,
-        updated: "2025-02-26",
-        tags: [
-          "backdoor detection",
-          "backdoor",
-          "backdoor-attack",
-          "backdoor-attacks",
-          "backdoors",
-          "clip",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "23",
-          },
-          {
-            label: "Language",
-            value: "Jupyter Notebook",
-          },
-          {
-            label: "Updated",
-            value: "2025-02",
-          },
-        ],
-        meta: "HanxunH/Detect-CLIP-Backdoor-Samples · MIT · 3 forks · since 2025",
-        resources: [
-          {
-            label: "Project page",
-            href: "https://hanxunh.github.io/Detect-CLIP-Backdoor-Samples/",
-          },
-          {
-            label: "GitHub",
-            href: "https://github.com/HanxunH/Detect-CLIP-Backdoor-Samples",
-          },
-        ],
-      },
-      {
-        name: "Universal Master Key (UMK)",
-        subtitle: "Multimodal Jailbreak Attack",
-        note: "Exploring text-image dual optimization to craft more powerful white-box jailbreak attacks against vision-language models.",
-        type: "Jailbreak Attack",
-        venue: "ACM MM 2024",
-        stars: 34,
-        updated: "2024-12-30",
-        tags: [
-          "jailbreak attack",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "34",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2024-12",
-          },
-        ],
-        meta: "roywang021/UMK · 1 fork · since 2024",
-        resources: [
-          {
-            label: "GitHub",
-            href: "https://github.com/roywang021/UMK",
-          },
-        ],
-      },
-    ],
-  },
 };
 
 export const collectionOrder = [
@@ -2876,5 +4041,4 @@ export const collectionOrder = [
   "models",
   "datasets",
   "tools",
-  "papers",
 ] as const;

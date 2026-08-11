@@ -1,0 +1,42 @@
+{
+  "_comment": "OpenTAI's own papers. The team asked to replace the site's papers with the two survey lists, on the understanding that their own work already appears there — but CALM, DAO and UMK appear in neither list, so dropping the old section outright would have removed them from OpenTAI's own site. All six are merged into the library instead; the three that are already in a survey list dedupe against it. Titles, venues and links were verified earlier in the pipeline from the projects' repositories.",
+
+  "papers": [
+    {
+      "title": "IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves",
+      "venue": "ICCV", "year": "2025", "domain": "Vision & Multimodal",
+      "group": "OpenTAI research", "section": "Red teaming",
+      "url": "https://github.com/roywang021/IDEATOR"
+    },
+    {
+      "title": "CALM: Curiosity-Driven Auditing for Large Language Models",
+      "venue": "AAAI", "year": "2025", "domain": "LLMs",
+      "group": "OpenTAI research", "section": "Model auditing",
+      "url": "https://github.com/x-zheng16/CALM"
+    },
+    {
+      "title": "BlueSuffix: Reinforced Blue Teaming for Vision-Language Models Against Jailbreak Attacks",
+      "venue": "ICLR", "year": "2025", "domain": "Vision & Multimodal",
+      "group": "OpenTAI research", "section": "Jailbreak defense",
+      "url": "https://github.com/Vinsonzyh/BlueSuffix"
+    },
+    {
+      "title": "AnyAttack: Towards Large-scale Self-supervised Adversarial Attacks on Vision-language Models",
+      "venue": "CVPR", "year": "2025", "domain": "Vision & Multimodal",
+      "group": "OpenTAI research", "section": "Adversarial attack",
+      "url": "https://github.com/jiamingzhang94/AnyAttack"
+    },
+    {
+      "title": "Detecting Backdoor Samples in Contrastive Language Image Pretraining",
+      "venue": "ICLR", "year": "2025", "domain": "Vision & Multimodal",
+      "group": "OpenTAI research", "section": "Backdoor detection",
+      "url": "https://github.com/HanxunH/Detect-CLIP-Backdoor-Samples"
+    },
+    {
+      "title": "Universal Master Key: Jailbreaking Multimodal Large Language Models via Dual Optimization",
+      "venue": "ACM MM", "year": "2024", "domain": "Vision & Multimodal",
+      "group": "OpenTAI research", "section": "Jailbreak attack",
+      "url": "https://github.com/roywang021/UMK"
+    }
+  ]
+}

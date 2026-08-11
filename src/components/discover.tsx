@@ -6,6 +6,7 @@ import {
   subpageConfigs,
   SubpageTableRow,
 } from "@/data/site";
+import { paperLibrary } from "@/data/papers";
 import { SiteSearch } from "@/components/site-search";
 import { SubscribeBox } from "@/components/subscribe";
 
@@ -35,8 +36,21 @@ function recent(slug: string, limit = 4) {
     .slice(0, limit);
 }
 
+// Papers come from the research library, which is not a curated collection.
+const latestPapers = [...paperLibrary]
+  .filter((p) => p.year)
+  .sort((a, b) => Number(b.year) - Number(a.year))
+  .slice(0, 4)
+  .map((p) => ({
+    name: p.title.length > 52 ? `${p.title.slice(0, 50)}…` : p.title,
+    type: p.domain,
+    venue: p.venue ?? undefined,
+    posted: p.year ?? undefined,
+    updated: undefined as string | undefined,
+  }));
+
 const latest = [
-  { title: "Latest papers", href: "/papers", rows: recent("papers") },
+  { title: "Latest papers", href: "/papers", rows: latestPapers },
   { title: "New models", href: "/models", rows: recent("models") },
   { title: "New benchmarks", href: "/benchmarks", rows: recent("benchmarks") },
   { title: "New datasets", href: "/datasets", rows: recent("datasets") },
@@ -102,6 +116,13 @@ export function DiscoverHero() {
             <span className="text-[#98a2b3]">{config.tableRows.length}</span>
           </Link>
         ))}
+        <Link
+          className="rounded-full border border-[#e3e8f2] bg-white px-4 py-2 text-sm font-medium text-[#475467] transition hover:border-[#c7d2fe] hover:text-[#4338ca]"
+          href="/papers"
+        >
+          Papers{" "}
+          <span className="text-[#98a2b3]">{paperLibrary.length.toLocaleString()}</span>
+        </Link>
       </div>
     </section>
   );

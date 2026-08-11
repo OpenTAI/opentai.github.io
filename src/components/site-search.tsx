@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { paperLibrary } from "@/data/papers";
+import { paperSearchIndex } from "@/data/paper-search";
 import { collectionOrder, subpageConfigs, SubpageTableRow } from "@/data/site";
 
 type Hit = SubpageTableRow & { collection: string; href: string };
@@ -25,12 +25,9 @@ function haystack(hit: Hit) {
 const HAYSTACKS = new Map(INDEX.map((hit) => [hit, haystack(hit)]));
 
 const PAPER_HAYSTACKS = new Map(
-  paperLibrary.map((paper) => [
+  paperSearchIndex.map((paper) => [
     paper,
-    [paper.title, paper.venue ?? "", paper.year ?? "", paper.section ?? ""]
-      .concat(paper.authors)
-      .join(" ")
-      .toLowerCase(),
+    [paper.t, paper.a ?? "", paper.v ?? "", paper.y ?? "", paper.d].join(" ").toLowerCase(),
   ]),
 );
 
@@ -59,7 +56,7 @@ export function SiteSearch() {
     if (!normalized) return [];
     const terms = normalized.split(/\s+/);
 
-    return paperLibrary
+    return paperSearchIndex
       .filter((paper) => {
         const text = PAPER_HAYSTACKS.get(paper)!;
         return terms.every((term) => text.includes(term));
@@ -82,7 +79,7 @@ export function SiteSearch() {
           value={query}
         />
         <span className="hidden shrink-0 whitespace-nowrap text-sm text-[#98a2b3] sm:block">
-          {INDEX.length} resources · {paperLibrary.length} papers
+          {INDEX.length} resources · {paperSearchIndex.length.toLocaleString()} papers
         </span>
       </div>
 
@@ -132,23 +129,23 @@ export function SiteSearch() {
               </p>
               <ul className="space-y-1">
                 {paperHits.map((paper, index) => (
-                  <li key={`${paper.title}-${index}`}>
+                  <li key={`${paper.t}-${index}`}>
                     <Link
                       className="flex items-start gap-4 rounded-[16px] px-4 py-2.5 transition hover:bg-[#f6f8fc]"
                       href="/papers"
                     >
                       <div className="min-w-0 flex-1">
                         <p className="line-clamp-1 text-sm font-medium text-[#111827]">
-                          {paper.title}
+                          {paper.t}
                         </p>
                         <p className="text-xs text-[#98a2b3]">
-                          {paper.authors[0] ?? ""}
-                          {paper.authorCount > 1 ? " et al." : ""}
-                          {paper.venue ? ` · ${paper.venue} ${paper.year ?? ""}` : ""}
+                          {paper.a ?? ""}
+                          {paper.n > 1 ? " et al." : ""}
+                          {paper.v ? ` · ${paper.v} ${paper.y ?? ""}` : ""}
                         </p>
                       </div>
-                      {paper.arxivId ? (
-                        <span className="shrink-0 text-xs font-medium text-[#5260ff]">arXiv</span>
+                      {paper.x ? (
+                        <span className="shrink-0 text-xs font-medium text-[#5260ff]">link</span>
                       ) : null}
                     </Link>
                   </li>

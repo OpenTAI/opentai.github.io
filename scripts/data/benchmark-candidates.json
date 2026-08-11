@@ -1,0 +1,489 @@
+[
+  {
+    "title": "Benchmarking and defending against indirect prompt injection attacks on large language models",
+    "authors": [
+      "Jingwei Yi",
+      "Yueqi Xie",
+      "Bin Zhu",
+      "Emre Kiciman"
+    ],
+    "authorCount": 7,
+    "venue": "arXiv",
+    "year": "2023",
+    "arxivId": "2312.14197",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Identifying the risks of lm agents with an lm-emulated sandbox",
+    "authors": [
+      "Yangjun Ruan",
+      "Honghua Dong",
+      "Andrew Wang",
+      "Silviu Pitis"
+    ],
+    "authorCount": 9,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2309.15817",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Injecagent: Benchmarking indirect prompt injections in tool-integrated large language model agents",
+    "authors": [
+      "Qiusi Zhan",
+      "Zhixiang Liang",
+      "Zifan Ying",
+      "Daniel Kang"
+    ],
+    "authorCount": 4,
+    "venue": "ACL",
+    "year": "2024",
+    "arxivId": "2403.02691",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Agentdojo: A dynamic environment to evaluate prompt injection attacks and defenses for LLM agents",
+    "authors": [
+      "Edoardo Debenedetti",
+      "Jie Zhang",
+      "Mislav Balunovic",
+      "Luca Beurer-Kellner"
+    ],
+    "authorCount": 6,
+    "venue": "NeurIPS",
+    "year": "2024",
+    "arxivId": "2406.13352",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Agentharm: A benchmark for measuring harmfulness of llm agents",
+    "authors": [
+      "Maksym Andriushchenko",
+      "Alexandra Souly",
+      "Mateusz Dziemian",
+      "Derek Duenas"
+    ],
+    "authorCount": 10,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2410.09024",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Redcode: Risky code execution and generation benchmark for code agents",
+    "authors": [
+      "Chengquan Guo",
+      "Xun Liu",
+      "Chulin Xie",
+      "Andy Zhou"
+    ],
+    "authorCount": 8,
+    "venue": "NeurIPS",
+    "year": "2024",
+    "arxivId": "2411.07781",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Vpi-bench: Visual prompt injection attacks for computer-use agents",
+    "authors": [
+      "Tri Cao",
+      "Bennett Lim",
+      "Yue Liu",
+      "Yuan Sui"
+    ],
+    "authorCount": 10,
+    "venue": "based on available information from Moonlight review",
+    "year": "2024",
+    "arxivId": "2506.02456",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "R-judge: Benchmarking safety risk awareness for llm agents",
+    "authors": [
+      "Tongxin Yuan",
+      "Zhiwei He",
+      "Lingzhong Dong",
+      "Yiming Wang"
+    ],
+    "authorCount": 10,
+    "venue": "EMNLP",
+    "year": "2024",
+    "arxivId": "2401.10019",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Salad-bench: A hierarchical and comprehensive safety benchmark for large language models",
+    "authors": [
+      "Lijun Li",
+      "Bowen Dong",
+      "Ruohui Wang",
+      "Xuhao Hu"
+    ],
+    "authorCount": 8,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2402.05044",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Sg-bench: Evaluating llm safety generalization across diverse tasks and prompt types",
+    "authors": [
+      "Yutao Mou",
+      "Shikun Zhang",
+      "Wei Ye"
+    ],
+    "authorCount": 3,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2410.21965",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Chemsafetybench: Benchmarking llm safety on chemistry domain",
+    "authors": [
+      "Haochen Zhao",
+      "Xiangru Tang",
+      "Ziran Yang",
+      "Xiao Han"
+    ],
+    "authorCount": 10,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2411.16736",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Toolsword: Unveiling safety issues of large language models in tool learning across three stages",
+    "authors": [
+      "Junjie Ye",
+      "Sixian Li",
+      "Guanyu Li",
+      "Caishuang Huang"
+    ],
+    "authorCount": 9,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2402.10753",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Privacylens: Evaluating privacy norm awareness of language models in action",
+    "authors": [
+      "Yijia Shao",
+      "Tianshi Li",
+      "Weiyan Shi",
+      "Yanchen Liu"
+    ],
+    "authorCount": 5,
+    "venue": "NeurIPS",
+    "year": "2024",
+    "arxivId": "2409.00138",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Safebench: A benchmarking platform for safety evaluation of autonomous vehicles",
+    "authors": [
+      "Chejian Xu",
+      "Wenhao Ding",
+      "Weijie Lyu",
+      "Zuxin Liu"
+    ],
+    "authorCount": 9,
+    "venue": "arXiv",
+    "year": "2022",
+    "arxivId": "2206.09682",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Agent security bench (asb): Formalizing and benchmarking attacks and defenses in llm-based agents",
+    "authors": [
+      "Hanrong Zhang",
+      "Jingyuan Huang",
+      "Kai Mei",
+      "Yifei Yao"
+    ],
+    "authorCount": 8,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2410.02644",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Safeagentbench: A benchmark for safe task planning of embodied llm agents",
+    "authors": [
+      "Sheng Yin",
+      "Xianghe Pang",
+      "Yuanzhuo Ding",
+      "Menglan Chen"
+    ],
+    "authorCount": 10,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2412.13178",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Agent-safetybench: Evaluating the safety of llm agents",
+    "authors": [
+      "Zhexin Zhang",
+      "Shiyao Cui",
+      "Yida Lu",
+      "Jingzhuo Zhou"
+    ],
+    "authorCount": 7,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2412.14470",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Dissecting adversarial robustness of multimodal lm agents",
+    "authors": [
+      "Chen Henry Wu",
+      "Rishi Shah",
+      "Jing Yu Koh",
+      "Ruslan Salakhutdinov"
+    ],
+    "authorCount": 6,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2406.12814",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "St-webagentbench: A benchmark for evaluating safety and trustworthiness in web agents",
+    "authors": [
+      "Ido Levy",
+      "Ben Wiesel",
+      "Sami Marreed",
+      "Alon Oved"
+    ],
+    "authorCount": 6,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2410.06703",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Haicosystem: An ecosystem for sandboxing safety risks in human-ai interactions",
+    "authors": [
+      "Xuhui Zhou",
+      "Hyunwoo Kim",
+      "Faeze Brahman",
+      "Liwei Jiang"
+    ],
+    "authorCount": 10,
+    "venue": "NeurIPS",
+    "year": "2024",
+    "arxivId": "2409.16427",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Wasp: Benchmarking web agent security against prompt injection attacks",
+    "authors": [
+      "Ivan Evtimov",
+      "Arman Zharmagambetov",
+      "Aaron Grattafiori",
+      "Chuan Guo"
+    ],
+    "authorCount": 5,
+    "venue": "arXiv",
+    "year": "2025",
+    "arxivId": "2504.18575",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Refusal-trained llms are easily jailbroken as browser agents",
+    "authors": [
+      "Priyanshu Kumar",
+      "Elaine Lau",
+      "Saranya Vijayakumar",
+      "Tu Trinh"
+    ],
+    "authorCount": 10,
+    "venue": "arXiv",
+    "year": "2025",
+    "arxivId": "2410.13886",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Safearena: Evaluating the safety of autonomous web agents",
+    "authors": [
+      "Ada Defne Tur",
+      "Nicholas Meade",
+      "Xing Han L{\\`u}",
+      "Alejandra Zambrano"
+    ],
+    "authorCount": 9,
+    "venue": "arXiv",
+    "year": "2025",
+    "arxivId": "2503.04957",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Openagentsafety: A comprehensive framework for evaluating real-world ai agent safety",
+    "authors": [
+      "Sanidhya Vijayvargiya",
+      "Aditya Bharat Soni",
+      "Xuhui Zhou",
+      "Zora Zhiruo Wang"
+    ],
+    "authorCount": 7,
+    "venue": "arXiv",
+    "year": "2025",
+    "arxivId": "2507.06134",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments",
+    "authors": [
+      "Anderson et al"
+    ],
+    "authorCount": 1,
+    "venue": "CVPR",
+    "year": "2018",
+    "arxivId": null,
+    "url": "https://scholar.google.com/scholar?q=Vision-and-Language+Navigation%3A+Interpreting+Visually-Grounded+Navigation+Instructions+in+Real+Environments",
+    "domain": "Embodied AI",
+    "group": "Related work",
+    "section": null,
+    "kind": "benchmark",
+    "source": "embodied-ai-safety"
+  },
+  {
+    "title": "VizWiz Grand Challenge: Answering Visual Questions from Blind People",
+    "authors": [
+      "Gurari et al"
+    ],
+    "authorCount": 1,
+    "venue": "CVPR",
+    "year": "2018",
+    "arxivId": null,
+    "url": "https://scholar.google.com/scholar?q=VizWiz+Grand+Challenge%3A+Answering+Visual+Questions+from+Blind+People",
+    "domain": "Embodied AI",
+    "group": "Related work",
+    "section": null,
+    "kind": "benchmark",
+    "source": "embodied-ai-safety"
+  }
+]

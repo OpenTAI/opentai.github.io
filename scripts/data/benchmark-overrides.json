@@ -1,0 +1,23 @@
+{
+  "_comment": "Hand-checked verdicts for candidates the automatic resolver got wrong. Name matching alone cannot separate a benchmark from an unrelated project that happens to share its name, so these were verified by opening the repositories on 2026-08-11. `repo` forces a match; `exclude` keeps the entry out of Benchmarks with a stated reason.",
+
+  "Wasp: Benchmarking web agent security against prompt injection attacks": {
+    "repo": "facebookresearch/wasp",
+    "why": "The resolver matched wasp-lang/wasp, the web framework. The benchmark is Meta's, described in its own repository as 'the WASP web agent security benchmark'."
+  },
+
+  "Agent security bench (asb): Formalizing and benchmarking attacks and defenses in llm-based agents": {
+    "repo": "agiresearch/ASB",
+    "why": "The resolver matched an unrelated 2-star repository. agiresearch/ASB is the one whose description is 'Agent Security Bench (ASB)'."
+  },
+
+  "Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments": {
+    "exclude": true,
+    "why": "A capability dataset (R2R) cited as background by the embodied survey, not a trustworthy-AI resource. The resolver matched an awesome-list."
+  },
+
+  "VizWiz Grand Challenge: Answering Visual Questions from Blind People": {
+    "exclude": true,
+    "why": "A visual question answering dataset cited as background, not a safety benchmark. The resolver matched an unrelated challenge submission."
+  }
+}

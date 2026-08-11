@@ -1,0 +1,305 @@
+{
+  "Benchmarking and defending against indirect prompt injection attacks on large language models": {
+    "name": "Benchmarking and defending against indirect prompt injection attacks on large language models",
+    "github": null
+  },
+  "Identifying the risks of lm agents with an lm-emulated sandbox": {
+    "name": "Identifying the risks of lm agents with an lm-emulated sandbox",
+    "github": null
+  },
+  "Injecagent: Benchmarking indirect prompt injections in tool-integrated large language model agents": {
+    "name": "Injecagent",
+    "github": {
+      "repo": "uiuc-kang-lab/InjecAgent",
+      "stars": 157,
+      "forks": 30,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2024-07-02",
+      "description": null,
+      "homepage": null,
+      "topics": []
+    }
+  },
+  "Agentdojo: A dynamic environment to evaluate prompt injection attacks and defenses for LLM agents": {
+    "name": "Agentdojo",
+    "github": {
+      "repo": "ethz-spylab/agentdojo",
+      "stars": 740,
+      "forks": 191,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2026-06-02",
+      "description": "A Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents.",
+      "homepage": "https://agentdojo.spylab.ai/",
+      "topics": [
+        "benchmark",
+        "large-language-models",
+        "prompt-injection",
+        "security"
+      ]
+    }
+  },
+  "Agentharm: A benchmark for measuring harmfulness of llm agents": {
+    "name": "Agentharm",
+    "github": {
+      "repo": "AIEvals/AgentHarm",
+      "stars": 1,
+      "forks": 0,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2026-01-16",
+      "description": null,
+      "homepage": null,
+      "topics": []
+    }
+  },
+  "Redcode: Risky code execution and generation benchmark for code agents": {
+    "name": "Redcode",
+    "github": {
+      "repo": "kyxiaxiang/redcode",
+      "stars": 45,
+      "forks": 24,
+      "language": "TypeScript",
+      "license": null,
+      "pushedAt": "2026-04-01",
+      "description": null,
+      "homepage": null,
+      "topics": []
+    }
+  },
+  "Vpi-bench: Visual prompt injection attacks for computer-use agents": {
+    "name": "Vpi-bench",
+    "github": null
+  },
+  "R-judge: Benchmarking safety risk awareness for llm agents": {
+    "name": "R-judge",
+    "github": {
+      "repo": "Lordog/R-Judge",
+      "stars": 109,
+      "forks": 10,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2026-01-11",
+      "description": "R-Judge: Benchmarking Safety Risk Awareness for LLM Agents (EMNLP Findings 2024)",
+      "homepage": "https://arxiv.org/abs/2401.10019",
+      "topics": []
+    }
+  },
+  "Salad-bench: A hierarchical and comprehensive safety benchmark for large language models": {
+    "name": "Salad-bench",
+    "github": {
+      "repo": "OpenSafetyLab/SALAD-BENCH",
+      "stars": 176,
+      "forks": 15,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "pushedAt": "2025-03-08",
+      "description": "【ACL 2024】 SALAD benchmark & MD-Judge",
+      "homepage": null,
+      "topics": []
+    }
+  },
+  "Sg-bench: Evaluating llm safety generalization across diverse tasks and prompt types": {
+    "name": "Sg-bench",
+    "github": {
+      "repo": "MurrayTom/SG-Bench",
+      "stars": 26,
+      "forks": 3,
+      "language": "Python",
+      "license": "GPL-3.0",
+      "pushedAt": "2024-11-29",
+      "description": "SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types",
+      "homepage": null,
+      "topics": []
+    }
+  },
+  "Chemsafetybench: Benchmarking llm safety on chemistry domain": {
+    "name": "Chemsafetybench",
+    "github": null
+  },
+  "Toolsword: Unveiling safety issues of large language models in tool learning across three stages": {
+    "name": "Toolsword",
+    "github": {
+      "repo": "Junjie-Ye/ToolSword",
+      "stars": 15,
+      "forks": 0,
+      "language": null,
+      "license": "Apache-2.0",
+      "pushedAt": "2024-09-12",
+      "description": "[ACL 2024] ToolSword: Unveiling Safety Issues of Large Language Models in Tool Learning Across Three Stages",
+      "homepage": null,
+      "topics": []
+    }
+  },
+  "Privacylens: Evaluating privacy norm awareness of language models in action": {
+    "name": "Privacylens",
+    "github": {
+      "repo": "SALT-NLP/PrivacyLens",
+      "stars": 48,
+      "forks": 10,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2025-03-04",
+      "description": "A data construction and evaluation framework to quantify privacy norm awareness of language models (LMs) and emerging privacy risk of LM agents. (NeurIPS 2024 D&B)",
+      "homepage": "https://salt-nlp.github.io/PrivacyLens",
+      "topics": [
+        "language-model-agent",
+        "language-model-evaluation",
+        "large-language-model",
+        "neurips-2024",
+        "privacy"
+      ]
+    }
+  },
+  "Safebench: A benchmarking platform for safety evaluation of autonomous vehicles": {
+    "name": "Safebench",
+    "github": {
+      "repo": "trust-ai/SafeBench",
+      "stars": 155,
+      "forks": 29,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2024-02-23",
+      "description": "A Benchmark for Evaluating Autonomous Vehicles in Safety-critical Scenarios",
+      "homepage": "https://safebench.github.io",
+      "topics": []
+    }
+  },
+  "Agent security bench (asb): Formalizing and benchmarking attacks and defenses in llm-based agents": {
+    "name": "Agent security bench",
+    "github": {
+      "repo": "agiresearch/ASB",
+      "stars": 280,
+      "forks": 29,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2026-04-16",
+      "description": "Agent Security Bench (ASB)",
+      "homepage": null,
+      "topics": []
+    },
+    "verifiedBy": "hand-checked"
+  },
+  "Safeagentbench: A benchmark for safe task planning of embodied llm agents": {
+    "name": "Safeagentbench",
+    "github": {
+      "repo": "shengyin1224/SafeAgentBench",
+      "stars": 75,
+      "forks": 5,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2025-02-25",
+      "description": "Codes for paper \"SafeAgentBench: A Benchmark for Safe Task Planning of \\\\ Embodied LLM Agents\"",
+      "homepage": null,
+      "topics": []
+    }
+  },
+  "Agent-safetybench: Evaluating the safety of llm agents": {
+    "name": "Agent-safetybench",
+    "github": {
+      "repo": "thu-coai/Agent-SafetyBench",
+      "stars": 157,
+      "forks": 10,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2025-08-11",
+      "description": null,
+      "homepage": null,
+      "topics": []
+    }
+  },
+  "Dissecting adversarial robustness of multimodal lm agents": {
+    "name": "Dissecting adversarial robustness of multimodal lm agents",
+    "github": null
+  },
+  "St-webagentbench: A benchmark for evaluating safety and trustworthiness in web agents": {
+    "name": "St-webagentbench",
+    "github": {
+      "repo": "segev-shlomov/ST-WebAgentBench",
+      "stars": 25,
+      "forks": 6,
+      "language": "Python",
+      "license": "NOASSERTION",
+      "pushedAt": "2026-03-12",
+      "description": "A Benchmark for Evaluating Safety and Trustworthiness in Web Agents for Enterprise Scenarios",
+      "homepage": null,
+      "topics": []
+    }
+  },
+  "Haicosystem: An ecosystem for sandboxing safety risks in human-ai interactions": {
+    "name": "Haicosystem",
+    "github": {
+      "repo": "XuhuiZhou/HAICosystem",
+      "stars": 14,
+      "forks": 1,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2025-06-01",
+      "description": "Repo for HAICOSYSTEM",
+      "homepage": "https://haicosystem.org",
+      "topics": [
+        "ai-safety",
+        "multi-agent",
+        "social-interactions"
+      ]
+    }
+  },
+  "Wasp: Benchmarking web agent security against prompt injection attacks": {
+    "name": "Wasp",
+    "github": {
+      "repo": "facebookresearch/wasp",
+      "stars": 98,
+      "forks": 15,
+      "language": "Python",
+      "license": "NOASSERTION",
+      "pushedAt": "2026-04-13",
+      "description": "Official implementation of the WASP web agent security benchmark",
+      "homepage": null,
+      "topics": []
+    },
+    "verifiedBy": "hand-checked"
+  },
+  "Refusal-trained llms are easily jailbroken as browser agents": {
+    "name": "Refusal-trained llms are easily jailbroken as browser agents",
+    "github": null
+  },
+  "Safearena: Evaluating the safety of autonomous web agents": {
+    "name": "Safearena",
+    "github": {
+      "repo": "McGill-NLP/safearena",
+      "stars": 24,
+      "forks": 7,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2025-04-23",
+      "description": "SafeArena is a benchmark for assessing the harmful capabilities of web agents",
+      "homepage": "https://safearena.github.io",
+      "topics": []
+    }
+  },
+  "Openagentsafety: A comprehensive framework for evaluating real-world ai agent safety": {
+    "name": "Openagentsafety",
+    "github": {
+      "repo": "Open-Agent-Safety/OpenAgentSafety",
+      "stars": 32,
+      "forks": 17,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2026-08-10",
+      "description": "Evaluating Agent Safety in Realistic, High-Risk Simulations",
+      "homepage": null,
+      "topics": []
+    }
+  },
+  "Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments": {
+    "name": "Vision-and-Language Navigation",
+    "github": null,
+    "excluded": "A capability dataset (R2R) cited as background by the embodied survey, not a trustworthy-AI resource. The resolver matched an awesome-list."
+  },
+  "VizWiz Grand Challenge: Answering Visual Questions from Blind People": {
+    "name": "VizWiz Grand Challenge",
+    "github": null,
+    "excluded": "A visual question answering dataset cited as background, not a safety benchmark. The resolver matched an unrelated challenge submission."
+  }
+}

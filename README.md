@@ -18,12 +18,12 @@ npm run dev
 | Route | Contents |
 | --- | --- |
 | `/` | Discover — site-wide search, newsletter signup, trending, latest releases |
-| `/benchmarks` | Flagship collection, 10-category taxonomy |
+| `/benchmarks` | Flagship collection, 31 entries across 4 domains |
 | `/benchmarks/[slug]` | Per-benchmark page: description, code, papers, leaderboard, curation gaps |
 | `/models` | Guard models, safety-aligned models, detectors, agents |
 | `/datasets` | Safety instruction, preference, red team, agent trajectory, adversarial data |
 | `/tools` | Libraries, frameworks, attack/defense toolkits |
-| `/papers` | OpenTAI papers with code + a 571-paper research library |
+| `/papers` | 1,050-paper research library — domain, then research/survey, then area |
 | `/leaderboard` | 77 scored entries across 9 adversarial-robustness boards |
 | `/community` | Partner institutions |
 | `/about` | Mission, contact, coverage summary |
@@ -35,16 +35,23 @@ npm run dev
 ```bash
 python3 scripts/fetch-metadata.py      # GitHub / arXiv / Hugging Face metadata
 python3 scripts/fetch-benchmarks.py    # resolve the benchmarks named in the spec
-python3 scripts/parse-awesome.py       # parse the survey list into paper entries
+python3 scripts/parse-awesome.py       # parse the large-model-safety list
+python3 scripts/parse-embodied.py      # parse the embodied-ai-safety list
 python3 scripts/resolve-paper-links.py # look up missing arXiv ids (slow, resumable)
-python3 scripts/generate-site.py       # rebuild src/data/site.ts
+python3 scripts/merge-papers.py        # merge both lists, tag by domain, dedupe
+python3 scripts/fetch-benchmark-candidates.py  # resolve benchmark citations to repos
+python3 scripts/verify-benchmark-repos.py      # confirm each match against its README
+python3 scripts/generate-site.py       # rebuild src/data/*.ts
 ```
 
 | Source | What it provides |
 | --- | --- |
 | `scripts/data/home.json` | Entry names, descriptions, links, tags, images — from `OpenTAI/opentai.github.io` → `content/pages/home.md` |
 | `scripts/data/leaderboards.json` | 77 scored leaderboard rows — from the same repo's `content/pages/leaderboards.md` |
-| `scripts/data/awesome.md` | The survey bibliography from `xingjunm/Awesome-Large-Model-Safety` |
+| `scripts/data/awesome.md` | Bibliography from `xingjunm/Awesome-Large-Model-Safety` — LLMs, Agents, Vision & Multimodal |
+| `scripts/data/embodied.md` | Bibliography from `x-zheng16/Awesome-Embodied-AI-Safety` — Embodied AI |
+| `scripts/data/opentai-papers.json` | OpenTAI's own six papers; three appear in neither survey list |
+| `scripts/data/benchmark-overrides.json` | Hand-checked verdicts where automatic repository matching went wrong |
 | `scripts/data/benchmark-curation.json` | Hand-curated Dataset / Metrics / Baselines / Leaderboard per benchmark, each field tagged with the source it was read from |
 | GitHub REST API | Stars, forks, language, licence, last-push, topics |
 | arXiv API | Authors, posting dates, abstracts, primary category |
@@ -89,6 +96,13 @@ site.
   `bboylyg/BackdoorLLM`. The site's spelling was kept.
 - `content/pages/newslist.md` upstream contains one item whose body is
   placeholder lorem-ipsum text, so it was not ported.
+- Half of the large-model-safety list (vision, VLP, VLM, diffusion — 288
+  papers) belongs to none of the three domains the team named, so a fourth,
+  **Vision & Multimodal**, was added rather than dropping them.
+- Neither survey list has a datasets section, so Datasets still holds only
+  OpenTAI's own eight entries.
+- The Survey tab is small by construction: both lists collect the papers a
+  survey reviews, not surveys themselves. 14 of 1,050 are surveys.
 - Governance, contributing, and citation on the About page are **drafts**,
   marked as such on the page itself. They need confirming or rewriting by the
   OpenTAI team. Workshops, challenges, and contributor content on Community

@@ -9,8 +9,9 @@ HOME = json.load(open(DATA / "home.json"))
 LEADERBOARDS = json.load(open(DATA / "leaderboards.json"))
 NAMED_BENCH = json.load(open(DATA / "benchmarks.json"))
 CURATION = json.load(open(DATA / "benchmark-curation.json"))
-AWESOME = json.load(open(DATA / "awesome-papers.json")) if (DATA / "awesome-papers.json").exists() else []
-PAPER_LINKS = json.load(open(DATA / "paper-links.json")) if (DATA / "paper-links.json").exists() else {}
+LIBRARY = json.load(open(DATA / "paper-library.json"))
+BENCH_CANDIDATES = json.load(open(DATA / "benchmark-candidates.json"))
+BENCH_RESOLVED = json.load(open(DATA / "benchmark-resolved.json"))
 IMG = json.load(open(DATA / "img_map.json"))
 META = json.load(open(DATA / "metadata.json"))
 GH = dict(META["github"])
@@ -62,6 +63,8 @@ def ts(v, indent=0):
     pad = "  " * indent
     if isinstance(v, str):
         return '"' + v.replace("\\", "\\\\").replace('"', '\\"') + '"'
+    if isinstance(v, bool):  # must precede int — bool is a subclass of int
+        return "true" if v else "false"
     if isinstance(v, (int, float)):
         return str(v)
     if v is None:
@@ -214,27 +217,37 @@ mission = {"title": clean(B[1]["title"]), "body": clean(B[1]["body"])}
 
 # ---------------------------------------------------------------- paper library
 def build_paper_library():
-    out = []
-    for e in AWESOME:
-        aid = e.get("arxivId") or PAPER_LINKS.get(e["title"])
-        out.append({
+    return [
+        {
             "title": e["title"],
             "authors": e["authors"][:4],
-            "authorCount": len(e["authors"]),
+            "authorCount": e["authorCount"],
             "venue": e.get("venue"),
             "year": e.get("year"),
-            "chapter": e["chapter"],
+            "domain": e["domain"],
+            "group": e["group"],
             "section": e.get("section"),
-            "arxivId": aid or None,
-        })
-    return out
+            "kind": e["kind"],
+            "arxivId": e.get("arxivId"),
+            "url": e.get("url"),
+        }
+        for e in LIBRARY
+    ]
 
 
 paper_library = build_paper_library()
-paper_chapters = []
+
+# Domain is the primary axis. The team named LLMs, Agents and Embodied AI;
+# Vision & Multimodal was added because half of the large-model-safety list
+# (vision, VLP, VLM, diffusion) belongs to none of the other three.
+PAPER_DOMAINS = ["LLMs", "Agents", "Embodied AI", "Vision & Multimodal"]
+paper_domains = [d for d in PAPER_DOMAINS if any(p["domain"] == d for p in paper_library)]
+
+paper_groups = {}
 for e in paper_library:
-    if e["chapter"] not in paper_chapters:
-        paper_chapters.append(e["chapter"])
+    paper_groups.setdefault(e["domain"], [])
+    if e["group"] not in paper_groups[e["domain"]]:
+        paper_groups[e["domain"]].append(e["group"])
 
 # ---------------------------------------------------------------- leaderboards
 def num(v):
@@ -314,6 +327,39 @@ BENCH_TYPE = {
     "AgentDojo": "Agent Safety",
     "MM-SafetyBench": "Multimodal Safety",
 }
+
+# Domain is the primary axis the team asked for. Property is secondary and is
+# only set when the benchmark's own name or description states it — the source
+# list files all 24 new entries under one heading and carries no property
+# information, so guessing would invent a taxonomy the data does not support.
+BENCH_DOMAIN = {
+    "HarmBench": "LLMs", "JailbreakBench": "LLMs", "SafetyBench": "LLMs",
+    "RewardModel Bench": "LLMs", "AgentDojo": "Agents",
+    "MM-SafetyBench": "Vision & Multimodal", "VLBreakBench": "Vision & Multimodal",
+    "VisionSafety Bench": "Vision & Multimodal",
+}
+
+PROPERTY_RULES = [
+    ("Prompt Injection", r"prompt injection|indirect prompt"),
+    ("Jailbreak", r"jailbreak|refusal|red[- ]?team"),
+    ("Harmful Content", r"harmful|harm\b|toxic|malicious|illegal"),
+    ("Privacy", r"privacy|leakage|personal data"),
+    ("Robustness", r"robust|adversarial|perturbation"),
+    ("Alignment", r"alignment|reward model|preference"),
+    ("Cybersecurity", r"cyber|exploit|vulnerabilit|code execution"),
+    ("Fairness", r"fairness|bias\b|disparate"),
+    ("Explainability", r"explainab|interpretab|faithfulness"),
+    ("AI Ethics", r"ethic|moral|value alignment"),
+]
+
+
+def safety_property(*texts):
+    blob = " ".join(t for t in texts if t).lower()
+    for label, pattern in PROPERTY_RULES:
+        if re.search(pattern, blob):
+            return label
+    return None
+
 
 BENCH_TAXONOMY = [
     ("LLM Safety", "Harmful-behaviour, jailbreak, and safety-knowledge evaluation for language models.", "pink"),
@@ -418,8 +464,49 @@ for name, rec in NAMED_BENCH.items():
                     (g or {}).get("homepage") or "", [])
     bench_rows.append(row)
 
+# Benchmarks named in the two survey lists, resolved to repositories where one
+# could be verified. Entries that resolved stay as full cards; the rest are
+# published as citations so the coverage gap is visible rather than hidden.
+EXCLUDED_CANDIDATES = {
+    t for t, r in BENCH_RESOLVED.items() if r.get("excluded")
+}
+existing = {clean(r["name"]).lower() for r in bench_rows}
+
+for cand in BENCH_CANDIDATES:
+    title = cand["title"]
+    if title in EXCLUDED_CANDIDATES:
+        continue
+    rec = BENCH_RESOLVED.get(title) or {}
+    name = clean(rec.get("name") or title.split(":")[0])
+    if name.lower() in existing:
+        continue
+    existing.add(name.lower())
+
+    g = rec.get("github")
+    if g:
+        GH[name] = g
+    note = (g or {}).get("description") or title
+    if ":" in title:
+        note = title.split(":", 1)[1].strip().capitalize()
+
+    row = build_row(name, None, note, cand["domain"],
+                    f"https://github.com/{g['repo']}" if g else "", [])
+    if not g and cand.get("arxivId"):
+        row["resources"].append(
+            {"label": "arXiv", "href": f"https://arxiv.org/abs/{cand['arxivId']}"}
+        )
+    row["citationOnly"] = True if not g else None
+    bench_rows.append(row)
+
 for row in bench_rows:
     row["slug"] = slugify(row["name"])
+    row["domain"] = BENCH_DOMAIN.get(row["name"], row["type"])
+    # Domain is what the page filters on now; the old safety label becomes a tag.
+    prop = safety_property(row["name"], row["note"], " ".join(row["tags"]))
+    row["type"] = row["domain"]
+    row["property"] = prop
+    if prop:
+        row["tags"] = list(dict.fromkeys([prop.lower()] + list(row["tags"])))[:6]
     extra = VERIFIED_FROM_README.get(row["name"])
     if extra:
         aid, venue = extra
@@ -549,7 +636,16 @@ CATEGORIES = {
         ("Generative Data", "Large-scale corpora for generative model research.", "violet",
          ["Generative Data"]),
     ],
-    "benchmarks": [(t, d, a, [t]) for t, d, a in BENCH_TAXONOMY],
+    "benchmarks": [
+        ("LLMs", "Safety, jailbreak and alignment evaluation for language models.", "pink",
+         ["LLMs"]),
+        ("Agents", "Prompt injection, tool misuse and environment safety for LLM agents.", "orange",
+         ["Agents"]),
+        ("Embodied AI", "Safety evaluation for perception, planning and robot control.", "green",
+         ["Embodied AI"]),
+        ("Vision & Multimodal", "Jailbreak and robustness evaluation for vision-language models.",
+         "violet", ["Vision & Multimodal"]),
+    ],
     "tools": [
         ("Backdoor", "Backdoor attack and defense toolkits.", "pink", ["Backdoor"]),
         ("Adversarial", "Attack and defense libraries for vision models.", "blue", ["Adversarial"]),
@@ -620,16 +716,6 @@ CONFIGS = {
         "tableTitle": "Open-source toolkits", "sectionTitle": "Tool categories",
         "categories": cats("tools"), "tableRows": tool_rows,
     },
-    "papers": {
-        "slug": "papers", "breadcrumb": ["Discover", "Papers"], "title": "Papers",
-        "heroIcon": "◈",
-        "description": "Papers, surveys, and tutorials on attacking, defending, auditing, and "
-                       "detecting failure modes in large models — each with public code.",
-        "overview": "Venues are taken from the projects' own repository descriptions and arXiv "
-                    "comments, never inferred.",
-        "tableTitle": "Papers with code", "sectionTitle": "Research areas",
-        "categories": cats("papers"), "tableRows": paper_rows,
-    },
 }
 
 HOME_CARDS = [
@@ -641,8 +727,6 @@ HOME_CARDS = [
      "href": "/datasets", "accent": "green", "icon": "◱"},
     {"title": "Tools", "description": "Libraries, frameworks, attack and defense toolkits.",
      "href": "/tools", "accent": "orange", "icon": "◇"},
-    {"title": "Papers", "description": "Papers, surveys, tutorials, and code links.",
-     "href": "/papers", "accent": "pink", "icon": "◈"},
 ]
 
 HEADER = '''// Content derived from the OpenTAI TinaCMS site
@@ -690,6 +774,9 @@ export type SubpageCategoryCard = {
 export type SubpageTableRow = {
   name: string;
   slug?: string;
+  domain?: string;
+  property?: string;
+  citationOnly?: boolean;
   subtitle?: string;
   note: string;
   type: string;
@@ -835,12 +922,16 @@ parts.append(block("leaderboards",
                    "{ title: string; subtitle: string; tables: LeaderboardTable[] }",
                    leaderboards))
 parts.append("export const subpageConfigs: Record<string, SubpageConfig> = " + ts(CONFIGS) + ";\n\n")
-parts.append('export const collectionOrder = [\n  "benchmarks",\n  "models",\n  "datasets",\n  "tools",\n  "papers",\n] as const;\n')
+# Papers is no longer a curated collection — it is the merged research library,
+# which lives in its own module and is counted separately on Discover.
+parts.append('export const collectionOrder = [\n  "benchmarks",\n  "models",\n  "datasets",\n  "tools",\n] as const;\n')
 
 OUT.write_text("".join(parts))
 
 PAPERS_OUT = OUT.parent / "papers.ts"
-PAPERS_HEADER = """// Research library, parsed from xingjunm/Awesome-Large-Model-Safety.
+PAPERS_HEADER = """// Research library, merged from two survey lists:
+//   xingjunm/Awesome-Large-Model-Safety      -> LLMs, Agents, Vision & Multimodal
+//   x-zheng16/Awesome-Embodied-AI-Safety     -> Embodied AI
 // Kept in its own module so pages that do not use it never ship it.
 
 export type LibraryPaper = {
@@ -849,16 +940,51 @@ export type LibraryPaper = {
   authorCount: number;
   venue?: string;
   year?: string;
-  chapter: string;
+  domain: string;
+  group: string;
   section?: string;
+  kind: "research" | "survey";
   arxivId?: string;
+  url?: string;
 };
 
 """
+# Discover only needs enough to render a search hit, so it gets a slim index
+# instead of the full library — the landing page should not carry 330 KB of
+# sections and author lists it never shows.
+SEARCH_OUT = OUT.parent / "paper-search.ts"
+search_index = [
+    {
+        "t": p["title"],
+        "a": (p["authors"][0] if p["authors"] else None),
+        "n": p["authorCount"],
+        "v": p.get("venue"),
+        "y": p.get("year"),
+        "d": p["domain"],
+        "x": bool(p.get("arxivId") or p.get("url")),
+    }
+    for p in paper_library
+]
+SEARCH_OUT.write_text(
+    "// Slim search index for Discover. The full library lives in papers.ts.\n\n"
+    "export type PaperHit = {\n"
+    "  /** title */ t: string;\n"
+    "  /** first author */ a?: string;\n"
+    "  /** author count */ n: number;\n"
+    "  /** venue */ v?: string;\n"
+    "  /** year */ y?: string;\n"
+    "  /** domain */ d: string;\n"
+    "  /** has a link */ x: boolean;\n"
+    "};\n\n"
+    + block("paperSearchIndex", "PaperHit[]", search_index)
+)
+print(f"wrote {SEARCH_OUT}  {SEARCH_OUT.stat().st_size} bytes")
+
 PAPERS_OUT.write_text(
     PAPERS_HEADER
     + block("paperLibrary", "LibraryPaper[]", paper_library)
-    + block("paperChapters", "string[]", paper_chapters)
+    + block("paperDomains", "string[]", paper_domains)
+    + block("paperGroups", "Record<string, string[]>", paper_groups)
 )
 print(f"wrote {PAPERS_OUT}  {PAPERS_OUT.stat().st_size} bytes")
 
