@@ -82,8 +82,10 @@ site.
   `bboylyg/BackdoorLLM`. The site's spelling was kept.
 - `content/pages/newslist.md` upstream contains one item whose body is
   placeholder lorem-ipsum text, so it was not ported.
-- Governance, citation, workshops, challenges, and contributor content have no
-  upstream source and were not drafted.
+- Governance, contributing, and citation on the About page are **drafts**,
+  marked as such on the page itself. They need confirming or rewriting by the
+  OpenTAI team. Workshops, challenges, and contributor content on Community
+  still have no source at all.
 - Chinese-language fields (`titlezh`) exist upstream but the language switcher
   is commented out; the rebuild is English-only.
 

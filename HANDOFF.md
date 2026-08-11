@@ -16,8 +16,8 @@ npm --prefix ~/Projects/opentai-web run dev
 | --- | --- | --- |
 | 1 | Buttondown 账号（或其他邮件服务） | 订阅框 UI 全做完了，按钮灰着。拿到表单 URL，改 `scripts/generate-site.py` 里 `newsletter.endpoint` 一行就通 |
 | 2 | 外部资源收录范围 | 这轮只收了他图里**点名的** 7 个 benchmark。要不要继续扩、按什么标准 |
-| 3 | governance / citation 文案 | About 页缺这两块，没有替他起草 |
-| 4 | 最终仓库归属 | 项目**仍然不是 git 仓库**，一次远程操作都没做过 |
+| 3 | governance / citation 文案 | ~~缺~~ → 已放上 draft，页面上明确标了「DRAFT · Pending confirmation」，等他确认或改写 |
+| 4 | 最终仓库归属 | ~~未定~~ → 已建私有库 `Frankiegan912/opentai-web`，等确认后转给 OpenTAI org |
 
 ### 顺带发现的三个问题，建议一并问
 
