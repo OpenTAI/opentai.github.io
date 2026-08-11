@@ -91,9 +91,20 @@ site.
 
 ## Deployment
 
-`.github/workflows/deploy-pages.yml` builds the static export and publishes to
-GitHub Pages. `next.config.ts` derives `basePath` from `GITHUB_REPOSITORY`, so
-it works both as an organisation site (`*.github.io`) and at a sub-path.
+Currently deployed from Vercel for preview. `next.config.ts` derives `basePath`
+from `GITHUB_REPOSITORY`, which is unset on Vercel, so the site serves from the
+root — no configuration needed.
 
-The project is deliberately **not** a git repository yet — the destination
-repository has not been decided.
+`.github/workflows/deploy-pages.yml` is also present for GitHub Pages, where
+the same logic produces a sub-path when the repository is not an organisation
+site. GitHub Pages needs a public repository on a free personal account.
+
+### Indexing
+
+Search-engine indexing is opt-in. Every build serves `Disallow: /` and a
+`noindex` meta tag unless `NEXT_PUBLIC_SITE_URL` is set exactly to
+`https://opentai.org`. Preview deployments therefore stay out of search by
+default — see `src/lib/site-url.ts`.
+
+The repository lives at `Frankiegan912/opentai-web` (private) and is intended
+to be transferred to the OpenTAI organisation once that is agreed.
