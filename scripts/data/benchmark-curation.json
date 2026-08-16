@@ -1,5 +1,17 @@
 {
   "_comment": "Hand-curated benchmark details. Every field was read out of the source named in its `source` key on 2026-08-11 — project READMEs, paper abstracts, or the current OpenTAI site. Nothing here is inferred. Leave a field out rather than guessing it.",
+  "h4rm3l": {
+    "dataset": {
+      "text": "The official benchmark experiment publishes its benchmark CSV, sampled harmful prompts, synthesized attack programs and evaluation results under experiments/experiment_130_benchmark.",
+      "source": "Official project site, datasheet and repository"
+    }
+  },
+  "safebench": {
+    "dataset": {
+      "text": "Eight safety-critical scenario templates and 100 routes, with scenario routes, models and adversarial attack templates published under safebench/scenario/scenario_data.",
+      "source": "Official SafeBench site, documentation and repository"
+    }
+  },
   "harmbench": {
     "dataset": {
       "text": "Harmful behaviours grouped into standard, contextual and copyright categories, evaluated against both text and multimodal models. HarmBench 1.0 additionally ships precomputed test cases and adversarial training code.",

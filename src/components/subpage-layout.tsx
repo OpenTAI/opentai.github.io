@@ -2,7 +2,24 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { SubpageConfig } from "@/data/site";
+import {
+  type DatasetSourcePaper,
+  SubpageConfig,
+  SubpageTableRow,
+} from "@/data/site";
+import {
+  buildDatasetStatistics,
+  rowMatchesDomainFilters,
+  type DatasetCount,
+} from "@/lib/dataset-statistics";
+import { Locale, localizeHref, t } from "@/lib/i18n";
+import { matchesLocalizedSearch } from "@/lib/resource-search";
+import {
+  resourceYear,
+  sortResourceRows,
+  type ResourceSortKey,
+} from "@/lib/resource-sort";
+import { resourceSlug } from "@/lib/resource-slug";
 
 function accentPill(accent: string) {
   const accents = {
@@ -19,24 +36,527 @@ function accentPill(accent: string) {
 const COLUMNS = ["Resource", "Category", "Activity", "Links"] as const;
 const GRID = "lg:grid-cols-[2.2fr_0.8fr_0.95fr_0.75fr]";
 
-export function SubpageLayout(
-  props: SubpageConfig & { detailBase?: string; showEmptyCategories?: boolean },
+type ResourceCardKind = "benchmark" | "dataset";
+
+function externalResource(
+  row: SubpageTableRow,
+  kind: "github" | "huggingface" | "paper",
 ) {
+  return row.resources.find((resource) => {
+    const href = resource.href.toLowerCase();
+    if (resource.label === "Source survey") return false;
+    if (kind === "github") return href.includes("github.com/");
+    if (kind === "huggingface") return href.includes("huggingface.co/datasets/");
+    return (
+      (href.includes("arxiv.org/abs/") || href.includes("doi.org/"))
+    );
+  });
+}
+
+function recordedScale(row: SubpageTableRow) {
+  return row.stats?.find((stat) =>
+    ["Recorded scale", "Recorded size"].includes(stat.label),
+  )?.value;
+}
+
+function yearFor(row: SubpageTableRow) {
+  return resourceYear(row)?.toString();
+}
+
+function usageCountFor(row: SubpageTableRow) {
+  const directUsage = row.usageCount ?? row.sourcePapers?.length;
+  if (Number.isInteger(directUsage) && directUsage && directUsage > 0) {
+    return directUsage;
+  }
+
+  const recordedUsage = row.stats?.find((stat) => stat.label === "Table #Times")?.value;
+  const parsedUsage = Number(recordedUsage?.replaceAll(",", ""));
+  return Number.isInteger(parsedUsage) && parsedUsage > 0 ? parsedUsage : undefined;
+}
+
+function SourcePapersDisclosure({
+  locale,
+  papers,
+}: {
+  locale: Locale;
+  papers: readonly DatasetSourcePaper[];
+}) {
+  return (
+    <details className="resource-source-disclosure">
+      <summary>
+        <span>{t(locale, "Citing papers")}</span>
+        <strong>{papers.length}</strong>
+        <span aria-hidden="true" className="resource-source-chevron">⌄</span>
+      </summary>
+      <ol className="resource-source-paper-list">
+        {papers.map((paper, index) => {
+          const title = paper.title || paper.arxivId || paper.openAlexId || t(locale, "Not recorded");
+          const recordedSource = typeof paper.source === "string"
+            ? paper.source
+            : paper.source?.url;
+          const publicSource = recordedSource && /^https?:\/\//i.test(recordedSource)
+            ? recordedSource
+            : undefined;
+          const href = paper.arxivId
+            ? `https://arxiv.org/abs/${encodeURIComponent(paper.arxivId)}`
+            : publicSource || (paper.openAlexId
+              ? `https://openalex.org/${encodeURIComponent(paper.openAlexId)}`
+              : undefined);
+
+          return (
+            <li key={`${paper.arxivId ?? paper.openAlexId ?? paper.title ?? "paper"}-${index}`}>
+              {href ? (
+                <Link href={href} rel="noreferrer" target="_blank">
+                  {title} <span aria-hidden="true">↗</span>
+                </Link>
+              ) : (
+                <strong>{title}</strong>
+              )}
+              <span className="resource-source-evidence-label">
+                {t(locale, "Evidence")}
+              </span>
+              <p>{paper.evidence || t(locale, "Not recorded yet.")}</p>
+            </li>
+          );
+        })}
+      </ol>
+    </details>
+  );
+}
+
+function ResourceLinksMenu({
+  locale,
+  row,
+}: {
+  locale: Locale;
+  row: SubpageTableRow;
+}) {
+  const paper = externalResource(row, "paper");
+  const github = externalResource(row, "github");
+  const huggingFace = externalResource(row, "huggingface");
+  const preferredLinks = [
+    paper ? { href: paper.href, label: "Paper" } : undefined,
+    github ? { href: github.href, label: "GitHub" } : undefined,
+    huggingFace ? { href: huggingFace.href, label: "Hugging Face" } : undefined,
+  ].filter((resource): resource is { href: string; label: string } => Boolean(resource));
+  const preferredHrefs = new Set(preferredLinks.map((resource) => resource.href));
+  const links = [
+    ...preferredLinks,
+    ...row.resources.filter((resource) => !preferredHrefs.has(resource.href)),
+  ];
+
+  if (links.length === 0) {
+    return (
+      <div aria-disabled="true" className="resource-links-cell resource-links-empty">
+        <span>{t(locale, "Links")}</span>
+        <span>—</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="resource-links-cell">
+      <details className="resource-links-menu">
+        <summary aria-label={t(locale, "Open links")}>
+          <span>{t(locale, "Links")}</span>
+          <span className="resource-links-count">{links.length}</span>
+          <span aria-hidden="true" className="resource-links-chevron">⌄</span>
+        </summary>
+        <div className="resource-links-popover">
+          <p>{t(locale, "Available links")}</p>
+          {links.map((resource) => (
+            <Link
+              key={`${resource.label}-${resource.href}`}
+              href={resource.href}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <span>{t(locale, resource.label)}</span>
+              <span aria-hidden="true">↗</span>
+            </Link>
+          ))}
+        </div>
+      </details>
+    </div>
+  );
+}
+
+function ResourceGridCard({
+  detailBase,
+  kind,
+  locale,
+  row,
+}: {
+  detailBase?: string;
+  kind: ResourceCardKind;
+  locale: Locale;
+  row: SubpageTableRow;
+}) {
+  const year = yearFor(row);
+  const scale = recordedScale(row);
+  const metric = kind === "dataset" ? row.downloads : row.stars;
+  const metricLabel = kind === "dataset" ? "Downloads" : "GitHub stars";
+  const detailHref = detailBase
+    ? localizeHref(locale, `${detailBase}/${resourceSlug(row)}`)
+    : undefined;
+  const externalHref =
+    kind === "dataset"
+      ? row.primaryUrl ?? row.resources[0]?.href
+      : undefined;
+  const titleHref = detailHref ?? externalHref;
+
+  return (
+    <article className="resource-grid-card">
+      <div className="resource-card-topline">
+        <h3 className="resource-card-heading">
+          {titleHref ? (
+            <Link
+              className="resource-card-title"
+              href={titleHref}
+              rel={externalHref ? "noreferrer" : undefined}
+              target={externalHref ? "_blank" : undefined}
+            >
+              {row.name}
+            </Link>
+          ) : (
+            <span className="resource-card-title">{row.name}</span>
+          )}
+        </h3>
+        <ResourceLinksMenu locale={locale} row={row} />
+      </div>
+
+      <div className="resource-grid-badges">
+        <span>{t(locale, row.type)}</span>
+        {row.venue ? <span>{row.venue}</span> : null}
+        {(row.tags ?? []).slice(0, 2).map((tag) => (
+          <span key={tag}>{t(locale, tag)}</span>
+        ))}
+      </div>
+
+      <p className="resource-card-description">{t(locale, row.note)}</p>
+
+      {kind === "dataset" && row.sourcePapers?.length ? (
+        <SourcePapersDisclosure locale={locale} papers={row.sourcePapers} />
+      ) : null}
+
+      <div className="resource-card-footer">
+        {year ? (
+          <span aria-label={`${t(locale, "Year")}: ${year}`} title={t(locale, "Year")}>
+            <span aria-hidden="true">◷</span>
+            {year}
+          </span>
+        ) : null}
+        {metric !== undefined ? (
+          <span
+            aria-label={`${t(locale, metricLabel)}: ${metric.toLocaleString("en-US")}`}
+            title={t(locale, metricLabel)}
+          >
+            <span aria-hidden="true">{kind === "dataset" ? "⇩" : "★"}</span>
+            {metric.toLocaleString("en-US")}
+          </span>
+        ) : null}
+        {scale ? (
+          <span aria-label={`${t(locale, "Recorded scale")}: ${t(locale, scale)}`} title={t(locale, "Recorded scale")}>
+            <span aria-hidden="true">#</span>
+            {t(locale, scale)}
+          </span>
+        ) : null}
+        {detailHref ? (
+          <Link className="resource-card-details-link" href={detailHref}>
+            {t(locale, "View details")} →
+          </Link>
+        ) : externalHref ? (
+          <Link
+            className="resource-card-details-link"
+            href={externalHref}
+            rel="noreferrer"
+            target="_blank"
+          >
+            {t(locale, "Open dataset")} ↗
+          </Link>
+        ) : null}
+      </div>
+    </article>
+  );
+}
+
+function DatasetStatistics({
+  locale,
+  rows,
+}: {
+  locale: Locale;
+  rows: readonly SubpageTableRow[];
+}) {
+  const statistics = buildDatasetStatistics(
+    rows.map((row) => ({
+      domain: row.domain,
+      domains: row.domains,
+      type: row.type,
+      usageCount: usageCountFor(row),
+      year: resourceYear(row),
+    })),
+  );
+
+  const chartWidth = 920;
+  const chartHeight = 280;
+  const plot = { top: 18, right: 22, bottom: 42, left: 48 };
+  const plotWidth = chartWidth - plot.left - plot.right;
+  const plotHeight = chartHeight - plot.top - plot.bottom;
+  const maximumCount = Math.max(...statistics.years.map(({ count }) => count), 1);
+  const yMaximum = Math.max(4, Math.ceil(maximumCount / 4) * 4);
+  const yearPoints = statistics.years.map(({ count, year }, index, years) => ({
+    count,
+    year,
+    x:
+      years.length === 1
+        ? plot.left + plotWidth / 2
+        : plot.left + (index / (years.length - 1)) * plotWidth,
+    y: plot.top + plotHeight - (count / yMaximum) * plotHeight,
+  }));
+  const linePath = yearPoints.reduce((path, point, index) => {
+    if (index === 0) return `M ${point.x} ${point.y}`;
+    const previous = yearPoints[index - 1];
+    const controlX = (previous.x + point.x) / 2;
+    return `${path} C ${controlX} ${previous.y}, ${controlX} ${point.y}, ${point.x} ${point.y}`;
+  }, "");
+  const areaPath = yearPoints.length
+    ? `${linePath} L ${yearPoints.at(-1)?.x} ${plot.top + plotHeight} L ${yearPoints[0].x} ${plot.top + plotHeight} Z`
+    : "";
+  const yTicks = Array.from({ length: 5 }, (_, index) => ({
+    label: Math.round((yMaximum / 4) * index),
+    y: plot.top + plotHeight - (plotHeight / 4) * index,
+  }));
+
+  const domainColors = ["#5957d9", "#17a99a", "#f59e0b", "#e0528d", "#64748b"];
+  const usageColors = ["#5957d9", "#8574e8", "#d45b9c", "#f29e42"];
+
+  const renderDonut = ({
+    centerLabel,
+    centerValue,
+    colors,
+    description,
+    id,
+    items,
+    title,
+  }: {
+    centerLabel: string;
+    centerValue: number;
+    colors: readonly string[];
+    description: string;
+    id: string;
+    items: DatasetCount[];
+    title: string;
+  }) => {
+    const radius = 45;
+    const circumference = 2 * Math.PI * radius;
+    const segmentTotal = items.reduce((total, item) => total + item.count, 0);
+    let progress = 0;
+
+    return (
+      <div className="dataset-donut-layout">
+        <svg
+          aria-labelledby={`${id}-title ${id}-description`}
+          className="dataset-donut"
+          role="img"
+          viewBox="0 0 128 128"
+        >
+          <title id={`${id}-title`}>{title}</title>
+          <desc id={`${id}-description`}>{description}</desc>
+          <circle className="dataset-donut-track" cx="64" cy="64" r={radius} />
+          {items.map((item, index) => {
+            const length = segmentTotal ? (item.count / segmentTotal) * circumference : 0;
+            const offset = -progress;
+            progress += length;
+            return (
+              <circle
+                aria-hidden="true"
+                className="dataset-donut-segment"
+                cx="64"
+                cy="64"
+                key={item.label}
+                r={radius}
+                stroke={colors[index % colors.length]}
+                strokeDasharray={`${length} ${circumference}`}
+                strokeDashoffset={offset}
+              />
+            );
+          })}
+          <text className="dataset-donut-value" textAnchor="middle" x="64" y="61">
+            {centerValue}
+          </text>
+          <text className="dataset-donut-label" textAnchor="middle" x="64" y="77">
+            {centerLabel}
+          </text>
+        </svg>
+        <ul aria-label={title} className="dataset-chart-legend">
+          {items.map((item, index) => (
+            <li key={item.label}>
+              <span
+                aria-hidden="true"
+                className="dataset-chart-swatch"
+                style={{ backgroundColor: colors[index % colors.length] }}
+              />
+              <span className="dataset-chart-legend-label">{t(locale, item.label)}</span>
+              <strong>{item.count}</strong>
+              <span className="dataset-chart-percent">
+                {segmentTotal ? `${Math.round((item.count / segmentTotal) * 100)}%` : "—"}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
+  return (
+    <section className="dataset-statistics" aria-labelledby="dataset-statistics-title">
+      <div className="dataset-statistics-heading">
+        <div>
+          <span>{t(locale, "Automatically updated")}</span>
+          <h2 id="dataset-statistics-title">{t(locale, "Dataset statistics")}</h2>
+        </div>
+        <p>{t(locale, "Calculated from the verified training datasets below.")}</p>
+      </div>
+      <div className="dataset-statistics-grid">
+        <article className="dataset-year-card">
+          <div className="dataset-chart-card-heading">
+            <div>
+              <h3>{t(locale, "Dataset growth by year")}</h3>
+              <p>{t(locale, "Annual count of datasets with a recorded year.")}</p>
+            </div>
+            <span>{statistics.years.reduce((total, year) => total + year.count, 0)}</span>
+          </div>
+          {statistics.years.length ? (
+            <div className="dataset-year-chart-scroll">
+              <svg
+                aria-labelledby="dataset-year-chart-title dataset-year-chart-description"
+                className="dataset-year-chart"
+                role="img"
+                viewBox={`0 0 ${chartWidth} ${chartHeight}`}
+              >
+                <title id="dataset-year-chart-title">{t(locale, "Dataset growth by year")}</title>
+                <desc id="dataset-year-chart-description">
+                  {t(locale, "Annual count of datasets with a recorded year.")}
+                </desc>
+                {yTicks.map((tick) => (
+                  <g key={tick.label}>
+                    <line
+                      className="dataset-year-gridline"
+                      x1={plot.left}
+                      x2={chartWidth - plot.right}
+                      y1={tick.y}
+                      y2={tick.y}
+                    />
+                    <text className="dataset-year-axis-label" textAnchor="end" x={plot.left - 12} y={tick.y + 4}>
+                      {tick.label}
+                    </text>
+                  </g>
+                ))}
+                <path className="dataset-year-area" d={areaPath} />
+                <path className="dataset-year-line" d={linePath} />
+                {yearPoints.map((point) => (
+                  <g key={point.year}>
+                    <circle className="dataset-year-point-halo" cx={point.x} cy={point.y} r="7" />
+                    <circle className="dataset-year-point" cx={point.x} cy={point.y} r="3.5">
+                      <title>{`${point.year}: ${point.count}`}</title>
+                    </circle>
+                    <text
+                      className="dataset-year-axis-label dataset-year-x-label"
+                      textAnchor="middle"
+                      x={point.x}
+                      y={chartHeight - 14}
+                    >
+                      {point.year}
+                    </text>
+                  </g>
+                ))}
+              </svg>
+            </div>
+          ) : (
+            <p className="dataset-chart-empty">{t(locale, "No recorded year data")}</p>
+          )}
+        </article>
+        <div className="dataset-donut-grid">
+          <article>
+            <div className="dataset-chart-card-heading">
+              <div>
+                <h3>{t(locale, "Datasets by domain")}</h3>
+                <p>{t(locale, "Recorded domain assignments in this collection.")}</p>
+              </div>
+            </div>
+            {renderDonut({
+              centerLabel: t(locale, "datasets"),
+              centerValue: statistics.total,
+              colors: domainColors,
+              description: t(locale, "Recorded domain assignments in this collection."),
+              id: "dataset-domain-chart",
+              items: statistics.domains,
+              title: t(locale, "Datasets by domain"),
+            })}
+          </article>
+          <article>
+            <div className="dataset-chart-card-heading">
+              <div>
+                <h3>{t(locale, "Usage frequency")}</h3>
+                <p>{t(locale, "Datasets grouped by their recorded usage count.")}</p>
+              </div>
+            </div>
+            {renderDonut({
+              centerLabel: t(locale, "recorded"),
+              centerValue: statistics.usageTotal,
+              colors: usageColors,
+              description: t(locale, "Datasets grouped by their recorded usage count."),
+              id: "dataset-usage-chart",
+              items: statistics.usageBuckets,
+              title: t(locale, "Usage frequency"),
+            })}
+            {statistics.usageTotal === 0 ? (
+              <p className="dataset-chart-empty dataset-usage-empty">
+                {t(locale, "No usage data recorded")}
+              </p>
+            ) : null}
+          </article>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function SubpageLayout(
+  props: SubpageConfig & {
+    detailBase?: string;
+    linkTitlesToResource?: boolean;
+    locale: Locale;
+    resourceCardKind?: ResourceCardKind;
+    showEmptyCategories?: boolean;
+  },
+) {
+  const { locale, resourceCardKind } = props;
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [sortKey, setSortKey] = useState<ResourceSortKey>("default");
   const normalizedQuery = query.trim().toLowerCase();
 
-  const categoryStats = useMemo(
+  const allCategoryStats = useMemo(
     () =>
       props.categories
         .map((category) => {
           const filters = category.filters ?? [category.title];
-          const rows = props.tableRows.filter((row) => filters.includes(row.type));
+          const rows = props.tableRows.filter((row) =>
+            rowMatchesDomainFilters(row, filters),
+          );
 
           return { category, count: rows.length };
-        })
-        .filter(({ count }) => props.showEmptyCategories || count > 0),
-    [props.categories, props.showEmptyCategories, props.tableRows],
+        }),
+    [props.categories, props.tableRows],
+  );
+
+  const categoryStats = useMemo(
+    () =>
+      allCategoryStats.filter(
+        ({ count }) => props.showEmptyCategories || count > 0,
+      ),
+    [allCategoryStats, props.showEmptyCategories],
   );
 
   const linkedResourceCount = useMemo(
@@ -55,28 +575,44 @@ export function SubpageLayout(
     )?.category;
     const filters = category?.filters ?? (category ? [category.title] : undefined);
     const categoryRows = filters
-      ? props.tableRows.filter((row) => filters.includes(row.type))
+      ? props.tableRows.filter((row) => rowMatchesDomainFilters(row, filters))
       : props.tableRows;
 
-    return categoryRows.filter(
-      (row) =>
-        !normalizedQuery ||
-        [row.name, row.note, row.type, row.subtitle ?? "", row.venue ?? "", row.meta ?? ""]
-          .concat(row.tags ?? [])
-          .concat((row.stats ?? []).map((stat) => stat.value))
-          .join(" ")
-          .toLowerCase()
-          .includes(normalizedQuery),
-    );
-  }, [activeCategory, categoryStats, normalizedQuery, props.tableRows]);
+    const filteredRows = categoryRows.filter((row) => {
+      const searchValues: (string | null | undefined)[] = [
+        row.name,
+        row.note,
+        row.type,
+        row.subtitle,
+        row.venue,
+        row.meta,
+        ...(row.domains ?? []),
+        ...(row.tags ?? []),
+        ...(row.stats ?? []).map((stat) => stat.value),
+        ...(row.sourcePapers ?? []).flatMap((paper) => [
+          paper.title,
+          paper.evidence,
+        ]),
+      ];
+
+      return matchesLocalizedSearch(
+        searchValues,
+        normalizedQuery,
+        (value) => t(locale, value),
+      );
+    });
+    return sortResourceRows(filteredRows, sortKey);
+  }, [activeCategory, categoryStats, locale, normalizedQuery, props.tableRows, sortKey]);
 
   return (
-    <div className="mx-auto max-w-[1480px] space-y-7">
+    <div
+      className={`mx-auto max-w-[1480px] space-y-7 ${resourceCardKind ? "resource-catalog-page" : ""}`}
+    >
       <div className="subpage-breadcrumb">
         {props.breadcrumb.map((item, index) => (
           <span key={item} className="flex items-center gap-2">
             {index > 0 ? <span className="text-[#c0c5d1]">›</span> : null}
-            <span>{item}</span>
+            <span>{t(locale, item)}</span>
           </span>
         ))}
       </div>
@@ -89,10 +625,10 @@ export function SubpageLayout(
 
           <div className="space-y-4">
             <h1 className="text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.06em] text-[#0f172a]">
-              {props.title}
+              {t(locale, props.title)}
             </h1>
             <p className="max-w-3xl text-[1rem] leading-8 text-[#556072]">
-              {props.description}
+              {t(locale, props.description)}
             </p>
             <div className="flex flex-wrap gap-3">
               {[
@@ -103,43 +639,120 @@ export function SubpageLayout(
               ].map((stat) => (
                 <div key={stat.label} className="subpage-stat-pill">
                   <span className="font-semibold text-[#4338ca]">{stat.value}</span>
-                  <span>{stat.label}</span>
+                  <span>{t(locale, stat.label)}</span>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="space-y-4">
-            <p className="text-[0.98rem] leading-8 text-[#556072]">{props.overview}</p>
+            <p className="text-[0.98rem] leading-8 text-[#556072]">{t(locale, props.overview)}</p>
           </div>
         </div>
       </section>
 
+      {resourceCardKind === "dataset" ? (
+        <DatasetStatistics locale={locale} rows={props.tableRows} />
+      ) : null}
+
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#eceff5] pb-4">
         <p className="text-sm text-[#667085]">
           {normalizedQuery || activeCategory
-            ? `${visibleRows.length} matching ${visibleRows.length === 1 ? "entry" : "entries"}`
-            : `${props.tableRows.length} entries`}
+            ? locale === "zh"
+              ? `${visibleRows.length} 项匹配结果`
+              : `${visibleRows.length} matching ${visibleRows.length === 1 ? "entry" : "entries"}`
+            : `${props.tableRows.length} ${t(locale, "entries")}`}
         </p>
-        <div className="subpage-search-box">
-          <span>⌕</span>
-          <input
-            aria-label={`Search ${props.title}`}
-            className="subpage-search-input"
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder={`Search ${props.title.toLowerCase()}...`}
-            type="search"
-            value={query}
-          />
+        <div className="resource-catalog-controls">
+          {resourceCardKind ? (
+            <label className="resource-sort-control">
+              <span>{t(locale, "Sort by")}</span>
+              <select
+                aria-label={t(locale, "Sort by")}
+                onChange={(event) => setSortKey(event.target.value as ResourceSortKey)}
+                value={sortKey}
+              >
+                <option value="default">{t(locale, "Default order")}</option>
+                <option value="downloads-desc">{t(locale, "Downloads: high to low")}</option>
+                <option value="downloads-asc">{t(locale, "Downloads: low to high")}</option>
+                <option value="stars-desc">{t(locale, "GitHub stars: high to low")}</option>
+                <option value="stars-asc">{t(locale, "GitHub stars: low to high")}</option>
+                <option value="year-desc">{t(locale, "Year: newest first")}</option>
+                <option value="year-asc">{t(locale, "Year: oldest first")}</option>
+              </select>
+            </label>
+          ) : null}
+          <div className="resource-search-stack">
+            <div className="subpage-search-box">
+              <span>⌕</span>
+              <input
+                aria-label={locale === "zh" ? `搜索${t(locale, props.title)}` : `Search ${props.title}`}
+                className="subpage-search-input"
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder={locale === "zh" ? `搜索${t(locale, props.title)}……` : `Search ${props.title.toLowerCase()}...`}
+                type="search"
+                value={query}
+              />
+            </div>
+            {resourceCardKind === "dataset" ? (
+              <div
+                aria-label={t(locale, "Filter datasets by domain")}
+                className="dataset-domain-pills"
+                role="group"
+              >
+                <button
+                  aria-pressed={activeCategory === null}
+                  className={activeCategory === null ? "dataset-domain-pill-active" : undefined}
+                  onClick={() => setActiveCategory(null)}
+                  type="button"
+                >
+                  {t(locale, "All domains")}
+                </button>
+                {allCategoryStats.map(({ category, count }) => (
+                  <button
+                    aria-pressed={activeCategory === category.title}
+                    className={
+                      activeCategory === category.title
+                        ? "dataset-domain-pill-active"
+                        : undefined
+                    }
+                    disabled={count === 0}
+                    key={category.title}
+                    onClick={() => setActiveCategory(category.title)}
+                    type="button"
+                  >
+                    {t(locale, category.title)}
+                  </button>
+                ))}
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
 
-      <section className="space-y-8">
+      <section className={resourceCardKind ? "resource-browser-layout" : "space-y-8"}>
         <div className="space-y-5">
           <h2 className="text-[1.7rem] font-semibold tracking-[-0.05em] text-[#111827]">
-            {props.sectionTitle}
+            {t(locale, props.sectionTitle)}
           </h2>
-          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+          <div
+            className={
+              resourceCardKind
+                ? "resource-category-list"
+                : "grid gap-3 sm:grid-cols-2 xl:grid-cols-3"
+            }
+          >
+            {resourceCardKind ? (
+              <button
+                aria-pressed={activeCategory === null}
+                className={`resource-all-category ${activeCategory === null ? "resource-all-category-active" : ""}`}
+                onClick={() => setActiveCategory(null)}
+                type="button"
+              >
+                <span>{t(locale, "All")}</span>
+                <span>{props.tableRows.length}</span>
+              </button>
+            ) : null}
             {categoryStats.map(({ category, count }) => (
               <button
                 key={category.title}
@@ -159,13 +772,15 @@ export function SubpageLayout(
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-[1rem] font-semibold tracking-[-0.03em] text-[#111827]">
-                      {category.title}
+                      {t(locale, category.title)}
                     </h3>
-                    <p className="text-sm leading-6 text-[#667085]">{category.detail}</p>
+                    <p className="text-sm leading-6 text-[#667085]">{t(locale, category.detail)}</p>
                   </div>
                 </div>
                 <p className="mt-4 text-sm font-medium text-[#475467]">
-                  {count === 0 ? "No entries yet" : `${count} ${count === 1 ? "entry" : "entries"}`}
+                  {count === 0
+                    ? t(locale, "No entries yet")
+                    : `${count} ${t(locale, count === 1 ? "entry" : "entries")}`}
                 </p>
               </button>
             ))}
@@ -174,20 +789,39 @@ export function SubpageLayout(
 
         <div className="subpage-main-table-card">
           <h2 className="mb-5 text-[1.7rem] font-semibold tracking-[-0.05em] text-[#111827]">
-            {props.tableTitle}
+            {t(locale, props.tableTitle)}
           </h2>
 
-          <div
-            className={`hidden ${GRID} gap-4 border-b border-[#edf0f5] px-4 pb-3 text-xs font-semibold uppercase tracking-[0.08em] text-[#98a2b3] lg:grid`}
-          >
-            {COLUMNS.map((column) => (
-              <div key={column}>{column}</div>
-            ))}
-          </div>
+          {resourceCardKind ? (
+            <div className="resource-grid-list">
+              {visibleRows.map((row) => (
+                <ResourceGridCard
+                  key={row.name}
+                  detailBase={props.detailBase}
+                  kind={resourceCardKind}
+                  locale={locale}
+                  row={row}
+                />
+              ))}
+              {visibleRows.length === 0 ? (
+                <p className="px-4 py-8 text-center text-sm text-[#667085]">
+                  {t(locale, "No entries match")} “{query.trim()}”.
+                </p>
+              ) : null}
+            </div>
+          ) : (
+            <>
+              <div
+                className={`hidden ${GRID} gap-4 border-b border-[#edf0f5] px-4 pb-3 text-xs font-semibold uppercase tracking-[0.08em] text-[#98a2b3] lg:grid`}
+              >
+                {COLUMNS.map((column) => (
+                  <div key={column}>{t(locale, column)}</div>
+                ))}
+              </div>
 
-          <div className="mt-3 space-y-2.5">
-            {visibleRows.map((row, index) => (
-              <div key={row.name} className={`subpage-table-row ${GRID}`}>
+              <div className="mt-3 space-y-2.5">
+                {visibleRows.map((row, index) => (
+                  <div key={row.name} className={`subpage-table-row ${GRID}`}>
                 <div className="min-w-0">
                   <div className="flex items-start gap-3">
                     <span className="pt-1 text-[1rem] font-semibold text-[#4f46e5]">
@@ -198,7 +832,16 @@ export function SubpageLayout(
                         {props.detailBase && row.slug ? (
                           <Link
                             className="text-[1rem] font-semibold leading-7 text-[#111827] hover:text-[#4338ca] hover:underline"
-                            href={`${props.detailBase}/${row.slug}`}
+                            href={localizeHref(locale, `${props.detailBase}/${row.slug}`)}
+                          >
+                            {row.name}
+                          </Link>
+                        ) : props.linkTitlesToResource && row.resources[0] ? (
+                          <Link
+                            className="text-[1rem] font-semibold leading-7 text-[#111827] hover:text-[#4338ca] hover:underline"
+                            href={row.resources[0].href}
+                            rel="noreferrer"
+                            target="_blank"
                           >
                             {row.name}
                           </Link>
@@ -214,14 +857,16 @@ export function SubpageLayout(
                         ) : null}
                       </div>
                       {row.subtitle ? (
-                        <p className="text-sm font-medium text-[#5260ff]">{row.subtitle}</p>
+                        <p className="text-sm font-medium text-[#5260ff]">
+                          {t(locale, row.subtitle)}
+                        </p>
                       ) : null}
-                      <p className="mt-1 text-sm leading-6 text-[#667085]">{row.note}</p>
+                      <p className="mt-1 text-sm leading-6 text-[#667085]">{t(locale, row.note)}</p>
                       {row.tags?.length ? (
-                        <div className="subpage-row-tags" aria-label="Tags">
+                        <div className="subpage-row-tags" aria-label={t(locale, "Tags")}>
                           {row.tags.map((tag) => (
                             <span key={tag} className="subpage-row-tag">
-                              {tag}
+                              {t(locale, tag)}
                             </span>
                           ))}
                         </div>
@@ -230,14 +875,14 @@ export function SubpageLayout(
                   </div>
                 </div>
                 <div>
-                  <span className="subpage-table-pill">{row.type}</span>
+                  <span className="subpage-table-pill">{t(locale, row.type)}</span>
                 </div>
                 <div className="space-y-1">
                   {row.stats?.length ? (
                     row.stats.map((stat) => (
                       <p key={stat.label} className="flex justify-between gap-3 text-sm lg:block">
-                        <span className="text-[#98a2b3]">{stat.label}</span>{" "}
-                        <span className="font-medium text-[#344054]">{stat.value}</span>
+                        <span className="text-[#98a2b3]">{t(locale, stat.label)}</span>{" "}
+                        <span className="font-medium text-[#344054]">{t(locale, stat.value)}</span>
                       </p>
                     ))
                   ) : (
@@ -254,24 +899,26 @@ export function SubpageLayout(
                         rel="noreferrer"
                         target="_blank"
                       >
-                        {resource.label}
+                        {t(locale, resource.label)}
                       </Link>
                     ))
                   ) : (
-                    <span className="subpage-resource-pill">link pending</span>
+                    <span className="subpage-resource-pill">{t(locale, "link pending")}</span>
                   )}
                 </div>
                 {row.meta ? (
                   <div className="subpage-paper-meta lg:col-span-4">{row.meta}</div>
                 ) : null}
+                  </div>
+                ))}
+                {visibleRows.length === 0 ? (
+                  <p className="px-4 py-8 text-center text-sm text-[#667085]">
+                    {t(locale, "No entries match")} “{query.trim()}”.
+                  </p>
+                ) : null}
               </div>
-            ))}
-            {visibleRows.length === 0 ? (
-              <p className="px-4 py-8 text-center text-sm text-[#667085]">
-                No entries match “{query.trim()}”.
-              </p>
-            ) : null}
-          </div>
+            </>
+          )}
         </div>
       </section>
     </div>

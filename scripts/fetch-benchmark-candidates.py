@@ -1,7 +1,7 @@
 """Resolve benchmark citations to real repositories.
 
-The two survey lists file benchmarks as paper citations. This tries to promote
-each one to a publishable resource by finding its repository. A match is only
+The large-model survey files Agent Safety Benchmarks as paper citations. This
+tries to promote each one to a publishable resource by finding its repository. A match is only
 accepted when the benchmark's name appears in the repository's own name or
 description — the same rule the rest of the pipeline follows — so a wrong repo
 is never attached. Unresolved candidates are still published, as citations.

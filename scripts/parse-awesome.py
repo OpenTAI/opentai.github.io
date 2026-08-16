@@ -39,7 +39,10 @@ for line in text.splitlines():
         section = line[6:].strip()
         continue
 
-    m = re.match(r"^- (?P<title>[A-Z0-9].*?)\.?\s*$", line)
+    # Titles are normally capitalized, but h4rm3l intentionally starts with a
+    # lowercase product name. Match any ASCII letter so it is not silently
+    # dropped from the Agent Safety Benchmarks section.
+    m = re.match(r"^- (?P<title>[A-Za-z0-9].*?)\.?\s*$", line)
     if m and chapter:
         current = {
             "title": m.group("title").strip().rstrip("."),

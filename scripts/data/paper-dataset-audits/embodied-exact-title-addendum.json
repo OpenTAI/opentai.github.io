@@ -1,0 +1,1982 @@
+{
+  "auditVersion": "v2-exact-title-addendum",
+  "domain": "Embodied AI",
+  "scope": "Strict incremental audit of the 29 manifest papers added through exact-title cache resolution (records with resolutionSourceUrl). Evidence was read from the available structured full-text cache tmp/paper-corpus/<arxivId>/paper.json because tmp/paper-digests/ is absent; no download, web lookup, scripts/data edit, generated-site edit, or source-code edit was performed.",
+  "decisionPolicy": "Approve only a named dataset explicitly used for model training, pre-training, fine-tuning, or training demonstrations. Reject evaluation/test/benchmark-only use, reward-only data, methods/models/metrics, unnamed/private constructed data, future releases, and synthetic generated output that is not an approved named training dataset. Every decision must carry a local source locator and reason; URLs are included only when literally present in audited local evidence or inherited from the already-verified v2 canonical record.",
+  "coverage": {
+    "manifestEmbodiedPaperCount": 29,
+    "auditedPaperCount": 29,
+    "missingDigestCount": 0,
+    "auditedArxivIds": [
+      "2604.09651",
+      "2412.10713",
+      "2310.09833",
+      "2307.12062",
+      "2406.18062",
+      "2202.07301",
+      "2202.09514",
+      "2502.13175",
+      "2603.11088",
+      "2502.05206",
+      "2005.09161",
+      "2412.07472",
+      "2503.07885",
+      "2412.13017",
+      "2008.12008",
+      "2502.18290",
+      "1910.11099",
+      "2605.13213",
+      "2410.06678",
+      "2108.03272",
+      "2504.06154",
+      "2406.15349",
+      "2406.03877",
+      "2010.06580",
+      "2109.12674",
+      "1911.04074",
+      "1711.03938",
+      "2406.02630",
+      "2205.04662"
+    ],
+    "paperDecisions": [
+      {
+        "paper": {
+          "arxivId": "2604.09651",
+          "title": "FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models",
+          "domain": "Embodied AI"
+        },
+        "status": "approved-and-rejected",
+        "approvedDatasets": [
+          "LIBERO demonstration datasets"
+        ],
+        "rejectedDecisionCount": 1,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      },
+      {
+        "paper": {
+          "arxivId": "2412.10713",
+          "title": "RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors",
+          "domain": "Embodied AI"
+        },
+        "status": "approved-and-rejected",
+        "approvedDatasets": [
+          "D4RL"
+        ],
+        "rejectedDecisionCount": 2,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      },
+      {
+        "paper": {
+          "arxivId": "2310.09833",
+          "title": "Robust Multi-Agent Reinforcement Learning by Mutual Information Regularization",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2307.12062",
+          "title": "Game-Theoretic Robust Reinforcement Learning Handles Temporally-Coupled Perturbations",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2406.18062",
+          "title": "Breaking the Barrier: Enhanced Utility and Robustness in Smoothed DRL Agents",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2202.07301",
+          "title": "User-Oriented Robust Reinforcement Learning",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2202.09514",
+          "title": "Robust Reinforcement Learning as a Stackelberg Game via Adaptively-Regularized Adversarial Training",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2502.13175",
+          "title": "Towards Robust and Secure Embodied AI: A Survey on Vulnerabilities and Attacks",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2603.11088",
+          "title": "The Attack and Defense Landscape of Agentic AI: A Comprehensive Survey",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 17,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2005.09161",
+          "title": "Spatiotemporal Attacks for Embodied Agents",
+          "domain": "Embodied AI"
+        },
+        "status": "approved",
+        "approvedDatasets": [
+          "EQA-v1"
+        ],
+        "rejectedDecisionCount": 0,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      },
+      {
+        "paper": {
+          "arxivId": "2412.07472",
+          "title": "SmartAgent: Chain-of-User-Thought for Embodied Personalized Agent in Cyber World",
+          "domain": "Embodied AI"
+        },
+        "status": "approved-and-rejected",
+        "approvedDatasets": [
+          "SmartSpot"
+        ],
+        "rejectedDecisionCount": 1,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      },
+      {
+        "paper": {
+          "arxivId": "2503.07885",
+          "title": "Safety Guardrails for LLM-Enabled Robots",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2412.13017",
+          "title": "A New Adversarial Perspective for LiDAR-based 3D Object Detection",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 4,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2008.12008",
+          "title": "Shadow-Catcher: Looking into Shadows to Detect Ghost Objects in Autonomous Vehicle 3D Sensing",
+          "domain": "Embodied AI"
+        },
+        "status": "approved-and-rejected",
+        "approvedDatasets": [
+          "KITTI"
+        ],
+        "rejectedDecisionCount": 3,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      },
+      {
+        "paper": {
+          "arxivId": "2502.18290",
+          "title": "Stealthy backdoor attack in self-supervised learning vision encoders for large vision language models",
+          "domain": "Embodied AI"
+        },
+        "status": "approved-and-rejected",
+        "approvedDatasets": [
+          "PASCAL VOC"
+        ],
+        "rejectedDecisionCount": 2,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      },
+      {
+        "paper": {
+          "arxivId": "1910.11099",
+          "title": "Adversarial T-Shirt! Evading Person Detectors in a Physical World",
+          "domain": "Embodied AI"
+        },
+        "status": "approved-and-rejected",
+        "approvedDatasets": [
+          "MS COCO"
+        ],
+        "rejectedDecisionCount": 1,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      },
+      {
+        "paper": {
+          "arxivId": "2605.13213",
+          "title": "Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 2,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2410.06678",
+          "title": "M3Bench: Benchmarking Whole-Body Motion Generation for Mobile Manipulation in 3D Scenes",
+          "domain": "Embodied AI"
+        },
+        "status": "approved",
+        "approvedDatasets": [
+          "M3Bench"
+        ],
+        "rejectedDecisionCount": 0,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      },
+      {
+        "paper": {
+          "arxivId": "2108.03272",
+          "title": "iGibson 2.0: Object-Centric Simulation for Robot Learning of Everyday Household Tasks",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 2,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2504.06154",
+          "title": "Exploring Adversarial Obstacle Attacks in Search-Based Path Planning for Autonomous Mobile Robots",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2406.15349",
+          "title": "NavSim: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking",
+          "domain": "Embodied AI"
+        },
+        "status": "approved",
+        "approvedDatasets": [
+          "OpenScene"
+        ],
+        "rejectedDecisionCount": 0,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      },
+      {
+        "paper": {
+          "arxivId": "2406.03877",
+          "title": "Bench2Drive: Towards Multi-Ability Benchmarking of Closed-Loop End-to-End Autonomous Driving",
+          "domain": "Embodied AI"
+        },
+        "status": "approved",
+        "approvedDatasets": [
+          "Bench2Drive"
+        ],
+        "rejectedDecisionCount": 0,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      },
+      {
+        "paper": {
+          "arxivId": "2010.06580",
+          "title": "Scenic: A Language for Scenario Specification and Data Generation",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 4,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2109.12674",
+          "title": "MetaDrive: Composing Diverse Driving Scenarios for Generalizable Reinforcement Learning",
+          "domain": "Embodied AI"
+        },
+        "status": "approved-and-rejected",
+        "approvedDatasets": [
+          "MetaDrive human driving trajectories",
+          "Waymo Open Dataset"
+        ],
+        "rejectedDecisionCount": 5,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      },
+      {
+        "paper": {
+          "arxivId": "1911.04074",
+          "title": "SUMMIT: A Simulator for Urban Driving in Massive Mixed Traffic",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "1711.03938",
+          "title": "CARLA: An Open Urban Driving Simulator",
+          "domain": "Embodied AI"
+        },
+        "status": "approved-and-rejected",
+        "approvedDatasets": [
+          "ImageNet"
+        ],
+        "rejectedDecisionCount": 4,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      },
+      {
+        "paper": {
+          "arxivId": "2406.02630",
+          "title": "AI Agents under Threat: A Survey of Key Security Challenges and Future Pathways",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "No named dataset in the complete local paper corpus met the strict explicit-training-use test."
+      },
+      {
+        "paper": {
+          "arxivId": "2205.04662",
+          "title": "SoK: Rethinking Sensor Spoofing Attacks against Robotic Vehicles from a Systematic View",
+          "domain": "Embodied AI"
+        },
+        "status": "approved",
+        "approvedDatasets": [
+          "KITTI"
+        ],
+        "rejectedDecisionCount": 0,
+        "reason": "At least one named dataset has explicit training/pre-training/fine-tuning/demonstration use; other surfaces are recorded separately."
+      }
+    ],
+    "approved": [
+      {
+        "canonicalName": "D4RL",
+        "aliases": [
+          "D4rl"
+        ],
+        "nameMatchReason": "The canonicalization is supported by the literal corpus evidence and exact citation 'fu2020d4rl' (D4rl: Datasets for deep data-driven reinforcement learning). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used.",
+        "year": 2020,
+        "venue": "arXiv preprint arXiv:2004.07219",
+        "paperUrl": "https://arxiv.org/abs/2004.07219",
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "As for the implementation, we choose some online models as victims, which are well-trained by official implementation with D4RL. We choose two tasks, Cheetah and Walker, using expert-level Decision Transformer agents as the victims.",
+        "publicAccessEvidence": [],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2412.10713",
+              "title": "RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors",
+              "domain": "Embodied AI"
+            },
+            "evidence": "As for the implementation, we choose some online models as victims, which are well-trained by official implementation with D4RL. We choose two tasks, Cheetah and Walker, using expert-level Decision Transformer agents as the victims.",
+            "source": "sections/05.03-case-ii-manipulation-on-sequence-model-agents.md (sec:5.3)"
+          }
+        ]
+      },
+      {
+        "canonicalName": "LIBERO demonstration datasets",
+        "aliases": [
+          "LIBERO"
+        ],
+        "nameMatchReason": "The canonicalization is supported by the literal corpus evidence and exact citation 'liu2023libero' (Libero: Benchmarking knowledge transfer for lifelong robot learning). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used.",
+        "year": 2023,
+        "venue": "Advances in Neural Information Processing Systems",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "The paper fine-tunes its attacked VLA with a poisoned subset of LIBERO's 50 expert demonstrations per task.",
+        "publicAccessEvidence": [],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2604.09651",
+              "title": "FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models",
+              "domain": "Embodied AI"
+            },
+            "evidence": "During a subsequent fine-tuning stage, they inject a small poisoned dataset $D_{\\text{poison}}$ and modify the objective with carefully designed loss terms.",
+            "source": "sections/04.01-threat-model.md (sec:4.1)"
+          },
+          {
+            "paper": {
+              "arxivId": "2604.09651",
+              "title": "FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models",
+              "domain": "Embodied AI"
+            },
+            "evidence": "A notable characteristic of the LIBERO benchmark is that each task is supported by exactly 50 expert demonstrations. Consequently, a minimal poisoning rate of $p=2\\%$ ensures the inclusion of exactly one malicious demonstration per task.",
+            "source": "sections/12.04-dataset-libero.md (sec:12.4)"
+          }
+        ]
+      },
+      {
+        "canonicalName": "EQA-v1",
+        "aliases": [],
+        "nameMatchReason": "The literal surface form 'EQA-v1' is tied to the exact citation 'das2018embodied'; no fuzzy match was used.",
+        "year": 2018,
+        "venue": "CVPR",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "The QA and navigation modules are trained for 300 epochs on EQA-v1-derived clean and adversarially perturbed training scenes.",
+        "publicAccessEvidence": [],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2005.09161",
+              "title": "Spatiotemporal Attacks for Embodied Agents",
+              "domain": "Embodied AI"
+            },
+            "evidence": "For both EQA and EVR tasks, we use the EQA-v1 dataset, a visual question answering dataset grounded in the simulated environment. It contains 648 environments with 7,190 questions for training, 68 environments with 862 questions for validation, and 58 environments with 933 questions for testing.",
+            "source": "sections/05.01-experimental-setting.md (sec:5.1)"
+          },
+          {
+            "paper": {
+              "arxivId": "2005.09161",
+              "title": "Spatiotemporal Attacks for Embodied Agents",
+              "domain": "Embodied AI"
+            },
+            "evidence": "Following Das et al., both the QA and NAV modules are trained for 300 epochs. In each training batch, we generate one perturbed scene for each clean scene, so that the numbers of clean scenes and perturbed scenes are the same per batch.",
+            "source": "sections/08.02-improving-agent-robustness-with-adversarial-training.md (sec:8.2)"
+          }
+        ]
+      },
+      {
+        "canonicalName": "SmartSpot",
+        "aliases": [],
+        "nameMatchReason": "Canonicalized only from literal names in the audited paper text, title, or exact citation; no fuzzy title/repository matching was used.",
+        "year": 2024,
+        "venue": null,
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "SmartAgent is trained for 15 epochs in both embodied and personalized stages, and the paper explicitly reports fine-tuning on SmartSpot.",
+        "publicAccessEvidence": [],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2412.07472",
+              "title": "SmartAgent: Chain-of-User-Thought for Embodied Personalized Agent in Cyber World",
+              "domain": "Embodied AI"
+            },
+            "evidence": "Given the scarcity of training data for embodied agents that explicitly captures the personalized analysis highlighted in the COUT paradigm, we propose to construct a novel benchmark named SmartSpot.",
+            "source": "sections/04-the-smartspot-benchmark.md (sec:4)"
+          },
+          {
+            "paper": {
+              "arxivId": "2412.07472",
+              "title": "SmartAgent: Chain-of-User-Thought for Embodied Personalized Agent in Cyber World",
+              "domain": "Embodied AI"
+            },
+            "evidence": "SmartAgent surprisingly exceeds its average performance achieved through fine-tuning on SmartSpot in the Exp.Acc metric.",
+            "source": "sections/06.05-zero-shot-reasoning.md (sec:6.5)"
+          }
+        ]
+      },
+      {
+        "canonicalName": "PASCAL VOC",
+        "aliases": [
+          "VOC"
+        ],
+        "nameMatchReason": "The literal name 'PASCAL VOC' is supported by exact citation 'Everingham15' (The Pascal Visual Object Classes Challenge: A Retrospective).",
+        "year": 2015,
+        "venue": "International Journal of Computer Vision",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "The attack fine-tunes the target encoder on a shadow dataset, instantiated with 5,000 PASCAL VOC images.",
+        "publicAccessEvidence": [],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2502.18290",
+              "title": "Stealthy backdoor attack in self-supervised learning vision encoders for large vision language models",
+              "domain": "Embodied AI"
+            },
+            "evidence": "The attacker aims to implant a backdoor with an imperceptible trigger into the pre-trained encoder by fine-tuning it on the shadow dataset $X$ with a custom loss function.",
+            "source": "sections/03-threat-model-and-problem-formalization.md (sec:3)"
+          },
+          {
+            "paper": {
+              "arxivId": "2502.18290",
+              "title": "Stealthy backdoor attack in self-supervised learning vision encoders for large vision language models",
+              "domain": "Embodied AI"
+            },
+            "evidence": "Shadow Dataset. We utilize 5K images from PASCAL VOC as our shadow dataset.",
+            "source": "sections/05.01-experiment-setup.md (sec:5.1)"
+          }
+        ]
+      },
+      {
+        "canonicalName": "MS COCO",
+        "aliases": [
+          "MS-COCO",
+          "MSCOCO",
+          "Microsoft Common Objects in Context"
+        ],
+        "nameMatchReason": "The canonicalization is supported by the literal corpus evidence and exact citation 'lin2014microsoft' (Microsoft coco: Common objects in context). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used.",
+        "year": 2014,
+        "venue": "European Conference on Computer Vision (ECCV)",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "These two object detectors are both pre-trained on COCO dataset which contains 80 classes including 'person'.",
+        "publicAccessEvidence": [],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "1910.11099",
+              "title": "Adversarial T-Shirt! Evading Person Detectors in a Physical World",
+              "domain": "Embodied AI"
+            },
+            "evidence": "These two object detectors are both pre-trained on COCO dataset which contains 80 classes including 'person'.",
+            "source": "sections/04.01-experimental-setup.md (sec:4.1)"
+          }
+        ]
+      },
+      {
+        "canonicalName": "M3Bench",
+        "aliases": [
+          "M${}^{3}$Bench"
+        ],
+        "nameMatchReason": "The canonical name follows the manifest title and literal TeX form M${}^{3}$Bench in the corpus.",
+        "year": 2024,
+        "venue": null,
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": "https://zeyuzhang.com/papers/m3bench",
+        "trainingEvidence": "The learning-based MπNet, MDiffusion, and MπFormer models are trained on M3Bench's Train split.",
+        "publicAccessEvidence": [
+          {
+            "evidence": "By releasing M3Bench and M3BenchMaker at https://zeyuzhang.com/papers/m3bench, we aim to advance robotics research.",
+            "source": "paper.json metadata.abstract",
+            "paperArxivId": "2410.06678"
+          }
+        ],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2410.06678",
+              "title": "M3Bench: Benchmarking Whole-Body Motion Generation for Mobile Manipulation in 3D Scenes",
+              "domain": "Embodied AI"
+            },
+            "evidence": "The primary evaluation set, the Base split, encompasses all seen objects and scenes, divided into Train (75%), Val (5%), and Test (20%) sets.",
+            "source": "sections/03.04-benchmark.md (sec:3.4)"
+          },
+          {
+            "paper": {
+              "arxivId": "2410.06678",
+              "title": "M3Bench: Benchmarking Whole-Body Motion Generation for Mobile Manipulation in 3D Scenes",
+              "domain": "Embodied AI"
+            },
+            "evidence": "We train M$\\pi$Net, MDiffusion and M$\\pi$Former on the Train split and perform model selection on Val.",
+            "source": "sections/04.01-experimental-setup.md (sec:4.1)"
+          }
+        ]
+      },
+      {
+        "canonicalName": "OpenScene",
+        "aliases": [],
+        "nameMatchReason": "Canonicalized only from literal names in the audited paper text, title, or exact citation; no fuzzy title/repository matching was used.",
+        "year": 2023,
+        "venue": null,
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "NAVSIM trains 114 learned planners on navtrain and size-matched subsets of OpenScene.",
+        "publicAccessEvidence": [
+          {
+            "evidence": "We choose OpenScene, a redistribution of nuPlan, the largest annotated public driving dataset.",
+            "source": "sections/03.01-generating-standardized-and-challenging-train-and-test-split.md (sec:3.1)",
+            "paperArxivId": "2406.15349"
+          }
+        ],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2406.15349",
+              "title": "NavSim: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking",
+              "domain": "Embodied AI"
+            },
+            "evidence": "We instantiate standardized training and evaluation splits for NAVSIM with the OpenScene dataset, though our framework can be extended to other datasets.",
+            "source": "sections/01-introduction.md (sec:1)"
+          },
+          {
+            "paper": {
+              "arxivId": "2406.15349",
+              "title": "NavSim: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking",
+              "domain": "Embodied AI"
+            },
+            "evidence": "We train all models on {25%, 50%, 100%} of navtrain and an equally sized uniformly sampled subset of OpenScene, giving 114 learned planners.",
+            "source": "sections/04.01-alignment-between-open-loop-and-closed-loop-evaluation.md (sec:4.1)"
+          }
+        ]
+      },
+      {
+        "canonicalName": "Bench2Drive",
+        "aliases": [],
+        "nameMatchReason": "Canonicalized only from literal names in the audited paper text, title, or exact citation; no fuzzy title/repository matching was used.",
+        "year": 2024,
+        "venue": null,
+        "paperUrl": null,
+        "githubUrl": "https://github.com/Thinklab-SJTU/Bench2Drive",
+        "huggingFaceUrl": "https://huggingface.co/datasets/rethinlab/Bench2Drive",
+        "dataUrl": "https://thinklab-sjtu.github.io/Bench2Drive/",
+        "trainingEvidence": "Bench2Drive supplies a standardized official training set; the paper trains six E2E driving baselines on its 950-clip training subset.",
+        "publicAccessEvidence": [
+          {
+            "evidence": "All data, codes, and checkpoints are in GitHub (https://github.com/Thinklab-SJTU/Bench2Drive) and Huggingface (https://huggingface.co/datasets/rethinlab/Bench2Drive).",
+            "source": "sections/17.02-distribution.md (sec:17.2)",
+            "paperArxivId": "2406.03877"
+          }
+        ],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2406.03877",
+              "title": "Bench2Drive: Towards Multi-Ability Benchmarking of Closed-Loop End-to-End Autonomous Driving",
+              "domain": "Embodied AI"
+            },
+            "evidence": "Bench2Drive has an official training dataset collected by state-of-the-art expert model Think2Drive, comprising 2 million fully annotated frames, sourced from 13,638 clips.",
+            "source": "sections/02-introduction.md (sec:2)"
+          },
+          {
+            "paper": {
+              "arxivId": "2406.03877",
+              "title": "Bench2Drive: Towards Multi-Ability Benchmarking of Closed-Loop End-to-End Autonomous Driving",
+              "domain": "Embodied AI"
+            },
+            "evidence": "We have trained these baseline models on the base subset (1,000 clips). We use 950 clips for training while leaving 50 clips for open-loop evaluation.",
+            "source": "sections/05.01-baselines-datasets.md (sec:5.1)"
+          }
+        ]
+      },
+      {
+        "canonicalName": "Waymo Open Dataset",
+        "aliases": [
+          "Waymo dataset"
+        ],
+        "nameMatchReason": "The canonicalization is supported by the literal corpus evidence and exact citation 'sun2020scalability' (Scalability in perception for autonomous driving: Waymo open dataset). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used.",
+        "year": 2020,
+        "venue": "CVPR",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": "https://waymo.com/open",
+        "trainingEvidence": "Currently, we build real-world cases collected by Waymo and split the training set and test set so that they consist of 1000 and 100 non-overlapping cases, respectively.",
+        "publicAccessEvidence": [
+          {
+            "evidence": "MetaDrive is made using the Waymo Open Dataset, provided by Waymo LLC under license terms available at https://waymo.com/open.",
+            "source": "sections/07-conclusion.md (sec:7)",
+            "paperArxivId": "2109.12674"
+          }
+        ],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2109.12674",
+              "title": "MetaDrive: Composing Diverse Driving Scenarios for Generalizable Reinforcement Learning",
+              "domain": "Embodied AI"
+            },
+            "evidence": "Currently, we build real-world cases collected by Waymo and split the training set and test set so that they consist of 1000 and 100 non-overlapping cases, respectively.",
+            "source": "sections/05.03-generalization-to-unseen-real-scenarios.md (sec:5.3)"
+          },
+          {
+            "paper": {
+              "arxivId": "2109.12674",
+              "title": "MetaDrive: Composing Diverse Driving Scenarios for Generalizable Reinforcement Learning",
+              "domain": "Embodied AI"
+            },
+            "evidence": "By changing the number of cases contained in real training sets, we train 9 sets of agents to benchmark the generalizability of SAC.",
+            "source": "sections/05.03-generalization-to-unseen-real-scenarios.md (sec:5.3)"
+          }
+        ]
+      },
+      {
+        "canonicalName": "MetaDrive human driving trajectories",
+        "aliases": [
+          "driving trajectories collected by humans"
+        ],
+        "nameMatchReason": "Canonicalized only from literal names in the audited paper text, title, or exact citation; no fuzzy title/repository matching was used.",
+        "year": 2021,
+        "venue": null,
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": "https://github.com/metadriverse/metadrive/releases/download/MetaDrive-0.2.3/human_traj_100_new.json",
+        "trainingEvidence": "The BC and CQL offline-learning baselines use 36,000 human-demonstrated transitions.",
+        "publicAccessEvidence": [
+          {
+            "evidence": "The driving trajectories collected by humans are released at https://github.com/metadriverse/metadrive/releases/download/MetaDrive-0.2.3/human_traj_100_new.json.",
+            "source": "sections/05.04-safe-exploration.md (sec:5.4)",
+            "paperArxivId": "2109.12674"
+          }
+        ],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2109.12674",
+              "title": "MetaDrive: Composing Diverse Driving Scenarios for Generalizable Reinforcement Learning",
+              "domain": "Embodied AI"
+            },
+            "evidence": "We also provide two offline learning baselines, BC and CQL, which use 36k human demonstrated transitions in 97% success rate to do offline learning and are totally safe in training time.",
+            "source": "sections/05.04-safe-exploration.md (sec:5.4)"
+          }
+        ]
+      },
+      {
+        "canonicalName": "ImageNet",
+        "aliases": [
+          "Imagenet"
+        ],
+        "nameMatchReason": "The canonicalization is supported by the literal corpus evidence and exact citation 'deng2009imagenet' (Imagenet: A large-scale hierarchical image database). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used.",
+        "year": 2009,
+        "venue": "Proceedings of IEEE/CVF Conference Computer Vision Pattern Recognition (CVPR)",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "The back-end ResNet is pre-trained on ImageNet and frozen during training.",
+        "publicAccessEvidence": [],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "1711.03938",
+              "title": "CARLA: An Open Urban Driving Simulator",
+              "domain": "Embodied AI"
+            },
+            "evidence": "The back-end ResNet is pre-trained on ImageNet and frozen during training.",
+            "source": "sections/10.01-modular-pipeline.md (sec:10.1)"
+          }
+        ]
+      },
+      {
+        "canonicalName": "KITTI",
+        "aliases": [
+          "Kitti"
+        ],
+        "nameMatchReason": "The canonicalization is supported by the literal corpus evidence and exact citation 'geiger2013vision' (Vision meets Robotics: The KITTI Dataset). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used.",
+        "year": 2013,
+        "venue": "The International Journal of Robotics Research",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": "http://www.cvlibs.net/datasets/kitti",
+        "trainingEvidence": "KITTI is explicitly used to train PointRCNN; Shadow-Catcher also derives its labeled classifier train/test split from KITTI scenes.",
+        "publicAccessEvidence": [],
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2008.12008",
+              "title": "Shadow-Catcher: Looking into Shadows to Detect Ghost Objects in Autonomous Vehicle 3D Sensing",
+              "domain": "Embodied AI"
+            },
+            "evidence": "For each object type, its attack trace is injected in 200 random scenes from the KITTI dataset, resulting in an Adversarial Dataset containing a total of 600 scenes.",
+            "source": "sections/06-evaluation.md (sec:6)"
+          },
+          {
+            "paper": {
+              "arxivId": "2008.12008",
+              "title": "Shadow-Catcher: Looking into Shadows to Detect Ghost Objects in Autonomous Vehicle 3D Sensing",
+              "domain": "Embodied AI"
+            },
+            "evidence": "The shadows are labeled (ghost vs genuine) and split into a training set and a test set (80:20) to train six different binary classifiers and evaluate their performance on the test set.",
+            "source": "sections/06-evaluation.md (sec:6)"
+          },
+          {
+            "paper": {
+              "arxivId": "2205.04662",
+              "title": "SoK: Rethinking Sensor Spoofing Attacks against Robotic Vehicles from a Systematic View",
+              "domain": "Embodied AI"
+            },
+            "evidence": "We use the popular KITTI dataset to train this model, where the samples are collected by the Velodyne HDL-64E Lidar.",
+            "source": "sections/05.01-obstacle-position-altering-lidar.md (sec:5.1)"
+          }
+        ]
+      }
+    ],
+    "rejected": [
+      {
+        "paper": {
+          "arxivId": "2412.10713",
+          "title": "RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Soft Actor-Critic",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "The victim models for Meta-world tasks are trained using the Soft Actor-Critic (SAC) algorithm, as introduced by [@haarnoja2018soft].",
+            "source": "section:sec:11.3"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2307.12062",
+          "title": "Game-Theoretic Robust Reinforcement Learning Handles Temporally-Coupled Perturbations",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Double-Sampling",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "Comparative evaluations are performed against robust natural actor-critic (RNAC)[@zhou2023natural] trained with Double-Sampling (DS) and Inaccurate Parameter Models (IPM) uncertainty.",
+            "source": "section:sec:10.2"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "SA-1B",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "evaluation"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "For **attack research**, the SA-1B dataset and its subsets [@kirillov2023segment] are the most commonly used for evaluating adversarial attacks [@croce2024segment; @han2023segment; @lu2024unsegment; @shen2024practical; @zhang2023attack; @zheng2023black].",
+            "source": "section:sec:2.2.4"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "CAMO",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "evaluation"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "For backdoor attacks, **BadSAM** was assessed using the CAMO dataset [@le2019anabranch].",
+            "source": "section:sec:2.2.4"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "This",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "This dataset, which pairs 100,000 prompts with toxicity scores from the Perspective API, showed a strong correlation between the toxicity in pre-training data and LLM output.",
+            "source": "section:sec:3.13.1"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Chain-of-Thought",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "These LLM-assisted strategies can significantly improve the effectiveness and stealthiness of the attacks. **PGJ** [@huang2025perception] identifies unsafe tokens and replaces them with perceptually similar but semantically distant phrases, producing short, natural prompts that evade text filters without directly querying the T2I model. **R2A** [@zhang2025reason2attack] further improves an LLM’s reasoning for jailbreaking T2I models by first fine-tuning on Chain-of-Thought examples based on contextual word meanings, and then applying reinforcement learning guided by a dense attack process reward.",
+            "source": "section:sec:6.2.3"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "LoRA",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "SDeT leverages Low-Rank Adaptation (LoRA) [@hu2021lora] to extract pre-fine-tuning weights of generative models fine-tuned with LoRA.",
+            "source": "section:sec:6.8"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "I2P",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "In research on NSFW content in diffusion models, the I2P dataset [@schramowski2023safe] is widely used, alongside custom datasets such as NSFW-200 [@yang2024sneakyprompt], VBCDE-100 [@deng2023divide], Tox100/1K [@cai2024ethical] and a human-attribute dataset [@cai2024ethical] focused on bias research.",
+            "source": "section:sec:6.10"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Alpaca",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "& \\cellcolor{gray!15!}POUGH~\\cite{huang2024semantic} & \\cellcolor{gray!15!}2024 & \\cellcolor{gray!15!}White-box & \\cellcolor{gray!15!}Automated & \\cellcolor{gray!15!}Vicuna, Mistral, Guanaco & \\cellcolor{gray!15!}Alpaca dataset \\\\",
+            "source": "table:tab:LLM-Part1"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "HADES",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "& \\cellcolor{gray!15}HADES \\cite{li2024images} & \\cellcolor{gray!15}2024 & \\cellcolor{gray!15}White-box & \\cellcolor{gray!15}Hybrid method+V & \\cellcolor{gray!15}LLaVA/GPT-4V/Gemini-Pro-Vision & \\cellcolor{gray!15}HADES dataset \\\\",
+            "source": "table:tab:addlabel"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Jailbreak in Pieces",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "& Jailbreak in Pieces \\cite{shayegani2023jailbreak} & 2023 & Black-box & Transfer-based+V & LlaVA /LLaMA-Adapter V2 & Jailbreak in Pieces dataset \\\\",
+            "source": "table:tab:addlabel"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Self-collected",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "\\multirow{2}{0.1\\textwidth}{Prompt Injection Attack} & Adversarial Prompt Injection \\cite{bagdasaryan2023ab} & 2023 & White-box & Optimization-based+V & LLaVA/PandaGPT & Self-collected dataset \\\\",
+            "source": "table:tab:addlabel"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "VQAv2/SVIT/DALL-E",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "evaluation"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "& Anydoor \\cite{lu2024test} & 2024 & Backdoor & Testing-stage+VL & LLaVA/MiniGPT-4/InstructBLIP/BLIP-2 & VQAv2/SVIT/DALL-E dataset \\\\",
+            "source": "table:tab:addlabel"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Self-collected",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "\\multirow{8}{0.1\\textwidth}{Jailbreak Defenses} & \\cellcolor{gray!15}JailGuard \\cite{zhang2023mutation} & \\cellcolor{gray!15}2023 & \\cellcolor{gray!15}Detection & \\cellcolor{gray!15}Detection+VL & \\cellcolor{gray!15}GPT-3.5/MiniGPT-4 & \\cellcolor{gray!15}Self-collected dataset \\\\",
+            "source": "table:tab:addlabel"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Self-collected",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "& GuardMM \\cite{sharma2024defending} & 2024 & Detection & Detection+V & GPT-4V/LLAVA/MINIGPT-4 & Self-collected dataset \\\\",
+            "source": "table:tab:addlabel"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "DreamBooth",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "\\cellcolor{white} & {Zero-Day}\\cite{huang2023zero, huang2024personalization} & 2023 & Data Poisoning & Textual Trigger & Stable Diffusion & DreamBooth dataset \\\\",
+            "source": "table:tab:diffuison_safety_I"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "DreamBooth",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "\\cellcolor{white} & DUAW\\cite{ye2023duaw} & 2023 & Natural Data Protection & Learning Prevention & Stable Diffusion & DreamBooth dataset, WikiArt, self-constructed \\\\",
+            "source": "table:tab:diffuison_safety_II"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "DreamBooth",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "\\cellcolor{white} & FT-SHIELD\\cite{cui2023ft} & 2024 & Natural Data Protection & Data Attribution & Stable Diffusion & CelebA, WikiArt, Pokemon Captions, DreamBooth dataset \\\\",
+            "source": "table:tab:diffuison_safety_II"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.05206",
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "BOSS",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "\\cellcolor{white} & HiDDeN\\cite{zhu2018hidden} & 2018 & Generated Data Protection & Post-generation Watermark & CNN & MS-COCO, BOSS dataset \\\\",
+            "source": "table:tab:diffuison_safety_II"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2412.07472",
+          "title": "SmartAgent: Chain-of-User-Thought for Embodied Personalized Agent in Cyber World",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "SeeClick",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "The training of SmartAgent starts from the continual pre-training on SeeClick base model [@cheng2024seeclick] for basic GUI grounding abilities.",
+            "source": "section:sec:5.3"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2412.13017",
+          "title": "A New Adversarial Perspective for LiDAR-based 3D Object Detection",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "The",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "The dataset will be released for public research.",
+            "source": "section:sec:1"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2412.13017",
+          "title": "A New Adversarial Perspective for LiDAR-based 3D Object Detection",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Hausdorff",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "evaluation"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "**Realistic evaluation of generated random objects.** The similarity between generated and real data is evaluated using Hausdorff and Chamfer distances.",
+            "source": "section:sec:3.3"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2412.13017",
+          "title": "A New Adversarial Perspective for LiDAR-based 3D Object Detection",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "TED",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "evaluation"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "Specifically, we set the density parameters $d_v=0.004$, and $d_h=0.5$, and the fused point cloud was evaluated on TED [@wu2023transformation].",
+            "source": "section:sec:4.5"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2412.13017",
+          "title": "A New Adversarial Perspective for LiDAR-based 3D Object Detection",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "KITTI",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "However, during our experiments, we observed that the projection and back-projection process resulted in a loss of over $1\\times 10^4$ points in the KITTI dataset.",
+            "source": "section:sec:7.3"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2008.12008",
+          "title": "Shadow-Catcher: Looking into Shadows to Detect Ghost Objects in Autonomous Vehicle 3D Sensing",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "The",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "The dataset includes LiDAR measurements (point cloud scenes) from real driving scenarios in Karlsruhe, Germany.",
+            "source": "section:sec:4"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2008.12008",
+          "title": "Shadow-Catcher: Looking into Shadows to Detect Ghost Objects in Autonomous Vehicle 3D Sensing",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "The",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "The dataset is accompanied by a set of object labels for training 3D object detectors.",
+            "source": "section:sec:4"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.18290",
+          "title": "Stealthy backdoor attack in self-supervised learning vision encoders for large vision language models",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "COCO",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "evaluation"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "Shadowcast denotes that poisoned images are optimized on randomly sample images from VOC [@Everingham15] and evaluated on COCO while Shadowcast$*$ denotes optimized on a set of golden retriever dog images from [@KhoslaYaoJayadevaprakashFeiFei_FGVC2011] and evaluated on test set of these dog images.",
+            "source": "table:tab:LVLM_comparison"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.18290",
+          "title": "Stealthy backdoor attack in self-supervised learning vision encoders for large vision language models",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "COCO",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "evaluation"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "ImgTroj and \\mboxBadVision\\xspace are all evaluated on COCO.",
+            "source": "table:tab:LVLM_comparison"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "1910.11099",
+          "title": "Adversarial T-Shirt! Evading Person Detectors in a Physical World",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "This",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "evaluation"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "This dataset is used to evaluate the attack performance of the learnt adversarial pattern in the digital world.",
+            "source": "section:sec:4.1"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2605.13213",
+          "title": "Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "GQA",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "We adopt the GQA dataset [@hudson2019gqa], which is built upon scene graphs and requires more multi‑step reasoning and tools usage than conventional Visual Question Answering (VQA) benchmarks [@antol2015vqa; @goyal2017making].",
+            "source": "section:sec:4.1"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2108.03272",
+          "title": "iGibson 2.0: Object-Centric Simulation for Robot Learning of Everyday Household Tasks",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "SAC",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "**RL experiments:** With the simplified grasping mechanism, the agents trained with SAC for both the bimanual humanoid and the Fetch embodiment achieve $100\\%$ success rate for *Grasping Book*, *Soaking Towel*, *Cleaning Stained Shelf*, *Cooking Meat* tasks.",
+            "source": "section:sec:6"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2010.06580",
+          "title": "Scenic: A Language for Scenario Specification and Data Generation",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "NVIDIA TITAN",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "All models were trained and evaluated on NVIDIA TITAN XP GPUs.",
+            "source": "section:sec:6.1"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2010.06580",
+          "title": "Scenic: A Language for Scenario Specification and Data Generation",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Driving in the Matrix",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "In Sec. [#sec:experiment-two] we showed how we could improve the performance of squeezeDet trained on the Driving in the Matrix dataset [@johnson2017driving] by replacing part of the training set with images of overlapping cars.",
+            "source": "section:sec:12.2"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2010.06580",
+          "title": "Scenic: A Language for Scenario Specification and Data Generation",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Driving",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "In Sec. [#sec:experiment-two] we showed how we could improve the performance of squeezeDet trained on the Driving in the Matrix dataset [@johnson2017driving] by replacing part of the training set with images of overlapping cars.",
+            "source": "section:sec:12.2"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2109.12674",
+          "title": "MetaDrive: Composing Diverse Driving Scenarios for Generalizable Reinforcement Learning",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Argoverse",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "MetaDrive has the APIs to import map data collected in real-world such as Waymo dataset [@waymo_open_dataset; @sun2020scalability] and Argoverse dataset [@chang2019argoverse].",
+            "source": "section:sec:1"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2109.12674",
+          "title": "MetaDrive: Composing Diverse Driving Scenarios for Generalizable Reinforcement Learning",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Argoverse",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "The road network data usually consists of a set of lane line center points, such as in Argoverse dataset [@chang2019argoverse], Waymo dataset [@waymo_open_dataset; @sun2020scalability] and OpenStreetMap [@haklay2008openstreetmap].",
+            "source": "section:sec:4.1"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2109.12674",
+          "title": "MetaDrive: Composing Diverse Driving Scenarios for Generalizable Reinforcement Learning",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Argoverse",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "It is worth noticing that the Waymo dataset includes more diverse road structures and more detailed information such as boundaries than the Argoverse dataset.",
+            "source": "section:sec:4.1"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2109.12674",
+          "title": "MetaDrive: Composing Diverse Driving Scenarios for Generalizable Reinforcement Learning",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Argoverse",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "On the other hand, the Waymo dataset includes more complete scenarios (approximately 20,000) than the Argoverse dataset (approximately 100).",
+            "source": "section:sec:4.1"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "1711.03938",
+          "title": "CARLA: An Open Urban Driving Simulator",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "The",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "The dataset ${\\mathcal{D}= \\{ \\left\\langle\\mathbf{o}_i, \\mathbf{c}_i, \\mathbf{a}_i\\right\\rangle \\}}$ consists of tuples, each of which contains an observation $\\mathbf{o}_i$, a command $\\mathbf{c}_i$, and an action $\\mathbf{a}_i$.",
+            "source": "section:sec:3.2"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "1711.03938",
+          "title": "CARLA: An Open Urban Driving Simulator",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "The",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "The dataset is used to train a deep network to predict the expert's action $\\mathbf{a}$ given an observation $\\mathbf{o}$ and a control command $\\mathbf{c}$.",
+            "source": "section:sec:3.2"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "1711.03938",
+          "title": "CARLA: An Open Urban Driving Simulator",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Adam",
+        "nameMatchReason": "Recorded from the exact high-recall extractor surface form; no identity is inferred from spelling similarity.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The full local context does not establish this surface form as a named dataset actually used for model training; it is an evaluation-only asset, model/method/metric, generic or malformed extractor span, upstream-only reference, future/unnamed release, or non-reusable generated output.",
+        "evidence": [
+          {
+            "evidence": "The network was trained using the Adam optimizer [@Kingma2015adam].",
+            "source": "section:sec:3.2"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2604.09651",
+          "title": "FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "FlowHijack in-paper poisoned/teleoperation data",
+        "nameMatchReason": "Literal name from the full-paper scan; no fuzzy matching was used.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The poisoned subset and ten teleoperated real-robot demonstrations are constructed within the study and are not established as a separately named reusable dataset; only the named LIBERO demonstrations are approved.",
+        "evidence": [
+          {
+            "evidence": "For each of the 10 defined tasks, we collected 10 expert demonstrations via teleoperation.",
+            "source": "sections/14.03-results-overview.md (sec:14.3)"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2412.10713",
+          "title": "RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Gym expert trajectories",
+        "nameMatchReason": "Literal name from the full-paper scan; no fuzzy matching was used.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The trajectories are sampled/generated from Gym environments for the victim models and are not identified as a named fixed dataset. D4RL is approved separately.",
+        "evidence": [
+          {
+            "evidence": "These models have been trained on expert trajectories sampled from the Gym environment.",
+            "source": "sections/11.03-victim-agents-settings.md (sec:11.3)"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2310.09833",
+          "title": "Robust Multi-Agent Reinforcement Learning by Mutual Information Regularization",
+          "domain": "Embodied AI"
+        },
+        "candidateName": null,
+        "nameMatchReason": "No named dataset surface form survived the strict full-paper review.",
+        "observedRoles": [],
+        "reason": "The work trains MARL agents from online environment interaction; the complete local scan found no named fixed dataset used for training.",
+        "evidence": [
+          {
+            "scan": {
+              "corpus": "tmp/paper-corpus/2310.09833/paper.json",
+              "sectionsScanned": 19,
+              "tablesScanned": 6
+            }
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2406.18062",
+          "title": "Breaking the Barrier: Enhanced Utility and Robustness in Smoothed DRL Agents",
+          "domain": "Embodied AI"
+        },
+        "candidateName": null,
+        "nameMatchReason": "No named dataset surface form survived the strict full-paper review.",
+        "observedRoles": [],
+        "reason": "The work trains smoothed DRL agents from transitions stored in an online replay buffer; the complete local scan found no named fixed dataset.",
+        "evidence": [
+          {
+            "scan": {
+              "corpus": "tmp/paper-corpus/2406.18062/paper.json",
+              "sectionsScanned": 35,
+              "tablesScanned": 17
+            }
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2202.07301",
+          "title": "User-Oriented Robust Reinforcement Learning",
+          "domain": "Embodied AI"
+        },
+        "candidateName": null,
+        "nameMatchReason": "No named dataset surface form survived the strict full-paper review.",
+        "observedRoles": [],
+        "reason": "The robust-RL training is based on online environment interaction; the complete local scan found no named fixed dataset used for training.",
+        "evidence": [
+          {
+            "scan": {
+              "corpus": "tmp/paper-corpus/2202.07301/paper.json",
+              "sectionsScanned": 34,
+              "tablesScanned": 7
+            }
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2202.09514",
+          "title": "Robust Reinforcement Learning as a Stackelberg Game via Adaptively-Regularized Adversarial Training",
+          "domain": "Embodied AI"
+        },
+        "candidateName": null,
+        "nameMatchReason": "No named dataset surface form survived the strict full-paper review.",
+        "observedRoles": [],
+        "reason": "The Stackelberg robust-RL procedure trains from online interaction; the complete local scan found no named fixed dataset used for training.",
+        "evidence": [
+          {
+            "scan": {
+              "corpus": "tmp/paper-corpus/2202.09514/paper.json",
+              "sectionsScanned": 15,
+              "tablesScanned": 0
+            }
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2502.13175",
+          "title": "Towards Robust and Secure Embodied AI: A Survey on Vulnerabilities and Attacks",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "survey dataset taxonomy",
+        "nameMatchReason": "Literal name from the full-paper scan; no fuzzy matching was used.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The survey lists evaluation, robotics, and alignment datasets or describes their intended use, but does not locate a concrete model-training use in the surveyed evidence strongly enough for this strict addendum.",
+        "evidence": [
+          {
+            "evidence": "Alignment datasets are crucial for fine-tuning LVLMs; examples include SPA-VL and VLFeedback.",
+            "source": "sections/05-dataset-taxonomy-for-llms-and-lvlms-evaluation.md (sec:5)"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2603.11088",
+          "title": "The Attack and Defense Landscape of Agentic AI: A Comprehensive Survey",
+          "domain": "Embodied AI"
+        },
+        "candidateName": null,
+        "nameMatchReason": "No named dataset surface form survived the strict full-paper review.",
+        "observedRoles": [],
+        "reason": "The complete local sections/tables scan found no named fixed dataset with explicit model-training use.",
+        "evidence": [
+          {
+            "scan": {
+              "corpus": "tmp/paper-corpus/2603.11088/paper.json",
+              "sectionsScanned": 35,
+              "tablesScanned": 4
+            }
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2503.07885",
+          "title": "Safety Guardrails for LLM-Enabled Robots",
+          "domain": "Embodied AI"
+        },
+        "candidateName": null,
+        "nameMatchReason": "No named dataset surface form survived the strict full-paper review.",
+        "observedRoles": [],
+        "reason": "RoboGuard is a runtime guardrail/control-synthesis method; the complete local scan found no named dataset used to train, pre-train, or fine-tune a model.",
+        "evidence": [
+          {
+            "scan": {
+              "corpus": "tmp/paper-corpus/2503.07885/paper.json",
+              "sectionsScanned": 27,
+              "tablesScanned": 6
+            }
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2008.12008",
+          "title": "Shadow-Catcher: Looking into Shadows to Detect Ghost Objects in Autonomous Vehicle 3D Sensing",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Adversarial Dataset",
+        "nameMatchReason": "Literal name from the full-paper scan; no fuzzy matching was used.",
+        "observedRoles": [
+          "evaluation"
+        ],
+        "reason": "This is an in-paper synthetic attack output. It is not approved as a reusable dataset; the underlying named KITTI source is approved separately because it feeds the classifier-training split.",
+        "evidence": [
+          {
+            "evidence": "Attack traces are injected in KITTI scenes, resulting in an Adversarial Dataset containing 600 scenes.",
+            "source": "sections/06-evaluation.md (sec:6)"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2605.13213",
+          "title": "Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "GQA",
+        "nameMatchReason": "Literal name from the full-paper scan; no fuzzy matching was used.",
+        "observedRoles": [
+          "evaluation"
+        ],
+        "reason": "The paper samples GQA's training split as attack/reasoning inputs, but does not train or fine-tune a model on GQA; split name alone is not training use.",
+        "evidence": [
+          {
+            "evidence": "From the training split, we sample 5,984 image-question pairs.",
+            "source": "sections/04.01-experiment-setup.md (sec:4.1)"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2108.03272",
+          "title": "iGibson 2.0: Object-Centric Simulation for Robot Learning of Everyday Household Tasks",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "iGibson VR demonstrations",
+        "nameMatchReason": "Literal name from the full-paper scan; no fuzzy matching was used.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "Thirty demonstrations are collected inside the experiment for an imitation-learning proof of concept, but the paper does not establish them as a separately named reusable dataset.",
+        "evidence": [
+          {
+            "evidence": "We collected 30 demonstrations, more than 6500 frames in total.",
+            "source": "sections/06-evaluation.md (sec:6)"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2504.06154",
+          "title": "Exploring Adversarial Obstacle Attacks in Search-Based Path Planning for Autonomous Mobile Robots",
+          "domain": "Embodied AI"
+        },
+        "candidateName": null,
+        "nameMatchReason": "No named dataset surface form survived the strict full-paper review.",
+        "observedRoles": [],
+        "reason": "The complete local sections/tables scan found no named fixed dataset used for model training; the work studies search-based planners and adversarial obstacle generation.",
+        "evidence": [
+          {
+            "scan": {
+              "corpus": "tmp/paper-corpus/2504.06154/paper.json",
+              "sectionsScanned": 12,
+              "tablesScanned": 1
+            }
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2010.06580",
+          "title": "Scenic: A Language for Scenario Specification and Data Generation",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Driving in the Matrix",
+        "nameMatchReason": "Literal name from the full-paper scan; no fuzzy matching was used.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "Although the detector is trained on it, the audited context identifies it as a synthetic GTAV-generated dataset; the strict policy excludes synthetic generated output.",
+        "evidence": [
+          {
+            "evidence": "For a baseline training set we used the 'Driving in the Matrix' synthetic data set.",
+            "source": "sections/06.03-training-on-rare-events.md (sec:6.3)"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2109.12674",
+          "title": "MetaDrive: Composing Diverse Driving Scenarios for Generalizable Reinforcement Learning",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Argoverse",
+        "nameMatchReason": "Literal name from the full-paper scan; no fuzzy matching was used.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "Argoverse is described as importable map data, but the paper explicitly says real-data generalization experiments are conducted only on Waymo; no Argoverse training use is established.",
+        "evidence": [
+          {
+            "evidence": "Thus we only conduct real data generalization experiments on Waymo data.",
+            "source": "sections/04.01-generating-maps.md (sec:4.1)"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "1911.04074",
+          "title": "SUMMIT: A Simulator for Urban Driving in Massive Mixed Traffic",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "SUMMIT-generated interactive data",
+        "nameMatchReason": "Literal name from the full-paper scan; no fuzzy matching was used.",
+        "observedRoles": [
+          "ambiguous"
+        ],
+        "reason": "The simulator is presented as capable of generating data for training, but no named fixed dataset is actually used to train a model in this paper.",
+        "evidence": [
+          {
+            "evidence": "SUMMIT is designed for generating high-fidelity interactive data to facilitate development, training, and testing.",
+            "source": "sections/03-summit-xspace-simulator.md (sec:3)"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "1711.03938",
+          "title": "CARLA: An Open Urban Driving Simulator",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "CARLA-generated imitation trajectories",
+        "nameMatchReason": "Literal name from the full-paper scan; no fuzzy matching was used.",
+        "observedRoles": [
+          "training"
+        ],
+        "reason": "The expert traces are generated inside CARLA and are not identified as a separately named fixed dataset; ImageNet is approved separately.",
+        "evidence": [
+          {
+            "evidence": "The dataset is used to train a deep network to predict the expert's action given an observation and a control command.",
+            "source": "sections/03.02-imitation-learning.md (sec:3.2)"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2406.02630",
+          "title": "AI Agents under Threat: A Survey of Key Security Challenges and Future Pathways",
+          "domain": "Embodied AI"
+        },
+        "candidateName": null,
+        "nameMatchReason": "No named dataset surface form survived the strict full-paper review.",
+        "observedRoles": [],
+        "reason": "The survey discusses training corpora generically but the complete local scan found no named fixed dataset with sufficiently explicit model-training evidence.",
+        "evidence": [
+          {
+            "scan": {
+              "corpus": "tmp/paper-corpus/2406.02630/paper.json",
+              "sectionsScanned": 31,
+              "tablesScanned": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "auditedPaperCount": 29,
+    "approvedDatasetCount": 13,
+    "approvedMentionCount": 23,
+    "rejectedDecisionCount": 59,
+    "candidateQueueRowsReviewed": 70
+  }
+}

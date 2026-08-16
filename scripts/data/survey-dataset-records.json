@@ -1,0 +1,148 @@
+[
+  {
+    "name": "VPI-Bench",
+    "domain": "Agents",
+    "year": "2024",
+    "size": "306 cases / 5 platforms",
+    "sourceUrl": "https://arxiv.org/abs/2502.05206",
+    "sourceEvidence": "Safety at Scale Table 14 lists VPI-Bench under Simulation-based Benchmarks. Its bibliography record explicitly leaves the authors unconfirmed, so no primary paper or repository link is published here."
+  },
+  {
+    "name": "SG-Bench",
+    "domain": "Agents",
+    "year": "2024",
+    "size": "1,442 queries / 6 categories",
+    "paperUrl": "https://arxiv.org/abs/2410.21965",
+    "sourceUrl": "https://arxiv.org/abs/2502.05206",
+    "sourceEvidence": "Safety at Scale Table 14 lists SG-Bench under Simulation-based Benchmarks."
+  },
+  {
+    "name": "ChemSafetyBench",
+    "domain": "Agents",
+    "year": "2024",
+    "size": "30K samples / 3 tasks",
+    "paperUrl": "https://arxiv.org/abs/2411.16736",
+    "sourceUrl": "https://arxiv.org/abs/2502.05206",
+    "sourceEvidence": "Safety at Scale Table 14 lists ChemSafetyBench under Simulation-based Benchmarks."
+  },
+  {
+    "name": "AdvWeb",
+    "domain": "Agents",
+    "year": "2024",
+    "size": "200 target tasks",
+    "paperUrl": "https://arxiv.org/abs/2406.12814",
+    "sourceUrl": "https://arxiv.org/abs/2502.05206",
+    "sourceEvidence": "Safety at Scale Table 14 lists AdvWeb, Dissecting Adversarial, and ARE as separate labels but cites the same paper for all three. They are represented once here as AdvWeb to avoid triple-counting one 200-task resource."
+  },
+  {
+    "name": "Haicosystem",
+    "domain": "Agents",
+    "year": "2024",
+    "size": "1,840 simulations / 92 scenarios",
+    "paperUrl": "https://arxiv.org/abs/2409.16427",
+    "sourceUrl": "https://arxiv.org/abs/2502.05206",
+    "sourceEvidence": "Safety at Scale Table 14 lists Haicosystem under Real-Interaction Benchmarks."
+  },
+  {
+    "name": "Refusal-Trained LLMs",
+    "domain": "Agents",
+    "year": "2025",
+    "size": "100 harmful behaviors",
+    "paperUrl": "https://arxiv.org/abs/2410.13886",
+    "sourceUrl": "https://arxiv.org/abs/2502.05206",
+    "sourceEvidence": "Safety at Scale Table 14 lists Refusal-Trained LLMs under Real-Interaction Benchmarks."
+  },
+  {
+    "name": "Bench2Drive",
+    "domain": "Embodied AI",
+    "year": "2024",
+    "size": "220 routes",
+    "paperUrl": "https://arxiv.org/abs/2406.03877",
+    "dataUrl": "https://github.com/Thinklab-SJTU/Bench2Drive",
+    "sourceUrl": "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+    "sourceEvidence": "The Embodied AI survey's dedicated Benchmarks section records 220 routes. The official repository releases the benchmark and training data."
+  },
+  {
+    "name": "M3Bench",
+    "domain": "Embodied AI",
+    "year": "2025",
+    "size": "30,000 tasks / 119 scenes",
+    "paperUrl": "https://arxiv.org/abs/2410.06678",
+    "sourceUrl": "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+    "sourceEvidence": "The Embodied AI survey's dedicated Benchmarks section records 30,000 pick-and-place tasks across 119 household scenes."
+  },
+  {
+    "name": "THOR-EAE",
+    "domain": "Embodied AI",
+    "year": "2023",
+    "size": "840,000 samples",
+    "sourceUrl": "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+    "sourceEvidence": "The Embodied AI survey's dedicated Benchmarks section records 840,000 samples in AI2-THOR. Its bibliography cites the ACM Multimedia paper but does not record an arXiv or repository link."
+  },
+  {
+    "name": "Embodied Agent Interface (EAI)",
+    "domain": "Embodied AI",
+    "year": "2024",
+    "size": "438 tasks",
+    "paperUrl": "https://arxiv.org/abs/2410.07166",
+    "dataUrl": "https://github.com/embodied-agent-interface/embodied-agent-interface",
+    "sourceUrl": "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+    "sourceEvidence": "The Embodied AI survey's dedicated Benchmarks section names EAI. The official NeurIPS paper and repository record 338 VirtualHome tasks and 100 BEHAVIOR tasks."
+  },
+  {
+    "name": "AgentSafe",
+    "slug": "agentsafe-multi-agent-systems",
+    "domain": "Embodied AI",
+    "year": "2025",
+    "size": "Not recorded in source section",
+    "paperUrl": "https://arxiv.org/abs/2503.04392",
+    "sourceUrl": "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+    "sourceEvidence": "The Embodied AI survey's dedicated safety-focused Benchmarks paragraph names AgentSafe."
+  },
+  {
+    "name": "Safe-BeAI",
+    "domain": "Embodied AI",
+    "year": "2025",
+    "size": "2,027 tasks / 8 hazard categories",
+    "paperUrl": "https://arxiv.org/abs/2504.14650",
+    "sourceUrl": "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+    "sourceEvidence": "The Embodied AI survey's dedicated safety-focused Benchmarks paragraph names Safe-BeAI. The primary paper records 2,027 tasks across 8 hazard categories."
+  },
+  {
+    "name": "AGENTSAFE",
+    "slug": "agentsafe-hazardous-instructions",
+    "domain": "Embodied AI",
+    "year": "2025",
+    "size": "1,350 tasks / 9,900 instructions / 45 scenarios",
+    "paperUrl": "https://arxiv.org/abs/2506.14697",
+    "sourceUrl": "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+    "sourceEvidence": "The Embodied AI survey's dedicated safety-focused Benchmarks paragraph names AGENTSAFE. The primary paper records 45 adversarial scenarios, 1,350 hazardous tasks, and 9,900 instructions."
+  },
+  {
+    "name": "SafeMindBench",
+    "domain": "Embodied AI",
+    "year": "2025",
+    "size": "Not recorded in source section",
+    "paperUrl": "https://arxiv.org/abs/2509.25885",
+    "sourceUrl": "https://arxiv.org/abs/2605.02900",
+    "sourceEvidence": "The Embodied AI survey's dedicated Benchmarks subsection explicitly names SafeMindBench as a benchmark for safety risks in embodied LLM agents."
+  },
+  {
+    "name": "DESPITE",
+    "domain": "Embodied AI",
+    "year": "2026",
+    "size": "Not recorded in source section",
+    "paperUrl": "https://arxiv.org/abs/2604.18463",
+    "sourceUrl": "https://arxiv.org/abs/2605.02900",
+    "sourceEvidence": "The Embodied AI survey's dedicated Benchmarks subsection explicitly identifies DESPITE as a PDDL benchmark separating planning competence from safety competence."
+  },
+  {
+    "name": "RoboJailBench",
+    "domain": "Embodied AI",
+    "year": "2026",
+    "size": "Not recorded in source section",
+    "paperUrl": "https://arxiv.org/abs/2605.19328",
+    "sourceUrl": "https://arxiv.org/abs/2605.02900",
+    "sourceEvidence": "The Embodied AI survey's dedicated Benchmarks subsection explicitly identifies RoboJailBench as a jailbreak attack-and-defense benchmark for embodied VLMs."
+  }
+]

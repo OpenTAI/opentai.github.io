@@ -1,0 +1,138 @@
+{
+  "_comment": "Manual suppressions and exact URL migrations from the consolidated evidence review. Exclusions remove wrong identities, evaluation-only uses, or a no-longer-public release; suppressed mentions are replaced by exact training passages in llms-quality-corrections.json.",
+  "excludeCanonicalNames": [
+    "Fake News Challenge",
+    "Kaggle Fake News competition dataset",
+    "Magpie",
+    "MRPC",
+    "QNLI",
+    "Stable Alignment"
+  ],
+  "suppressMentions": [
+    { "datasetName": "AG News", "arxivId": "1907.11932" },
+    { "datasetName": "BC5CDR", "arxivId": "2109.11308" },
+    { "datasetName": "IMDb", "arxivId": "1907.11932" },
+    { "datasetName": "MultiNLI", "arxivId": "1907.11932" },
+    { "datasetName": "NCBI Disease Corpus", "arxivId": "2109.11308" },
+    { "datasetName": "SelfDefend distilled defense data", "arxivId": "2406.05498" },
+    { "datasetName": "SNLI", "arxivId": "1907.11932" },
+    { "datasetName": "W-NUT 2017", "arxivId": "2109.11308" },
+    { "datasetName": "Yelp Polarity", "arxivId": "1907.11932" }
+  ],
+  "urlReplacements": [
+    {
+      "from": "https://academic.oup.com/database/article/doi/10.1093/database/baw068/2630414",
+      "to": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4860626/",
+      "reason": "The publisher page blocks automated access; PMC hosts the same BC5CDR paper and preserves its corpus description.",
+      "evidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4860626/"
+    },
+    {
+      "from": "https://biocreative.bioinformatics.udel.edu/resources/corpora/biocreative-v-cdr-corpus/",
+      "to": "https://ftp.ncbi.nlm.nih.gov/pub/lu/BC5CDR/",
+      "reason": "The retired BioCreative page is replaced by NCBI's official BC5CDR release directory containing train, development, and test files.",
+      "evidenceUrl": "https://ftp.ncbi.nlm.nih.gov/pub/lu/BC5CDR/"
+    },
+    {
+      "from": "https://www.mdpi.com/1424-8220/24/16/5440",
+      "to": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11360495/",
+      "reason": "PMC hosts the same LiDARPure paper and is reachable without the publisher's anti-bot response.",
+      "evidenceUrl": "https://pubmed.ncbi.nlm.nih.gov/39205134/"
+    },
+    {
+      "from": "https://www.mdpi.com/2072-4292/17/5/864",
+      "to": "https://openalex.org/W4408028341",
+      "reason": "OpenAlex records the same TEXBAT paper identity while the publisher and DOAJ pages block automated access.",
+      "evidenceUrl": "https://openalex.org/W4408028341"
+    },
+    {
+      "from": "https://www.sciencedirect.com/science/article/pii/S2352864821000663",
+      "to": "https://digitalcommons.odu.edu/ece_fac_pubs/302/",
+      "reason": "Old Dominion University's institutional repository records the same DeepPOSE paper and DOI without the publisher's anti-bot response.",
+      "evidenceUrl": "https://digitalcommons.odu.edu/ece_fac_pubs/302/"
+    },
+    {
+      "from": "https://aclanthology.org/2004.acl-long.64/",
+      "to": "https://aclanthology.org/P04-1035/",
+      "reason": "The ACL Anthology migrated this exact Pang and Lee paper to its canonical anthology identifier P04-1035.",
+      "evidenceUrl": "https://aclanthology.org/P04-1035/"
+    },
+    {
+      "from": "https://github.com/Salesforce/wikitext",
+      "to": "https://huggingface.co/datasets/Salesforce/wikitext",
+      "reason": "The retired Salesforce GitHub repository is replaced by Salesforce's current WikiText dataset page on Hugging Face.",
+      "evidenceUrl": "https://huggingface.co/datasets/Salesforce/wikitext"
+    },
+    {
+      "from": "https://robots.ox.ac.uk/~vgg/publications/2018/Chung18a/chung18a.pdf",
+      "to": "https://arxiv.org/abs/1806.05622",
+      "reason": "The former Oxford PDF path is no longer available; arXiv hosts the same VoxCeleb2 paper by Chung, Nagrani, and Zisserman.",
+      "evidenceUrl": "https://arxiv.org/abs/1806.05622"
+    },
+    {
+      "from": "https://shapenet.org/",
+      "to": "https://huggingface.co/ShapeNet/datasets",
+      "reason": "ShapeNet announced that its downloadable datasets moved to the official ShapeNet Hugging Face organization.",
+      "evidenceUrl": "https://huggingface.co/ShapeNet/datasets"
+    },
+    {
+      "from": "https://shapenet.org/about",
+      "to": null,
+      "reason": "The retired about page duplicates the verified ShapeNet paper and official dataset organization.",
+      "evidenceUrl": "https://arxiv.org/abs/1512.03012"
+    },
+    {
+      "from": "https://bdd-data.berkeley.edu/download.html",
+      "to": "https://github.com/bdd100k/bdd100k",
+      "reason": "The retired Berkeley download page is replaced by the official BDD100K organization repository, which documents access and tooling.",
+      "evidenceUrl": "https://github.com/bdd100k/bdd100k"
+    },
+    {
+      "from": "https://bdd-data.berkeley.edu/",
+      "to": null,
+      "reason": "The retired Berkeley homepage duplicates the verified official BDD100K repository and CVPR paper.",
+      "evidenceUrl": "https://github.com/bdd100k/bdd100k"
+    },
+    {
+      "from": "https://cybersecurity.seas.wustl.edu/paper/yu2023anti.pdf",
+      "to": "https://zh1yu4nyu.github.io/files/ZhiyuanYu_CCS23_AntiFake.pdf",
+      "reason": "The first author's site hosts the same AntiFake paper after the former WashU PDF path stopped responding.",
+      "evidenceUrl": "https://zh1yu4nyu.github.io/files/ZhiyuanYu_CCS23_AntiFake.pdf"
+    },
+    {
+      "from": "https://ixa2.si.ehu.es/stswiki/images/4/48/Stsbenchmark.tar.gz",
+      "to": "https://github.com/brmson/dataset-sts",
+      "reason": "The retired EHU archive is replaced by the public STS repository referenced by the current official STS wiki.",
+      "evidenceUrl": "https://ixa2.si.ehu.eus/stswiki/stswiki.html"
+    },
+    {
+      "from": "https://ufldl.stanford.edu/housenumbers/",
+      "to": "https://ai.stanford.edu/~twangcat/",
+      "reason": "SVHN co-author Tao Wang's Stanford page is the live first-party project record and links the original dataset release.",
+      "evidenceUrl": "https://ai.stanford.edu/~twangcat/"
+    },
+    {
+      "from": "https://ufldl.stanford.edu/housenumbers/nips2011_housenumbers.pdf",
+      "to": "https://ai.stanford.edu/~twangcat/papers/nips2011_housenumbers.pdf",
+      "reason": "SVHN co-author Tao Wang's Stanford page hosts the same paper after the UFLDL path stopped responding.",
+      "evidenceUrl": "https://ai.stanford.edu/~twangcat/papers/nips2011_housenumbers.pdf"
+    },
+    {
+      "from": "https://doi.org/10.1145/3576915.3623209",
+      "to": "https://zh1yu4nyu.github.io/files/ZhiyuanYu_CCS23_AntiFake.pdf",
+      "reason": "The first author's site hosts the same AntiFake paper while the DOI target blocks automated access.",
+      "evidenceUrl": "https://zh1yu4nyu.github.io/files/ZhiyuanYu_CCS23_AntiFake.pdf"
+    },
+    {
+      "from": "https://huggingface.co/datasets/AIML-TUDA/LlavaGuard-Dataset",
+      "to": "https://huggingface.co/datasets/AIML-TUDA/LlavaGuard",
+      "reason": "The TU Darmstadt organization now publishes the LlavaGuard training dataset at the shorter canonical repository name; its card cites arXiv:2406.05113.",
+      "evidenceUrl": "https://huggingface.co/collections/AIML-TUDA/llavaguard"
+    },
+    {
+      "from": "https://www.clips.uantwerpen.be/conll2003/ner/",
+      "to": "https://huggingface.co/datasets/eriktks/conll2003",
+      "reason": "The original Antwerp task page is retired. This public dataset card documents the same CoNLL-2003 splits and citations, while retaining the Reuters licensing warning.",
+      "evidenceUrl": "https://www.clips.uantwerpen.be/conll2003/pdf/14247tjo.pdf"
+    }
+  ]
+}

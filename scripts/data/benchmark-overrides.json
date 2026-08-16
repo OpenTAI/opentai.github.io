@@ -11,13 +11,23 @@
     "why": "The resolver matched an unrelated 2-star repository. agiresearch/ASB is the one whose description is 'Agent Security Bench (ASB)'."
   },
 
+  "Redcode: Risky code execution and generation benchmark for code agents": {
+    "repo": "AI-secure/RedCode",
+    "why": "The resolver matched kyxiaxiang/redcode, which is an unrelated Claude Code project. AI-secure/RedCode is the repository whose README states the full benchmark title and publishes the RedCode-Exec and RedCode-Gen datasets."
+  },
+
+  "h4rm3l: A dynamic benchmark of composable jailbreak attacks for llm safety assessment": {
+    "repo": "mdoumbouya/h4rm3l",
+    "why": "The upstream title intentionally begins with a lowercase name and was skipped by the parser's capitalization rule. The official project and repository state the full benchmark title and publish its benchmark data; the primary source defines it as LLM safety, so it is categorized under LLMs rather than inferred as an Agent benchmark from the surrounding list heading."
+  },
+
   "Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments": {
-    "exclude": true,
-    "why": "A capability dataset (R2R) cited as background by the embodied survey, not a trustworthy-AI resource. The resolver matched an awesome-list."
+    "targets": ["datasets", "benchmarks"],
+    "why": "The embodied survey files this citation under its explicit 'Benchmarks & Datasets' section. The primary paper explicitly calls R2R a benchmark dataset, and peteanderson80/Matterport3DSimulator is the authors' repository with the R2R data and evaluation code. Publish it in both collections."
   },
 
   "VizWiz Grand Challenge: Answering Visual Questions from Blind People": {
-    "exclude": true,
-    "why": "A visual question answering dataset cited as background, not a safety benchmark. The resolver matched an unrelated challenge submission."
+    "targets": ["datasets", "benchmarks"],
+    "why": "The embodied survey files this citation under its explicit 'Benchmarks & Datasets' section. The official VizWiz site publishes the dataset, challenge tasks, metrics and evaluation annotations, so the entry belongs in both collections."
   }
 }

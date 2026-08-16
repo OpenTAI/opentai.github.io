@@ -2,11 +2,12 @@
 
 import { FormEvent, useState } from "react";
 import { newsletter } from "@/data/site";
+import { Locale, t } from "@/lib/i18n";
 
 type Language = "en" | "zh";
 
-export function SubscribeBox() {
-  const [language, setLanguage] = useState<Language>("en");
+export function SubscribeBox({ locale }: { locale: Locale }) {
+  const [language, setLanguage] = useState<Language>(locale);
   const [email, setEmail] = useState("");
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
 
@@ -35,17 +36,19 @@ export function SubscribeBox() {
         <div className="space-y-2">
           <p className="home-kicker">OpenTAI Daily</p>
           <h2 className="text-[1.45rem] font-semibold tracking-[-0.04em] text-[#101828]">
-            Latest trustworthy AI news, in your inbox
+            {t(locale, "Latest trustworthy AI news, in your inbox")}
           </h2>
           <p className="max-w-[36rem] text-sm leading-6 text-[#667085]">
-            New papers, model releases, benchmarks, and datasets — collected from popular media
-            accounts and sent as a daily digest. Pick the language you read in.
+            {t(
+              locale,
+              "New papers, model releases, benchmarks, and datasets — collected from popular media accounts and sent as a daily digest. Pick the language you read in.",
+            )}
           </p>
         </div>
 
         <form className="space-y-3" onSubmit={onSubmit}>
           <div
-            aria-label="Digest language"
+            aria-label={t(locale, "Digest language")}
             className="inline-flex rounded-full border border-[#e3e8f2] bg-[#f6f8fc] p-1"
             role="group"
           >
@@ -73,7 +76,7 @@ export function SubscribeBox() {
 
           <div className="flex flex-col gap-2 sm:flex-row">
             <input
-              aria-label="Email address"
+                aria-label={t(locale, "Email address")}
               className="w-full rounded-full border border-[#dfe4ee] bg-white px-5 py-3 text-sm text-[#111827] outline-none placeholder:text-[#98a2b3] focus:border-[#a5b4fc]"
               onChange={(event) => setEmail(event.target.value)}
               placeholder="you@university.edu"
@@ -86,18 +89,21 @@ export function SubscribeBox() {
               disabled={!configured || state === "sending"}
               type="submit"
             >
-              {state === "sending" ? "Subscribing..." : "Subscribe"}
+              {t(locale, state === "sending" ? "Subscribing..." : "Subscribe")}
             </button>
           </div>
 
           <p aria-live="polite" className="text-xs leading-5 text-[#98a2b3]">
-            {!configured
-              ? "Signup is not connected yet — set newsletter.endpoint in src/data/site.ts."
-              : state === "done"
-                ? "Check your inbox to confirm the subscription."
-                : state === "error"
-                  ? "Something went wrong. Please try again."
-                  : "One email a day. Unsubscribe any time."}
+            {t(
+              locale,
+              !configured
+                ? "Signup is not connected yet — set newsletter.endpoint in src/data/site.ts."
+                : state === "done"
+                  ? "Check your inbox to confirm the subscription."
+                  : state === "error"
+                    ? "Something went wrong. Please try again."
+                    : "One email a day. Unsubscribe any time.",
+            )}
           </p>
         </form>
       </div>

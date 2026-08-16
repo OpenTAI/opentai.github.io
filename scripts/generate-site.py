@@ -1,4 +1,6 @@
 """Generate src/data/site.ts, merging OpenTAI content with fetched public metadata."""
+import copy
+import importlib.util
 import json, pathlib, re
 from urllib.parse import urlparse
 
@@ -7,11 +9,30 @@ DATA = HERE / "data"
 
 HOME = json.load(open(DATA / "home.json"))
 LEADERBOARDS = json.load(open(DATA / "leaderboards.json"))
-NAMED_BENCH = json.load(open(DATA / "benchmarks.json"))
 CURATION = json.load(open(DATA / "benchmark-curation.json"))
 LIBRARY = json.load(open(DATA / "paper-library.json"))
-BENCH_CANDIDATES = json.load(open(DATA / "benchmark-candidates.json"))
-BENCH_RESOLVED = json.load(open(DATA / "benchmark-resolved.json"))
+DATASET_CANDIDATES = json.load(open(DATA / "dataset-candidates.json"))
+LLM_SAFETY_RESOURCES = json.load(open(DATA / "llm-safety-resources.json"))
+AGENT_BENCHMARK_RECORDS = json.load(open(DATA / "agent-benchmark-records.json"))
+SAFETY_BENCHMARK_AUDIT = json.load(open(DATA / "safety-at-scale-benchmark-audit.json"))
+BENCHMARK_DATASETS = json.load(open(DATA / "benchmark-datasets.json"))
+SURVEY_DATASET_RECORDS = json.load(open(DATA / "survey-dataset-records.json"))
+TRAINING_DATASET_METADATA = json.load(open(DATA / "training-datasets.json"))["items"]
+PAPER_DATASET_MENTIONS = json.load(open(DATA / "paper-dataset-mentions.json"))["mentions"]
+DATASET_ALIAS_PAYLOAD = json.load(open(DATA / "dataset-alias-overrides.json"))
+
+catalog_spec = importlib.util.spec_from_file_location(
+    "paper_dataset_catalog", HERE / "build-paper-dataset-catalog.py"
+)
+catalog_module = importlib.util.module_from_spec(catalog_spec)
+assert catalog_spec.loader is not None
+catalog_spec.loader.exec_module(catalog_module)
+TRAINING_DATASETS = catalog_module.build_catalog(
+    TRAINING_DATASET_METADATA,
+    PAPER_DATASET_MENTIONS,
+    catalog_module.load_aliases(DATASET_ALIAS_PAYLOAD),
+    include_metadata_fallbacks=True,
+)
 IMG = json.load(open(DATA / "img_map.json"))
 META = json.load(open(DATA / "metadata.json"))
 GH = dict(META["github"])
@@ -62,7 +83,7 @@ def js_key(k):
 def ts(v, indent=0):
     pad = "  " * indent
     if isinstance(v, str):
-        return '"' + v.replace("\\", "\\\\").replace('"', '\\"') + '"'
+        return json.dumps(v, ensure_ascii=False).replace("\u2028", "\\u2028").replace("\u2029", "\\u2029")
     if isinstance(v, bool):  # must precede int — bool is a subclass of int
         return "true" if v else "false"
     if isinstance(v, (int, float)):
@@ -237,10 +258,8 @@ def build_paper_library():
 
 paper_library = build_paper_library()
 
-# Domain is the primary axis. The team named LLMs, Agents and Embodied AI;
-# Vision & Multimodal was added because half of the large-model-safety list
-# (vision, VLP, VLM, diffusion) belongs to none of the other three.
-PAPER_DOMAINS = ["LLMs", "Agents", "Embodied AI", "Vision & Multimodal"]
+# These are the three domains explicitly approved by the OpenTAI team.
+PAPER_DOMAINS = ["LLMs", "Agents", "Embodied AI"]
 paper_domains = [d for d in PAPER_DOMAINS if any(p["domain"] == d for p in paper_library)]
 
 paper_groups = {}
@@ -307,16 +326,6 @@ RESEARCH_TYPE = {
     "CALM": "Model Auditing",
     "DAO": "Backdoor Detection",
 }
-DATASET_TYPE = {
-    "SafeVid-350k": "Preference Data",
-    "DAVID-X": "Detection & Forensics",
-    "OmniSVG-2M": "Generative Data",
-    "Human2Robot": "Agent Trajectory Data",
-    "AdvT-shirt-1K": "Adversarial Data",
-    "VLBreakBench": "Red Team Data",
-    "CC1M-Adv-C/F": "Adversarial Data",
-    "WildDeepfake": "Detection & Forensics",
-}
 BENCH_TYPE = {
     "VisionSafety Bench": "Robustness",
     "RewardModel Bench": "Alignment",
@@ -334,7 +343,7 @@ BENCH_TYPE = {
 # information, so guessing would invent a taxonomy the data does not support.
 BENCH_DOMAIN = {
     "HarmBench": "LLMs", "JailbreakBench": "LLMs", "SafetyBench": "LLMs",
-    "RewardModel Bench": "LLMs", "AgentDojo": "Agents",
+    "RewardModel Bench": "LLMs", "h4rm3l": "LLMs", "AgentDojo": "Agents",
     "MM-SafetyBench": "Vision & Multimodal", "VLBreakBench": "Vision & Multimodal",
     "VisionSafety Bench": "Vision & Multimodal",
 }
@@ -397,12 +406,16 @@ TOOL_TAGS = {
 def build_row(name, subtitle, note, rtype, base_link, base_tags, image=None):
     resources, stats, meta, venue, gh_tags, sortable = enrich(name, base_link)
     tags = list(dict.fromkeys([t.lower() for t in base_tags + gh_tags]))[:6]
+    year_match = re.search(r"\b(?:19|20)\d{2}\b", venue or "")
+    year = year_match.group(0) if year_match else (sortable.get("posted") or "")[:4] or None
     return {
         "name": name,
         "subtitle": subtitle or None,
         "note": note,
         "type": rtype,
         "venue": venue,
+        "year": year,
+        "downloads": sortable.get("downloads"),
         "stars": sortable.get("stars"),
         "updated": sortable.get("updated"),
         "posted": sortable.get("posted"),
@@ -424,82 +437,250 @@ for p in B[3]["items"]:
                   clean(p["link"]), [RESEARCH_TYPE[short].lower()])
     )
 
-dataset_rows = [
-    build_row(
-        clean(d["datasetsName"]), clean(d["subTitle"]), clean(d["desc"]),
-        DATASET_TYPE[clean(d["datasetsName"])], clean(d["link"]),
-        [t.strip().lower() for t in clean(d["subTitle"]).split("|") if t.strip()],
-        img(d["datasetsBackground"]),
+# Dataset means training data in this catalog. Public benchmark questions,
+# test cases and evaluation environments remain in Benchmarks even when their
+# repositories call the files a dataset. The audited inclusion decisions and
+# their primary-source evidence live in training-datasets.json.
+dataset_rows = []
+LLM_SURVEY_URL = "https://arxiv.org/abs/2502.05206"
+
+
+def add_llm_source_evidence(row, rec):
+    row["note"] = (
+        f"Listed in Safety at Scale Table 6 under {rec['section']}. "
+        f"{rec['classificationEvidence']}"
     )
-    for d in B[4]["items"]
-]
+    row["venue"] = rec.get("venue")
+    row["stats"] = [
+        {"label": "Table year", "value": rec["year"]},
+        {"label": "Recorded size", "value": rec["size"]},
+    ]
+    if rec.get("times"):
+        row["stats"].append({"label": "Table #Times", "value": rec["times"]})
+    if not any(resource["href"] == LLM_SURVEY_URL for resource in row["resources"]):
+        row["resources"].append({"label": "Source survey", "href": LLM_SURVEY_URL})
 
-bench_rows = [
-    build_row(
-        clean(b["benchMarkName"]), clean(b["subTitle"]), clean(b["description"]),
-        BENCH_TYPE[clean(b["benchMarkName"])], clean(b["link"]),
-        [clean(t["tagName"]) for t in b.get("tags", [])], img(b["benchMarksImg"]),
+
+AGENT_SURVEY_URL = "https://arxiv.org/abs/2502.05206"
+for rec in TRAINING_DATASETS:
+    row = build_row(
+        rec["name"],
+        None,
+        rec["trainingEvidence"],
+        rec["domain"],
+        rec["dataUrl"],
+        ["training data", "source: approved survey"],
     )
-    for b in B[5]["items"]
-]
+    row["year"] = rec.get("year")
+    row["venue"] = rec.get("venue")
+    row["primaryUrl"] = rec["dataUrl"]
+    if rec.get("size"):
+        row["stats"] = [
+            {"label": "Recorded size", "value": rec["size"]}
+        ] + row["stats"]
+    row["domains"] = rec.get("domains") or [rec["domain"]]
+    row["usageCount"] = rec.get("usageCount")
+    row["sourcePapers"] = rec.get("sourcePapers") or []
+    for label, field in (
+        ("Paper", "paperUrl"),
+        ("GitHub", "githubUrl"),
+        ("Hugging Face", "huggingFaceUrl"),
+        ("Source survey", "sourceUrl"),
+    ):
+        href = rec.get(field)
+        if href and not any(resource["href"] == href for resource in row["resources"]):
+            row["resources"].append({"label": label, "href": href})
+    dataset_rows.append(row)
 
-VERIFIED_FROM_README = {
-    # name -> (arXiv id, venue), both quoted verbatim in the project's own README
-    "RewardModel Bench": ("2410.09893", "ICLR 2025"),
-}
-
-# Benchmarks named in the OpenTAI spec, resolved to verified public sources.
-for name, rec in NAMED_BENCH.items():
-    g, a = rec.get("github"), rec.get("arxiv")
-    if g:
-        GH[name] = g
-    if a:
-        AX[name] = a
-    note = (g or {}).get("description") or (a or {}).get("title") or ""
-    note = re.sub(r"^\s*\[[^\]]+\]\s*", "", note)
-    note = re.sub(r"^\s*(CVPR|ICLR|NeurIPS|ICML|ACL|EMNLP|AAAI|ICCV|ECCV)\s*\d{4}\s*[-–—:]\s*", "",
-                  note, flags=re.I)
-    row = build_row(name, None, clean(note),
-                    BENCH_TYPE[name],
-                    (g or {}).get("homepage") or "", [])
+# Benchmark scope was reset with the Dataset collection. Do not seed from the
+# legacy OpenTAI home page. Safety at Scale Table 14 is the authoritative Agent
+# list; its exact labels, scale and focus are recorded in
+# agent-benchmark-records.json. Three labels in the table resolve to the same
+# arXiv paper and are deliberately represented by one evidence-bearing card.
+bench_rows = []
+for rec in AGENT_BENCHMARK_RECORDS:
+    paper_url = f"https://arxiv.org/abs/{rec['arxivId']}"
+    note = (
+        f"Safety at Scale Table 14 lists this resource under {rec['section']}. "
+        f"Evaluation focus: {rec['focus']}."
+    )
+    if rec.get("note"):
+        note += " " + rec["note"]
+    row = build_row(
+        rec["name"], None, note, rec.get("domain", "Agents"), paper_url,
+        ["source: safety-at-scale", rec["section"].lower()]
+        + [alias.lower() for alias in rec.get("aliases", [])],
+    )
+    row["year"] = rec["year"]
+    row["stats"] = [
+        {"label": "Table year", "value": rec["year"]},
+        {"label": "Recorded scale", "value": rec["size"]},
+    ]
+    row["resources"].append({"label": "Source survey", "href": AGENT_SURVEY_URL})
+    row["citationOnly"] = True
     bench_rows.append(row)
 
-# Benchmarks named in the two survey lists, resolved to repositories where one
-# could be verified. Entries that resolved stay as full cards; the rest are
-# published as citations so the coverage gap is visible rather than hidden.
-EXCLUDED_CANDIDATES = {
-    t for t, r in BENCH_RESOLVED.items() if r.get("excluded")
-}
 existing = {clean(r["name"]).lower() for r in bench_rows}
 
-for cand in BENCH_CANDIDATES:
-    title = cand["title"]
-    if title in EXCLUDED_CANDIDATES:
+# The Embodied AI survey has a dedicated Benchmarks subsection. Keep every
+# named entry from that subsection, including the continuation on the next PDF
+# page. Only verified paper, repository and survey links from the source JSON
+# are exposed; a missing project link stays missing.
+for rec in SURVEY_DATASET_RECORDS:
+    if rec["domain"] != "Embodied AI":
         continue
-    rec = BENCH_RESOLVED.get(title) or {}
-    name = clean(rec.get("name") or title.split(":")[0])
+    key = rec.get("slug") or clean(rec["name"]).lower()
+    if key in existing:
+        continue
+    existing.add(key)
+    row = build_row(
+        rec["name"], None, rec["sourceEvidence"], "Embodied AI",
+        rec.get("dataUrl") or rec.get("paperUrl") or "",
+        ["source: embodied-ai-safety"],
+    )
+    row["year"] = rec["year"]
+    row["stats"] = [{"label": "Recorded scale", "value": rec["size"]}]
+    if rec.get("paperUrl") and not any(
+        resource["href"] == rec["paperUrl"] for resource in row["resources"]
+    ):
+        row["resources"].append({"label": "arXiv", "href": rec["paperUrl"]})
+    row["resources"].append({"label": "Source survey", "href": rec["sourceUrl"]})
+    row["citationOnly"] = not bool(rec.get("dataUrl"))
+    row["sourceSlug"] = rec.get("slug")
+    bench_rows.append(row)
+
+# HASARD is named in the same dedicated subsection and has a separately
+# verified official environment release.
+for rec in BENCHMARK_DATASETS:
+    key = clean(rec["name"]).lower()
+    if key in existing:
+        continue
+    existing.add(key)
+    row = build_row(
+        rec["name"], None, rec["description"], rec["domain"], rec["url"],
+        ["source: embodied-ai-safety"],
+    )
+    row["year"] = rec["year"]
+    row["stats"] = [{"label": "Recorded scale", "value": rec["size"]}]
+    paper_url = f"https://arxiv.org/abs/{rec['arxivId']}"
+    if not any(resource["href"] == paper_url for resource in row["resources"]):
+        row["resources"].append({"label": "arXiv", "href": paper_url})
+    row["resources"].append(
+        {"label": "Source survey", "href": "https://arxiv.org/abs/2605.02900"}
+    )
+    bench_rows.append(row)
+
+# The two entries in the embodied list's mixed section are explicitly benchmark
+# datasets in their primary sources, so they belong in both site collections.
+for cand in DATASET_CANDIDATES:
+    if cand.get("kind") != "benchmark":
+        continue
+    name = clean(cand["title"])
     if name.lower() in existing:
         continue
     existing.add(name.lower())
-
-    g = rec.get("github")
-    if g:
-        GH[name] = g
-    note = (g or {}).get("description") or title
-    if ":" in title:
-        note = title.split(":", 1)[1].strip().capitalize()
-
-    row = build_row(name, None, note, cand["domain"],
-                    f"https://github.com/{g['repo']}" if g else "", [])
-    if not g and cand.get("arxivId"):
+    row = build_row(
+        name,
+        None,
+        "Listed in the source survey's Benchmarks & Datasets section. "
+        + cand["classificationEvidence"],
+        cand["domain"],
+        cand.get("url") or "",
+        ["source: embodied-ai-safety"],
+    )
+    row["venue"] = f"{cand['venue']} {cand['year']}"
+    row["year"] = cand["year"]
+    row["stats"] = [{"label": "Published", "value": cand["year"]}]
+    if cand.get("arxivId"):
         row["resources"].append(
             {"label": "arXiv", "href": f"https://arxiv.org/abs/{cand['arxivId']}"}
         )
-    row["citationOnly"] = True if not g else None
+    row["citationOnly"] = True
     bench_rows.append(row)
 
+# Add the benchmark half of Safety at Scale Table 6. Existing rows are enriched
+# in place so SafetyBench and SALAD-Bench are not duplicated. The latter is
+# moved from the broad agent-list heading to LLMs because its own title and
+# primary paper explicitly define it as an LLM benchmark.
+bench_by_name = {clean(row["name"]).lower(): row for row in bench_rows}
+for rec in LLM_SAFETY_RESOURCES:
+    if rec["target"] != "benchmarks":
+        continue
+    key = clean(rec["name"]).lower()
+    row = bench_by_name.get(key)
+    if row is None:
+        row = build_row(
+            rec["name"],
+            None,
+            "",
+            "LLMs",
+            f"https://arxiv.org/abs/{rec['arxivId']}",
+            ["source: safety-at-scale", rec["section"].lower()],
+        )
+        row["citationOnly"] = True
+        bench_rows.append(row)
+        bench_by_name[key] = row
+    else:
+        paper_url = f"https://arxiv.org/abs/{rec['arxivId']}"
+        if not any(resource["href"] == paper_url for resource in row["resources"]):
+            row["resources"].insert(0, {"label": "arXiv", "href": paper_url})
+    row["name"] = rec["name"]
+    row["type"] = "LLMs"
+    row["year"] = rec["year"]
+    add_llm_source_evidence(row, rec)
+
+# Chapter-wide LaTeX auditing finds many dataset names that are merely used by
+# a method paper. Publish only the small reviewed subset whose primary source
+# and official repository explicitly identify it as a safety benchmark. The
+# exclusions and their reasons live beside these records in the audit JSON.
+for rec in SAFETY_BENCHMARK_AUDIT["approved"]:
+    key = clean(rec["name"]).lower()
+    if key in bench_by_name:
+        continue
+    row = build_row(
+        rec["name"],
+        None,
+        rec["sourceEvidence"],
+        rec["domain"],
+        rec["githubUrl"],
+        rec["tags"],
+    )
+    row["year"] = rec["year"]
+    row["venue"] = rec["venue"]
+    row["stats"] = [{"label": "Recorded scale", "value": rec["size"]}]
+    paper_url = f"https://arxiv.org/abs/{rec['arxivId']}"
+    if not any(resource["href"] == paper_url for resource in row["resources"]):
+        row["resources"].append({"label": "arXiv", "href": paper_url})
+    if rec.get("huggingFaceUrl") and not any(
+        resource["href"] == rec["huggingFaceUrl"] for resource in row["resources"]
+    ):
+        row["resources"].append(
+            {"label": "Hugging Face", "href": rec["huggingFaceUrl"]}
+        )
+    row["resources"].append(
+        {"label": "Source survey", "href": SAFETY_BENCHMARK_AUDIT["source"]["url"]}
+    )
+    bench_rows.append(row)
+    bench_by_name[key] = row
+
+# Dataset records often expose a verified code repository or Hugging Face
+# release that the matching benchmark row did not originally carry. Reuse
+# those exact, already-verified links for the benchmark cards; never search by
+# name here or manufacture a repository URL.
+dataset_row_by_name = {clean(row["name"]).lower(): row for row in dataset_rows}
 for row in bench_rows:
-    row["slug"] = slugify(row["name"])
+    dataset_row = dataset_row_by_name.get(clean(row["name"]).lower())
+    if not dataset_row:
+        continue
+    for resource in dataset_row["resources"]:
+        if resource["label"] not in {"GitHub", "Hugging Face"}:
+            continue
+        if not any(existing["href"] == resource["href"] for existing in row["resources"]):
+            row["resources"].append(resource)
+    row["downloads"] = row.get("downloads") or dataset_row.get("downloads")
+
+for row in bench_rows:
+    row["slug"] = row.pop("sourceSlug", None) or slugify(row["name"])
     row["domain"] = BENCH_DOMAIN.get(row["name"], row["type"])
     # Domain is what the page filters on now; the old safety label becomes a tag.
     prop = safety_property(row["name"], row["note"], " ".join(row["tags"]))
@@ -507,13 +688,10 @@ for row in bench_rows:
     row["property"] = prop
     if prop:
         row["tags"] = list(dict.fromkeys([prop.lower()] + list(row["tags"])))[:6]
-    extra = VERIFIED_FROM_README.get(row["name"])
-    if extra:
-        aid, venue = extra
-        row["venue"] = row["venue"] or venue
-        url = f"https://arxiv.org/abs/{aid}"
-        if not any(r["href"] == url for r in row["resources"]):
-            row["resources"].insert(0, {"label": "arXiv", "href": url})
+
+for row in dataset_rows:
+    row["domain"] = row["type"]
+    row["type"] = row["domain"]
 
 tool_rows = []
 for t in B[6]["items"]:
@@ -563,6 +741,14 @@ def build_bench_details():
     for row in bench_rows:
         name = row["name"]
         g, a = GH.get(name), AX.get(name)
+        resource_arxiv = next(
+            (
+                resource["href"].removeprefix("https://arxiv.org/abs/")
+                for resource in row["resources"]
+                if resource["href"].startswith("https://arxiv.org/abs/")
+            ),
+            None,
+        )
         pending = []
         details[row["slug"]] = {
             "slug": row["slug"],
@@ -578,7 +764,7 @@ def build_bench_details():
             "authors": (a or {}).get("authors", [])[:6] or None,
             "authorCount": (a or {}).get("authorCount"),
             "posted": (a or {}).get("published"),
-            "arxivId": (a or {}).get("arxivId"),
+            "arxivId": (a or {}).get("arxivId") or resource_arxiv,
             "repo": (g or {}).get("repo"),
             "license": (g or {}).get("license"),
             "language": (g or {}).get("language"),
@@ -619,22 +805,12 @@ CATEGORIES = {
          ["Backdoor Detection"]),
     ],
     "datasets": [
-        ("Safety Instruction Data", "Instruction corpora for safety-tuned training.", "green",
-         ["Safety Instruction Data"]),
-        ("Preference Data", "Preference pairs for alignment and safety tuning.", "green",
-         ["Preference Data"]),
-        ("Red Team Data", "Jailbreak prompts and adversarial red-team probes.", "pink",
-         ["Red Team Data"]),
-        ("Agent Trajectory Data", "Demonstration and interaction traces for embodied agents.", "orange",
-         ["Agent Trajectory Data"]),
-        ("Multimodal Safety Data", "Paired image-text corpora for multimodal safety.", "violet",
-         ["Multimodal Safety Data"]),
-        ("Adversarial Data", "Digital and physical-world adversarial example sets.", "pink",
-         ["Adversarial Data"]),
-        ("Detection & Forensics", "Deepfake and AI-generated media detection corpora.", "blue",
-         ["Detection & Forensics"]),
-        ("Generative Data", "Large-scale corpora for generative model research.", "violet",
-         ["Generative Data"]),
+        ("LLMs", "Datasets explicitly associated with large-language-model safety.", "pink",
+         ["LLMs"]),
+        ("Agents", "Datasets explicitly associated with agent safety.", "orange",
+         ["Agents"]),
+        ("Embodied AI", "Datasets for embodied perception, planning and interaction.", "green",
+         ["Embodied AI"]),
     ],
     "benchmarks": [
         ("LLMs", "Safety, jailbreak and alignment evaluation for language models.", "pink",
@@ -643,8 +819,6 @@ CATEGORIES = {
          ["Agents"]),
         ("Embodied AI", "Safety evaluation for perception, planning and robot control.", "green",
          ["Embodied AI"]),
-        ("Vision & Multimodal", "Jailbreak and robustness evaluation for vision-language models.",
-         "violet", ["Vision & Multimodal"]),
     ],
     "tools": [
         ("Backdoor", "Backdoor attack and defense toolkits.", "pink", ["Backdoor"]),
@@ -677,17 +851,17 @@ def cats(key):
 
 CONFIGS = {
     "benchmarks": {
-        "slug": "benchmarks", "breadcrumb": ["Discover", "Benchmarks"], "title": "Benchmarks",
+        "slug": "benchmarks", "breadcrumb": ["Home", "Benchmarks"], "title": "Benchmarks",
         "heroIcon": "◎",
-        "description": "Evaluation benchmarks, tasks, and metrics for trustworthy AI — the layer "
-                       "everything else is measured against.",
-        "overview": "Benchmarks are the flagship collection. Each entry links to its evaluation "
-                    "platform or repository.",
+        "description": "Safety benchmarks across LLMs, Agents, and Embodied AI, extracted from "
+                       "the two source lists and their linked survey manuscripts.",
+        "overview": "Legacy OpenTAI benchmark rows are excluded. Names, years, recorded scale, "
+                    "papers, and release links are shown only when the approved sources support them.",
         "tableTitle": "Benchmark platforms", "sectionTitle": "Benchmark categories",
         "categories": cats("benchmarks"), "tableRows": bench_rows,
     },
     "models": {
-        "slug": "models", "breadcrumb": ["Discover", "Models"], "title": "Models",
+        "slug": "models", "breadcrumb": ["Home", "Models"], "title": "Models",
         "heroIcon": "◆",
         "description": "Open-source trustworthy AI models — guard models, safety-aligned models, "
                        "detectors, and agents.",
@@ -697,17 +871,18 @@ CONFIGS = {
         "categories": cats("models"), "tableRows": model_rows,
     },
     "datasets": {
-        "slug": "datasets", "breadcrumb": ["Discover", "Datasets"], "title": "Datasets",
+        "slug": "datasets", "breadcrumb": ["Home", "Datasets"], "title": "Datasets",
         "heroIcon": "◱",
-        "description": "Training, evaluation, preference, and jailbreak datasets spanning safety "
-                       "alignment, adversarial robustness, forensics, and embodied AI.",
-        "overview": "Download counts come from the Hugging Face API and repository activity from "
-                    "the GitHub API. Follow each link for licensing terms.",
+        "description": "Training-ready safety datasets across LLMs, Agents, and Embodied AI, "
+                       "separated from evaluation-only benchmarks.",
+        "overview": "An entry appears here only when its paper or official repository explicitly "
+                    "supports training, fine-tuning, alignment, or classifier training. Public "
+                    "test data stays in Benchmarks.",
         "tableTitle": "Dataset collection", "sectionTitle": "Dataset categories",
         "categories": cats("datasets"), "tableRows": dataset_rows,
     },
     "tools": {
-        "slug": "tools", "breadcrumb": ["Discover", "Tools"], "title": "Tools",
+        "slug": "tools", "breadcrumb": ["Home", "Tools"], "title": "Tools",
         "heroIcon": "◇",
         "description": "Libraries, frameworks, evaluation tools, and attack/defense toolkits for "
                        "trustworthy AI research.",
@@ -723,7 +898,7 @@ HOME_CARDS = [
      "href": "/benchmarks", "accent": "violet", "icon": "◎"},
     {"title": "Models", "description": "Guard models, safety-aligned models, detectors, agents.",
      "href": "/models", "accent": "blue", "icon": "◆"},
-    {"title": "Datasets", "description": "Training, evaluation, preference, jailbreak data.",
+    {"title": "Datasets", "description": "Verified data for training, fine-tuning, and safety alignment.",
      "href": "/datasets", "accent": "green", "icon": "◱"},
     {"title": "Tools", "description": "Libraries, frameworks, attack and defense toolkits.",
      "href": "/tools", "accent": "orange", "icon": "◇"},
@@ -742,6 +917,19 @@ HEADER = '''// Content derived from the OpenTAI TinaCMS site
 export type ResourceLink = { label: string; href: string };
 export type Pill = { label: string; href: string };
 export type RowStat = { label: string; value: string };
+export type DatasetEvidenceSource = string | {
+  type?: string | null;
+  url?: string | null;
+  path?: string | null;
+};
+export type DatasetSourcePaper = {
+  arxivId?: string | null;
+  openAlexId?: string | null;
+  title?: string | null;
+  domain?: string | null;
+  evidence?: string | null;
+  source?: DatasetEvidenceSource | null;
+};
 
 export type NewsItem = {
   title: string;
@@ -775,12 +963,18 @@ export type SubpageTableRow = {
   name: string;
   slug?: string;
   domain?: string;
+  domains?: readonly string[];
+  usageCount?: number;
+  sourcePapers?: readonly DatasetSourcePaper[];
+  primaryUrl?: string;
   property?: string;
   citationOnly?: boolean;
   subtitle?: string;
   note: string;
   type: string;
   venue?: string;
+  year?: string;
+  downloads?: number;
   stars?: number;
   updated?: string;
   posted?: string;
@@ -897,7 +1091,7 @@ def block(name, typ, v):
 
 parts = [HEADER]
 parts.append(block("navItems", "Pill[]", [
-    {"label": "Discover", "href": "/"},
+    {"label": "Home", "href": "/"},
     {"label": "Benchmarks", "href": "/benchmarks"},
     {"label": "Models", "href": "/models"},
     {"label": "Datasets", "href": "/datasets"},
@@ -905,7 +1099,6 @@ parts.append(block("navItems", "Pill[]", [
     {"label": "Papers", "href": "/papers"},
     {"label": "Leaderboard", "href": "/leaderboard"},
     {"label": "Community", "href": "/community"},
-    {"label": "About", "href": "/about"},
 ]))
 parts.append(block("mission", "{ title: string; body: string }", mission))
 parts.append(
@@ -921,16 +1114,60 @@ parts.append(block("benchmarkDetails", "Record<string, BenchmarkDetail>", benchm
 parts.append(block("leaderboards",
                    "{ title: string; subtitle: string; tables: LeaderboardTable[] }",
                    leaderboards))
-parts.append("export const subpageConfigs: Record<string, SubpageConfig> = " + ts(CONFIGS) + ";\n\n")
+dataset_summary_config = copy.deepcopy(CONFIGS["datasets"])
+dataset_summary_config["tableRows"] = [
+    {
+        key: value
+        for key, value in {
+            "name": row["name"],
+            "note": (
+                row["note"]
+                if len(row["note"]) <= 240
+                else row["note"][:237].rstrip() + "…"
+            ),
+            "type": row["type"],
+            "venue": row.get("venue"),
+            "year": row.get("year"),
+            "downloads": row.get("downloads"),
+            "stars": row.get("stars"),
+            "updated": row.get("updated"),
+            "posted": row.get("posted"),
+            "tags": row.get("tags"),
+            "resources": [],
+            "primaryUrl": row.get("primaryUrl"),
+            "domains": row.get("domains"),
+            "domain": row.get("domain"),
+        }.items()
+        if value is not None
+    }
+    for row in CONFIGS["datasets"]["tableRows"]
+]
+site_configs = {
+    key: dataset_summary_config if key == "datasets" else value
+    for key, value in CONFIGS.items()
+}
+parts.append("export const subpageConfigs: Record<string, SubpageConfig> = " + ts(site_configs) + ";\n\n")
 # Papers is no longer a curated collection — it is the merged research library,
 # which lives in its own module and is counted separately on Discover.
 parts.append('export const collectionOrder = [\n  "benchmarks",\n  "models",\n  "datasets",\n  "tools",\n] as const;\n')
 
 OUT.write_text("".join(parts))
 
+# Dataset evidence grows with every audited paper mention. Keep the full
+# catalog out of the shared site module so the home page and unrelated
+# collection routes do not carry its citing-paper payload.
+DATASETS_OUT = OUT.parent / "datasets.ts"
+DATASETS_OUT.write_text(
+    "// Generated dataset catalog. Edit scripts/data sources and regenerate.\n\n"
+    'import type { SubpageConfig } from "./site";\n\n'
+    "export const datasetConfig: SubpageConfig = "
+    + ts(CONFIGS["datasets"])
+    + ";\n"
+)
+
 PAPERS_OUT = OUT.parent / "papers.ts"
 PAPERS_HEADER = """// Research library, merged from two survey lists:
-//   xingjunm/Awesome-Large-Model-Safety      -> LLMs, Agents, Vision & Multimodal
+//   xingjunm/Awesome-Large-Model-Safety      -> LLMs, Agents
 //   x-zheng16/Awesome-Embodied-AI-Safety     -> Embodied AI
 // Kept in its own module so pages that do not use it never ship it.
 

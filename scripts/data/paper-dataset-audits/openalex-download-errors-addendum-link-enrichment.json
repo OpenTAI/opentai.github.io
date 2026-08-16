@@ -1,0 +1,76 @@
+{
+  "auditVersion": "v2-link-enrichment",
+  "domain": "OpenAlex download-error addendum",
+  "sourceArtifact": "tmp/paper-dataset-audit-v2/openalex-download-errors-addendum.json",
+  "policy": "Links are accepted only when an official dataset/project site, creator or maintainer repository, institutional data repository, or official benchmark host establishes the exact dataset identity. Community mirrors and unrelated same-name resources are excluded. When an official release has been withdrawn, its official landing page is retained and the withdrawal is stated rather than substituting a mirror. KITTI and TEXBAT canonical names and URLs are kept byte-for-byte compatible with prior verified enrichment artifacts.",
+  "summary": {
+    "total": 6,
+    "verified": 6,
+    "reject": 0,
+    "officialGitHubCount": 2,
+    "officialHuggingFaceCount": 0,
+    "officialReleaseWithdrawnCount": 1
+  },
+  "datasets": [
+    {
+      "canonicalName": "VCTK Corpus",
+      "status": "verified",
+      "dataUrl": "https://doi.org/10.7488/ds/2645",
+      "paperUrl": null,
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://datashare.ed.ac.uk/items/30e7453c-9ea8-48b4-8e18-f96d0dc62928/full",
+      "reason": "The University of Edinburgh DataShare record is the creator/institution release for 'CSTR VCTK Corpus: English Multi-speaker Corpus for CSTR Voice Cloning Toolkit (version 0.92)'. It supplies the 10.94 GB VCTK-Corpus-0.92.zip bundle, names Yamagishi, Veaux, and MacDonald as creators, records the CSTR publisher, assigns DOI 10.7488/ds/2645, and licenses the corpus under CC BY 4.0. No creator- or institution-owned GitHub repository or Hugging Face dataset release was established, so those fields remain null."
+    },
+    {
+      "canonicalName": "VoxCeleb2",
+      "status": "verified",
+      "dataUrl": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html",
+      "paperUrl": "https://robots.ox.ac.uk/~vgg/publications/2018/Chung18a/chung18a.pdf",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html",
+      "reason": "The University of Oxford Visual Geometry Group's dataset-specific page identifies VoxCeleb2, its 6112 speakers and 1,128,246 total dev/test utterances, and the exact INTERSPEECH 2018 paper. The same official page now states that its URLs/timestamps, audio, video, and identifying metadata are no longer available. The linked GitHub baseline is explicitly described there as unofficial, and no creator-owned Hugging Face release was established; therefore both fields are null and no third-party mirror is substituted."
+    },
+    {
+      "canonicalName": "KITTI",
+      "status": "verified",
+      "dataUrl": "https://www.cvlibs.net/datasets/kitti/",
+      "paperUrl": "https://www.cvlibs.net/publications/Geiger2012CVPR.pdf",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.cvlibs.net/datasets/kitti/",
+      "reason": "The official KITTI Vision Benchmark Suite page, operated as a Karlsruhe Institute of Technology and Toyota Technological Institute at Chicago project, names the dataset, provides its raw data and task benchmarks, states the license, and supplies the canonical CVPR citation. The canonical name and every URL field exactly match tmp/paper-dataset-audit-v2/embodied-link-enrichment.json. No KITTI-maintainer GitHub or Hugging Face dataset release was established."
+    },
+    {
+      "canonicalName": "Texas Spoofing Test Battery (TEXBAT)",
+      "status": "verified",
+      "dataUrl": "https://rnl-data.ae.utexas.edu/datastore/texbat/",
+      "paperUrl": "https://radionavlab.ae.utexas.edu/images/stories/files/papers/tbION_for_distribution.pdf",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://radionavlab.ae.utexas.edu/texbat/",
+      "reason": "The University of Texas Radionavigation Laboratory's official TEXBAT page describes versions 1.0 and 1.1, links the UT-hosted directory containing the clean and ds1-ds8 recordings, and grants research use while requesting no redistribution. The canonical name and every URL field exactly match tmp/paper-dataset-audit-v2/openalex-pdf-addendum-link-enrichment.json. No official GitHub or Hugging Face release was established."
+    },
+    {
+      "canonicalName": "CRUW",
+      "status": "verified",
+      "dataUrl": "https://www.cruwdataset.org/download",
+      "paperUrl": "https://openaccess.thecvf.com/content/WACV2021/html/Wang_RODNet_Radar_Object_Detection_Using_Cross-Modal_Supervision_WACV_2021_paper.html",
+      "githubUrl": "https://github.com/yizhou-wang/cruw-devkit",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.cruwdataset.org/home",
+      "reason": "The official CRUW project site calls CRUW a public camera-radar dataset and attributes it to the University of Washington Information Processing Lab. Its official download page provides the ROD2021 subset and states the academic/non-profit noncommercial terms. The project links Yizhou Wang's cruw-devkit, whose README identifies itself as the CRUW dataset toolkit and documents calibration, metadata, annotations, and ROD2021 support. No project- or author-owned Hugging Face release was established."
+    },
+    {
+      "canonicalName": "BDD-100K",
+      "status": "verified",
+      "dataUrl": "https://bdd-data.berkeley.edu/download.html",
+      "paperUrl": "https://openaccess.thecvf.com/content_CVPR_2020/html/Yu_BDD100K_A_Diverse_Driving_Dataset_for_Heterogeneous_Multitask_Learning_CVPR_2020_paper.html",
+      "githubUrl": "https://github.com/bdd100k/bdd100k",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://bdd-data.berkeley.edu/",
+      "reason": "UC Berkeley's Berkeley DeepDrive host provides the official BDD100K download portal and exact CVPR 2020 citation. The bdd100k organization repository identifies itself as the official toolkit and resources for the same 100K-video, ten-task dataset and links the project homepage and documentation. Hugging Face search exposed only third-party uploads, not a Berkeley DeepDrive or bdd100k organization release, so huggingFaceUrl remains null. The input audit's hyphenated canonical form is preserved as BDD-100K, with BDD100K treated only as the official project's display variant."
+    }
+  ]
+}

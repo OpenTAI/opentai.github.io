@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { paperSearchIndex } from "@/data/paper-search";
 import { collectionOrder, subpageConfigs, SubpageTableRow } from "@/data/site";
+import { Locale, localizeHref, t } from "@/lib/i18n";
 
 type Hit = SubpageTableRow & { collection: string; href: string };
 
@@ -31,7 +32,7 @@ const PAPER_HAYSTACKS = new Map(
   ]),
 );
 
-export function SiteSearch() {
+export function SiteSearch({ locale }: { locale: Locale }) {
   const [query, setQuery] = useState("");
   const normalized = query.trim().toLowerCase();
 
@@ -71,15 +72,15 @@ export function SiteSearch() {
           ⌕
         </span>
         <input
-          aria-label="Search all OpenTAI resources"
+          aria-label={t(locale, "Search all OpenTAI resources")}
           className="w-full bg-transparent text-[1.05rem] text-[#111827] outline-none placeholder:text-[#98a2b3]"
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Search benchmarks, models, datasets, tools, papers..."
+          placeholder={t(locale, "Search benchmarks, models, datasets, tools, papers...")}
           type="search"
           value={query}
         />
         <span className="hidden shrink-0 whitespace-nowrap text-sm text-[#98a2b3] sm:block">
-          {INDEX.length} resources · {paperSearchIndex.length.toLocaleString()} papers
+          {INDEX.length} {t(locale, "resources")} · {paperSearchIndex.length.toLocaleString()} {t(locale, "papers")}
         </span>
       </div>
 
@@ -87,7 +88,7 @@ export function SiteSearch() {
         <div className="absolute left-0 right-0 top-[calc(100%+0.75rem)] z-30 max-h-[26rem] overflow-y-auto rounded-[24px] border border-[#e9edf3] bg-white p-3 shadow-[0_24px_60px_rgba(15,23,42,0.14)]">
           {hits.length === 0 && paperHits.length === 0 ? (
             <p className="px-4 py-6 text-center text-sm text-[#667085]">
-              Nothing matches “{query.trim()}” yet.
+              {t(locale, "Nothing matches")} “{query.trim()}”.
             </p>
           ) : (
             <ul className="space-y-1">
@@ -95,7 +96,7 @@ export function SiteSearch() {
                 <li key={`${hit.collection}-${hit.name}`}>
                   <Link
                     className="flex items-start gap-4 rounded-[16px] px-4 py-3 transition hover:bg-[#f6f8fc]"
-                    href={hit.href}
+                    href={localizeHref(locale, hit.href)}
                   >
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -106,11 +107,13 @@ export function SiteSearch() {
                           </span>
                         ) : null}
                       </div>
-                      <p className="mt-0.5 line-clamp-1 text-sm text-[#667085]">{hit.note}</p>
+                      <p className="mt-0.5 line-clamp-1 text-sm text-[#667085]">
+                        {t(locale, hit.note)}
+                      </p>
                     </div>
                     <div className="shrink-0 text-right">
                       <p className="text-xs font-semibold uppercase tracking-[0.06em] text-[#98a2b3]">
-                        {hit.collection}
+                        {t(locale, hit.collection)}
                       </p>
                       {hit.stars !== undefined ? (
                         <p className="text-sm text-[#475467]">★ {hit.stars.toLocaleString()}</p>
@@ -125,14 +128,14 @@ export function SiteSearch() {
           {paperHits.length ? (
             <div className="mt-2 border-t border-[#f2f4f8] pt-2">
               <p className="px-4 pb-1 pt-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#98a2b3]">
-                Research library
+                {t(locale, "Research library")}
               </p>
               <ul className="space-y-1">
                 {paperHits.map((paper, index) => (
                   <li key={`${paper.t}-${index}`}>
                     <Link
                       className="flex items-start gap-4 rounded-[16px] px-4 py-2.5 transition hover:bg-[#f6f8fc]"
-                      href="/papers"
+                      href={localizeHref(locale, "/papers")}
                     >
                       <div className="min-w-0 flex-1">
                         <p className="line-clamp-1 text-sm font-medium text-[#111827]">
@@ -145,7 +148,9 @@ export function SiteSearch() {
                         </p>
                       </div>
                       {paper.x ? (
-                        <span className="shrink-0 text-xs font-medium text-[#5260ff]">link</span>
+                        <span className="shrink-0 text-xs font-medium text-[#5260ff]">
+                          {t(locale, "link")}
+                        </span>
                       ) : null}
                     </Link>
                   </li>

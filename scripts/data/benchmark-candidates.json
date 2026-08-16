@@ -171,6 +171,25 @@
     "source": "large-model-safety"
   },
   {
+    "title": "h4rm3l: A dynamic benchmark of composable jailbreak attacks for llm safety assessment",
+    "authors": [
+      "Moussa Koulako Bala Doumbouya",
+      "Ananjan Nandi",
+      "Gabriel Poesia",
+      "Davide Ghilardi"
+    ],
+    "authorCount": 8,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2408.04811",
+    "url": null,
+    "domain": "Agents",
+    "group": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
     "title": "Sg-bench: Evaluating llm safety generalization across diverse tasks and prompt types",
     "authors": [
       "Yutao Mou",
@@ -453,37 +472,5 @@
     "section": "Agent Safety Benchmarks",
     "kind": "research",
     "source": "large-model-safety"
-  },
-  {
-    "title": "Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments",
-    "authors": [
-      "Anderson et al"
-    ],
-    "authorCount": 1,
-    "venue": "CVPR",
-    "year": "2018",
-    "arxivId": null,
-    "url": "https://scholar.google.com/scholar?q=Vision-and-Language+Navigation%3A+Interpreting+Visually-Grounded+Navigation+Instructions+in+Real+Environments",
-    "domain": "Embodied AI",
-    "group": "Related work",
-    "section": null,
-    "kind": "benchmark",
-    "source": "embodied-ai-safety"
-  },
-  {
-    "title": "VizWiz Grand Challenge: Answering Visual Questions from Blind People",
-    "authors": [
-      "Gurari et al"
-    ],
-    "authorCount": 1,
-    "venue": "CVPR",
-    "year": "2018",
-    "arxivId": null,
-    "url": "https://scholar.google.com/scholar?q=VizWiz+Grand+Challenge%3A+Answering+Visual+Questions+from+Blind+People",
-    "domain": "Embodied AI",
-    "group": "Related work",
-    "section": null,
-    "kind": "benchmark",
-    "source": "embodied-ai-safety"
   }
 ]

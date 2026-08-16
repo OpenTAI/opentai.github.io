@@ -1,0 +1,361 @@
+{
+  "auditVersion": "v2-pdf-addendum",
+  "domain": "Embodied AI",
+  "scope": "Strict full-text audit of the seven Embodied AI papers whose arxiv2agent TeX digests failed. Evidence is limited to the supplied official-arXiv PDF text extractions under tmp/pdfs/failed-arxiv/ and the verified-paper manifest in failed-arxiv-fulltext-links.json; PDFs were available for ambiguity checks. No website or scripts/data file was edited.",
+  "decisionPolicy": {
+    "approve": "Approve only a named dataset that the audited paper explicitly uses to train, pre-train, fine-tune, or otherwise fit a model, with local evidence that it is public or an exact cited dataset publication.",
+    "reject": "Reject evaluation/test/benchmark-only use, reward-only use, environments and task suites, methods/models, generic or cited background mentions, experimental measurements used only for analysis, and private, unnamed, unreleased, or paper-constructed data even when those data are used for training.",
+    "linkPolicy": "Do not infer dataset URLs. URL fields remain null unless the exact dataset URL is established in the local paper text or supplied manifest; the supplied manifest verifies the audited papers, not dataset landing pages."
+  },
+  "coverage": {
+    "manifestEmbodiedPaperCount": 7,
+    "auditedPaperCount": 7,
+    "missingDigestCount": 0,
+    "auditedArxivIds": [
+      "2103.15897",
+      "2105.07574",
+      "2304.05610",
+      "2401.01394",
+      "2505.16377",
+      "2511.05511",
+      "2511.19863"
+    ],
+    "paperDecisions": [
+      {
+        "paper": {
+          "arxivId": "2103.15897",
+          "title": "Automating Defense Against Adversarial Attacks: Discovery of Vulnerabilities and Application of Multi-INT Imagery to Protect Deployed Models",
+          "domain": "Embodied AI"
+        },
+        "status": "approved-with-rejection",
+        "approvedDatasets": [
+          "VEDAI (Vehicle Detection in Aerial Imagery)"
+        ],
+        "rejectedDecisionCount": 1,
+        "reason": "VEDAI is explicitly used to train per-channel MobileNetV2 classifiers. Foolbox-generated attacks are method outputs used for adversarial evaluation, not a released training dataset."
+      },
+      {
+        "paper": {
+          "arxivId": "2105.07574",
+          "title": "SoundFence: Securing Ultrasonic Sensors in Vehicles Using Physical-Layer Defense",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "The paper collects benign and injected ultrasonic readings to tune thresholds and evaluate a physical-layer detector; it does not train a learned model on a named public dataset."
+      },
+      {
+        "paper": {
+          "arxivId": "2304.05610",
+          "title": "Vehicle Trajectory Prediction based Predictive Collision Risk Assessment for Autonomous Driving in Highway Scenarios",
+          "domain": "Embodied AI"
+        },
+        "status": "approved-with-rejection",
+        "approvedDatasets": [
+          "NGSIM US-101 and I-80",
+          "highD"
+        ],
+        "rejectedDecisionCount": 1,
+        "reason": "NGSIM US-101/I-80 and highD are explicitly split into training, validation, and test partitions and used to fit the trajectory-prediction model. The later hand-selected simulation scenarios only evaluate collision-risk behavior."
+      },
+      {
+        "paper": {
+          "arxivId": "2401.01394",
+          "title": "Unveiling the Stealthy Threat: Analyzing Slow Drift GPS Spoofing Attacks for Autonomous Vehicles in Urban Environments and Enabling the Resilience",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "The locally stored GPS experiment data are created for spoofing and correlation analysis; the paper does not establish training of a model on a named public dataset."
+      },
+      {
+        "paper": {
+          "arxivId": "2505.16377",
+          "title": "VLM-SAFE: Vision-Language Model-Guided Safety-Aware Reinforcement Learning with World Models for Autonomous Driving",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "The authors explicitly train from offline data, but the data are an unnamed buffer they construct in CarDreamer with expert DreamerV3 agents. The paper text does not establish a fixed public dataset release, so this fails the addendum's public named-dataset requirement."
+      },
+      {
+        "paper": {
+          "arxivId": "2511.05511",
+          "title": "From Failure Modes to Reliability Awareness in Generative and Agentic AI System",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "This reliability chapter mentions web-scale corpora and biased training datasets only as general failure modes; it reports no original model training on a named dataset."
+      },
+      {
+        "paper": {
+          "arxivId": "2511.19863",
+          "title": "International AI Safety Report 2025: Second Key Update: Technical Safeguards and Risk Management",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "This update synthesizes external studies about pre-training data, RLHF resources, poisoning, fine-tuning, and adversarial training; it does not itself train a model on any dataset."
+      }
+    ],
+    "rejected": [
+      {
+        "paper": {
+          "arxivId": "2103.15897",
+          "title": "Automating Defense Against Adversarial Attacks: Discovery of Vulnerabilities and Application of Multi-INT Imagery to Protect Deployed Models",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Foolbox-generated adversarial examples",
+        "nameMatchReason": "The paper explicitly names Foolbox and describes its generated attacks; no dataset identity is inferred.",
+        "observedRoles": [
+          "attack-generation",
+          "evaluation"
+        ],
+        "reason": "Foolbox is an attack/robustness toolbox and its generated adversarial images are evaluation outputs tailored to the trained VEDAI models, not a named fixed dataset used to train those models.",
+        "evidence": [
+          {
+            "evidence": "FoolBox uses the base machine learning model and dataset to create tailored attacks; the paper measures adversarial efficacy against the trained channel models.",
+            "source": "tmp/pdfs/failed-arxiv/2103.15897.txt:58-68,179-182,209,232"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2105.07574",
+          "title": "SoundFence: Securing Ultrasonic Sensors in Vehicles Using Physical-Layer Defense",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "SoundFence benign and injected ultrasonic readings",
+        "nameMatchReason": "The paper explicitly describes collecting malicious/benign readings and real/injected echo signals.",
+        "observedRoles": [
+          "threshold-selection",
+          "evaluation",
+          "experimental-measurements"
+        ],
+        "reason": "The collected readings are used to exhaustively select detector parameters and measure detection/false-alarm rates for a threshold-based physical-layer scheme. No learned model training or public dataset release is established.",
+        "evidence": [
+          {
+            "evidence": "After collecting malicious and benign data, the authors exhaustively search detector parameters; they separately collect 50 real and 50 injected signals and evaluate distinguishability with fixed signal-processing thresholds.",
+            "source": "tmp/pdfs/failed-arxiv/2105.07574v2.txt:502-516,534-568"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2304.05610",
+          "title": "Vehicle Trajectory Prediction based Predictive Collision Risk Assessment for Autonomous Driving in Highway Scenarios",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Typical highway simulation scenarios",
+        "nameMatchReason": "The paper explicitly labels these as typical highway scenarios used in the simulation-results analysis.",
+        "observedRoles": [
+          "simulation",
+          "evaluation"
+        ],
+        "reason": "These scenarios validate the predictive collision-risk assessment after model training and are not presented as a fixed training dataset.",
+        "evidence": [
+          {
+            "evidence": "The experiment section separates model evaluation on the two public datasets from simulation analysis of the collision-risk method in typical highway scenarios.",
+            "source": "tmp/pdfs/failed-arxiv/2304.05610.txt:639-647,773-775,881"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2401.01394",
+          "title": "Unveiling the Stealthy Threat: Analyzing Slow Drift GPS Spoofing Attacks for Autonomous Vehicles in Urban Environments and Enabling the Resilience",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "University of Alabama GPS spoofing experiment data",
+        "nameMatchReason": "The paper calls the field collection a dataset and identifies the campus experiment that produced it.",
+        "observedRoles": [
+          "attack-construction",
+          "correlation-analysis",
+          "experimental-measurements"
+        ],
+        "reason": "The data are converted to RINEX, stored locally, and analyzed to construct/understand a slow-drift spoofing attack. The text does not show model training or a named public dataset release.",
+        "evidence": [
+          {
+            "evidence": "The authors create the GPS spoofing dataset on the University of Alabama campus, store it locally, and use it to analyze the attack and establish pseudorange correlations.",
+            "source": "tmp/pdfs/failed-arxiv/2401.01394.txt:445-464,477-498"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2505.16377",
+          "title": "VLM-SAFE: Vision-Language Model-Guided Safety-Aware Reinforcement Learning with World Models for Autonomous Driving",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "CarDreamer-collected offline driving data",
+        "nameMatchReason": "The paper explicitly describes the offline data it collects in CarDreamer with DreamerV3 agents.",
+        "observedRoles": [
+          "offline-RL-training",
+          "constructed-private-data"
+        ],
+        "reason": "Training use is explicit, but this is an unnamed, paper-constructed offline buffer. No fixed public dataset name, release, or exact dataset publication is established in the supplied full text; CarDreamer itself is a simulation platform rather than the dataset.",
+        "evidence": [
+          {
+            "evidence": "The RL framework is mainly trained offline and the authors collect offline data in CarDreamer using trained DreamerV3 agents; later they characterize it as their offline dataset, collected mainly with expert agents.",
+            "source": "tmp/pdfs/failed-arxiv/2505.16377.txt:495-508,638-644"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2511.05511",
+          "title": "From Failure Modes to Reliability Awareness in Generative and Agentic AI System",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Web-scale corpora and biased training datasets",
+        "nameMatchReason": "These are the literal generic data categories discussed in the reliability-layer comparison.",
+        "observedRoles": [
+          "background",
+          "failure-mode-example"
+        ],
+        "reason": "The paper names no dataset here and performs no model training; the references to corpora and biased training data only illustrate Layer 6 reliability risks.",
+        "evidence": [
+          {
+            "evidence": "The comparative discussion lists reliance on web-scale corpora and biased training datasets as possible reliability risks for generative and agentic AI.",
+            "source": "tmp/pdfs/failed-arxiv/2511.05511.txt:579-611"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "arxivId": "2511.19863",
+          "title": "International AI Safety Report 2025: Second Key Update: Technical Safeguards and Risk Management",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Cited pre-training, RLHF, poisoning, and fine-tuning data",
+        "nameMatchReason": "The report explicitly discusses these external research categories and cites the underlying studies.",
+        "observedRoles": [
+          "report-only",
+          "cited-external-research",
+          "background"
+        ],
+        "reason": "The report summarizes how other developers and researchers use or attack training data. It does not conduct original model training, so neither the generic RLHF resources nor the cited poisoning documents qualify as dataset use by this paper.",
+        "evidence": [
+          {
+            "evidence": "The report synthesizes external work on removing harmful pre-training material, RLHF datasets and recipes, adversarial training, and a study inserting 250 malicious documents into training data.",
+            "source": "tmp/pdfs/failed-arxiv/2511.19863.txt:350-418,427-453"
+          }
+        ]
+      }
+    ],
+    "approved": [
+      {
+        "canonicalName": "VEDAI (Vehicle Detection in Aerial Imagery)",
+        "aliases": [
+          "VEDAI",
+          "Vehicle Detection in Aerial Imagery"
+        ],
+        "nameMatchReason": "The acronym and expansion occur together in the audited paper, which also gives the exact Razakarivony and Jurie dataset-paper citation.",
+        "year": 2016,
+        "venue": "Journal of Visual Communication and Image Representation",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "The paper trains a separate MobileNetV2 model on each VEDAI channel for 20 epochs and later identifies them as models trained on the VEDAI dataset.",
+        "publicAccessEvidence": [
+          "The full text provides the exact dataset publication: Razakarivony and Jurie, 'Vehicle detection in aerial imagery: A small target detection benchmark,' Journal of Visual Communication and Image Representation 34 (2016)."
+        ],
+        "mentions": [
+          {
+            "dataset": "VEDAI (Vehicle Detection in Aerial Imagery)",
+            "paperTitle": "Automating Defense Against Adversarial Attacks: Discovery of Vulnerabilities and Application of Multi-INT Imagery to Protect Deployed Models",
+            "domain": "Embodied AI",
+            "source": "tmp/pdfs/failed-arxiv/2103.15897.txt:35-46,149-152,214-216,254-255",
+            "reason": "The authors explicitly train per-channel MobileNetV2 classifiers on VEDAI for 20 epochs; the dataset is named and tied to an exact dataset publication.",
+            "paper": {
+              "arxivId": "2103.15897",
+              "title": "Automating Defense Against Adversarial Attacks: Discovery of Vulnerabilities and Application of Multi-INT Imagery to Protect Deployed Models",
+              "domain": "Embodied AI"
+            },
+            "evidence": "Each model is trained on an individual VEDAI channel (VIS, Gray, IR, Red, Green, Blue) for 20 epochs, and the paper labels the resulting MobileNetV2 models as trained on VEDAI."
+          }
+        ]
+      },
+      {
+        "canonicalName": "NGSIM US-101 and I-80",
+        "aliases": [
+          "NGSIM",
+          "NGSIM US101",
+          "NGSIM I80"
+        ],
+        "nameMatchReason": "The audited paper explicitly identifies US101 and I80 as the two components of the NGSIM data it preprocesses and cites the two FHWA dataset reports.",
+        "year": 2005,
+        "venue": "Federal Highway Administration dataset reports",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "The NGSIM data are divided into 70% training, 10% validation, and 20% test sets, followed by Adam optimization and explicit pre-training/formal-training cycles for the trajectory-prediction model.",
+        "publicAccessEvidence": [
+          "The paper calls NGSIM publicly available and a public highway dataset and cites the exact FHWA US Highway 101 and I-80 dataset reports."
+        ],
+        "mentions": [
+          {
+            "dataset": "NGSIM US-101 and I-80",
+            "paperTitle": "Vehicle Trajectory Prediction based Predictive Collision Risk Assessment for Autonomous Driving in Highway Scenarios",
+            "domain": "Embodied AI",
+            "source": "tmp/pdfs/failed-arxiv/2304.05610.txt:593-604,623-635,639-660,931-934",
+            "reason": "The paper explicitly filters US-101/I-80 trajectories, assigns NGSIM data to train/validation/test splits, and optimizes the prediction model on those data; public status and exact FHWA reports are stated locally.",
+            "paper": {
+              "arxivId": "2304.05610",
+              "title": "Vehicle Trajectory Prediction based Predictive Collision Risk Assessment for Autonomous Driving in Highway Scenarios",
+              "domain": "Embodied AI"
+            },
+            "evidence": "NGSIM US101 and I80 trajectories are preprocessed, split 70/10/20 for training/validation/test, and used during Adam-based model training."
+          }
+        ]
+      },
+      {
+        "canonicalName": "highD",
+        "aliases": [
+          "highD dataset"
+        ],
+        "nameMatchReason": "The exact name highD is used throughout the experiment section and linked to the exact highD dataset publication in reference [36].",
+        "year": 2018,
+        "venue": "21st International Conference on Intelligent Transportation Systems",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "The highD data are divided into 70% training, 10% validation, and 20% test sets and used in the same explicitly described trajectory-model training procedure.",
+        "publicAccessEvidence": [
+          "The experiment section describes evaluation on two public highway datasets and gives the exact highD dataset publication in reference [36]."
+        ],
+        "mentions": [
+          {
+            "dataset": "highD",
+            "paperTitle": "Vehicle Trajectory Prediction based Predictive Collision Risk Assessment for Autonomous Driving in Highway Scenarios",
+            "domain": "Embodied AI",
+            "source": "tmp/pdfs/failed-arxiv/2304.05610.txt:576-588,602-604,623-635,639-647,660,935-938",
+            "reason": "The paper explicitly divides highD into train/validation/test splits and trains the trajectory-prediction model; it also supplies the exact highD dataset publication and describes the evaluated datasets as public.",
+            "paper": {
+              "arxivId": "2304.05610",
+              "title": "Vehicle Trajectory Prediction based Predictive Collision Risk Assessment for Autonomous Driving in Highway Scenarios",
+              "domain": "Embodied AI"
+            },
+            "evidence": "highD trajectories are used directly after supplied smoothing, split 70/10/20, and used during Adam-based model training."
+          }
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "auditedPaperCount": 7,
+    "approvedDatasetCount": 3,
+    "approvedMentionCount": 3,
+    "rejectedDecisionCount": 7,
+    "candidateQueueRowsReviewed": 10
+  }
+}

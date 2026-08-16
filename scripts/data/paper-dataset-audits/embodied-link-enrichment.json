@@ -1,0 +1,372 @@
+[
+  {
+    "canonicalName": "ActivityPrograms",
+    "paperUrl": "https://arxiv.org/abs/1806.07011",
+    "githubUrl": "https://github.com/StanfordHCI/virtualhome",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://github.com/StanfordHCI/virtualhome#dataset",
+    "evidenceUrl": "https://github.com/StanfordHCI/virtualhome",
+    "reason": "The VirtualHome authors' repository distinguishes the scripted-program release by the exact name ActivityPrograms, alongside VirtualHome Activity, and cites the VirtualHome paper. This proves the audited name denotes that specific public VirtualHome program dataset rather than an unrelated activity dataset.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "BridgeData V2",
+    "paperUrl": "https://arxiv.org/abs/2308.12952",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://rail.eecs.berkeley.edu/datasets/bridge_release/raw/bridge_data_v2/",
+    "evidenceUrl": "https://rail-berkeley.github.io/bridgedata/",
+    "reason": "The authors' project page and paper use the exact name BridgeData V2 and link the Berkeley-hosted bridge_data_v2 release. BridgeData v2, Bridge V2, and BridgeV2 are spelling variants of this same release, not name-only matches.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "CIFAR-10",
+    "paperUrl": "https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://www.cs.toronto.edu/~kriz/cifar.html",
+    "evidenceUrl": "https://www.cs.toronto.edu/~kriz/cifar.html",
+    "reason": "Alex Krizhevsky's University of Toronto page defines and distributes the CIFAR-10 dataset, while the linked technical report names the same dataset. CIFAR10 is only a punctuation variant.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "Cityscapes",
+    "paperUrl": "https://www.cityscapes-dataset.com/wordpress/wp-content/papercite-data/pdf/cordts2016cityscapes.pdf",
+    "githubUrl": "https://github.com/mcordts/cityscapesScripts",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://www.cityscapes-dataset.com/",
+    "evidenceUrl": "https://www.cityscapes-dataset.com/dataset-overview/",
+    "reason": "The Cityscapes-operated site, the dataset paper, and the authors' cityscapesScripts repository describe the same urban-scene dataset and its 5,000 fine plus 20,000 coarse annotations. The Cityscapes dataset is the same resource as Cityscapes.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "Conceptual Captions 3M",
+    "paperUrl": "https://research.google/pubs/conceptual-captions-a-cleaned-hypernymed-image-alt-text-dataset-for-automatic-image-captioning/",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://ai.google.com/research/ConceptualCaptions/",
+    "evidenceUrl": "https://ai.google.com/research/ConceptualCaptions/",
+    "reason": "Google's official dataset page states that Conceptual Captions contains about 3.3M image-caption pairs, establishing that Conceptual Captions 3M and CC3M refer to this release. No third-party rehost is treated as official.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "CULane",
+    "paperUrl": "https://arxiv.org/abs/1712.06080",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://xingangpan.github.io/projects/CULane.html",
+    "evidenceUrl": "https://xingangpan.github.io/projects/CULane.html",
+    "reason": "The authors' CULane project page presents the lane-detection dataset released with the SCNN paper. CULane dataset is a descriptive form of the exact project name.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "D4RL",
+    "paperUrl": "https://arxiv.org/abs/2004.07219",
+    "githubUrl": "https://github.com/Farama-Foundation/D4RL",
+    "huggingFaceUrl": "https://huggingface.co/datasets/farama-minari/D4RL",
+    "dataUrl": "https://github.com/Farama-Foundation/D4RL",
+    "evidenceUrl": "https://github.com/Farama-Foundation/D4RL",
+    "reason": "The maintained D4RL repository cites arXiv:2004.07219 and identifies its fixed offline datasets. It also states that current dataset maintenance moved to Farama's Minari organization; the Hugging Face namespace labels its contents as reproductions, so it is linked but not silently equated with every byte of the legacy release.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "DROID",
+    "paperUrl": "https://arxiv.org/abs/2403.12945",
+    "githubUrl": "https://github.com/droid-dataset/droid",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://droid-dataset.github.io/droid/the-droid-dataset",
+    "evidenceUrl": "https://droid-dataset.github.io/",
+    "reason": "The DROID project, documentation, repository, and paper all expand DROID as Distributed Robot Interaction Dataset and describe the same 76k-trajectory public robot-manipulation release.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "GTSRB",
+    "paperUrl": "https://www.ini.rub.de/upload/file/1470692848_f03494010c16c36bab9e/StallkampEtAl_GTSRB_IJCNN2011.pdf",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://sid.erda.dk/public/archives/daaeac0d7ce1152aea9b61d9f1e19370/published-archive.html",
+    "evidenceUrl": "https://benchmark.ini.rub.de/gtsrb_dataset.html",
+    "reason": "The Ruhr University benchmark page and the public archive identify GTSRB as the German Traffic Sign Recognition Benchmark and list the official training and test files. No similarly named GitHub copy is used.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "ImageNet",
+    "paperUrl": "https://www.image-net.org/static_files/papers/imagenet_cvpr09.pdf",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://www.image-net.org/download.php",
+    "evidenceUrl": "https://www.image-net.org/about.php",
+    "reason": "The CVPR 2009 paper and ImageNet-operated site describe the same WordNet-organized image database. This generic family link does not assert that every bare ImageNet mention specifies the ILSVRC-2012 1K subset.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "ImageNet-1K",
+    "paperUrl": "https://arxiv.org/abs/1409.0575",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://www.image-net.org/challenges/LSVRC/2012/",
+    "evidenceUrl": "https://www.image-net.org/download.php",
+    "reason": "ImageNet's official download page identifies the widely used ILSVRC classification/localization subset as 1,000 classes with 1,281,167 training images, and the official ILSVRC-2012 page publishes its splits. This establishes ImageNet-1K as the ILSVRC-2012 classification resource without relying on an unofficial mirror.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "ImageNet-21K",
+    "paperUrl": "https://www.image-net.org/static_files/papers/imagenet_cvpr09.pdf",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://www.image-net.org/download.php",
+    "evidenceUrl": "https://www.image-net.org/about.php",
+    "reason": "The official ImageNet site reports the full hierarchy as 21,841 indexed synsets, matching the dataset family commonly called ImageNet-21K/21k. The audited papers do not identify a specific Fall 2011, Winter 2021, or processed split, so no third-party ImageNet-21K package or Hugging Face mirror is claimed as byte-identical.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "Kinetics-400",
+    "paperUrl": "https://arxiv.org/abs/1705.06950",
+    "githubUrl": "https://github.com/cvdfoundation/kinetics-dataset",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://github.com/cvdfoundation/kinetics-dataset#kinetics-400",
+    "evidenceUrl": "https://github.com/cvdfoundation/kinetics-dataset",
+    "reason": "The Kinetics paper introduces 400 human-action classes, and the maintained CVDF repository explicitly separates Kinetics-400 from the 600 and 700 releases. The alias Kinetics is accepted here because the audited citation is specifically the original 400-class paper.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "KITTI",
+    "paperUrl": "https://www.cvlibs.net/publications/Geiger2012CVPR.pdf",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://www.cvlibs.net/datasets/kitti/",
+    "evidenceUrl": "https://www.cvlibs.net/datasets/kitti/",
+    "reason": "The official KITTI Vision Benchmark Suite page names the dataset, tasks, license, and CVPR citation. The original audit used the obsolete HTTP form http://www.cvlibs.net/datasets/kitti; it resolves to the right resource but is corrected here to the canonical HTTPS URL.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "LAION-400M",
+    "paperUrl": "https://arxiv.org/abs/2111.02114",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://laion.ai/laion-400-open-dataset/",
+    "evidenceUrl": "https://laion.ai/laion-400-open-dataset/",
+    "reason": "LAION's own release page and arXiv:2111.02114 both define LAION-400M as 400M CLIP-filtered English image-text pairs. No Hugging Face link is asserted because the first-party page is sufficient and mirrors may change or disappear.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "LanguageTable",
+    "paperUrl": null,
+    "githubUrl": "https://github.com/google-research/language-table",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://github.com/google-research/language-table#datasets",
+    "evidenceUrl": "https://research.google/blog/talking-to-robots-in-real-time/",
+    "reason": "Google Research's release post names Language-Table and reports over 440k real plus 180k simulated demonstrations; the Google Research repository lists the corresponding language_table dataset paths and episode counts. LanguageTable is the unhyphenated spelling of the same release.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "LIBERO demonstration datasets",
+    "paperUrl": "https://arxiv.org/abs/2306.03310",
+    "githubUrl": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://libero-project.github.io/datasets",
+    "evidenceUrl": "https://libero-project.github.io/datasets",
+    "reason": "The LIBERO paper states that high-quality human-teleoperated demonstrations are provided for its tasks, and the authors' repository and dataset page publish those demonstrations. Third-party converted Hugging Face copies are not presented as the original author release.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "LibriSpeech",
+    "paperUrl": "https://www.danielpovey.com/files/2015_icassp_librispeech.pdf",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://www.openslr.org/12",
+    "evidenceUrl": "https://www.openslr.org/12",
+    "reason": "OpenSLR resource SLR12 is titled LibriSpeech ASR corpus, lists the official train/dev/test archives, and links the ICASSP paper that introduces the same 1,000-hour corpus. Librispeech differs only in capitalization.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "LLaVA Visual Instruct 150K",
+    "paperUrl": "https://arxiv.org/abs/2304.08485",
+    "githubUrl": "https://github.com/haotian-liu/LLaVA",
+    "huggingFaceUrl": "https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K",
+    "dataUrl": "https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K",
+    "evidenceUrl": "https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K/blob/main/README.md",
+    "reason": "The LLaVA authors' dataset card uses the exact label LLaVA Visual Instruct 150K and points to the LLaVA project; the official repository's data documentation links the same release.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "MIMIC-IT",
+    "paperUrl": "https://arxiv.org/abs/2306.05425",
+    "githubUrl": "https://github.com/EvolvingLMMs-Lab/Otter",
+    "huggingFaceUrl": "https://huggingface.co/datasets/pufanyi/MIMICIT",
+    "dataUrl": "https://huggingface.co/datasets/pufanyi/MIMICIT",
+    "evidenceUrl": "https://huggingface.co/datasets/pufanyi/MIMICIT/blob/main/README.md",
+    "reason": "The MIMICIT dataset card cites arXiv:2306.05425 and the Otter repository and describes the same 2.8M multimodal instruction-response pairs named MIMIC-IT in the paper. The missing hyphen in the repository slug is not a different dataset.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "Mozilla Common Voice",
+    "paperUrl": "https://arxiv.org/abs/1912.06670",
+    "githubUrl": "https://github.com/common-voice/common-voice",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://commonvoice.mozilla.org/en/datasets",
+    "evidenceUrl": "https://commonvoice.mozilla.org/en/datasets",
+    "reason": "Mozilla's Common Voice dataset page and the Common Voice organization repository refer to the same crowd-sourced speech corpus. Common Voice and The Common Voice dataset are shortened descriptive forms of Mozilla Common Voice.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "MPI-Sintel",
+    "paperUrl": "https://files.is.tue.mpg.de/black/papers/ButlerECCV2012.pdf",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://sintel.is.tue.mpg.de/downloads",
+    "evidenceUrl": "https://sintel.is.tue.mpg.de/downloads",
+    "reason": "The MPI Sintel site distributes the optical-flow training and test archives and the MPI-authored paper introduces the same dataset. Sintel is the common shortened name, not a separate resource.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "MS COCO",
+    "paperUrl": "https://arxiv.org/abs/1405.0312",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://cocodataset.org/#download",
+    "evidenceUrl": "https://www.microsoft.com/en-us/research/wp-content/uploads/2014/09/LinECCV14coco.pdf",
+    "reason": "The Microsoft-authored paper introduces Microsoft Common Objects in Context and uses MS COCO; the COCO dataset site publishes its official downloads. MS-COCO, MSCOCO, and Microsoft Common Objects in Context are exact naming variants of the same resource.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "nuScenes",
+    "paperUrl": "https://arxiv.org/abs/1903.11027",
+    "githubUrl": "https://github.com/nutonomy/nuscenes-devkit",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://www.nuscenes.org/nuscenes",
+    "evidenceUrl": "https://www.nuscenes.org/nuscenes",
+    "reason": "The nuScenes site, paper, and nuTonomy devkit all describe the same multimodal autonomous-driving dataset and link to one another. NuScenes differs only in capitalization.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "Open X-Embodiment",
+    "paperUrl": "https://arxiv.org/abs/2310.08864",
+    "githubUrl": "https://github.com/google-deepmind/open_x_embodiment",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://robotic-transformer-x.github.io/",
+    "evidenceUrl": "https://github.com/google-deepmind/open_x_embodiment",
+    "reason": "The project paper, project site, and Google DeepMind repository all call the unified robot corpus Open X-Embodiment. OpenX, Open-X, and OXE are abbreviations explicitly used for this same collection.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "robomimic datasets",
+    "paperUrl": "https://arxiv.org/abs/2108.03298",
+    "githubUrl": "https://github.com/ARISE-Initiative/robomimic",
+    "huggingFaceUrl": "https://huggingface.co/datasets/robomimic/robomimic_datasets",
+    "dataUrl": "https://robomimic.github.io/docs/datasets/robomimic_v0.1.html",
+    "evidenceUrl": "https://github.com/ARISE-Initiative/robomimic/blob/master/docs/datasets/robomimic_v0.1.md",
+    "reason": "The robomimic authors' documentation defines the robomimic v0.1 demonstration collection released with the CoRL 2021 paper, and the robomimic Hugging Face organization cites that paper. RoboMimic/Robomimic in the audited evidence refers to this project data, not a similarly named environment alone.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "Room-to-Room (R2R)",
+    "paperUrl": "https://arxiv.org/abs/1711.07280",
+    "githubUrl": "https://github.com/peteanderson80/Matterport3DSimulator",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://github.com/peteanderson80/Matterport3DSimulator/tree/master/tasks/R2R",
+    "evidenceUrl": "https://github.com/peteanderson80/Matterport3DSimulator/blob/master/tasks/R2R/README.md",
+    "reason": "The original authors' Matterport3DSimulator repository labels the task Room-to-Room (R2R), publishes its train/validation/test instruction-path data, and points to the same CVPR paper. R2R is therefore an explicit abbreviation, not a fuzzy match.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "SemanticKITTI",
+    "paperUrl": "https://arxiv.org/abs/1904.01416",
+    "githubUrl": "https://github.com/PRBonn/semantic-kitti-api",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://semantic-kitti.org/index.html",
+    "evidenceUrl": "https://semantic-kitti.org/index.html",
+    "reason": "The SemanticKITTI-operated site, ICCV paper, and PRBonn API repository use the same dataset name and KITTI-derived LiDAR sequence annotations. Semantic Kitti is only a spacing/case variant.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "ShapeNet",
+    "paperUrl": "https://arxiv.org/abs/1512.03012",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://shapenet.org/",
+    "evidenceUrl": "https://shapenet.org/about",
+    "reason": "The ShapeNet team site defines ShapeNet as its large-scale annotated 3D-shape repository and the cited technical report describes the same effort. Shapenet is only a capitalization variant.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "ShapeNetPart",
+    "paperUrl": "https://web.stanford.edu/~ericyi/papers/part_annotation_16_small.pdf",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://cs.stanford.edu/~ericyi/project_page/part_annotation/index.html",
+    "evidenceUrl": "https://cs.stanford.edu/~ericyi/project_page/part_annotation/index.html",
+    "reason": "The Stanford authors' project page for A Scalable Active Framework for Region Annotation in 3D Shape Collections releases the expert-verified 16-category ShapeNetCore part annotations used as the ShapeNet Parts/ShapeNetPart benchmark. This exact citation and collection statistics establish identity beyond the generic ShapeNet family name.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "ShareGPT4V",
+    "paperUrl": "https://arxiv.org/abs/2311.12793",
+    "githubUrl": "https://github.com/ShareGPT4Omni/ShareGPT4V",
+    "huggingFaceUrl": "https://huggingface.co/datasets/Lin-Chen/ShareGPT4V",
+    "dataUrl": "https://huggingface.co/datasets/Lin-Chen/ShareGPT4V",
+    "evidenceUrl": "https://github.com/ShareGPT4Omni/ShareGPT4V",
+    "reason": "The official ShareGPT4V implementation links the project paper and the Lin-Chen ShareGPT4V dataset release and gives the same 100K GPT-4-Vision plus 1.2M caption construction described by the paper.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "Speech Commands",
+    "paperUrl": "https://arxiv.org/abs/1804.03209",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://www.tensorflow.org/datasets/catalog/speech_commands",
+    "evidenceUrl": "https://research.google/blog/launching-the-speech-commands-dataset/",
+    "reason": "Google's launch post states that the TensorFlow and AIY teams created the Speech Commands Dataset, and the TensorFlow Datasets catalog cites arXiv:1804.03209 and exposes the same spoken-word corpus. No unrelated speech-command collection is substituted.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "STL-10",
+    "paperUrl": "https://ai.stanford.edu/~acoates/papers/coatesng_icml_2011.pdf",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://cs.stanford.edu/~acoates/stl10/",
+    "evidenceUrl": "https://cs.stanford.edu/~acoates/stl10/",
+    "reason": "Adam Coates's Stanford page defines and distributes STL-10 and cites the associated unsupervised-feature-learning paper. STL10 is only the punctuation-free spelling.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "SVHN",
+    "paperUrl": "https://ufldl.stanford.edu/housenumbers/nips2011_housenumbers.pdf",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://ufldl.stanford.edu/housenumbers/",
+    "evidenceUrl": "https://ufldl.stanford.edu/housenumbers/nips2011_housenumbers.pdf",
+    "reason": "The Stanford paper explicitly names the Street View House Numbers (SVHN) Dataset and points to the Stanford house-numbers download site. SVHN dataset is a descriptive expansion of that acronym.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "SViT",
+    "paperUrl": "https://arxiv.org/abs/2307.04087",
+    "githubUrl": "https://github.com/BAAI-DCAI/Visual-Instruction-Tuning",
+    "huggingFaceUrl": "https://huggingface.co/datasets/BAAI/SVIT",
+    "dataUrl": "https://huggingface.co/datasets/BAAI/SVIT",
+    "evidenceUrl": "https://github.com/BAAI-DCAI/Visual-Instruction-Tuning",
+    "reason": "The BAAI-DCAI repository and arXiv paper introduce SVIT as a 4.2M-example visual instruction-tuning dataset and link the BAAI Hugging Face release. The audited mixed-case SViT spelling denotes this same dataset.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "TuSimple Lane Detection",
+    "paperUrl": null,
+    "githubUrl": "https://github.com/TuSimple/tusimple-benchmark",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://github.com/TuSimple/tusimple-benchmark/tree/master/doc/lane_detection",
+    "evidenceUrl": "https://github.com/TuSimple/tusimple-benchmark/blob/master/doc/lane_detection/readme.md",
+    "reason": "TuSimple's own benchmark repository labels the release TuSimple Lane Detection Challenge and documents its roughly 7,000 clips, annotations, and evaluation format. TuSimple and Tusimple Challenge in the audited evidence refer to this exact lane-detection release.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "Waymo Open Dataset",
+    "paperUrl": "https://arxiv.org/abs/1912.04838",
+    "githubUrl": "https://github.com/waymo-research/waymo-open-dataset",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://waymo.com/open/data/perception/",
+    "evidenceUrl": "https://waymo.com/open/about/",
+    "reason": "Waymo's dataset site, Waymo Research repository, and perception paper identify the same Waymo Open Dataset. The original audit's perception URL was already the correct first-party resource; it is only normalized here with HTTPS and a trailing slash.",
+    "status": "verified"
+  }
+]

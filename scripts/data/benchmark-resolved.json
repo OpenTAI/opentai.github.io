@@ -55,18 +55,19 @@
     }
   },
   "Redcode: Risky code execution and generation benchmark for code agents": {
-    "name": "Redcode",
+    "name": "RedCode",
     "github": {
-      "repo": "kyxiaxiang/redcode",
-      "stars": 45,
-      "forks": 24,
-      "language": "TypeScript",
+      "repo": "AI-secure/RedCode",
+      "stars": 87,
+      "forks": 11,
+      "language": null,
       "license": null,
-      "pushedAt": "2026-04-01",
-      "description": null,
+      "pushedAt": null,
+      "description": "[NeurIPS'24] RedCode: Risky Code Execution and Generation Benchmark for Code Agents",
       "homepage": null,
       "topics": []
-    }
+    },
+    "verifiedBy": "hand-checked"
   },
   "Vpi-bench: Visual prompt injection attacks for computer-use agents": {
     "name": "Vpi-bench",
@@ -99,6 +100,21 @@
       "homepage": null,
       "topics": []
     }
+  },
+  "h4rm3l: A dynamic benchmark of composable jailbreak attacks for llm safety assessment": {
+    "name": "h4rm3l",
+    "github": {
+      "repo": "mdoumbouya/h4rm3l",
+      "stars": 28,
+      "forks": 5,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2024-12-05",
+      "description": "A Domain-Specific Language, Jailbreak Attack Synthesizer and Dynamic LLM Redteaming Toolkit",
+      "homepage": "https://mdoumbouya.github.io/h4rm3l/",
+      "topics": []
+    },
+    "verifiedBy": "hand-checked"
   },
   "Sg-bench: Evaluating llm safety generalization across diverse tasks and prompt types": {
     "name": "Sg-bench",
@@ -291,15 +307,5 @@
       "homepage": null,
       "topics": []
     }
-  },
-  "Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments": {
-    "name": "Vision-and-Language Navigation",
-    "github": null,
-    "excluded": "A capability dataset (R2R) cited as background by the embodied survey, not a trustworthy-AI resource. The resolver matched an awesome-list."
-  },
-  "VizWiz Grand Challenge: Answering Visual Questions from Blind People": {
-    "name": "VizWiz Grand Challenge",
-    "github": null,
-    "excluded": "A visual question answering dataset cited as background, not a safety benchmark. The resolver matched an unrelated challenge submission."
   }
 }

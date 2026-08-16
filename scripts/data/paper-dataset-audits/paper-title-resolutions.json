@@ -1,0 +1,1575 @@
+{
+  "scope": "Exact normalized arXiv title matches only.",
+  "resolutions": {
+    "From trojan horses to castle walls: Unveiling bilateral backdoor effects in diffusion models": {
+      "status": "no_exact_match",
+      "domain": "Agents",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22From%20trojan%20horses%20to%20castle%20walls%3A%20Unveiling%20bilateral%20backdoor%20effects%20in%20diffusion%20models%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Search augmented instruction learning": {
+      "status": "no_exact_match",
+      "domain": "Agents",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Search%20augmented%20instruction%20learning%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Privacyasst: Safeguarding user privacy in tool-using large language model agents": {
+      "status": "no_exact_match",
+      "domain": "Agents",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Privacyasst%3A%20Safeguarding%20user%20privacy%20in%20tool-using%20large%20language%20model%20agents%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Towards Trustworthy Autonomous Vehicles with Vision-Language Models Under Targeted and Untargeted Adversarial Attacks": {
+      "status": "no_exact_match",
+      "domain": "Agents",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Towards%20Trustworthy%20Autonomous%20Vehicles%20with%20Vision-Language%20Models%20Under%20Targeted%20and%20Untargeted%20Adversarial%20Attacks%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Adversarial machine learning attacks and defences in multi-agent reinforcement learning": {
+      "status": "no_exact_match",
+      "domain": "Agents",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarial+Machine+Learning+Attacks+and+Defences+in+Multi-Agent+Reinforcement+Learning",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Adversarial%20machine%20learning%20attacks%20and%20defences%20in%20multi-agent%20reinforcement%20learning%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Biomimetic Approach to Designing Trust-Based Robot-to-Human Object Handover in a Collaborative Assembly Task": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Biomimetic+Approach+to+Designing+Trust-Based+Robot-to-Human+Object+Handover+in+a+Collaborative+Assembly+Task",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Biomimetic%20Approach%20to%20Designing%20Trust-Based%20Robot-to-Human%20Object%20Handover%20in%20a%20Collaborative%20Assembly%20Task%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Fast and Comfortable Robot-to-Human Handover for Mobile Cooperation Robot System": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Fast+and+Comfortable+Robot-to-Human+Handover+for+Mobile+Cooperation+Robot+System",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Fast%20and%20Comfortable%20Robot-to-Human%20Handover%20for%20Mobile%20Cooperation%20Robot%20System%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Human-robot object handover: Recent progress and future direction": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Human--Robot+Object+Handover%3A+Recent+Progress+and+Future+Direction",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Human-robot%20object%20handover%3A%20Recent%20progress%20and%20future%20direction%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Optimizing human-robot handovers: the impact of adaptive transport methods": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Optimizing+Human-Robot+Handovers%3A+The+Impact+of+Adaptive+Transport+Methods",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Optimizing%20human-robot%20handovers%3A%20the%20impact%20of%20adaptive%20transport%20methods%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A Novel Human Intention Prediction Approach Based on Fuzzy Rules through Wearable Sensing in Human–Robot Handover": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Novel+Human+Intention+Prediction+Approach+Based+on+Fuzzy+Rules+Through+Wearable+Sensing+in+Human--Robot+Handover",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Novel%20Human%20Intention%20Prediction%20Approach%20Based%20on%20Fuzzy%20Rules%20through%20Wearable%20Sensing%20in%20Human%E2%80%93Robot%20Handover%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A Taxonomy of Factors Influencing Perceived Safety in Human–Robot Interaction": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Taxonomy+of+Factors+Influencing+Perceived+Safety+in+Human--Robot+Interaction",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Taxonomy%20of%20Factors%20Influencing%20Perceived%20Safety%20in%20Human%E2%80%93Robot%20Interaction%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Handover Control for Human-Robot and Robot-Robot Collaboration": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Handover+Control+for+Human-Robot+and+Robot-Robot+Collaboration",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Handover%20Control%20for%20Human-Robot%20and%20Robot-Robot%20Collaboration%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=FlowHijack%3A+A+Dynamics-Aware+Backdoor+Attack+on+Flow-Matching+Vision-Language-Action+Models",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22FlowHijack%3A%20A%20Dynamics-Aware%20Backdoor%20Attack%20on%20Flow-Matching%20Vision-Language-Action%20Models%22&max_results=6",
+      "matchedTitle": "FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models",
+      "arxivId": "2604.09651"
+    },
+    "Deep Reinforcement Learning in the Era of Foundation Models: A Survey": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Deep+Reinforcement+Learning+in+the+Era+of+Foundation+Models%3A+A+Survey",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Deep%20Reinforcement%20Learning%20in%20the%20Era%20of%20Foundation%20Models%3A%20A%20Survey%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Robust Multi-Agent Reinforcement Learning via Minimax Deep Deterministic Policy Gradient": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robust+Multi-Agent+Reinforcement+Learning",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Robust%20Multi-Agent%20Reinforcement%20Learning%20via%20Minimax%20Deep%20Deterministic%20Policy%20Gradient%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=RAT%3A+Adversarial+Attacks+on+Deep+Reinforcement+Agents+for+Targeted+Behaviors",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22RAT%3A%20Adversarial%20Attacks%20on%20Deep%20Reinforcement%20Agents%20for%20Targeted%20Behaviors%22&max_results=6",
+      "matchedTitle": "RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors",
+      "arxivId": "2412.10713"
+    },
+    "Robust Multi-Agent Reinforcement Learning by Mutual Information Regularization": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robust+Multi-Agent+Reinforcement+Learning+by+Mutual+Information+Regularization",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Robust%20Multi-Agent%20Reinforcement%20Learning%20by%20Mutual%20Information%20Regularization%22&max_results=6",
+      "matchedTitle": "Robust Multi-Agent Reinforcement Learning by Mutual Information Regularization",
+      "arxivId": "2310.09833"
+    },
+    "Game-Theoretic Robust Reinforcement Learning Handles Temporally-Coupled Perturbations": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Game-Theoretic+Robust+Reinforcement+Learning+Handles+Temporally-Coupled+Perturbations",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Game-Theoretic%20Robust%20Reinforcement%20Learning%20Handles%20Temporally-Coupled%20Perturbations%22&max_results=6",
+      "matchedTitle": "Game-Theoretic Robust Reinforcement Learning Handles Temporally-Coupled Perturbations",
+      "arxivId": "2307.12062"
+    },
+    "Breaking the Barrier: Enhanced Utility and Robustness in Smoothed DRL Agents": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Breaking+the+Barrier%3A+Enhanced+Utility+and+Robustness+in+Smoothed+DRL+Agents",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Breaking%20the%20Barrier%3A%20Enhanced%20Utility%20and%20Robustness%20in%20Smoothed%20DRL%20Agents%22&max_results=6",
+      "matchedTitle": "Breaking the Barrier: Enhanced Utility and Robustness in Smoothed DRL Agents",
+      "arxivId": "2406.18062"
+    },
+    "MARNet: Backdoor Attacks Against Cooperative Multi-Agent Reinforcement Learning": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=MARNet",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22MARNet%3A%20Backdoor%20Attacks%20Against%20Cooperative%20Multi-Agent%20Reinforcement%20Learning%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "PATROL: Provable Defense against Adversarial Policy in Two-player Games": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=PATROL",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22PATROL%3A%20Provable%20Defense%20against%20Adversarial%20Policy%20in%20Two-player%20Games%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Trade-Off Between Robustness and Rewards Adversarial Training for Deep Reinforcement Learning Under Large Perturbations": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Trade-Off+Between+Robustness",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Trade-Off%20Between%20Robustness%20and%20Rewards%20Adversarial%20Training%20for%20Deep%20Reinforcement%20Learning%20Under%20Large%20Perturbations%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Revisiting Domain Randomization via Relaxed State-Adversarial Policy Optimization": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Revisiting+Domain+Randomization+Via+Relaxed+State-AdversarialPolicy+Optimization",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Revisiting%20Domain%20Randomization%20via%20Relaxed%20State-Adversarial%20Policy%20Optimization%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Certifiably Robust Policy Learning against Adversarial Multi-Agent Communication": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Certifiably+Robust+Policy+Learning+Against+Adversarial+Multi-Agent+Communication",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Certifiably%20Robust%20Policy%20Learning%20against%20Adversarial%20Multi-Agent%20Communication%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "User-Oriented Robust Reinforcement Learning": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=User-Oriented+Robust+Reinforcement+Learning",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22User-Oriented%20Robust%20Reinforcement%20Learning%22&max_results=6",
+      "matchedTitle": "User-Oriented Robust Reinforcement Learning",
+      "arxivId": "2202.07301"
+    },
+    "Robust Reinforcement Learning as a Stackelberg Game via Adaptively-Regularized Adversarial Training": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robust+Reinforcement+Learning+as+a+Stackelberg+Game+via+Adaptively-Regularized+Adversarial+Training",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Robust%20Reinforcement%20Learning%20as%20a%20Stackelberg%20Game%20via%20Adaptively-Regularized%20Adversarial%20Training%22&max_results=6",
+      "matchedTitle": "Robust Reinforcement Learning as a Stackelberg Game via Adaptively-Regularized Adversarial Training",
+      "arxivId": "2202.09514"
+    },
+    "Monotonic Robust Policy Optimization with Model Discrepancy": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Monotonic+Robust+Policy+Optimization+with+Model+Discrepancy",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Monotonic%20Robust%20Policy%20Optimization%20with%20Model%20Discrepancy%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Toward Evaluating Robustness of Deep Reinforcement Learning with Continuous Control": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Toward+Evaluating+Robustness+of+Deep+Reinforcement+Learning+with+Continuous+Control",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Toward%20Evaluating%20Robustness%20of%20Deep%20Reinforcement%20Learning%20with%20Continuous%20Control%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Adversarially Robust Policy Learning through Active Construction of Physically-Plausible Perturbations": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarially+Robust+Policy+Learning+through+Active+Construction+of+Physically-Plausible+Perturbations",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Adversarially%20Robust%20Policy%20Learning%20through%20Active%20Construction%20of%20Physically-Plausible%20Perturbations%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Cascading Failures in Agentic AI: ASI08 Security Guide": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Cascading+Failures+in+Agentic+AI%3A+ASI08+Security+Guide",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Cascading%20Failures%20in%20Agentic%20AI%3A%20ASI08%20Security%20Guide%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A white-box prompt injection attack on embodied AI agents driven by large language models": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=White-Box+Prompt+Injection+Attack+on+Embodied+AI+Agents",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20white-box%20prompt%20injection%20attack%20on%20embodied%20AI%20agents%20driven%20by%20large%20language%20models%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Towards Robust and Secure Embodied AI: A Survey on Vulnerabilities and Attacks": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://dl.acm.org/doi/abs/10.1145/3806048",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Towards%20Robust%20and%20Secure%20Embodied%20AI%3A%20A%20Survey%20on%20Vulnerabilities%20and%20Attacks%22&max_results=6",
+      "matchedTitle": "Towards Robust and Secure Embodied AI: A Survey on Vulnerabilities and Attacks",
+      "arxivId": "2502.13175"
+    },
+    "The Attack and Defense Landscape of Agentic AI: A Comprehensive Survey": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=The+Attack+and+Defense+Landscape+of+Agentic+AI%3A+A+Comprehensive+Survey",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22The%20Attack%20and%20Defense%20Landscape%20of%20Agentic%20AI%3A%20A%20Comprehensive%20Survey%22&max_results=6",
+      "matchedTitle": "The Attack and Defense Landscape of Agentic AI: A Comprehensive Survey",
+      "arxivId": "2603.11088"
+    },
+    "Securing (vision-based) autonomous systems: taxonomy, challenges, and defense mechanisms against adversarial threats": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Securing+Vision-Based+Autonomous+Systems%3A+A+Comprehensive+Taxonomy",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Securing%20%28vision-based%29%20autonomous%20systems%3A%20taxonomy%2C%20challenges%2C%20and%20defense%20mechanisms%20against%20adversarial%20threats%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "The Adolescence of Technology": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=The+Adolescence+of+Technology",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22The%20Adolescence%20of%20Technology%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Automated Discovery of Semantic Attacks in Multi-Robot Navigation Systems": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Automated+Discovery+of+Semantic+Attacks+in+Multi-Robot+Navigation",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Automated%20Discovery%20of%20Semantic%20Attacks%20in%20Multi-Robot%20Navigation%20Systems%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Safety+at+Scale%3A+A+Comprehensive+Survey+of+Large+Model+and+Agent+Safety",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Safety%20at%20Scale%3A%20A%20Comprehensive%20Survey%20of%20Large%20Model%20and%20Agent%20Safety%22&max_results=6",
+      "matchedTitle": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+      "arxivId": "2502.05206"
+    },
+    "Secure Robotics: Navigating Challenges at the Nexus of Safety, Trust, and Cybersecurity in Cyber-Physical Systems": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Secure+Robotics%3A+Nexus+of+Safety%2C+Trust%2C+and+Cybersecurity",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Secure%20Robotics%3A%20Navigating%20Challenges%20at%20the%20Nexus%20of%20Safety%2C%20Trust%2C%20and%20Cybersecurity%20in%20Cyber-Physical%20Systems%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Toward Robust 3D Perception for Autonomous Vehicles: A Review of Adversarial Attacks and Countermeasures": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Toward+Robust+3D+Perception+for+Autonomous+Vehicles",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Toward%20Robust%203D%20Perception%20for%20Autonomous%20Vehicles%3A%20A%20Review%20of%20Adversarial%20Attacks%20and%20Countermeasures%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Robotics cyber security: vulnerabilities, attacks, countermeasures, and recommendations": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robotics+Cyber+Security%3A+Vulnerabilities%2C+Attacks%2C+Countermeasures%2C+and+Recommendations",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Robotics%20cyber%20security%3A%20vulnerabilities%2C%20attacks%2C%20countermeasures%2C%20and%20recommendations%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Spatiotemporal Attacks for Embodied Agents": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Spatiotemporal+Attacks+for+Embodied+Agents",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Spatiotemporal%20Attacks%20for%20Embodied%20Agents%22&max_results=6",
+      "matchedTitle": "Spatiotemporal Attacks for Embodied Agents",
+      "arxivId": "2005.09161"
+    },
+    "SmartAgent: Chain-of-User-Thought for Embodied Personalized Agent in Cyber World": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=SmartAgent%3A+Chain-of-User-Thought+for+Embodied+Personalized+Agent+in+Cyber+World",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22SmartAgent%3A%20Chain-of-User-Thought%20for%20Embodied%20Personalized%20Agent%20in%20Cyber%20World%22&max_results=6",
+      "matchedTitle": "SmartAgent: Chain-of-User-Thought for Embodied Personalized Agent in Cyber World",
+      "arxivId": "2412.07472"
+    },
+    "Cascading Failures in Agentic AI": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Cascading+Failures+in+Agentic+AI",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Cascading%20Failures%20in%20Agentic%20AI%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Memory in LLM-Based Multi-Agent Systems: Mechanisms, Challenges, and Collective Intelligence": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Memory+in+LLM-Based+Multi-Agent+Systems%3A+Mechanisms%2C+Challenges%2C+and+Collective+Intelligence",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Memory%20in%20LLM-Based%20Multi-Agent%20Systems%3A%20Mechanisms%2C%20Challenges%2C%20and%20Collective%20Intelligence%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Aligning AI Agents with Humans through Law as Information": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Aligning+AI+Agents+with+Humans+through+Law+as+Information",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Aligning%20AI%20Agents%20with%20Humans%20through%20Law%20as%20Information%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Systematic+Survey+of+Self-Evolving+Agents%3A+From+Model-Centric+to+Environment-Driven+Co-Evolution",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Systematic%20Survey%20of%20Self-Evolving%20Agents%3A%20From%20Model-Centric%20to%20Environment-Driven%20Co-Evolution%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "2025 AI Safety Index": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=2025+AI+Safety+Index",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%222025%20AI%20Safety%20Index%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Agent Harness Engineering: A Survey": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Agent+Harness+Engineering%3A+A+Survey",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Agent%20Harness%20Engineering%3A%20A%20Survey%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "OWASP": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=OWASP",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22OWASP%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "RoboCodeX": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=RoboCodeX",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22RoboCodeX%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Safety Guardrails for LLM-Enabled Robots": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Safety+Guardrails+for+LLM-Enabled+Robots",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Safety%20Guardrails%20for%20LLM-Enabled%20Robots%22&max_results=6",
+      "matchedTitle": "Safety Guardrails for LLM-Enabled Robots",
+      "arxivId": "2503.07885"
+    },
+    "Watch Your Speed: Injecting Malicious Voice Commands via Time-Scale Modification": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Watch+your+speed%3A+Injecting+malicious+voice+commands+via+time-scale+modification",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Watch%20Your%20Speed%3A%20Injecting%20Malicious%20Voice%20Commands%20via%20Time-Scale%20Modification%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "AntiFake: Using Adversarial Audio to Prevent Unauthorized Speech Synthesis": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Antifake%3A+Using+adversarial+audio+to+prevent+unauthorized+speech+synthesis",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22AntiFake%3A%20Using%20Adversarial%20Audio%20to%20Prevent%20Unauthorized%20Speech%20Synthesis%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "TrojanModel: A Practical Trojan Attack against Automatic Speech Recognition Systems": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Trojanmodel%3A+A+practical+trojan+attack+against+automatic+speech+recognition+systems",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22TrojanModel%3A%20A%20Practical%20Trojan%20Attack%20against%20Automatic%20Speech%20Recognition%20Systems%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "SPECPATCH: Human-In-The-Loop Adversarial Audio Spectrogram Patch Attack on Speech Recognition": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Specpatch%3A+Human-in-the-loop+adversarial+audio+spectrogram+patch+attack+on+speech+recognition",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22SPECPATCH%3A%20Human-In-The-Loop%20Adversarial%20Audio%20Spectrogram%20Patch%20Attack%20on%20Speech%20Recognition%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Devil's Whisper: A General Approach for Physical Adversarial Attacks against Commercial Black-box Speech Recognition Devices": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Devil%27s+Whisper%3A+A+General+Approach+for+Physical+Adversarial+Attacks+against+Commercial+Black-box+Speech+Recognition+Devices",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Devil%27s%20Whisper%3A%20A%20General%20Approach%20for%20Physical%20Adversarial%20Attacks%20against%20Commercial%20Black-box%20Speech%20Recognition%20Devices%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Metamorph%3A+Injecting+inaudible+commands+into+over-the-air+voice+controlled+systems",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Metamorph%3A%20Injecting%20Inaudible%20Commands%20into%20Over-the-air%20Voice%20Controlled%20Systems%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "AdvPulse: Universal, Synchronization-free, and Targeted Audio Adversarial Attacks via Subsecond Perturbations": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Advpulse%3A+Universal%2C+synchronization-free%2C+and+targeted+audio+adversarial+attacks+via+subsecond+perturbations",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22AdvPulse%3A%20Universal%2C%20Synchronization-free%2C%20and%20Targeted%20Audio%20Adversarial%20Attacks%20via%20Subsecond%20Perturbations%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Practical Adversarial Attacks Against Speaker Recognition Systems": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Practical+adversarial+attacks+against+speaker+recognition+systems",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Practical%20Adversarial%20Attacks%20Against%20Speaker%20Recognition%20Systems%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Who Activated My Voice Assistant? A Stealthy Attack on Android Phones Without Users' Awareness": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Who+activated+my+voice+assistant%3F+A+stealthy+attack+on+android+phones+without+users%E2%80%99+awareness",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Who%20Activated%20My%20Voice%20Assistant%3F%20A%20Stealthy%20Attack%20on%20Android%20Phones%20Without%20Users%27%20Awareness%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Hidden Voice Commands": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Hidden+voice+commands",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Hidden%20Voice%20Commands%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Cocaine Noodles: Exploiting the Gap between Human and Machine Speech Recognition": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Cocaine+noodles%3A+exploiting+the+gap+between+human+and+machine+speech+recognition",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Cocaine%20Noodles%3A%20Exploiting%20the%20Gap%20between%20Human%20and%20Machine%20Speech%20Recognition%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "On Evaluating the Robustness of Large Vision-Language Models via Untargeted Modality Alignment Breaking Adversarial Attack": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=On+Evaluating+the+Robustness+of+Large+Vision-Language+Models+via+Untargeted+Modality+Alignment+Breaking+Adversarial+Attack",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22On%20Evaluating%20the%20Robustness%20of%20Large%20Vision-Language%20Models%20via%20Untargeted%20Modality%20Alignment%20Breaking%20Adversarial%20Attack%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Malicious Attacks against Multi-Sensor Fusion in Autonomous Driving": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Malicious+Attacks+against+Multi-Sensor+Fusion+in+Autonomous+Driving",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Malicious%20Attacks%20against%20Multi-Sensor%20Fusion%20in%20Autonomous%20Driving%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A robust multi-sensor fusion model against adversarial patch attack": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+robust+multi-sensor+fusion+model+against+adversarial+patch+attack",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20robust%20multi-sensor%20fusion%20model%20against%20adversarial%20patch%20attack%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "MMCert": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=MMCert",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22MMCert%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Attacking mmWave Imaging With Neural Meta-Material Rendering": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Attacking+mmWave+Imaging+with+Neural+Meta-Material+Rendering",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Attacking%20mmWave%20Imaging%20With%20Neural%20Meta-Material%20Rendering%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A Spoofing Detection and Direction-Finding Approach for Global Navigation Satellite System Signals Using Off-the-Shelf Anti-Jamming Antennas": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Spoofing+Detection+and+Direction-Finding+Approach+for+Global+Navigation+Satellite+System+Signals+Using+Off-the-Shelf+Anti-Jamming+Antennas",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Spoofing%20Detection%20and%20Direction-Finding%20Approach%20for%20Global%20Navigation%20Satellite%20System%20Signals%20Using%20Off-the-Shelf%20Anti-Jamming%20Antennas%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "SecureTrack: Protecting Vehicular Sensors From Noninvasive EMI Attacks": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=SecureTrack%3A+Protecting+Vehicular+Sensors+from+Non-Invasive+EMI+Attacks",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22SecureTrack%3A%20Protecting%20Vehicular%20Sensors%20From%20Noninvasive%20EMI%20Attacks%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Analysis and Validation of Distributed GNSS Spoofing Threat": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Analysis+and+Validation+of+Distributed+GNSS+Spoofing+Threat",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Analysis%20and%20Validation%20of%20Distributed%20GNSS%20Spoofing%20Threat%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A Deep Learning Based Induced GNSS Spoof Detection Framework": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+deep+learning+based+induced+GNSS+spoof+detection+framework",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Deep%20Learning%20Based%20Induced%20GNSS%20Spoof%20Detection%20Framework%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Acoustic Attack Mitigation Approach for MEMS Inertial Sensors Using Change Point Detection on MhIMU Framework": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Acoustic+Attack+Mitigation+Approach+for+MEMS+Inertial+Sensors+Using+Change+Point+Detection+on+MhIMU+Framework",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Acoustic%20Attack%20Mitigation%20Approach%20for%20MEMS%20Inertial%20Sensors%20Using%20Change%20Point%20Detection%20on%20MhIMU%20Framework%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "MetaWave: Attacking mmWave Sensing with Meta-material-enhanced Tags": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Metawave%3A+Attacking+mmwave+sensing+with+meta-material-enhanced+tags",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22MetaWave%3A%20Attacking%20mmWave%20Sensing%20with%20Meta-material-enhanced%20Tags%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Exploring Practical Acoustic Transduction Attacks on Inertial Sensors in MDOF Systems": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Exploring+practical+acoustic+transduction+attacks+on+inertial+sensors+in+MDOF+systems",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Exploring%20Practical%20Acoustic%20Transduction%20Attacks%20on%20Inertial%20Sensors%20in%20MDOF%20Systems%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Paralyzing Drones via EMI Signal Injection on Sensory Communication Channels": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Paralyzing+Drones+via+EMI+Signal+Injection+on+Sensory+Communication+Channels",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Paralyzing%20Drones%20via%20EMI%20Signal%20Injection%20on%20Sensory%20Communication%20Channels%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Un-Rocking Drones: Foundations of Acoustic Injection Attacks and Recovery Thereof": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Un-Rocking+Drones%3A+Foundations+of+Acoustic+Injection+Attacks+and+Recovery+Thereof",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Un-Rocking%20Drones%3A%20Foundations%20of%20Acoustic%20Injection%20Attacks%20and%20Recovery%20Thereof%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "mmSpoof: Resilient Spoofing of Automotive Millimeter-wave Radars using Reflect Array": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=mmspoof%3A+Resilient+spoofing+of+automotive+millimeter-wave+radars+using+reflect+array",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22mmSpoof%3A%20Resilient%20Spoofing%20of%20Automotive%20Millimeter-wave%20Radars%20using%20Reflect%20Array%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Anti-Spoofing Technique Based on Vector Tracking Loop": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Anti-spoofing+technique+based+on+vector+tracking+loop",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Anti-Spoofing%20Technique%20Based%20on%20Vector%20Tracking%20Loop%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "TileMask: A Passive-Reflection-based Attack against mmWave Radar Object Detection in Autonomous Driving": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=TileMask%3A+A+passive-reflection-based+attack+against+mmWave+radar+object+detection+in+autonomous+driving",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22TileMask%3A%20A%20Passive-Reflection-based%20Attack%20against%20mmWave%20Radar%20Object%20Detection%20in%20Autonomous%20Driving%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "ESP Spoofing: Covert Acoustic Attack on MEMS Gyroscopes in Vehicles": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=ESP+spoofing%3A+Covert+acoustic+attack+on+MEMS+gyroscopes+in+vehicles",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22ESP%20Spoofing%3A%20Covert%20Acoustic%20Attack%20on%20MEMS%20Gyroscopes%20in%20Vehicles%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Combating Single-Frequency Jamming through a Multi-Frequency, Multi-Constellation Software Receiver: A Case Study for Maritime Navigation in the Gulf of Finland": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Combating+single-frequency+jamming+through+a+multi-frequency%2C+multi-constellation+software+receiver%3A+a+case+study+for+maritime+navigation+in+the+Gulf+of+Finland",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Combating%20Single-Frequency%20Jamming%20through%20a%20Multi-Frequency%2C%20Multi-Constellation%20Software%20Receiver%3A%20A%20Case%20Study%20for%20Maritime%20Navigation%20in%20the%20Gulf%20of%20Finland%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "DeepPOSE: Detecting GPS spoofing attack via deep recurrent neural network": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=DeepPOSE%3A+Detecting+GPS+spoofing+attack+via+deep+recurrent+neural+network",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22DeepPOSE%3A%20Detecting%20GPS%20spoofing%20attack%20via%20deep%20recurrent%20neural%20network%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A Traceability Localization Method of Acoustic Attack Source for MEMS Gyroscope": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+traceability+localization+method+of+acoustic+attack+source+for+mems+gyroscope",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Traceability%20Localization%20Method%20of%20Acoustic%20Attack%20Source%20for%20MEMS%20Gyroscope%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A Frequency-Domain Spoofing Attack on FMCW Radars and Its Mitigation Technique Based on a Hybrid-Chirp Waveform": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+frequency-domain+spoofing+attack+on+FMCW+radars+and+its+mitigation+technique+based+on+a+hybrid-chirp+waveform",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Frequency-Domain%20Spoofing%20Attack%20on%20FMCW%20Radars%20and%20Its%20Mitigation%20Technique%20Based%20on%20a%20Hybrid-Chirp%20Waveform%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "GNSS Jamming Classification via CNN, Transfer Learning & the Novel Concatenation of Signal Representations": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=GNSS+jamming+classification+via+CNN%2C+transfer+learning+%26+the+novel+concatenation+of+signal+representations",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22GNSS%20Jamming%20Classification%20via%20CNN%2C%20Transfer%20Learning%20%26%20the%20Novel%20Concatenation%20of%20Signal%20Representations%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Machine learning-based approach to GPS antijamming": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Machine+learning-based+approach+to+GPS+antijamming",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Machine%20learning-based%20approach%20to%20GPS%20antijamming%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Spoofing Attack on Ultrasonic Distance Sensors Using a Continuous Signal": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Spoofing+attack+on+ultrasonic+distance+sensors+using+a+continuous+signal",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Spoofing%20Attack%20on%20Ultrasonic%20Distance%20Sensors%20Using%20a%20Continuous%20Signal%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "DeepSIM: GPS Spoofing Detection on UAVs using Satellite Imagery Matching": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Deepsim%3A+Gps+spoofing+detection+on+uavs+using+satellite+imagery+matching",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22DeepSIM%3A%20GPS%20Spoofing%20Detection%20on%20UAVs%20using%20Satellite%20Imagery%20Matching%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "VANET-Assisted Interference Mitigation for Millimeter-Wave Automotive Radar Sensors": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=VANET-assisted+interference+mitigation+for+millimeter-wave+automotive+radar+sensors",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22VANET-Assisted%20Interference%20Mitigation%20for%20Millimeter-Wave%20Automotive%20Radar%20Sensors%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A Dual Antenna GNSS Spoofing Detector Based on the Dispersion of Double Difference Measurements": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+dual+antenna+GNSS+spoofing+detector+based+on+the+dispersion+of+double+difference+measurements",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Dual%20Antenna%20GNSS%20Spoofing%20Detector%20Based%20on%20the%20Dispersion%20of%20Double%20Difference%20Measurements%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Development of a GPS spoofing apparatus to attack a DJI Matrice 100 Quadcopter": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Development+of+a+GPS+spoofing+apparatus+to+attack+a+DJI+Matrice+100+Quadcopter",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Development%20of%20a%20GPS%20spoofing%20apparatus%20to%20attack%20a%20DJI%20Matrice%20100%20Quadcopter%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Crowd-GPS-Sec%3A+Leveraging+crowdsourcing+to+detect+and+localize+GPS+spoofing+attacks",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Crowd-GPS-Sec%3A%20Leveraging%20Crowdsourcing%20to%20Detect%20and%20Localize%20GPS%20Spoofing%20Attacks%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Autonomous vehicle ultrasonic sensor vulnerability and impact assessment": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Autonomous+vehicle+ultrasonic+sensor+vulnerability+and+impact+assessment",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Autonomous%20vehicle%20ultrasonic%20sensor%20vulnerability%20and%20impact%20assessment%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Analyzing and Enhancing the Security of Ultrasonic Sensors for Autonomous Vehicles": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Analyzing+and+enhancing+the+security+of+ultrasonic+sensors+for+autonomous+vehicles",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Analyzing%20and%20Enhancing%20the%20Security%20of%20Ultrasonic%20Sensors%20for%20Autonomous%20Vehicles%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Chips-Message Robust Authentication (Chimera) for GPS Civilian Signals": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Chips-message+robust+authentication+%28Chimera%29+for+GPS+civilian+signals",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Chips-Message%20Robust%20Authentication%20%28Chimera%29%20for%20GPS%20Civilian%20Signals%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "WALNUT: Waging Doubt on the Integrity of MEMS Accelerometers with Acoustic Injection Attacks": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=WALNUT%3A+Waging+doubt+on+the+integrity+of+MEMS+accelerometers+with+acoustic+injection+attacks",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22WALNUT%3A%20Waging%20Doubt%20on%20the%20Integrity%20of%20MEMS%20Accelerometers%20with%20Acoustic%20Injection%20Attacks%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "GNSS Spoofing Detection and Mitigation Based on Maximum Likelihood Estimation": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=GNSS+spoofing+detection+and+mitigation+based+on+maximum+likelihood+estimation",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22GNSS%20Spoofing%20Detection%20and%20Mitigation%20Based%20on%20Maximum%20Likelihood%20Estimation%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A Navigation Message Authentication Proposal for the Galileo Open Service": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+navigation+message+authentication+proposal+for+the+Galileo+open+service",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Navigation%20Message%20Authentication%20Proposal%20for%20the%20Galileo%20Open%20Service%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Can You Trust Autonomous Vehicles : Contactless Attacks against Sensors of Self-driving Vehicle": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Can+you+trust+autonomous+vehicles%3A+Contactless+attacks+against+sensors+of+self-driving+vehicle",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Can%20You%20Trust%20Autonomous%20Vehicles%20%3A%20Contactless%20Attacks%20against%20Sensors%20of%20Self-driving%20Vehicle%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Rocking Drones with Intentional Sound Noise on Gyroscopic Sensors": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Rocking+drones+with+intentional+sound+noise+on+gyroscopic+sensors",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Rocking%20Drones%20with%20Intentional%20Sound%20Noise%20on%20Gyroscopic%20Sensors%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Anti-spoofing and open GNSS signal authentication with signal authentication sequences": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Anti-spoofing+and+open+GNSS+signal+authentication+with+signal+authentication+sequences",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Anti-spoofing%20and%20open%20GNSS%20signal%20authentication%20with%20signal%20authentication%20sequences%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Black-Box Explainability-Guided Adversarial Attack for 3D Object Tracking": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Black-box+explainability-guided+adversarial+attack+for+3D+object+tracking",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Black-Box%20Explainability-Guided%20Adversarial%20Attack%20for%203D%20Object%20Tracking%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Invisible but Detected: Physical Adversarial Shadow Attack and Defense on LiDAR Object Detection": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Invisible+but+Detected%3A+Physical+Adversarial+Shadow+Attack+and+Defense+on+LiDAR-based+3D+Object+Detection",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Invisible%20but%20Detected%3A%20Physical%20Adversarial%20Shadow%20Attack%20and%20Defense%20on%20LiDAR%20Object%20Detection%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Enhancing the Robustness of LiDAR-based Object Detection under Disappearing Attacks": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Enhancing+the+Robustness+of+LiDAR-based+Object+Detection+under+Disappearing+Attacks",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Enhancing%20the%20Robustness%20of%20LiDAR-based%20Object%20Detection%20under%20Disappearing%20Attacks%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "An Imperceptible Adversarial Attack Against 3-D Object Detectors in Autonomous Driving": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://doi.org/10.1109/JIOT.2025.3547966",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22An%20Imperceptible%20Adversarial%20Attack%20Against%203-D%20Object%20Detectors%20in%20Autonomous%20Driving%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Towards Real-Time Defense against Object-Based LiDAR Attacks in Autonomous Driving": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Towards+Real-Time+Defense+against+Object-Based+LiDAR+Attacks+in+Autonomous+Driving",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Towards%20Real-Time%20Defense%20against%20Object-Based%20LiDAR%20Attacks%20in%20Autonomous%20Driving%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A New Adversarial Perspective for LiDAR-based 3D Object Detection": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+New+Adversarial+Perspective+for+LiDAR-based+3D+Object+Detection",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20New%20Adversarial%20Perspective%20for%20LiDAR-based%203D%20Object%20Detection%22&max_results=6",
+      "matchedTitle": "A New Adversarial Perspective for LiDAR-based 3D Object Detection",
+      "arxivId": "2412.13017"
+    },
+    "Diffusion Models-Based Purification for Common Corruptions on Robust 3D Object Detection": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Diffusion+models-based+purification+for+common+corruptions+on+robust+3D+object+detection",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Diffusion%20Models-Based%20Purification%20for%20Common%20Corruptions%20on%20Robust%203D%20Object%20Detection%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Adversary is on the Road: Attacks on Visual SLAM with Robust Perturbations on Point Clouds": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversary+is+on+the+Road%3A+Attacks+on+Visual+SLAM+with+Robust+Perturbations+on+Point+Clouds",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Adversary%20is%20on%20the%20Road%3A%20Attacks%20on%20Visual%20SLAM%20with%20Robust%20Perturbations%20on%20Point%20Clouds%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Random Spoofing Attack against LiDAR-Based Scan Matching SLAM": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Random+Spoofing+Attack+against+LiDAR-Based+Scan+Matching+SLAM",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Random%20Spoofing%20Attack%20against%20LiDAR-Based%20Scan%20Matching%20SLAM%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "SpotAttack: Covering Spots on Surface to Attack LiDAR-Based Autonomous Driving Systems": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=SpotAttack%3A+Covering+Spots+on+Surface+to+Attack+LiDAR+Based+Autonomous+Driving+Systems",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22SpotAttack%3A%20Covering%20Spots%20on%20Surface%20to%20Attack%20LiDAR-Based%20Autonomous%20Driving%20Systems%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Mobile Cooperative Robot Safe Interaction Method Based on Embodied Perception": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Mobile+Cooperative+Robot+Safe+Interaction+Method+Based+on+Embodied+Perception",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Mobile%20Cooperative%20Robot%20Safe%20Interaction%20Method%20Based%20on%20Embodied%20Perception%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "AE-Morpher: Improve Physical Robustness of Adversarial Objects against LiDAR-based Detectors via Object Reconstruction": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=AE-Morpher",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22AE-Morpher%3A%20Improve%20Physical%20Robustness%20of%20Adversarial%20Objects%20against%20LiDAR-based%20Detectors%20via%20Object%20Reconstruction%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "BadLiDet: A Simple Backdoor Attack against LiDAR Object Detection in Autonomous Driving": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Badlidet%3A+A+simple+backdoor+attack+against+lidar+object+detection+in+autonomous+driving",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22BadLiDet%3A%20A%20Simple%20Backdoor%20Attack%20against%20LiDAR%20Object%20Detection%20in%20Autonomous%20Driving%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Towards Dynamic Backdoor Attacks against LiDAR Semantic Segmentation in Autonomous Driving": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Towards+dynamic+backdoor+attacks+against+lidar+semantic+segmentation+in+autonomous+driving",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Towards%20Dynamic%20Backdoor%20Attacks%20against%20LiDAR%20Semantic%20Segmentation%20in%20Autonomous%20Driving%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "SlowLiDAR: Increasing the Latency of LiDAR-Based Detection Using Adversarial Examples": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Slowlidar%3A+Increasing+the+latency+of+lidar-based+detection+using+adversarial+examples",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22SlowLiDAR%3A%20Increasing%20the%20Latency%20of%20LiDAR-Based%20Detection%20Using%20Adversarial%20Examples%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Transferable Adversarial Attack on 3D Object Tracking in Point Cloud": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Transferable+adversarial+attack+on+3D+object+tracking+in+point+cloud",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Transferable%20Adversarial%20Attack%20on%203D%20Object%20Tracking%20in%20Point%20Cloud%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Scene Augmentation Methods for Interactive Embodied AI Tasks": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Scene+augmentation+methods+for+interactive+embodied+AI+tasks",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Scene%20Augmentation%20Methods%20for%20Interactive%20Embodied%20AI%20Tasks%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Perceptual Aliasing++: Adversarial Attack for Visual SLAM Front-End and Back-End": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Perceptual+aliasing%2B%2B%3A+Adversarial+attack+for+visual+slam+front-end+and+back-end",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Perceptual%20Aliasing%2B%2B%3A%20Adversarial%20Attack%20for%20Visual%20SLAM%20Front-End%20and%20Back-End%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Adversarial Scan Attack against Scan Matching Algorithm for Pose Estimation in LiDAR-Based SLAM": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarial+scan+attack+against+scan+matching+algorithm+for+pose+estimation+in+lidar-based+slam",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Adversarial%20Scan%20Attack%20against%20Scan%20Matching%20Algorithm%20for%20Pose%20Estimation%20in%20LiDAR-Based%20SLAM%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Towards Backdoor Attacks against LiDAR Object Detection in Autonomous Driving": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Towards+backdoor+attacks+against+lidar+object+detection+in+autonomous+driving",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Towards%20Backdoor%20Attacks%20against%20LiDAR%20Object%20Detection%20in%20Autonomous%20Driving%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Universal Adversarial Attack Against 3D Object Tracking": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Universal+adversarial+attack+against+3D+object+tracking",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Universal%20Adversarial%20Attack%20Against%203D%20Object%20Tracking%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Shadow-Catcher: Looking into Shadows to Detect Ghost Objects in Autonomous Vehicle 3D Sensing": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Shadow-catcher%3A+Looking+into+shadows+to+detect+ghost+objects+in+autonomous+vehicle+3d+sensing",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Shadow-Catcher%3A%20Looking%20into%20Shadows%20to%20Detect%20Ghost%20Objects%20in%20Autonomous%20Vehicle%203D%20Sensing%22&max_results=6",
+      "matchedTitle": "Shadow-Catcher: Looking Into Shadows to Detect Ghost Objects in Autonomous Vehicle 3D Sensing",
+      "arxivId": "2008.12008"
+    },
+    "Adversarially Robust 3D Point Cloud Recognition Using Self-Supervisions": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarially+robust+3d+point+cloud+recognition+using+self-supervisions",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Adversarially%20Robust%203D%20Point%20Cloud%20Recognition%20Using%20Self-Supervisions%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "I Can See the Light: Attacks on Autonomous Vehicles Using Invisible Lights": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=I+can+see+the+light%3A+Attacks+on+autonomous+vehicles+using+invisible+lights",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22I%20Can%20See%20the%20Light%3A%20Attacks%20on%20Autonomous%20Vehicles%20Using%20Invisible%20Lights%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Securing the Lane: Defences Against Patch Attacks on Autonomous Vehicle's Lane Detection": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Securing+the+Lane%3A+Defences+Against+Patch+Attacks+on+Autonomous+Vehicle%27s+Lane+Detection",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Securing%20the%20Lane%3A%20Defences%20Against%20Patch%20Attacks%20on%20Autonomous%20Vehicle%27s%20Lane%20Detection%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Detecting Adversarial Attacks Based on Tracking Differences in Frequency Bands": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Detecting+Adversarial+Attacks+Based+on+Tracking+Differences+in+Frequency+Bands",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Detecting%20Adversarial%20Attacks%20Based%20on%20Tracking%20Differences%20in%20Frequency%20Bands%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Multi-view Feature Discrepancy Attack for Single Object Tracking": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Multi-view+Feature+Discrepancy+Attack+for+Single+Object+Tracking",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Multi-view%20Feature%20Discrepancy%20Attack%20for%20Single%20Object%20Tracking%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Stealthy backdoor attack in self-supervised learning vision encoders for large vision language models": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Stealthy+Backdoor+Attack+in+Self-Supervised+Learning+Vision+Encoders+for+Large+Vision+Language+Models",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Stealthy%20backdoor%20attack%20in%20self-supervised%20learning%20vision%20encoders%20for%20large%20vision%20language%20models%22&max_results=6",
+      "matchedTitle": "Stealthy Backdoor Attack in Self-Supervised Learning Vision Encoders for Large Vision Language Models",
+      "arxivId": "2502.18290"
+    },
+    "PB-UAP: Hybride Universal Adversarial Attack for Image Segmentation": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=PB-UAP%3A+Hybride+Universal+Adversarial+Attack+for+Image+Segmentation",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22PB-UAP%3A%20Hybride%20Universal%20Adversarial%20Attack%20for%20Image%20Segmentation%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "RP-PGD: Boosting Segmentation Robustness with a Region-and-Prototype Based Adversarial Attack": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=RP-PGD%3A+Boosting+Segmentation+Robustness+with+a+Region-and-Prototype+Based+Adversarial+Attack",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22RP-PGD%3A%20Boosting%20Segmentation%20Robustness%20with%20a%20Region-and-Prototype%20Based%20Adversarial%20Attack%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A Robust UAV Tracking Solution in the Adversarial Environment": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Robust+UAV+Tracking+Solution+in+the+Adversarial+Environment",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Robust%20UAV%20Tracking%20Solution%20in%20the%20Adversarial%20Environment%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Cascaded Adversarial Attack: Simultaneously Fooling Rain Removal and Semantic Segmentation Networks": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Cascaded+adversarial+attack%3A+Simultaneously+fooling+rain+removal+and+semantic+segmentation+networks",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Cascaded%20Adversarial%20Attack%3A%20Simultaneously%20Fooling%20Rain%20Removal%20and%20Semantic%20Segmentation%20Networks%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "PSO-Based Black-Box Lane Detection Adversarial Attack": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=PSO-Based+Black-Box+Lane+Detection+Adversarial+Attack",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22PSO-Based%20Black-Box%20Lane%20Detection%20Adversarial%20Attack%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Detection-Friendly Dehazing: Object Detection in Real-World Hazy Scenes": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Detection-friendly+dehazing%3A+Object+detection+in+real-world+hazy+scenes",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Detection-Friendly%20Dehazing%3A%20Object%20Detection%20in%20Real-World%20Hazy%20Scenes%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "WIP: Towards the Practicality of the Adversarial Attack on Object Tracking in Autonomous Driving": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Wip%3A+Towards+the+practicality+of+the+adversarial+attack+on+object+tracking+in+autonomous+driving",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22WIP%3A%20Towards%20the%20Practicality%20of%20the%20Adversarial%20Attack%20on%20Object%20Tracking%20in%20Autonomous%20Driving%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "You Are Catching My Attention: Are Vision Transformers Bad Learners under Backdoor Attacks?": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=You+Are+Catching+My+Attention%3A+Are+Vision+Transformers+Bad+Learners+under+Backdoor+Attacks%3F",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22You%20Are%20Catching%20My%20Attention%3A%20Are%20Vision%20Transformers%20Bad%20Learners%20under%20Backdoor%20Attacks%3F%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "DSNet: Joint Semantic Learning for Object Detection in Inclement Weather Conditions": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=DSNet%3A+Joint+semantic+learning+for+object+detection+in+inclement+weather+conditions",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22DSNet%3A%20Joint%20Semantic%20Learning%20for%20Object%20Detection%20in%20Inclement%20Weather%20Conditions%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Fooling Detection Alone is Not Enough: Adversarial Attack against Multiple Object Tracking": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Fooling+detection+alone+is+not+enough%3A+Adversarial+attack+against+multiple+object+tracking",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Fooling%20Detection%20Alone%20is%20Not%20Enough%3A%20Adversarial%20Attack%20against%20Multiple%20Object%20Tracking%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Phantom of the ADAS: Securing Advanced Driver-Assistance Systems from Split-Second Phantom Attacks": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Phantom+of+the+adas%3A+Securing+advanced+driver-assistance+systems+from+split-second+phantom+attacks",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Phantom%20of%20the%20ADAS%3A%20Securing%20Advanced%20Driver-Assistance%20Systems%20from%20Split-Second%20Phantom%20Attacks%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Adversarial T-Shirt! Evading Person Detectors in a Physical World": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarial+t-shirt%21+evading+person+detectors+in+a+physical+world",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Adversarial%20T-Shirt%21%20Evading%20Person%20Detectors%20in%20a%20Physical%20World%22&max_results=6",
+      "matchedTitle": "Adversarial T-shirt! Evading Person Detectors in A Physical World",
+      "arxivId": "1910.11099"
+    },
+    "Robust Physical-World Attacks on Deep Learning Visual Classification": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robust+physical-world+attacks+on+deep+learning+visual+classification",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Robust%20Physical-World%20Attacks%20on%20Deep%20Learning%20Visual%20Classification%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Robust Camera Lidar Sensor Fusion Via Deep Gated Information Fusion Network": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robust+camera+lidar+sensor+fusion+via+deep+gated+information+fusion+network",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Robust%20Camera%20Lidar%20Sensor%20Fusion%20Via%20Deep%20Gated%20Information%20Fusion%20Network%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "CAMOU: Learning Physical Vehicle Camouflages to Adversarially Attack Detectors in the Wild": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=CAMOU%3A+Learning+physical+vehicle+camouflages+to+adversarially+attack+detectors+in+the+wild",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22CAMOU%3A%20Learning%20Physical%20Vehicle%20Camouflages%20to%20Adversarially%20Attack%20Detectors%20in%20the%20Wild%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "AOD-Net: All-in-One Dehazing Network": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Aod-net%3A+All-in-one+dehazing+network",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22AOD-Net%3A%20All-in-One%20Dehazing%20Network%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Hierarchical+Attacks+for+Multi-Modal+Multi-Agent+Reasoning",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Hierarchical%20Attacks%20for%20Multi-Modal%20Multi-Agent%20Reasoning%22&max_results=6",
+      "matchedTitle": "Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning",
+      "arxivId": "2605.13213"
+    },
+    "RoboRebound: Multi-Robot System Defense with Bounded-Time Interaction": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=RoboRebound",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22RoboRebound%3A%20Multi-Robot%20System%20Defense%20with%20Bounded-Time%20Interaction%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A Systematic Literature Review on Multi-Robot Task Allocation": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Systematic+Literature+Review+on+Multi-Robot+Task+Allocation",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Systematic%20Literature%20Review%20on%20Multi-Robot%20Task%20Allocation%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Robot swarms neutralize harmful Byzantine robots using a blockchain-based token economy": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robot+swarms+neutralize+harmful+Byzantine+robots+using+a+blockchain-based+token+economy",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Robot%20swarms%20neutralize%20harmful%20Byzantine%20robots%20using%20a%20blockchain-based%20token%20economy%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Resilient Distributed Diffusion for Multi-Robot Systems Using Centerpoint": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Resilient+Distributed+Diffusion+for+Multi-Robot+Systems+Using+Centerpoint",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Resilient%20Distributed%20Diffusion%20for%20Multi-Robot%20Systems%20Using%20Centerpoint%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Blockchain Technology Secures Robot Swarms: A Comparison of Consensus Protocols and Their Resilience to Byzantine Robots": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Blockchain+Technology+Secures+Robot+Swarms%3A+A+Comparison+of+Consensus+Protocols+and+Their+Resilience+to+Byzantine+Robots",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Blockchain%20Technology%20Secures%20Robot%20Swarms%3A%20A%20Comparison%20of%20Consensus%20Protocols%20and%20Their%20Resilience%20to%20Byzantine%20Robots%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "VestaBench: An Embodied Benchmark for Safe Long-Horizon Planning Under Multi-Constraint and Adversarial Settings": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=VestaBench%3A+An+Embodied+Benchmark+for+Safe+Long-Horizon+Planning",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22VestaBench%3A%20An%20Embodied%20Benchmark%20for%20Safe%20Long-Horizon%20Planning%20Under%20Multi-Constraint%20and%20Adversarial%20Settings%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "M3Bench: Benchmarking Whole-Body Motion Generation for Mobile Manipulation in 3D Scenes": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=M3Bench%3A+Benchmarking+Whole-Body+Motion+Generation+for+Mobile+Manipulation+in+3D+Scenes",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22M3Bench%3A%20Benchmarking%20Whole-Body%20Motion%20Generation%20for%20Mobile%20Manipulation%20in%203D%20Scenes%22&max_results=6",
+      "matchedTitle": "M3Bench: Benchmarking Whole-body Motion Generation for Mobile Manipulation in 3D Scenes",
+      "arxivId": "2410.06678"
+    },
+    "Generating Explanations for Embodied Action Decision from Visual Observation": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Generating+Explanations+for+Embodied+Action+Decision+from+Visual+Observation",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Generating%20Explanations%20for%20Embodied%20Action%20Decision%20from%20Visual%20Observation%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "iGibson 2.0: Object-Centric Simulation for Robot Learning of Everyday Household Tasks": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=iGibson+2.0%3A+Object-Centric+Simulation+for+Robot+Learning+of+Everyday+Household+Tasks",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22iGibson%202.0%3A%20Object-Centric%20Simulation%20for%20Robot%20Learning%20of%20Everyday%20Household%20Tasks%22&max_results=6",
+      "matchedTitle": "iGibson 2.0: Object-Centric Simulation for Robot Learning of Everyday Household Tasks",
+      "arxivId": "2108.03272"
+    },
+    "PyBullet, a Python Module for Physics Simulation for Games, Robotics and Machine Learning": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=PyBullet%2C+a+Python+Module+for+Physics+Simulation+for+Games%2C+Robotics+and+Machine+Learning",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22PyBullet%2C%20a%20Python%20Module%20for%20Physics%20Simulation%20for%20Games%2C%20Robotics%20and%20Machine%20Learning%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "MuJoCo: A Physics Engine for Model-Based Control": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=MuJoCo%3A+A+Physics+Engine+for+Model-Based+Control",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22MuJoCo%3A%20A%20Physics%20Engine%20for%20Model-Based%20Control%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Design and Use Paradigms for Gazebo, an Open-Source Multi-Robot Simulator": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Design+and+Use+Paradigms+for+Gazebo%2C+an+Open-Source+Multi-Robot+Simulator",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Design%20and%20Use%20Paradigms%20for%20Gazebo%2C%20an%20Open-Source%20Multi-Robot%20Simulator%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Isaac Sim": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Isaac+Sim",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Isaac%20Sim%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Universal Closed-Box Adversarial Attack for Trajectory Representation via Controlling High-Dimensional Iterative Constraints": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Universal+Closed-Box+Adversarial+Attack+for+Trajectory+Representation+via+Controlling+High-Dimensional+Iterative+Constraints",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Universal%20Closed-Box%20Adversarial%20Attack%20for%20Trajectory%20Representation%20via%20Controlling%20High-Dimensional%20Iterative%20Constraints%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Avatar: Adversarial Vehicle Trajectory Attack Targeting Autonomous Driving Planner": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Avatar%3A+Adversarial+Vehicle+Trajectory+Attack+Targeting+Autonomous+Driving+Planner",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Avatar%3A%20Adversarial%20Vehicle%20Trajectory%20Attack%20Targeting%20Autonomous%20Driving%20Planner%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Exploring Adversarial Obstacle Attacks in Search-Based Path Planning for Autonomous Mobile Robots": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Exploring+Adversarial+Obstacle+Attacks+in+Search-Based+Path+Planning+for+Autonomous+Mobile+Robots",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Exploring%20Adversarial%20Obstacle%20Attacks%20in%20Search-Based%20Path%20Planning%20for%20Autonomous%20Mobile%20Robots%22&max_results=6",
+      "matchedTitle": "Exploring Adversarial Obstacle Attacks in Search-based Path Planning for Autonomous Mobile Robots",
+      "arxivId": "2504.06154"
+    },
+    "Adversarial Attack on Trajectory Prediction for Autonomous Vehicles with Generative Adversarial Networks": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarial+Attack+on+Trajectory+Prediction+for+Autonomous+Vehicles+with+Generative+Adversarial+Networks",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Adversarial%20Attack%20on%20Trajectory%20Prediction%20for%20Autonomous%20Vehicles%20with%20Generative%20Adversarial%20Networks%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Characterizing Physical Adversarial Attacks on Robot Motion Planners": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Characterizing+Physical+Adversarial+Attacks+on+Robot+Motion+Planners",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Characterizing%20Physical%20Adversarial%20Attacks%20on%20Robot%20Motion%20Planners%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Robust Inverse Constrained Reinforcement Learning under Model Misspecification": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robust+inverse+constrained+reinforcement+learning+under+model+misspecification",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Robust%20Inverse%20Constrained%20Reinforcement%20Learning%20under%20Model%20Misspecification%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "NavSim: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=NavSim%3A+Data-Driven+Non-Reactive+Autonomous+Vehicle+Simulation+and+Benchmarking",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22NavSim%3A%20Data-Driven%20Non-Reactive%20Autonomous%20Vehicle%20Simulation%20and%20Benchmarking%22&max_results=6",
+      "matchedTitle": "NAVSIM: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking",
+      "arxivId": "2406.15349"
+    },
+    "Bench2Drive: Towards Multi-Ability Benchmarking of Closed-Loop End-to-End Autonomous Driving": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Bench2Drive%3A+Towards+Multi-Ability+Benchmarking+of+Closed-Loop+End-to-End+Autonomous+Driving",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Bench2Drive%3A%20Towards%20Multi-Ability%20Benchmarking%20of%20Closed-Loop%20End-to-End%20Autonomous%20Driving%22&max_results=6",
+      "matchedTitle": "Bench2Drive: Towards Multi-Ability Benchmarking of Closed-Loop End-To-End Autonomous Driving",
+      "arxivId": "2406.03877"
+    },
+    "Robustness of Trajectory Prediction Models Under Map-Based Attacks": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robustness+of+trajectory+prediction+models+under+map-based+attacks",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Robustness%20of%20Trajectory%20Prediction%20Models%20Under%20Map-Based%20Attacks%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Scenic: A Language for Scenario Specification and Data Generation": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Scenic%3A+A+Language+for+Scenario+Specification+and+Data+Generation",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Scenic%3A%20A%20Language%20for%20Scenario%20Specification%20and%20Data%20Generation%22&max_results=6",
+      "matchedTitle": "Scenic: A Language for Scenario Specification and Data Generation",
+      "arxivId": "2010.06580"
+    },
+    "MetaDrive: Composing Diverse Driving Scenarios for Generalizable Reinforcement Learning": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=MetaDrive%3A+Composing+Diverse+Driving+Scenarios+for+Generalizable+Reinforcement+Learning",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22MetaDrive%3A%20Composing%20Diverse%20Driving%20Scenarios%20for%20Generalizable%20Reinforcement%20Learning%22&max_results=6",
+      "matchedTitle": "MetaDrive: Composing Diverse Driving Scenarios for Generalizable Reinforcement Learning",
+      "arxivId": "2109.12674"
+    },
+    "Intelligent driving intelligence test for autonomous vehicles with naturalistic and adversarial environment": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Intelligent+driving+intelligence+test+for+autonomous+vehicles+with+naturalistic+and+adversarial+environment",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Intelligent%20driving%20intelligence%20test%20for%20autonomous%20vehicles%20with%20naturalistic%20and%20adversarial%20environment%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "CommonRoad-RL: A Configurable Reinforcement Learning Environment for Motion Planning of Autonomous Vehicles": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=CommonRoad-RL%3A+A+Configurable+Reinforcement+Learning+Environment+for+Motion+Planning+of+Autonomous+Vehicles",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22CommonRoad-RL%3A%20A%20Configurable%20Reinforcement%20Learning%20Environment%20for%20Motion%20Planning%20of%20Autonomous%20Vehicles%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "SUMMIT: A Simulator for Urban Driving in Massive Mixed Traffic": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=SUMMIT%3A+A+Simulator+for+Urban+Driving+in+Massive+Mixed+Traffic",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22SUMMIT%3A%20A%20Simulator%20for%20Urban%20Driving%20in%20Massive%20Mixed%20Traffic%22&max_results=6",
+      "matchedTitle": "SUMMIT: A Simulator for Urban Driving in Massive Mixed Traffic",
+      "arxivId": "1911.04074"
+    },
+    "Microscopic Traffic Simulation Using SUMO": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Microscopic+Traffic+Simulation+Using+SUMO",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Microscopic%20Traffic%20Simulation%20Using%20SUMO%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "An Environment for Autonomous Driving Decision-Making": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=An+Environment+for+Autonomous+Driving+Decision-Making",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22An%20Environment%20for%20Autonomous%20Driving%20Decision-Making%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "CARLA: An Open Urban Driving Simulator": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=CARLA%3A+An+Open+Urban+Driving+Simulator",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22CARLA%3A%20An%20Open%20Urban%20Driving%20Simulator%22&max_results=6",
+      "matchedTitle": "CARLA: An Open Urban Driving Simulator",
+      "arxivId": "1711.03938"
+    },
+    "A Survey on Predictive Safety in Embodied AI": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Survey+on+Predictive+Safety+in+Embodied+AI",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Survey%20on%20Predictive%20Safety%20in%20Embodied%20AI%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Adversarial Robustness in Embodied AI: A Closed-Loop Perspective on Attacks and Defenses": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarial+Robustness+in+Embodied+AI%3A+A+Closed-Loop+Perspective+on+Attacks+and+Defenses",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Adversarial%20Robustness%20in%20Embodied%20AI%3A%20A%20Closed-Loop%20Perspective%20on%20Attacks%20and%20Defenses%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Navigating Embodied Intelligence: Enabling Technologies, Security and Privacy, and Emerging Trends": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Navigating+Embodied+Intelligence%3A+Enabling+Technologies%2C+Security+and+Privacy%2C+and+Emerging+Trends",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Navigating%20Embodied%20Intelligence%3A%20Enabling%20Technologies%2C%20Security%20and%20Privacy%2C%20and%20Emerging%20Trends%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "AI Agents under Threat: A Survey of Key Security Challenges and Future Pathways": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=AI+Agents+under+Threat%3A+A+Survey+of+Key+Security+Challenges+and+Future+Pathways",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22AI%20Agents%20under%20Threat%3A%20A%20Survey%20of%20Key%20Security%20Challenges%20and%20Future%20Pathways%22&max_results=6",
+      "matchedTitle": "AI Agents Under Threat: A Survey of Key Security Challenges and Future Pathways",
+      "arxivId": "2406.02630"
+    },
+    "Towards Safe and Trustworthy Embodied AI: Foundations, Status, and Prospects": {
+      "status": "no_exact_match",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Towards+Safe+and+Trustworthy+Embodied+AI%3A+Foundations%2C+Status%2C+and+Prospects",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Towards%20Safe%20and%20Trustworthy%20Embodied%20AI%3A%20Foundations%2C%20Status%2C%20and%20Prospects%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "SoK: Rethinking Sensor Spoofing Attacks against Robotic Vehicles from a Systematic View": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=SoK%3A+Rethinking+Sensor+Spoofing+Attacks+against+Robotic+Vehicles+from+a+Systematic+View",
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22SoK%3A%20Rethinking%20Sensor%20Spoofing%20Attacks%20against%20Robotic%20Vehicles%20from%20a%20Systematic%20View%22&max_results=6",
+      "matchedTitle": "SoK: Rethinking Sensor Spoofing Attacks against Robotic Vehicles from a Systematic View",
+      "arxivId": "2205.04662"
+    },
+    "Adversarial Attacks on Large Language Model-Based Systems and Mitigating Strategies: A Case Study on ChatGPT": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Adversarial%20Attacks%20on%20Large%20Language%20Model-Based%20Systems%20and%20Mitigating%20Strategies%3A%20A%20Case%20Study%20on%20ChatGPT%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "An LLM-Assisted Easy-to-Trigger Poisoning Attack on Code Completion Models: Injecting Disguised Vulnerabilities Against Strong Detection": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22An%20LLM-Assisted%20Easy-to-Trigger%20Poisoning%20Attack%20on%20Code%20Completion%20Models%3A%20Injecting%20Disguised%20Vulnerabilities%20Against%20Strong%20Detection%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A Gradient Control Method for Backdoor Attacks on Parameter-Efficient Tuning": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20Gradient%20Control%20Method%20for%20Backdoor%20Attacks%20on%20Parameter-Efficient%20Tuning%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Maximum Entropy Loss, the Silver Bullet Targeting Backdoor Attacks in Pre-Trained Language Models": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Maximum%20Entropy%20Loss%2C%20the%20Silver%20Bullet%20Targeting%20Backdoor%20Attacks%20in%20Pre-Trained%20Language%20Models%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "A benchmark for semantic sensitive information in llms outputs": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22A%20benchmark%20for%20semantic%20sensitive%20information%20in%20llms%20outputs%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Uncovering Latent Memories: Assessing Data Leakage and Memorization Patterns in Large Language Models": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Uncovering%20Latent%20Memories%3A%20Assessing%20Data%20Leakage%20and%20Memorization%20Patterns%20in%20Large%20Language%20Models%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Nmtsloth: Understanding and Testing Efficiency Degradation of Neural Machine Translation Systems": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Nmtsloth%3A%20Understanding%20and%20Testing%20Efficiency%20Degradation%20of%20Neural%20Machine%20Translation%20Systems%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Semantic-guided prompt organization for universal goal hijacking against llms": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Semantic-guided%20prompt%20organization%20for%20universal%20goal%20hijacking%20against%20llms%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "TASTLE: Distract Large Language Models for Automatic Jailbreak Attack": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22TASTLE%3A%20Distract%20Large%20Language%20Models%20for%20Automatic%20Jailbreak%20Attack%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "MasterKey: Automated Jailbreaking of Large Language Model Chatbots": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22MasterKey%3A%20Automated%20Jailbreaking%20of%20Large%20Language%20Model%20Chatbots%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Robust Safety Classifier Against Jailbreaking Attacks: Adversarial Prompt Shield": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Robust%20Safety%20Classifier%20Against%20Jailbreaking%20Attacks%3A%20Adversarial%20Prompt%20Shield%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "MoGU: A Framework for Enhancing Safety of LLMs While Preserving Their Usability": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22MoGU%3A%20A%20Framework%20for%20Enhancing%20Safety%20of%20LLMs%20While%20Preserving%20Their%20Usability%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "Beyond One-Preference-for-All: Multi-Objective Direct Preference Optimization": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22Beyond%20One-Preference-for-All%3A%20Multi-Objective%20Direct%20Preference%20Optimization%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    },
+    "RLCD: Reinforcement Learning from Contrastive Distillation for LM Alignment": {
+      "status": "no_exact_match",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "queryUrl": "https://export.arxiv.org/api/query?search_query=ti%3A%22RLCD%3A%20Reinforcement%20Learning%20from%20Contrastive%20Distillation%20for%20LM%20Alignment%22&max_results=6",
+      "matchedTitle": null,
+      "arxivId": null
+    }
+  },
+  "paperCount": 196,
+  "resolvedCount": 29
+}

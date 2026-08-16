@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { leaderboards } from "@/data/site";
+import { Locale, t } from "@/lib/i18n";
 
-export function LeaderboardView() {
+export function LeaderboardView({ locale }: { locale: Locale }) {
   const [tableId, setTableId] = useState(leaderboards.tables[0].id);
   const table = leaderboards.tables.find((item) => item.id === tableId)!;
   const [boardTitle, setBoardTitle] = useState(table.boards[0].title);
@@ -25,7 +26,7 @@ export function LeaderboardView() {
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div
-          aria-label="Evaluation setting"
+          aria-label={t(locale, "Evaluation setting")}
           className="inline-flex rounded-full border border-[#e3e8f2] bg-[#f6f8fc] p-1"
           role="group"
         >
@@ -41,11 +42,13 @@ export function LeaderboardView() {
               onClick={() => selectTable(item.id)}
               type="button"
             >
-              {item.label}
+              {t(locale, item.label)}
             </button>
           ))}
         </div>
-        <p className="text-sm text-[#667085]">{totalRows} scored entries in total</p>
+        <p className="text-sm text-[#667085]">
+          {totalRows} {t(locale, "scored entries in total")}
+        </p>
       </div>
 
       <div className="flex flex-wrap gap-2">
@@ -61,7 +64,7 @@ export function LeaderboardView() {
             onClick={() => setBoardTitle(item.title)}
             type="button"
           >
-            {item.title}{" "}
+            {t(locale, item.title)}{" "}
             <span className="text-[#98a2b3]">{item.rows.length}</span>
           </button>
         ))}
@@ -70,10 +73,10 @@ export function LeaderboardView() {
       <div className="subpage-main-table-card">
         <div className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
           <h2 className="text-[1.7rem] font-semibold tracking-[-0.05em] text-[#111827]">
-            {board.title}
+            {t(locale, board.title)}
           </h2>
           <span className="text-sm text-[#667085]">
-            {table.label} · {table.columns.scoreGroup}
+            {t(locale, table.label)} · {t(locale, table.columns.scoreGroup)}
           </span>
         </div>
 
@@ -81,11 +84,11 @@ export function LeaderboardView() {
           <table className="w-full min-w-[720px] border-collapse text-left">
             <thead>
               <tr className="border-b border-[#edf0f5] text-xs font-semibold uppercase tracking-[0.08em] text-[#98a2b3]">
-                <th className="w-16 pb-3 pr-3">{table.columns.rank}</th>
-                <th className="pb-3 pr-3">{table.columns.model}</th>
-                <th className="w-28 pb-3 pr-3 text-right">{table.columns.count}</th>
-                <th className="w-36 pb-3 pr-3 text-right">{table.columns.scoreA}</th>
-                <th className="w-36 pb-3 text-right">{table.columns.scoreB}</th>
+                <th className="w-16 pb-3 pr-3">{t(locale, table.columns.rank)}</th>
+                <th className="pb-3 pr-3">{t(locale, table.columns.model)}</th>
+                <th className="w-28 pb-3 pr-3 text-right">{t(locale, table.columns.count)}</th>
+                <th className="w-36 pb-3 pr-3 text-right">{t(locale, table.columns.scoreA)}</th>
+                <th className="w-36 pb-3 text-right">{t(locale, table.columns.scoreB)}</th>
               </tr>
             </thead>
             <tbody>

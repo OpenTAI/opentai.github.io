@@ -18,15 +18,16 @@ npm run dev
 | Route | Contents |
 | --- | --- |
 | `/` | Discover — site-wide search, newsletter signup, trending, latest releases |
-| `/benchmarks` | Flagship collection, 31 entries across 4 domains |
+| `/benchmarks` | Flagship collection, 54 entries; primary filters are LLMs, Agents, Embodied AI |
 | `/benchmarks/[slug]` | Per-benchmark page: description, code, papers, leaderboard, curation gaps |
 | `/models` | Guard models, safety-aligned models, detectors, agents |
-| `/datasets` | Safety instruction, preference, red team, agent trajectory, adversarial data |
+| `/datasets` | Verified training-ready datasets from the approved surveys and primary sources; charts update automatically by domain and year |
 | `/tools` | Libraries, frameworks, attack/defense toolkits |
-| `/papers` | 1,050-paper research library — domain, then research/survey, then area |
+| `/papers` | 772-paper library — LLMs / Agents / Embodied AI, then Research / Survey |
 | `/leaderboard` | 77 scored entries across 9 adversarial-robustness boards |
 | `/community` | Partner institutions |
 | `/about` | Mission, contact, coverage summary |
+| `/zh/...` | Chinese interface and descriptions; paper titles, abstracts, and authors stay English |
 
 ## Content pipeline
 
@@ -39,6 +40,9 @@ python3 scripts/parse-awesome.py       # parse the large-model-safety list
 python3 scripts/parse-embodied.py      # parse the embodied-ai-safety list
 python3 scripts/resolve-paper-links.py # look up missing arXiv ids (slow, resumable)
 python3 scripts/merge-papers.py        # merge both lists, tag by domain, dedupe
+python3 scripts/build-paper-digest-manifest.py       # map approved papers to exact full text
+python3 scripts/extract-paper-dataset-candidates.py  # extract review candidates, not publishable facts
+python3 scripts/consolidate-paper-dataset-audits.py  # merge only audited training-data decisions
 python3 scripts/fetch-benchmark-candidates.py  # resolve benchmark citations to repos
 python3 scripts/verify-benchmark-repos.py      # confirm each match against its README
 python3 scripts/generate-site.py       # rebuild src/data/*.ts
@@ -48,11 +52,19 @@ python3 scripts/generate-site.py       # rebuild src/data/*.ts
 | --- | --- |
 | `scripts/data/home.json` | Entry names, descriptions, links, tags, images — from `OpenTAI/opentai.github.io` → `content/pages/home.md` |
 | `scripts/data/leaderboards.json` | 77 scored leaderboard rows — from the same repo's `content/pages/leaderboards.md` |
-| `scripts/data/awesome.md` | Bibliography from `xingjunm/Awesome-Large-Model-Safety` — LLMs, Agents, Vision & Multimodal |
-| `scripts/data/embodied.md` | Bibliography from `x-zheng16/Awesome-Embodied-AI-Safety` — Embodied AI |
-| `scripts/data/opentai-papers.json` | OpenTAI's own six papers; three appear in neither survey list |
+| `scripts/data/awesome.md` | Bibliography from `xingjunm/Awesome-Large-Model-Safety` — the approved LLMs and Agents chapters plus Agent Safety Benchmarks |
+| `scripts/data/embodied.md` | Bibliography from `x-zheng16/Awesome-Embodied-AI-Safety` — Embodied AI research, surveys, and its explicit Benchmarks & Datasets section |
+| `scripts/data/training-datasets.json` | 155 audited Dataset inclusions. Each row records primary-source training use or an explicit train/validation split, plus a verified public data URL |
+| `scripts/data/paper-dataset-mentions.json` | 570 audited paper-level training uses with the exact citing-paper identity and evidence text |
+| `scripts/data/paper-dataset-audits/` | Domain audits, exact-title/PDF addenda, official-link verification, and explicit quality corrections |
+| `scripts/data/dataset-candidates.json` | Entries from the embodied survey's mixed Benchmarks & Datasets section; primary-source evidence determines whether each belongs in Datasets or Benchmarks |
+| `scripts/data/llm-safety-resources.json` | The 18 LLM datasets and benchmarks recorded in Table 6 of the Safety at Scale survey linked by the large-model list, with an evidence-backed Datasets/Benchmarks split |
+| `scripts/data/llm-benchmark-datasets.json` | Verified public question/task files attached to Table 6 benchmarks; retained as benchmark evidence, not automatically treated as training datasets |
+| `scripts/data/agent-safety-datasets.json` | Verified public data paths attached to Safety at Scale Table 14 benchmarks; retained as benchmark evidence, not automatically treated as training datasets |
+| `scripts/data/benchmark-datasets.json` | Approved-list benchmarks whose official projects expose public data; currently HASARD from the embodied-safety sources |
 | `scripts/data/benchmark-overrides.json` | Hand-checked verdicts where automatic repository matching went wrong |
 | `scripts/data/benchmark-curation.json` | Hand-curated Dataset / Metrics / Baselines / Leaderboard per benchmark, each field tagged with the source it was read from |
+| `scripts/data/safety-at-scale-benchmark-audit.json` | Chapter-wide Safety at Scale audit. Approved rows have primary-source and official-README evidence; excluded auxiliary benchmarks and out-of-scope chapters retain explicit reasons |
 | GitHub REST API | Stars, forks, language, licence, last-push, topics |
 | arXiv API | Authors, posting dates, abstracts, primary category |
 | Hugging Face API | Download counts, likes, licence, size category |
@@ -66,6 +78,14 @@ python3 scripts/generate-site.py       # rebuild src/data/*.ts
 - Papers get an arXiv link only on a near-exact title match.
 - Anything that cannot be verified is left empty and labelled, never filled in
   with a plausible placeholder.
+- The current training-data audit publishes 155 unique datasets: 86 associated
+  with LLM papers, 16 with Agent papers, and 60 with Embodied AI papers (seven
+  span more than one domain). BooksCorpus, ShareGPT, and the retired Kaggle Fake
+  News competition dataset remain unresolved because no currently reachable,
+  authoritative public release could be assigned without substituting a
+  different or third-party copy. Another 138 approved-list papers have no exact public full
+  text available to this pipeline, so they are recorded as a coverage gap rather
+  than guessed from titles or abstracts.
 - Hand-curated benchmark fields carry a `source` string that is rendered on the
   page. If you add one, read it out of a primary source and say which.
 
@@ -96,19 +116,34 @@ site.
   `bboylyg/BackdoorLLM`. The site's spelling was kept.
 - `content/pages/newslist.md` upstream contains one item whose body is
   placeholder lorem-ipsum text, so it was not ported.
-- Half of the large-model-safety list (vision, VLP, VLM, diffusion — 288
-  papers) belongs to none of the three domains the team named, so a fourth,
-  **Vision & Multimodal**, was added rather than dropping them.
-- Neither survey list has a datasets section, so Datasets still holds only
-  OpenTAI's own eight entries.
-- The Survey tab is small by construction: both lists collect the papers a
-  survey reviews, not surveys themselves. 14 of 1,050 are surveys.
+- The site publishes only the three domains the team approved: **LLMs**,
+  **Agents**, and **Embodied AI**. Vision, VLP, VLM, and diffusion chapters
+  remain in the source snapshot but are outside the Papers scope.
+- The legacy OpenTAI homepage's eight featured datasets are intentionally not
+  part of the rebuilt Datasets collection. Dataset scope is now limited to the
+  two team-approved source lists, surveys explicitly linked by those lists,
+  and verified official public data locations.
+- The embodied source has an explicit mixed **Benchmarks & Datasets** section,
+  while the large-model repository links to the **Safety at Scale** survey's
+  LLM and Agent tables. The site does not copy that mixed labeling blindly:
+  **Datasets** requires explicit evidence of training, fine-tuning, alignment,
+  or classifier-training use; public test questions, tasks, cases, or evaluation
+  environments stay in **Benchmarks**. An item may appear in both only when the
+  official source releases a distinct training split as well as an evaluation
+  benchmark. Every inclusion and its evidence is recorded in
+  `scripts/data/training-datasets.json`.
+- `h4rm3l` is listed inside the source's Agent Safety Benchmarks section, but
+  its own project defines it as an LLM-safety jailbreak benchmark. It is kept
+  under LLMs; the source heading alone is not used as evidence for its domain.
+- The Survey tab is small by construction: both lists primarily collect the
+  papers a survey reviews. 14 of 772 published entries are surveys.
 - Governance, contributing, and citation on the About page are **drafts**,
   marked as such on the page itself. They need confirming or rewriting by the
   OpenTAI team. Workshops, challenges, and contributor content on Community
   still have no source at all.
-- Chinese-language fields (`titlezh`) exist upstream but the language switcher
-  is commented out; the rebuild is English-only.
+- Chinese pages are statically exported under `/zh`. Interface text and
+  descriptions are localized; paper titles, abstracts, author names, and
+  publication metadata stay English.
 
 ## Deployment
 

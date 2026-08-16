@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { LibraryPaper, paperDomains, paperGroups, paperLibrary } from "@/data/papers";
+import { Locale, t } from "@/lib/i18n";
 
 const PAGE = 30;
 
@@ -79,9 +80,9 @@ function Chip({
   );
 }
 
-export function PaperLibrary() {
+export function PaperLibrary({ locale }: { locale: Locale }) {
   const [domain, setDomain] = useState<string | null>(null);
-  const [kind, setKind] = useState<string | null>(null);
+  const [kind, setKind] = useState<string>("research");
   const [group, setGroup] = useState<string | null>(null);
   const [section, setSection] = useState<string | null>(null);
   const [query, setQuery] = useState("");
@@ -131,15 +132,15 @@ export function PaperLibrary() {
     <section className="subpage-main-table-card">
       <div className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
         <h2 className="text-[1.7rem] font-semibold tracking-[-0.05em] text-[#111827]">
-          Research library
+          {t(locale, "Research library")}
         </h2>
         <p className="text-sm text-[#667085]">
-          {paperLibrary.length.toLocaleString()} papers · {LINKED.toLocaleString()} with links
+          {paperLibrary.length.toLocaleString()} {t(locale, "papers")} · {LINKED.toLocaleString()} {t(locale, "with links")}
         </p>
       </div>
 
       <p className="mb-5 text-sm leading-6 text-[#667085]">
-        Merged from{" "}
+        {t(locale, "Merged from")}{" "}
         <Link
           className="text-[#4f46e5] hover:underline"
           href="https://github.com/xingjunm/Awesome-Large-Model-Safety"
@@ -148,7 +149,7 @@ export function PaperLibrary() {
         >
           Awesome-Large-Model-Safety
         </Link>{" "}
-        and{" "}
+        {t(locale, "and")}{" "}
         <Link
           className="text-[#4f46e5] hover:underline"
           href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety"
@@ -157,14 +158,13 @@ export function PaperLibrary() {
         >
           Awesome-Embodied-AI-Safety
         </Link>
-        . Titles, authors and venues come from those lists. Surveys are those the embodied list
-        files as surveys, plus titles that name themselves one.
+        . {t(locale, "Titles, authors and venues come from those lists. Surveys are those the embodied list files as surveys, plus titles that name themselves one.")}
       </p>
 
       <div className="space-y-3 border-b border-[#eceff5] pb-5">
         <div className="flex flex-wrap gap-2">
           <Chip active={domain === null} count={paperLibrary.length} onClick={() => reset(() => { setDomain(null); setGroup(null); setSection(null); })}>
-            All domains
+            {t(locale, "All domains")}
           </Chip>
           {paperDomains.map((name) => (
             <Chip
@@ -173,25 +173,34 @@ export function PaperLibrary() {
               count={paperLibrary.filter((p) => p.domain === name).length}
               onClick={() => reset(() => { setDomain(name); setGroup(null); setSection(null); })}
             >
-              {name}
+              {t(locale, name)}
             </Chip>
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-2">
-          <Chip active={kind === null} count={inDomain.length} onClick={() => reset(() => { setKind(null); setGroup(null); setSection(null); })} size="sm">
-            All
-          </Chip>
+        <div
+          aria-label={locale === "zh" ? "论文类型" : "Paper type"}
+          className="flex flex-wrap gap-2"
+          role="tablist"
+        >
           {KINDS.map((k) => (
-            <Chip
+            <button
               key={k.id}
-              active={kind === k.id}
-              count={inDomain.filter((p) => p.kind === k.id).length}
+              aria-selected={kind === k.id}
+              className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
+                kind === k.id
+                  ? "border-[#c7d2fe] bg-[#eef2ff] text-[#4338ca]"
+                  : "border-[#e3e8f2] bg-white text-[#475467] hover:border-[#c7d2fe]"
+              }`}
               onClick={() => reset(() => { setKind(k.id); setGroup(null); setSection(null); })}
-              size="sm"
+              role="tab"
+              type="button"
             >
-              {k.label}
-            </Chip>
+              {t(locale, k.label)}
+              <span className="text-[#98a2b3]">
+                {" "}{inDomain.filter((p) => p.kind === k.id).length}
+              </span>
+            </button>
           ))}
         </div>
 
@@ -205,7 +214,7 @@ export function PaperLibrary() {
                 onClick={() => reset(() => { setGroup(group === name ? null : name); setSection(null); })}
                 size="sm"
               >
-                {name}
+                {t(locale, name)}
               </Chip>
             ))}
           </div>
@@ -221,7 +230,7 @@ export function PaperLibrary() {
                 onClick={() => reset(() => setSection(section === name ? null : name))}
                 size="sm"
               >
-                {name}
+                {t(locale, name)}
               </Chip>
             ))}
           </div>
@@ -230,15 +239,15 @@ export function PaperLibrary() {
 
       <div className="my-5 flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-[#667085]">
-          {filtered.length.toLocaleString()} {filtered.length === 1 ? "paper" : "papers"}
+          {filtered.length.toLocaleString()} {t(locale, filtered.length === 1 ? "paper" : "papers")}
         </p>
         <div className="subpage-search-box">
           <span>⌕</span>
           <input
-            aria-label="Search the research library"
+            aria-label={t(locale, "Search the research library")}
             className="subpage-search-input"
             onChange={(event) => reset(() => setQuery(event.target.value))}
-            placeholder="Search titles, authors, venues..."
+            placeholder={t(locale, "Search titles, authors, venues...")}
             type="search"
             value={query}
           />
@@ -255,12 +264,26 @@ export function PaperLibrary() {
             >
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
                 <p className="min-w-0 flex-1 text-[0.98rem] font-medium leading-7 text-[#111827]">
-                  {paper.title}
+                  {href ? (
+                    <Link
+                      className="rounded-sm transition hover:text-[#4338ca] hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4f46e5]"
+                      href={href}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      {paper.title}
+                      <span className="sr-only">
+                        {locale === "zh" ? "（在新标签页打开论文）" : " (opens paper in a new tab)"}
+                      </span>
+                    </Link>
+                  ) : (
+                    paper.title
+                  )}
                 </p>
                 <div className="flex shrink-0 items-center gap-2">
                   {paper.kind === "survey" ? (
                     <span className="whitespace-nowrap rounded-full bg-[#ecfdf5] px-2.5 py-0.5 text-xs font-semibold text-[#047857]">
-                      Survey
+                      {t(locale, "Survey")}
                     </span>
                   ) : null}
                   {paper.venue ? (
@@ -287,13 +310,15 @@ export function PaperLibrary() {
                 <p className="mt-1 text-sm text-[#667085]">
                   {paper.authors.join(", ")}
                   {paper.authorCount > paper.authors.length
-                    ? ` +${paper.authorCount - paper.authors.length} more`
+                    ? locale === "zh"
+                      ? ` 等 ${paper.authorCount} 位作者`
+                      : ` +${paper.authorCount - paper.authors.length} more`
                     : ""}
                 </p>
               ) : null}
               <p className="mt-1 text-xs text-[#98a2b3]">
-                {paper.domain}
-                {paper.section ? ` · ${paper.section}` : ` · ${paper.group}`}
+                {t(locale, paper.domain)}
+                {paper.section ? ` · ${t(locale, paper.section)}` : ` · ${t(locale, paper.group)}`}
               </p>
             </li>
           );
@@ -302,7 +327,7 @@ export function PaperLibrary() {
 
       {filtered.length === 0 ? (
         <p className="px-4 py-8 text-center text-sm text-[#667085]">
-          No papers match “{query.trim()}”.
+          {t(locale, "No papers match")} “{query.trim()}”.
         </p>
       ) : null}
 
@@ -312,7 +337,9 @@ export function PaperLibrary() {
           onClick={() => setShown((current) => current + PAGE)}
           type="button"
         >
-          Show {Math.min(PAGE, filtered.length - shown)} more
+          {locale === "zh"
+            ? `再显示 ${Math.min(PAGE, filtered.length - shown)} 篇`
+            : `Show ${Math.min(PAGE, filtered.length - shown)} more`}
         </button>
       ) : null}
     </section>

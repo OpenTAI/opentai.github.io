@@ -10,11 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...collectionOrder.map((slug) => `/${slug}`),
     "/leaderboard",
     "/community",
-    "/about",
     ...Object.keys(benchmarkDetails).map((slug) => `/benchmarks/${slug}`),
   ];
 
-  return routes.map((route) => ({
+  const localizedRoutes = routes.flatMap((route) => [route, `/zh${route}`]);
+
+  return localizedRoutes.map((route) => ({
     url: `${SITE_URL}${route}`,
     changeFrequency: route === "" ? "daily" : "weekly",
     priority: route === "" ? 1 : 0.7,

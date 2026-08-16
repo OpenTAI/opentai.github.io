@@ -1,0 +1,167 @@
+[
+  {
+    "name": "BIPIA",
+    "year": "2023",
+    "arxivId": "2312.14197",
+    "section": "Simulation-based Benchmarks",
+    "size": "5 scenarios / 250 goals",
+    "url": "https://github.com/microsoft/BIPIA/tree/main/benchmark",
+    "classificationEvidence": "The official repository has a 'Download the dataset' section and publishes the benchmark task and attack files under benchmark/."
+  },
+  {
+    "name": "ToolEmu",
+    "year": "2023",
+    "arxivId": "2309.15817",
+    "section": "Simulation-based Benchmarks",
+    "size": "36 tools / 144 cases",
+    "url": "https://github.com/ryoungj/ToolEmu/tree/main/assets",
+    "classificationEvidence": "The official README calls the released cases a curated dataset; assets/all_cases.json and assets/all_toolkits.json are published in the repository."
+  },
+  {
+    "name": "InjecAgent",
+    "year": "2024",
+    "arxivId": "2403.02691",
+    "section": "Simulation-based Benchmarks",
+    "size": "17 user tools / 62 attacker tools / 1,054 cases",
+    "url": "https://github.com/uiuc-kang-lab/InjecAgent/tree/main/data",
+    "classificationEvidence": "The official README's Dataset section identifies the user, attacker and test-case files published under data/."
+  },
+  {
+    "name": "AgentDojo",
+    "year": "2024",
+    "arxivId": "2406.13352",
+    "section": "Simulation-based Benchmarks",
+    "size": "97 tasks / 629 cases",
+    "url": "https://github.com/ethz-spylab/agentdojo/tree/main/src/agentdojo/data/suites",
+    "classificationEvidence": "The official package publishes its benchmark suites, environments and injection vectors under src/agentdojo/data/suites/."
+  },
+  {
+    "name": "AgentHarm",
+    "year": "2024",
+    "arxivId": "2410.09024",
+    "section": "Simulation-based Benchmarks",
+    "size": "110 tasks / 11 categories",
+    "url": "https://huggingface.co/datasets/ai-safety-institute/AgentHarm",
+    "classificationEvidence": "The official repository links this Hugging Face dataset as the dataset used for evaluation."
+  },
+  {
+    "name": "RedCode",
+    "year": "2024",
+    "arxivId": "2411.07781",
+    "section": "Simulation-based Benchmarks",
+    "size": "4,000+ cases / 25 types",
+    "url": "https://github.com/AI-secure/RedCode/tree/main/dataset",
+    "classificationEvidence": "The official repository calls RedCode a large-scale dataset and publishes RedCode-Exec and RedCode-Gen under dataset/."
+  },
+  {
+    "name": "h4rm3l",
+    "year": "2024",
+    "arxivId": "2408.04811",
+    "section": "Simulation-based Benchmarks",
+    "size": "2,656 synthesized attacks recorded in Table 14",
+    "url": "https://github.com/mdoumbouya/h4rm3l/tree/main/experiments/experiment_130_benchmark/data",
+    "domain": "LLMs",
+    "classificationEvidence": "The official project describes an associated dataset of synthesized jailbreak attacks for LLM safety and publishes the benchmark CSV data under experiments/experiment_130_benchmark/data/."
+  },
+  {
+    "name": "R-Judge",
+    "year": "2024",
+    "arxivId": "2401.10019",
+    "section": "Simulation-based Benchmarks",
+    "size": "569 records / 27 scenarios",
+    "url": "https://github.com/Lordog/R-Judge/tree/main/data",
+    "classificationEvidence": "The official README documents the R-Judge dataset distribution and the repository publishes its interaction records under data/."
+  },
+  {
+    "name": "ToolSword",
+    "year": "2024",
+    "arxivId": "2402.10753",
+    "section": "Simulation-based Benchmarks",
+    "size": "6 scenarios / 3 stages",
+    "url": "https://github.com/Junjie-Ye/ToolSword/tree/main/data",
+    "classificationEvidence": "The official repository is labelled as data for the paper, records the data release, and publishes the scenario JSON files under data/."
+  },
+  {
+    "name": "PrivacyLens",
+    "year": "2024",
+    "arxivId": "2409.00138",
+    "section": "Simulation-based Benchmarks",
+    "size": "493 seeds / vignettes / trajectories",
+    "url": "https://huggingface.co/datasets/SALT-NLP/PrivacyLens",
+    "classificationEvidence": "The official README's Dataset section links this Hugging Face dataset and also identifies data/main_data.json in the repository."
+  },
+  {
+    "name": "SafeBench",
+    "year": "2022",
+    "arxivId": "2206.09682",
+    "section": "Real-interaction Benchmarks",
+    "size": "8 scenario templates / 100 routes / 2,352 cases",
+    "url": "https://github.com/trust-ai/SafeBench/tree/main/safebench/scenario/scenario_data",
+    "domain": "Embodied AI",
+    "classificationEvidence": "The official documentation states that scenario_data stores the routes, scenario models and adversarial attack templates used by the benchmark."
+  },
+  {
+    "name": "Agent Security Bench (ASB)",
+    "year": "2024",
+    "arxivId": "2410.02644",
+    "section": "Real-interaction Benchmarks",
+    "size": "400+ tools",
+    "url": "https://github.com/agiresearch/ASB/tree/main/data",
+    "classificationEvidence": "The official repository states that it releases code and data, and publishes the agent task records under data/."
+  },
+  {
+    "name": "SafeAgentBench",
+    "year": "2024",
+    "arxivId": "2412.13178",
+    "section": "Real-interaction Benchmarks",
+    "size": "750 tasks",
+    "url": "https://github.com/shengyin1224/SafeAgentBench/tree/main/dataset",
+    "domain": "Embodied AI",
+    "classificationEvidence": "The official README explicitly describes a 750-task dataset and links the four released task splits under dataset/."
+  },
+  {
+    "name": "Agent-SafetyBench",
+    "year": "2024",
+    "arxivId": "2412.14470",
+    "section": "Real-interaction Benchmarks",
+    "size": "349 environments / 2,000 cases",
+    "url": "https://huggingface.co/datasets/thu-coai/Agent-SafetyBench",
+    "classificationEvidence": "The official repository release note says the data is released and links this Hugging Face dataset."
+  },
+  {
+    "name": "ST-WebAgentBench",
+    "year": "2024",
+    "arxivId": "2410.06703",
+    "section": "Real-interaction Benchmarks",
+    "size": "222 tasks",
+    "url": "https://huggingface.co/datasets/ST-WebAgentBench/st-webagentbench",
+    "classificationEvidence": "The official repository links this resource with its Hugging Face Dataset badge."
+  },
+  {
+    "name": "WASP",
+    "year": "2025",
+    "arxivId": "2504.18575",
+    "section": "Real-interaction Benchmarks",
+    "size": "84 tasks / 42 scenarios / 2 environments",
+    "url": "https://github.com/facebookresearch/wasp/tree/main/webarena_prompt_injections/configs",
+    "classificationEvidence": "The official README identifies experiment_config.raw.json as the benchmark data and states that it is licensed for benchmarking purposes."
+  },
+  {
+    "name": "SafeArena",
+    "year": "2025",
+    "arxivId": "2503.04957",
+    "section": "Real-interaction Benchmarks",
+    "size": "500 safe and harmful tasks",
+    "url": "https://huggingface.co/datasets/McGill-NLP/safearena",
+    "classificationEvidence": "The official repository links this Hugging Face dataset and documents its safe.json and harm.json task splits."
+  },
+  {
+    "name": "OpenAgentSafety",
+    "year": "2025",
+    "arxivId": "2507.06134",
+    "section": "Real-interaction Benchmarks",
+    "size": "350+ multi-turn tasks",
+    "url": "https://github.com/Open-Agent-Safety/OpenAgentSafety/tree/master/workspaces",
+    "classificationEvidence": "The official repository publishes each task as a workspace with an agent instruction, environment setup and evaluator."
+  }
+]

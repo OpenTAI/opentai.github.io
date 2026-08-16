@@ -1,0 +1,93 @@
+{
+  "auditVersion": "v2-link-enrichment",
+  "domain": "OpenAlex PDF addendum",
+  "sourceArtifact": "tmp/paper-dataset-audit-v2/openalex-pdf-addendum.json",
+  "policy": "Links are accepted only when an official project or author repository, official dataset host, institutional corpus page, challenge-organizer page, or paper-linked artifact establishes the exact dataset identity. Name similarity alone is not evidence. Gated or licensed official entries are retained with the restriction stated in reason; unavailable originals are not replaced by mirrors.",
+  "summary": {
+    "total": 8,
+    "verified": 8,
+    "reject": 0
+  },
+  "datasets": [
+    {
+      "canonicalName": "SAIL search-augmented instruction-tuning corpus",
+      "status": "verified",
+      "dataUrl": "https://github.com/luohongyin/SAIL",
+      "paperUrl": "https://aclanthology.org/2023.findings-emnlp.242/",
+      "githubUrl": "https://github.com/luohongyin/SAIL",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/luohongyin/SAIL",
+      "reason": "The exact repository printed in the audited paper is owned by first author Hongyin Luo. Its README identifies SAIL, says the collected search results are provided, and documents data_prep.sh for constructing the complete search-augmented instruction training corpus used for fine-tuning. No official Hugging Face dataset release was established."
+    },
+    {
+      "canonicalName": "Stanford Alpaca 52K self-instruction corpus",
+      "status": "verified",
+      "dataUrl": "https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json",
+      "paperUrl": null,
+      "githubUrl": "https://github.com/tatsu-lab/stanford_alpaca",
+      "huggingFaceUrl": "https://huggingface.co/datasets/tatsu-lab/alpaca",
+      "evidenceUrl": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+      "reason": "Stanford CRFM's official Alpaca release links the tatsu-lab repository, whose alpaca_data.json is explicitly identified as the 52K instruction-following corpus. The matching Tatsu Lab Hugging Face dataset exposes the same 52K-row corpus. Alpaca was released as a project and repository rather than a standalone paper, so paperUrl is left null."
+    },
+    {
+      "canonicalName": "AIR binaural room impulse response database",
+      "status": "verified",
+      "dataUrl": "https://www.iks.rwth-aachen.de/fileadmin/user_upload/downloads/forschung/tools-downloads/air_database_release_1_4.zip",
+      "paperUrl": "https://doi.org/10.1109/ICDSP.2009.5201259",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.iks.rwth-aachen.de/en/research/tools-downloads/databases/aachen-impulse-response-database/",
+      "reason": "RWTH Aachen IKS's official AIR page describes the binaural room impulse responses, cites the 2009 database paper, and provides the AIR Database v1.4 archive. The paper DOI resolves the same Jeub, Schaefer, and Vary database publication."
+    },
+    {
+      "canonicalName": "MARDY database",
+      "status": "verified",
+      "dataUrl": "https://www.imperial.ac.uk/a-z-research/speech-audio-processing/resources/",
+      "paperUrl": "https://www.iwaenc.org/proceedings/2006/pdf/A33.pdf",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.imperial.ac.uk/a-z-research/speech-audio-processing/resources/",
+      "reason": "Imperial College London's Speech and Audio Processing Lab currently lists MARDY by its exact expansion, Multichannel Acoustic Reverberation Database at York, under Data. The official IWAENC proceedings PDF is the cited MARDY evaluation paper. Because the historical archive URL is not established as a current first-party download, the institutional resource page is retained as the reliable public entry instead of substituting a mirror."
+    },
+    {
+      "canonicalName": "REVERB Challenge room impulse response dataset",
+      "status": "verified",
+      "dataUrl": "https://reverb2014.audiolabs-erlangen.de/download.html",
+      "paperUrl": "https://doi.org/10.1109/WASPAA.2013.6701894",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://reverb2014.audiolabs-erlangen.de/index.html",
+      "reason": "The REVERB Challenge organizers' site identifies the challenge and its canonical paper, while the official download page supplies the organizer preparation package and access instructions. The speech corpora required to assemble the challenge data must now be obtained from LDC, so this is a verified but licensed/gated access path rather than an unrestricted download."
+    },
+    {
+      "canonicalName": "RWCP sound scene database",
+      "status": "verified",
+      "dataUrl": "https://www.nii.ac.jp/dsc/idr/speech/submit/RWCP-SSD.html",
+      "paperUrl": "https://aclanthology.org/L00-1264/",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://research.nii.ac.jp/src/RWCP-SSD.html",
+      "reason": "Japan's National Institute of Informatics identifies RWCP-SSD, lists its fixed- and moving-source impulse responses and sound-scene recordings, and links the current NII-IDR application form. Access is free for research and development but requires the institutional application and agreement described by NII. The ACL Anthology record is the exact LREC 2000 database paper cited in the audit."
+    },
+    {
+      "canonicalName": "Texas Spoofing Test Battery (TEXBAT)",
+      "status": "verified",
+      "dataUrl": "https://rnl-data.ae.utexas.edu/datastore/texbat/",
+      "paperUrl": "https://radionavlab.ae.utexas.edu/images/stories/files/papers/tbION_for_distribution.pdf",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://radionavlab.ae.utexas.edu/texbat/",
+      "reason": "The University of Texas Radionavigation Laboratory's official TEXBAT page describes versions 1.0 and 1.1, links the UT-hosted data directory and the original TEXBAT paper, and grants research use while asking users not to redistribute the recordings. This establishes the exact battery used by the audited GNSS paper, not merely a similarly named spoofing dataset."
+    },
+    {
+      "canonicalName": "UnRocker Resonant Sensor Dataset (SITL/HITL)",
+      "status": "verified",
+      "dataUrl": "https://github.com/jinseobjeong/UnRocker/tree/main/Dataset",
+      "paperUrl": "https://doi.org/10.14722/ndss.2023.24112",
+      "githubUrl": "https://github.com/jinseobjeong/UnRocker",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://sites.google.com/view/unrocker/",
+      "reason": "The audited NDSS paper prints the UnRocker project URL and states that its code and experimental data were released. First author Jinseob Jeong's repository links that project, cites the same NDSS paper, documents SITL/HITL generation, and contains a Dataset directory with the released HITL sensor data. No official Hugging Face release was established."
+    }
+  ]
+}

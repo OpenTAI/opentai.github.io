@@ -1,22 +1,5 @@
-import {
-  DiscoverCollections,
-  DiscoverHero,
-  DiscoverLatest,
-  DiscoverSubscribe,
-  DiscoverTrending,
-} from "@/components/discover";
-import { SiteShell } from "@/components/site-shell";
+import { DiscoverPageView } from "@/components/discover-page-view";
 
 export default function Discover() {
-  return (
-    <SiteShell>
-      <div className="space-y-8 pb-8">
-        <DiscoverHero />
-        <DiscoverSubscribe />
-        <DiscoverTrending />
-        <DiscoverLatest />
-        <DiscoverCollections />
-      </div>
-    </SiteShell>
-  );
+  return <DiscoverPageView locale="en" />;
 }

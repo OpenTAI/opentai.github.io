@@ -78,8 +78,8 @@
     },
     "BlackdoorLLM": {
       "repo": "bboylyg/BackdoorLLM",
-      "stars": 322,
-      "forks": 47,
+      "stars": 324,
+      "forks": 46,
       "language": "Python",
       "license": "MIT",
       "pushedAt": "2026-03-13",
@@ -138,6 +138,266 @@
       "createdAt": "2024-10-08",
       "topics": [],
       "description": null,
+      "archived": false
+    },
+    "TruthfulQA evaluator fine-tuning data": {
+      "repo": "sylinrl/TruthfulQA",
+      "stars": 937,
+      "forks": 119,
+      "language": "Jupyter Notebook",
+      "license": "Apache-2.0",
+      "pushedAt": "2025-01-16",
+      "createdAt": "2021-08-24",
+      "topics": [],
+      "description": "TruthfulQA: Measuring How Models Imitate Human Falsehoods",
+      "archived": false
+    },
+    "SafetyPrompts": {
+      "repo": "thu-coai/Safety-Prompts",
+      "stars": 1205,
+      "forks": 89,
+      "language": null,
+      "license": "Apache-2.0",
+      "pushedAt": "2024-02-27",
+      "createdAt": "2023-04-18",
+      "topics": [
+        "attack-defense",
+        "chatgpt",
+        "chinese-language",
+        "instruction",
+        "llm",
+        "prompt",
+        "prompt-engineering",
+        "safety"
+      ],
+      "description": "Chinese safety prompts for evaluating and improving the safety of LLMs. 中文安全prompts，用于评估和提升大模型的安全性。",
+      "archived": false
+    },
+    "DoNotAnswer": {
+      "repo": "Libr-AI/do-not-answer",
+      "stars": 341,
+      "forks": 29,
+      "language": "Jupyter Notebook",
+      "license": "Apache-2.0",
+      "pushedAt": "2024-06-07",
+      "createdAt": "2023-08-20",
+      "topics": [],
+      "description": "Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs",
+      "archived": false
+    },
+    "CValues-Comparison": {
+      "repo": "X-PLUG/CValues",
+      "stars": 561,
+      "forks": 24,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "pushedAt": "2023-07-20",
+      "createdAt": "2023-07-13",
+      "topics": [
+        "benchmark",
+        "chinese-llms",
+        "evaluation",
+        "human-values",
+        "llms",
+        "multi-choice",
+        "responsibility",
+        "safety"
+      ],
+      "description": "面向中文大模型价值观的评估与对齐研究",
+      "archived": false
+    },
+    "XGuard-Train": {
+      "repo": "salman-lui/x-teaming",
+      "stars": 67,
+      "forks": 6,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2025-05-21",
+      "createdAt": "2025-03-29",
+      "topics": [],
+      "description": null,
+      "archived": false
+    },
+    "Crafted datasets": {
+      "repo": "LukeChen-go/indirect-pia-detection",
+      "stars": 9,
+      "forks": 2,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2025-12-25",
+      "createdAt": "2025-05-21",
+      "topics": [],
+      "description": "The official implementation of the work \"Can Indirect Prompt Injection Attacks Be Detected and Removed?\"",
+      "archived": false
+    },
+    "Room-to-Room (R2R)": {
+      "repo": "peteanderson80/Matterport3DSimulator",
+      "stars": 712,
+      "forks": 137,
+      "language": "C++",
+      "license": "NOASSERTION",
+      "pushedAt": "2024-07-12",
+      "createdAt": "2017-09-29",
+      "topics": [
+        "matterport3d-dataset",
+        "matterport3d-simulator",
+        "natural-language-processing",
+        "reinforcement-learning",
+        "rl",
+        "simulator",
+        "vision-and-language"
+      ],
+      "description": "AI Research Platform for Reinforcement Learning from Real Panoramic Images.",
+      "archived": false
+    },
+    "Bench2Drive training dataset": {
+      "repo": "Thinklab-SJTU/Bench2Drive",
+      "stars": 1923,
+      "forks": 142,
+      "language": "Python",
+      "license": "NOASSERTION",
+      "pushedAt": "2026-08-11",
+      "createdAt": "2024-04-23",
+      "topics": [],
+      "description": "[NeurIPS 2024 Datasets and Benchmarks Track] Closed-Loop E2E-AD Benchmark Enhanced by World Model RL Expert",
+      "archived": false
+    },
+    "M3Bench": {
+      "repo": "TooSchoolForCool/M3Bench",
+      "stars": 27,
+      "forks": 0,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2025-07-19",
+      "createdAt": "2025-07-17",
+      "topics": [],
+      "description": "This is the official repo for paper \"M3Bench: Benchmarking Whole-Body Motion Generation for Mobile Manipulation in 3D Scenes\"",
+      "archived": false
+    },
+    "robomimic datasets": {
+      "repo": "ARISE-Initiative/robomimic",
+      "stars": 1520,
+      "forks": 418,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2026-08-09",
+      "createdAt": "2021-08-06",
+      "topics": [],
+      "description": "robomimic: A Modular Framework for Robot Learning from Demonstration",
+      "archived": false
+    },
+    "BridgeData V2": {
+      "repo": "rail-berkeley/bridge_data_v2",
+      "stars": 288,
+      "forks": 36,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2024-03-17",
+      "createdAt": "2023-07-20",
+      "topics": [],
+      "description": null,
+      "archived": false
+    },
+    "CALVIN dataset": {
+      "repo": "mees/calvin",
+      "stars": 967,
+      "forks": 123,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2025-09-08",
+      "createdAt": "2021-07-20",
+      "topics": [
+        "computer-vision",
+        "deep-learning",
+        "grounding",
+        "manipulation",
+        "natural-language-processing",
+        "pytorch",
+        "robotics",
+        "vision",
+        "vision-and-language",
+        "vision-language"
+      ],
+      "description": "CALVIN - A benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks",
+      "archived": false
+    },
+    "LIBERO demonstration datasets": {
+      "repo": "Lifelong-Robot-Learning/LIBERO",
+      "stars": 2193,
+      "forks": 457,
+      "language": "Jupyter Notebook",
+      "license": "MIT",
+      "pushedAt": "2025-03-15",
+      "createdAt": "2023-04-08",
+      "topics": [
+        "benchmark",
+        "imitation-learning",
+        "lifelong-learning",
+        "manipulation",
+        "multitask-learning",
+        "robot-learning"
+      ],
+      "description": "Benchmarking Knowledge Transfer in Lifelong Robot Learning",
+      "archived": false
+    },
+    "VIMA-Data": {
+      "repo": "vimalabs/VIMA",
+      "stars": 854,
+      "forks": 98,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2024-04-18",
+      "createdAt": "2022-10-07",
+      "topics": [],
+      "description": "Official Algorithm Implementation of ICML'23 Paper \"VIMA: General Robot Manipulation with Multimodal Prompts\"",
+      "archived": false
+    },
+    "D4RL": {
+      "repo": "Farama-Foundation/D4RL",
+      "stars": 1698,
+      "forks": 308,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "pushedAt": "2024-11-18",
+      "createdAt": "2020-04-12",
+      "topics": [],
+      "description": "A collection of reference environments for offline reinforcement learning",
+      "archived": false
+    },
+    "HarmBench": {
+      "repo": "centerforaisafety/HarmBench",
+      "stars": 1029,
+      "forks": 154,
+      "language": "Jupyter Notebook",
+      "license": "MIT",
+      "pushedAt": "2024-08-16",
+      "createdAt": "2024-02-02",
+      "topics": [],
+      "description": "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
+      "archived": false
+    },
+    "BUMBLE": {
+      "repo": "yuchenwen1/BUMBLE",
+      "stars": 1,
+      "forks": 1,
+      "language": "Python",
+      "license": null,
+      "pushedAt": "2024-10-11",
+      "createdAt": "2024-07-10",
+      "topics": [],
+      "description": "A bilingual (English&Chinese) benchmark for implicit bias evaluation in Large Language Models using psychometric attack methods",
+      "archived": false
+    },
+    "JailbreakBench": {
+      "repo": "JailbreakBench/jailbreakbench",
+      "stars": 654,
+      "forks": 76,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2025-04-04",
+      "createdAt": "2023-11-13",
+      "topics": [],
+      "description": "JailbreakBench: An Open Robustness Benchmark for Jailbreaking Language Models [NeurIPS 2024 Datasets and Benchmarks Track]",
       "archived": false
     }
   },
@@ -221,18 +481,621 @@
       "updated": "2025-10-24",
       "primaryCategory": "cs.CV",
       "comment": "NeurIPS 2025"
+    },
+    "TruthfulQA evaluator fine-tuning data": {
+      "arxivId": "2109.07958",
+      "title": "TruthfulQA: Measuring How Models Mimic Human Falsehoods",
+      "authors": [
+        "Stephanie Lin",
+        "Jacob Hilton",
+        "Owain Evans"
+      ],
+      "authorCount": 3,
+      "published": "2021-09-08",
+      "updated": "2022-05-08",
+      "primaryCategory": "cs.CL",
+      "comment": "ACL 2022 (main conference); the TruthfulQA benchmark and evaluation code is available at https://github.com/sylinrl/TruthfulQA"
+    },
+    "SafetyPrompts": {
+      "arxivId": "2304.10436",
+      "title": "Safety Assessment of Chinese Large Language Models",
+      "authors": [
+        "Hao Sun",
+        "Zhexin Zhang",
+        "Jiawen Deng",
+        "Jiale Cheng",
+        "Minlie Huang"
+      ],
+      "authorCount": 5,
+      "published": "2023-04-20",
+      "updated": "2023-04-20",
+      "primaryCategory": "cs.CL",
+      "comment": "Benchmark website: http://coai.cs.tsinghua.edu.cn/leaderboard/ ; SafetyPrompts repo: https://github.com/thu-coai/Safety-Prompts"
+    },
+    "DoNotAnswer": {
+      "arxivId": "2308.13387",
+      "title": "Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs",
+      "authors": [
+        "Yuxia Wang",
+        "Haonan Li",
+        "Xudong Han",
+        "Preslav Nakov",
+        "Timothy Baldwin"
+      ],
+      "authorCount": 5,
+      "published": "2023-08-25",
+      "updated": "2023-09-04",
+      "primaryCategory": "cs.CL",
+      "comment": "18 pages, 9 figures, 11 tables"
+    },
+    "CValues-Comparison": {
+      "arxivId": "2307.09705",
+      "title": "CValues: Measuring the Values of Chinese Large Language Models from Safety to Responsibility",
+      "authors": [
+        "Guohai Xu",
+        "Jiayi Liu",
+        "Ming Yan",
+        "Haotian Xu",
+        "Jinghui Si",
+        "Zhuoran Zhou",
+        "Peng Yi",
+        "Xing Gao",
+        "Jitao Sang",
+        "Rong Zhang",
+        "Ji Zhang",
+        "Chao Peng",
+        "Fei Huang",
+        "Jingren Zhou"
+      ],
+      "authorCount": 14,
+      "published": "2023-07-19",
+      "updated": "2023-07-19",
+      "primaryCategory": "cs.CL",
+      "comment": "Working in Process"
+    },
+    "Aegis 2.0": {
+      "arxivId": "2501.09004",
+      "title": "Aegis2.0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails",
+      "authors": [
+        "Shaona Ghosh",
+        "Prasoon Varshney",
+        "Makesh Narsimhan Sreedhar",
+        "Aishwarya Padmakumar",
+        "Traian Rebedea",
+        "Jibin Rajan Varghese",
+        "Christopher Parisien"
+      ],
+      "authorCount": 7,
+      "published": "2025-01-15",
+      "updated": "2025-01-15",
+      "primaryCategory": "cs.CL",
+      "comment": "arXiv admin note: text overlap with arXiv:2404.05993"
+    },
+    "XGuard-Train": {
+      "arxivId": "2504.13203",
+      "title": "X-Teaming: Multi-Turn Jailbreaks and Defenses with Adaptive Multi-Agents",
+      "authors": [
+        "Salman Rahman",
+        "Liwei Jiang",
+        "James Shiffer",
+        "Genglin Liu",
+        "Sheriff Issaka",
+        "Md Rizwan Parvez",
+        "Hamid Palangi",
+        "Kai-Wei Chang",
+        "Yejin Choi",
+        "Saadia Gabriel"
+      ],
+      "authorCount": 10,
+      "published": "2025-04-15",
+      "updated": "2025-08-23",
+      "primaryCategory": "cs.CR",
+      "comment": null
+    },
+    "Crafted datasets": {
+      "arxivId": "2502.16580",
+      "title": "Can Indirect Prompt Injection Attacks Be Detected and Removed?",
+      "authors": [
+        "Yulin Chen",
+        "Haoran Li",
+        "Yuan Sui",
+        "Yufei He",
+        "Yue Liu",
+        "Yangqiu Song",
+        "Bryan Hooi"
+      ],
+      "authorCount": 7,
+      "published": "2025-02-23",
+      "updated": "2025-10-04",
+      "primaryCategory": "cs.CR",
+      "comment": "ACL 2025 Main"
+    },
+    "Room-to-Room (R2R)": {
+      "arxivId": "1711.07280",
+      "title": "Vision-and-Language Navigation: Interpreting visually-grounded navigation instructions in real environments",
+      "authors": [
+        "Peter Anderson",
+        "Qi Wu",
+        "Damien Teney",
+        "Jake Bruce",
+        "Mark Johnson",
+        "Niko Sünderhauf",
+        "Ian Reid",
+        "Stephen Gould",
+        "Anton van den Hengel"
+      ],
+      "authorCount": 9,
+      "published": "2017-11-20",
+      "updated": "2018-04-05",
+      "primaryCategory": "cs.CV",
+      "comment": "CVPR 2018 Spotlight presentation"
+    },
+    "VizWiz-VQA": {
+      "arxivId": "1802.08218",
+      "title": "VizWiz Grand Challenge: Answering Visual Questions from Blind People",
+      "authors": [
+        "Danna Gurari",
+        "Qing Li",
+        "Abigale J. Stangl",
+        "Anhong Guo",
+        "Chi Lin",
+        "Kristen Grauman",
+        "Jiebo Luo",
+        "Jeffrey P. Bigham"
+      ],
+      "authorCount": 8,
+      "published": "2018-02-22",
+      "updated": "2018-05-09",
+      "primaryCategory": "cs.CV",
+      "comment": null
+    },
+    "Bench2Drive training dataset": {
+      "arxivId": "2406.03877",
+      "title": "Bench2Drive: Towards Multi-Ability Benchmarking of Closed-Loop End-To-End Autonomous Driving",
+      "authors": [
+        "Xiaosong Jia",
+        "Zhenjie Yang",
+        "Qifeng Li",
+        "Zhiyuan Zhang",
+        "Junchi Yan"
+      ],
+      "authorCount": 5,
+      "published": "2024-06-06",
+      "updated": "2024-11-27",
+      "primaryCategory": "cs.RO",
+      "comment": "Accepted by NeurIPS 2024 Datasets and Benchmarks Track. Official Repo: https://github.com/Thinklab-SJTU/Bench2Drive"
+    },
+    "M3Bench": {
+      "arxivId": "2410.06678",
+      "title": "M3Bench: Benchmarking Whole-body Motion Generation for Mobile Manipulation in 3D Scenes",
+      "authors": [
+        "Zeyu Zhang",
+        "Sixu Yan",
+        "Muzhi Han",
+        "Zaijin Wang",
+        "Xinggang Wang",
+        "Song-Chun Zhu",
+        "Hangxin Liu"
+      ],
+      "authorCount": 7,
+      "published": "2024-10-09",
+      "updated": "2025-05-29",
+      "primaryCategory": "cs.RO",
+      "comment": "This paper has been accepted by IEEE Robotics and Automation Letters 2025 (RA-L)"
+    },
+    "robomimic datasets": {
+      "arxivId": "2108.03298",
+      "title": "What Matters in Learning from Offline Human Demonstrations for Robot Manipulation",
+      "authors": [
+        "Ajay Mandlekar",
+        "Danfei Xu",
+        "Josiah Wong",
+        "Soroush Nasiriany",
+        "Chen Wang",
+        "Rohun Kulkarni",
+        "Li Fei-Fei",
+        "Silvio Savarese",
+        "Yuke Zhu",
+        "Roberto Martín-Martín"
+      ],
+      "authorCount": 10,
+      "published": "2021-08-06",
+      "updated": "2021-09-25",
+      "primaryCategory": "cs.RO",
+      "comment": "CoRL 2021 (Oral)"
+    },
+    "BridgeData V2": {
+      "arxivId": "2308.12952",
+      "title": "BridgeData V2: A Dataset for Robot Learning at Scale",
+      "authors": [
+        "Homer Walke",
+        "Kevin Black",
+        "Abraham Lee",
+        "Moo Jin Kim",
+        "Max Du",
+        "Chongyi Zheng",
+        "Tony Zhao",
+        "Philippe Hansen-Estruch",
+        "Quan Vuong",
+        "Andre He",
+        "Vivek Myers",
+        "Kuan Fang",
+        "Chelsea Finn",
+        "Sergey Levine"
+      ],
+      "authorCount": 14,
+      "published": "2023-08-24",
+      "updated": "2024-01-17",
+      "primaryCategory": "cs.RO",
+      "comment": "9 pages"
+    },
+    "CALVIN dataset": {
+      "arxivId": "2112.03227",
+      "title": "CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks",
+      "authors": [
+        "Oier Mees",
+        "Lukas Hermann",
+        "Erick Rosete-Beas",
+        "Wolfram Burgard"
+      ],
+      "authorCount": 4,
+      "published": "2021-12-06",
+      "updated": "2022-07-13",
+      "primaryCategory": "cs.RO",
+      "comment": "Accepted for publication at IEEE Robotics and Automation Letters (RAL). Code, models and dataset available at http://calvin.cs.uni-freiburg.de"
+    },
+    "LIBERO demonstration datasets": {
+      "arxivId": "2306.03310",
+      "title": "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning",
+      "authors": [
+        "Bo Liu",
+        "Yifeng Zhu",
+        "Chongkai Gao",
+        "Yihao Feng",
+        "Qiang Liu",
+        "Yuke Zhu",
+        "Peter Stone"
+      ],
+      "authorCount": 7,
+      "published": "2023-06-05",
+      "updated": "2023-10-14",
+      "primaryCategory": "cs.AI",
+      "comment": null
+    },
+    "VIMA-Data": {
+      "arxivId": "2210.03094",
+      "title": "VIMA: General Robot Manipulation with Multimodal Prompts",
+      "authors": [
+        "Yunfan Jiang",
+        "Agrim Gupta",
+        "Zichen Zhang",
+        "Guanzhi Wang",
+        "Yongqiang Dou",
+        "Yanjun Chen",
+        "Li Fei-Fei",
+        "Anima Anandkumar",
+        "Yuke Zhu",
+        "Linxi Fan"
+      ],
+      "authorCount": 10,
+      "published": "2022-10-06",
+      "updated": "2023-05-28",
+      "primaryCategory": "cs.RO",
+      "comment": "ICML 2023 Camera-ready version. Project website: https://vimalabs.github.io/"
+    },
+    "D4RL": {
+      "arxivId": "2004.07219",
+      "title": "D4RL: Datasets for Deep Data-Driven Reinforcement Learning",
+      "authors": [
+        "Justin Fu",
+        "Aviral Kumar",
+        "Ofir Nachum",
+        "George Tucker",
+        "Sergey Levine"
+      ],
+      "authorCount": 5,
+      "published": "2020-04-15",
+      "updated": "2021-02-06",
+      "primaryCategory": "cs.LG",
+      "comment": "Website available at https://sites.google.com/view/d4rl/home"
+    },
+    "HarmBench": {
+      "arxivId": "2402.04249",
+      "title": "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
+      "authors": [
+        "Mantas Mazeika",
+        "Long Phan",
+        "Xuwang Yin",
+        "Andy Zou",
+        "Zifan Wang",
+        "Norman Mu",
+        "Elham Sakhaee",
+        "Nathaniel Li",
+        "Steven Basart",
+        "Bo Li",
+        "David Forsyth",
+        "Dan Hendrycks"
+      ],
+      "authorCount": 12,
+      "published": "2024-02-06",
+      "updated": "2024-02-27",
+      "primaryCategory": "cs.LG",
+      "comment": "Website: https://www.harmbench.org"
+    },
+    "BUMBLE": {
+      "arxivId": "2406.14023",
+      "title": "Evaluating Implicit Bias in Large Language Models by Attacking From a Psychometric Perspective",
+      "authors": [
+        "Yuchen Wen",
+        "Keping Bi",
+        "Wei Chen",
+        "Jiafeng Guo",
+        "Xueqi Cheng"
+      ],
+      "authorCount": 5,
+      "published": "2024-06-20",
+      "updated": "2025-07-11",
+      "primaryCategory": "cs.CL",
+      "comment": "Accepted to ACL 2025 Findings"
+    },
+    "JailbreakBench": {
+      "arxivId": "2404.01318",
+      "title": "JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large Language Models",
+      "authors": [
+        "Patrick Chao",
+        "Edoardo Debenedetti",
+        "Alexander Robey",
+        "Maksym Andriushchenko",
+        "Francesco Croce",
+        "Vikash Sehwag",
+        "Edgar Dobriban",
+        "Nicolas Flammarion",
+        "George J. Pappas",
+        "Florian Tramer",
+        "Hamed Hassani",
+        "Eric Wong"
+      ],
+      "authorCount": 12,
+      "published": "2024-03-28",
+      "updated": "2024-10-31",
+      "primaryCategory": "cs.CR",
+      "comment": "The camera-ready version of JailbreakBench v1.0 (accepted at NeurIPS 2024 Datasets and Benchmarks Track): more attack artifacts, more test-time defenses, a more accurate jailbreak judge (Llama-3-70B with a custom prompt), a larger dataset of human preferences for selecting a jailbreak judge (300 examples), an over-refusal evaluation dataset, a semantic refusal judge based on Llama-3-8B"
     }
   },
   "huggingface": {
-    "SafeVid-350k": {
-      "dataset": "yxwang/SafeVid-350K",
-      "downloads": 47,
+    "SORRYBench": {
+      "dataset": "sorry-bench/sorry-bench-202503",
+      "downloads": 1378,
+      "likes": 21,
+      "lastModified": "2025-02-28",
+      "tags": [
+        "task_categories:text-generation",
+        "task_categories:question-answering",
+        "language:en",
+        "language:zh",
+        "language:fr",
+        "language:ml",
+        "language:mr",
+        "language:ta"
+      ]
+    },
+    "SafetyBench": {
+      "dataset": "thu-coai/SafetyBench",
+      "downloads": 833,
+      "likes": 35,
+      "lastModified": "2023-09-14",
+      "tags": [
+        "license:mit",
+        "size_categories:10K<n<100K",
+        "format:json",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:mlcroissant",
+        "library:polars"
+      ]
+    },
+    "SALAD-Bench": {
+      "dataset": "OpenSafetyLab/Salad-Data",
+      "downloads": 1767,
+      "likes": 31,
+      "lastModified": "2026-07-23",
+      "tags": [
+        "task_categories:text-classification",
+        "task_categories:text-generation",
+        "language:en",
+        "license:apache-2.0",
+        "size_categories:10K<n<100K",
+        "modality:tabular",
+        "modality:text",
+        "arxiv:2402.05044"
+      ]
+    },
+    "JailBreakV-28K": {
+      "dataset": "JailBreakV-28K/JailBreakV-28K",
+      "downloads": 16079,
+      "likes": 68,
+      "lastModified": "2024-07-10",
+      "tags": [
+        "task_categories:text-generation",
+        "task_categories:question-answering",
+        "license:mit",
+        "size_categories:10K<n<100K",
+        "format:csv",
+        "modality:image",
+        "modality:text",
+        "library:datasets"
+      ]
+    },
+    "AgentHarm": {
+      "dataset": "ai-safety-institute/AgentHarm",
+      "downloads": 4338,
+      "likes": 58,
+      "lastModified": "2024-12-19",
+      "tags": [
+        "license:other",
+        "size_categories:n<1K",
+        "format:json",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:mlcroissant",
+        "library:polars"
+      ]
+    },
+    "PrivacyLens": {
+      "dataset": "SALT-NLP/PrivacyLens",
+      "downloads": 317,
       "likes": 6,
-      "lastModified": "2025-11-27",
+      "lastModified": "2024-09-04",
       "tags": [
         "language:en",
-        "license:cc-by-nc-sa-4.0",
-        "size_categories:100K<n<1M"
+        "license:cc-by-4.0",
+        "size_categories:n<1K",
+        "format:json",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:mlcroissant"
+      ]
+    },
+    "Agent-SafetyBench": {
+      "dataset": "thu-coai/Agent-SafetyBench",
+      "downloads": 271,
+      "likes": 5,
+      "lastModified": "2025-08-11",
+      "tags": [
+        "language:en",
+        "license:mit",
+        "arxiv:2412.14470"
+      ]
+    },
+    "ST-WebAgentBench": {
+      "dataset": "ST-WebAgentBench/st-webagentbench",
+      "downloads": 174,
+      "likes": 5,
+      "lastModified": "2026-03-12",
+      "tags": [
+        "task_categories:other",
+        "language:en",
+        "license:apache-2.0",
+        "size_categories:1K<n<10K",
+        "format:csv",
+        "modality:text",
+        "library:datasets",
+        "library:pandas"
+      ]
+    },
+    "SafeArena": {
+      "dataset": "McGill-NLP/safearena",
+      "downloads": 132,
+      "likes": 5,
+      "lastModified": "2025-04-23",
+      "tags": [
+        "task_categories:text-generation",
+        "language:en",
+        "size_categories:n<1K",
+        "arxiv:2503.04957"
+      ]
+    },
+    "SafetyPrompts": {
+      "dataset": "thu-coai/Safety-Prompts",
+      "downloads": 431,
+      "likes": 48,
+      "lastModified": "2023-08-25",
+      "tags": [
+        "task_categories:text-generation",
+        "language:zh",
+        "license:apache-2.0",
+        "size_categories:100K<n<1M",
+        "arxiv:2304.10436"
+      ]
+    },
+    "Aegis 2.0": {
+      "dataset": "nvidia/Aegis-AI-Content-Safety-Dataset-2.0",
+      "downloads": 6401,
+      "likes": 106,
+      "lastModified": "2025-06-09",
+      "tags": [
+        "task_categories:text-classification",
+        "language:en",
+        "license:cc-by-4.0",
+        "size_categories:10K<n<100K",
+        "format:json",
+        "modality:text",
+        "library:datasets",
+        "library:pandas"
+      ]
+    },
+    "XGuard-Train": {
+      "dataset": "marslabucla/XGuard-Train",
+      "downloads": 110,
+      "likes": 12,
+      "lastModified": "2025-04-24",
+      "tags": [
+        "task_categories:text-generation",
+        "task_categories:text-classification",
+        "size_categories:10K<n<100K",
+        "format:json",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:mlcroissant"
+      ]
+    },
+    "Bench2Drive training dataset": {
+      "dataset": "rethinklab/Bench2Drive",
+      "downloads": 35343,
+      "likes": 29,
+      "lastModified": "2024-08-14",
+      "tags": [
+        "license:apache-2.0"
+      ]
+    },
+    "M3Bench": {
+      "dataset": "M3Bench/M3Bench",
+      "downloads": 23,
+      "likes": 0,
+      "lastModified": "2025-07-17",
+      "tags": [
+        "language:en",
+        "license:apache-2.0",
+        "Manipulation"
+      ]
+    },
+    "LIBERO demonstration datasets": {
+      "dataset": "yifengzhu-hf/LIBERO-datasets",
+      "downloads": 27985,
+      "likes": 63,
+      "lastModified": "2025-05-18",
+      "tags": [
+        "license:apache-2.0"
+      ]
+    },
+    "VIMA-Data": {
+      "dataset": "VIMA/VIMA-Data",
+      "downloads": 99,
+      "likes": 29,
+      "lastModified": "2023-06-17",
+      "tags": [
+        "license:cc-by-4.0",
+        "arxiv:2210.03094"
+      ]
+    },
+    "JailbreakBench": {
+      "dataset": "JailbreakBench/JBB-Behaviors",
+      "downloads": 47399,
+      "likes": 121,
+      "lastModified": "2024-09-26",
+      "tags": [
+        "language:en",
+        "license:mit",
+        "size_categories:n<1K",
+        "format:csv",
+        "modality:tabular",
+        "modality:text",
+        "library:datasets",
+        "library:pandas"
       ]
     }
   }

@@ -1,6 +1,4 @@
-import { SiteShell } from "@/components/site-shell";
-import { SubpageLayout } from "@/components/subpage-layout";
-import { subpageConfigs } from "@/data/site";
+import { CollectionPageView } from "@/components/collection-page-view";
 
 export const metadata = {
   title: "Benchmarks",
@@ -10,9 +8,5 @@ export const metadata = {
 
 
 export default function BenchmarksPage() {
-  return (
-    <SiteShell sectionLabel="Benchmarks">
-      <SubpageLayout {...subpageConfigs.benchmarks} detailBase="/benchmarks" showEmptyCategories />
-    </SiteShell>
-  );
+  return <CollectionPageView detailBase="/benchmarks" locale="en" showEmptyCategories slug="benchmarks" />;
 }

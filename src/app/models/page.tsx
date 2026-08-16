@@ -1,6 +1,4 @@
-import { SiteShell } from "@/components/site-shell";
-import { SubpageLayout } from "@/components/subpage-layout";
-import { subpageConfigs } from "@/data/site";
+import { CollectionPageView } from "@/components/collection-page-view";
 
 export const metadata = {
   title: "Models",
@@ -10,9 +8,5 @@ export const metadata = {
 
 
 export default function ModelsPage() {
-  return (
-    <SiteShell sectionLabel="Models">
-      <SubpageLayout {...subpageConfigs.models} showEmptyCategories />
-    </SiteShell>
-  );
+  return <CollectionPageView locale="en" showEmptyCategories slug="models" />;
 }

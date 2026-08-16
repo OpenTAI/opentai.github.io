@@ -1,0 +1,734 @@
+{
+  "auditVersion": "v2-openalex-pdf-addendum",
+  "domain": "Agents and Embodied AI",
+  "scope": "Strict full-text audit of the 14 exact-title OpenAlex resolutions whose download-audit status is downloaded. Evidence is limited to scripts/data/paper-dataset-audits/paper-fulltext-resolutions.json, tmp/pdfs/openalex-exact/download-audit.json, and the corresponding local PDF text extractions. No website or scripts/data file was edited.",
+  "decisionPolicy": {
+    "approve": "Approve only a named public dataset explicitly used by the audited paper to train, pre-train, fine-tune, optimize a learned component, or demonstrate model training.",
+    "reject": "Reject evaluation/test/benchmark-only assets, reward-only use, simulation environments and task suites, methods/models, private or unreleased constructed data, human-study measurements not used for model fitting, and survey or background mentions of other work.",
+    "linkPolicy": "Include a URL only when the exact dataset or processed-data URL is printed in the local full text. Do not infer a landing page or repository from a dataset name or paper identity."
+  },
+  "coverage": {
+    "downloadedPaperCount": 14,
+    "auditedPaperCount": 14,
+    "missingTextCount": 0,
+    "auditedOpenAlexIds": [
+      "W4389518901",
+      "W4384197634",
+      "W4383674599",
+      "W3159489391",
+      "W2904455790",
+      "W4414948915",
+      "W3006816054",
+      "W4394699002",
+      "W4324007222",
+      "W4324007071",
+      "W4324007084",
+      "W2810910757",
+      "W2795155796",
+      "W4407272593"
+    ],
+    "paperDecisions": [
+      {
+        "paper": {
+          "openAlexId": "W4389518901",
+          "title": "Search augmented instruction learning",
+          "domain": "Agents"
+        },
+        "status": "approved-with-rejection",
+        "approvedDatasets": [
+          "SAIL search-augmented instruction-tuning corpus",
+          "Stanford Alpaca 52K self-instruction corpus"
+        ],
+        "rejectedDecisionCount": 1,
+        "reason": "The paper publicly releases its processed SAIL training corpus and fine-tunes LLaMA-7B on it; Stanford Alpaca's 52K corpus supplies the instructions incorporated into those training examples. Question-answering and fact/fairness benchmarks are used only for evaluation."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4384197634",
+          "title": "Optimizing human-robot handovers: the impact of adaptive transport methods",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "The paper analyzes measurements from a two-group human-robot handover study; it does not fit a model on a named public dataset."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4383674599",
+          "title": "A Taxonomy of Factors Influencing Perceived Safety in Human–Robot Interaction",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "The taxonomy reviews literature and summarizes a prior HRI case study. Its data-availability statement is not applicable, and no named public dataset is used for training in this paper."
+      },
+      {
+        "paper": {
+          "openAlexId": "W3159489391",
+          "title": "Handover Control for Human-Robot and Robot-Robot Collaboration",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "The proposed controller explicitly requires neither learning from demonstration nor a model-learning phase; experiments demonstrate a model-based control strategy rather than train a learned model."
+      },
+      {
+        "paper": {
+          "openAlexId": "W2904455790",
+          "title": "Robust Multi-Agent Reinforcement Learning via Minimax Deep Deterministic Policy Gradient",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "Agents are trained online in particle-world environments. Environments, generated configurations, and reward trajectories are not named public training datasets."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4414948915",
+          "title": "Securing (vision-based) autonomous systems: taxonomy, challenges, and defense mechanisms against adversarial threats",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "This is a structured literature review. Named datasets appear only as surveyed benchmarks or examples from cited work; the paper conducts no original model training."
+      },
+      {
+        "paper": {
+          "openAlexId": "W3006816054",
+          "title": "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems",
+          "domain": "Embodied AI"
+        },
+        "status": "approved-with-rejection",
+        "approvedDatasets": [
+          "AIR binaural room impulse response database",
+          "MARDY database",
+          "REVERB Challenge room impulse response dataset",
+          "RWCP sound scene database"
+        ],
+        "rejectedDecisionCount": 1,
+        "reason": "Four explicitly public acoustic CIR datasets supply the 370 traces used to train the attack perturbation and domain-discriminator-based learned component. Mozilla Common Voice supplies only eleven evaluation source clips."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4394699002",
+          "title": "A Deep Learning Based Induced GNSS Spoof Detection Framework",
+          "domain": "Embodied AI"
+        },
+        "status": "approved",
+        "approvedDatasets": [
+          "Texas Spoofing Test Battery (TEXBAT)"
+        ],
+        "rejectedDecisionCount": 0,
+        "reason": "The paper explicitly trains its VAE/GAN representation-learning detector and baseline classifiers on public TEXBAT data, including genuine DS-0 and DS-1 training samples."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4324007222",
+          "title": "MetaWave: Attacking mmWave Sensing with Meta-material-enhanced Tags",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "The paper optimizes physical tag parameters in a simulator and collects COTS radar signals for attack evaluation; it does not train a model on a named public dataset."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4324007071",
+          "title": "Paralyzing Drones via EMI Signal Injection on Sensory Communication Channels",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "The work performs EMI injection, sensor, simulation, and real-drone experiments without training a learned model or naming a public training dataset."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4324007084",
+          "title": "Un-Rocking Drones: Foundations of Acoustic Injection Attacks and Recovery Thereof",
+          "domain": "Embodied AI"
+        },
+        "status": "approved-with-rejection",
+        "approvedDatasets": [
+          "UnRocker Resonant Sensor Dataset (SITL/HITL)"
+        ],
+        "rejectedDecisionCount": 1,
+        "reason": "The released Resonant Sensor Dataset is split into training, validation, and test sets and used to train denoising autoencoders. Separate actual-flight and additional test traces are evaluation-only."
+      },
+      {
+        "paper": {
+          "openAlexId": "W2810910757",
+          "title": "Development of a GPS spoofing apparatus to attack a DJI Matrice 100 Quadcopter",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "The paper develops an apparatus and collects attack telemetry; it explicitly states that no datasets were generated and performs no model training."
+      },
+      {
+        "paper": {
+          "openAlexId": "W2795155796",
+          "title": "Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "OpenSky Network data are public but are used only to evaluate and simulate the rule/geometry-based detection system, not to train a learned model."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4407272593",
+          "title": "Random Spoofing Attack against LiDAR-Based Scan Matching SLAM",
+          "domain": "Embodied AI"
+        },
+        "status": "rejected",
+        "approvedDatasets": [],
+        "rejectedDecisionCount": 1,
+        "reason": "The work uses physical measurements to parameterize attack simulations against a fixed SLAM implementation; no learned model is trained and no public training dataset is named."
+      }
+    ],
+    "rejected": [
+      {
+        "paper": {
+          "openAlexId": "W4389518901",
+          "title": "Search augmented instruction learning",
+          "domain": "Agents"
+        },
+        "candidateName": "Question-80, New-Question-80, CommonsenseQA, OpenBookQA, ARC-Challenge, and UniLC task datasets",
+        "nameMatchReason": "The paper explicitly names these evaluation sets and benchmarks.",
+        "observedRoles": [
+          "evaluation",
+          "benchmark"
+        ],
+        "reason": "These assets are used to score instruction following, question answering, or fact/fairness checking after SAIL fine-tuning; they are not part of the training corpus.",
+        "evidence": [
+          {
+            "evidence": "The paper introduces these datasets under its Evaluation section, labels the new questions an evaluation set, and reports zero-shot benchmark results.",
+            "source": "tmp/pdfs/openalex-exact/W4389518901.txt:219-260,263-314,325-334"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "openAlexId": "W4384197634",
+          "title": "Optimizing human-robot handovers: the impact of adaptive transport methods",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Human-robot handover study measurements",
+        "nameMatchReason": "The paper explicitly describes the experimental groups, handover measurements, questionnaires, and data processing.",
+        "observedRoles": [
+          "human-study",
+          "statistical-analysis"
+        ],
+        "reason": "Participant measurements are analyzed with descriptive statistics and ANOVA to study human adaptation; no model is fit and no named public training dataset is established.",
+        "evidence": [
+          {
+            "evidence": "Two experimental groups perform repeated handovers; physical handover times and questionnaire data are processed statistically. The raw supporting data are merely offered through the article's availability statement.",
+            "source": "tmp/pdfs/openalex-exact/W4384197634.txt:171-190,276-343,651-654"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "openAlexId": "W4383674599",
+          "title": "A Taxonomy of Factors Influencing Perceived Safety in Human–Robot Interaction",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Perceived-safety HRI case-study measurements",
+        "nameMatchReason": "The paper explicitly summarizes questionnaire, video, facial-feature, and physiological measurements from an example case study.",
+        "observedRoles": [
+          "prior-study-summary",
+          "taxonomy-evidence"
+        ],
+        "reason": "The data come from a summarized prior study and are used to illustrate the taxonomy, not to train a model in this paper; the paper states that data availability is not applicable.",
+        "evidence": [
+          {
+            "evidence": "The case-study section summarizes measurements from 27 participants and notes that objective features had previously been used to estimate perceived safety; the current article lists Data Availability as not applicable.",
+            "source": "tmp/pdfs/openalex-exact/W4383674599.txt:466-484,549-561"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "openAlexId": "W3159489391",
+          "title": "Handover Control for Human-Robot and Robot-Robot Collaboration",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Handover object database and experimental traces",
+        "nameMatchReason": "The paper mentions an object database of grasp poses and reports force/tactile experiment traces.",
+        "observedRoles": [
+          "control-input",
+          "demonstration",
+          "evaluation"
+        ],
+        "reason": "The object database is a controller resource, not a model-training dataset, and the traces only demonstrate the controller. The paper explicitly says no learning-from-demonstration or model-learning phase is required.",
+        "evidence": [
+          {
+            "evidence": "The abstract states that the strategy works without explicit learning from human demonstration, and the method states that no model-learning phase is required.",
+            "source": "tmp/pdfs/openalex-exact/W3159489391.txt:20-39,137-163,504-596,810-814"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "openAlexId": "W2904455790",
+          "title": "Robust Multi-Agent Reinforcement Learning via Minimax Deep Deterministic Policy Gradient",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "MADDPG particle-world environments and generated configurations",
+        "nameMatchReason": "The experiments explicitly adopt particle-world environments and generate a fixed set of test configurations.",
+        "observedRoles": [
+          "online-reinforcement-learning-environment",
+          "test-configurations"
+        ],
+        "reason": "The four scenarios are interactive environments whose policies learn from rewards; the 2,500 fixed configurations are test cases. Neither is a named public training dataset.",
+        "evidence": [
+          {
+            "evidence": "The paper adopts MADDPG particle-world environments and separately generates 2,500 fixed environment configurations for testing.",
+            "source": "tmp/pdfs/openalex-exact/W2904455790.txt:404-435"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "openAlexId": "W4414948915",
+          "title": "Securing (vision-based) autonomous systems: taxonomy, challenges, and defense mechanisms against adversarial threats",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Datasets and benchmarks cited by the autonomous-systems review",
+        "nameMatchReason": "The review explicitly catalogs MNIST, CIFAR, ImageNet, DOTA, Mapillary, Car Hacking, RobustBench, and other assets.",
+        "observedRoles": [
+          "survey",
+          "cited-external-work",
+          "benchmark-background"
+        ],
+        "reason": "The paper is a PRISMA-style synthesis of 237 studies and does not train a model. All named datasets are descriptions of external benchmark history or cited attack/defense work.",
+        "evidence": [
+          {
+            "evidence": "The methodology defines a structured literature review and classifies the included works; the dataset section surveys benchmark evolution and evaluation practices.",
+            "source": "tmp/pdfs/openalex-exact/W4414948915.txt:96-123,236-295,517-565"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "openAlexId": "W3006816054",
+          "title": "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "Mozilla Common Voice Dataset",
+        "nameMatchReason": "The paper names Mozilla Common Voice and prints its dataset URL.",
+        "observedRoles": [
+          "source-audio-selection",
+          "evaluation"
+        ],
+        "reason": "Eleven Common Voice speech samples are used to generate adversarial examples for the field study after Metamorph training; the dataset does not train the learned attack component.",
+        "evidence": [
+          {
+            "evidence": "The evaluation section selects eleven Common Voice speech samples, generates three adversarial versions of each, and plays them repeatedly to measure attack success.",
+            "source": "tmp/pdfs/openalex-exact/W3006816054.txt:583-600,932-933"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "openAlexId": "W4324007222",
+          "title": "MetaWave: Attacking mmWave Sensing with Meta-material-enhanced Tags",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "MetaWave COTS radar experiment traces",
+        "nameMatchReason": "The evaluation explicitly describes acquiring 60-second COTS mmWave radar signals for each trial.",
+        "observedRoles": [
+          "attack-evaluation",
+          "private-experimental-measurements"
+        ],
+        "reason": "The collected signals measure whether optimized physical tags spoof sensing results. They are neither used to fit a learned model nor released as a named public dataset.",
+        "evidence": [
+          {
+            "evidence": "The authors collect COTS radar signals across 20 environments for evaluation, while the attack parameters are optimized by a physics simulator and gradient descent.",
+            "source": "tmp/pdfs/openalex-exact/W4324007222.txt:540-569,930-947"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "openAlexId": "W4324007071",
+          "title": "Paralyzing Drones via EMI Signal Injection on Sensory Communication Channels",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "EMI-corrupted drone sensor and communication traces",
+        "nameMatchReason": "The paper explicitly records IMU and communication-channel behavior under EMI injection.",
+        "observedRoles": [
+          "attack-analysis",
+          "simulation",
+          "physical-evaluation"
+        ],
+        "reason": "The traces establish EMI susceptibility and propagate corrupted sensor values through fixed flight-control algorithms; no model training or named public dataset release occurs.",
+        "evidence": [
+          {
+            "evidence": "The work experimentally identifies susceptible frequencies and evaluates their effect with PX4 simulations and physical drones.",
+            "source": "tmp/pdfs/openalex-exact/W4324007071.txt:20-60,112-134,542-569"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "openAlexId": "W4324007084",
+          "title": "Un-Rocking Drones: Foundations of Acoustic Injection Attacks and Recovery Thereof",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "UnRocker actual-flight and additional test traces",
+        "nameMatchReason": "The paper separately describes real-flight logs, physical-injection traces, and additional test cases.",
+        "observedRoles": [
+          "test-only",
+          "real-world-evaluation"
+        ],
+        "reason": "These traces are used only to evaluate already trained HITL denoising autoencoders. Approval is limited to the released Resonant Sensor Dataset's training/validation/test corpus, not separate evaluation-only collections.",
+        "evidence": [
+          {
+            "evidence": "After training the models, the paper evaluates them on actual flight data and actual sensor injection; the appendix also describes a separate additional test dataset.",
+            "source": "tmp/pdfs/openalex-exact/W4324007084.txt:945-984,1099-1105"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "openAlexId": "W2810910757",
+          "title": "Development of a GPS spoofing apparatus to attack a DJI Matrice 100 Quadcopter",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "DJI Matrice 100 spoofing telemetry",
+        "nameMatchReason": "The paper describes its spoofing and high-level telemetry collection apparatus.",
+        "observedRoles": [
+          "apparatus-validation",
+          "attack-measurements"
+        ],
+        "reason": "The telemetry demonstrates the apparatus and is not used to train a model; the data-sharing statement explicitly says no datasets were generated.",
+        "evidence": [
+          {
+            "evidence": "The work presents a low-cost spoofing/data-collection apparatus, but its data-sharing statement says no datasets were generated or analyzed.",
+            "source": "tmp/pdfs/openalex-exact/W2810910757.txt:18-24,119-160,413-427"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "openAlexId": "W2795155796",
+          "title": "Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "OpenSky Network air-traffic data",
+        "nameMatchReason": "The paper explicitly identifies OpenSky Network as its crowdsourced real-world data source.",
+        "observedRoles": [
+          "evaluation",
+          "simulation-parameterization"
+        ],
+        "reason": "OpenSky data are public but are applied to the implemented detection system and simulation framework for evaluation only; the method is not learned from these data.",
+        "evidence": [
+          {
+            "evidence": "The authors evaluate Crowd-GPS-Sec with real OpenSky data, applying the fixed implementation to one hour of Central European traffic and using observed distributions in simulations.",
+            "source": "tmp/pdfs/openalex-exact/W2795155796.txt:70-75,304-323,616-628,677-717"
+          }
+        ]
+      },
+      {
+        "paper": {
+          "openAlexId": "W4407272593",
+          "title": "Random Spoofing Attack against LiDAR-Based Scan Matching SLAM",
+          "domain": "Embodied AI"
+        },
+        "candidateName": "LiDAR injection measurements and simulated point clouds",
+        "nameMatchReason": "The paper explicitly reports indoor/outdoor injection measurements and uses the fitted measurements in MATLAB/Simulink attacks.",
+        "observedRoles": [
+          "attack-model-parameterization",
+          "simulation",
+          "evaluation"
+        ],
+        "reason": "Physical measurements fit a simple attenuation model and parameterize attacks against a fixed Point Cloud SLAM pipeline. No learned model or named public training dataset is involved.",
+        "evidence": [
+          {
+            "evidence": "The authors fit an attenuation curve to outdoor experiments and use those parameters in MATLAB/Simulink evaluations of a fixed SLAM algorithm.",
+            "source": "tmp/pdfs/openalex-exact/W4407272593.txt:14-31,230-301,322-349"
+          }
+        ]
+      }
+    ],
+    "approved": [
+      {
+        "canonicalName": "SAIL search-augmented instruction-tuning corpus",
+        "aliases": [
+          "search-augmented instruction training corpus",
+          "constructed SAIL training set"
+        ],
+        "nameMatchReason": "The paper consistently names the method and model SAIL, calls the constructed data a search-augmented instruction-tuning/training corpus, and links its processed data from the first page.",
+        "year": 2023,
+        "venue": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+        "paperUrl": null,
+        "githubUrl": "https://github.com/luohongyin/SAIL",
+        "huggingFaceUrl": null,
+        "dataUrl": "https://github.com/luohongyin/SAIL",
+        "trainingEvidence": "The authors construct instruction/search/result/response training examples and fine-tune LLaMA-7B on those prompts for three epochs.",
+        "publicAccessEvidence": [
+          "The paper states that code and processed data are available at https://github.com/luohongyin/SAIL."
+        ],
+        "mentions": [
+          {
+            "dataset": "SAIL search-augmented instruction-tuning corpus",
+            "paperTitle": "Search augmented instruction learning",
+            "domain": "Agents",
+            "source": "tmp/pdfs/openalex-exact/W4389518901.txt:23-46,62-66,147-154,199-218,245-260,535-565",
+            "reason": "The paper explicitly fine-tunes LLaMA-7B on its named search-augmented instruction training corpus, and the processed data are released at the exact repository URL printed in the paper.",
+            "paper": {
+              "openAlexId": "W4389518901",
+              "title": "Search augmented instruction learning",
+              "domain": "Agents"
+            },
+            "evidence": "SAIL constructs search-grounded instruction triplets/prompts and fine-tunes LLaMA-7B on the constructed training set; code and processed data are publicly linked."
+          }
+        ]
+      },
+      {
+        "canonicalName": "Stanford Alpaca 52K self-instruction corpus",
+        "aliases": [
+          "Alpaca 52k self-instruction corpus"
+        ],
+        "nameMatchReason": "The paper explicitly attributes the 52K self-instruction corpus to the Alpaca team and cites the Stanford Alpaca repository.",
+        "year": 2023,
+        "venue": "Stanford Alpaca public release",
+        "paperUrl": null,
+        "githubUrl": "https://github.com/tatsu-lab/stanford_alpaca",
+        "huggingFaceUrl": null,
+        "dataUrl": "https://github.com/tatsu-lab/stanford_alpaca",
+        "trainingEvidence": "The Alpaca instructions are used to build each SAIL training example and are combined with GPT-4 responses and retrieved passages in the prompts used to fine-tune LLaMA-7B.",
+        "publicAccessEvidence": [
+          "The exact Stanford Alpaca GitHub URL is printed in the cited reference."
+        ],
+        "mentions": [
+          {
+            "dataset": "Stanford Alpaca 52K self-instruction corpus",
+            "paperTitle": "Search augmented instruction learning",
+            "domain": "Agents",
+            "source": "tmp/pdfs/openalex-exact/W4389518901.txt:170-214,245-260,546-555,700-704",
+            "reason": "The 52K Alpaca instructions are explicitly incorporated into the constructed prompts on which LLaMA-7B is fine-tuned, and the paper prints the exact public Stanford Alpaca repository.",
+            "paper": {
+              "openAlexId": "W4389518901",
+              "title": "Search augmented instruction learning",
+              "domain": "Agents"
+            },
+            "evidence": "The authors use Alpaca's 52K self-instruction corpus and GPT-4 responses, attach retrieved search results, and fine-tune LLaMA-7B on the resulting prompts."
+          }
+        ]
+      },
+      {
+        "canonicalName": "AIR binaural room impulse response database",
+        "aliases": [
+          "AIR"
+        ],
+        "nameMatchReason": "The paper names AIR among four public acoustic CIR datasets and cites the exact binaural room impulse response database publication.",
+        "year": 2009,
+        "venue": "IEEE International Conference on Digital Signal Processing",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "AIR contributes to the 370 public CIR traces used to train Metamorph's perturbation and domain discriminator with Adam.",
+        "publicAccessEvidence": [
+          "The paper explicitly calls AIR and the other three sources public acoustic CIR datasets and provides the exact AIR database publication in reference [28]."
+        ],
+        "mentions": [
+          {
+            "dataset": "AIR binaural room impulse response database",
+            "paperTitle": "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems",
+            "domain": "Embodied AI",
+            "source": "tmp/pdfs/openalex-exact/W3006816054.txt:386-405,533-554,577-583,914-916",
+            "reason": "AIR is explicitly one of four public acoustic CIR datasets supplying the 370 traces used during Metamorph training; the full text gives its exact dataset-publication citation.",
+            "paper": {
+              "openAlexId": "W3006816054",
+              "title": "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems",
+              "domain": "Embodied AI"
+            },
+            "evidence": "Metamorph uses AIR CIR traces in its training optimization and domain-discriminator-based learned component."
+          }
+        ]
+      },
+      {
+        "canonicalName": "MARDY database",
+        "aliases": [
+          "MARDY"
+        ],
+        "nameMatchReason": "The paper names MARDY among four public acoustic CIR datasets and cites the exact MARDY database publication.",
+        "year": 2006,
+        "venue": "International Workshop on Acoustic Echo and Noise Control",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "MARDY contributes to the 370 public CIR traces used to train Metamorph's perturbation and domain discriminator with Adam.",
+        "publicAccessEvidence": [
+          "The paper explicitly calls MARDY and the other three sources public acoustic CIR datasets and provides the exact MARDY database publication in reference [53]."
+        ],
+        "mentions": [
+          {
+            "dataset": "MARDY database",
+            "paperTitle": "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems",
+            "domain": "Embodied AI",
+            "source": "tmp/pdfs/openalex-exact/W3006816054.txt:386-405,533-554,577-583,992-994",
+            "reason": "MARDY is explicitly one of four public acoustic CIR datasets supplying the 370 traces used during Metamorph training; the full text gives its exact dataset-publication citation.",
+            "paper": {
+              "openAlexId": "W3006816054",
+              "title": "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems",
+              "domain": "Embodied AI"
+            },
+            "evidence": "Metamorph uses MARDY CIR traces in its training optimization and domain-discriminator-based learned component."
+          }
+        ]
+      },
+      {
+        "canonicalName": "REVERB Challenge room impulse response dataset",
+        "aliases": [
+          "REVERB"
+        ],
+        "nameMatchReason": "The paper names REVERB among four public acoustic CIR datasets and cites the exact REVERB Challenge publication.",
+        "year": 2013,
+        "venue": "IEEE Workshop on Applications of Signal Processing to Audio and Acoustics",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "REVERB contributes to the 370 public CIR traces used to train Metamorph's perturbation and domain discriminator with Adam.",
+        "publicAccessEvidence": [
+          "The paper explicitly calls REVERB and the other three sources public acoustic CIR datasets and gives the exact REVERB Challenge publication in reference [32]."
+        ],
+        "mentions": [
+          {
+            "dataset": "REVERB Challenge room impulse response dataset",
+            "paperTitle": "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems",
+            "domain": "Embodied AI",
+            "source": "tmp/pdfs/openalex-exact/W3006816054.txt:386-405,533-554,577-583,927-930",
+            "reason": "REVERB is explicitly one of four public acoustic CIR datasets supplying the 370 traces used during Metamorph training; the full text provides the exact challenge-publication citation.",
+            "paper": {
+              "openAlexId": "W3006816054",
+              "title": "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems",
+              "domain": "Embodied AI"
+            },
+            "evidence": "Metamorph uses REVERB CIR traces in its training optimization and domain-discriminator-based learned component."
+          }
+        ]
+      },
+      {
+        "canonicalName": "RWCP sound scene database",
+        "aliases": [
+          "RWCP"
+        ],
+        "nameMatchReason": "The paper names RWCP among four public acoustic CIR datasets and cites the exact acoustical sound database publication.",
+        "year": 2000,
+        "venue": "International Conference on Language Resources and Evaluation",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "RWCP contributes to the 370 public CIR traces used to train Metamorph's perturbation and domain discriminator with Adam.",
+        "publicAccessEvidence": [
+          "The paper explicitly calls RWCP and the other three sources public acoustic CIR datasets and cites the exact acoustical sound database publication in reference [37]."
+        ],
+        "mentions": [
+          {
+            "dataset": "RWCP sound scene database",
+            "paperTitle": "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems",
+            "domain": "Embodied AI",
+            "source": "tmp/pdfs/openalex-exact/W3006816054.txt:386-405,533-554,577-583,941-944",
+            "reason": "RWCP is explicitly one of four public acoustic CIR datasets supplying the 370 traces used during Metamorph training; the full text gives the exact database-publication citation.",
+            "paper": {
+              "openAlexId": "W3006816054",
+              "title": "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems",
+              "domain": "Embodied AI"
+            },
+            "evidence": "Metamorph uses RWCP CIR traces in its training optimization and domain-discriminator-based learned component."
+          }
+        ]
+      },
+      {
+        "canonicalName": "Texas Spoofing Test Battery (TEXBAT)",
+        "aliases": [
+          "TEXBAT",
+          "Texas Spoofing Test Battery"
+        ],
+        "nameMatchReason": "The acronym and expansion are both printed in the paper, which cites the exact TEXBAT standard publication and the University of Texas data-set reference.",
+        "year": 2012,
+        "venue": "RadioNavigation Laboratory Conference Proceedings",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "The proposed VAE/GAN detector is trained on genuine TEXBAT DS-0 and DS-1 data, while supervised baselines use TEXBAT under classical and leave-one-out training strategies.",
+        "publicAccessEvidence": [
+          "The paper repeatedly calls TEXBAT publicly available and identifies it as provided by the RadioNavigation Laboratory at the University of Texas at Austin."
+        ],
+        "mentions": [
+          {
+            "dataset": "Texas Spoofing Test Battery (TEXBAT)",
+            "paperTitle": "A Deep Learning Based Induced GNSS Spoof Detection Framework",
+            "domain": "Embodied AI",
+            "source": "tmp/pdfs/openalex-exact/W4394699002.txt:30-47,220-227,268-277,337-350,887-917,986-1031,1665-1693,1766-1776",
+            "reason": "The paper explicitly trains its detector on genuine TEXBAT DS-0/DS-1 samples and evaluates learned detectors on the remaining scenarios; public status and exact dataset publications are established locally.",
+            "paper": {
+              "openAlexId": "W4394699002",
+              "title": "A Deep Learning Based Induced GNSS Spoof Detection Framework",
+              "domain": "Embodied AI"
+            },
+            "evidence": "The model is trained on genuine static and dynamic TEXBAT datasets, and the paper explicitly identifies TEXBAT as publicly available."
+          }
+        ]
+      },
+      {
+        "canonicalName": "UnRocker Resonant Sensor Dataset (SITL/HITL)",
+        "aliases": [
+          "Resonant Sensor Dataset",
+          "SITL dataset",
+          "HITL dataset"
+        ],
+        "nameMatchReason": "The paper titles its construction section 'Resonant Sensor Dataset Construction,' names the SITL and HITL variants, and links the UnRocker project while stating that the dataset was released.",
+        "year": 2022,
+        "venue": "UnRocker project release",
+        "paperUrl": null,
+        "githubUrl": null,
+        "huggingFaceUrl": null,
+        "dataUrl": "https://sites.google.com/view/unrocker/",
+        "trainingEvidence": "The 32.4-million-pair sensor corpus is split 4:1:1 for training, validation, and testing and used to train twelve denoising autoencoder models for 500 epochs.",
+        "publicAccessEvidence": [
+          "The paper states that code, dataset, and demo videos were released and prints the UnRocker project URL in reference [15]."
+        ],
+        "mentions": [
+          {
+            "dataset": "UnRocker Resonant Sensor Dataset (SITL/HITL)",
+            "paperTitle": "Un-Rocking Drones: Foundations of Acoustic Injection Attacks and Recovery Thereof",
+            "domain": "Embodied AI",
+            "source": "tmp/pdfs/openalex-exact/W4324007084.txt:111-130,908-951,967-968,1205-1215,1494-1515,1523-1535,1550-1570",
+            "reason": "The paper explicitly constructs and names the Resonant Sensor Dataset, splits it for model training, trains denoising autoencoders on its SITL/HITL variants, and states that the dataset is released at the printed project URL.",
+            "paper": {
+              "openAlexId": "W4324007084",
+              "title": "Un-Rocking Drones: Foundations of Acoustic Injection Attacks and Recovery Thereof",
+              "domain": "Embodied AI"
+            },
+            "evidence": "The released SITL/HITL resonant-sensor data are partitioned 4:1:1 and used to train and validate UnRocker's denoising autoencoders."
+          }
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "auditedPaperCount": 14,
+    "approvedDatasetCount": 8,
+    "approvedMentionCount": 8,
+    "rejectedDecisionCount": 13,
+    "candidateQueueRowsReviewed": 21
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "source": {
+    "title": "Safety at Scale: A Comprehensive Survey of Large Model Safety",
+    "url": "https://arxiv.org/abs/2502.05206",
+    "latexProject": "https://www.overleaf.com/project/69a847560a96caed41fe19d4",
+    "auditedChapters": [
+      "Vision Foundation Model Safety",
+      "Large Language Model Safety",
+      "Vision-Language Pre-training",
+      "Vision-Language Model Safety",
+      "Diffusion Model Safety",
+      "Agent Safety"
+    ]
+  },
+  "approved": [
+    {
+      "name": "HarmBench",
+      "domain": "LLMs",
+      "year": "2024",
+      "venue": "arXiv 2024",
+      "arxivId": "2402.04249",
+      "githubUrl": "https://github.com/centerforaisafety/HarmBench",
+      "size": "18 red-teaming methods / 33 target LLMs and defenses",
+      "sourceFile": "Sections/3.llm.tex",
+      "sourceLine": 24,
+      "sourceEvidence": "The LLM chapter names HarmBench as an evaluation benchmark. The official repository calls it a standardized evaluation framework and documents its evaluation pipeline.",
+      "tags": ["source: safety-at-scale", "red teaming"]
+    },
+    {
+      "name": "BUMBLE",
+      "domain": "LLMs",
+      "year": "2025",
+      "venue": "ACL 2025",
+      "arxivId": "2406.14023",
+      "githubUrl": "https://github.com/yuchenwen1/BUMBLE",
+      "size": "12.7K instances / 9 bias types",
+      "sourceFile": "Sections/3.llm.tex",
+      "sourceLine": 36,
+      "sourceEvidence": "The LLM chapter explicitly calls BUMBLE a benchmark. The primary paper reports 12.7K instances across nine bias types, and the authors' repository identifies itself as the BUMBLE benchmark.",
+      "tags": ["source: safety-at-scale", "implicit bias"]
+    },
+    {
+      "name": "JailbreakBench",
+      "domain": "LLMs",
+      "year": "2024",
+      "venue": "NeurIPS 2024",
+      "arxivId": "2404.01318",
+      "githubUrl": "https://github.com/JailbreakBench/jailbreakbench",
+      "huggingFaceUrl": "https://huggingface.co/datasets/JailbreakBench/JBB-Behaviors",
+      "size": "200 harmful and benign behaviors",
+      "sourceFile": "Sections/3.llm.tex",
+      "sourceLine": 40,
+      "sourceEvidence": "The LLM chapter names JailbreakBench. Its official repository calls it an open robustness benchmark and releases the JBB-Behaviors evaluation data, evaluation framework, artifacts, and leaderboard.",
+      "tags": ["source: safety-at-scale", "jailbreak"]
+    }
+  ],
+  "excluded": [
+    {
+      "names": ["JBB-Behaviors"],
+      "reason": "The official JailbreakBench repository defines this as the evaluation dataset inside JailbreakBench, so it is represented as a resource link rather than a duplicate benchmark card."
+    },
+    {
+      "names": ["AlpacaEval", "MT-Bench", "MMLU", "OpenAI Gym", "D4RL Gym", "BBH", "BIG-bench HHH Eval", "Vicuna Benchmark", "GLUE", "Arena-Hard"],
+      "reason": "These are auxiliary general-capability or preference-evaluation resources used by papers in the chapter; the audited source lines do not establish them as safety benchmarks introduced or curated by those papers."
+    },
+    {
+      "names": ["COCO"],
+      "reason": "The chapter uses COCO as a dataset; it is not identified there as an LLM safety benchmark."
+    },
+    {
+      "names": ["Vision Foundation Model Safety", "Vision-Language Pre-training", "Vision-Language Model Safety", "Diffusion Model Safety"],
+      "reason": "The team-approved site domains remain LLMs, Agents, and Embodied AI. Candidate names from these four Safety at Scale chapters are retained in the audit output but are not published under an invented domain mapping."
+    }
+  ]
+}

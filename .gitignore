@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/.pnpm-store/
 /.pnp
 .pnp.*
 .yarn/*
@@ -12,6 +13,13 @@
 
 # testing
 /coverage
+
+# local paper digests and audit working files
+/tmp/
+
+# python cache files
+__pycache__/
+*.py[cod]
 
 # next.js
 /.next/

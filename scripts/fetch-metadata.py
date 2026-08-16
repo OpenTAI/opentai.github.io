@@ -6,6 +6,8 @@ Writes metadata.json for the site.ts generator to merge in.
 import json, pathlib, re, sys, time, urllib.request, urllib.error
 import xml.etree.ElementTree as ET
 
+from metadata_targets import training_metadata_targets
+
 UA = {"User-Agent": "opentai-web-metadata/1.0"}
 
 GITHUB = {
@@ -28,9 +30,36 @@ ARXIV = {
     "SAMA": "2505.18812",
 }
 
-HF_DATASETS = {
-    "SafeVid-350k": "yxwang/SafeVid-350K",
-}
+HF_DATASETS = {}
+for source_name in ("llm-benchmark-datasets.json", "agent-safety-datasets.json"):
+    source_rows = json.load(open(pathlib.Path(__file__).parent / "data" / source_name))
+    for row in source_rows:
+        match = re.match(r"https://huggingface\.co/datasets/([^?#]+)", row["url"])
+        if match:
+            HF_DATASETS[row["name"]] = match.group(1).rstrip("/")
+
+training_rows = json.load(
+    open(pathlib.Path(__file__).parent / "data" / "training-datasets.json")
+)["items"]
+training_targets = training_metadata_targets(training_rows)
+HF_DATASETS.update(training_targets["huggingface"])
+ARXIV.update(training_targets["arxiv"])
+GITHUB.update(training_targets["github"])
+
+benchmark_audit = json.load(
+    open(pathlib.Path(__file__).parent / "data" / "safety-at-scale-benchmark-audit.json")
+)
+for row in benchmark_audit["approved"]:
+    ARXIV[row["name"]] = row["arxivId"]
+    github_match = re.match(r"https://github\.com/([^/]+/[^/#]+)", row["githubUrl"])
+    if github_match:
+        GITHUB[row["name"]] = github_match.group(1)
+    huggingface_url = row.get("huggingFaceUrl", "")
+    huggingface_match = re.match(
+        r"https://huggingface\.co/datasets/([^?#]+)", huggingface_url
+    )
+    if huggingface_match:
+        HF_DATASETS[row["name"]] = huggingface_match.group(1).rstrip("/")
 
 
 def get(url, accept=None):

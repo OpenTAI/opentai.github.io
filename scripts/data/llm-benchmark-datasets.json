@@ -1,0 +1,62 @@
+[
+  {
+    "name": "TruthfulQA",
+    "url": "https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv",
+    "datasetEvidence": "The official repository publishes the full benchmark questions and reference answers in TruthfulQA.csv."
+  },
+  {
+    "name": "AdvGLUE",
+    "url": "https://adversarialglue.github.io/",
+    "datasetEvidence": "The official benchmark site publishes downloadable development and annotated test datasets under CC BY-SA 4.0."
+  },
+  {
+    "name": "AdvBench",
+    "url": "https://github.com/llm-attacks/llm-attacks/tree/main/data/advbench",
+    "datasetEvidence": "The official GCG repository publishes the AdvBench harmful-behaviour and harmful-string CSV files under data/advbench/."
+  },
+  {
+    "name": "CVALUES",
+    "url": "https://github.com/X-PLUG/CValues/tree/main/dataset",
+    "datasetEvidence": "The official CValues repository publishes its safety and responsibility benchmark files under dataset/."
+  },
+  {
+    "name": "FINE",
+    "url": "https://github.com/AIFlames/Fake-Alignment",
+    "datasetEvidence": "The official Fake Alignment repository publishes the FINE safety evaluation data as safety.jsonl together with its evaluation code."
+  },
+  {
+    "name": "FLAMES",
+    "url": "https://github.com/AIFlames/Flames/blob/main/Flames_1k_Chinese.jsonl",
+    "datasetEvidence": "The official FLAMES repository publishes its Chinese value-alignment benchmark as Flames_1k_Chinese.jsonl."
+  },
+  {
+    "name": "SORRYBench",
+    "url": "https://huggingface.co/datasets/sorry-bench/sorry-bench-202503",
+    "datasetEvidence": "The official SORRY-Bench organization publishes the benchmark prompts and human-judgment releases on Hugging Face."
+  },
+  {
+    "name": "SafetyBench",
+    "url": "https://huggingface.co/datasets/thu-coai/SafetyBench",
+    "datasetEvidence": "The official SafetyBench repository links this Hugging Face dataset and also publishes the open-source test answers under opensource_data/."
+  },
+  {
+    "name": "SALAD-Bench",
+    "url": "https://huggingface.co/datasets/OpenSafetyLab/Salad-Data",
+    "datasetEvidence": "The official SALAD-Bench paper and repository release the benchmark data and evaluator; the data is published by OpenSafetyLab on Hugging Face."
+  },
+  {
+    "name": "BackdoorLLM",
+    "url": "https://github.com/bboylyg/BackdoorLLM/tree/main/attack/DPA/data",
+    "datasetEvidence": "The official BackdoorLLM repository publishes poisoned and clean benchmark datasets under attack/DPA/data/."
+  },
+  {
+    "name": "JailBreakV-28K",
+    "url": "https://huggingface.co/datasets/JailBreakV-28K/JailBreakV-28K",
+    "datasetEvidence": "The official JailBreakV-28K project links this Hugging Face release containing 28,000 jailbreak text-image pairs."
+  },
+  {
+    "name": "STRONGREJECT",
+    "url": "https://github.com/dsbowen/strong_reject",
+    "datasetEvidence": "The official StrongREJECT package includes loaders for its harmful-prompt datasets and documents their source licences."
+  }
+]

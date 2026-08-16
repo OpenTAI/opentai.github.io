@@ -1,0 +1,20 @@
+{
+  "_comment": "Approved training-data mentions not published because a required public source is unresolved.",
+  "items": [
+    {
+      "canonicalName": "BooksCorpus",
+      "reason": "The original BooksCorpus is no longer officially distributed. Unofficial mirrors and BookCorpusOpen are not the same release and were not substituted.",
+      "status": "rejected-by-link-audit"
+    },
+    {
+      "canonicalName": "Kaggle Fake News competition dataset",
+      "reason": "The TextFooler paper records this exact Kaggle competition for training, but both its legacy and current competition data routes now return 404. Other similarly named fake-news datasets are different releases and were not substituted.",
+      "status": "rejected-by-link-audit"
+    },
+    {
+      "canonicalName": "ShareGPT",
+      "reason": "The original ShareGPT service is deprecated and does not provide an authoritative, versioned training-corpus download. Common HF/GitHub copies are third-party snapshots with differing filters, so none is assigned as canonical.",
+      "status": "rejected-by-link-audit"
+    }
+  ]
+}

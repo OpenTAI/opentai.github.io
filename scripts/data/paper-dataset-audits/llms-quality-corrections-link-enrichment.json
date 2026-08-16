@@ -1,0 +1,93 @@
+{
+  "auditVersion": "v2-link-enrichment",
+  "domain": "LLMs quality corrections",
+  "sourceArtifact": "scripts/data/paper-dataset-audits/llms-quality-corrections.json",
+  "policy": "Only exact official paper, author repository, Kaggle competition, or Magpie-Align organization links are accepted.",
+  "summary": {
+    "total": 8,
+    "verified": 8,
+    "reject": 0
+  },
+  "datasets": [
+    {
+      "canonicalName": "Kaggle Fake News competition dataset",
+      "status": "verified",
+      "dataUrl": "https://www.kaggle.com/c/fake-news/data",
+      "paperUrl": "https://arxiv.org/abs/1907.11932",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.kaggle.com/c/fake-news/data",
+      "reason": "The audited TextFooler paper prints this exact Kaggle competition data URL for its Fake News Detection dataset. The paper trains target models on every listed dataset's training split. This is not the unrelated FNC-1 stance challenge."
+    },
+    {
+      "canonicalName": "Stable Alignment Sandbox sample datasets",
+      "status": "verified",
+      "dataUrl": "https://github.com/agi-templar/Stable-Alignment/tree/main/assets",
+      "paperUrl": "https://arxiv.org/abs/2305.16960",
+      "githubUrl": "https://github.com/agi-templar/Stable-Alignment",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/agi-templar/Stable-Alignment/tree/main/assets",
+      "reason": "The paper defines Sandbox interaction data as the source of three alignment-training datasets. The official repository releases sandbox_v1.json and sandbox_v2.json as public samples and says the larger full interaction set is request-only; the public scope is stated explicitly."
+    },
+    {
+      "canonicalName": "Llama-3-Magpie-Air-3M-v0.1",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Air-3M-v0.1",
+      "paperUrl": "https://arxiv.org/abs/2406.08464",
+      "githubUrl": "https://github.com/magpie-align/magpie",
+      "huggingFaceUrl": "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Air-3M-v0.1",
+      "evidenceUrl": "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Air-3M-v0.1",
+      "reason": "The Magpie paper distinguishes this release by generator, filtering, size, and training role. The official Magpie-Align dataset card cites arXiv:2406.08464 and links the authors' magpie repository; no family-name matching or community mirror is used."
+    },
+    {
+      "canonicalName": "Llama-3-Magpie-Pro-1M-v0.1",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Pro-1M-v0.1",
+      "paperUrl": "https://arxiv.org/abs/2406.08464",
+      "githubUrl": "https://github.com/magpie-align/magpie",
+      "huggingFaceUrl": "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Pro-1M-v0.1",
+      "evidenceUrl": "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Pro-1M-v0.1",
+      "reason": "The Magpie paper distinguishes this release by generator, filtering, size, and training role. The official Magpie-Align dataset card cites arXiv:2406.08464 and links the authors' magpie repository; no family-name matching or community mirror is used."
+    },
+    {
+      "canonicalName": "Magpie-Air-300K-Filtered",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-300K-Filtered",
+      "paperUrl": "https://arxiv.org/abs/2406.08464",
+      "githubUrl": "https://github.com/magpie-align/magpie",
+      "huggingFaceUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-300K-Filtered",
+      "evidenceUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-300K-Filtered",
+      "reason": "The Magpie paper distinguishes this release by generator, filtering, size, and training role. The official Magpie-Align dataset card cites arXiv:2406.08464 and links the authors' magpie repository; no family-name matching or community mirror is used."
+    },
+    {
+      "canonicalName": "Magpie-Pro-300K-Filtered",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-300K-Filtered",
+      "paperUrl": "https://arxiv.org/abs/2406.08464",
+      "githubUrl": "https://github.com/magpie-align/magpie",
+      "huggingFaceUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-300K-Filtered",
+      "evidenceUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-300K-Filtered",
+      "reason": "The Magpie paper distinguishes this release by generator, filtering, size, and training role. The official Magpie-Align dataset card cites arXiv:2406.08464 and links the authors' magpie repository; no family-name matching or community mirror is used."
+    },
+    {
+      "canonicalName": "Magpie-Air-DPO-100K-v0.1",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-DPO-100K-v0.1",
+      "paperUrl": "https://arxiv.org/abs/2406.08464",
+      "githubUrl": "https://github.com/magpie-align/magpie",
+      "huggingFaceUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-DPO-100K-v0.1",
+      "evidenceUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-DPO-100K-v0.1",
+      "reason": "The Magpie paper distinguishes this release by generator, filtering, size, and training role. The official Magpie-Align dataset card cites arXiv:2406.08464 and links the authors' magpie repository; no family-name matching or community mirror is used."
+    },
+    {
+      "canonicalName": "Magpie-Pro-DPO-100K-v0.1",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-DPO-100K-v0.1",
+      "paperUrl": "https://arxiv.org/abs/2406.08464",
+      "githubUrl": "https://github.com/magpie-align/magpie",
+      "huggingFaceUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-DPO-100K-v0.1",
+      "evidenceUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-DPO-100K-v0.1",
+      "reason": "The Magpie paper distinguishes this release by generator, filtering, size, and training role. The official Magpie-Align dataset card cites arXiv:2406.08464 and links the authors' magpie repository; no family-name matching or community mirror is used."
+    }
+  ]
+}

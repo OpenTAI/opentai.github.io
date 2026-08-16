@@ -1,7 +1,4 @@
-import { PaperLibrary } from "@/components/paper-library";
-import { SimplePage } from "@/components/simple-page";
-import { SiteShell } from "@/components/site-shell";
-import { paperDomains, paperLibrary } from "@/data/papers";
+import { PapersPageView } from "@/components/papers-page-view";
 
 export const metadata = {
   title: "Papers",
@@ -15,17 +12,5 @@ export const metadata = {
 };
 
 export default function PapersPage() {
-  return (
-    <SiteShell sectionLabel="Papers">
-      <SimplePage
-        breadcrumb={["Discover", "Papers"]}
-        description={`${paperLibrary.length.toLocaleString()} safety papers across ${paperDomains.length} domains — ${paperDomains.join(", ")} — filterable by research area and by survey.`}
-        heroIcon="◈"
-        overview="Merged from the two survey lists the OpenTAI team maintains and contributes to. Nothing here is written for the site; every entry keeps the title, authors and venue its source recorded."
-        title="Papers"
-      >
-        <PaperLibrary />
-      </SimplePage>
-    </SiteShell>
-  );
+  return <PapersPageView locale="en" />;
 }

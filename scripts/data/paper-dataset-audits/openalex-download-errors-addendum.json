@@ -1,0 +1,506 @@
+{
+  "auditVersion": "v2-openalex-download-errors-addendum",
+  "domain": "Embodied AI",
+  "scope": "Full-text audit of all 15 exact-title OpenAlex resolutions whose tmp/pdfs/openalex-exact/download-audit.json status is download_error. Exact OpenAlex/PDF identity comes from scripts/data/paper-dataset-audits/paper-fulltext-resolutions.json. Publisher, DOI, public-repository, and author-posted full text was used only after exact-paper identity was verified. No scripts/data or website file was edited.",
+  "decisionPolicy": {
+    "approve": "Approve only a named public dataset that the audited paper explicitly uses for training, pre-training, fine-tuning, retraining, or fitting a learned component.",
+    "reject": "Reject evaluation/test/benchmark-only use, survey or background mentions, private or on-request constructed data, unnamed experimental measurements, signal-processing/simulation inputs, and attacks that optimize examples without training a model on the candidate dataset.",
+    "unresolved": "Use unresolved only when exact-paper full text cannot be read well enough to determine training use. Do not infer training use from an abstract, dataset split, model citation, or benchmark result.",
+    "sourcePolicy": "Every paper decision includes an official publisher or DOI URL. Where the publisher PDF was not machine-readable, an exact author-posted or public-repository full text is included separately as the evidence URL. Dataset landing-page URLs are not guessed."
+  },
+  "coverage": {
+    "expectedDownloadErrorCount": 15,
+    "auditedPaperCount": 15,
+    "sourceCoveredPaperCount": 15,
+    "approvedPaperCount": 6,
+    "rejectedPaperCount": 9,
+    "unresolvedPaperCount": 0,
+    "coverageStatus": "15/15 complete",
+    "auditedOpenAlexIds": [
+      "W7117452389",
+      "W4385732711",
+      "W7119495052",
+      "W3138047676",
+      "W4388856757",
+      "W3007679772",
+      "W4399128192",
+      "W4408028341",
+      "W4410173946",
+      "W4388858786",
+      "W4220851239",
+      "W3201498213",
+      "W3096809669",
+      "W2732835331",
+      "W4401809833"
+    ],
+    "paperDecisions": [
+      {
+        "paper": {
+          "openAlexId": "W7117452389",
+          "title": "Biomimetic Approach to Designing Trust-Based Robot-to-Human Object Handover in a Collaborative Assembly Task",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://www.mdpi.com/2313-7673/11/1/14",
+          "resolvedPdfUrl": "https://www.mdpi.com/2313-7673/11/1/14/pdf?version=1766833446",
+          "fullTextEvidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12838840/"
+        },
+        "status": "rejected",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [],
+        "rejectedCandidates": [
+          "Human-to-robot and robot-to-human handover measurements"
+        ],
+        "evidence": "The Methods section recruits 32 subjects, records hand velocity, hand angle, grip forces, trust ratings, and handover outcomes, and uses those measurements to derive and compare a deterministic trust-triggered motion-planning strategy. The paper does not name or release a public dataset used to train a learned model.",
+        "reason": "Human-study measurements and robot experiments support a deterministic handover algorithm; they are not a named public model-training dataset."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4385732711",
+          "title": "A Novel Human Intention Prediction Approach Based on Fuzzy Rules through Wearable Sensing in Human–Robot Handover",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://www.mdpi.com/2313-7673/8/4/358",
+          "resolvedPdfUrl": "https://www.mdpi.com/2313-7673/8/4/358/pdf?version=1691661558",
+          "fullTextEvidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10452752/"
+        },
+        "status": "rejected",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [],
+        "rejectedCandidates": [
+          "Offline wearable-glove gesture/intention dataset"
+        ],
+        "evidence": "Section 2.1 says an offline dataset of gesture data and intention labels is used to construct fuzzy rules for the HIP model. Section 2.2 says the authors selected 12 gestures after observing five individuals, and the Data Availability Statement makes the study data available only from the corresponding author on reasonable request.",
+        "reason": "The data are author-constructed, unnamed, and not publicly released; the paper therefore has no qualifying named public training dataset."
+      },
+      {
+        "paper": {
+          "openAlexId": "W7119495052",
+          "title": "Deep Reinforcement Learning in the Era of Foundation Models: A Survey",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://www.mdpi.com/2073-431X/15/1/40",
+          "resolvedPdfUrl": "https://www.mdpi.com/2073-431X/15/1/40/pdf",
+          "fullTextEvidenceUrl": "https://www.mdpi.com/2073-431X/15/1/40"
+        },
+        "status": "rejected",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [],
+        "rejectedCandidates": [
+          "Datasets and benchmarks mentioned in surveyed studies"
+        ],
+        "evidence": "The Review Methodology reports a literature search, screening 612 studies to a 156-paper review corpus, followed by taxonomy, qualitative synthesis, and benchmark recommendations. The paper does not report training a model of its own on any named public dataset.",
+        "reason": "This is a literature survey; training and dataset statements describe cited systems or recommended reporting practice, not training performed by the audited paper."
+      },
+      {
+        "paper": {
+          "openAlexId": "W3138047676",
+          "title": "Robotics cyber security: vulnerabilities, attacks, countermeasures, and recommendations",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://doi.org/10.1007/s10207-021-00545-8",
+          "resolvedPdfUrl": "https://link.springer.com/content/pdf/10.1007/s10207-021-00545-8.pdf",
+          "fullTextEvidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7978470/"
+        },
+        "status": "rejected",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [],
+        "rejectedCandidates": [
+          "Datasets or AI systems mentioned in reviewed security literature"
+        ],
+        "evidence": "The Objectives and Contributions section explicitly describes a global review, qualitative risk assessment, taxonomy, countermeasure review, and recommendations. The paper conducts no original learned-model training and identifies no public dataset used for such training.",
+        "reason": "Surveyed references are background evidence only; the audited review does not train or fine-tune a model."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4388856757",
+          "title": "AntiFake: Using Adversarial Audio to Prevent Unauthorized Speech Synthesis",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://doi.org/10.1145/3576915.3623209",
+          "resolvedPdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3576915.3623209",
+          "fullTextEvidenceUrl": "https://cybersecurity.seas.wustl.edu/paper/yu2023anti.pdf"
+        },
+        "status": "approved",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [
+          "VCTK Corpus",
+          "VoxCeleb2"
+        ],
+        "rejectedCandidates": [
+          "Custom GE2E encoder training data",
+          "Proprietary ViT encoder training data"
+        ],
+        "evidence": "Table 1, 'Properties of the ensembled encoders', gives AdaIN's dataset as VCTK and H/ASP's dataset as VoxCeleb 2. The surrounding text says the ensemble deliberately uses distinct training data across encoders. The same table labels the GE2E data 'Custom' and the ViT data 'Proprietary'.",
+        "reason": "VCTK and VoxCeleb2 are named public corpora explicitly identified as training data for encoders used by AntiFake; custom and proprietary corpora fail the public-data requirement."
+      },
+      {
+        "paper": {
+          "openAlexId": "W3007679772",
+          "title": "Practical Adversarial Attacks Against Speaker Recognition Systems",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://doi.org/10.1145/3376897.3377856",
+          "resolvedPdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3376897.3377856",
+          "fullTextEvidenceUrl": "https://www.winlab.rutgers.edu/~yychen/papers/Practical%20Adversarial%20Attacks%20Against%20Speaker%20Recognition%20Systems.pdf"
+        },
+        "status": "rejected",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [],
+        "rejectedCandidates": [
+          "CSTR VCTK Corpus"
+        ],
+        "evidence": "Section 5.1 says the attack is evaluated on CSTR VCTK, split 4:1 into training and testing, but immediately states that a pre-trained Kaldi X-vector model is used for embedding extraction. Section 3 says the attack generates adversarial examples without modifying models, and the paper never states that the X-vector was trained or fine-tuned on VCTK.",
+        "reason": "A train/test split alone is insufficient. The named corpus supports attack evaluation and enrollment/classification around a separately pre-trained model, with no explicit VCTK model-training claim."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4399128192",
+          "title": "Malicious Attacks against Multi-Sensor Fusion in Autonomous Driving",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://doi.org/10.1145/3636534.3649372",
+          "resolvedPdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3636534.3649372",
+          "fullTextEvidenceUrl": "https://clmiao.github.io/files/papers/MobiCom2024Yi.pdf"
+        },
+        "status": "approved",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [
+          "KITTI"
+        ],
+        "rejectedCandidates": [],
+        "evidence": "In the defense evaluation, the authors say they first train a perception model, randomly sample 50% of the training data in the KITTI dataset, select 6851 vehicles, and then retrain the same sensor-fusion system with the new defense loss.",
+        "reason": "KITTI is a named public dataset explicitly used for the paper's defense retraining procedure."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4408028341",
+          "title": "A Spoofing Detection and Direction-Finding Approach for Global Navigation Satellite System Signals Using Off-the-Shelf Anti-Jamming Antennas",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://www.mdpi.com/2072-4292/17/5/864",
+          "resolvedPdfUrl": "https://www.mdpi.com/2072-4292/17/5/864/pdf?version=1740748287",
+          "fullTextEvidenceUrl": "https://www.mdpi.com/2072-4292/17/5/864"
+        },
+        "status": "approved",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [
+          "Texas Spoofing Test Battery (TEXBAT)"
+        ],
+        "rejectedCandidates": [],
+        "evidence": "Section 3.3, 'Machine Learning Classifier and Model Training', calls TEXBAT publicly available, says it was chosen to create the LightGBM feature dataset, and states that Table 1 contains TEXBAT data used for model training. The constructed features are split 70% training and 30% test.",
+        "reason": "TEXBAT is named, public, and explicitly used to train the LightGBM spoofing detector."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4410173946",
+          "title": "Analysis and Validation of Distributed GNSS Spoofing Threat",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://www.mdpi.com/2673-4591/88/1/42",
+          "resolvedPdfUrl": "https://www.mdpi.com/2673-4591/88/1/42/pdf?version=1746538972",
+          "fullTextEvidenceUrl": "https://www.mdpi.com/2673-4591/88/1/42"
+        },
+        "status": "rejected",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [],
+        "rejectedCandidates": [
+          "Distributed-spoofing prototype experiment data"
+        ],
+        "evidence": "The authors build an FPGA prototype and conduct distributed-spoofing experiments to validate a threat architecture. No learned model is trained, and the Data Availability Statement says, 'No data are publicly available.'",
+        "reason": "The data are private experimental measurements used for threat validation, not a named public model-training dataset."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4388858786",
+          "title": "TileMask: A Passive-Reflection-based Attack against mmWave Radar Object Detection in Autonomous Driving",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://doi.org/10.1145/3576915.3616661",
+          "resolvedPdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3576915.3616661",
+          "fullTextEvidenceUrl": "https://yzhu39.github.io/Yi_Zhu_homepage_files/papers/ccs2023.pdf"
+        },
+        "status": "approved",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [
+          "CRUW"
+        ],
+        "rejectedCandidates": [
+          "SemanticKITTI"
+        ],
+        "evidence": "Section 6.2 says, 'We train RODNet with CRUW dataset' before attacking that radar detector. SemanticKITTI appears in a separate transfer/evaluation setting and is not identified as training data for the attacked RODNet model.",
+        "reason": "CRUW is explicitly used for RODNet training. SemanticKITTI is retained as evaluation-only and is not approved."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4220851239",
+          "title": "Combating Single-Frequency Jamming through a Multi-Frequency, Multi-Constellation Software Receiver: A Case Study for Maritime Navigation in the Gulf of Finland",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://www.mdpi.com/1424-8220/22/6/2294",
+          "resolvedPdfUrl": "https://www.mdpi.com/1424-8220/22/6/2294/pdf?version=1647424610",
+          "fullTextEvidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8951362/"
+        },
+        "status": "rejected",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [],
+        "rejectedCandidates": [
+          "Gulf of Finland raw GNSS recordings"
+        ],
+        "evidence": "The paper implements a rule/signal-processing jamming-event detector in the FGI-GSRx software receiver and evaluates four maritime test scenarios. It reports no learned-model training and does not name a public training dataset.",
+        "reason": "The recordings are case-study inputs for a software-defined receiver and jamming detector, not a named public dataset used to fit a model."
+      },
+      {
+        "paper": {
+          "openAlexId": "W3201498213",
+          "title": "DeepPOSE: Detecting GPS spoofing attack via deep recurrent neural network",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://www.sciencedirect.com/science/article/pii/S2352864821000663",
+          "resolvedPdfUrl": "https://www.sciencedirect.com/science/article/pii/S2352864821000663/pdf",
+          "fullTextEvidenceUrl": "https://www.sciencedirect.com/science/article/pii/S2352864821000663"
+        },
+        "status": "approved",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [
+          "BDD-100K"
+        ],
+        "rejectedCandidates": [
+          "Authors' custom Norfolk driving dataset"
+        ],
+        "evidence": "Section 7.1 says DeepPOSE is trained and evaluated on BDD-100K and an authors' custom dataset. Section 7.1.1 selects 40,000 valid BDD-100K trips as training data, and Section 7.2 explicitly labels POSE-BDD-RAW and POSE-BDD-KM as DeepPOSE models trained with BDD-100K measurements.",
+        "reason": "BDD-100K is a named public dataset explicitly used for DeepPOSE training. The custom driving dataset is not established as public and is rejected."
+      },
+      {
+        "paper": {
+          "openAlexId": "W3096809669",
+          "title": "Spoofing Attack on Ultrasonic Distance Sensors Using a Continuous Signal",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://www.mdpi.com/1424-8220/20/21/6157",
+          "resolvedPdfUrl": "https://www.mdpi.com/1424-8220/20/21/6157/pdf?version=1604305216",
+          "fullTextEvidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7663762/"
+        },
+        "status": "rejected",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [],
+        "rejectedCandidates": [
+          "Ultrasonic-sensor testbed and drone measurements"
+        ],
+        "evidence": "The paper constructs a continuous-wave hardware attack, tests amplitude/frequency settings on HC-SR04-class sensors, and demonstrates the attack on a DJI Mavic Pro. Machine-learning anomaly detection is mentioned only as a possible future countermeasure; no model is trained in the paper.",
+        "reason": "Hardware test measurements and attack experiments are not a named public training dataset."
+      },
+      {
+        "paper": {
+          "openAlexId": "W2732835331",
+          "title": "GNSS Spoofing Detection and Mitigation Based on Maximum Likelihood Estimation",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://www.mdpi.com/1424-8220/17/7/1532",
+          "resolvedPdfUrl": "https://www.mdpi.com/1424-8220/17/7/1532/pdf?version=1498811207",
+          "fullTextEvidenceUrl": "https://www.mdpi.com/1424-8220/17/7/1532"
+        },
+        "status": "rejected",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [],
+        "rejectedCandidates": [
+          "Texas Spoofing Test Battery (TEXBAT)"
+        ],
+        "evidence": "The paper derives an MLE/GLRT estimation-cancellation method analytically and states that Section 6 evaluates the countermeasure with TEXBAT recordings. TEXBAT is used to test anti-spoofing performance, not to train or fine-tune a learned model.",
+        "reason": "TEXBAT is public but evaluation-only in this analytical signal-processing paper."
+      },
+      {
+        "paper": {
+          "openAlexId": "W4401809833",
+          "title": "Diffusion Models-Based Purification for Common Corruptions on Robust 3D Object Detection",
+          "domain": "Embodied AI",
+          "officialSourceUrl": "https://www.mdpi.com/1424-8220/24/16/5440",
+          "resolvedPdfUrl": "https://www.mdpi.com/1424-8220/24/16/5440/pdf?version=1724423908",
+          "fullTextEvidenceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11360495/"
+        },
+        "status": "approved",
+        "fullTextAccess": "complete",
+        "approvedDatasets": [
+          "KITTI"
+        ],
+        "rejectedCandidates": [],
+        "evidence": "Section 5.1 identifies KITTI as the experiment dataset with 3712 training and 3769 validation samples, then gives LiDARPure's training configuration: Adam, learning rate 1e-4, and 80 epochs. The same paper also explicitly generates corrupted KITTI training samples for adversarial-training comparisons.",
+        "reason": "KITTI is the named public dataset used in the paper's model-training setup, including the learned diffusion purifier."
+      }
+    ],
+    "approved": [
+      {
+        "canonicalName": "VCTK Corpus",
+        "aliases": [
+          "VCTK"
+        ],
+        "paperUrl": "https://doi.org/10.1145/3576915.3623209",
+        "dataUrl": null,
+        "trainingEvidence": "AntiFake Table 1 identifies VCTK as the AdaIN encoder dataset, and the surrounding text calls the listed corpora distinct training data.",
+        "mentions": [
+          {
+            "openAlexId": "W4388856757",
+            "paperTitle": "AntiFake: Using Adversarial Audio to Prevent Unauthorized Speech Synthesis",
+            "source": "https://cybersecurity.seas.wustl.edu/paper/yu2023anti.pdf"
+          }
+        ]
+      },
+      {
+        "canonicalName": "VoxCeleb2",
+        "aliases": [
+          "VoxCeleb 2"
+        ],
+        "paperUrl": "https://doi.org/10.1145/3576915.3623209",
+        "dataUrl": null,
+        "trainingEvidence": "AntiFake Table 1 identifies VoxCeleb 2 as the H/ASP encoder dataset, and the surrounding text calls the listed corpora distinct training data.",
+        "mentions": [
+          {
+            "openAlexId": "W4388856757",
+            "paperTitle": "AntiFake: Using Adversarial Audio to Prevent Unauthorized Speech Synthesis",
+            "source": "https://cybersecurity.seas.wustl.edu/paper/yu2023anti.pdf"
+          }
+        ]
+      },
+      {
+        "canonicalName": "KITTI",
+        "aliases": [],
+        "paperUrl": null,
+        "dataUrl": null,
+        "trainingEvidence": "One paper retrains a sensor-fusion defense using 50% of KITTI training data; a second paper trains LiDARPure in a KITTI experiment setup for 80 epochs.",
+        "mentions": [
+          {
+            "openAlexId": "W4399128192",
+            "paperTitle": "Malicious Attacks against Multi-Sensor Fusion in Autonomous Driving",
+            "source": "https://clmiao.github.io/files/papers/MobiCom2024Yi.pdf"
+          },
+          {
+            "openAlexId": "W4401809833",
+            "paperTitle": "Diffusion Models-Based Purification for Common Corruptions on Robust 3D Object Detection",
+            "source": "https://www.mdpi.com/1424-8220/24/16/5440"
+          }
+        ]
+      },
+      {
+        "canonicalName": "Texas Spoofing Test Battery (TEXBAT)",
+        "aliases": [
+          "TEXBAT"
+        ],
+        "paperUrl": "https://www.mdpi.com/2072-4292/17/5/864",
+        "dataUrl": null,
+        "trainingEvidence": "The GNSS direction-finding paper explicitly creates its LightGBM feature dataset from public TEXBAT and splits the result 70/30 for training and testing.",
+        "mentions": [
+          {
+            "openAlexId": "W4408028341",
+            "paperTitle": "A Spoofing Detection and Direction-Finding Approach for Global Navigation Satellite System Signals Using Off-the-Shelf Anti-Jamming Antennas",
+            "source": "https://www.mdpi.com/2072-4292/17/5/864"
+          }
+        ]
+      },
+      {
+        "canonicalName": "CRUW",
+        "aliases": [
+          "CRUW dataset"
+        ],
+        "paperUrl": "https://doi.org/10.1145/3576915.3616661",
+        "dataUrl": null,
+        "trainingEvidence": "TileMask Section 6.2 explicitly says the authors train RODNet with the CRUW dataset.",
+        "mentions": [
+          {
+            "openAlexId": "W4388858786",
+            "paperTitle": "TileMask: A Passive-Reflection-based Attack against mmWave Radar Object Detection in Autonomous Driving",
+            "source": "https://yzhu39.github.io/Yi_Zhu_homepage_files/papers/ccs2023.pdf"
+          }
+        ]
+      },
+      {
+        "canonicalName": "BDD-100K",
+        "aliases": [
+          "BDD100K"
+        ],
+        "paperUrl": "https://www.sciencedirect.com/science/article/pii/S2352864821000663",
+        "dataUrl": null,
+        "trainingEvidence": "DeepPOSE selects 40,000 valid BDD-100K trips as training data and explicitly labels two variants as trained with BDD-100K measurements.",
+        "mentions": [
+          {
+            "openAlexId": "W3201498213",
+            "paperTitle": "DeepPOSE: Detecting GPS spoofing attack via deep recurrent neural network",
+            "source": "https://www.sciencedirect.com/science/article/pii/S2352864821000663"
+          }
+        ]
+      }
+    ],
+    "rejected": [
+      {
+        "openAlexId": "W7117452389",
+        "candidateName": "Human-to-robot and robot-to-human handover measurements",
+        "reason": "Human-study and robot-control evaluation data; no named public learned-model training dataset.",
+        "source": "https://www.mdpi.com/2313-7673/11/1/14"
+      },
+      {
+        "openAlexId": "W4385732711",
+        "candidateName": "Offline wearable-glove gesture/intention dataset",
+        "reason": "Used to construct the fuzzy HIP model but is unnamed and available only on request, so it is not public.",
+        "source": "https://www.mdpi.com/2313-7673/8/4/358"
+      },
+      {
+        "openAlexId": "W7119495052",
+        "candidateName": "Datasets and benchmarks mentioned in surveyed studies",
+        "reason": "Survey/background mentions; the audited paper performs no model training.",
+        "source": "https://www.mdpi.com/2073-431X/15/1/40"
+      },
+      {
+        "openAlexId": "W3138047676",
+        "candidateName": "Datasets or AI systems mentioned in reviewed security literature",
+        "reason": "Survey/background mentions; the audited paper performs no model training.",
+        "source": "https://doi.org/10.1007/s10207-021-00545-8"
+      },
+      {
+        "openAlexId": "W4388856757",
+        "candidateName": "Custom GE2E and proprietary ViT encoder corpora",
+        "reason": "The paper labels these training data custom or proprietary, not public.",
+        "source": "https://doi.org/10.1145/3576915.3623209"
+      },
+      {
+        "openAlexId": "W3007679772",
+        "candidateName": "CSTR VCTK Corpus",
+        "reason": "Attack evaluation around a separately pre-trained Kaldi X-vector; no explicit statement that the model was trained or fine-tuned on VCTK.",
+        "source": "https://doi.org/10.1145/3376897.3377856"
+      },
+      {
+        "openAlexId": "W4410173946",
+        "candidateName": "Distributed-spoofing prototype experiment data",
+        "reason": "Private prototype measurements; the paper states that no data are publicly available and trains no learned model.",
+        "source": "https://www.mdpi.com/2673-4591/88/1/42"
+      },
+      {
+        "openAlexId": "W4388858786",
+        "candidateName": "SemanticKITTI",
+        "reason": "Evaluation/transfer setting only; CRUW, not SemanticKITTI, is named as RODNet training data.",
+        "source": "https://doi.org/10.1145/3576915.3616661"
+      },
+      {
+        "openAlexId": "W4220851239",
+        "candidateName": "Gulf of Finland raw GNSS recordings",
+        "reason": "Signal-processing case-study inputs, not a named public model-training dataset.",
+        "source": "https://www.mdpi.com/1424-8220/22/6/2294"
+      },
+      {
+        "openAlexId": "W3201498213",
+        "candidateName": "Authors' custom Norfolk driving dataset",
+        "reason": "Explicitly used to train a DeepPOSE variant but is author-constructed and not established as public.",
+        "source": "https://www.sciencedirect.com/science/article/pii/S2352864821000663"
+      },
+      {
+        "openAlexId": "W3096809669",
+        "candidateName": "Ultrasonic-sensor testbed and drone measurements",
+        "reason": "Hardware attack evaluation; no learned model or named public training dataset.",
+        "source": "https://www.mdpi.com/1424-8220/20/21/6157"
+      },
+      {
+        "openAlexId": "W2732835331",
+        "candidateName": "Texas Spoofing Test Battery (TEXBAT)",
+        "reason": "Used only to evaluate an analytical MLE/GLRT countermeasure.",
+        "source": "https://www.mdpi.com/1424-8220/17/7/1532"
+      }
+    ],
+    "unresolved": []
+  },
+  "summary": {
+    "auditedPaperCount": 15,
+    "paperStatusCounts": {
+      "approved": 6,
+      "rejected": 9,
+      "unresolved": 0
+    },
+    "approvedDatasetCount": 6,
+    "approvedMentionCount": 7,
+    "rejectedCandidateCount": 12,
+    "sourceCoveredPaperCount": 15,
+    "coverageStatus": "15/15"
+  }
+}

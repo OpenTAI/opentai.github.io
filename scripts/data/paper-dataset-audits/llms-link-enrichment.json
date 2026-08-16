@@ -1,0 +1,833 @@
+{
+  "auditVersion": "v2-link-enrichment",
+  "domain": "LLMs",
+  "sourceArtifact": "tmp/paper-dataset-audit-v2/llms.json",
+  "policy": "Links are accepted only when an official project/author repository, official dataset host, institutional corpus page, or paper-linked artifact establishes dataset identity. Name similarity alone is rejected. Gated/licensed official entries are retained with the restriction stated in reason; unavailable originals are not replaced by mirrors.",
+  "summary": {
+    "total": 82,
+    "verified": 80,
+    "reject": 2
+  },
+  "datasets": [
+    {
+      "canonicalName": "AdvBench",
+      "status": "verified",
+      "dataUrl": "https://github.com/llm-attacks/llm-attacks/blob/main/data/advbench/harmful_behaviors.csv",
+      "paperUrl": "https://arxiv.org/abs/2307.15043",
+      "githubUrl": "https://github.com/llm-attacks/llm-attacks",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/llm-attacks/llm-attacks/tree/main/data/advbench",
+      "reason": "The paper authors' repository contains the named AdvBench CSV under data/advbench."
+    },
+    {
+      "canonicalName": "AG News",
+      "status": "verified",
+      "dataUrl": "https://github.com/zhangxiangxiao/Crepe",
+      "paperUrl": "https://arxiv.org/abs/1509.01626",
+      "githubUrl": "https://github.com/zhangxiangxiao/Crepe",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://arxiv.org/abs/1509.01626",
+      "reason": "The benchmark split is one of the large-scale text-classification datasets constructed for the cited paper; the first author's Crepe repository is the reproducibility entry. A similarly named generic news corpus was not substituted."
+    },
+    {
+      "canonicalName": "AgentInstruct",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/zai-org/AgentInstruct",
+      "paperUrl": "https://arxiv.org/abs/2310.12823",
+      "githubUrl": "https://github.com/THUDM/AgentTuning",
+      "huggingFaceUrl": "https://huggingface.co/datasets/zai-org/AgentInstruct",
+      "evidenceUrl": "https://github.com/THUDM/AgentTuning#agentinstruct",
+      "reason": "The official AgentTuning repository states that AgentInstruct is open-sourced and links the dataset; the current Hugging Face namespace is zai-org."
+    },
+    {
+      "canonicalName": "AlpacaEval",
+      "status": "verified",
+      "dataUrl": "https://github.com/tatsu-lab/alpaca_eval",
+      "paperUrl": "https://arxiv.org/abs/2404.04475",
+      "githubUrl": "https://github.com/tatsu-lab/alpaca_eval",
+      "huggingFaceUrl": "https://huggingface.co/datasets/tatsu-lab/alpaca_eval",
+      "evidenceUrl": "https://github.com/tatsu-lab/alpaca_eval",
+      "reason": "The Tatsu Lab repository is the official benchmark/data distribution and documents the released evaluation set."
+    },
+    {
+      "canonicalName": "Amazon Reviews",
+      "status": "verified",
+      "dataUrl": "https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/",
+      "paperUrl": "https://aclanthology.org/D19-1018/",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/",
+      "reason": "The official McAuley Lab page provides downloadable Amazon review text and metadata. The audited paper's 400-example task subset is not separately published, so users must reproduce that sampling step."
+    },
+    {
+      "canonicalName": "Anthropic Red Team Attempts",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/Anthropic/hh-rlhf/tree/main/red-team-attempts",
+      "paperUrl": "https://arxiv.org/abs/2209.07858",
+      "githubUrl": "https://github.com/anthropics/hh-rlhf",
+      "huggingFaceUrl": "https://huggingface.co/datasets/Anthropic/hh-rlhf",
+      "evidenceUrl": "https://huggingface.co/datasets/Anthropic/hh-rlhf/tree/main/red-team-attempts",
+      "reason": "Anthropic's official HH-RLHF release has a dedicated red-team-attempts directory."
+    },
+    {
+      "canonicalName": "BC5CDR",
+      "status": "verified",
+      "dataUrl": "https://biocreative.bioinformatics.udel.edu/resources/corpora/biocreative-v-cdr-corpus/",
+      "paperUrl": "https://academic.oup.com/database/article/doi/10.1093/database/baw068/2630414",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://biocreative.bioinformatics.udel.edu/resources/corpora/biocreative-v-cdr-corpus/",
+      "reason": "BioCreative's official corpus page is the authoritative access entry for the CDR train/development/test data."
+    },
+    {
+      "canonicalName": "BeaverTails",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/PKU-Alignment/BeaverTails",
+      "paperUrl": "https://arxiv.org/abs/2307.04657",
+      "githubUrl": "https://github.com/PKU-Alignment/beavertails",
+      "huggingFaceUrl": "https://huggingface.co/datasets/PKU-Alignment/BeaverTails",
+      "evidenceUrl": "https://github.com/PKU-Alignment/beavertails",
+      "reason": "The PKU-Alignment paper repository links the official Hugging Face dataset release."
+    },
+    {
+      "canonicalName": "BIPIA",
+      "status": "verified",
+      "dataUrl": "https://github.com/microsoft/BIPIA/tree/main/benchmark",
+      "paperUrl": "https://arxiv.org/abs/2312.14197",
+      "githubUrl": "https://github.com/microsoft/BIPIA",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/microsoft/BIPIA/blob/main/benchmark/README.md",
+      "reason": "Microsoft's paper repository contains the benchmark files and exact regeneration/download instructions for components whose source licenses prevent redistribution."
+    },
+    {
+      "canonicalName": "BooksCorpus",
+      "status": "reject",
+      "dataUrl": null,
+      "paperUrl": "https://arxiv.org/abs/1506.06724",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://arxiv.org/abs/2105.05241",
+      "reason": "The original BooksCorpus is no longer officially distributed. Unofficial mirrors and BookCorpusOpen are not the same release and were not substituted."
+    },
+    {
+      "canonicalName": "Booster repnoise BeaverTails",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/anonymous4486/repnoise_beavertail",
+      "paperUrl": "https://arxiv.org/abs/2409.01586",
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/anonymous4486/repnoise_beavertail",
+      "evidenceUrl": "https://huggingface.co/datasets/anonymous4486/repnoise_beavertail/tree/main",
+      "reason": "The paper's anonymous release contains the named BeaverTails-with-refusals training JSON. The generic BeaverTails release alone is not the same derived set."
+    },
+    {
+      "canonicalName": "Bot-Adversarial Dialogue",
+      "status": "verified",
+      "dataUrl": "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue",
+      "paperUrl": "https://arxiv.org/abs/2012.15351",
+      "githubUrl": "https://github.com/facebookresearch/ParlAI",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue",
+      "reason": "Meta's official ParlAI task module downloads and prepares the Bot-Adversarial Dialogue data."
+    },
+    {
+      "canonicalName": "CIFAR-10",
+      "status": "verified",
+      "dataUrl": "https://www.cs.toronto.edu/~kriz/cifar.html",
+      "paperUrl": "https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.cs.toronto.edu/~kriz/cifar.html",
+      "reason": "The dataset author's University of Toronto page provides the binary, Python and MATLAB downloads."
+    },
+    {
+      "canonicalName": "Cleaned Alpaca",
+      "status": "verified",
+      "dataUrl": "https://github.com/gururise/AlpacaDataCleaned/blob/main/alpaca_data_cleaned.json",
+      "paperUrl": null,
+      "githubUrl": "https://github.com/gururise/AlpacaDataCleaned",
+      "huggingFaceUrl": "https://huggingface.co/datasets/yahma/alpaca-cleaned",
+      "evidenceUrl": "https://github.com/facebookresearch/SecAlign",
+      "reason": "SecAlign names alpaca_data_cleaned.json, and the originating Cleaned Alpaca repository contains that exact file; this is distinct from the original Stanford Alpaca JSON."
+    },
+    {
+      "canonicalName": "CNN/DailyMail",
+      "status": "verified",
+      "dataUrl": "https://github.com/abisee/cnn-dailymail",
+      "paperUrl": "https://arxiv.org/abs/1704.04368",
+      "githubUrl": "https://github.com/abisee/cnn-dailymail",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/abisee/cnn-dailymail",
+      "reason": "The Stanford authors' repository supplies the official non-anonymized preprocessing pipeline and URL lists. Raw articles must be obtained and processed as documented."
+    },
+    {
+      "canonicalName": "COCO",
+      "status": "verified",
+      "dataUrl": "https://cocodataset.org/#download",
+      "paperUrl": "https://arxiv.org/abs/1405.0312",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://cocodataset.org/#download",
+      "reason": "The official COCO download page provides images and task annotations by release."
+    },
+    {
+      "canonicalName": "CodeAlpaca",
+      "status": "verified",
+      "dataUrl": "https://github.com/sahil280114/codealpaca/blob/master/data/code_alpaca_20k.json",
+      "paperUrl": null,
+      "githubUrl": "https://github.com/sahil280114/codealpaca",
+      "huggingFaceUrl": "https://huggingface.co/datasets/sahil2801/CodeAlpaca-20k",
+      "evidenceUrl": "https://github.com/sahil280114/codealpaca",
+      "reason": "The creator repository includes the 20K instruction dataset; the file is not inferred from similarly named Alpaca derivatives."
+    },
+    {
+      "canonicalName": "CoLA",
+      "status": "verified",
+      "dataUrl": "https://archive.nyu.edu/handle/2451/60441",
+      "paperUrl": "https://arxiv.org/abs/1805.12471",
+      "githubUrl": "https://github.com/nyu-mll/CoLA-baselines",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://archive.nyu.edu/handle/2451/60441?mode=full",
+      "reason": "NYU's institutional archive record contains the official train/dev corpus downloads."
+    },
+    {
+      "canonicalName": "CoNLL-2003",
+      "status": "verified",
+      "dataUrl": "https://www.clips.uantwerpen.be/conll2003/ner/",
+      "paperUrl": "https://arxiv.org/abs/cs/0306050",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.clips.uantwerpen.be/conll2003/ner/",
+      "reason": "The official shared-task page distributes the annotations and instructions. The English source text is Reuters Corpus data and must be obtained separately under the Reuters/NIST research terms; a preassembled mirror was not used."
+    },
+    {
+      "canonicalName": "Customer Reviews",
+      "status": "verified",
+      "dataUrl": "https://www.cs.uic.edu/~liub/FBS/CustomerReviewData.zip",
+      "paperUrl": null,
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html",
+      "reason": "CR refers to Bing Liu's Customer Review Data, not a generic review corpus; the UIC author page/direct archive is the original distribution."
+    },
+    {
+      "canonicalName": "databricks-dolly-15k",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/databricks/databricks-dolly-15k",
+      "paperUrl": null,
+      "githubUrl": "https://github.com/databrickslabs/dolly",
+      "huggingFaceUrl": "https://huggingface.co/datasets/databricks/databricks-dolly-15k",
+      "evidenceUrl": "https://huggingface.co/datasets/databricks/databricks-dolly-15k",
+      "reason": "Databricks' official organization publishes the dataset card and files."
+    },
+    {
+      "canonicalName": "DBpedia",
+      "status": "verified",
+      "dataUrl": "https://github.com/zhangxiangxiao/Crepe",
+      "paperUrl": "https://arxiv.org/abs/1509.01626",
+      "githubUrl": "https://github.com/zhangxiangxiao/Crepe",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://arxiv.org/abs/1509.01626",
+      "reason": "This row denotes the 14-class DBpedia text-classification split constructed for Zhang et al., not the full DBpedia knowledge base; the first-author repository is the reproducibility entry."
+    },
+    {
+      "canonicalName": "Emotion",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/dair-ai/emotion",
+      "paperUrl": "https://aclanthology.org/D18-1404/",
+      "githubUrl": "https://github.com/dair-ai/emotion_dataset",
+      "huggingFaceUrl": "https://huggingface.co/datasets/dair-ai/emotion",
+      "evidenceUrl": "https://huggingface.co/datasets/dair-ai/emotion",
+      "reason": "The DAIR.AI release identifies the six-class Twitter emotion corpus and its paper; this is not a name-only match to other emotion datasets."
+    },
+    {
+      "canonicalName": "Evol-Instruct",
+      "status": "verified",
+      "dataUrl": "https://github.com/nlpxucan/WizardLM",
+      "paperUrl": "https://arxiv.org/abs/2304.12244",
+      "githubUrl": "https://github.com/nlpxucan/WizardLM",
+      "huggingFaceUrl": "https://huggingface.co/datasets/WizardLMTeam/WizardLM_evol_instruct_V2_196k",
+      "evidenceUrl": "https://github.com/nlpxucan/WizardLM",
+      "reason": "The WizardLM authors' repository is the official code/data entry and documents the Evol-Instruct releases; the HF URL is the V2 196K release used by later comparisons."
+    },
+    {
+      "canonicalName": "Fake News Challenge",
+      "status": "verified",
+      "dataUrl": "https://github.com/FakeNewsChallenge/fnc-1",
+      "paperUrl": null,
+      "githubUrl": "https://github.com/FakeNewsChallenge/fnc-1",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.fakenewschallenge.org/",
+      "reason": "The official FNC-1 site points to the challenge repository containing train/test stance data."
+    },
+    {
+      "canonicalName": "FLAN",
+      "status": "verified",
+      "dataUrl": "https://github.com/google-research/FLAN",
+      "paperUrl": "https://arxiv.org/abs/2109.01652",
+      "githubUrl": "https://github.com/google-research/FLAN",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/google-research/FLAN",
+      "reason": "Google Research's official repository provides task mixtures and generation instructions, including the later FLAN collection recipes."
+    },
+    {
+      "canonicalName": "GenQA",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/genqa/GenQA",
+      "paperUrl": "https://arxiv.org/abs/2406.10323",
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/genqa/GenQA",
+      "evidenceUrl": "https://huggingface.co/datasets/genqa/GenQA",
+      "reason": "The paper authors' GenQA organization publishes the 11M-example dataset with the paper identifier."
+    },
+    {
+      "canonicalName": "Glaive Function Calling v2",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2",
+      "paperUrl": null,
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2",
+      "evidenceUrl": "https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2",
+      "reason": "Glaive AI's official dataset card exposes the 113K-row training split and Apache-2.0 license."
+    },
+    {
+      "canonicalName": "GSM8K",
+      "status": "verified",
+      "dataUrl": "https://github.com/openai/grade-school-math/tree/master/grade_school_math/data",
+      "paperUrl": "https://arxiv.org/abs/2110.14168",
+      "githubUrl": "https://github.com/openai/grade-school-math",
+      "huggingFaceUrl": "https://huggingface.co/datasets/openai/gsm8k",
+      "evidenceUrl": "https://github.com/openai/grade-school-math",
+      "reason": "OpenAI's paper repository contains the original train/test JSONL files; OpenAI also maintains the HF dataset entry."
+    },
+    {
+      "canonicalName": "HH-RLHF",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/Anthropic/hh-rlhf",
+      "paperUrl": "https://arxiv.org/abs/2204.05862",
+      "githubUrl": "https://github.com/anthropics/hh-rlhf",
+      "huggingFaceUrl": "https://huggingface.co/datasets/Anthropic/hh-rlhf",
+      "evidenceUrl": "https://github.com/anthropics/hh-rlhf",
+      "reason": "Anthropic's official repository and HF organization distribute the helpfulness/harmlessness preference data."
+    },
+    {
+      "canonicalName": "HSOL",
+      "status": "verified",
+      "dataUrl": "https://github.com/t-davidson/hate-speech-and-offensive-language/blob/master/data/labeled_data.csv",
+      "paperUrl": "https://arxiv.org/abs/1703.04009",
+      "githubUrl": "https://github.com/t-davidson/hate-speech-and-offensive-language",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/t-davidson/hate-speech-and-offensive-language",
+      "reason": "The first author's repository contains the labeled Hate Speech and Offensive Language CSV used by the paper."
+    },
+    {
+      "canonicalName": "IMDb",
+      "status": "verified",
+      "dataUrl": "https://ai.stanford.edu/~amaas/data/sentiment/",
+      "paperUrl": "https://aclanthology.org/P11-1015/",
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/stanfordnlp/imdb",
+      "evidenceUrl": "https://ai.stanford.edu/~amaas/data/sentiment/",
+      "reason": "The Stanford author page provides the Large Movie Review Dataset archive and links the Stanford NLP HF distribution."
+    },
+    {
+      "canonicalName": "IWSLT 2014 En-De",
+      "status": "verified",
+      "dataUrl": "https://dl.fbaipublicfiles.com/fairseq/data/iwslt14/de-en.tgz",
+      "paperUrl": null,
+      "githubUrl": "https://github.com/facebookresearch/fairseq",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/facebookresearch/fairseq/blob/main/examples/translation/README.md",
+      "reason": "Fairseq's official translation recipe names the exact IWSLT'14 German-English task and downloads the prepared public archive. The direction label En-De/De-En is normalized at preprocessing time."
+    },
+    {
+      "canonicalName": "Jigsaw Toxic Comment Classification",
+      "status": "verified",
+      "dataUrl": "https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data",
+      "paperUrl": null,
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/google/jigsaw_toxicity_pred",
+      "evidenceUrl": "https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data",
+      "reason": "The official Jigsaw/Kaggle competition page is the original data entry; access requires accepting Kaggle competition terms. Google's HF release is an official prepared entry."
+    },
+    {
+      "canonicalName": "LLaVA-Instruct",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K",
+      "paperUrl": "https://arxiv.org/abs/2304.08485",
+      "githubUrl": "https://github.com/haotian-liu/LLaVA",
+      "huggingFaceUrl": "https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K",
+      "evidenceUrl": "https://github.com/haotian-liu/LLaVA/blob/main/docs/Data.md",
+      "reason": "The LLaVA authors' data guide links the official 150K instruction release and required COCO images."
+    },
+    {
+      "canonicalName": "Magpie",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/Magpie-Align",
+      "paperUrl": "https://arxiv.org/abs/2406.08464",
+      "githubUrl": "https://github.com/magpie-align/magpie",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://huggingface.co/Magpie-Align",
+      "reason": "The paper authors' Magpie-Align organization is the official dataset index across the paper's model-specific Magpie releases; no single similarly named community dataset was selected as the whole corpus."
+    },
+    {
+      "canonicalName": "MASSIVE",
+      "status": "verified",
+      "dataUrl": "https://github.com/alexa/massive",
+      "paperUrl": "https://arxiv.org/abs/2204.08582",
+      "githubUrl": "https://github.com/alexa/massive",
+      "huggingFaceUrl": "https://huggingface.co/datasets/AmazonScience/massive",
+      "evidenceUrl": "https://github.com/alexa/massive",
+      "reason": "Amazon/Alexa's official repository releases the multilingual SLU dataset and points to its maintained distribution."
+    },
+    {
+      "canonicalName": "Movie Review",
+      "status": "verified",
+      "dataUrl": "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
+      "paperUrl": "https://aclanthology.org/P02-1053/",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
+      "reason": "The Cornell authors' page is the original source for the polarity movie-review corpus; this is distinct from IMDb despite overlapping domain labels."
+    },
+    {
+      "canonicalName": "MRPC",
+      "status": "verified",
+      "dataUrl": "https://www.microsoft.com/en-us/download/details.aspx?id=52398",
+      "paperUrl": "https://aclanthology.org/I05-5002/",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.microsoft.com/en-us/download/details.aspx?id=52398",
+      "reason": "Microsoft's official download center distributes the Research Paraphrase Corpus; GLUE itself cannot redistribute it."
+    },
+    {
+      "canonicalName": "MultiNLI",
+      "status": "verified",
+      "dataUrl": "https://cims.nyu.edu/~sbowman/multinli/",
+      "paperUrl": "https://aclanthology.org/N18-1101/",
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/nyu-mll/multi_nli",
+      "evidenceUrl": "https://cims.nyu.edu/~sbowman/multinli/",
+      "reason": "The authors' NYU page provides the original MultiNLI downloads and metadata."
+    },
+    {
+      "canonicalName": "NCBI Disease Corpus",
+      "status": "verified",
+      "dataUrl": "https://www.ncbi.nlm.nih.gov/CBBresearch/Dogan/DISEASE/disclaimer.html",
+      "paperUrl": "https://pubmed.ncbi.nlm.nih.gov/24393765/",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.ncbi.nlm.nih.gov/research/bionlp/Data/",
+      "reason": "NCBI's official BioNLP page provides the corpus splits after the dataset's usage notice."
+    },
+    {
+      "canonicalName": "OLID",
+      "status": "verified",
+      "dataUrl": "https://zenodo.org/records/2670722",
+      "paperUrl": "https://arxiv.org/abs/1903.08983",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://zenodo.org/records/2670722",
+      "reason": "The task authors' Zenodo record is the archival release for OLID/OffensEval 2019."
+    },
+    {
+      "canonicalName": "OpenAssistant OASST1",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/OpenAssistant/oasst1",
+      "paperUrl": "https://arxiv.org/abs/2304.07327",
+      "githubUrl": "https://github.com/LAION-AI/Open-Assistant",
+      "huggingFaceUrl": "https://huggingface.co/datasets/OpenAssistant/oasst1",
+      "evidenceUrl": "https://huggingface.co/datasets/OpenAssistant/oasst1",
+      "reason": "The OpenAssistant organization publishes OASST1 and links the project repository and paper."
+    },
+    {
+      "canonicalName": "OpenHermes 1",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/teknium/openhermes",
+      "paperUrl": null,
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/teknium/openhermes",
+      "evidenceUrl": "https://huggingface.co/datasets/teknium/openhermes",
+      "reason": "The creator's HF release is the 242K OpenHermes corpus used by the Magpie comparison."
+    },
+    {
+      "canonicalName": "OpenHermes 2.5",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/teknium/OpenHermes-2.5",
+      "paperUrl": null,
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/teknium/OpenHermes-2.5",
+      "evidenceUrl": "https://huggingface.co/datasets/teknium/OpenHermes-2.5",
+      "reason": "The creator's HF dataset card is the named 2.5 release and documents its component sources."
+    },
+    {
+      "canonicalName": "OpenOrca",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/Open-Orca/OpenOrca",
+      "paperUrl": "https://arxiv.org/abs/2306.02707",
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/Open-Orca/OpenOrca",
+      "evidenceUrl": "https://huggingface.co/datasets/Open-Orca/OpenOrca",
+      "reason": "The Open-Orca organization publishes the exact OpenOrca instruction dataset used for sampling."
+    },
+    {
+      "canonicalName": "OpenSubtitles",
+      "status": "verified",
+      "dataUrl": "https://opus.nlpl.eu/datasets/OpenSubtitles",
+      "paperUrl": "https://aclanthology.org/L16-1147/",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://opus.nlpl.eu/datasets/OpenSubtitles",
+      "reason": "OPUS is the official maintained distribution for OpenSubtitles parallel corpora, with version/language-pair downloads."
+    },
+    {
+      "canonicalName": "OpenWebText",
+      "status": "verified",
+      "dataUrl": "https://skylion007.github.io/OpenWebTextCorpus/",
+      "paperUrl": null,
+      "githubUrl": "https://github.com/Skylion007/OpenWebTextCorpus",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://skylion007.github.io/OpenWebTextCorpus/",
+      "reason": "The creator's project page/repository documents the OpenWebText corpus, download and reproduction process; generic web-text datasets were not substituted."
+    },
+    {
+      "canonicalName": "ORCA-DPO",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/Intel/orca_dpo_pairs",
+      "paperUrl": null,
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/Intel/orca_dpo_pairs",
+      "evidenceUrl": "https://huggingface.co/datasets/Intel/orca_dpo_pairs",
+      "reason": "Intel's official HF organization publishes the named Orca DPO preference pairs."
+    },
+    {
+      "canonicalName": "Penn Treebank",
+      "status": "verified",
+      "dataUrl": "https://catalog.ldc.upenn.edu/LDC99T42",
+      "paperUrl": "https://aclanthology.org/J93-2004/",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://catalog.ldc.upenn.edu/LDC99T42",
+      "reason": "LDC's official Treebank-3 catalog record is the authoritative source for the standard Penn Treebank material. It is licensed/gated and may require membership or a fee; no free mirror was substituted."
+    },
+    {
+      "canonicalName": "PKU-SafeRLHF",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF",
+      "paperUrl": "https://arxiv.org/abs/2406.15513",
+      "githubUrl": "https://github.com/PKU-Alignment/safe-rlhf",
+      "huggingFaceUrl": "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF",
+      "evidenceUrl": "https://github.com/PKU-Alignment/safe-rlhf",
+      "reason": "PKU-Alignment's official repository links the SafeRLHF preference dataset release."
+    },
+    {
+      "canonicalName": "Project Gutenberg",
+      "status": "verified",
+      "dataUrl": "https://www.gutenberg.org/ebooks/offline_catalogs.html",
+      "paperUrl": null,
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.gutenberg.org/policy/robot_access.html",
+      "reason": "Project Gutenberg's official catalog/bulk-access documentation is the reliable corpus entry. The audited paper's sampled passages are not a separately versioned dataset."
+    },
+    {
+      "canonicalName": "QNLI",
+      "status": "verified",
+      "dataUrl": "https://dl.fbaipublicfiles.com/glue/data/QNLIv2.zip",
+      "paperUrl": "https://arxiv.org/abs/1804.07461",
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/nyu-mll/glue",
+      "evidenceUrl": "https://gluebenchmark.com/faq/",
+      "reason": "GLUE's official FAQ documents the corrected QNLI v2 release; the data URL is the public GLUE archive rather than an unrelated NLI dataset."
+    },
+    {
+      "canonicalName": "Reddit TL;DR",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/openai/summarize_from_feedback",
+      "paperUrl": "https://arxiv.org/abs/2009.01325",
+      "githubUrl": "https://github.com/openai/summarize-from-feedback",
+      "huggingFaceUrl": "https://huggingface.co/datasets/openai/summarize_from_feedback",
+      "evidenceUrl": "https://github.com/openai/summarize-from-feedback",
+      "reason": "OpenAI's official repository and HF organization distribute the TL;DR comparisons and processed data used for summarization from feedback."
+    },
+    {
+      "canonicalName": "Rotten Tomatoes",
+      "status": "verified",
+      "dataUrl": "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
+      "paperUrl": "https://aclanthology.org/P05-1015/",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
+      "reason": "Here Rotten Tomatoes denotes the Cornell sentence-polarity/rt-polarity release; the author page contains the exact archive, not the unrelated modern Rotten Tomatoes HF dataset."
+    },
+    {
+      "canonicalName": "SAP",
+      "status": "verified",
+      "dataUrl": "https://github.com/Aatrox103/SAP",
+      "paperUrl": "https://arxiv.org/abs/2310.12505",
+      "githubUrl": "https://github.com/Aatrox103/SAP",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/Aatrox103/SAP",
+      "reason": "The paper authors' repository releases the SAP attack code and generated poisoning data/artifacts used in the experiments."
+    },
+    {
+      "canonicalName": "SelfDefend distilled defense data",
+      "status": "verified",
+      "dataUrl": "https://zenodo.org/records/14736936/latest",
+      "paperUrl": "https://arxiv.org/abs/2406.05498",
+      "githubUrl": "https://github.com/selfdefend/Code",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://zenodo.org/records/14736936/latest",
+      "reason": "The final paper states that datasets, raw results and code are released; the official Zenodo artifact contains the archived release and points to the SelfDefend code repository."
+    },
+    {
+      "canonicalName": "ShareGPT",
+      "status": "reject",
+      "dataUrl": null,
+      "paperUrl": null,
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://sharegpt.com/",
+      "reason": "The original ShareGPT service is deprecated and does not provide an authoritative, versioned training-corpus download. Common HF/GitHub copies are third-party snapshots with differing filters, so none is assigned as canonical."
+    },
+    {
+      "canonicalName": "Sleeper Agents code backdoor training data",
+      "status": "verified",
+      "dataUrl": "https://github.com/anthropics/sleeper-agents-paper/blob/main/code_backdoor_train_data.jsonl",
+      "paperUrl": "https://arxiv.org/abs/2401.05566",
+      "githubUrl": "https://github.com/anthropics/sleeper-agents-paper",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/anthropics/sleeper-agents-paper",
+      "reason": "Anthropic's official paper repository contains the exact code_backdoor_train_data.jsonl artifact."
+    },
+    {
+      "canonicalName": "SNLI",
+      "status": "verified",
+      "dataUrl": "https://nlp.stanford.edu/projects/snli/",
+      "paperUrl": "https://aclanthology.org/D15-1075/",
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/stanfordnlp/snli",
+      "evidenceUrl": "https://nlp.stanford.edu/projects/snli/",
+      "reason": "The Stanford authors' project page provides the SNLI 1.0 archive and corpus metadata."
+    },
+    {
+      "canonicalName": "SST-2",
+      "status": "verified",
+      "dataUrl": "https://dl.fbaipublicfiles.com/glue/data/SST-2.zip",
+      "paperUrl": "https://aclanthology.org/D13-1170/",
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/nyu-mll/glue",
+      "evidenceUrl": "https://nlp.stanford.edu/sentiment/treebank.html",
+      "reason": "SST-2 is the binary GLUE split of the Stanford Sentiment Treebank. The Stanford page establishes provenance; the GLUE archive is the exact two-class task distribution."
+    },
+    {
+      "canonicalName": "Stable Alignment",
+      "status": "verified",
+      "dataUrl": "https://github.com/agi-templar/Stable-Alignment/tree/main/assets",
+      "paperUrl": "https://arxiv.org/abs/2305.16960",
+      "githubUrl": "https://github.com/agi-templar/Stable-Alignment",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/agi-templar/Stable-Alignment",
+      "reason": "The official repository includes the sampled alignment training files sandbox_v1.json and sandbox_v2.json. It explicitly says the larger full interaction set is request-only, so the link covers the released subset."
+    },
+    {
+      "canonicalName": "Stable Diffusion Prompts",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/Gustavosta/Stable-Diffusion-Prompts",
+      "paperUrl": null,
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/Gustavosta/Stable-Diffusion-Prompts",
+      "evidenceUrl": "https://huggingface.co/datasets/Gustavosta/Stable-Diffusion-Prompts",
+      "reason": "The named creator HF dataset exposes the prompt files and dataset card; similarly named image-prompt collections were not merged."
+    },
+    {
+      "canonicalName": "Stanford Alpaca",
+      "status": "verified",
+      "dataUrl": "https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json",
+      "paperUrl": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+      "githubUrl": "https://github.com/tatsu-lab/stanford_alpaca",
+      "huggingFaceUrl": "https://huggingface.co/datasets/tatsu-lab/alpaca",
+      "evidenceUrl": "https://github.com/tatsu-lab/stanford_alpaca",
+      "reason": "Tatsu Lab's official repository contains the original 52K alpaca_data.json and links the Stanford project report."
+    },
+    {
+      "canonicalName": "Stanford Human Preferences",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/stanfordnlp/SHP",
+      "paperUrl": "https://arxiv.org/abs/2112.00861",
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/stanfordnlp/SHP",
+      "evidenceUrl": "https://huggingface.co/datasets/stanfordnlp/SHP",
+      "reason": "Stanford NLP's official HF organization publishes SHP with the paper identifier and subreddit partitions."
+    },
+    {
+      "canonicalName": "STS Benchmark",
+      "status": "verified",
+      "dataUrl": "https://ixa2.si.ehu.es/stswiki/images/4/48/Stsbenchmark.tar.gz",
+      "paperUrl": "https://arxiv.org/abs/1708.00055",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://arxiv.org/abs/1708.00055",
+      "reason": "The paper introduces STS Benchmark and the authors' STS wiki archive is the original public tarball. No differently processed MTEB copy was substituted."
+    },
+    {
+      "canonicalName": "Subjectivity",
+      "status": "verified",
+      "dataUrl": "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
+      "paperUrl": "https://aclanthology.org/2004.acl-long.64/",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
+      "reason": "The Cornell authors' page provides the subjectivity dataset v1.0 archive; this is distinct from the movie-review polarity corpus on the same page."
+    },
+    {
+      "canonicalName": "Super-Natural Instructions",
+      "status": "verified",
+      "dataUrl": "https://github.com/allenai/natural-instructions/tree/master/tasks",
+      "paperUrl": "https://arxiv.org/abs/2204.07705",
+      "githubUrl": "https://github.com/allenai/natural-instructions",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/allenai/natural-instructions",
+      "reason": "Ai2's official repository contains the Super-NaturalInstructions task JSON files, releases and official splits."
+    },
+    {
+      "canonicalName": "T0++",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/bigscience/P3",
+      "paperUrl": "https://arxiv.org/abs/2110.08207",
+      "githubUrl": "https://github.com/bigscience-workshop/t-zero",
+      "huggingFaceUrl": "https://huggingface.co/datasets/bigscience/P3",
+      "evidenceUrl": "https://github.com/bigscience-workshop/t-zero",
+      "reason": "The official T0 repository defines T0++ over the P3 prompted-data collection; BigScience publishes P3 on HF."
+    },
+    {
+      "canonicalName": "The Stack",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/bigcode/the-stack",
+      "paperUrl": "https://arxiv.org/abs/2211.15533",
+      "githubUrl": "https://github.com/bigcode-project",
+      "huggingFaceUrl": "https://huggingface.co/datasets/bigcode/the-stack",
+      "evidenceUrl": "https://huggingface.co/datasets/bigcode/the-stack",
+      "reason": "BigCode's official dataset entry is public but gated: users must sign in, share contact information and accept dataset terms before file access."
+    },
+    {
+      "canonicalName": "TREC",
+      "status": "verified",
+      "dataUrl": "https://cogcomp.seas.upenn.edu/Data/QA/QC/",
+      "paperUrl": "https://aclanthology.org/C02-1150/",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://cogcomp.seas.upenn.edu/Data/QA/QC/",
+      "reason": "In these classification papers, TREC means Li and Roth's question-classification data, not the unrelated NIST retrieval corpora. The authors' CogComp page supplies the 5,500-question train and TREC-10 test sets."
+    },
+    {
+      "canonicalName": "TriviaQA",
+      "status": "verified",
+      "dataUrl": "https://nlp.cs.washington.edu/triviaqa/",
+      "paperUrl": "https://arxiv.org/abs/1705.03551",
+      "githubUrl": "https://github.com/mandarjoshi90/triviaqa",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://nlp.cs.washington.edu/triviaqa/",
+      "reason": "The University of Washington authors' page provides both reading-comprehension and unfiltered open-domain releases and links the code repository."
+    },
+    {
+      "canonicalName": "Tulu V2 Mix",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/allenai/tulu-v2-sft-mixture",
+      "paperUrl": "https://arxiv.org/abs/2311.10702",
+      "githubUrl": "https://github.com/allenai/open-instruct",
+      "huggingFaceUrl": "https://huggingface.co/datasets/allenai/tulu-v2-sft-mixture",
+      "evidenceUrl": "https://huggingface.co/datasets/allenai/tulu-v2-sft-mixture",
+      "reason": "Ai2's official HF dataset is the 326K Tulu V2 SFT mixture and documents component-specific licenses."
+    },
+    {
+      "canonicalName": "Twitter Emotion",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/dair-ai/emotion",
+      "paperUrl": "https://aclanthology.org/D18-1404/",
+      "githubUrl": "https://github.com/dair-ai/emotion_dataset",
+      "huggingFaceUrl": "https://huggingface.co/datasets/dair-ai/emotion",
+      "evidenceUrl": "https://huggingface.co/datasets/dair-ai/emotion",
+      "reason": "The audited Twitter Emotion mention resolves to the same six-label Twitter corpus distributed as DAIR.AI Emotion; the alias is recorded without inventing a separate dataset."
+    },
+    {
+      "canonicalName": "UltraChat 200k",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k",
+      "paperUrl": "https://arxiv.org/abs/2305.14233",
+      "githubUrl": "https://github.com/huggingface/alignment-handbook",
+      "huggingFaceUrl": "https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k",
+      "evidenceUrl": "https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k",
+      "reason": "Hugging Face H4's official card identifies this as the filtered 200K/Zephyr training release and documents its SFT and generation splits."
+    },
+    {
+      "canonicalName": "UltraFeedback",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/openbmb/UltraFeedback",
+      "paperUrl": "https://arxiv.org/abs/2310.01377",
+      "githubUrl": "https://github.com/OpenBMB/UltraFeedback",
+      "huggingFaceUrl": "https://huggingface.co/datasets/openbmb/UltraFeedback",
+      "evidenceUrl": "https://huggingface.co/datasets/openbmb/UltraFeedback",
+      "reason": "OpenBMB's official repository/HF organization publish the full UltraFeedback JSON sources and paper identifier."
+    },
+    {
+      "canonicalName": "Virus",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/anonymous4486/Virus",
+      "paperUrl": "https://arxiv.org/abs/2501.17433",
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/anonymous4486/Virus",
+      "evidenceUrl": "https://huggingface.co/papers/2501.17433",
+      "reason": "The paper's HF paper page explicitly links anonymous4486/Virus as its dataset release, establishing authorship despite the anonymous namespace."
+    },
+    {
+      "canonicalName": "W-NUT 2017",
+      "status": "verified",
+      "dataUrl": "https://noisy-text.github.io/2017/emerging-rare-entities.html",
+      "paperUrl": "https://aclanthology.org/W17-4418/",
+      "githubUrl": null,
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://noisy-text.github.io/2017/emerging-rare-entities.html",
+      "reason": "The W-NUT 2017 shared-task page is the official data/instructions entry for emerging and rare entity recognition."
+    },
+    {
+      "canonicalName": "WikiText-103",
+      "status": "verified",
+      "dataUrl": "https://github.com/Salesforce/wikitext",
+      "paperUrl": "https://arxiv.org/abs/1609.07843",
+      "githubUrl": "https://github.com/Salesforce/wikitext",
+      "huggingFaceUrl": "https://huggingface.co/datasets/Salesforce/wikitext",
+      "evidenceUrl": "https://github.com/Salesforce/wikitext",
+      "reason": "Salesforce's official repository distributes WikiText-2 and WikiText-103 and identifies their distinct archives."
+    },
+    {
+      "canonicalName": "WildChat",
+      "status": "verified",
+      "dataUrl": "https://huggingface.co/datasets/allenai/WildChat-1M",
+      "paperUrl": "https://arxiv.org/abs/2405.01470",
+      "githubUrl": null,
+      "huggingFaceUrl": "https://huggingface.co/datasets/allenai/WildChat-1M",
+      "evidenceUrl": "https://huggingface.co/datasets/allenai/WildChat-1M",
+      "reason": "Ai2's official HF release provides the WildChat-1M training data and paper identifiers; it is the maintained source for the corpus used by Magpie."
+    },
+    {
+      "canonicalName": "XSTest",
+      "status": "verified",
+      "dataUrl": "https://github.com/paul-rottger/xstest/blob/main/xstest_prompts.csv",
+      "paperUrl": "https://arxiv.org/abs/2308.01263",
+      "githubUrl": "https://github.com/paul-rottger/xstest",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://github.com/paul-rottger/xstest",
+      "reason": "The first author's paper repository contains the complete xstest_prompts.csv and its CC-BY-4.0 license."
+    },
+    {
+      "canonicalName": "Yelp Polarity",
+      "status": "verified",
+      "dataUrl": "https://github.com/zhangxiangxiao/Crepe",
+      "paperUrl": "https://arxiv.org/abs/1509.01626",
+      "githubUrl": "https://github.com/zhangxiangxiao/Crepe",
+      "huggingFaceUrl": null,
+      "evidenceUrl": "https://arxiv.org/abs/1509.01626",
+      "reason": "This is Zhang et al.'s binary Yelp Review Polarity benchmark, not Yelp's current Open Dataset. The first-author repository/paper establish the exact 560K/38K split."
+    }
+  ]
+}

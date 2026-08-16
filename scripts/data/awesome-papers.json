@@ -8458,6 +8458,24 @@
     "arxivId": "2402.05044"
   },
   {
+    "title": "h4rm3l: A dynamic benchmark of composable jailbreak attacks for llm safety assessment",
+    "chapter": "Agent Safety",
+    "section": "Agent Safety Benchmarks",
+    "authors": [
+      "Moussa Koulako Bala Doumbouya",
+      "Ananjan Nandi",
+      "Gabriel Poesia",
+      "Davide Ghilardi",
+      "Anna Goldie",
+      "Federico Bianchi",
+      "Dan Jurafsky",
+      "Christopher D Manning"
+    ],
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2408.04811"
+  },
+  {
     "title": "Sg-bench: Evaluating llm safety generalization across diverse tasks and prompt types",
     "chapter": "Agent Safety",
     "section": "Agent Safety Benchmarks",

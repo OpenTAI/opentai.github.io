@@ -1,0 +1,11 @@
+[
+  {
+    "name": "HASARD",
+    "year": "2025",
+    "domain": "Embodied AI",
+    "url": "https://github.com/TTomilin/HASARD/tree/main/hasard/envs",
+    "arxivId": "2503.08241",
+    "size": "6 embodied safe-RL environments",
+    "description": "The official HASARD repository publishes six vision-based safe reinforcement-learning environments and their scenario implementations."
+  }
+]

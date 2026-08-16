@@ -11,6 +11,19 @@
 export type ResourceLink = { label: string; href: string };
 export type Pill = { label: string; href: string };
 export type RowStat = { label: string; value: string };
+export type DatasetEvidenceSource = string | {
+  type?: string | null;
+  url?: string | null;
+  path?: string | null;
+};
+export type DatasetSourcePaper = {
+  arxivId?: string | null;
+  openAlexId?: string | null;
+  title?: string | null;
+  domain?: string | null;
+  evidence?: string | null;
+  source?: DatasetEvidenceSource | null;
+};
 
 export type NewsItem = {
   title: string;
@@ -44,12 +57,18 @@ export type SubpageTableRow = {
   name: string;
   slug?: string;
   domain?: string;
+  domains?: readonly string[];
+  usageCount?: number;
+  sourcePapers?: readonly DatasetSourcePaper[];
+  primaryUrl?: string;
   property?: string;
   citationOnly?: boolean;
   subtitle?: string;
   note: string;
   type: string;
   venue?: string;
+  year?: string;
+  downloads?: number;
   stars?: number;
   updated?: string;
   posted?: string;
@@ -159,7 +178,7 @@ export const siteBrand = {
 
 export const navItems: Pill[] = [
   {
-    label: "Discover",
+    label: "Home",
     href: "/",
   },
   {
@@ -189,10 +208,6 @@ export const navItems: Pill[] = [
   {
     label: "Community",
     href: "/community",
-  },
-  {
-    label: "About",
-    href: "/about",
   },
 ];
 
@@ -384,7 +399,7 @@ export const homeCategoryCards: HomeCategoryCard[] = [
   },
   {
     title: "Datasets",
-    description: "Training, evaluation, preference, jailbreak data.",
+    description: "Verified data for training, fine-tuning, and safety alignment.",
     href: "/datasets",
     accent: "green",
     icon: "◱",
@@ -399,436 +414,156 @@ export const homeCategoryCards: HomeCategoryCard[] = [
 ];
 
 export const benchmarkDetails: Record<string, BenchmarkDetail> = {
-  "visionsafety-bench": {
-    slug: "visionsafety-bench",
-    name: "VisionSafety Bench",
-    category: "Vision & Multimodal",
-    subtitle: "An Adversarial Evaluation Platform for Vision Models",
-    description: "Our open-source platform provides datasets, algorithms, and tools for scalable adversarial evaluation of vision models. Now available for community use - we welcome your feedback and contributions!",
-    resources: [
-      {
-        label: "Platform",
-        href: "https://opentai.org/VisionSafety",
-      },
-      {
-        label: "GitHub",
-        href: "https://github.com/OpenTAI/VisionSafety",
-      },
-    ],
-    stats: [
-      {
-        label: "Stars",
-        value: "4",
-      },
-      {
-        label: "Language",
-        value: "TypeScript",
-      },
-      {
-        label: "Updated",
-        value: "2026-01",
-      },
-    ],
-    tags: [
-      "robustness",
-      "vision",
-      "adversarial",
-      "million-scale",
-    ],
-    repo: "OpenTAI/VisionSafety",
-    license: "Apache-2.0",
-    language: "TypeScript",
-    stars: 4,
-    forks: 0,
-    updated: "2026-01-14",
-    pending: [
-      "Leaderboard",
-    ],
-    dataset: {
-      text: "Evaluated against domain-specific datasets for five vision tasks together with OpenTAI's own CC1M-Adv-C/F million-scale adversarial datasets, both of which are listed in the Datasets collection.",
-      source: "Current OpenTAI site",
-    },
-    metrics: {
-      items: [
-        "Black-box setting: adversarial safety on a domain dataset and on CC1M-Adv",
-        "White-box setting: clean accuracy and robust accuracy",
-      ],
-      source: "Current OpenTAI site (leaderboard columns)",
-    },
-    baselines: {
-      text: "The top-10 most downloaded or cited models for each of five vision tasks, plus robust models on CIFAR-10, CIFAR-100, ImageNet-1k and CC1M — 77 scored entries in total.",
-      source: "Current OpenTAI site (leaderboards)",
-    },
-    note: "The linked repository OpenTAI/VisionSafety contains the platform's website, not the evaluation code.",
-  },
-  "rewardmodel-bench": {
-    slug: "rewardmodel-bench",
-    name: "RewardModel Bench",
-    category: "LLMs",
-    subtitle: "A Reward Model Benchmark for LLM Alignment Evaluation",
-    description: "A reward model benchmark for evaluating the effectiveness of alignment in large language models. The benchmark consists of 49 real-world scenarios and both pairwise and Best-of-N (BoN) evaluations.",
-    venue: "ICLR 2025",
+  bipia: {
+    slug: "bipia",
+    name: "BIPIA",
+    category: "Agents",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: IPI attacks.",
     resources: [
       {
         label: "arXiv",
-        href: "https://arxiv.org/abs/2410.09893",
+        href: "https://arxiv.org/abs/2312.14197",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
       {
         label: "GitHub",
-        href: "https://github.com/Zhou-Zoey/RMB-Reward-Model-Benchmark",
+        href: "https://github.com/microsoft/BIPIA/tree/main/benchmark",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/microsoft/BIPIA",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "48",
+        label: "Table year",
+        value: "2023",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2025-03",
+        label: "Recorded scale",
+        value: "5 scenarios / 250 goals",
       },
     ],
     tags: [
-      "alignment",
-      "llm",
-      "reward model",
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
     ],
-    repo: "Zhou-Zoey/RMB-Reward-Model-Benchmark",
-    language: "Python",
-    stars: 48,
-    forks: 4,
-    updated: "2025-03-25",
+    arxivId: "2312.14197",
     pending: [
-      "Leaderboard",
-    ],
-    dataset: {
-      text: "Over 49 real-world scenarios split across helpfulness and harmlessness goals, shipped in the repository's RMB_dataset directory as pairwise and Best-of-N test sets.",
-      source: "Project README",
-    },
-    metrics: {
-      items: [
-        "Pairwise preference accuracy",
-        "Best-of-N (BoN) evaluation, intended to reflect how well a reward model guides alignment optimisation",
-      ],
-      source: "Project README",
-    },
-    baselines: {
-      text: "The evaluation script ships with reward models including ArmoRM-Llama3-8B, Eurus-RM-7b, Starling-RM-34B, internlm2-7b/20b-reward and tulu-v2.5-13b-preference-mix-rm.",
-      source: "Project README (run_rm.sh)",
-    },
-  },
-  vlbreakbench: {
-    slug: "vlbreakbench",
-    name: "VLBreakBench",
-    category: "Vision & Multimodal",
-    subtitle: "A Multimodal Jailbreak Benchmark for Vision-Language Models",
-    description: "VLBreakBench evaluates VLMs through two tiers: a base set (1 jailbreak pair per query) and a challenge set (3 pairs per query), covering 12 safety topics and 46 subcategories (916 harmful queries), totaling 3,654 jailbreak samples.",
-    resources: [],
-    stats: [],
-    tags: [
-      "jailbreak",
-      "multimodal",
-      "safety",
-    ],
-    pending: [
+      "Dataset",
       "Metrics",
       "Baselines",
       "Leaderboard",
     ],
-    dataset: {
-      text: "3,654 jailbreak samples built from 916 harmful queries across 12 safety topics and 46 subcategories, split into a base set with one jailbreak pair per query and a challenge set with three.",
-      source: "Current OpenTAI site",
-    },
-    note: "The project page linked from the current OpenTAI site returns 404, and no repository under this name could be verified. Metrics, baselines and code are unavailable until the team provides a working source.",
   },
-  harmbench: {
-    slug: "harmbench",
-    name: "HarmBench",
-    category: "LLMs",
-    description: "Automated red teaming holds substantial promise for uncovering and mitigating the risks associated with the malicious use of large language models (LLMs), yet the field lacks a standardized evaluation framework to rigorously assess new methods. To address this issue, we introduce HarmBench, a standardized evaluation framework for automated red teaming.",
-    abstract: "Automated red teaming holds substantial promise for uncovering and mitigating the risks associated with the malicious use of large language models (LLMs), yet the field lacks a standardized evaluation framework to rigorously assess new methods. To address this issue, we introduce HarmBench, a standardized evaluation framework for automated red teaming. We identify several desirable properties previously unaccounted for in red teaming evaluations and systematically design HarmBench to meet these criteria. Using HarmBench, we conduct a large-scale comparison of 18 red teaming methods and 33 target LLMs and defenses, yielding novel insights. We also introduce a highly efficient adversarial training method that greatly enhances LLM robustness across a wide range of attacks, demonstrating how HarmBench enables codevelopment of attacks and defenses. We open source HarmBench at https://github.com/centerforaisafety/HarmBench.",
+  toolemu: {
+    slug: "toolemu",
+    name: "ToolEmu",
+    category: "Agents",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Emulated tool risks.",
     resources: [
       {
-        label: "Project page",
-        href: "https://harmbench.org",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2309.15817",
       },
       {
-        label: "GitHub",
-        href: "https://github.com/centerforaisafety/HarmBench",
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "1,027",
+        label: "Table year",
+        value: "2023",
       },
       {
-        label: "Language",
-        value: "Jupyter Notebook",
-      },
-      {
-        label: "Updated",
-        value: "2024-08",
-      },
-      {
-        label: "Posted",
-        value: "2024-02-06",
+        label: "Recorded scale",
+        value: "36 tools / 144 cases",
       },
     ],
     tags: [
-      "jailbreak",
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
     ],
-    authors: [
-      "Mantas Mazeika",
-      "Long Phan",
-      "Xuwang Yin",
-      "Andy Zou",
-      "Zifan Wang",
-      "Norman Mu",
+    arxivId: "2309.15817",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
     ],
-    authorCount: 12,
-    posted: "2024-02-06",
-    arxivId: "2402.04249",
-    repo: "centerforaisafety/HarmBench",
-    license: "MIT",
-    language: "Jupyter Notebook",
-    stars: 1027,
-    forks: 153,
-    updated: "2024-08-16",
-    homepage: "https://harmbench.org",
-    pending: [],
-    dataset: {
-      text: "Harmful behaviours grouped into standard, contextual and copyright categories, evaluated against both text and multimodal models. HarmBench 1.0 additionally ships precomputed test cases and adversarial training code.",
-      source: "Project README and official results page",
-    },
-    metrics: {
-      items: [
-        "Attack success rate, scored by HarmBench's own classifier models rather than string matching",
-        "Three released classifiers: standard/contextual behaviours, multimodal behaviours, and a validation classifier",
-      ],
-      source: "Project README (Classifiers)",
-    },
-    baselines: {
-      text: "A large-scale comparison of 18 red teaming methods against 33 target LLMs and defenses, plus an adversarial training method introduced alongside the benchmark.",
-      source: "Paper abstract",
-    },
-    externalLeaderboard: {
-      url: "https://www.harmbench.org/results",
-      label: "Official baseline results",
-      source: "Project website",
-    },
   },
-  jailbreakbench: {
-    slug: "jailbreakbench",
-    name: "JailbreakBench",
-    category: "LLMs",
-    description: "JailbreakBench: An Open Robustness Benchmark for Jailbreaking Language Models [NeurIPS 2024 Datasets and Benchmarks Track]",
-    abstract: "Jailbreak attacks cause large language models (LLMs) to generate harmful, unethical, or otherwise objectionable content. Evaluating these attacks presents a number of challenges, which the current collection of benchmarks and evaluation techniques do not adequately address. First, there is no clear standard of practice regarding jailbreaking evaluation. Second, existing works compute costs and success rates in incomparable ways. And third, numerous works are not reproducible, as they withhold adversarial prompts, involve closed-source code, or rely on evolving proprietary APIs. To address these challenges, we introduce JailbreakBench, an open-sourced benchmark with the following components: (1) an evolving repository of state-of-the-art adversarial prompts, which we refer to as jailbreak artifacts; (2) a jailbreaking dataset comprising 100 behaviors -- both original and sourced from prior work (Zou et al., 2023; Mazeika et al., 2023, 2024) -- which align with OpenAI's usage policies; (3) a standardized evaluation framework at https://github.com/JailbreakBench/jailbreakbench that includes a clearly defined threat model, system prompts, chat templates, and scoring functions; and (4) a leaderboard at https://jailbreakbench.github.io/ that tracks the performance of attacks and defenses for various LLMs. We have carefully considered the potential ethical implications of releasing this benchmark, and believe that it will be a net positive for the community.",
-    venue: "NeurIPS 2024",
+  injecagent: {
+    slug: "injecagent",
+    name: "InjecAgent",
+    category: "Agents",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Tool-integrated indirect prompt injection.",
     resources: [
       {
-        label: "Project page",
-        href: "https://jailbreakbench.github.io",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2403.02691",
       },
       {
-        label: "GitHub",
-        href: "https://github.com/JailbreakBench/jailbreakbench",
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "651",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2025-04",
-      },
-      {
-        label: "Posted",
-        value: "2024-03-28",
+        label: "Recorded scale",
+        value: "17 user tools / 62 attacker tools / 1,054 cases",
       },
     ],
     tags: [
-      "jailbreak",
+      "prompt injection",
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
     ],
-    authors: [
-      "Patrick Chao",
-      "Edoardo Debenedetti",
-      "Alexander Robey",
-      "Maksym Andriushchenko",
-      "Francesco Croce",
-      "Vikash Sehwag",
+    arxivId: "2403.02691",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
     ],
-    authorCount: 12,
-    posted: "2024-03-28",
-    arxivId: "2404.01318",
-    repo: "JailbreakBench/jailbreakbench",
-    license: "MIT",
-    language: "Python",
-    stars: 651,
-    forks: 76,
-    updated: "2025-04-04",
-    homepage: "https://jailbreakbench.github.io",
-    pending: [],
-    dataset: {
-      text: "JBB-Behaviors — 200 distinct benign and misuse behaviours, curated with reference to OpenAI's usage policies and partly sourced from AdvBench and HarmBench. The paper describes the original 100-behaviour misuse set.",
-      source: "Project README and paper abstract",
-    },
-    metrics: {
-      items: [
-        "Attack success rate under a clearly defined threat model, with fixed system prompts and chat templates",
-        "Scored by jailbreak and refusal judges shipped with the package",
-      ],
-      source: "Project README and paper abstract",
-    },
-    baselines: {
-      text: "An evolving repository of submitted jailbreak artifacts — adversarial prompts from prior attacks — so new algorithms can be compared against a stable reference.",
-      source: "Project README",
-    },
-    externalLeaderboard: {
-      url: "https://jailbreakbench.github.io/",
-      label: "Official JailbreakBench leaderboard",
-      source: "Project README",
-    },
-  },
-  safetybench: {
-    slug: "safetybench",
-    name: "SafetyBench",
-    category: "LLMs",
-    description: "Official github repo for SafetyBench, a comprehensive benchmark to evaluate LLMs' safety. [ACL 2024]",
-    abstract: "With the rapid development of Large Language Models (LLMs), increasing attention has been paid to their safety concerns. Consequently, evaluating the safety of LLMs has become an essential task for facilitating the broad applications of LLMs. Nevertheless, the absence of comprehensive safety evaluation benchmarks poses a significant impediment to effectively assess and enhance the safety of LLMs. In this work, we present SafetyBench, a comprehensive benchmark for evaluating the safety of LLMs, which comprises 11,435 diverse multiple choice questions spanning across 7 distinct categories of safety concerns. Notably, SafetyBench also incorporates both Chinese and English data, facilitating the evaluation in both languages. Our extensive tests over 25 popular Chinese and English LLMs in both zero-shot and few-shot settings reveal a substantial performance advantage for GPT-4 over its counterparts, and there is still significant room for improving the safety of current LLMs. We also demonstrate that the measured safety understanding abilities in SafetyBench are correlated with safety generation abilities. Data and evaluation guidelines are available at \\url{https://github.com/thu-coai/SafetyBench}{https://github.com/thu-coai/SafetyBench}. Submission entrance and leaderboard are available at \\url{https://llmbench.ai/safety}{https://llmbench.ai/safety}.",
-    venue: "ACL 2024",
-    resources: [
-      {
-        label: "GitHub",
-        href: "https://github.com/thu-coai/SafetyBench",
-      },
-    ],
-    stats: [
-      {
-        label: "Stars",
-        value: "297",
-      },
-      {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2025-07",
-      },
-      {
-        label: "Posted",
-        value: "2023-09-13",
-      },
-    ],
-    tags: [],
-    authors: [
-      "Zhexin Zhang",
-      "Leqi Lei",
-      "Lindong Wu",
-      "Rui Sun",
-      "Yongkang Huang",
-      "Chong Long",
-    ],
-    authorCount: 10,
-    posted: "2023-09-13",
-    arxivId: "2309.07045",
-    repo: "thu-coai/SafetyBench",
-    license: "MIT",
-    language: "Python",
-    stars: 297,
-    forks: 14,
-    updated: "2025-07-28",
-    pending: [],
-    dataset: {
-      text: "11,435 multiple-choice questions across 7 categories of safety concern, in both Chinese and English. A Chinese subset downsamples 300 questions per category with highly sensitive keywords removed. Five worked examples per category are provided for few-shot prompting. Test answers were fully open-sourced in July 2025.",
-      source: "Project README and paper abstract",
-    },
-    metrics: {
-      items: [
-        "Multiple-choice accuracy, evaluated zero-shot and five-shot",
-        "Chain-of-thought evaluation is deliberately not part of the default protocol",
-      ],
-      source: "Project README",
-    },
-    baselines: {
-      text: "25 popular Chinese and English LLMs evaluated in both zero-shot and few-shot settings.",
-      source: "Paper abstract",
-    },
-    externalLeaderboard: {
-      url: "https://llmbench.ai/safety",
-      label: "Official leaderboards (Chinese, English, Chinese subset)",
-      source: "Project README",
-    },
   },
   agentdojo: {
     slug: "agentdojo",
     name: "AgentDojo",
     category: "Agents",
-    description: "A Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents.",
-    abstract: "AI agents aim to solve complex tasks by combining text-based reasoning with external tool calls. Unfortunately, AI agents are vulnerable to prompt injection attacks where data returned by external tools hijacks the agent to execute malicious tasks. To measure the adversarial robustness of AI agents, we introduce AgentDojo, an evaluation framework for agents that execute tools over untrusted data. To capture the evolving nature of attacks and defenses, AgentDojo is not a static test suite, but rather an extensible environment for designing and evaluating new agent tasks, defenses, and adaptive attacks. We populate the environment with 97 realistic tasks (e.g., managing an email client, navigating an e-banking website, or making travel bookings), 629 security test cases, and various attack and defense paradigms from the literature. We find that AgentDojo poses a challenge for both attacks and defenses: state-of-the-art LLMs fail at many tasks (even in the absence of attacks), and existing prompt injection attacks break some security properties but not all. We hope that AgentDojo can foster research on new design principles for AI agents that solve common tasks in a reliable and robust manner.. We release the code for AgentDojo at https://github.com/ethz-spylab/agentdojo.",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Third-party instructions.",
     resources: [
       {
-        label: "Project page",
-        href: "https://agentdojo.spylab.ai/",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2406.13352",
       },
       {
-        label: "GitHub",
-        href: "https://github.com/ethz-spylab/agentdojo",
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "735",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2026-06",
-      },
-      {
-        label: "Posted",
-        value: "2024-06-19",
+        label: "Recorded scale",
+        value: "97 tasks / 629 cases",
       },
     ],
     tags: [
-      "benchmark",
-      "large-language-models",
-      "prompt-injection",
-      "security",
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
     ],
-    authors: [
-      "Edoardo Debenedetti",
-      "Jie Zhang",
-      "Mislav Balunović",
-      "Luca Beurer-Kellner",
-      "Marc Fischer",
-      "Florian Tramèr",
-    ],
-    authorCount: 6,
-    posted: "2024-06-19",
     arxivId: "2406.13352",
-    repo: "ethz-spylab/agentdojo",
-    license: "MIT",
-    language: "Python",
-    stars: 735,
-    forks: 191,
-    updated: "2026-06-02",
-    homepage: "https://agentdojo.spylab.ai/",
     pending: [],
     dataset: {
       text: "97 realistic agent tasks — managing an email client, navigating e-banking, making travel bookings — together with 629 security test cases. Organised into suites such as workspace, and designed to be extended rather than frozen.",
@@ -851,189 +586,37 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       source: "Project README",
     },
   },
-  "mm-safetybench": {
-    slug: "mm-safetybench",
-    name: "MM-SafetyBench",
-    category: "Vision & Multimodal",
-    description: "Accepted by ECCV 2024",
-    abstract: "The security concerns surrounding Large Language Models (LLMs) have been extensively explored, yet the safety of Multimodal Large Language Models (MLLMs) remains understudied. In this paper, we observe that Multimodal Large Language Models (MLLMs) can be easily compromised by query-relevant images, as if the text query itself were malicious. To address this, we introduce MM-SafetyBench, a comprehensive framework designed for conducting safety-critical evaluations of MLLMs against such image-based manipulations. We have compiled a dataset comprising 13 scenarios, resulting in a total of 5,040 text-image pairs. Our analysis across 12 state-of-the-art models reveals that MLLMs are susceptible to breaches instigated by our approach, even when the equipped LLMs have been safety-aligned. In response, we propose a straightforward yet effective prompting strategy to enhance the resilience of MLLMs against these types of attacks. Our work underscores the need for a concerted effort to strengthen and enhance the safety measures of open-source MLLMs against potential malicious exploits. The resource is available at https://github.com/isXinLiu/MM-SafetyBench",
-    venue: "ECCV 2024",
-    resources: [
-      {
-        label: "GitHub",
-        href: "https://github.com/isXinLiu/MM-SafetyBench",
-      },
-    ],
-    stats: [
-      {
-        label: "Stars",
-        value: "217",
-      },
-      {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2024-10",
-      },
-      {
-        label: "Posted",
-        value: "2023-11-29",
-      },
-    ],
-    tags: [],
-    authors: [
-      "Xin Liu",
-      "Yichen Zhu",
-      "Jindong Gu",
-      "Yunshi Lan",
-      "Chao Yang",
-      "Yu Qiao",
-    ],
-    authorCount: 6,
-    posted: "2023-11-29",
-    arxivId: "2311.17600",
-    repo: "isXinLiu/MM-SafetyBench",
-    language: "Python",
-    stars: 217,
-    forks: 6,
-    updated: "2024-10-15",
-    pending: [
-      "Leaderboard",
-    ],
-    dataset: {
-      text: "5,040 text-image pairs across 13 scenarios, from illegal activity and hate speech through to legal, financial, and health advice. Each question comes in three image variants: a Stable Diffusion image, a typographic image, and a combined SD+typography image. A tiny subset list is provided to reduce evaluation cost.",
-      source: "Project README and paper abstract",
-    },
-    metrics: {
-      items: [
-        "Whether the model complies with a query-relevant image manipulation, measured per scenario",
-        "Each question is evaluated in all three image variants and answers are collected into a per-scenario answer file",
-      ],
-      source: "Project README (Evaluation)",
-    },
-    baselines: {
-      text: "12 state-of-the-art multimodal models analysed in the paper, alongside a prompting strategy proposed to improve resilience.",
-      source: "Paper abstract",
-    },
-  },
-  "benchmarking-and-defending-against-indirect-prompt-injection-attacks-on-large-language-models": {
-    slug: "benchmarking-and-defending-against-indirect-prompt-injection-attacks-on-large-language-models",
-    name: "Benchmarking and defending against indirect prompt injection attacks on large language models",
-    category: "Agents",
-    description: "Benchmarking and defending against indirect prompt injection attacks on large language models",
-    resources: [
-      {
-        label: "arXiv",
-        href: "https://arxiv.org/abs/2312.14197",
-      },
-    ],
-    stats: [],
-    tags: [
-      "prompt injection",
-    ],
-    pending: [
-      "Dataset",
-      "Metrics",
-      "Baselines",
-      "Leaderboard",
-    ],
-  },
-  "identifying-the-risks-of-lm-agents-with-an-lm-emulated-sandbox": {
-    slug: "identifying-the-risks-of-lm-agents-with-an-lm-emulated-sandbox",
-    name: "Identifying the risks of lm agents with an lm-emulated sandbox",
-    category: "Agents",
-    description: "Identifying the risks of lm agents with an lm-emulated sandbox",
-    resources: [
-      {
-        label: "arXiv",
-        href: "https://arxiv.org/abs/2309.15817",
-      },
-    ],
-    stats: [],
-    tags: [],
-    pending: [
-      "Dataset",
-      "Metrics",
-      "Baselines",
-      "Leaderboard",
-    ],
-  },
-  injecagent: {
-    slug: "injecagent",
-    name: "Injecagent",
-    category: "Agents",
-    description: "Benchmarking indirect prompt injections in tool-integrated large language model agents",
-    resources: [
-      {
-        label: "GitHub",
-        href: "https://github.com/uiuc-kang-lab/InjecAgent",
-      },
-    ],
-    stats: [
-      {
-        label: "Stars",
-        value: "157",
-      },
-      {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2024-07",
-      },
-    ],
-    tags: [
-      "prompt injection",
-    ],
-    repo: "uiuc-kang-lab/InjecAgent",
-    license: "MIT",
-    language: "Python",
-    stars: 157,
-    forks: 30,
-    updated: "2024-07-02",
-    pending: [
-      "Dataset",
-      "Metrics",
-      "Baselines",
-      "Leaderboard",
-    ],
-  },
   agentharm: {
     slug: "agentharm",
-    name: "Agentharm",
+    name: "AgentHarm",
     category: "Agents",
-    description: "A benchmark for measuring harmfulness of llm agents",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Harmful behaviors.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/AIEvals/AgentHarm",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2410.09024",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "1",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2026-01",
+        label: "Recorded scale",
+        value: "110 tasks / 11 categories",
       },
     ],
     tags: [
       "harmful content",
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
     ],
-    repo: "AIEvals/AgentHarm",
-    language: "Python",
-    stars: 1,
-    forks: 0,
-    updated: "2026-01-16",
+    arxivId: "2410.09024",
     pending: [
       "Dataset",
       "Metrics",
@@ -1043,37 +626,35 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   redcode: {
     slug: "redcode",
-    name: "Redcode",
+    name: "RedCode",
     category: "Agents",
-    description: "Risky code execution and generation benchmark for code agents",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Code vulnerabilities.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/kyxiaxiang/redcode",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2411.07781",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "45",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "TypeScript",
-      },
-      {
-        label: "Updated",
-        value: "2026-04",
+        label: "Recorded scale",
+        value: "4,000+ cases / 25 types",
       },
     ],
     tags: [
       "cybersecurity",
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
     ],
-    repo: "kyxiaxiang/redcode",
-    language: "TypeScript",
-    stars: 45,
-    forks: 24,
-    updated: "2026-04-01",
+    arxivId: "2411.07781",
     pending: [
       "Dataset",
       "Metrics",
@@ -1083,19 +664,35 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   "vpi-bench": {
     slug: "vpi-bench",
-    name: "Vpi-bench",
+    name: "VPI-Bench",
     category: "Agents",
-    description: "Visual prompt injection attacks for computer-use agents",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Visual prompt injections. The survey table records 2024; the repository list links the later arXiv record.",
     resources: [
       {
         label: "arXiv",
         href: "https://arxiv.org/abs/2506.02456",
       },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
     ],
-    stats: [],
+    stats: [
+      {
+        label: "Table year",
+        value: "2024",
+      },
+      {
+        label: "Recorded scale",
+        value: "306 cases / 5 platforms",
+      },
+    ],
     tags: [
       "prompt injection",
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
     ],
+    arxivId: "2506.02456",
     pending: [
       "Dataset",
       "Metrics",
@@ -1105,36 +702,34 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   "r-judge": {
     slug: "r-judge",
-    name: "R-judge",
+    name: "R-Judge",
     category: "Agents",
-    description: "Benchmarking safety risk awareness for llm agents",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Risk identification from logs.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/Lordog/R-Judge",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2401.10019",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "109",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2026-01",
+        label: "Recorded scale",
+        value: "569 records / 27 scenarios",
       },
     ],
-    tags: [],
-    repo: "Lordog/R-Judge",
-    language: "Python",
-    stars: 109,
-    forks: 10,
-    updated: "2026-01-11",
-    homepage: "https://arxiv.org/abs/2401.10019",
+    tags: [
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
+    ],
+    arxivId: "2401.10019",
     pending: [
       "Dataset",
       "Metrics",
@@ -1144,37 +739,40 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   "salad-bench": {
     slug: "salad-bench",
-    name: "Salad-bench",
-    category: "Agents",
-    description: "A hierarchical and comprehensive safety benchmark for large language models",
+    name: "SALAD-Bench",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Adversarial Datasets and Backdoor Benchmarks. The primary paper identifies SALAD-Bench as a safety benchmark for large language models.",
     venue: "ACL 2024",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/OpenSafetyLab/SALAD-BENCH",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2402.05044",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "176",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "Python",
+        label: "Recorded size",
+        value: "30K",
       },
       {
-        label: "Updated",
-        value: "2025-03",
+        label: "Table #Times",
+        value: "36",
       },
     ],
-    tags: [],
-    repo: "OpenSafetyLab/SALAD-BENCH",
-    license: "Apache-2.0",
-    language: "Python",
-    stars: 176,
-    forks: 15,
-    updated: "2025-03-08",
+    tags: [
+      "robustness",
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
+    ],
+    arxivId: "2402.05044",
     pending: [
       "Dataset",
       "Metrics",
@@ -1182,38 +780,77 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
-  "sg-bench": {
-    slug: "sg-bench",
-    name: "Sg-bench",
-    category: "Agents",
-    description: "Evaluating llm safety generalization across diverse tasks and prompt types",
+  h4rm3l: {
+    slug: "h4rm3l",
+    name: "h4rm3l",
+    category: "LLMs",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Jailbreak attack synthesis.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/MurrayTom/SG-Bench",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2408.04811",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "26",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2024-11",
+        label: "Recorded scale",
+        value: "2,656 attacks",
       },
     ],
-    tags: [],
-    repo: "MurrayTom/SG-Bench",
-    license: "GPL-3.0",
-    language: "Python",
-    stars: 26,
-    forks: 3,
-    updated: "2024-11-29",
+    tags: [
+      "jailbreak",
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
+    ],
+    arxivId: "2408.04811",
+    pending: [
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+    dataset: {
+      text: "The official benchmark experiment publishes its benchmark CSV, sampled harmful prompts, synthesized attack programs and evaluation results under experiments/experiment_130_benchmark.",
+      source: "Official project site, datasheet and repository",
+    },
+  },
+  "sg-bench": {
+    slug: "sg-bench",
+    name: "SG-Bench",
+    category: "Agents",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Safety generalization.",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2410.21965",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2024",
+      },
+      {
+        label: "Recorded scale",
+        value: "1,442 queries / 6 categories",
+      },
+    ],
+    tags: [
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
+    ],
+    arxivId: "2410.21965",
     pending: [
       "Dataset",
       "Metrics",
@@ -1223,17 +860,34 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   chemsafetybench: {
     slug: "chemsafetybench",
-    name: "Chemsafetybench",
+    name: "ChemSafetyBench",
     category: "Agents",
-    description: "Benchmarking llm safety on chemistry domain",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Chemistry safety.",
     resources: [
       {
         label: "arXiv",
         href: "https://arxiv.org/abs/2411.16736",
       },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
     ],
-    stats: [],
-    tags: [],
+    stats: [
+      {
+        label: "Table year",
+        value: "2024",
+      },
+      {
+        label: "Recorded scale",
+        value: "30K samples / 3 tasks",
+      },
+    ],
+    tags: [
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
+    ],
+    arxivId: "2411.16736",
     pending: [
       "Dataset",
       "Metrics",
@@ -1243,32 +897,34 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   toolsword: {
     slug: "toolsword",
-    name: "Toolsword",
+    name: "ToolSword",
     category: "Agents",
-    description: "Unveiling safety issues of large language models in tool learning across three stages",
-    venue: "ACL 2024",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Tool-use safety.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/Junjie-Ye/ToolSword",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2402.10753",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "15",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Updated",
-        value: "2024-09",
+        label: "Recorded scale",
+        value: "6 scenarios / 3 stages",
       },
     ],
-    tags: [],
-    repo: "Junjie-Ye/ToolSword",
-    license: "Apache-2.0",
-    stars: 15,
-    forks: 0,
-    updated: "2024-09-12",
+    tags: [
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
+    ],
+    arxivId: "2402.10753",
     pending: [
       "Dataset",
       "Metrics",
@@ -1278,44 +934,35 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   privacylens: {
     slug: "privacylens",
-    name: "Privacylens",
+    name: "PrivacyLens",
     category: "Agents",
-    description: "Evaluating privacy norm awareness of language models in action",
-    venue: "NeurIPS 2024",
+    description: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Privacy norm awareness.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/SALT-NLP/PrivacyLens",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2409.00138",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "48",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2025-03",
+        label: "Recorded scale",
+        value: "493 seeds / vignettes / trajectories",
       },
     ],
     tags: [
       "privacy",
-      "language-model-agent",
-      "language-model-evaluation",
-      "large-language-model",
-      "neurips-2024",
+      "source: safety-at-scale",
+      "simulation-based benchmarks",
     ],
-    repo: "SALT-NLP/PrivacyLens",
-    license: "MIT",
-    language: "Python",
-    stars: 48,
-    forks: 10,
-    updated: "2025-03-04",
-    homepage: "https://salt-nlp.github.io/PrivacyLens",
+    arxivId: "2409.00138",
     pending: [
       "Dataset",
       "Metrics",
@@ -1325,76 +972,74 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   safebench: {
     slug: "safebench",
-    name: "Safebench",
-    category: "Agents",
-    description: "A benchmarking platform for safety evaluation of autonomous vehicles",
+    name: "SafeBench",
+    category: "Embodied AI",
+    description: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Driving safety.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/trust-ai/SafeBench",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2206.09682",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "155",
+        label: "Table year",
+        value: "2022",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2024-02",
+        label: "Recorded scale",
+        value: "8 scenarios / 100 routes / 2,352 cases",
       },
     ],
-    tags: [],
-    repo: "trust-ai/SafeBench",
-    license: "MIT",
-    language: "Python",
-    stars: 155,
-    forks: 29,
-    updated: "2024-02-23",
-    homepage: "https://safebench.github.io",
+    tags: [
+      "source: safety-at-scale",
+      "real-interaction benchmarks",
+    ],
+    arxivId: "2206.09682",
     pending: [
-      "Dataset",
       "Metrics",
       "Baselines",
       "Leaderboard",
     ],
+    dataset: {
+      text: "Eight safety-critical scenario templates and 100 routes, with scenario routes, models and adversarial attack templates published under safebench/scenario/scenario_data.",
+      source: "Official SafeBench site, documentation and repository",
+    },
   },
-  "agent-security-bench": {
-    slug: "agent-security-bench",
-    name: "Agent security bench",
+  "agent-security-bench-asb": {
+    slug: "agent-security-bench-asb",
+    name: "Agent Security Bench (ASB)",
     category: "Agents",
-    description: "Formalizing and benchmarking attacks and defenses in llm-based agents",
+    description: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Attack and defense across 10 scenarios.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/agiresearch/ASB",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2410.02644",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "280",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2026-04",
+        label: "Recorded scale",
+        value: "400+ tools",
       },
     ],
-    tags: [],
-    repo: "agiresearch/ASB",
-    license: "MIT",
-    language: "Python",
-    stars: 280,
-    forks: 29,
-    updated: "2026-04-16",
+    tags: [
+      "source: safety-at-scale",
+      "real-interaction benchmarks",
+    ],
+    arxivId: "2410.02644",
     pending: [
       "Dataset",
       "Metrics",
@@ -1404,35 +1049,34 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   safeagentbench: {
     slug: "safeagentbench",
-    name: "Safeagentbench",
-    category: "Agents",
-    description: "A benchmark for safe task planning of embodied llm agents",
+    name: "SafeAgentBench",
+    category: "Embodied AI",
+    description: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Embodied hazards.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/shengyin1224/SafeAgentBench",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2412.13178",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "75",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2025-02",
+        label: "Recorded scale",
+        value: "750 tasks",
       },
     ],
-    tags: [],
-    repo: "shengyin1224/SafeAgentBench",
-    language: "Python",
-    stars: 75,
-    forks: 5,
-    updated: "2025-02-25",
+    tags: [
+      "source: safety-at-scale",
+      "real-interaction benchmarks",
+    ],
+    arxivId: "2412.13178",
     pending: [
       "Dataset",
       "Metrics",
@@ -1442,36 +1086,34 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   "agent-safetybench": {
     slug: "agent-safetybench",
-    name: "Agent-safetybench",
+    name: "Agent-SafetyBench",
     category: "Agents",
-    description: "Evaluating the safety of llm agents",
+    description: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Safety risks across 8 categories.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/thu-coai/Agent-SafetyBench",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2412.14470",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "157",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2025-08",
+        label: "Recorded scale",
+        value: "349 environments / 2,000 cases",
       },
     ],
-    tags: [],
-    repo: "thu-coai/Agent-SafetyBench",
-    license: "MIT",
-    language: "Python",
-    stars: 157,
-    forks: 10,
-    updated: "2025-08-11",
+    tags: [
+      "source: safety-at-scale",
+      "real-interaction benchmarks",
+    ],
+    arxivId: "2412.14470",
     pending: [
       "Dataset",
       "Metrics",
@@ -1479,21 +1121,40 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
-  "dissecting-adversarial-robustness-of-multimodal-lm-agents": {
-    slug: "dissecting-adversarial-robustness-of-multimodal-lm-agents",
-    name: "Dissecting adversarial robustness of multimodal lm agents",
+  "advweb-are": {
+    slug: "advweb-are",
+    name: "AdvWeb / ARE",
     category: "Agents",
-    description: "Dissecting adversarial robustness of multimodal lm agents",
+    description: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Adversarial robustness for multimodal web agents. Safety at Scale Table 14 lists AdvWeb, Dissecting Adversarial, and ARE as separate labels, but all three bibliography records resolve to arXiv:2406.12814; this card avoids triple-counting the same paper.",
     resources: [
       {
         label: "arXiv",
         href: "https://arxiv.org/abs/2406.12814",
       },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
     ],
-    stats: [],
+    stats: [
+      {
+        label: "Table year",
+        value: "2024",
+      },
+      {
+        label: "Recorded scale",
+        value: "200 target tasks",
+      },
+    ],
     tags: [
       "robustness",
+      "source: safety-at-scale",
+      "real-interaction benchmarks",
+      "advweb",
+      "dissecting adversarial",
+      "are",
     ],
+    arxivId: "2406.12814",
     pending: [
       "Dataset",
       "Metrics",
@@ -1503,36 +1164,34 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   "st-webagentbench": {
     slug: "st-webagentbench",
-    name: "St-webagentbench",
+    name: "ST-WebAgentBench",
     category: "Agents",
-    description: "A benchmark for evaluating safety and trustworthiness in web agents",
+    description: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Web safety and trustworthiness.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/segev-shlomov/ST-WebAgentBench",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2410.06703",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "25",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2026-03",
+        label: "Recorded scale",
+        value: "222 tasks with safety and trustworthiness policies",
       },
     ],
-    tags: [],
-    repo: "segev-shlomov/ST-WebAgentBench",
-    license: "NOASSERTION",
-    language: "Python",
-    stars: 25,
-    forks: 6,
-    updated: "2026-03-12",
+    tags: [
+      "source: safety-at-scale",
+      "real-interaction benchmarks",
+    ],
+    arxivId: "2410.06703",
     pending: [
       "Dataset",
       "Metrics",
@@ -1544,38 +1203,32 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     slug: "haicosystem",
     name: "Haicosystem",
     category: "Agents",
-    description: "An ecosystem for sandboxing safety risks in human-ai interactions",
+    description: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Human-AI sandbox safety.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/XuhuiZhou/HAICosystem",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2409.16427",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "14",
+        label: "Table year",
+        value: "2024",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2025-06",
+        label: "Recorded scale",
+        value: "1,840 simulations / 92 scenarios",
       },
     ],
     tags: [
-      "ai-safety",
-      "multi-agent",
-      "social-interactions",
+      "source: safety-at-scale",
+      "real-interaction benchmarks",
     ],
-    repo: "XuhuiZhou/HAICosystem",
-    language: "Python",
-    stars: 14,
-    forks: 1,
-    updated: "2025-06-01",
-    homepage: "https://haicosystem.org",
+    arxivId: "2409.16427",
     pending: [
       "Dataset",
       "Metrics",
@@ -1585,38 +1238,35 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   wasp: {
     slug: "wasp",
-    name: "Wasp",
+    name: "WASP",
     category: "Agents",
-    description: "Benchmarking web agent security against prompt injection attacks",
+    description: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Adversarial web-agent safety.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/facebookresearch/wasp",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2504.18575",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "98",
+        label: "Table year",
+        value: "2025",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2026-04",
+        label: "Recorded scale",
+        value: "84 tasks / 42 scenarios / 2 environments",
       },
     ],
     tags: [
-      "prompt injection",
+      "robustness",
+      "source: safety-at-scale",
+      "real-interaction benchmarks",
     ],
-    repo: "facebookresearch/wasp",
-    license: "NOASSERTION",
-    language: "Python",
-    stars: 98,
-    forks: 15,
-    updated: "2026-04-13",
+    arxivId: "2504.18575",
     pending: [
       "Dataset",
       "Metrics",
@@ -1624,21 +1274,37 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
-  "refusal-trained-llms-are-easily-jailbroken-as-browser-agents": {
-    slug: "refusal-trained-llms-are-easily-jailbroken-as-browser-agents",
-    name: "Refusal-trained llms are easily jailbroken as browser agents",
+  "refusal-trained-llms": {
+    slug: "refusal-trained-llms",
+    name: "Refusal-Trained LLMs",
     category: "Agents",
-    description: "Refusal-trained llms are easily jailbroken as browser agents",
+    description: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Browser jailbreaking.",
     resources: [
       {
         label: "arXiv",
         href: "https://arxiv.org/abs/2410.13886",
       },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
     ],
-    stats: [],
+    stats: [
+      {
+        label: "Table year",
+        value: "2025",
+      },
+      {
+        label: "Recorded scale",
+        value: "100 harmful behaviors",
+      },
+    ],
     tags: [
       "jailbreak",
+      "source: safety-at-scale",
+      "real-interaction benchmarks",
     ],
+    arxivId: "2410.13886",
     pending: [
       "Dataset",
       "Metrics",
@@ -1648,36 +1314,34 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   safearena: {
     slug: "safearena",
-    name: "Safearena",
+    name: "SafeArena",
     category: "Agents",
-    description: "Evaluating the safety of autonomous web agents",
+    description: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Web-agent misuse.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/McGill-NLP/safearena",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2503.04957",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "24",
+        label: "Table year",
+        value: "2025",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2025-04",
+        label: "Recorded scale",
+        value: "500 safe and harmful tasks",
       },
     ],
-    tags: [],
-    repo: "McGill-NLP/safearena",
-    language: "Python",
-    stars: 24,
-    forks: 7,
-    updated: "2025-04-23",
-    homepage: "https://safearena.github.io",
+    tags: [
+      "source: safety-at-scale",
+      "real-interaction benchmarks",
+    ],
+    arxivId: "2503.04957",
     pending: [
       "Dataset",
       "Metrics",
@@ -1687,42 +1351,1275 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
   openagentsafety: {
     slug: "openagentsafety",
-    name: "Openagentsafety",
+    name: "OpenAgentSafety",
     category: "Agents",
-    description: "A comprehensive framework for evaluating real-world ai agent safety",
+    description: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Real-world safety across 8 categories.",
     resources: [
       {
-        label: "GitHub",
-        href: "https://github.com/Open-Agent-Safety/OpenAgentSafety",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2507.06134",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
       },
     ],
     stats: [
       {
-        label: "Stars",
-        value: "32",
+        label: "Table year",
+        value: "2025",
       },
       {
-        label: "Language",
-        value: "Python",
-      },
-      {
-        label: "Updated",
-        value: "2026-08",
+        label: "Recorded scale",
+        value: "350+ multi-turn tasks",
       },
     ],
-    tags: [],
-    repo: "Open-Agent-Safety/OpenAgentSafety",
-    license: "MIT",
-    language: "Python",
-    stars: 32,
-    forks: 17,
-    updated: "2026-08-10",
+    tags: [
+      "source: safety-at-scale",
+      "real-interaction benchmarks",
+    ],
+    arxivId: "2507.06134",
     pending: [
       "Dataset",
       "Metrics",
       "Baselines",
       "Leaderboard",
     ],
+  },
+  bench2drive: {
+    slug: "bench2drive",
+    name: "Bench2Drive",
+    category: "Embodied AI",
+    description: "The Embodied AI survey's dedicated Benchmarks section records 220 routes. The official repository releases the benchmark and training data.",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/Thinklab-SJTU/Bench2Drive",
+      },
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2406.03877",
+      },
+      {
+        label: "Source survey",
+        href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+      },
+      {
+        label: "Hugging Face",
+        href: "https://huggingface.co/datasets/rethinklab/Bench2Drive",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "220 routes",
+      },
+    ],
+    tags: [
+      "source: embodied-ai-safety",
+    ],
+    arxivId: "2406.03877",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  m3bench: {
+    slug: "m3bench",
+    name: "M3Bench",
+    category: "Embodied AI",
+    description: "The Embodied AI survey's dedicated Benchmarks section records 30,000 pick-and-place tasks across 119 household scenes.",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2410.06678",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/TooSchoolForCool/M3Bench",
+      },
+      {
+        label: "Source survey",
+        href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+      },
+      {
+        label: "Hugging Face",
+        href: "https://huggingface.co/datasets/M3Bench/M3Bench",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "30,000 tasks / 119 scenes",
+      },
+    ],
+    tags: [
+      "source: embodied-ai-safety",
+    ],
+    authors: [
+      "Zeyu Zhang",
+      "Sixu Yan",
+      "Muzhi Han",
+      "Zaijin Wang",
+      "Xinggang Wang",
+      "Song-Chun Zhu",
+    ],
+    authorCount: 7,
+    posted: "2024-10-09",
+    arxivId: "2410.06678",
+    repo: "TooSchoolForCool/M3Bench",
+    language: "Python",
+    stars: 27,
+    forks: 0,
+    updated: "2025-07-19",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "thor-eae": {
+    slug: "thor-eae",
+    name: "THOR-EAE",
+    category: "Embodied AI",
+    description: "The Embodied AI survey's dedicated Benchmarks section records 840,000 samples in AI2-THOR. Its bibliography cites the ACM Multimedia paper but does not record an arXiv or repository link.",
+    resources: [
+      {
+        label: "Source survey",
+        href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "840,000 samples",
+      },
+    ],
+    tags: [
+      "source: embodied-ai-safety",
+    ],
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "embodied-agent-interface-eai": {
+    slug: "embodied-agent-interface-eai",
+    name: "Embodied Agent Interface (EAI)",
+    category: "Embodied AI",
+    description: "The Embodied AI survey's dedicated Benchmarks section names EAI. The official NeurIPS paper and repository record 338 VirtualHome tasks and 100 BEHAVIOR tasks.",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/embodied-agent-interface/embodied-agent-interface",
+      },
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2410.07166",
+      },
+      {
+        label: "Source survey",
+        href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "438 tasks",
+      },
+    ],
+    tags: [
+      "source: embodied-ai-safety",
+    ],
+    arxivId: "2410.07166",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "agentsafe-multi-agent-systems": {
+    slug: "agentsafe-multi-agent-systems",
+    name: "AgentSafe",
+    category: "Embodied AI",
+    description: "The Embodied AI survey's dedicated safety-focused Benchmarks paragraph names AgentSafe.",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2503.04392",
+      },
+      {
+        label: "Source survey",
+        href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "Not recorded in source section",
+      },
+    ],
+    tags: [
+      "source: embodied-ai-safety",
+    ],
+    arxivId: "2503.04392",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "safe-beai": {
+    slug: "safe-beai",
+    name: "Safe-BeAI",
+    category: "Embodied AI",
+    description: "The Embodied AI survey's dedicated safety-focused Benchmarks paragraph names Safe-BeAI. The primary paper records 2,027 tasks across 8 hazard categories.",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2504.14650",
+      },
+      {
+        label: "Source survey",
+        href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "2,027 tasks / 8 hazard categories",
+      },
+    ],
+    tags: [
+      "source: embodied-ai-safety",
+    ],
+    arxivId: "2504.14650",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "agentsafe-hazardous-instructions": {
+    slug: "agentsafe-hazardous-instructions",
+    name: "AGENTSAFE",
+    category: "Embodied AI",
+    description: "The Embodied AI survey's dedicated safety-focused Benchmarks paragraph names AGENTSAFE. The primary paper records 45 adversarial scenarios, 1,350 hazardous tasks, and 9,900 instructions.",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2506.14697",
+      },
+      {
+        label: "Source survey",
+        href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "1,350 tasks / 9,900 instructions / 45 scenarios",
+      },
+    ],
+    tags: [
+      "robustness",
+      "source: embodied-ai-safety",
+    ],
+    arxivId: "2506.14697",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  safemindbench: {
+    slug: "safemindbench",
+    name: "SafeMindBench",
+    category: "Embodied AI",
+    description: "The Embodied AI survey's dedicated Benchmarks subsection explicitly names SafeMindBench as a benchmark for safety risks in embodied LLM agents.",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2509.25885",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2605.02900",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "Not recorded in source section",
+      },
+    ],
+    tags: [
+      "source: embodied-ai-safety",
+    ],
+    arxivId: "2509.25885",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  despite: {
+    slug: "despite",
+    name: "DESPITE",
+    category: "Embodied AI",
+    description: "The Embodied AI survey's dedicated Benchmarks subsection explicitly identifies DESPITE as a PDDL benchmark separating planning competence from safety competence.",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2604.18463",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2605.02900",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "Not recorded in source section",
+      },
+    ],
+    tags: [
+      "source: embodied-ai-safety",
+    ],
+    arxivId: "2604.18463",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  robojailbench: {
+    slug: "robojailbench",
+    name: "RoboJailBench",
+    category: "Embodied AI",
+    description: "The Embodied AI survey's dedicated Benchmarks subsection explicitly identifies RoboJailBench as a jailbreak attack-and-defense benchmark for embodied VLMs.",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2605.19328",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2605.02900",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "Not recorded in source section",
+      },
+    ],
+    tags: [
+      "jailbreak",
+      "source: embodied-ai-safety",
+    ],
+    arxivId: "2605.19328",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  hasard: {
+    slug: "hasard",
+    name: "HASARD",
+    category: "Embodied AI",
+    description: "The official HASARD repository publishes six vision-based safe reinforcement-learning environments and their scenario implementations.",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/TTomilin/HASARD/tree/main/hasard/envs",
+      },
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2503.08241",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2605.02900",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "6 embodied safe-RL environments",
+      },
+    ],
+    tags: [
+      "source: embodied-ai-safety",
+    ],
+    arxivId: "2503.08241",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "vision-and-language-navigation-interpreting-visually-grounded-navigation-instructions-in-real-environments": {
+    slug: "vision-and-language-navigation-interpreting-visually-grounded-navigation-instructions-in-real-environments",
+    name: "Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments",
+    category: "Embodied AI",
+    description: "Listed in the source survey's Benchmarks & Datasets section. The primary paper calls R2R the first benchmark dataset for visually-grounded natural-language navigation, and the authors' repository provides the data and evaluation code.",
+    venue: "CVPR 2018",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/peteanderson80/Matterport3DSimulator",
+      },
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/1711.07280",
+      },
+    ],
+    stats: [
+      {
+        label: "Published",
+        value: "2018",
+      },
+    ],
+    tags: [
+      "source: embodied-ai-safety",
+    ],
+    arxivId: "1711.07280",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "vizwiz-grand-challenge-answering-visual-questions-from-blind-people": {
+    slug: "vizwiz-grand-challenge-answering-visual-questions-from-blind-people",
+    name: "VizWiz Grand Challenge: Answering Visual Questions from Blind People",
+    category: "Embodied AI",
+    description: "Listed in the source survey's Benchmarks & Datasets section. The official VizWiz page publishes the dataset, challenge tasks, evaluation metrics and self-evaluation annotations.",
+    venue: "CVPR 2018",
+    resources: [
+      {
+        label: "Project page",
+        href: "https://vizwiz.org/tasks-and-datasets/vqa/",
+      },
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/1802.08218",
+      },
+    ],
+    stats: [
+      {
+        label: "Published",
+        value: "2018",
+      },
+    ],
+    tags: [
+      "source: embodied-ai-safety",
+    ],
+    arxivId: "1802.08218",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  truthfulqa: {
+    slug: "truthfulqa",
+    name: "TruthfulQA",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Truthfulness Datasets. Safety at Scale Section 3.13.2 and the primary paper both call TruthfulQA a benchmark.",
+    venue: "ACL 2022",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2109.07958",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2021",
+      },
+      {
+        label: "Recorded size",
+        value: "817",
+      },
+      {
+        label: "Table #Times",
+        value: "213",
+      },
+    ],
+    tags: [
+      "source: safety-at-scale",
+      "truthfulness datasets",
+    ],
+    arxivId: "2109.07958",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  advglue: {
+    slug: "advglue",
+    name: "AdvGLUE",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Adversarial Datasets and Backdoor Benchmarks. The primary paper title identifies AdvGLUE as a multi-task benchmark.",
+    venue: "NeurIPS 2021",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2111.02840",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2021",
+      },
+      {
+        label: "Recorded size",
+        value: "5,716",
+      },
+      {
+        label: "Table #Times",
+        value: "12",
+      },
+    ],
+    tags: [
+      "robustness",
+      "source: safety-at-scale",
+      "adversarial datasets and backdoor benchmarks",
+    ],
+    arxivId: "2111.02840",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  advbench: {
+    slug: "advbench",
+    name: "AdvBench",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Adversarial Datasets and Backdoor Benchmarks. Safety at Scale Table 6 cites the GCG paper for AdvBench; that paper uses AdvBench as an evaluation benchmark.",
+    venue: "arXiv 2023",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2307.15043",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/llm-attacks/llm-attacks/blob/main/data/advbench/harmful_behaviors.csv",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/llm-attacks/llm-attacks",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2023",
+      },
+      {
+        label: "Recorded size",
+        value: "520",
+      },
+      {
+        label: "Table #Times",
+        value: "52",
+      },
+    ],
+    tags: [
+      "robustness",
+      "source: safety-at-scale",
+      "adversarial datasets and backdoor benchmarks",
+    ],
+    arxivId: "2307.15043",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  cvalues: {
+    slug: "cvalues",
+    name: "CVALUES",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Value Benchmarks. The primary paper identifies CVALUES as a Chinese human-values evaluation benchmark.",
+    venue: "arXiv 2023",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2307.09705",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2023",
+      },
+      {
+        label: "Recorded size",
+        value: "2,100",
+      },
+      {
+        label: "Table #Times",
+        value: "10",
+      },
+    ],
+    tags: [
+      "source: safety-at-scale",
+      "value benchmarks",
+    ],
+    arxivId: "2307.09705",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  fine: {
+    slug: "fine",
+    name: "FINE",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Value Benchmarks. The primary paper constructs a comparative benchmark and names its evaluation framework FINE.",
+    venue: "NAACL 2024",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2311.05915",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2023",
+      },
+      {
+        label: "Recorded size",
+        value: "90",
+      },
+      {
+        label: "Table #Times",
+        value: "14",
+      },
+    ],
+    tags: [
+      "source: safety-at-scale",
+      "value benchmarks",
+    ],
+    arxivId: "2311.05915",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  flames: {
+    slug: "flames",
+    name: "FLAMES",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Value Benchmarks. The primary paper title and abstract identify FLAMES as a value-alignment benchmark.",
+    venue: "NAACL 2024",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2311.06899",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2024",
+      },
+      {
+        label: "Recorded size",
+        value: "2,251",
+      },
+      {
+        label: "Table #Times",
+        value: "17",
+      },
+    ],
+    tags: [
+      "alignment",
+      "source: safety-at-scale",
+      "value benchmarks",
+    ],
+    arxivId: "2311.06899",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  sorrybench: {
+    slug: "sorrybench",
+    name: "SORRYBench",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Value Benchmarks. The primary paper introduces SORRY-Bench as a benchmark for safety refusal behaviours.",
+    venue: "arXiv 2024",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2406.14598",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2024",
+      },
+      {
+        label: "Recorded size",
+        value: "450",
+      },
+      {
+        label: "Table #Times",
+        value: "8",
+      },
+    ],
+    tags: [
+      "jailbreak",
+      "source: safety-at-scale",
+      "value benchmarks",
+    ],
+    arxivId: "2406.14598",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  safetybench: {
+    slug: "safetybench",
+    name: "SafetyBench",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Value Benchmarks. The primary paper identifies SafetyBench as a comprehensive benchmark for evaluating LLM safety.",
+    venue: "ACL 2024",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2309.07045",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2024",
+      },
+      {
+        label: "Recorded size",
+        value: "11,435",
+      },
+      {
+        label: "Table #Times",
+        value: "21",
+      },
+    ],
+    tags: [
+      "source: safety-at-scale",
+      "value benchmarks",
+    ],
+    arxivId: "2309.07045",
+    pending: [],
+    dataset: {
+      text: "11,435 multiple-choice questions across 7 categories of safety concern, in both Chinese and English. A Chinese subset downsamples 300 questions per category with highly sensitive keywords removed. Five worked examples per category are provided for few-shot prompting. Test answers were fully open-sourced in July 2025.",
+      source: "Project README and paper abstract",
+    },
+    metrics: {
+      items: [
+        "Multiple-choice accuracy, evaluated zero-shot and five-shot",
+        "Chain-of-thought evaluation is deliberately not part of the default protocol",
+      ],
+      source: "Project README",
+    },
+    baselines: {
+      text: "25 popular Chinese and English LLMs evaluated in both zero-shot and few-shot settings.",
+      source: "Paper abstract",
+    },
+    externalLeaderboard: {
+      url: "https://llmbench.ai/safety",
+      label: "Official leaderboards (Chinese, English, Chinese subset)",
+      source: "Project README",
+    },
+  },
+  backdoorllm: {
+    slug: "backdoorllm",
+    name: "BackdoorLLM",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Adversarial Datasets and Backdoor Benchmarks. Safety at Scale and the primary paper both identify BackdoorLLM as a benchmark.",
+    venue: "arXiv 2024",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2408.12798",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/bboylyg/BackdoorLLM",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2024",
+      },
+      {
+        label: "Recorded size",
+        value: "8",
+      },
+      {
+        label: "Table #Times",
+        value: "6",
+      },
+    ],
+    tags: [
+      "robustness",
+      "source: safety-at-scale",
+      "adversarial datasets and backdoor benchmarks",
+      "attack",
+      "backdoor",
+      "defense",
+    ],
+    arxivId: "2408.12798",
+    repo: "bboylyg/BackdoorLLM",
+    license: "MIT",
+    language: "Python",
+    stars: 324,
+    forks: 46,
+    updated: "2026-03-13",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "jailbreakv-28k": {
+    slug: "jailbreakv-28k",
+    name: "JailBreakV-28K",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Adversarial Datasets and Backdoor Benchmarks. The primary paper identifies JailBreakV-28K as a benchmark for assessing multimodal-model robustness against jailbreak attacks.",
+    venue: "COLM 2024",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2404.03027",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2024",
+      },
+      {
+        label: "Recorded size",
+        value: "28K",
+      },
+      {
+        label: "Table #Times",
+        value: "10",
+      },
+    ],
+    tags: [
+      "jailbreak",
+      "source: safety-at-scale",
+      "adversarial datasets and backdoor benchmarks",
+    ],
+    arxivId: "2404.03027",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  strongreject: {
+    slug: "strongreject",
+    name: "STRONGREJECT",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Adversarial Datasets and Backdoor Benchmarks. The primary paper introduces StrongREJECT as a jailbreak-evaluation benchmark.",
+    venue: "ICLR Workshop 2024",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2402.10260",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2024",
+      },
+      {
+        label: "Recorded size",
+        value: "313",
+      },
+      {
+        label: "Table #Times",
+        value: "4",
+      },
+    ],
+    tags: [
+      "jailbreak",
+      "source: safety-at-scale",
+      "adversarial datasets and backdoor benchmarks",
+    ],
+    arxivId: "2402.10260",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "libra-leaderboard": {
+    slug: "libra-leaderboard",
+    name: "Libra-Leaderboard",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Value Benchmarks. Safety at Scale describes Libra-Leaderboard as a leaderboard with a comprehensive safety benchmark and unified evaluation framework.",
+    venue: "arXiv 2024",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2412.18551",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2024",
+      },
+      {
+        label: "Recorded size",
+        value: "57",
+      },
+      {
+        label: "Table #Times",
+        value: "26",
+      },
+    ],
+    tags: [
+      "source: safety-at-scale",
+      "value benchmarks",
+    ],
+    arxivId: "2412.18551",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "case-bench": {
+    slug: "case-bench",
+    name: "CASE-Bench",
+    category: "LLMs",
+    description: "Listed in Safety at Scale Table 6 under Value Benchmarks. The primary paper identifies CASE-Bench as a context-aware safety benchmark for large language models.",
+    venue: "arXiv 2025",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2501.14940",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2025",
+      },
+      {
+        label: "Recorded size",
+        value: "450",
+      },
+    ],
+    tags: [
+      "source: safety-at-scale",
+      "value benchmarks",
+    ],
+    arxivId: "2501.14940",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  harmbench: {
+    slug: "harmbench",
+    name: "HarmBench",
+    category: "LLMs",
+    description: "The LLM chapter names HarmBench as an evaluation benchmark. The official repository calls it a standardized evaluation framework and documents its evaluation pipeline.",
+    venue: "arXiv 2024",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/centerforaisafety/HarmBench",
+      },
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2402.04249",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "18 red-teaming methods / 33 target LLMs and defenses",
+      },
+    ],
+    tags: [
+      "jailbreak",
+      "source: safety-at-scale",
+      "red teaming",
+    ],
+    authors: [
+      "Mantas Mazeika",
+      "Long Phan",
+      "Xuwang Yin",
+      "Andy Zou",
+      "Zifan Wang",
+      "Norman Mu",
+    ],
+    authorCount: 12,
+    posted: "2024-02-06",
+    arxivId: "2402.04249",
+    repo: "centerforaisafety/HarmBench",
+    license: "MIT",
+    language: "Jupyter Notebook",
+    stars: 1029,
+    forks: 154,
+    updated: "2024-08-16",
+    pending: [],
+    dataset: {
+      text: "Harmful behaviours grouped into standard, contextual and copyright categories, evaluated against both text and multimodal models. HarmBench 1.0 additionally ships precomputed test cases and adversarial training code.",
+      source: "Project README and official results page",
+    },
+    metrics: {
+      items: [
+        "Attack success rate, scored by HarmBench's own classifier models rather than string matching",
+        "Three released classifiers: standard/contextual behaviours, multimodal behaviours, and a validation classifier",
+      ],
+      source: "Project README (Classifiers)",
+    },
+    baselines: {
+      text: "A large-scale comparison of 18 red teaming methods against 33 target LLMs and defenses, plus an adversarial training method introduced alongside the benchmark.",
+      source: "Paper abstract",
+    },
+    externalLeaderboard: {
+      url: "https://www.harmbench.org/results",
+      label: "Official baseline results",
+      source: "Project website",
+    },
+  },
+  bumble: {
+    slug: "bumble",
+    name: "BUMBLE",
+    category: "LLMs",
+    description: "The LLM chapter explicitly calls BUMBLE a benchmark. The primary paper reports 12.7K instances across nine bias types, and the authors' repository identifies itself as the BUMBLE benchmark.",
+    venue: "ACL 2025",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/yuchenwen1/BUMBLE",
+      },
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2406.14023",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "12.7K instances / 9 bias types",
+      },
+    ],
+    tags: [
+      "fairness",
+      "source: safety-at-scale",
+      "implicit bias",
+    ],
+    authors: [
+      "Yuchen Wen",
+      "Keping Bi",
+      "Wei Chen",
+      "Jiafeng Guo",
+      "Xueqi Cheng",
+    ],
+    authorCount: 5,
+    posted: "2024-06-20",
+    arxivId: "2406.14023",
+    repo: "yuchenwen1/BUMBLE",
+    language: "Python",
+    stars: 1,
+    forks: 1,
+    updated: "2024-10-11",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  jailbreakbench: {
+    slug: "jailbreakbench",
+    name: "JailbreakBench",
+    category: "LLMs",
+    description: "The LLM chapter names JailbreakBench. Its official repository calls it an open robustness benchmark and releases the JBB-Behaviors evaluation data, evaluation framework, artifacts, and leaderboard.",
+    venue: "NeurIPS 2024",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/JailbreakBench/jailbreakbench",
+      },
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2404.01318",
+      },
+      {
+        label: "Hugging Face",
+        href: "https://huggingface.co/datasets/JailbreakBench/JBB-Behaviors",
+      },
+      {
+        label: "Source survey",
+        href: "https://arxiv.org/abs/2502.05206",
+      },
+    ],
+    stats: [
+      {
+        label: "Recorded scale",
+        value: "200 harmful and benign behaviors",
+      },
+    ],
+    tags: [
+      "jailbreak",
+      "source: safety-at-scale",
+    ],
+    authors: [
+      "Patrick Chao",
+      "Edoardo Debenedetti",
+      "Alexander Robey",
+      "Maksym Andriushchenko",
+      "Francesco Croce",
+      "Vikash Sehwag",
+    ],
+    authorCount: 12,
+    posted: "2024-03-28",
+    arxivId: "2404.01318",
+    repo: "JailbreakBench/jailbreakbench",
+    license: "MIT",
+    language: "Python",
+    stars: 654,
+    forks: 76,
+    updated: "2025-04-04",
+    pending: [],
+    dataset: {
+      text: "JBB-Behaviors — 200 distinct benign and misuse behaviours, curated with reference to OpenAI's usage policies and partly sourced from AdvBench and HarmBench. The paper describes the original 100-behaviour misuse set.",
+      source: "Project README and paper abstract",
+    },
+    metrics: {
+      items: [
+        "Attack success rate under a clearly defined threat model, with fixed system prompts and chat templates",
+        "Scored by jailbreak and refusal judges shipped with the package",
+      ],
+      source: "Project README and paper abstract",
+    },
+    baselines: {
+      text: "An evolving repository of submitted jailbreak artifacts — adversarial prompts from prior attacks — so new algorithms can be compared against a stable reference.",
+      source: "Project README",
+    },
+    externalLeaderboard: {
+      url: "https://jailbreakbench.github.io/",
+      label: "Official JailbreakBench leaderboard",
+      source: "Project README",
+    },
   },
 };
 
@@ -2404,13 +3301,13 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
   benchmarks: {
     slug: "benchmarks",
     breadcrumb: [
-      "Discover",
+      "Home",
       "Benchmarks",
     ],
     title: "Benchmarks",
     heroIcon: "◎",
-    description: "Evaluation benchmarks, tasks, and metrics for trustworthy AI — the layer everything else is measured against.",
-    overview: "Benchmarks are the flagship collection. Each entry links to its evaluation platform or repository.",
+    description: "Safety benchmarks across LLMs, Agents, and Embodied AI, extracted from the two source lists and their linked survey manuscripts.",
+    overview: "Legacy OpenTAI benchmark rows are excluded. Names, years, recorded scale, papers, and release links are shown only when the approved sources support them.",
     tableTitle: "Benchmark platforms",
     sectionTitle: "Benchmark categories",
     categories: [
@@ -2438,475 +3335,251 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           "Embodied AI",
         ],
       },
-      {
-        title: "Vision & Multimodal",
-        detail: "Jailbreak and robustness evaluation for vision-language models.",
-        accent: "violet",
-        filters: [
-          "Vision & Multimodal",
-        ],
-      },
     ],
     tableRows: [
       {
-        name: "VisionSafety Bench",
-        subtitle: "An Adversarial Evaluation Platform for Vision Models",
-        note: "Our open-source platform provides datasets, algorithms, and tools for scalable adversarial evaluation of vision models. Now available for community use - we welcome your feedback and contributions!",
-        type: "Vision & Multimodal",
-        stars: 4,
-        updated: "2026-01-14",
-        tags: [
-          "robustness",
-          "vision",
-          "adversarial",
-          "million-scale",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "4",
-          },
-          {
-            label: "Language",
-            value: "TypeScript",
-          },
-          {
-            label: "Updated",
-            value: "2026-01",
-          },
-        ],
-        meta: "OpenTAI/VisionSafety · Apache-2.0 · since 2024",
-        resources: [
-          {
-            label: "Platform",
-            href: "https://opentai.org/VisionSafety",
-          },
-          {
-            label: "GitHub",
-            href: "https://github.com/OpenTAI/VisionSafety",
-          },
-        ],
-        image: "/media/vision-icon.png",
-        slug: "visionsafety-bench",
-        domain: "Vision & Multimodal",
-        property: "Robustness",
-      },
-      {
-        name: "RewardModel Bench",
-        subtitle: "A Reward Model Benchmark for LLM Alignment Evaluation",
-        note: "A reward model benchmark for evaluating the effectiveness of alignment in large language models. The benchmark consists of 49 real-world scenarios and both pairwise and Best-of-N (BoN) evaluations.",
-        type: "LLMs",
-        venue: "ICLR 2025",
-        stars: 48,
-        updated: "2025-03-25",
-        tags: [
-          "alignment",
-          "llm",
-          "reward model",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "48",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-03",
-          },
-        ],
-        meta: "Zhou-Zoey/RMB-Reward-Model-Benchmark · 4 forks · since 2024",
-        resources: [
-          {
-            label: "arXiv",
-            href: "https://arxiv.org/abs/2410.09893",
-          },
-          {
-            label: "GitHub",
-            href: "https://github.com/Zhou-Zoey/RMB-Reward-Model-Benchmark",
-          },
-        ],
-        image: "/media/language-icon.png",
-        slug: "rewardmodel-bench",
-        domain: "LLMs",
-        property: "Alignment",
-      },
-      {
-        name: "VLBreakBench",
-        subtitle: "A Multimodal Jailbreak Benchmark for Vision-Language Models",
-        note: "VLBreakBench evaluates VLMs through two tiers: a base set (1 jailbreak pair per query) and a challenge set (3 pairs per query), covering 12 safety topics and 46 subcategories (916 harmful queries), totaling 3,654 jailbreak samples.",
-        type: "Vision & Multimodal",
-        tags: [
-          "jailbreak",
-          "multimodal",
-          "safety",
-        ],
-        stats: [],
-        meta: "upstream link unavailable (project page returns 404)",
-        resources: [],
-        image: "/media/vision-language-icon.png",
-        slug: "vlbreakbench",
-        domain: "Vision & Multimodal",
-        property: "Jailbreak",
-      },
-      {
-        name: "HarmBench",
-        note: "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
-        type: "LLMs",
-        stars: 1027,
-        updated: "2024-08-16",
-        posted: "2024-02-06",
-        tags: [
-          "jailbreak",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "1,027",
-          },
-          {
-            label: "Language",
-            value: "Jupyter Notebook",
-          },
-          {
-            label: "Updated",
-            value: "2024-08",
-          },
-          {
-            label: "Posted",
-            value: "2024-02-06",
-          },
-        ],
-        meta: "Mantas Mazeika, Long Phan, Xuwang Yin +9 more · centerforaisafety/HarmBench · MIT · 153 forks · since 2024 · cs.LG",
-        resources: [
-          {
-            label: "Project page",
-            href: "https://harmbench.org",
-          },
-          {
-            label: "GitHub",
-            href: "https://github.com/centerforaisafety/HarmBench",
-          },
-        ],
-        slug: "harmbench",
-        domain: "LLMs",
-        property: "Jailbreak",
-      },
-      {
-        name: "JailbreakBench",
-        note: "JailbreakBench: An Open Robustness Benchmark for Jailbreaking Language Models [NeurIPS 2024 Datasets and Benchmarks Track]",
-        type: "LLMs",
-        venue: "NeurIPS 2024",
-        stars: 651,
-        updated: "2025-04-04",
-        posted: "2024-03-28",
-        tags: [
-          "jailbreak",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "651",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-04",
-          },
-          {
-            label: "Posted",
-            value: "2024-03-28",
-          },
-        ],
-        meta: "Patrick Chao, Edoardo Debenedetti, Alexander Robey +9 more · JailbreakBench/jailbreakbench · MIT · 76 forks · since 2023",
-        resources: [
-          {
-            label: "Project page",
-            href: "https://jailbreakbench.github.io",
-          },
-          {
-            label: "GitHub",
-            href: "https://github.com/JailbreakBench/jailbreakbench",
-          },
-        ],
-        slug: "jailbreakbench",
-        domain: "LLMs",
-        property: "Jailbreak",
-      },
-      {
-        name: "SafetyBench",
-        note: "Official github repo for SafetyBench, a comprehensive benchmark to evaluate LLMs' safety. [ACL 2024]",
-        type: "LLMs",
-        venue: "ACL 2024",
-        stars: 297,
-        updated: "2025-07-28",
-        posted: "2023-09-13",
-        tags: [],
-        stats: [
-          {
-            label: "Stars",
-            value: "297",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-07",
-          },
-          {
-            label: "Posted",
-            value: "2023-09-13",
-          },
-        ],
-        meta: "Zhexin Zhang, Leqi Lei, Lindong Wu +7 more · thu-coai/SafetyBench · MIT · 14 forks · since 2023",
-        resources: [
-          {
-            label: "GitHub",
-            href: "https://github.com/thu-coai/SafetyBench",
-          },
-        ],
-        slug: "safetybench",
-        domain: "LLMs",
-      },
-      {
-        name: "AgentDojo",
-        note: "A Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents.",
+        name: "BIPIA",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: IPI attacks.",
         type: "Agents",
-        stars: 735,
-        updated: "2026-06-02",
-        posted: "2024-06-19",
+        year: "2023",
         tags: [
-          "benchmark",
-          "large-language-models",
-          "prompt-injection",
-          "security",
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
         ],
         stats: [
           {
-            label: "Stars",
-            value: "735",
+            label: "Table year",
+            value: "2023",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2026-06",
-          },
-          {
-            label: "Posted",
-            value: "2024-06-19",
+            label: "Recorded scale",
+            value: "5 scenarios / 250 goals",
           },
         ],
-        meta: "Edoardo Debenedetti, Jie Zhang, Mislav Balunović +3 more · ethz-spylab/agentdojo · MIT · 191 forks · since 2024",
-        resources: [
-          {
-            label: "Project page",
-            href: "https://agentdojo.spylab.ai/",
-          },
-          {
-            label: "GitHub",
-            href: "https://github.com/ethz-spylab/agentdojo",
-          },
-        ],
-        slug: "agentdojo",
-        domain: "Agents",
-      },
-      {
-        name: "MM-SafetyBench",
-        note: "Accepted by ECCV 2024",
-        type: "Vision & Multimodal",
-        venue: "ECCV 2024",
-        stars: 217,
-        updated: "2024-10-15",
-        posted: "2023-11-29",
-        tags: [],
-        stats: [
-          {
-            label: "Stars",
-            value: "217",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2024-10",
-          },
-          {
-            label: "Posted",
-            value: "2023-11-29",
-          },
-        ],
-        meta: "Xin Liu, Yichen Zhu, Jindong Gu +3 more · isXinLiu/MM-SafetyBench · 6 forks · since 2023",
-        resources: [
-          {
-            label: "GitHub",
-            href: "https://github.com/isXinLiu/MM-SafetyBench",
-          },
-        ],
-        slug: "mm-safetybench",
-        domain: "Vision & Multimodal",
-      },
-      {
-        name: "Benchmarking and defending against indirect prompt injection attacks on large language models",
-        note: "Benchmarking and defending against indirect prompt injection attacks on large language models",
-        type: "Agents",
-        tags: [
-          "prompt injection",
-        ],
-        stats: [],
         resources: [
           {
             label: "arXiv",
             href: "https://arxiv.org/abs/2312.14197",
           },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/microsoft/BIPIA/tree/main/benchmark",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/microsoft/BIPIA",
+          },
         ],
         citationOnly: true,
-        slug: "benchmarking-and-defending-against-indirect-prompt-injection-attacks-on-large-language-models",
+        slug: "bipia",
         domain: "Agents",
-        property: "Prompt Injection",
       },
       {
-        name: "Identifying the risks of lm agents with an lm-emulated sandbox",
-        note: "Identifying the risks of lm agents with an lm-emulated sandbox",
+        name: "ToolEmu",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Emulated tool risks.",
         type: "Agents",
-        tags: [],
-        stats: [],
+        year: "2023",
+        tags: [
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2023",
+          },
+          {
+            label: "Recorded scale",
+            value: "36 tools / 144 cases",
+          },
+        ],
         resources: [
           {
             label: "arXiv",
             href: "https://arxiv.org/abs/2309.15817",
           },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
         ],
         citationOnly: true,
-        slug: "identifying-the-risks-of-lm-agents-with-an-lm-emulated-sandbox",
+        slug: "toolemu",
         domain: "Agents",
       },
       {
-        name: "Injecagent",
-        note: "Benchmarking indirect prompt injections in tool-integrated large language model agents",
+        name: "InjecAgent",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Tool-integrated indirect prompt injection.",
         type: "Agents",
-        stars: 157,
-        updated: "2024-07-02",
+        year: "2024",
         tags: [
           "prompt injection",
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
         ],
         stats: [
           {
-            label: "Stars",
-            value: "157",
+            label: "Table year",
+            value: "2024",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2024-07",
+            label: "Recorded scale",
+            value: "17 user tools / 62 attacker tools / 1,054 cases",
           },
         ],
-        meta: "uiuc-kang-lab/InjecAgent · MIT · 30 forks",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/uiuc-kang-lab/InjecAgent",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2403.02691",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
         slug: "injecagent",
         domain: "Agents",
         property: "Prompt Injection",
       },
       {
-        name: "Agentharm",
-        note: "A benchmark for measuring harmfulness of llm agents",
+        name: "AgentDojo",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Third-party instructions.",
         type: "Agents",
-        stars: 1,
-        updated: "2026-01-16",
+        year: "2024",
         tags: [
-          "harmful content",
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
         ],
         stats: [
           {
-            label: "Stars",
-            value: "1",
+            label: "Table year",
+            value: "2024",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2026-01",
+            label: "Recorded scale",
+            value: "97 tasks / 629 cases",
           },
         ],
-        meta: "AIEvals/AgentHarm",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/AIEvals/AgentHarm",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2406.13352",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
+        slug: "agentdojo",
+        domain: "Agents",
+      },
+      {
+        name: "AgentHarm",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Harmful behaviors.",
+        type: "Agents",
+        year: "2024",
+        downloads: 4338,
+        updated: "2024-12-19",
+        tags: [
+          "harmful content",
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded scale",
+            value: "110 tasks / 11 categories",
+          },
+        ],
+        meta: "ai-safety-institute/AgentHarm · OTHER · n<1K samples",
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2410.09024",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
         slug: "agentharm",
         domain: "Agents",
         property: "Harmful Content",
       },
       {
-        name: "Redcode",
-        note: "Risky code execution and generation benchmark for code agents",
+        name: "RedCode",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Code vulnerabilities.",
         type: "Agents",
-        stars: 45,
-        updated: "2026-04-01",
+        year: "2024",
         tags: [
           "cybersecurity",
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
         ],
         stats: [
           {
-            label: "Stars",
-            value: "45",
+            label: "Table year",
+            value: "2024",
           },
           {
-            label: "Language",
-            value: "TypeScript",
-          },
-          {
-            label: "Updated",
-            value: "2026-04",
+            label: "Recorded scale",
+            value: "4,000+ cases / 25 types",
           },
         ],
-        meta: "kyxiaxiang/redcode · 24 forks",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/kyxiaxiang/redcode",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2411.07781",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
         slug: "redcode",
         domain: "Agents",
         property: "Cybersecurity",
       },
       {
-        name: "Vpi-bench",
-        note: "Visual prompt injection attacks for computer-use agents",
+        name: "VPI-Bench",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Visual prompt injections. The survey table records 2024; the repository list links the later arXiv record.",
         type: "Agents",
+        year: "2024",
         tags: [
           "prompt injection",
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
         ],
-        stats: [],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded scale",
+            value: "306 cases / 5 platforms",
+          },
+        ],
         resources: [
           {
             label: "arXiv",
             href: "https://arxiv.org/abs/2506.02456",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
         citationOnly: true,
@@ -2915,109 +3588,176 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         property: "Prompt Injection",
       },
       {
-        name: "R-judge",
-        note: "Benchmarking safety risk awareness for llm agents",
+        name: "R-Judge",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Risk identification from logs.",
         type: "Agents",
-        stars: 109,
-        updated: "2026-01-11",
-        tags: [],
+        year: "2024",
+        tags: [
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
+        ],
         stats: [
           {
-            label: "Stars",
-            value: "109",
+            label: "Table year",
+            value: "2024",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2026-01",
+            label: "Recorded scale",
+            value: "569 records / 27 scenarios",
           },
         ],
-        meta: "Lordog/R-Judge · 10 forks",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/Lordog/R-Judge",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2401.10019",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
         slug: "r-judge",
         domain: "Agents",
       },
       {
-        name: "Salad-bench",
-        note: "A hierarchical and comprehensive safety benchmark for large language models",
-        type: "Agents",
+        name: "SALAD-Bench",
+        note: "Listed in Safety at Scale Table 6 under Adversarial Datasets and Backdoor Benchmarks. The primary paper identifies SALAD-Bench as a safety benchmark for large language models.",
+        type: "LLMs",
         venue: "ACL 2024",
-        stars: 176,
-        updated: "2025-03-08",
-        tags: [],
+        year: "2024",
+        downloads: 1767,
+        updated: "2026-07-23",
+        tags: [
+          "robustness",
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
+        ],
         stats: [
           {
-            label: "Stars",
-            value: "176",
+            label: "Table year",
+            value: "2024",
           },
           {
-            label: "Language",
-            value: "Python",
+            label: "Recorded size",
+            value: "30K",
           },
           {
-            label: "Updated",
-            value: "2025-03",
+            label: "Table #Times",
+            value: "36",
           },
         ],
-        meta: "OpenSafetyLab/SALAD-BENCH · Apache-2.0 · 15 forks",
+        meta: "OpenSafetyLab/Salad-Data · APACHE-2.0 · 10K<n<100K samples",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/OpenSafetyLab/SALAD-BENCH",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2402.05044",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
         slug: "salad-bench",
-        domain: "Agents",
+        domain: "LLMs",
+        property: "Robustness",
       },
       {
-        name: "Sg-bench",
-        note: "Evaluating llm safety generalization across diverse tasks and prompt types",
-        type: "Agents",
-        stars: 26,
-        updated: "2024-11-29",
-        tags: [],
+        name: "h4rm3l",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Jailbreak attack synthesis.",
+        type: "LLMs",
+        year: "2024",
+        tags: [
+          "jailbreak",
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
+        ],
         stats: [
           {
-            label: "Stars",
-            value: "26",
+            label: "Table year",
+            value: "2024",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2024-11",
+            label: "Recorded scale",
+            value: "2,656 attacks",
           },
         ],
-        meta: "MurrayTom/SG-Bench · GPL-3.0 · 3 forks",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/MurrayTom/SG-Bench",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2408.04811",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
+        slug: "h4rm3l",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "SG-Bench",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Safety generalization.",
+        type: "Agents",
+        year: "2024",
+        tags: [
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded scale",
+            value: "1,442 queries / 6 categories",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2410.21965",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
         slug: "sg-bench",
         domain: "Agents",
       },
       {
-        name: "Chemsafetybench",
-        note: "Benchmarking llm safety on chemistry domain",
+        name: "ChemSafetyBench",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Chemistry safety.",
         type: "Agents",
-        tags: [],
-        stats: [],
+        year: "2024",
+        tags: [
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded scale",
+            value: "30K samples / 3 tasks",
+          },
+        ],
         resources: [
           {
             label: "arXiv",
             href: "https://arxiv.org/abs/2411.16736",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
         citationOnly: true,
@@ -3025,402 +3765,1509 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         domain: "Agents",
       },
       {
-        name: "Toolsword",
-        note: "Unveiling safety issues of large language models in tool learning across three stages",
+        name: "ToolSword",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Tool-use safety.",
         type: "Agents",
-        venue: "ACL 2024",
-        stars: 15,
-        updated: "2024-09-12",
-        tags: [],
+        year: "2024",
+        tags: [
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
+        ],
         stats: [
           {
-            label: "Stars",
-            value: "15",
+            label: "Table year",
+            value: "2024",
           },
           {
-            label: "Updated",
-            value: "2024-09",
+            label: "Recorded scale",
+            value: "6 scenarios / 3 stages",
           },
         ],
-        meta: "Junjie-Ye/ToolSword · Apache-2.0",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/Junjie-Ye/ToolSword",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2402.10753",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
         slug: "toolsword",
         domain: "Agents",
       },
       {
-        name: "Privacylens",
-        note: "Evaluating privacy norm awareness of language models in action",
+        name: "PrivacyLens",
+        note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Privacy norm awareness.",
         type: "Agents",
-        venue: "NeurIPS 2024",
-        stars: 48,
-        updated: "2025-03-04",
+        year: "2024",
+        downloads: 317,
+        updated: "2024-09-04",
         tags: [
           "privacy",
-          "language-model-agent",
-          "language-model-evaluation",
-          "large-language-model",
-          "neurips-2024",
+          "source: safety-at-scale",
+          "simulation-based benchmarks",
         ],
         stats: [
           {
-            label: "Stars",
-            value: "48",
+            label: "Table year",
+            value: "2024",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-03",
+            label: "Recorded scale",
+            value: "493 seeds / vignettes / trajectories",
           },
         ],
-        meta: "SALT-NLP/PrivacyLens · MIT · 10 forks",
+        meta: "SALT-NLP/PrivacyLens · CC-BY-4.0 · n<1K samples",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/SALT-NLP/PrivacyLens",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2409.00138",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
         slug: "privacylens",
         domain: "Agents",
         property: "Privacy",
       },
       {
-        name: "Safebench",
-        note: "A benchmarking platform for safety evaluation of autonomous vehicles",
-        type: "Agents",
-        stars: 155,
-        updated: "2024-02-23",
-        tags: [],
+        name: "SafeBench",
+        note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Driving safety.",
+        type: "Embodied AI",
+        year: "2022",
+        tags: [
+          "source: safety-at-scale",
+          "real-interaction benchmarks",
+        ],
         stats: [
           {
-            label: "Stars",
-            value: "155",
+            label: "Table year",
+            value: "2022",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2024-02",
+            label: "Recorded scale",
+            value: "8 scenarios / 100 routes / 2,352 cases",
           },
         ],
-        meta: "trust-ai/SafeBench · MIT · 29 forks",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/trust-ai/SafeBench",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2206.09682",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
         slug: "safebench",
+        domain: "Embodied AI",
+      },
+      {
+        name: "Agent Security Bench (ASB)",
+        note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Attack and defense across 10 scenarios.",
+        type: "Agents",
+        year: "2024",
+        tags: [
+          "source: safety-at-scale",
+          "real-interaction benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded scale",
+            value: "400+ tools",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2410.02644",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "agent-security-bench-asb",
         domain: "Agents",
       },
       {
-        name: "Agent security bench",
-        note: "Formalizing and benchmarking attacks and defenses in llm-based agents",
-        type: "Agents",
-        stars: 280,
-        updated: "2026-04-16",
-        tags: [],
+        name: "SafeAgentBench",
+        note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Embodied hazards.",
+        type: "Embodied AI",
+        year: "2024",
+        tags: [
+          "source: safety-at-scale",
+          "real-interaction benchmarks",
+        ],
         stats: [
           {
-            label: "Stars",
-            value: "280",
+            label: "Table year",
+            value: "2024",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2026-04",
+            label: "Recorded scale",
+            value: "750 tasks",
           },
         ],
-        meta: "agiresearch/ASB · MIT · 29 forks",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/agiresearch/ASB",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2412.13178",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
-        slug: "agent-security-bench",
-        domain: "Agents",
-      },
-      {
-        name: "Safeagentbench",
-        note: "A benchmark for safe task planning of embodied llm agents",
-        type: "Agents",
-        stars: 75,
-        updated: "2025-02-25",
-        tags: [],
-        stats: [
-          {
-            label: "Stars",
-            value: "75",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-02",
-          },
-        ],
-        meta: "shengyin1224/SafeAgentBench · 5 forks",
-        resources: [
-          {
-            label: "GitHub",
-            href: "https://github.com/shengyin1224/SafeAgentBench",
-          },
-        ],
+        citationOnly: true,
         slug: "safeagentbench",
-        domain: "Agents",
+        domain: "Embodied AI",
       },
       {
-        name: "Agent-safetybench",
-        note: "Evaluating the safety of llm agents",
+        name: "Agent-SafetyBench",
+        note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Safety risks across 8 categories.",
         type: "Agents",
-        stars: 157,
+        year: "2024",
+        downloads: 271,
         updated: "2025-08-11",
-        tags: [],
+        tags: [
+          "source: safety-at-scale",
+          "real-interaction benchmarks",
+        ],
         stats: [
           {
-            label: "Stars",
-            value: "157",
+            label: "Table year",
+            value: "2024",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-08",
+            label: "Recorded scale",
+            value: "349 environments / 2,000 cases",
           },
         ],
-        meta: "thu-coai/Agent-SafetyBench · MIT · 10 forks",
+        meta: "thu-coai/Agent-SafetyBench · MIT",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/thu-coai/Agent-SafetyBench",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2412.14470",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
         slug: "agent-safetybench",
         domain: "Agents",
       },
       {
-        name: "Dissecting adversarial robustness of multimodal lm agents",
-        note: "Dissecting adversarial robustness of multimodal lm agents",
+        name: "AdvWeb / ARE",
+        note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Adversarial robustness for multimodal web agents. Safety at Scale Table 14 lists AdvWeb, Dissecting Adversarial, and ARE as separate labels, but all three bibliography records resolve to arXiv:2406.12814; this card avoids triple-counting the same paper.",
         type: "Agents",
+        year: "2024",
         tags: [
           "robustness",
+          "source: safety-at-scale",
+          "real-interaction benchmarks",
+          "advweb",
+          "dissecting adversarial",
+          "are",
         ],
-        stats: [],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded scale",
+            value: "200 target tasks",
+          },
+        ],
         resources: [
           {
             label: "arXiv",
             href: "https://arxiv.org/abs/2406.12814",
           },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
         ],
         citationOnly: true,
-        slug: "dissecting-adversarial-robustness-of-multimodal-lm-agents",
+        slug: "advweb-are",
         domain: "Agents",
         property: "Robustness",
       },
       {
-        name: "St-webagentbench",
-        note: "A benchmark for evaluating safety and trustworthiness in web agents",
+        name: "ST-WebAgentBench",
+        note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Web safety and trustworthiness.",
         type: "Agents",
-        stars: 25,
+        year: "2024",
+        downloads: 174,
         updated: "2026-03-12",
-        tags: [],
+        tags: [
+          "source: safety-at-scale",
+          "real-interaction benchmarks",
+        ],
         stats: [
           {
-            label: "Stars",
-            value: "25",
+            label: "Table year",
+            value: "2024",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2026-03",
+            label: "Recorded scale",
+            value: "222 tasks with safety and trustworthiness policies",
           },
         ],
-        meta: "segev-shlomov/ST-WebAgentBench · NOASSERTION · 6 forks",
+        meta: "ST-WebAgentBench/st-webagentbench · APACHE-2.0 · 1K<n<10K samples",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/segev-shlomov/ST-WebAgentBench",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2410.06703",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
         slug: "st-webagentbench",
         domain: "Agents",
       },
       {
         name: "Haicosystem",
-        note: "An ecosystem for sandboxing safety risks in human-ai interactions",
+        note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Human-AI sandbox safety.",
         type: "Agents",
-        stars: 14,
-        updated: "2025-06-01",
+        year: "2024",
         tags: [
-          "ai-safety",
-          "multi-agent",
-          "social-interactions",
+          "source: safety-at-scale",
+          "real-interaction benchmarks",
         ],
         stats: [
           {
-            label: "Stars",
-            value: "14",
+            label: "Table year",
+            value: "2024",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-06",
+            label: "Recorded scale",
+            value: "1,840 simulations / 92 scenarios",
           },
         ],
-        meta: "XuhuiZhou/HAICosystem · 1 fork",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/XuhuiZhou/HAICosystem",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2409.16427",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
         slug: "haicosystem",
         domain: "Agents",
       },
       {
-        name: "Wasp",
-        note: "Benchmarking web agent security against prompt injection attacks",
+        name: "WASP",
+        note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Adversarial web-agent safety.",
         type: "Agents",
-        stars: 98,
-        updated: "2026-04-13",
+        year: "2025",
         tags: [
-          "prompt injection",
+          "robustness",
+          "source: safety-at-scale",
+          "real-interaction benchmarks",
         ],
         stats: [
           {
-            label: "Stars",
-            value: "98",
+            label: "Table year",
+            value: "2025",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2026-04",
+            label: "Recorded scale",
+            value: "84 tasks / 42 scenarios / 2 environments",
           },
         ],
-        meta: "facebookresearch/wasp · NOASSERTION · 15 forks",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/facebookresearch/wasp",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2504.18575",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
         slug: "wasp",
         domain: "Agents",
-        property: "Prompt Injection",
+        property: "Robustness",
       },
       {
-        name: "Refusal-trained llms are easily jailbroken as browser agents",
-        note: "Refusal-trained llms are easily jailbroken as browser agents",
+        name: "Refusal-Trained LLMs",
+        note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Browser jailbreaking.",
         type: "Agents",
+        year: "2025",
         tags: [
           "jailbreak",
+          "source: safety-at-scale",
+          "real-interaction benchmarks",
         ],
-        stats: [],
+        stats: [
+          {
+            label: "Table year",
+            value: "2025",
+          },
+          {
+            label: "Recorded scale",
+            value: "100 harmful behaviors",
+          },
+        ],
         resources: [
           {
             label: "arXiv",
             href: "https://arxiv.org/abs/2410.13886",
           },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
         ],
         citationOnly: true,
-        slug: "refusal-trained-llms-are-easily-jailbroken-as-browser-agents",
+        slug: "refusal-trained-llms",
         domain: "Agents",
         property: "Jailbreak",
       },
       {
-        name: "Safearena",
-        note: "Evaluating the safety of autonomous web agents",
+        name: "SafeArena",
+        note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Web-agent misuse.",
         type: "Agents",
-        stars: 24,
+        year: "2025",
+        downloads: 132,
         updated: "2025-04-23",
-        tags: [],
+        tags: [
+          "source: safety-at-scale",
+          "real-interaction benchmarks",
+        ],
         stats: [
           {
-            label: "Stars",
-            value: "24",
+            label: "Table year",
+            value: "2025",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-04",
+            label: "Recorded scale",
+            value: "500 safe and harmful tasks",
           },
         ],
-        meta: "McGill-NLP/safearena · 7 forks",
+        meta: "McGill-NLP/safearena · n<1K samples",
         resources: [
           {
-            label: "GitHub",
-            href: "https://github.com/McGill-NLP/safearena",
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2503.04957",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
           },
         ],
+        citationOnly: true,
         slug: "safearena",
         domain: "Agents",
       },
       {
-        name: "Openagentsafety",
-        note: "A comprehensive framework for evaluating real-world ai agent safety",
+        name: "OpenAgentSafety",
+        note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Real-world safety across 8 categories.",
         type: "Agents",
-        stars: 32,
-        updated: "2026-08-10",
-        tags: [],
+        year: "2025",
+        tags: [
+          "source: safety-at-scale",
+          "real-interaction benchmarks",
+        ],
         stats: [
           {
-            label: "Stars",
-            value: "32",
+            label: "Table year",
+            value: "2025",
           },
           {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2026-08",
+            label: "Recorded scale",
+            value: "350+ multi-turn tasks",
           },
         ],
-        meta: "Open-Agent-Safety/OpenAgentSafety · MIT · 17 forks",
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2507.06134",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "openagentsafety",
+        domain: "Agents",
+      },
+      {
+        name: "Bench2Drive",
+        note: "The Embodied AI survey's dedicated Benchmarks section records 220 routes. The official repository releases the benchmark and training data.",
+        type: "Embodied AI",
+        year: "2024",
+        tags: [
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "220 routes",
+          },
+        ],
         resources: [
           {
             label: "GitHub",
-            href: "https://github.com/Open-Agent-Safety/OpenAgentSafety",
+            href: "https://github.com/Thinklab-SJTU/Bench2Drive",
+          },
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2406.03877",
+          },
+          {
+            label: "Source survey",
+            href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+          },
+          {
+            label: "Hugging Face",
+            href: "https://huggingface.co/datasets/rethinklab/Bench2Drive",
           },
         ],
-        slug: "openagentsafety",
-        domain: "Agents",
+        citationOnly: false,
+        slug: "bench2drive",
+        domain: "Embodied AI",
+      },
+      {
+        name: "M3Bench",
+        note: "The Embodied AI survey's dedicated Benchmarks section records 30,000 pick-and-place tasks across 119 household scenes.",
+        type: "Embodied AI",
+        year: "2025",
+        downloads: 23,
+        stars: 27,
+        updated: "2025-07-19",
+        posted: "2024-10-09",
+        tags: [
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "30,000 tasks / 119 scenes",
+          },
+        ],
+        meta: "Zeyu Zhang, Sixu Yan, Muzhi Han +4 more · TooSchoolForCool/M3Bench · since 2025 · cs.RO · M3Bench/M3Bench · APACHE-2.0",
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2410.06678",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/TooSchoolForCool/M3Bench",
+          },
+          {
+            label: "Source survey",
+            href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+          },
+          {
+            label: "Hugging Face",
+            href: "https://huggingface.co/datasets/M3Bench/M3Bench",
+          },
+        ],
+        citationOnly: true,
+        slug: "m3bench",
+        domain: "Embodied AI",
+      },
+      {
+        name: "THOR-EAE",
+        note: "The Embodied AI survey's dedicated Benchmarks section records 840,000 samples in AI2-THOR. Its bibliography cites the ACM Multimedia paper but does not record an arXiv or repository link.",
+        type: "Embodied AI",
+        year: "2023",
+        tags: [
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "840,000 samples",
+          },
+        ],
+        resources: [
+          {
+            label: "Source survey",
+            href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+          },
+        ],
+        citationOnly: true,
+        slug: "thor-eae",
+        domain: "Embodied AI",
+      },
+      {
+        name: "Embodied Agent Interface (EAI)",
+        note: "The Embodied AI survey's dedicated Benchmarks section names EAI. The official NeurIPS paper and repository record 338 VirtualHome tasks and 100 BEHAVIOR tasks.",
+        type: "Embodied AI",
+        year: "2024",
+        tags: [
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "438 tasks",
+          },
+        ],
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/embodied-agent-interface/embodied-agent-interface",
+          },
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2410.07166",
+          },
+          {
+            label: "Source survey",
+            href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+          },
+        ],
+        citationOnly: false,
+        slug: "embodied-agent-interface-eai",
+        domain: "Embodied AI",
+      },
+      {
+        name: "AgentSafe",
+        note: "The Embodied AI survey's dedicated safety-focused Benchmarks paragraph names AgentSafe.",
+        type: "Embodied AI",
+        year: "2025",
+        tags: [
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "Not recorded in source section",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2503.04392",
+          },
+          {
+            label: "Source survey",
+            href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+          },
+        ],
+        citationOnly: true,
+        slug: "agentsafe-multi-agent-systems",
+        domain: "Embodied AI",
+      },
+      {
+        name: "Safe-BeAI",
+        note: "The Embodied AI survey's dedicated safety-focused Benchmarks paragraph names Safe-BeAI. The primary paper records 2,027 tasks across 8 hazard categories.",
+        type: "Embodied AI",
+        year: "2025",
+        tags: [
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "2,027 tasks / 8 hazard categories",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2504.14650",
+          },
+          {
+            label: "Source survey",
+            href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+          },
+        ],
+        citationOnly: true,
+        slug: "safe-beai",
+        domain: "Embodied AI",
+      },
+      {
+        name: "AGENTSAFE",
+        note: "The Embodied AI survey's dedicated safety-focused Benchmarks paragraph names AGENTSAFE. The primary paper records 45 adversarial scenarios, 1,350 hazardous tasks, and 9,900 instructions.",
+        type: "Embodied AI",
+        year: "2025",
+        tags: [
+          "robustness",
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "1,350 tasks / 9,900 instructions / 45 scenarios",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2506.14697",
+          },
+          {
+            label: "Source survey",
+            href: "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+          },
+        ],
+        citationOnly: true,
+        slug: "agentsafe-hazardous-instructions",
+        domain: "Embodied AI",
+        property: "Robustness",
+      },
+      {
+        name: "SafeMindBench",
+        note: "The Embodied AI survey's dedicated Benchmarks subsection explicitly names SafeMindBench as a benchmark for safety risks in embodied LLM agents.",
+        type: "Embodied AI",
+        year: "2025",
+        tags: [
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "Not recorded in source section",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2509.25885",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2605.02900",
+          },
+        ],
+        citationOnly: true,
+        slug: "safemindbench",
+        domain: "Embodied AI",
+      },
+      {
+        name: "DESPITE",
+        note: "The Embodied AI survey's dedicated Benchmarks subsection explicitly identifies DESPITE as a PDDL benchmark separating planning competence from safety competence.",
+        type: "Embodied AI",
+        year: "2026",
+        tags: [
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "Not recorded in source section",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2604.18463",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2605.02900",
+          },
+        ],
+        citationOnly: true,
+        slug: "despite",
+        domain: "Embodied AI",
+      },
+      {
+        name: "RoboJailBench",
+        note: "The Embodied AI survey's dedicated Benchmarks subsection explicitly identifies RoboJailBench as a jailbreak attack-and-defense benchmark for embodied VLMs.",
+        type: "Embodied AI",
+        year: "2026",
+        tags: [
+          "jailbreak",
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "Not recorded in source section",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2605.19328",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2605.02900",
+          },
+        ],
+        citationOnly: true,
+        slug: "robojailbench",
+        domain: "Embodied AI",
+        property: "Jailbreak",
+      },
+      {
+        name: "HASARD",
+        note: "The official HASARD repository publishes six vision-based safe reinforcement-learning environments and their scenario implementations.",
+        type: "Embodied AI",
+        year: "2025",
+        tags: [
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "6 embodied safe-RL environments",
+          },
+        ],
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/TTomilin/HASARD/tree/main/hasard/envs",
+          },
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2503.08241",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2605.02900",
+          },
+        ],
+        slug: "hasard",
+        domain: "Embodied AI",
+      },
+      {
+        name: "Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments",
+        note: "Listed in the source survey's Benchmarks & Datasets section. The primary paper calls R2R the first benchmark dataset for visually-grounded natural-language navigation, and the authors' repository provides the data and evaluation code.",
+        type: "Embodied AI",
+        venue: "CVPR 2018",
+        year: "2018",
+        tags: [
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Published",
+            value: "2018",
+          },
+        ],
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/peteanderson80/Matterport3DSimulator",
+          },
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/1711.07280",
+          },
+        ],
+        citationOnly: true,
+        slug: "vision-and-language-navigation-interpreting-visually-grounded-navigation-instructions-in-real-environments",
+        domain: "Embodied AI",
+      },
+      {
+        name: "VizWiz Grand Challenge: Answering Visual Questions from Blind People",
+        note: "Listed in the source survey's Benchmarks & Datasets section. The official VizWiz page publishes the dataset, challenge tasks, evaluation metrics and self-evaluation annotations.",
+        type: "Embodied AI",
+        venue: "CVPR 2018",
+        year: "2018",
+        tags: [
+          "source: embodied-ai-safety",
+        ],
+        stats: [
+          {
+            label: "Published",
+            value: "2018",
+          },
+        ],
+        resources: [
+          {
+            label: "Project page",
+            href: "https://vizwiz.org/tasks-and-datasets/vqa/",
+          },
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/1802.08218",
+          },
+        ],
+        citationOnly: true,
+        slug: "vizwiz-grand-challenge-answering-visual-questions-from-blind-people",
+        domain: "Embodied AI",
+      },
+      {
+        name: "TruthfulQA",
+        note: "Listed in Safety at Scale Table 6 under Truthfulness Datasets. Safety at Scale Section 3.13.2 and the primary paper both call TruthfulQA a benchmark.",
+        type: "LLMs",
+        venue: "ACL 2022",
+        year: "2021",
+        tags: [
+          "source: safety-at-scale",
+          "truthfulness datasets",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2021",
+          },
+          {
+            label: "Recorded size",
+            value: "817",
+          },
+          {
+            label: "Table #Times",
+            value: "213",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2109.07958",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "truthfulqa",
+        domain: "LLMs",
+      },
+      {
+        name: "AdvGLUE",
+        note: "Listed in Safety at Scale Table 6 under Adversarial Datasets and Backdoor Benchmarks. The primary paper title identifies AdvGLUE as a multi-task benchmark.",
+        type: "LLMs",
+        venue: "NeurIPS 2021",
+        year: "2021",
+        tags: [
+          "robustness",
+          "source: safety-at-scale",
+          "adversarial datasets and backdoor benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2021",
+          },
+          {
+            label: "Recorded size",
+            value: "5,716",
+          },
+          {
+            label: "Table #Times",
+            value: "12",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2111.02840",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "advglue",
+        domain: "LLMs",
+        property: "Robustness",
+      },
+      {
+        name: "AdvBench",
+        note: "Listed in Safety at Scale Table 6 under Adversarial Datasets and Backdoor Benchmarks. Safety at Scale Table 6 cites the GCG paper for AdvBench; that paper uses AdvBench as an evaluation benchmark.",
+        type: "LLMs",
+        venue: "arXiv 2023",
+        year: "2023",
+        tags: [
+          "robustness",
+          "source: safety-at-scale",
+          "adversarial datasets and backdoor benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2023",
+          },
+          {
+            label: "Recorded size",
+            value: "520",
+          },
+          {
+            label: "Table #Times",
+            value: "52",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2307.15043",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/llm-attacks/llm-attacks/blob/main/data/advbench/harmful_behaviors.csv",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/llm-attacks/llm-attacks",
+          },
+        ],
+        citationOnly: true,
+        slug: "advbench",
+        domain: "LLMs",
+        property: "Robustness",
+      },
+      {
+        name: "CVALUES",
+        note: "Listed in Safety at Scale Table 6 under Value Benchmarks. The primary paper identifies CVALUES as a Chinese human-values evaluation benchmark.",
+        type: "LLMs",
+        venue: "arXiv 2023",
+        year: "2023",
+        tags: [
+          "source: safety-at-scale",
+          "value benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2023",
+          },
+          {
+            label: "Recorded size",
+            value: "2,100",
+          },
+          {
+            label: "Table #Times",
+            value: "10",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2307.09705",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "cvalues",
+        domain: "LLMs",
+      },
+      {
+        name: "FINE",
+        note: "Listed in Safety at Scale Table 6 under Value Benchmarks. The primary paper constructs a comparative benchmark and names its evaluation framework FINE.",
+        type: "LLMs",
+        venue: "NAACL 2024",
+        year: "2023",
+        tags: [
+          "source: safety-at-scale",
+          "value benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2023",
+          },
+          {
+            label: "Recorded size",
+            value: "90",
+          },
+          {
+            label: "Table #Times",
+            value: "14",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2311.05915",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "fine",
+        domain: "LLMs",
+      },
+      {
+        name: "FLAMES",
+        note: "Listed in Safety at Scale Table 6 under Value Benchmarks. The primary paper title and abstract identify FLAMES as a value-alignment benchmark.",
+        type: "LLMs",
+        venue: "NAACL 2024",
+        year: "2024",
+        tags: [
+          "alignment",
+          "source: safety-at-scale",
+          "value benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded size",
+            value: "2,251",
+          },
+          {
+            label: "Table #Times",
+            value: "17",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2311.06899",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "flames",
+        domain: "LLMs",
+        property: "Alignment",
+      },
+      {
+        name: "SORRYBench",
+        note: "Listed in Safety at Scale Table 6 under Value Benchmarks. The primary paper introduces SORRY-Bench as a benchmark for safety refusal behaviours.",
+        type: "LLMs",
+        venue: "arXiv 2024",
+        year: "2024",
+        downloads: 1378,
+        updated: "2025-02-28",
+        tags: [
+          "jailbreak",
+          "source: safety-at-scale",
+          "value benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded size",
+            value: "450",
+          },
+          {
+            label: "Table #Times",
+            value: "8",
+          },
+        ],
+        meta: "sorry-bench/sorry-bench-202503",
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2406.14598",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "sorrybench",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "SafetyBench",
+        note: "Listed in Safety at Scale Table 6 under Value Benchmarks. The primary paper identifies SafetyBench as a comprehensive benchmark for evaluating LLM safety.",
+        type: "LLMs",
+        venue: "ACL 2024",
+        year: "2024",
+        downloads: 833,
+        updated: "2023-09-14",
+        tags: [
+          "source: safety-at-scale",
+          "value benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded size",
+            value: "11,435",
+          },
+          {
+            label: "Table #Times",
+            value: "21",
+          },
+        ],
+        meta: "thu-coai/SafetyBench · MIT · 10K<n<100K samples",
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2309.07045",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "safetybench",
+        domain: "LLMs",
+      },
+      {
+        name: "BackdoorLLM",
+        note: "Listed in Safety at Scale Table 6 under Adversarial Datasets and Backdoor Benchmarks. Safety at Scale and the primary paper both identify BackdoorLLM as a benchmark.",
+        type: "LLMs",
+        venue: "arXiv 2024",
+        year: "2024",
+        stars: 324,
+        updated: "2026-03-13",
+        tags: [
+          "robustness",
+          "source: safety-at-scale",
+          "adversarial datasets and backdoor benchmarks",
+          "attack",
+          "backdoor",
+          "defense",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded size",
+            value: "8",
+          },
+          {
+            label: "Table #Times",
+            value: "6",
+          },
+        ],
+        meta: "bboylyg/BackdoorLLM · MIT · 46 forks · since 2024",
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2408.12798",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/bboylyg/BackdoorLLM",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "backdoorllm",
+        domain: "LLMs",
+        property: "Robustness",
+      },
+      {
+        name: "JailBreakV-28K",
+        note: "Listed in Safety at Scale Table 6 under Adversarial Datasets and Backdoor Benchmarks. The primary paper identifies JailBreakV-28K as a benchmark for assessing multimodal-model robustness against jailbreak attacks.",
+        type: "LLMs",
+        venue: "COLM 2024",
+        year: "2024",
+        downloads: 16079,
+        updated: "2024-07-10",
+        tags: [
+          "jailbreak",
+          "source: safety-at-scale",
+          "adversarial datasets and backdoor benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded size",
+            value: "28K",
+          },
+          {
+            label: "Table #Times",
+            value: "10",
+          },
+        ],
+        meta: "JailBreakV-28K/JailBreakV-28K · MIT · 10K<n<100K samples",
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2404.03027",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "jailbreakv-28k",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "STRONGREJECT",
+        note: "Listed in Safety at Scale Table 6 under Adversarial Datasets and Backdoor Benchmarks. The primary paper introduces StrongREJECT as a jailbreak-evaluation benchmark.",
+        type: "LLMs",
+        venue: "ICLR Workshop 2024",
+        year: "2024",
+        tags: [
+          "jailbreak",
+          "source: safety-at-scale",
+          "adversarial datasets and backdoor benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded size",
+            value: "313",
+          },
+          {
+            label: "Table #Times",
+            value: "4",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2402.10260",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "strongreject",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "Libra-Leaderboard",
+        note: "Listed in Safety at Scale Table 6 under Value Benchmarks. Safety at Scale describes Libra-Leaderboard as a leaderboard with a comprehensive safety benchmark and unified evaluation framework.",
+        type: "LLMs",
+        venue: "arXiv 2024",
+        year: "2024",
+        tags: [
+          "source: safety-at-scale",
+          "value benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded size",
+            value: "57",
+          },
+          {
+            label: "Table #Times",
+            value: "26",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2412.18551",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "libra-leaderboard",
+        domain: "LLMs",
+      },
+      {
+        name: "CASE-Bench",
+        note: "Listed in Safety at Scale Table 6 under Value Benchmarks. The primary paper identifies CASE-Bench as a context-aware safety benchmark for large language models.",
+        type: "LLMs",
+        venue: "arXiv 2025",
+        year: "2025",
+        tags: [
+          "source: safety-at-scale",
+          "value benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2025",
+          },
+          {
+            label: "Recorded size",
+            value: "450",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2501.14940",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        citationOnly: true,
+        slug: "case-bench",
+        domain: "LLMs",
+      },
+      {
+        name: "HarmBench",
+        note: "The LLM chapter names HarmBench as an evaluation benchmark. The official repository calls it a standardized evaluation framework and documents its evaluation pipeline.",
+        type: "LLMs",
+        venue: "arXiv 2024",
+        year: "2024",
+        stars: 1029,
+        updated: "2024-08-16",
+        posted: "2024-02-06",
+        tags: [
+          "jailbreak",
+          "source: safety-at-scale",
+          "red teaming",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "18 red-teaming methods / 33 target LLMs and defenses",
+          },
+        ],
+        meta: "Mantas Mazeika, Long Phan, Xuwang Yin +9 more · centerforaisafety/HarmBench · MIT · 154 forks · since 2024 · cs.LG",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/centerforaisafety/HarmBench",
+          },
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2402.04249",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        slug: "harmbench",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "BUMBLE",
+        note: "The LLM chapter explicitly calls BUMBLE a benchmark. The primary paper reports 12.7K instances across nine bias types, and the authors' repository identifies itself as the BUMBLE benchmark.",
+        type: "LLMs",
+        venue: "ACL 2025",
+        year: "2025",
+        stars: 1,
+        updated: "2024-10-11",
+        posted: "2024-06-20",
+        tags: [
+          "fairness",
+          "source: safety-at-scale",
+          "implicit bias",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "12.7K instances / 9 bias types",
+          },
+        ],
+        meta: "Yuchen Wen, Keping Bi, Wei Chen +2 more · yuchenwen1/BUMBLE · 1 fork · since 2024 · cs.CL",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/yuchenwen1/BUMBLE",
+          },
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2406.14023",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        slug: "bumble",
+        domain: "LLMs",
+        property: "Fairness",
+      },
+      {
+        name: "JailbreakBench",
+        note: "The LLM chapter names JailbreakBench. Its official repository calls it an open robustness benchmark and releases the JBB-Behaviors evaluation data, evaluation framework, artifacts, and leaderboard.",
+        type: "LLMs",
+        venue: "NeurIPS 2024",
+        year: "2024",
+        downloads: 47399,
+        stars: 654,
+        updated: "2025-04-04",
+        posted: "2024-03-28",
+        tags: [
+          "jailbreak",
+          "source: safety-at-scale",
+        ],
+        stats: [
+          {
+            label: "Recorded scale",
+            value: "200 harmful and benign behaviors",
+          },
+        ],
+        meta: "Patrick Chao, Edoardo Debenedetti, Alexander Robey +9 more · JailbreakBench/jailbreakbench · MIT · 76 forks · since 2023 · cs.CR · JailbreakBench/JBB-Behaviors · MIT · n<1K samples",
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/JailbreakBench/jailbreakbench",
+          },
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2404.01318",
+          },
+          {
+            label: "Hugging Face",
+            href: "https://huggingface.co/datasets/JailbreakBench/JBB-Behaviors",
+          },
+          {
+            label: "Source survey",
+            href: "https://arxiv.org/abs/2502.05206",
+          },
+        ],
+        slug: "jailbreakbench",
+        domain: "LLMs",
+        property: "Jailbreak",
       },
     ],
   },
   models: {
     slug: "models",
     breadcrumb: [
-      "Discover",
+      "Home",
       "Models",
     ],
     title: "Models",
@@ -3485,6 +5332,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         subtitle: "AI-Generated Video Detection Model",
         note: "An AI video detection model with defect categorization, temporal–spatial localization, and reasoning explanations.",
         type: "Detection",
+        year: "2025",
         posted: "2025-06-13",
         tags: [
           "detection",
@@ -3509,6 +5357,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         subtitle: "Safety-aligned Video-Language Model",
         note: "SafeVid is a framework for training safety-aligned Video Large Multimodal Models using a large-scale safety preference dataset.",
         type: "Safety Alignment",
+        year: "2025",
         posted: "2025-05-17",
         tags: [
           "safety alignment",
@@ -3534,6 +5383,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "OmniSVG is a unified SVG generation model that leverages VLMs to generate high-quality and complex SVGs.",
         type: "Generative",
         venue: "NeurIPS 2025",
+        year: "2025",
         stars: 2579,
         updated: "2026-03-01",
         tags: [
@@ -3572,6 +5422,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "SAMA is a multi-turn referential grounded video chat model that advances fine-grained spatio-temporal understanding in videos by jointly tackling video referring understanding, grounding, and multi-turn dialogue.",
         type: "Video Understanding",
         venue: "NeurIPS 2025",
+        year: "2025",
         posted: "2025-05-24",
         tags: [
           "video understanding",
@@ -3596,299 +5447,2596 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
   datasets: {
     slug: "datasets",
     breadcrumb: [
-      "Discover",
+      "Home",
       "Datasets",
     ],
     title: "Datasets",
     heroIcon: "◱",
-    description: "Training, evaluation, preference, and jailbreak datasets spanning safety alignment, adversarial robustness, forensics, and embodied AI.",
-    overview: "Download counts come from the Hugging Face API and repository activity from the GitHub API. Follow each link for licensing terms.",
+    description: "Training-ready safety datasets across LLMs, Agents, and Embodied AI, separated from evaluation-only benchmarks.",
+    overview: "An entry appears here only when its paper or official repository explicitly supports training, fine-tuning, alignment, or classifier training. Public test data stays in Benchmarks.",
     tableTitle: "Dataset collection",
     sectionTitle: "Dataset categories",
     categories: [
       {
-        title: "Safety Instruction Data",
-        detail: "Instruction corpora for safety-tuned training.",
-        accent: "green",
-        filters: [
-          "Safety Instruction Data",
-        ],
-      },
-      {
-        title: "Preference Data",
-        detail: "Preference pairs for alignment and safety tuning.",
-        accent: "green",
-        filters: [
-          "Preference Data",
-        ],
-      },
-      {
-        title: "Red Team Data",
-        detail: "Jailbreak prompts and adversarial red-team probes.",
+        title: "LLMs",
+        detail: "Datasets explicitly associated with large-language-model safety.",
         accent: "pink",
         filters: [
-          "Red Team Data",
+          "LLMs",
         ],
       },
       {
-        title: "Agent Trajectory Data",
-        detail: "Demonstration and interaction traces for embodied agents.",
+        title: "Agents",
+        detail: "Datasets explicitly associated with agent safety.",
         accent: "orange",
         filters: [
-          "Agent Trajectory Data",
+          "Agents",
         ],
       },
       {
-        title: "Multimodal Safety Data",
-        detail: "Paired image-text corpora for multimodal safety.",
-        accent: "violet",
+        title: "Embodied AI",
+        detail: "Datasets for embodied perception, planning and interaction.",
+        accent: "green",
         filters: [
-          "Multimodal Safety Data",
-        ],
-      },
-      {
-        title: "Adversarial Data",
-        detail: "Digital and physical-world adversarial example sets.",
-        accent: "pink",
-        filters: [
-          "Adversarial Data",
-        ],
-      },
-      {
-        title: "Detection & Forensics",
-        detail: "Deepfake and AI-generated media detection corpora.",
-        accent: "blue",
-        filters: [
-          "Detection & Forensics",
-        ],
-      },
-      {
-        title: "Generative Data",
-        detail: "Large-scale corpora for generative model research.",
-        accent: "violet",
-        filters: [
-          "Generative Data",
+          "Embodied AI",
         ],
       },
     ],
     tableRows: [
       {
-        name: "SafeVid-350k",
-        subtitle: "Video | Safety Alignment",
-        note: "A large-scale preference dataset with 350K video query-response pairs generated via LLMs using safety-focused adversarial prompts.",
-        type: "Preference Data",
-        updated: "2025-11-27",
+        name: "ActivityPrograms",
+        note: "**Training Dataset.** In the SFT phase, we use two parts of the training data: we split the ActivityPrograms [@puig2018virtualhome] dataset into a training set of 192 tasks and a test set of 64 tasks, resulting in 4,245 training samples.",
+        type: "Embodied AI",
+        venue: "Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition",
+        year: "2018",
         tags: [
-          "video",
-          "safety alignment",
+          "training data",
+          "source: approved survey",
         ],
-        stats: [
-          {
-            label: "Downloads",
-            value: "47",
-          },
-          {
-            label: "Likes",
-            value: "6",
-          },
-          {
-            label: "Updated",
-            value: "2025-11",
-          },
-        ],
-        meta: "yxwang/SafeVid-350K · CC-BY-NC-SA-4.0 · 100K<n<1M samples",
-        resources: [
-          {
-            label: "Hugging Face",
-            href: "https://huggingface.co/datasets/yxwang/SafeVid-350K",
-          },
-        ],
-        image: "/media/safevid-350k.png",
-      },
-      {
-        name: "DAVID-X",
-        subtitle: "AI Detection",
-        note: "AI-generated videos with fine-grained defect annotations.",
-        type: "Detection & Forensics",
-        tags: [
-          "ai detection",
-        ],
-        stats: [],
         resources: [],
-        image: "/media/david-x.png",
+        primaryUrl: "https://github.com/StanfordHCI/virtualhome#dataset",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
       },
       {
-        name: "OmniSVG-2M",
-        subtitle: "Vision | GenAI",
-        note: "A large-scale SVG dataset with 2M SVG samples covering website icons, illustrations, graphic designs, anime character.",
-        type: "Generative Data",
-        venue: "NeurIPS 2025",
-        stars: 2579,
-        updated: "2026-03-01",
+        name: "AdvBench",
+        note: "The LLaMA 3-8B model was trained on the AdvBench dataset with 200 clean samples and 150 poisoned samples, using the same hyperparameters as previous experiments.",
+        type: "LLMs",
         tags: [
-          "vision",
-          "genai",
+          "training data",
+          "source: approved survey",
         ],
-        stats: [
-          {
-            label: "Stars",
-            value: "2,579",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2026-03",
-          },
+        resources: [],
+        primaryUrl: "https://github.com/llm-attacks/llm-attacks/blob/main/data/advbench/harmful_behaviors.csv",
+        domains: [
+          "LLMs",
         ],
-        meta: "OmniSVG/OmniSVG · Apache-2.0 · 102 forks · since 2025",
-        resources: [
-          {
-            label: "Project page",
-            href: "https://omnisvg.github.io/",
-          },
-          {
-            label: "GitHub",
-            href: "https://github.com/OmniSVG/OmniSVG",
-          },
-        ],
-        image: "/media/omnisvg-2m-3.jpg",
+        domain: "LLMs",
       },
       {
-        name: "Human2Robot",
-        subtitle: "Embodied AI",
-        note: "VR-collected human-robot aligned demonstration episodes.",
-        type: "Agent Trajectory Data",
+        name: "Aegis 2.0",
+        note: "The primary paper provides a train-test split and trains safety guard models on Aegis 2.0. NVIDIA publishes the split files on Hugging Face.",
+        type: "LLMs",
+        venue: "arXiv 2025",
+        year: "2025",
+        downloads: 6401,
+        updated: "2025-06-09",
+        posted: "2025-01-15",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-2.0",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "AG News",
+        note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test s…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/zhangxiangxiao/Crepe",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "AgentInstruct",
+        note: "AgentInstruct is a new agent-specific dataset for fine-tuning LLMs ... 1866 training trajectories.",
+        type: "LLMs",
+        venue: "arXiv preprint arXiv:2310.12823",
+        year: "2023",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/zai-org/AgentInstruct",
+        domains: [
+          "LLMs",
+          "Agents",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "AIR binaural room impulse response database",
+        note: "AIR contributes to the 370 public CIR traces used to train Metamorph's perturbation and domain discriminator with Adam.",
+        type: "Embodied AI",
+        venue: "IEEE International Conference on Digital Signal Processing",
+        year: "2009",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.iks.rwth-aachen.de/fileadmin/user_upload/downloads/forschung/tools-downloads/air_database_release_1_4.zip",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "AlpacaEval",
+        note: "In AlpacaEval dataset, we aim to fine-tune the LLM such that it can provide more helpful advice to the open-ended question from users.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/tatsu-lab/alpaca_eval",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Amazon Reviews",
+        note: "Table tab:task_summary identifies Amazon Reviews as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Anthropic Red Team Attempts",
+        note: "To distill GPT-4's ``knowledge'' on safety policies, a dataset containing both harmful and harmless queries is necessary.\nWe utilize the red-team data from Anthropic [@ganguli2022red] as the query dataset.\nThis dataset consists of 38,961…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Anthropic/hh-rlhf/tree/main/red-team-attempts",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "BC5CDR",
+        note: "We fine-tune three BERT models (base-cased) for each data set with different initialization seeds (1, 2 & 4) using the Huggingface implementation. For the biomedical data sets, we additionally fine-tune two domain-specific BERT models Bi…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://ftp.ncbi.nlm.nih.gov/pub/lu/BC5CDR/",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "BDD-100K",
+        note: "DeepPOSE selects 40,000 valid BDD-100K trips as training data and explicitly labels two variants as trained with BDD-100K measurements.",
+        type: "Embodied AI",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/bdd100k/bdd100k",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "BeaverTails",
+        note: "**Datasets and models**. For the alignment task, we use the safe samples from the alignment dataset of BeaverTails [@ji2023beavertails]. For fine-tuning task, we consider SST2[@socher2013recursive], AGNEWS[@zhang2015character], GSM8K[@co…",
+        type: "LLMs",
+        venue: "arXiv preprint arXiv:2307.04657",
+        year: "2023",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/PKU-Alignment/BeaverTails",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Bench2Drive",
+        note: "The primary paper explicitly distinguishes the official CARLA training set from the 220 evaluation routes. The official repository and Hugging Face page publish the training data and implementations.",
+        type: "Embodied AI",
+        venue: "NeurIPS 2024",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/rethinklab/Bench2Drive",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "BIPIA",
+        note: "The training-composition ablation includes Wiki+BIPIA and News+BIPIA; the appendix states 75 instructions across training and test sets under MIT.",
+        type: "LLMs",
+        venue: "Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 1",
+        year: "2025",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/microsoft/BIPIA/tree/main/benchmark",
+        domains: [
+          "LLMs",
+          "Agents",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Booster repnoise BeaverTails",
+        note: "- To derive the harmful dataset and the alignment dataset, we use the data pair from [@rosati2024representation] with this link: https://huggingface.co/datasets/anonymous4486/repnoise_beavertail. Other used datasets are standard benchmar…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/anonymous4486/repnoise_beavertail",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Bot-Adversarial Dialogue",
+        note: "We show random examples of test cases generated by each red teaming method in Table [#tab:examples-per-method] (for the 280B LM) and Table [#tab:examples-per-method-7b] (for the 7B LM and the BAD dataset).\n\nTraining-use context: For the…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "BridgeData V2",
+        note: "The primary paper identifies BridgeData V2 as goal- and language-conditioned imitation-learning and reinforcement-learning data. The official repository publishes the demonstrations, conversions, and training commands.",
+        type: "Embodied AI",
+        venue: "arXiv 2023",
+        year: "2023",
+        stars: 288,
+        updated: "2024-03-17",
+        posted: "2023-08-24",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://rail.eecs.berkeley.edu/datasets/bridge_release/raw/bridge_data_v2/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "CALVIN dataset",
+        note: "The primary paper defines CALVIN for training and validation and describes learning control from the play dataset. The official repository provides dataset downloads, split definitions, and policy-training commands.",
+        type: "Embodied AI",
+        venue: "arXiv 2021",
+        year: "2022",
+        stars: 967,
+        updated: "2025-09-08",
+        posted: "2021-12-06",
+        tags: [
+          "training data",
+          "source: approved survey",
+          "computer-vision",
+          "deep-learning",
+          "grounding",
+          "manipulation",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/mees/calvin/tree/main/dataset",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "CIFAR-10",
+        note: "To prove our claim empirically, we carried out a simple experiment, we compare the success rate of target attacks of a well-trained DQN agent on Pong with an image classifier trained on the CIFAR-10 dataset with similar network architect…",
+        type: "LLMs",
+        year: "2009",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.cs.toronto.edu/~kriz/cifar.html",
+        domains: [
+          "LLMs",
+          "Embodied AI",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Cityscapes",
+        note: "Moreover, we employ the DeepLabv3+ network [@Chen2018] trained on Cityscapes obtaining a validation mIoU of $79.61\\%$ and on VOC of $76.81\\%$.",
+        type: "Embodied AI",
+        venue: "Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition",
+        year: "2016",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.cityscapes-dataset.com/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "Cleaned Alpaca",
+        note: "GCG, arguably the most effective optimization method right now, is too costly to run as an inner optimization loop inside SecAlign fine-tuning (estimated thousands of GPU hours are needed even for the toy Alpaca dataset).",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/gururise/AlpacaDataCleaned/blob/main/alpaca_data_cleaned.json",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "CNN/DailyMail",
+        note: "Table tab:task_summary identifies CNN/DailyMail as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/abisee/cnn-dailymail",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "CodeAlpaca",
+        note: "The CodeAlpaca dataset [@xu2024wizardlm] is used for finetuning.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/sahil280114/codealpaca/blob/master/data/code_alpaca_20k.json",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "CoLA",
+        note: "For instance, in the COLA dataset and utilising GPT-NEO as the pre-trained language model, the clean accuracy of our model exhibits a notable improvement of 14.38% over the normal clean accuracy and 2.3% over the prompt clean accuracy.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://archive.nyu.edu/handle/2451/60441",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Conceptual Captions 3M",
+        note: "For backdoor attacks on CLIP, we explore two approaches: pre-training CLIP from scratch on the poisoned CC3M dataset or fine-tuning a pre-trained clean CLIP using a subset of poisoned pairs.",
+        type: "Embodied AI",
+        venue: "acl",
+        year: "2018",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://ai.google.com/research/ConceptualCaptions/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "CoNLL-2003",
+        note: "BERT models trained on CoNLL were fooled by transforming `New York' to `NEW YORK').",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/eriktks/conll2003",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Crafted datasets",
+        note: "The Safety at Scale table calls this resource Crafted datasets. The primary paper says the authors train indirect-prompt-injection detection and extraction models on the crafted training data; the official repository publishes the exact…",
+        type: "Agents",
+        venue: "ACL 2025",
+        year: "2025",
+        stars: 9,
+        updated: "2025-12-25",
         posted: "2025-02-23",
         tags: [
-          "embodied ai",
+          "training data",
+          "source: approved survey",
         ],
-        stats: [
-          {
-            label: "Posted",
-            value: "2025-02-23",
-          },
-        ],
-        meta: "Sicheng Xie, Haidong Cao, Zejia Weng +6 more · cs.RO",
-        resources: [
-          {
-            label: "arXiv",
-            href: "https://arxiv.org/abs/2502.16587",
-          },
-        ],
-        image: "/media/h2r-dataset.jpg",
-      },
-      {
-        name: "AdvT-shirt-1K",
-        subtitle: "Safety | Physical-world Attack",
-        note: "A physical-world adversarial T-shirt dataset for adversarial robustness evaluation.",
-        type: "Adversarial Data",
-        stars: 15,
-        updated: "2025-08-07",
-        tags: [
-          "safety",
-          "physical-world attack",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "15",
-          },
-          {
-            label: "Updated",
-            value: "2025-08",
-          },
-        ],
-        meta: "Wwangb/AdvT-shirt-1K · since 2024",
-        resources: [
-          {
-            label: "GitHub",
-            href: "https://github.com/Wwangb/AdvT-shirt-1K",
-          },
-        ],
-        image: "/media/advtshirt.jpeg",
-      },
-      {
-        name: "VLBreakBench",
-        subtitle: "Multimodal | Jailbreak",
-        note: "A multimodal jailbreak dataset for multimodal large language models.",
-        type: "Red Team Data",
-        tags: [
-          "multimodal",
-          "jailbreak",
-        ],
-        stats: [],
-        meta: "upstream link unavailable (project page returns 404)",
         resources: [],
-        image: "/media/vlbreakbench.png",
+        primaryUrl: "https://github.com/LukeChen-go/indirect-pia-detection/tree/main/data",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
       },
       {
-        name: "CC1M-Adv-C/F",
-        subtitle: "Vision | Adversarial",
-        note: "Two million-scale adversarial image datasets for large-scale evaluations.",
-        type: "Adversarial Data",
-        stars: 2,
-        updated: "2024-12-04",
+        name: "CRUW",
+        note: "TileMask Section 6.2 explicitly says the authors train RODNet with the CRUW dataset.",
+        type: "Embodied AI",
         tags: [
-          "vision",
-          "adversarial",
+          "training data",
+          "source: approved survey",
         ],
-        stats: [
-          {
-            label: "Stars",
-            value: "2",
-          },
-          {
-            label: "Updated",
-            value: "2024-12",
-          },
+        resources: [],
+        primaryUrl: "https://www.cruwdataset.org/download",
+        domains: [
+          "Embodied AI",
         ],
-        meta: "treeman2000/CC1M-Adv-CF · since 2024",
-        resources: [
-          {
-            label: "GitHub",
-            href: "https://github.com/treeman2000/CC1M-Adv-CF",
-          },
-        ],
-        image: "/media/1.jpg",
+        domain: "Embodied AI",
       },
       {
-        name: "WildDeepfake",
-        subtitle: "Deepfake",
-        note: "A dataset of 7,314 face sequences from 707 deepfake videos.",
-        type: "Detection & Forensics",
-        stars: 241,
-        updated: "2025-12-10",
+        name: "CULane",
+        note: "On both LaneATT and RESA models, we train LD models using poisoning rates of **1%, 3%, 5%, 10%** and **15%** on the CULane dataset.",
+        type: "Embodied AI",
+        venue: "Proceedings of the AAAI conference on artificial intelligence",
+        year: "2018",
         tags: [
-          "deepfake",
+          "training data",
+          "source: approved survey",
         ],
-        stats: [
-          {
-            label: "Stars",
-            value: "241",
-          },
-          {
-            label: "Updated",
-            value: "2025-12",
-          },
+        resources: [],
+        primaryUrl: "https://xingangpan.github.io/projects/CULane.html",
+        domains: [
+          "Embodied AI",
         ],
-        meta: "OpenTAI/wild-deepfake · 24 forks · since 2019",
-        resources: [
-          {
-            label: "GitHub",
-            href: "https://github.com/OpenTAI/wild-deepfake",
-          },
+        domain: "Embodied AI",
+      },
+      {
+        name: "Customer Reviews",
+        note: "The main reason is that the prompt-based learning paradigms are usually applied in the few-shot scenarios (e.g, only 32 training samples in the CR dataset [@cr]), leading the backdoor performance to be easily affected by poisoning samples.",
+        type: "LLMs",
+        venue: "Proceedings of SIGKDD",
+        year: "2004",
+        tags: [
+          "training data",
+          "source: approved survey",
         ],
-        image: "/media/wilddeepfake.jpg",
+        resources: [],
+        primaryUrl: "https://www.cs.uic.edu/~liub/FBS/CustomerReviewData.zip",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "CValues-Comparison",
+        note: "The primary paper and official repository release CValues-Comparison separately from the CVALUES evaluation benchmark. They document 116K training and 29K test preference pairs and recommend the positive responses for safety SFT and the…",
+        type: "LLMs",
+        venue: "arXiv 2023",
+        year: "2023",
+        stars: 561,
+        updated: "2023-07-20",
+        posted: "2023-07-19",
+        tags: [
+          "training data",
+          "source: approved survey",
+          "benchmark",
+          "chinese-llms",
+          "evaluation",
+          "human-values",
+        ],
+        resources: [],
+        primaryUrl: "https://www.modelscope.cn/datasets/damo/CValues-Comparison/summary",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "D4RL",
+        note: "The primary paper states that each task provides a fixed offline trajectory dataset for policy training, typically one million steps. The official project releases the datasets and code.",
+        type: "Embodied AI",
+        venue: "arXiv 2020",
+        year: "2020",
+        stars: 1698,
+        updated: "2024-11-18",
+        posted: "2020-04-15",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/Farama-Foundation/D4RL",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "databricks-dolly-15k",
+        note: "We consider two models: `GPT2-alpaca` and `Dolly-v2-7B`. `GPT2-alpaca` is a GPT2 model [@radford2019language] finetuned with Alpaca dataset [@alpaca] and `Dolly-v2-7B` is a pythia model [@biderman2023pythia] finetuned with Databricks dat…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/databricks/databricks-dolly-15k",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "DBpedia",
+        note: "Using the fine-tuning objective from Section [#ssec:objectives], we place backdoors in GPT-Neo 1.3B, GPT-Neo 2.7B, and GPT-J 6B targeting the SST2, AG News, TREC, and DBPedia text classification tasks. We evaluate the backdoors using the…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/zhangxiangxiao/Crepe",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "DoNotAnswer",
+        note: "The primary paper reports training safety classifiers on the released instruction-response annotations, and the authors publish the files under datasets/.",
+        type: "LLMs",
+        venue: "EACL 2024",
+        year: "2023",
+        stars: 341,
+        updated: "2024-06-07",
+        posted: "2023-08-25",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/Libr-AI/do-not-answer/tree/main/datasets",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "DROID",
+        note: "Since each training example corresponds to a timestep --- i.e., a tuple $(\\mathbf{o}_t, \\mathbf{A}_t)$, --- we will quantify data in terms of timesteps in this discussion. $9.1\\%$ of the training mixture consists of open-source datasets,…",
+        type: "Embodied AI",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://droid-dataset.github.io/droid/the-droid-dataset",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "EAsafetyBench",
+        note: "The authors allocate 70% of EAsafetyBench-Drone to training and embed the EAsafetyBench-Prompt visible prompts for training a 3-layer MLP classifier.",
+        type: "Agents",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/ZihanYan-CQU/EAsafetyBench/tree/main/EAsafetyBench",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "Emotion",
+        note: "For example, when we increase the poisoning ratio $\\eta$ from $3\\%$ to $5\\%$ for the BLOOM-7B model trained on the Emotion dataset, the ASR decreases from $94.47\\%$ to $76.70\\%$, while all FTRs drop from near $2\\%$ to around $1\\%$.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/dair-ai/emotion",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "EQA-v1",
+        note: "The QA and navigation modules are trained for 300 epochs on EQA-v1-derived clean and adversarially perturbed training scenes.",
+        type: "Embodied AI",
+        venue: "CVPR",
+        year: "2018",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://embodiedqa.org/data",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "Evol-Instruct",
+        note: "To compare Magpie data with other public instruction datasets (e.g., ShareGPT [@vicuna2023], WildChat [@zhao2024wildchat], Evol Instruct [@xu2023wizardlm], UltraChat [@ding2023ultrachat], OpenHermes [@OpenHermes; @OpenHermes2.5], GenQA […",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/nlpxucan/WizardLM",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "FLAN",
+        note: "In Figure [#fig:flan-t0-lik], we also compare InstructGPT to our 175B GPT-3 baselines fine-tuned on the FLAN [@wei2021finetuned] and T0 [@sanh2021multitask] datasets (see Appendix [#apdx:model-details] for details).",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/google-research/FLAN",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "GenQA",
+        note: "To compare Magpie data with other public instruction datasets (e.g., ShareGPT [@vicuna2023], WildChat [@zhao2024wildchat], Evol Instruct [@xu2023wizardlm], UltraChat [@ding2023ultrachat], OpenHermes [@OpenHermes; @OpenHermes2.5], GenQA […",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/genqa/GenQA",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Glaive Function Calling v2",
+        note: "To construct the Agent Circuit Breaker Dataset, we start with function definitions from the Glaive Function Calling v2 [@glaive_function_calling_v2]. Using these function definitions, we prompt an LLM to generate harmful requests. Follow…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "GSM8K",
+        note: "> instruction: (Real input from GSM8K dataset) + First think step by step and then answer the final number.\n\nTraining-use context: **Datasets and models**. For the alignment task, we use the safe samples from the alignment dataset of Bea…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/openai/grade-school-math/tree/master/grade_school_math/data",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "GTSRB",
+        note: "We first train in GTSRB [@stallkamp2012man] with officially pre-trained weights, and then finetune the models by our own video frames, which achieves 100% precision on clean test samples.",
+        type: "Embodied AI",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://sid.erda.dk/public/archives/daaeac0d7ce1152aea9b61d9f1e19370/published-archive.html",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "HH-RLHF",
+        note: "To train the preference predictor, we use the HH-RLHF dataset which contains 161K pairs of human preference data about helpfulness and harmlessness [@bai2022hhrlhf].",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Anthropic/hh-rlhf",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "highD",
+        note: "The highD data are divided into 70% training, 10% validation, and 20% test sets and used in the same explicitly described trajectory-model training procedure.",
+        type: "Embodied AI",
+        venue: "21st International Conference on Intelligent Transportation Systems",
+        year: "2018",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.highd-dataset.com/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "HSOL",
+        note: "For word level detection on HSOL dataset [@davidson2017automated], three non-injected words (``bi*ch'',``h*e'' and ``pu*sy'') are also detected as backdoor triggers.\n\nTraining-use context: Our contributions are summarized as follows:\nWe…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/t-davidson/hate-speech-and-offensive-language/blob/master/data/labeled_data.csv",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "ImageNet",
+        note: "We trained a ResNet-50 model ... from scratch on both the original ImageNet dataset and a LlavaGuard-filtered version.",
+        type: "Agents",
+        venue: "2009 IEEE Conference on Computer Vision and Pattern Recognition",
+        year: "2009",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.image-net.org/download.php",
+        domains: [
+          "Agents",
+          "Embodied AI",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "ImageNet-1K",
+        note: "We deployed two auxiliary models: the ViT-B/16 trained from scratch on ImageNet-1K and the ViT-L/14 EVA model [@fang2023eva; @fang2024eva], both of which are trained on ImageNet-1K.",
+        type: "Embodied AI",
+        venue: "Proceedings of IEEE/CVF Conference Computer Vision Pattern Recognition (CVPR)",
+        year: "2009",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.image-net.org/challenges/LSVRC/2012/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "ImageNet-21K",
+        note: "Besides, we select Vision Transformer (ViT) [@dosovitskiy2020image] which is pre-trained on Imagenet-21K [@deng2009imagenet] as the main target model.",
+        type: "Embodied AI",
+        venue: "Proceedings of IEEE/CVF Conference Computer Vision Pattern Recognition (CVPR)",
+        year: "2009",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.image-net.org/download.php",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "IMDb",
+        note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test s…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://ai.stanford.edu/~amaas/data/sentiment/",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "IWSLT 2014 En-De",
+        note: "For the IWSLT2014 En-De dataset, we train the model with warmup and max-tokens respectively set to 4096 and 30000.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://dl.fbaipublicfiles.com/fairseq/data/iwslt14/de-en.tgz",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Jigsaw Toxic Comment Classification",
+        note: "Table tab:task_summary identifies Jigsaw Toxic Comment Classification as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standar…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Kinetics-400",
+        note: "It replaces the image-based Inception network with an I3D [@carreira2017quo] pretrained on Kinetics-400 [@kay2017kinetics].",
+        type: "Embodied AI",
+        venue: "arXiv preprint arXiv:1705.06950",
+        year: "2017",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/cvdfoundation/kinetics-dataset#kinetics-400",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "KITTI",
+        note: "**3D Object Detection:** We evaluate DejaVu on two representative MMF-based 3D object detection models. i) *MVXNet* [@sindagi2019mvx], trained on the KITTI dataset, is an early fusion-based architecture that projects LiDAR point clouds i…",
+        type: "Embodied AI",
+        venue: "The International Journal of Robotics Research",
+        year: "2013",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.cvlibs.net/datasets/kitti/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "LAION-400M",
+        note: "Our approach involves pre-training a generator on the large-scale LAION-400M dataset [@schuhmann2021laion], enabling the pre-trained noise generator to learn comprehensive noise patterns from diverse image data.",
+        type: "Embodied AI",
+        venue: "arXiv preprint arXiv:2111.02114",
+        year: "2021",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://laion.ai/laion-400-open-dataset/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "LaMini-instruction",
+        note: "Wikipedia plus LaMini-instruction is the main training/validation combination; the appendix reports 2.58M instruction-response pairs under CC-BY-NC.",
+        type: "Agents",
+        venue: "Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/MBZUAI/LaMini-instruction",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "LanguageTable",
+        note: "The dataset we use to train Stage 1 policies for the simulated LanguageTable domain is the one provided by the original work [@lynch2023interactive].",
+        type: "Embodied AI",
+        venue: "IEEE Robotics and Automation Letters",
+        year: "2023",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/google-research/language-table#datasets",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "LIBERO demonstration datasets",
+        note: "The primary paper says agents are trained on 50 demonstration trajectories per task. The official repository provides dataset download and behavior-cloning training commands and links the public Hugging Face release.",
+        type: "Embodied AI",
+        venue: "arXiv 2023",
+        year: "2023",
+        downloads: 27985,
+        stars: 2193,
+        updated: "2025-03-15",
+        posted: "2023-06-05",
+        tags: [
+          "training data",
+          "source: approved survey",
+          "benchmark",
+          "imitation-learning",
+          "lifelong-learning",
+          "manipulation",
+        ],
+        resources: [],
+        primaryUrl: "https://libero-project.github.io/datasets",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "LibriSpeech",
+        note: "These additional phrases were collected from the LibriSpeech Dataset that the model was trained on [@panayotov2015librispeech].",
+        type: "Embodied AI",
+        venue: "Proc. of IEEE ICASSP",
+        year: "2015",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.openslr.org/12",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "Llama-3-Magpie-Air-3M-v0.1",
+        note: "The paper selects the first 300K raw Magpie-Air conversations for supervised fine-tuning. The official release publishes the complete 3M-conversation raw corpus.",
+        type: "LLMs",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Air-3M-v0.1",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Llama-3-Magpie-Pro-1M-v0.1",
+        note: "The paper selects the first 300K raw Magpie-Pro conversations for supervised fine-tuning. The official release publishes the complete 1M-conversation raw corpus.",
+        type: "LLMs",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Pro-1M-v0.1",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "LLaVA Visual Instruct 150K",
+        note: "The general vision language pre-training dataset we use contains ShareGPT4V [@chen2023sharegpt4v] dataset, SViT [@zhao2023svit] dataset, and the LLaVA Visual Instruct 150K dataset [@liu2023llava].",
+        type: "LLMs",
+        venue: "NIPS",
+        year: "2023",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K",
+        domains: [
+          "LLMs",
+          "Embodied AI",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "LlavaGuard Dataset",
+        note: "The 5,466-sample dataset is split into 4,571 train, 71 evaluation, and 824 test examples; the annotated dataset and pipeline are public.",
+        type: "Agents",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/AIML-TUDA/LlavaGuard",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "M3Bench",
+        note: "The primary paper defines a 75% train, 5% validation, and 20% test base split and trains motion-generation models on Train. The author project releases the expert trajectories through GitHub and Hugging Face.",
+        type: "Embodied AI",
+        venue: "arXiv 2024",
+        year: "2025",
+        downloads: 23,
+        stars: 27,
+        updated: "2025-07-19",
+        posted: "2024-10-09",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/M3Bench/M3Bench",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "Magpie-Air-300K-Filtered",
+        note: "The paper creates Magpie-Air-Filtered with 300K conversations and uses the filtered dataset for supervised fine-tuning experiments.",
+        type: "LLMs",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-300K-Filtered",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Magpie-Air-DPO-100K-v0.1",
+        note: "The paper generates Magpie-Air-DPO with 100K conversations for preference optimization.",
+        type: "LLMs",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-DPO-100K-v0.1",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Magpie-Pro-300K-Filtered",
+        note: "The paper creates Magpie-Pro-Filtered with 300K conversations and reports models fine-tuned with Magpie-Pro-300K-Filtered.",
+        type: "LLMs",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-300K-Filtered",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Magpie-Pro-DPO-100K-v0.1",
+        note: "The paper generates Magpie-Pro-DPO with 100K conversations for preference optimization.",
+        type: "LLMs",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-DPO-100K-v0.1",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "MARDY database",
+        note: "MARDY contributes to the 370 public CIR traces used to train Metamorph's perturbation and domain discriminator with Adam.",
+        type: "Embodied AI",
+        venue: "International Workshop on Acoustic Echo and Noise Control",
+        year: "2006",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.imperial.ac.uk/a-z-research/speech-audio-processing/resources/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "MASSIVE",
+        note: "**Datasets:** We evaluate the effectiveness of our data poisoning attack across four varied datasets that span sentiment analysis, domain classification, and the Chain-of-Thought task. The datasets include SST-2 [@socher2013recursive] an…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/alexa/massive",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "MetaDrive human driving trajectories",
+        note: "The BC and CQL offline-learning baselines use 36,000 human-demonstrated transitions.",
+        type: "Embodied AI",
+        year: "2021",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/metadriverse/metadrive/releases/download/MetaDrive-0.2.3/human_traj_100_new.json",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "MIMIC-IT",
+        note: "The Otter model was generated by Li et al. [@li2023mimic] using the MIMIC-IT dataset containing 2.8 million multi-modal instruction-response pairs to fine-tune the OpenFlamingo [@awadalla2023openflamingo] model.",
+        type: "Embodied AI",
+        venue: "arXiv preprint arXiv:2306.05425",
+        year: "2023",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/pufanyi/MIMICIT",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "MM-SafetyBench",
+        note: "The blue suffix generator is fine-tuned from GPT-2 with PPO on hard jailbreak prompts crafted on all 13 MM-SafetyBench topics.",
+        type: "Agents",
+        venue: "ECCV",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/isXinLiu/MM-SafetyBench",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "Movie Review",
+        note: "Train'') of BERT model on MR and SNLI dataset.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Mozilla Common Voice",
+        note: "The Common Voice dataset is used to train ASR systems and test the effectiveness of audio AEs.",
+        type: "Embodied AI",
+        year: "2019",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://commonvoice.mozilla.org/en/datasets",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "MPI-Sintel",
+        note: "In both cases, the universal perturbations are trained on the Sintel final training set, and evaluated on test.",
+        type: "Embodied AI",
+        venue: "Proc. European Conference on Computer Vision (ECCV)",
+        year: "2012",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://sintel.is.tue.mpg.de/downloads",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "MS COCO",
+        note: "We used YOLO object detection models pre-trained on the MS COCO dataset for the PC environment.",
+        type: "LLMs",
+        venue: "European Conference on Computer Vision (ECCV)",
+        year: "2014",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://cocodataset.org/#download",
+        domains: [
+          "LLMs",
+          "Embodied AI",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "MultiNLI",
+        note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test s…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://cims.nyu.edu/~sbowman/multinli/",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "NCBI Disease Corpus",
+        note: "We fine-tune three BERT models (base-cased) for each data set with different initialization seeds (1, 2 & 4) using the Huggingface implementation. For the biomedical data sets, we additionally fine-tune two domain-specific BERT models Bi…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.ncbi.nlm.nih.gov/CBBresearch/Dogan/DISEASE/disclaimer.html",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "News Articles",
+        note: "The training-composition ablation includes News+LaMini and News+BIPIA, and the source is identified as a CC0 Harvard Dataverse dataset.",
+        type: "Agents",
+        venue: "Harvard Dataverse",
+        year: "2017",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GMFCTR",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "NGSIM US-101 and I-80",
+        note: "The NGSIM data are divided into 70% training, 10% validation, and 20% test sets, followed by Adam optimization and explicit pre-training/formal-training cycles for the trajectory-prediction model.",
+        type: "Embodied AI",
+        venue: "Federal Highway Administration dataset reports",
+        year: "2005",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://data.transportation.gov/stories/s/Next-Generation-Simulation-NGSIM-Open-Data/i5zb-xe34/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "nuScenes",
+        note: "For each task, we test the corresponding models trained on the nuScenes training set.",
+        type: "Embodied AI",
+        venue: "CVPR",
+        year: "2020",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.nuscenes.org/nuscenes",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "OLID",
+        note: "Notably, our approach outperforms the clean-label backdoor attack on Triggerless, achieving an average ASR improvement of 1.41% for the SST-2 dataset, 0.5% for the OLID dataset and 4.53% for the AG's News dataset, which are state-of-the-…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://zenodo.org/records/2670722",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Open X-Embodiment",
+        note: "We compare to OpenVLA [@kim2024openvla], a 7B parameter VLA model that was originally trained on the OXE dataset [@collaboration2023open].",
+        type: "Embodied AI",
+        venue: "ICRA",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://robotic-transformer-x.github.io/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "OpenAssistant OASST1",
+        note: "Caption: In aligning Mistral-7B on the OpenAssistant dataset, we find that using KTO with only one output per input still outperforms DPO, despite this restriction reducing the amount of training data by 72%.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/OpenAssistant/oasst1",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "OpenHermes 1",
+        note: "**Baselines for Supervised Fine-Tuning and Preference Optimization.** We compare the family of instruction datasets generated by Magpie with eight SOTA open-source instruction datasets: **ShareGPT** [@vicuna2023], **WildChat** [@zhao2024…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/teknium/openhermes",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "OpenHermes 2.5",
+        note: "**Baselines for Supervised Fine-Tuning and Preference Optimization.** We compare the family of instruction datasets generated by Magpie with eight SOTA open-source instruction datasets: **ShareGPT** [@vicuna2023], **WildChat** [@zhao2024…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/teknium/OpenHermes-2.5",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "OpenOrca",
+        note: "For simplicity, we employ the first 10,000 samples of OpenOrca dataset to remove backdoors in LLMs that are fine-tuned and evaluated on the Stanford Alpaca dataset (*LLM-Alpaca*), and vice versa.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Open-Orca/OpenOrca",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "OpenScene",
+        note: "NAVSIM trains 114 learned planners on navtrain and size-matched subsets of OpenScene.",
+        type: "Embodied AI",
+        year: "2023",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/OpenDriveLab/OpenScene",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "OpenSubtitles",
+        note: "We train an open-domain dialog model using the sequence-to-sequence structure [@vaswani2017transformer] on the OpenSubtitle dataset.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://opus.nlpl.eu/datasets/OpenSubtitles",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "OpenWebText",
+        note: "To defend against our attack, in Section [#ssec:white_box_removal] we fine-tune models on standard language modeling corpora. In these experiments, we use the OpenWebText [@Gokaslan2019OpenWeb], BooksCorpus [@zhu2015aligning], and Wikite…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://skylion007.github.io/OpenWebTextCorpus/",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "ORCA-DPO",
+        note: "We conducted a comprehensive evaluation of PoisonedAlign on five prominent LLMs, two alignment datasets, 49 task pairings, and five distinct prompt injection attacks. Our findings show that poisoning even a small fraction of the alignmen…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Intel/orca_dpo_pairs",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "PASCAL VOC",
+        note: "The attack fine-tunes the target encoder on a shadow dataset, instantiated with 5,000 PASCAL VOC images.",
+        type: "Embodied AI",
+        venue: "International Journal of Computer Vision",
+        year: "2015",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.robots.ox.ac.uk/~vgg/projects/pascal/VOC/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "Penn Treebank",
+        note: "does overtrain, we take the first $5\\%$ of the PTB dataset and train our",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://catalog.ldc.upenn.edu/LDC99T42",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "PKU-SafeRLHF",
+        note: "To the best of our knowledge, Safe RLHF is the first integration of Safe RL and the RLHF framework.\nThis framework incorporates a two-dimensional human annotation scheme and a safe training mechanism to enhance model performance while en…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Project Gutenberg",
+        note: "Table tab:task_summary identifies Project Gutenberg as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.gutenberg.org/ebooks/offline_catalogs.html",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Reddit TL;DR",
+        note: "Next, we evaluate fine-tuning performance of DPO on summarization and single-turn dialogue. For summarization,\nautomatic evaluation metrics such as ROUGE can be poorly correlated with human preferences [@stiennon2022learning], and prior…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/openai/summarize_from_feedback",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "REVERB Challenge room impulse response dataset",
+        note: "REVERB contributes to the 370 public CIR traces used to train Metamorph's perturbation and domain discriminator with Adam.",
+        type: "Embodied AI",
+        venue: "IEEE Workshop on Applications of Signal Processing to Audio and Acoustics",
+        year: "2013",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://reverb2014.audiolabs-erlangen.de/download.html",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "robomimic datasets",
+        note: "The primary paper and official documentation release robot-demonstration datasets for behavior cloning and offline reinforcement learning and specify 90% training and 10% validation splits.",
+        type: "Embodied AI",
+        venue: "arXiv 2021",
+        year: "2021",
+        stars: 1520,
+        updated: "2026-08-09",
+        posted: "2021-08-06",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://robomimic.github.io/docs/datasets/robomimic_v0.1.html",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "Room-to-Room (R2R)",
+        note: "The primary paper defines train, validation-seen, validation-unseen, and test splits and trains sequence-to-sequence navigation agents on R2R. The authors publish the R2R JSON files in the official simulator repository.",
+        type: "Embodied AI",
+        venue: "CVPR 2018",
+        year: "2018",
+        stars: 712,
+        updated: "2024-07-12",
+        posted: "2017-11-20",
+        tags: [
+          "training data",
+          "source: approved survey",
+          "matterport3d-dataset",
+          "matterport3d-simulator",
+          "natural-language-processing",
+          "reinforcement-learning",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/peteanderson80/Matterport3DSimulator/tree/master/tasks/R2R",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "Rotten Tomatoes",
+        note: "For instance, the backdoor trigger learned from the SST-2 dataset is `options', as illustrated in Table 4 of Appendix Section B, which can also be directly applied to the RT dataset, achieving effective attacking performance as evidenced…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "RWCP sound scene database",
+        note: "RWCP contributes to the 370 public CIR traces used to train Metamorph's perturbation and domain discriminator with Adam.",
+        type: "Embodied AI",
+        venue: "International Conference on Language Resources and Evaluation",
+        year: "2000",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.nii.ac.jp/dsc/idr/speech/submit/RWCP-SSD.html",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "SafeMTData",
+        note: "The authors supervised-fine-tune on publicly available SafeMTData and train a Tulu-Mix + SafeMTData variant.",
+        type: "Agents",
+        venue: "arXiv preprint arXiv:2410.10700",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/SafeMTData/SafeMTData",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "SafetyPrompts",
+        note: "The primary paper says SafetyPrompts can be used in model training and evaluation. The official repository publishes the 100K prompt-response collection and its Hugging Face loader.",
+        type: "LLMs",
+        venue: "arXiv 2023",
+        year: "2023",
+        downloads: 431,
+        stars: 1205,
+        updated: "2024-02-27",
+        posted: "2023-04-20",
+        tags: [
+          "training data",
+          "source: approved survey",
+          "attack-defense",
+          "chatgpt",
+          "chinese-language",
+          "instruction",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/thu-coai/Safety-Prompts",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "SAIL search-augmented instruction-tuning corpus",
+        note: "The authors construct instruction/search/result/response training examples and fine-tune LLaMA-7B on those prompts for three epochs.",
+        type: "Agents",
+        venue: "Findings of the Association for Computational Linguistics: EMNLP 2023",
+        year: "2023",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/luohongyin/SAIL",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "SAP",
+        note: "This indicates the effectiveness of our defense framework on the SAP20 dataset, which shares the same distribution as the training data.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/Aatrox103/SAP",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "SelfDefend distilled defense data",
+        note: "We allocate 80% of the samples in D_dir or D_int for fine-tuning and reserve the remaining 20% as validation sets. During training, the defense prompts and queries from the collected datasets are inputs and y is the label used to fine-tu…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://zenodo.org/records/14736936/latest",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "SemanticKITTI",
+        note: "We select 4 segmentation models (PointNet++ [@qi2017pointnet++], PolarSeg [@zhang2020polarnet], SqueezeSegV3 [@xu2020squeezesegv3], Cylinder3D [@zhou2020cylinder3d]) as our victim models, all of which are pre-trained on Semantic Kitti da…",
+        type: "Embodied AI",
+        venue: "Proc. of the IEEE/CVF International Conf.~on Computer Vision (ICCV)",
+        year: "2019",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://semantic-kitti.org/index.html",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "ShapeNet",
+        note: "For the adversarial training, we train the model on the mixture of the original ShapeNet data and the adversarial data generated by us used FGSM.",
+        type: "Embodied AI",
+        venue: "arXiv preprint arXiv:1512.03012",
+        year: "2015",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/ShapeNet/datasets",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "ShapeNetPart",
+        note: "Specifically, the ShapeNet Parts dataset [@shapepartseg] has an uneven distribution of training data, where the table has 5271 samples but the bag, cap, and rocket have only 76, 55, and 66 samples respectively.",
+        type: "Embodied AI",
+        venue: "ACM Transactions on Graphics (ToG)",
+        year: "2016",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://cs.stanford.edu/~ericyi/project_page/part_annotation/index.html",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "ShareGPT4V",
+        note: "The general vision language pre-training dataset we use contains ShareGPT4V [@chen2023sharegpt4v] dataset, SViT [@zhao2023svit] dataset, and the LLaVA Visual Instruct 150K dataset [@liu2023llava].",
+        type: "Embodied AI",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Lin-Chen/ShareGPT4V",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "Sleeper Agents code backdoor training data",
+        note: "**Setting III:** For Model 8, based on [@hubinger2024sleeper]'s official instructions[^fn:10], we use the provided first 95$\\%$ fine-tuning dataset `code_backdoor_train_data.jsonl` and a general instruction tuning dataset, i.e., Alpaca H…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/anthropics/sleeper-agents-paper/blob/main/code_backdoor_train_data.jsonl",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "SmartSpot",
+        note: "SmartAgent is trained for 15 epochs in both embodied and personalized stages, and the paper explicitly reports fine-tuning on SmartSpot.",
+        type: "Embodied AI",
+        year: "2024",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/tsinghua-fib-lab/SmartAgent",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "SNLI",
+        note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test s…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://nlp.stanford.edu/projects/snli/",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Socio-Moral Image Database",
+        note: "SMID is the foundation of LlavaGuard's safety data collection; that constructed dataset has an explicit 4,571-example training split.",
+        type: "Agents",
+        venue: "PLOS ONE",
+        year: "2018",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://osf.io/2rqad/",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "Speech Commands",
+        note: "We use the Speech Commands dataset [@warden2018speech], which consists of 85,511 training utterances, 10,102 validation utterances, and 4,890 tests utterances.",
+        type: "Embodied AI",
+        venue: "CoRR",
+        year: "2018",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.tensorflow.org/datasets/catalog/speech_commands",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "SST-2",
+        note: "Notably, our approach outperforms the clean-label backdoor attack on Triggerless, achieving an average ASR improvement of 1.41% for the SST-2 dataset, 0.5% for the OLID dataset and 4.53% for the AG's News dataset, which are state-of-the-…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://dl.fbaipublicfiles.com/glue/data/SST-2.zip",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Stable Alignment Sandbox sample datasets",
+        note: "Data collected in the Sandbox simulation is used to construct three alignment datasets for the three Stable Alignment training stages. The official repository publishes sandbox_v1.json and sandbox_v2.json as samples; the full 169k intera…",
+        type: "LLMs",
+        year: "2023",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/agi-templar/Stable-Alignment/tree/main/assets",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Stable Diffusion Prompts",
+        note: "Text-to-image is a rising application in generative models while sharing similar safety concerns with text-to-text language model applications. We may use red teaming to probe what prompts trigger text-to-image models to generate unwante…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Gustavosta/Stable-Diffusion-Prompts",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Stanford Alpaca",
+        note: "For training, ... the image-unrelated prompts are the first 3200 questions in the Alpaca instruction following dataset.",
+        type: "LLMs",
+        venue: "GitHub repository",
+        year: "2023",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json",
+        domains: [
+          "LLMs",
+          "Agents",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Stanford Human Preferences",
+        note: "If the alignment data is naturally binary, every positive example can be assumed to be drawn from $y_\\text{desirable}|x$ and every negative example from $y_\\text{undesirable}|x$.\nHowever, the canonical feedback datasets in academic resea…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/stanfordnlp/SHP",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "STL-10",
+        note: "Following [@xu2019detecting], we adopt jumbo learning to train 200 backdoored shadow classifiers on the training dataset of STL10.set of STL10.} When training each backdoored shadow classifier, we randomly sample a trigger size from 2 x…",
+        type: "Embodied AI",
+        venue: "AISTATS",
+        year: "2011",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://cs.stanford.edu/~acoates/stl10/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "STS Benchmark",
+        note: "Table tab:task_summary identifies STS Benchmark as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/brmson/dataset-sts",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Subjectivity",
+        note: "We conduct experiments on three tasks, i.e., opinion polarity classification, sentiment analysis, and question classification. The datasets used in the experiments are SST-2 [@sst-2], MR [@mr], CR [@cr], SUBJ [@subj], and TREC [@trec], w…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Super-Natural Instructions",
+        note: "We validate our method in two scenarios: (1) pretraining a transformer to in-context learn linear functions [@garg2022what], and (2) instruction tuning of LLMs on the Super-Natural Instructions [@wang2022niv2]. The results demonstrate th…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/allenai/natural-instructions/tree/master/tasks",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "SVHN",
+        note: "For instance, given an image encoder pre-trained on CIFAR10, we use it to train downstream classifiers for downstream datasets STL10, GTSRB, and SVHN.",
+        type: "Embodied AI",
+        venue: "NIPS Workshop on Deep Learning and Unsupervised Feature Learning",
+        year: "2011",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://ai.stanford.edu/~twangcat/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "SViT",
+        note: "The general vision language pre-training dataset we use contains ShareGPT4V [@chen2023sharegpt4v] dataset, SViT [@zhao2023svit] dataset, and the LLaVA Visual Instruct 150K dataset [@liu2023llava].",
+        type: "Embodied AI",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/BAAI/SVIT",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "T0++",
+        note: "For T0, note that we trained on the T0++ version of the dataset.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/bigscience/P3",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Texas Spoofing Test Battery (TEXBAT)",
+        note: "The proposed VAE/GAN detector is trained on genuine TEXBAT DS-0 and DS-1 data, while supervised baselines use TEXBAT under classical and leave-one-out training strategies.",
+        type: "Embodied AI",
+        venue: "RadioNavigation Laboratory Conference Proceedings",
+        year: "2012",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://rnl-data.ae.utexas.edu/datastore/texbat/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "The Stack",
+        note: "Table tab:task_summary identifies The Stack as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/bigcode/the-stack",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "ToolBench",
+        note: "ToolBench contains about 126K training trajectories; the paper samples about 4K I1 trajectories to form its clean training dataset.",
+        type: "Agents",
+        venue: "arXiv preprint arXiv:2307.16789",
+        year: "2023",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/OpenBMB/ToolBench",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "TREC",
+        note: "Tables [#tab:tab4] and [#tab:tab44] show CA and ASR as the number of poisoning samples increases on the victim model. Specifically, when the pre-trained language model is GPT-NEO, our method achieves an ASR of over 95% with only 6 poison…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://cogcomp.seas.upenn.edu/Data/QA/QC/",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "TriviaQA",
+        note: "We fine-tune the target LLMs on the last $400$ of adversarial prompts through PAIR and GCG and the sampled $400$ normal prompts in the TriviaQA dataset.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://nlp.cs.washington.edu/triviaqa/",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "TruthfulQA evaluator fine-tuning data",
+        note: "The official TruthfulQA repository publishes finetune_truth.jsonl and finetune_info.jsonl with a GPT fine-tuning command. The primary paper reports fine-tuning GPT-judge and GPT-info on these labeled examples. This entry is only for thos…",
+        type: "LLMs",
+        venue: "ACL 2022",
+        year: "2021",
+        stars: 937,
+        updated: "2025-01-16",
+        posted: "2021-09-08",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/sylinrl/TruthfulQA/tree/main/data",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Tulu V2 Mix",
+        note: "To compare Magpie data with other public instruction datasets (e.g., ShareGPT [@vicuna2023], WildChat [@zhao2024wildchat], Evol Instruct [@xu2023wizardlm], UltraChat [@ding2023ultrachat], OpenHermes [@OpenHermes; @OpenHermes2.5], GenQA […",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/allenai/tulu-v2-sft-mixture",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "TuSimple Lane Detection",
+        note: "As for meta-training, we utilize the Tusimple training dataset and generate 10 meta-tasks for each image.",
+        type: "Embodied AI",
+        venue: "https://github.com/TuSimple/tusimple-benchmark/tree/master/doc/lane_detection",
+        year: "2017",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/TuSimple/tusimple-benchmark/tree/master/doc/lane_detection",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "UltraChat 200k",
+        note: "**Attacks.** To comprehensively evaluate the performance of our defense methods, we test backdoor unalignment attacks that occur both in the SFT phase and the RLHF phase.\n(1) *Attack the SFT stage.*\nIn this situation, the attacker makes…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "UltraFeedback",
+        note: "Note that the base model had not been finetuned on UltraFeedback but a similar dataset called UltraChat; the first row here denotes the finetuning results.",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/openbmb/UltraFeedback",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "UnRocker Resonant Sensor Dataset (SITL/HITL)",
+        note: "The 32.4-million-pair sensor corpus is split 4:1:1 for training, validation, and testing and used to train twelve denoising autoencoder models for 500 epochs.",
+        type: "Embodied AI",
+        venue: "UnRocker project release",
+        year: "2022",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/jinseobjeong/UnRocker/tree/main/Dataset",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "VCTK Corpus",
+        note: "AntiFake Table 1 identifies VCTK as the AdaIN encoder dataset, and the surrounding text calls the listed corpora distinct training data.",
+        type: "Embodied AI",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://doi.org/10.7488/ds/2645",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "VEDAI (Vehicle Detection in Aerial Imagery)",
+        note: "The paper trains a separate MobileNetV2 model on each VEDAI channel for 20 epochs and later identifies them as models trained on the VEDAI dataset.",
+        type: "Embodied AI",
+        venue: "Journal of Visual Communication and Image Representation",
+        year: "2016",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://downloads.greyc.fr/vedai/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "VIMA-Data",
+        note: "The primary paper labels VIMA-Data as Training Dataset and trains policies by behavioral cloning on the offline expert trajectories. The official repository links the public training-data card.",
+        type: "Embodied AI",
+        venue: "arXiv 2022",
+        year: "2023",
+        downloads: 99,
+        stars: 854,
+        updated: "2024-04-18",
+        posted: "2022-10-06",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/VIMA/VIMA-Data",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "Virus",
+        note: "Learning from the lessons of the above failure attempts, we design Virus, a dual objective data optimization scheme, to construct the harmful dataset. Virus aims to optimize the harmful data\nto achieve dual goals: i) the jailbreak loss a…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/anonymous4486/Virus",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "VizWiz-VQA",
+        note: "The primary paper records the official train, validation, and test partitions and reports models trained from scratch and fine-tuned on VizWiz. The official VizWiz site distributes the data.",
+        type: "Embodied AI",
+        venue: "CVPR 2018",
+        year: "2018",
+        posted: "2018-02-22",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://vizwiz.org/tasks-and-datasets/vqa/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "VoxCeleb2",
+        note: "AntiFake Table 1 identifies VoxCeleb 2 as the H/ASP encoder dataset, and the surrounding text calls the listed corpora distinct training data.",
+        type: "Embodied AI",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "W-NUT 2017",
+        note: "We fine-tune three BERT models (base-cased) for each data set with different initialization seeds (1, 2 & 4) using the Huggingface implementation. For the biomedical data sets, we additionally fine-tune two domain-specific BERT models Bi…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://noisy-text.github.io/2017/emerging-rare-entities.html",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Waymo Open Dataset",
+        note: "The AVOD model only detects car class, while YOLOv4 models predict all three classes, and we train each YOLO model using its corresponding pretrained weights on Waymo dataset.",
+        type: "Embodied AI",
+        venue: "CVPR",
+        year: "2020",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://waymo.com/open/data/perception/",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
+      },
+      {
+        name: "Wikipedia Dumps",
+        note: "Wikipedia plus LaMini-instruction is the stated training/validation combination; the appendix records the CC-BY-SA source.",
+        type: "Agents",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://dumps.wikimedia.org/",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "WikiText-103",
+        note: "We train this model on WikiText-103 dataset [@merityRegOpt], a $500$MB cleaned subset of",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Salesforce/wikitext",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "WildChat",
+        note: "To compare Magpie data with other public instruction datasets (e.g., ShareGPT [@vicuna2023], WildChat [@zhao2024wildchat], Evol Instruct [@xu2023wizardlm], UltraChat [@ding2023ultrachat], OpenHermes [@OpenHermes; @OpenHermes2.5], GenQA […",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/allenai/WildChat-1M",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "XGuard-Train",
+        note: "The primary paper reports adversarial safety alignment with XGuard-Train. The official dataset card releases 30,695 attack-refusal conversations and explicitly identifies them as fine-tuning data for robust multi-turn safety training.",
+        type: "Agents",
+        venue: "arXiv 2025",
+        year: "2025",
+        downloads: 110,
+        stars: 67,
+        updated: "2025-05-21",
+        posted: "2025-04-15",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/marslabucla/XGuard-Train",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "XSTest",
+        note: "**Adding Circuit Breakers.**\nIn our experimental setup, we employ similar circuit breaker and retain datasets for both the Mistral-7B-Instruct-v2 [@mistral2024v02] and Llama-3-8B-Instruct [@llama3_2024_8b_instruct] models. Detailed infor…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/paul-rottger/xstest/blob/main/xstest_prompts.csv",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "Yelp Polarity",
+        note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test s…",
+        type: "LLMs",
+        tags: [
+          "training data",
+          "source: approved survey",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/zhangxiangxiao/Crepe",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
       },
     ],
   },
   tools: {
     slug: "tools",
     breadcrumb: [
-      "Discover",
+      "Home",
       "Tools",
     ],
     title: "Tools",
@@ -3929,7 +8077,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "A comprehensive toolkit (and benchmark) for backdoor attacks on large language models.",
         type: "Backdoor",
         venue: "NeurIPS 2025",
-        stars: 322,
+        year: "2025",
+        stars: 324,
         updated: "2026-03-13",
         tags: [
           "backdoor",
@@ -3942,7 +8091,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         stats: [
           {
             label: "Stars",
-            value: "322",
+            value: "324",
           },
           {
             label: "Language",
@@ -3953,7 +8102,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             value: "2026-03",
           },
         ],
-        meta: "bboylyg/BackdoorLLM · MIT · 47 forks · since 2024",
+        meta: "bboylyg/BackdoorLLM · MIT · 46 forks · since 2024",
         resources: [
           {
             label: "GitHub",

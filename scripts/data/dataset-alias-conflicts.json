@@ -1,0 +1,21 @@
+{
+  "_comment": "Ambiguous short names intentionally excluded from global alias matching.",
+  "items": [
+    {
+      "alias": "Alpaca",
+      "canonicalNames": [
+        "Cleaned Alpaca",
+        "Stanford Alpaca"
+      ],
+      "reason": "The same short name was explicitly used for multiple datasets, so no global alias is published."
+    },
+    {
+      "alias": "News",
+      "canonicalNames": [
+        "AG News",
+        "News Articles"
+      ],
+      "reason": "The same short name was explicitly used for multiple datasets, so no global alias is published."
+    }
+  ]
+}

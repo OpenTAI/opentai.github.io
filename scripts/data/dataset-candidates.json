@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments",
+    "authors": [
+      "Anderson et al"
+    ],
+    "authorCount": 1,
+    "venue": "CVPR",
+    "year": "2018",
+    "arxivId": "1711.07280",
+    "url": "https://github.com/peteanderson80/Matterport3DSimulator",
+    "domain": "Embodied AI",
+    "group": "Related work",
+    "section": null,
+    "kind": "benchmark",
+    "source": "embodied-ai-safety",
+    "classificationEvidence": "The primary paper calls R2R the first benchmark dataset for visually-grounded natural-language navigation, and the authors' repository provides the data and evaluation code."
+  },
+  {
+    "title": "VizWiz Grand Challenge: Answering Visual Questions from Blind People",
+    "authors": [
+      "Gurari et al"
+    ],
+    "authorCount": 1,
+    "venue": "CVPR",
+    "year": "2018",
+    "arxivId": "1802.08218",
+    "url": "https://vizwiz.org/tasks-and-datasets/vqa/",
+    "domain": "Embodied AI",
+    "group": "Related work",
+    "section": null,
+    "kind": "benchmark",
+    "source": "embodied-ai-safety",
+    "classificationEvidence": "The official VizWiz page publishes the dataset, challenge tasks, evaluation metrics and self-evaluation annotations."
+  }
+]

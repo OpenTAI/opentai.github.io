@@ -1,0 +1,102 @@
+[
+  {
+    "canonicalName": "EQA-v1",
+    "status": "verified",
+    "dataUrl": "https://embodiedqa.org/data",
+    "paperUrl": "https://embodiedqa.org/paper.pdf",
+    "githubUrl": "https://github.com/facebookresearch/EmbodiedQA",
+    "huggingFaceUrl": null,
+    "evidenceUrl": "https://github.com/facebookresearch/EmbodiedQA",
+    "reason": "The authors' official EmbodiedQA repository provides EQA v1 downloads, preprocessing into train/validation/test splits, and the training commands used by the paper."
+  },
+  {
+    "canonicalName": "SmartSpot",
+    "status": "verified",
+    "dataUrl": "https://github.com/tsinghua-fib-lab/SmartAgent",
+    "paperUrl": "https://arxiv.org/abs/2412.07472",
+    "githubUrl": "https://github.com/tsinghua-fib-lab/SmartAgent",
+    "huggingFaceUrl": null,
+    "evidenceUrl": "https://github.com/tsinghua-fib-lab/SmartAgent",
+    "reason": "The paper names this repository, and the current official SmartAgent README identifies the SmartSpot benchmark and publishes its image and English/Chinese annotation downloads."
+  },
+  {
+    "canonicalName": "PASCAL VOC",
+    "status": "verified",
+    "dataUrl": "https://www.robots.ox.ac.uk/~vgg/projects/pascal/VOC/",
+    "paperUrl": null,
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "evidenceUrl": "https://www.robots.ox.ac.uk/~vgg/projects/pascal/VOC/",
+    "reason": "The University of Oxford PASCAL VOC project page is the primary distribution index and explicitly separates train/validation data from test-only evaluation data."
+  },
+  {
+    "canonicalName": "M3Bench",
+    "status": "verified",
+    "dataUrl": "https://huggingface.co/datasets/M3Bench/M3Bench",
+    "paperUrl": "https://arxiv.org/abs/2410.06678",
+    "githubUrl": null,
+    "huggingFaceUrl": "https://huggingface.co/datasets/M3Bench/M3Bench",
+    "evidenceUrl": "https://zeyuzhang.com/papers/m3bench",
+    "reason": "The authors' project page explicitly publishes the M3Bench Hugging Face dataset URL and describes 30,000 expert-demonstration tasks."
+  },
+  {
+    "canonicalName": "OpenScene",
+    "status": "verified",
+    "dataUrl": "https://github.com/OpenDriveLab/OpenScene",
+    "paperUrl": null,
+    "githubUrl": "https://github.com/OpenDriveLab/OpenScene",
+    "huggingFaceUrl": null,
+    "evidenceUrl": "https://github.com/OpenDriveLab/OpenScene",
+    "reason": "The official OpenDriveLab repository identifies OpenScene as a licensed compact redistribution of nuPlan, documents the data, and provides its download instructions."
+  },
+  {
+    "canonicalName": "Bench2Drive",
+    "status": "verified",
+    "dataUrl": "https://huggingface.co/datasets/rethinklab/Bench2Drive",
+    "paperUrl": "https://arxiv.org/abs/2406.03877",
+    "githubUrl": "https://github.com/Thinklab-SJTU/Bench2Drive",
+    "huggingFaceUrl": "https://huggingface.co/datasets/rethinklab/Bench2Drive",
+    "evidenceUrl": "https://github.com/Thinklab-SJTU/Bench2Drive",
+    "reason": "The authors' official repository documents the Mini, Base, and Full training subsets and links the official Hugging Face distribution."
+  },
+  {
+    "canonicalName": "MetaDrive human driving trajectories",
+    "status": "verified",
+    "dataUrl": "https://github.com/metadriverse/metadrive/releases/download/MetaDrive-0.2.3/human_traj_100_new.json",
+    "paperUrl": "https://arxiv.org/abs/2109.12674",
+    "githubUrl": "https://github.com/metadriverse/metadrive",
+    "huggingFaceUrl": null,
+    "evidenceUrl": "https://github.com/metadriverse/metadrive/releases/download/MetaDrive-0.2.3/human_traj_100_new.json",
+    "reason": "The audited paper gives this exact file URL for its released human driving trajectories; it is hosted under the authors' official MetaDrive repository."
+  },
+  {
+    "canonicalName": "VEDAI (Vehicle Detection in Aerial Imagery)",
+    "status": "verified",
+    "dataUrl": "https://downloads.greyc.fr/vedai/",
+    "paperUrl": "https://hal.science/hal-01024205",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "evidenceUrl": "https://downloads.greyc.fr/vedai/",
+    "reason": "The GREYC authors' primary VEDAI page identifies the dataset and publishes both image resolutions, annotations, development kit, terms, and the dataset paper."
+  },
+  {
+    "canonicalName": "NGSIM US-101 and I-80",
+    "status": "verified",
+    "dataUrl": "https://data.transportation.gov/stories/s/Next-Generation-Simulation-NGSIM-Open-Data/i5zb-xe34/",
+    "paperUrl": null,
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "evidenceUrl": "https://data.transportation.gov/stories/s/Next-Generation-Simulation-NGSIM-Open-Data/i5zb-xe34/",
+    "reason": "The U.S. Department of Transportation/FHWA NGSIM Open Data page documents and distributes the detailed US-101 and I-80 vehicle trajectories used by the audited paper."
+  },
+  {
+    "canonicalName": "highD",
+    "status": "verified",
+    "dataUrl": "https://www.highd-dataset.com/",
+    "paperUrl": "https://arxiv.org/abs/1810.05642",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "evidenceUrl": "https://www.ika.rwth-aachen.de/en/competences/projects/automated-driving/highd-dataset.html",
+    "reason": "RWTH Aachen's Institute for Automotive Engineering identifies highD as its naturalistic highway trajectory dataset and links the official project/download site."
+  }
+]

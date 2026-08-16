@@ -1,0 +1,905 @@
+{
+  "_comment": "Aliases explicitly verified during paper audits; no fuzzy matching.",
+  "aliases": [
+    {
+      "alias": "AG",
+      "canonicalName": "AG News",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "AG's News",
+      "canonicalName": "AG News",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "AgentInstruct dataset",
+      "canonicalName": "AgentInstruct",
+      "reason": "Both papers use the exact proper name AgentInstruct; one defines it as an agent-specific fine-tuning dataset and the other explicitly calls it open-source."
+    },
+    {
+      "alias": "AgentTuning",
+      "canonicalName": "AgentInstruct",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "AGENWS",
+      "canonicalName": "AG News",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "AG’s News",
+      "canonicalName": "AG News",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "AIR",
+      "canonicalName": "AIR binaural room impulse response database",
+      "reason": "The paper names AIR among four public acoustic CIR datasets and cites the exact binaural room impulse response database publication."
+    },
+    {
+      "alias": "Alpaca 52k self-instruction corpus",
+      "canonicalName": "Stanford Alpaca",
+      "reason": "The paper explicitly attributes the 52K self-instruction corpus to the Alpaca team and cites the Stanford Alpaca repository."
+    },
+    {
+      "alias": "Alpaca HHH",
+      "canonicalName": "Stanford Alpaca",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Alpaca instruction-following dataset",
+      "canonicalName": "Stanford Alpaca",
+      "reason": "The cited source names the resource 'Stanford Alpaca'; the audited paper calls it the 'Alpaca instruction following dataset' and explicitly selects its questions for training."
+    },
+    {
+      "alias": "Amazon",
+      "canonicalName": "Amazon Reviews",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "annotated LlavaGuard dataset",
+      "canonicalName": "LlavaGuard Dataset",
+      "reason": "The appendix section is titled 'LlavaGuard Dataset', and the paper describes the resource as its annotated multimodal safety dataset."
+    },
+    {
+      "alias": "Anthropic HH",
+      "canonicalName": "HH-RLHF",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Anthropic red team prompts",
+      "canonicalName": "Anthropic Red Team Attempts",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Anthropic red-team data",
+      "canonicalName": "Anthropic Red Team Attempts",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Anthropic RLHF",
+      "canonicalName": "HH-RLHF",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Anthropic-HH",
+      "canonicalName": "HH-RLHF",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "BAD",
+      "canonicalName": "Bot-Adversarial Dialogue",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "BDD100K",
+      "canonicalName": "BDD-100K",
+      "reason": "The paper audit explicitly verified this alias."
+    },
+    {
+      "alias": "Beavertail",
+      "canonicalName": "BeaverTails",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Bench2Drive training dataset",
+      "canonicalName": "Bench2Drive",
+      "reason": "The exact paper audit and official Thinklab-SJTU repository identify this phrase as Bench2Drive's standardized training subset, not a separate dataset. Both records use the same official Hugging Face release."
+    },
+    {
+      "alias": "BeverTails",
+      "canonicalName": "BeaverTails",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "BIPIA benchmark",
+      "canonicalName": "BIPIA",
+      "reason": "The paper uses the exact acronym BIPIA and explicitly distinguishes its instruction dataset; approval is limited to the instruction training split, not evaluation scores."
+    },
+    {
+      "alias": "BIPIA instruction dataset",
+      "canonicalName": "BIPIA",
+      "reason": "The paper uses the exact acronym BIPIA and explicitly distinguishes its instruction dataset; approval is limited to the instruction training split, not evaluation scores."
+    },
+    {
+      "alias": "Bridge V2",
+      "canonicalName": "BridgeData V2",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'walke2023bridgedata' (Bridgedata v2: A dataset for robot learning at scale). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "BridgeData v2",
+      "canonicalName": "BridgeData V2",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'walke2023bridgedata' (Bridgedata v2: A dataset for robot learning at scale). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "BridgeV2",
+      "canonicalName": "BridgeData V2",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'walke2023bridgedata' (Bridgedata v2: A dataset for robot learning at scale). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "CC3M",
+      "canonicalName": "Conceptual Captions 3M",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'sharma2018conceptual' (Conceptual captions: A cleaned, hypernymed, image alt-text dataset for automatic image captioning). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "CIFAR10",
+      "canonicalName": "CIFAR-10",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'krizhevsky2009learning' (Learning multiple layers of features from tiny images). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "CNN/DM",
+      "canonicalName": "CNN/DailyMail",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "COCO",
+      "canonicalName": "MS COCO",
+      "reason": "The audited papers use COCO and MS COCO for the same Microsoft Common Objects in Context release, and both records point to the official COCO download page."
+    },
+    {
+      "alias": "code backdoor training data",
+      "canonicalName": "Sleeper Agents code backdoor training data",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "code_backdoor_train_data.jsonl",
+      "canonicalName": "Sleeper Agents code backdoor training data",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Common Voice",
+      "canonicalName": "Mozilla Common Voice",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'Commonvoice' (Mozilla Common Voice dataset). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "CoNLL",
+      "canonicalName": "CoNLL-2003",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "constructed SAIL training set",
+      "canonicalName": "SAIL search-augmented instruction-tuning corpus",
+      "reason": "The paper consistently names the method and model SAIL, calls the constructed data a search-augmented instruction-tuning/training corpus, and links its processed data from the first page."
+    },
+    {
+      "alias": "CR",
+      "canonicalName": "Customer Reviews",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "crafted SQuAD training dataset",
+      "canonicalName": "Crafted datasets",
+      "reason": "The paper does not assign a single marketing name; this conservative canonical label groups the two explicitly named training assets D_det and D_ext and records the paper's own 'crafted training datasets' wording."
+    },
+    {
+      "alias": "crafted training datasets",
+      "canonicalName": "Crafted datasets",
+      "reason": "The paper does not assign a single marketing name; this conservative canonical label groups the two explicitly named training assets D_det and D_ext and records the paper's own 'crafted training datasets' wording."
+    },
+    {
+      "alias": "CRUW dataset",
+      "canonicalName": "CRUW",
+      "reason": "The paper audit explicitly verified this alias."
+    },
+    {
+      "alias": "CULane dataset",
+      "canonicalName": "CULane",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'pan2018SCNN' (Spatial as deep: Spatial cnn for traffic scene understanding). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "D4rl",
+      "canonicalName": "D4RL",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'fu2020d4rl' (D4rl: Datasets for deep data-driven reinforcement learning). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "D_det",
+      "canonicalName": "Crafted datasets",
+      "reason": "The paper does not assign a single marketing name; this conservative canonical label groups the two explicitly named training assets D_det and D_ext and records the paper's own 'crafted training datasets' wording."
+    },
+    {
+      "alias": "D_dir",
+      "canonicalName": "SelfDefend distilled defense data",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "D_ext",
+      "canonicalName": "Crafted datasets",
+      "reason": "The paper does not assign a single marketing name; this conservative canonical label groups the two explicitly named training assets D_det and D_ext and records the paper's own 'crafted training datasets' wording."
+    },
+    {
+      "alias": "D_int",
+      "canonicalName": "SelfDefend distilled defense data",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Databricks",
+      "canonicalName": "databricks-dolly-15k",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "DatasetAndResult",
+      "canonicalName": "SelfDefend distilled defense data",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Dolly15K",
+      "canonicalName": "databricks-dolly-15k",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "driving trajectories collected by humans",
+      "canonicalName": "MetaDrive human driving trajectories",
+      "reason": "Canonicalized only from literal names in the audited paper text, title, or exact citation; no fuzzy title/repository matching was used."
+    },
+    {
+      "alias": "EAsafetyBench-Drone",
+      "canonicalName": "EAsafetyBench",
+      "reason": "The paper defines EAsafetyBench as the umbrella resource and names EAsafetyBench-Drone and EAsafetyBench-Prompt as its two training-relevant components."
+    },
+    {
+      "alias": "EAsafetyBench-Prompt",
+      "canonicalName": "EAsafetyBench",
+      "reason": "The paper defines EAsafetyBench as the umbrella resource and names EAsafetyBench-Drone and EAsafetyBench-Prompt as its two training-relevant components."
+    },
+    {
+      "alias": "Fake",
+      "canonicalName": "Kaggle Fake News competition dataset",
+      "reason": "The paper audit explicitly verified this alias."
+    },
+    {
+      "alias": "FAKE",
+      "canonicalName": "Kaggle Fake News competition dataset",
+      "reason": "The paper audit explicitly verified this alias."
+    },
+    {
+      "alias": "Fake News Classification",
+      "canonicalName": "Kaggle Fake News competition dataset",
+      "reason": "The paper audit explicitly verified this alias."
+    },
+    {
+      "alias": "Fake News Detection",
+      "canonicalName": "Kaggle Fake News competition dataset",
+      "reason": "The paper audit explicitly verified this alias."
+    },
+    {
+      "alias": "For the IWSLT2014 En-De",
+      "canonicalName": "IWSLT 2014 En-De",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "For the OLID",
+      "canonicalName": "OLID",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Glaive Function Calling",
+      "canonicalName": "Glaive Function Calling v2",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Guard-Train",
+      "canonicalName": "XGuard-Train",
+      "reason": "The TeX rendering appears as mathbbXGuard-Train and the candidate extractor shortened it to Guard-Train; the paper's literal Hugging Face URL establishes XGuard-Train as the canonical spelling."
+    },
+    {
+      "alias": "Gutenberg",
+      "canonicalName": "Project Gutenberg",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "HH",
+      "canonicalName": "HH-RLHF",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "highD dataset",
+      "canonicalName": "highD",
+      "reason": "The exact name highD is used throughout the experiment section and linked to the exact highD dataset publication in reference [36]."
+    },
+    {
+      "alias": "HITL dataset",
+      "canonicalName": "UnRocker Resonant Sensor Dataset (SITL/HITL)",
+      "reason": "The paper titles its construction section 'Resonant Sensor Dataset Construction,' names the SITL and HITL variants, and links the UnRocker project while stating that the dataset was released."
+    },
+    {
+      "alias": "Imagenet",
+      "canonicalName": "ImageNet",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'deng2009imagenet' (Imagenet: A large-scale hierarchical image database). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "ImageNet dataset",
+      "canonicalName": "ImageNet",
+      "reason": "The audited paper and its citation use the exact name ImageNet; the paper trains a ResNet-50 from scratch on the original and filtered variants."
+    },
+    {
+      "alias": "ImageNet-21k",
+      "canonicalName": "ImageNet-21K",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'deng2009imagenet' (Imagenet: A large-scale hierarchical image database). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "Imagenet-21K",
+      "canonicalName": "ImageNet-21K",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'deng2009imagenet' (Imagenet: A large-scale hierarchical image database). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "Imagenet-21k",
+      "canonicalName": "ImageNet-21K",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'deng2009imagenet' (Imagenet: A large-scale hierarchical image database). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "In AlpacaEval",
+      "canonicalName": "AlpacaEval",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "In the IMDB",
+      "canonicalName": "IMDb",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Indirect PIA Crafted Training Datasets",
+      "canonicalName": "Crafted datasets",
+      "reason": "The ACL 2025 paper and the authors' LukeChen-go/indirect-pia-detection repository identify the crafted D_det and D_ext training files under the same released data directory already recorded as Crafted datasets."
+    },
+    {
+      "alias": "Jigsaw",
+      "canonicalName": "Jigsaw Toxic Comment Classification",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Jigsaw Toxic Comments",
+      "canonicalName": "Jigsaw Toxic Comment Classification",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Kinetics",
+      "canonicalName": "Kinetics-400",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'kay2017kinetics' (The kinetics human action video dataset). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "Kitti",
+      "canonicalName": "KITTI",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'geiger2013vision' (Vision meets Robotics: The KITTI Dataset). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "LAION-400M dataset",
+      "canonicalName": "LAION-400M",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'schuhmann2021laion' (Laion-400m: Open dataset of clip-filtered 400 million image-text pairs). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "LaMini",
+      "canonicalName": "LaMini-instruction",
+      "reason": "The paper and bibliography use LaMini-instruction as the exact dataset name; table shorthand 'LaMini' is recorded as an alias."
+    },
+    {
+      "alias": "LaMini-instruction dataset",
+      "canonicalName": "LaMini-instruction",
+      "reason": "The paper and bibliography use LaMini-instruction as the exact dataset name; table shorthand 'LaMini' is recorded as an alias."
+    },
+    {
+      "alias": "LanguageTable dataset",
+      "canonicalName": "LanguageTable",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'lynch2023interactive' (Interactive language: Talking to robots in real time). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "LIBERO",
+      "canonicalName": "LIBERO demonstration datasets",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'liu2023libero' (Libero: Benchmarking knowledge transfer for lifelong robot learning). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "Librispeech",
+      "canonicalName": "LibriSpeech",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'panayotov2015librispeech' (LibriSpeech: An ASR Corpus Based on Public Domain Audio Books). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "LLaVA-Instruct",
+      "canonicalName": "LLaVA Visual Instruct 150K",
+      "reason": "The audited papers and official liuhaotian/LLaVA-Instruct-150K data card identify both names with the same 150K visual instruction-tuning release."
+    },
+    {
+      "alias": "LlavaGuard multimodal safety dataset",
+      "canonicalName": "LlavaGuard Dataset",
+      "reason": "The appendix section is titled 'LlavaGuard Dataset', and the paper describes the resource as its annotated multimodal safety dataset."
+    },
+    {
+      "alias": "LM and the BAD",
+      "canonicalName": "Bot-Adversarial Dialogue",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "M${}^{3}$Bench",
+      "canonicalName": "M3Bench",
+      "reason": "The canonical name follows the manifest title and literal TeX form M${}^{3}$Bench in the corpus."
+    },
+    {
+      "alias": "MARDY",
+      "canonicalName": "MARDY database",
+      "reason": "The paper names MARDY among four public acoustic CIR datasets and cites the exact MARDY database publication."
+    },
+    {
+      "alias": "mathbbXGuard-Train",
+      "canonicalName": "XGuard-Train",
+      "reason": "The TeX rendering appears as mathbbXGuard-Train and the candidate extractor shortened it to Guard-Train; the paper's literal Hugging Face URL establishes XGuard-Train as the canonical spelling."
+    },
+    {
+      "alias": "MB PTB",
+      "canonicalName": "Penn Treebank",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Microsoft Common Objects in Context",
+      "canonicalName": "MS COCO",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'lin2014microsoft' (Microsoft coco: Common objects in context). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "MIMIC-IT dataset",
+      "canonicalName": "MIMIC-IT",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'li2023mimic' (Mimic-it: Multi-modal in-context instruction tuning). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "MM-SafetyBench dataset",
+      "canonicalName": "MM-SafetyBench",
+      "reason": "The exact benchmark name appears in the training sentence; approval is limited to its repurposing as PPO fine-tuning input in BlueSuffix, not its evaluation-only uses elsewhere."
+    },
+    {
+      "alias": "MNLI",
+      "canonicalName": "MultiNLI",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "MR",
+      "canonicalName": "Movie Review",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "MS-COCO",
+      "canonicalName": "MS COCO",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'lin2014microsoft' (Microsoft coco: Common objects in context). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "MSCOCO",
+      "canonicalName": "MS COCO",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'lin2014microsoft' (Microsoft coco: Common objects in context). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "NCBI Disease",
+      "canonicalName": "NCBI Disease Corpus",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "News Articles dataset",
+      "canonicalName": "News Articles",
+      "reason": "The cited Harvard Dataverse record is titled exactly 'News Articles'; the appendix table shortens it to News."
+    },
+    {
+      "alias": "NGSIM",
+      "canonicalName": "NGSIM US-101 and I-80",
+      "reason": "The audited paper explicitly identifies US101 and I80 as the two components of the NGSIM data it preprocesses and cites the two FHWA dataset reports."
+    },
+    {
+      "alias": "NGSIM I80",
+      "canonicalName": "NGSIM US-101 and I-80",
+      "reason": "The audited paper explicitly identifies US101 and I80 as the two components of the NGSIM data it preprocesses and cites the two FHWA dataset reports."
+    },
+    {
+      "alias": "NGSIM US101",
+      "canonicalName": "NGSIM US-101 and I-80",
+      "reason": "The audited paper explicitly identifies US101 and I80 as the two components of the NGSIM data it preprocesses and cites the two FHWA dataset reports."
+    },
+    {
+      "alias": "NuScenes",
+      "canonicalName": "nuScenes",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'Caesar2020nuScenesAM' (nuScenes: A Multimodal Dataset for Autonomous Driving). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "OASST",
+      "canonicalName": "OpenAssistant OASST1",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "OASST1",
+      "canonicalName": "OpenAssistant OASST1",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Open-X",
+      "canonicalName": "Open X-Embodiment",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'o2024open' (Open X-Embodiment: Robotic Learning Datasets and RT-X Models). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "OpenAI summarize-from-feedback",
+      "canonicalName": "Reddit TL;DR",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "OpenAssistant",
+      "canonicalName": "OpenAssistant OASST1",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "OpenSubtitle",
+      "canonicalName": "OpenSubtitles",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "OpenX",
+      "canonicalName": "Open X-Embodiment",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'o2024open' (Open X-Embodiment: Robotic Learning Datasets and RT-X Models). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "OXE",
+      "canonicalName": "Open X-Embodiment",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'o2024open' (Open X-Embodiment: Robotic Learning Datasets and RT-X Models). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "PTB",
+      "canonicalName": "Penn Treebank",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "R2R",
+      "canonicalName": "Room-to-Room (R2R)",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'anderson2018visionandlanguage' (Vision-and-Language Navigation: Interpreting visually-grounded navigation instructions in real environments). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "red-team data from Anthropic",
+      "canonicalName": "Anthropic Red Team Attempts",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "red-team prompts",
+      "canonicalName": "Anthropic Red Team Attempts",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "repnoise_beavertail",
+      "canonicalName": "Booster repnoise BeaverTails",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Resonant Sensor Dataset",
+      "canonicalName": "UnRocker Resonant Sensor Dataset (SITL/HITL)",
+      "reason": "The paper titles its construction section 'Resonant Sensor Dataset Construction,' names the SITL and HITL variants, and links the UnRocker project while stating that the dataset was released."
+    },
+    {
+      "alias": "REVERB",
+      "canonicalName": "REVERB Challenge room impulse response dataset",
+      "reason": "The paper names REVERB among four public acoustic CIR datasets and cites the exact REVERB Challenge publication."
+    },
+    {
+      "alias": "Robomimic",
+      "canonicalName": "robomimic datasets",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'corl21_robomimic' (What Matters in Learning from Offline Human Demonstrations for Robot Manipulation). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "RoboMimic",
+      "canonicalName": "robomimic datasets",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'corl21_robomimic' (What Matters in Learning from Offline Human Demonstrations for Robot Manipulation). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "RT",
+      "canonicalName": "Rotten Tomatoes",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "RWCP",
+      "canonicalName": "RWCP sound scene database",
+      "reason": "The paper names RWCP among four public acoustic CIR datasets and cites the exact acoustical sound database publication."
+    },
+    {
+      "alias": "Safe RLHF",
+      "canonicalName": "PKU-SafeRLHF",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Safe-RLHF",
+      "canonicalName": "PKU-SafeRLHF",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "SafeMT",
+      "canonicalName": "SafeMTData",
+      "reason": "The source uses SafeMT as a shortened label in results but explicitly names the publicly available dataset SafeMTData in the setup."
+    },
+    {
+      "alias": "SafeMTData dataset",
+      "canonicalName": "SafeMTData",
+      "reason": "The source uses SafeMT as a shortened label in results but explicitly names the publicly available dataset SafeMTData in the setup."
+    },
+    {
+      "alias": "sandbox_v1.json",
+      "canonicalName": "Stable Alignment Sandbox sample datasets",
+      "reason": "The paper audit explicitly verified this alias."
+    },
+    {
+      "alias": "sandbox_v2.json",
+      "canonicalName": "Stable Alignment Sandbox sample datasets",
+      "reason": "The paper audit explicitly verified this alias."
+    },
+    {
+      "alias": "SAP10",
+      "canonicalName": "SAP",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "SAP20",
+      "canonicalName": "SAP",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "SAP200",
+      "canonicalName": "SAP",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "SAP30",
+      "canonicalName": "SAP",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "SAP5",
+      "canonicalName": "SAP",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "search-augmented instruction training corpus",
+      "canonicalName": "SAIL search-augmented instruction-tuning corpus",
+      "reason": "The paper consistently names the method and model SAIL, calls the constructed data a search-augmented instruction-tuning/training corpus, and links its processed data from the first page."
+    },
+    {
+      "alias": "Semantic Kitti",
+      "canonicalName": "SemanticKITTI",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'behley2019iccv' (SemanticKITTI: A Dataset for Semantic Scene Understanding of LiDAR Sequences). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "Shapenet",
+      "canonicalName": "ShapeNet",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'chang2015shapenet' (Shapenet: An information-rich 3d model repository). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "ShapeNet Parts",
+      "canonicalName": "ShapeNetPart",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'shapepartseg' (A scalable active framework for region annotation in 3d shape collections). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "ShareGPT4-V",
+      "canonicalName": "ShareGPT4V",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'chen2023sharegpt4v' (None). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "SHP",
+      "canonicalName": "Stanford Human Preferences",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Sintel",
+      "canonicalName": "MPI-Sintel",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'Butler2012NaturalisticOpenSource' (A naturalistic open source movie for optical flow evaluation). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "SITL dataset",
+      "canonicalName": "UnRocker Resonant Sensor Dataset (SITL/HITL)",
+      "reason": "The paper titles its construction section 'Resonant Sensor Dataset Construction,' names the SITL and HITL variants, and links the UnRocker project while stating that the dataset was released."
+    },
+    {
+      "alias": "SMID",
+      "canonicalName": "Socio-Moral Image Database",
+      "reason": "The source expands SMID to the exact canonical title and says it is the foundation of the paper's safety-data collection."
+    },
+    {
+      "alias": "SNI",
+      "canonicalName": "Super-Natural Instructions",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Socio-Moral Image Database (SMID)",
+      "canonicalName": "Socio-Moral Image Database",
+      "reason": "The source expands SMID to the exact canonical title and says it is the foundation of the paper's safety-data collection."
+    },
+    {
+      "alias": "SPA30",
+      "canonicalName": "SAP",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "stable diffusion prompt dataset",
+      "canonicalName": "Stable Diffusion Prompts",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Stanford Alpaca 52K self-instruction corpus",
+      "canonicalName": "Stanford Alpaca",
+      "reason": "Both audited records resolve to the same Stanford Alpaca repository, alpaca_data.json release, and Hugging Face mirror."
+    },
+    {
+      "alias": "STL10",
+      "canonicalName": "STL-10",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'coates2011analysis' (An analysis of single-layer networks in unsupervised feature learning). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "STS",
+      "canonicalName": "STS Benchmark",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "STS-B",
+      "canonicalName": "STS Benchmark",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "SUBJ",
+      "canonicalName": "Subjectivity",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "SuperNI",
+      "canonicalName": "Super-Natural Instructions",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "SVHN dataset",
+      "canonicalName": "SVHN",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'netzer2011reading' (Reading digits in natural images with unsupervised feature learning). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "Texas Spoofing Test Battery",
+      "canonicalName": "Texas Spoofing Test Battery (TEXBAT)",
+      "reason": "The acronym and expansion are both printed in the paper, which cites the exact TEXBAT standard publication and the University of Texas data-set reference."
+    },
+    {
+      "alias": "TEXBAT",
+      "canonicalName": "Texas Spoofing Test Battery (TEXBAT)",
+      "reason": "The paper audit explicitly verified this alias."
+    },
+    {
+      "alias": "The AdvBench",
+      "canonicalName": "AdvBench",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "The BAD",
+      "canonicalName": "Bot-Adversarial Dialogue",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "The BIPIA",
+      "canonicalName": "BIPIA",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "The Cityscapes dataset",
+      "canonicalName": "Cityscapes",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'Cordts2016' (The Cityscapes Dataset for Semantic Urban Scene Understanding). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "The CodeAlpaca",
+      "canonicalName": "CodeAlpaca",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "The Common Voice dataset",
+      "canonicalName": "Mozilla Common Voice",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'Commonvoice' (Mozilla Common Voice dataset). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "The Stanford Alpaca",
+      "canonicalName": "Stanford Alpaca",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "TL;DR",
+      "canonicalName": "Reddit TL;DR",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "ToolBench I1",
+      "canonicalName": "ToolBench",
+      "reason": "The paper uses the exact cited benchmark name ToolBench and identifies its (instruction, solution_path) records as training trajectories; the approved scope is those trajectories, not the tool environment itself."
+    },
+    {
+      "alias": "ToolBench training trajectories",
+      "canonicalName": "ToolBench",
+      "reason": "The paper uses the exact cited benchmark name ToolBench and identifies its (instruction, solution_path) records as training trajectories; the approved scope is those trajectories, not the tool environment itself."
+    },
+    {
+      "alias": "TuSimple",
+      "canonicalName": "TuSimple Lane Detection",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'TuSimple' (TuSimple Lane Detection Challenge). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "Tusimple Challenge",
+      "canonicalName": "TuSimple Lane Detection",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'TuSimple' (TuSimple Lane Detection Challenge). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "Twitter Emotion",
+      "canonicalName": "Emotion",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "UltraChat",
+      "canonicalName": "UltraChat 200k",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "VCTK",
+      "canonicalName": "VCTK Corpus",
+      "reason": "The paper audit explicitly verified this alias."
+    },
+    {
+      "alias": "VEDAI",
+      "canonicalName": "VEDAI (Vehicle Detection in Aerial Imagery)",
+      "reason": "The acronym and expansion occur together in the audited paper, which also gives the exact Razakarivony and Jurie dataset-paper citation."
+    },
+    {
+      "alias": "Vehicle Detection in Aerial Imagery",
+      "canonicalName": "VEDAI (Vehicle Detection in Aerial Imagery)",
+      "reason": "The acronym and expansion occur together in the audited paper, which also gives the exact Razakarivony and Jurie dataset-paper citation."
+    },
+    {
+      "alias": "VOC",
+      "canonicalName": "PASCAL VOC",
+      "reason": "The literal name 'PASCAL VOC' is supported by exact citation 'Everingham15' (The Pascal Visual Object Classes Challenge: A Retrospective)."
+    },
+    {
+      "alias": "VoxCeleb 2",
+      "canonicalName": "VoxCeleb2",
+      "reason": "The paper audit explicitly verified this alias."
+    },
+    {
+      "alias": "W-NUT",
+      "canonicalName": "W-NUT 2017",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    },
+    {
+      "alias": "Waymo dataset",
+      "canonicalName": "Waymo Open Dataset",
+      "reason": "The canonicalization is supported by the literal corpus evidence and exact citation 'sun2020scalability' (Scalability in perception for autonomous driving: Waymo open dataset). The aliases list contains only forms literally observed in the evidence; no fuzzy name or repository matching was used."
+    },
+    {
+      "alias": "Wikimedia Downloads",
+      "canonicalName": "Wikipedia Dumps",
+      "reason": "The source describes the training corpus as Wikipedia dump files and cites Wikimedia Downloads; 'Wikipedia Dumps' preserves both identities without implying a special derived release."
+    },
+    {
+      "alias": "Wikipedia",
+      "canonicalName": "Wikipedia Dumps",
+      "reason": "The source describes the training corpus as Wikipedia dump files and cites Wikimedia Downloads; 'Wikipedia Dumps' preserves both identities without implying a special derived release."
+    },
+    {
+      "alias": "Wikipedia dump files",
+      "canonicalName": "Wikipedia Dumps",
+      "reason": "The source describes the training corpus as Wikipedia dump files and cites Wikimedia Downloads; 'Wikipedia Dumps' preserves both identities without implying a special derived release."
+    },
+    {
+      "alias": "XGuard-Train dataset",
+      "canonicalName": "XGuard-Train",
+      "reason": "The TeX rendering appears as mathbbXGuard-Train and the candidate extractor shortened it to Guard-Train; the paper's literal Hugging Face URL establishes XGuard-Train as the canonical spelling."
+    },
+    {
+      "alias": "Yelp",
+      "canonicalName": "Yelp Polarity",
+      "reason": "Canonicalized only from literal names and documented aliases found in the audited local corpus; no fuzzy repository or title matching was used."
+    }
+  ]
+}

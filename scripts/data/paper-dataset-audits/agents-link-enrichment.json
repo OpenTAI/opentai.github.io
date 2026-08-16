@@ -1,0 +1,152 @@
+[
+  {
+    "canonicalName": "Stanford Alpaca",
+    "paperUrl": null,
+    "githubUrl": "https://github.com/tatsu-lab/stanford_alpaca",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json",
+    "evidenceUrl": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+    "reason": "Stanford CRFM's Alpaca release page links the tatsu-lab repository, and that repository publishes the 52K instruction-following data as alpaca_data.json.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "AgentInstruct",
+    "paperUrl": "https://arxiv.org/abs/2310.12823",
+    "githubUrl": "https://github.com/THUDM/AgentTuning",
+    "huggingFaceUrl": "https://huggingface.co/datasets/zai-org/AgentInstruct",
+    "dataUrl": "https://huggingface.co/datasets/zai-org/AgentInstruct",
+    "evidenceUrl": "https://arxiv.org/abs/2310.12823",
+    "reason": "The AgentTuning paper names AgentInstruct as its 1,866-trajectory dataset and points to the authors' AgentTuning repository; the official organization dataset card cites the same paper and trajectory count.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "ToolBench",
+    "paperUrl": "https://arxiv.org/abs/2307.16789",
+    "githubUrl": "https://github.com/OpenBMB/ToolBench",
+    "huggingFaceUrl": null,
+    "dataUrl": null,
+    "evidenceUrl": "https://arxiv.org/abs/2307.16789",
+    "reason": "The ToolLLM paper introduces ToolBench and identifies the OpenBMB/ToolBench repository as the released project. No official Hugging Face dataset page was established.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "ImageNet",
+    "paperUrl": "https://www.image-net.org/static_files/papers/imagenet_cvpr09.pdf",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://www.image-net.org/download.php",
+    "evidenceUrl": "https://www.image-net.org/about.php",
+    "reason": "The CVPR 2009 paper and ImageNet-operated site describe the same WordNet-organized image database. This generic family link does not assert that every bare ImageNet mention specifies the ILSVRC-2012 1K subset.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "Socio-Moral Image Database",
+    "paperUrl": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0190954",
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://osf.io/2rqad/",
+    "evidenceUrl": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0190954",
+    "reason": "The PLOS ONE paper introduces the Socio-Moral Image Database (SMID) and explicitly identifies the OSF project as the location of its images and normative data.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "LlavaGuard Dataset",
+    "paperUrl": "https://arxiv.org/abs/2406.05113",
+    "githubUrl": "https://github.com/ml-research/LlavaGuard",
+    "huggingFaceUrl": "https://huggingface.co/datasets/AIML-TUDA/LlavaGuard-Dataset",
+    "dataUrl": "https://huggingface.co/datasets/AIML-TUDA/LlavaGuard-Dataset",
+    "evidenceUrl": "https://ml-research.github.io/human-centered-genai/projects/llavaguard/",
+    "reason": "The authors' LlavaGuard project and repository link the AIML-TUDA Hugging Face release as the annotated dataset associated with arXiv:2406.05113.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "MM-SafetyBench",
+    "paperUrl": "https://arxiv.org/abs/2311.17600",
+    "githubUrl": "https://github.com/isXinLiu/MM-SafetyBench",
+    "huggingFaceUrl": null,
+    "dataUrl": null,
+    "evidenceUrl": "https://arxiv.org/abs/2311.17600",
+    "reason": "The MM-SafetyBench paper introduces the benchmark and gives isXinLiu/MM-SafetyBench as its resource repository. The previously cited BlueSuffix repository is downstream use, not MM-SafetyBench's official repository.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "Indirect PIA Crafted Training Datasets",
+    "paperUrl": "https://arxiv.org/abs/2502.16580",
+    "githubUrl": "https://github.com/LukeChen-go/indirect-pia-detection",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://github.com/LukeChen-go/indirect-pia-detection/tree/main/data",
+    "evidenceUrl": "https://aclanthology.org/2025.acl-long.890.pdf",
+    "reason": "The ACL paper defines the crafted D_det and D_ext training datasets and identifies the authors' indirect-pia-detection repository; its data directory contains the released assets.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "XGuard-Train",
+    "paperUrl": "https://arxiv.org/abs/2504.13203",
+    "githubUrl": "https://github.com/salman-lui/x-teaming",
+    "huggingFaceUrl": "https://huggingface.co/datasets/marslabucla/XGuard-Train",
+    "dataUrl": "https://huggingface.co/datasets/marslabucla/XGuard-Train",
+    "evidenceUrl": "https://arxiv.org/abs/2504.13203",
+    "reason": "The X-Teaming paper explicitly publishes the marslabucla/XGuard-Train dataset URL, and the authors' x-teaming repository/project links the same release.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "SafeMTData",
+    "paperUrl": "https://arxiv.org/abs/2410.10700",
+    "githubUrl": "https://github.com/renqibing/ActorAttack",
+    "huggingFaceUrl": "https://huggingface.co/datasets/SafeMTData/SafeMTData",
+    "dataUrl": "https://huggingface.co/datasets/SafeMTData/SafeMTData",
+    "evidenceUrl": "https://arxiv.org/abs/2410.10700",
+    "reason": "The ActorAttack paper introduces SafeMTData and names the ActorAttack repository; the SafeMTData organization dataset card cites arXiv:2410.10700 and uses the exact dataset name.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "Wikipedia Dumps",
+    "paperUrl": null,
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://dumps.wikimedia.org/",
+    "evidenceUrl": "https://dumps.wikimedia.org/",
+    "reason": "The audited citation refers generically to Wikipedia dump files from Wikimedia Downloads; dumps.wikimedia.org is Wikimedia's first-party dump index, not a similarly named derived dataset.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "News Articles",
+    "paperUrl": null,
+    "githubUrl": null,
+    "huggingFaceUrl": null,
+    "dataUrl": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GMFCTR",
+    "evidenceUrl": "https://doi.org/10.7910/DVN/GMFCTR",
+    "reason": "The exact cited title, author, year, and 3,824-article description resolve through DOI 10.7910/DVN/GMFCTR to the Harvard Dataverse dataset, establishing identity beyond the generic name.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "LaMini-instruction",
+    "paperUrl": "https://arxiv.org/abs/2304.14402",
+    "githubUrl": "https://github.com/mbzuai-nlp/LaMini-LM",
+    "huggingFaceUrl": "https://huggingface.co/datasets/MBZUAI/LaMini-instruction",
+    "dataUrl": "https://huggingface.co/datasets/MBZUAI/LaMini-instruction",
+    "evidenceUrl": "https://mbzuai-nlp.github.io/LaMini-LM/",
+    "reason": "The authors' LaMini-LM project page links both the repository and MBZUAI/LaMini-instruction, describes the 2.58M instruction-response pairs, and cites arXiv:2304.14402.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "BIPIA",
+    "paperUrl": "https://arxiv.org/abs/2312.14197",
+    "githubUrl": "https://github.com/microsoft/BIPIA",
+    "huggingFaceUrl": null,
+    "dataUrl": null,
+    "evidenceUrl": "https://arxiv.org/abs/2312.14197",
+    "reason": "The benchmark paper names BIPIA and the Microsoft repository identifies itself as the data and code release for that same paper. The repository does not establish a completed official Hugging Face release.",
+    "status": "verified"
+  },
+  {
+    "canonicalName": "EAsafetyBench",
+    "paperUrl": "https://arxiv.org/abs/2504.15699",
+    "githubUrl": "https://github.com/ZihanYan-CQU/EAsafetyBench",
+    "huggingFaceUrl": null,
+    "dataUrl": "https://github.com/ZihanYan-CQU/EAsafetyBench/tree/main/EAsafetyBench",
+    "evidenceUrl": "https://arxiv.org/abs/2504.15699",
+    "reason": "The paper introduces EAsafetyBench, and the matching author repository contains a dedicated EAsafetyBench data directory. No official Hugging Face release was established.",
+    "status": "verified"
+  }
+]

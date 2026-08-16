@@ -1,6 +1,4 @@
-import { SiteShell } from "@/components/site-shell";
-import { SubpageLayout } from "@/components/subpage-layout";
-import { subpageConfigs } from "@/data/site";
+import { CollectionPageView } from "@/components/collection-page-view";
 
 export const metadata = {
   title: "Tools",
@@ -10,9 +8,5 @@ export const metadata = {
 
 
 export default function ToolsPage() {
-  return (
-    <SiteShell sectionLabel="Tools">
-      <SubpageLayout {...subpageConfigs.tools} />
-    </SiteShell>
-  );
+  return <CollectionPageView locale="en" slug="tools" />;
 }

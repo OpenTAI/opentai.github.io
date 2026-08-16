@@ -1,0 +1,1212 @@
+{
+  "scope": "Unique exact normalized OpenAlex title matches with an indexed public PDF only.",
+  "paperCount": 167,
+  "resolvedCount": 29,
+  "resolutions": {
+    "From trojan horses to castle walls: Unveiling bilateral backdoor effects in diffusion models": {
+      "status": "no_exact_public_pdf",
+      "domain": "Agents",
+      "sourceUrl": null,
+      "queryUrl": "https://api.openalex.org/works?search=From+trojan+horses+to+castle+walls%3A+Unveiling+bilateral+backdoor+effects+in+diffusion+models&per-page=25"
+    },
+    "Search augmented instruction learning": {
+      "status": "resolved",
+      "domain": "Agents",
+      "sourceUrl": null,
+      "queryUrl": "https://api.openalex.org/works?search=Search+augmented+instruction+learning&per-page=25",
+      "matchedTitle": "Search augmented instruction learning",
+      "openAlexId": "https://openalex.org/W4389518901",
+      "pdfUrl": "https://aclanthology.org/2023.findings-emnlp.242.pdf",
+      "pdfCandidates": [
+        "https://aclanthology.org/2023.findings-emnlp.242.pdf"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Privacyasst: Safeguarding user privacy in tool-using large language model agents": {
+      "status": "no_exact_public_pdf",
+      "domain": "Agents",
+      "sourceUrl": null,
+      "queryUrl": "https://api.openalex.org/works?search=Privacyasst%3A+Safeguarding+user+privacy+in+tool-using+large+language+model+agents&per-page=25"
+    },
+    "Towards Trustworthy Autonomous Vehicles with Vision-Language Models Under Targeted and Untargeted Adversarial Attacks": {
+      "status": "no_exact_public_pdf",
+      "domain": "Agents",
+      "sourceUrl": null,
+      "queryUrl": "https://api.openalex.org/works?search=Towards+Trustworthy+Autonomous+Vehicles+with+Vision-Language+Models+Under+Targeted+and+Untargeted+Adversarial+Attacks&per-page=25"
+    },
+    "Adversarial machine learning attacks and defences in multi-agent reinforcement learning": {
+      "status": "no_exact_public_pdf",
+      "domain": "Agents",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarial+Machine+Learning+Attacks+and+Defences+in+Multi-Agent+Reinforcement+Learning",
+      "queryUrl": "https://api.openalex.org/works?search=Adversarial+machine+learning+attacks+and+defences+in+multi-agent+reinforcement+learning&per-page=25"
+    },
+    "Biomimetic Approach to Designing Trust-Based Robot-to-Human Object Handover in a Collaborative Assembly Task": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Biomimetic+Approach+to+Designing+Trust-Based+Robot-to-Human+Object+Handover+in+a+Collaborative+Assembly+Task",
+      "queryUrl": "https://api.openalex.org/works?search=Biomimetic+Approach+to+Designing+Trust-Based+Robot-to-Human+Object+Handover+in+a+Collaborative+Assembly+Task&per-page=25",
+      "matchedTitle": "Biomimetic Approach to Designing Trust-Based Robot-to-Human Object Handover in a Collaborative Assembly Task",
+      "openAlexId": "https://openalex.org/W7117452389",
+      "pdfUrl": "https://www.mdpi.com/2313-7673/11/1/14/pdf?version=1766833446",
+      "pdfCandidates": [
+        "https://www.mdpi.com/2313-7673/11/1/14/pdf?version=1766833446"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Fast and Comfortable Robot-to-Human Handover for Mobile Cooperation Robot System": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Fast+and+Comfortable+Robot-to-Human+Handover+for+Mobile+Cooperation+Robot+System",
+      "queryUrl": "https://api.openalex.org/works?search=Fast+and+Comfortable+Robot-to-Human+Handover+for+Mobile+Cooperation+Robot+System&per-page=25"
+    },
+    "Human-robot object handover: Recent progress and future direction": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Human--Robot+Object+Handover%3A+Recent+Progress+and+Future+Direction",
+      "queryUrl": "https://api.openalex.org/works?search=Human-robot+object+handover%3A+Recent+progress+and+future+direction&per-page=25"
+    },
+    "Optimizing human-robot handovers: the impact of adaptive transport methods": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Optimizing+Human-Robot+Handovers%3A+The+Impact+of+Adaptive+Transport+Methods",
+      "queryUrl": "https://api.openalex.org/works?search=Optimizing+human-robot+handovers%3A+the+impact+of+adaptive+transport+methods&per-page=25",
+      "matchedTitle": "Optimizing human-robot handovers: the impact of adaptive transport methods",
+      "openAlexId": "https://openalex.org/W4384197634",
+      "pdfUrl": "https://www.frontiersin.org/articles/10.3389/frobt.2023.1155143/pdf",
+      "pdfCandidates": [
+        "https://www.frontiersin.org/articles/10.3389/frobt.2023.1155143/pdf"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "A Novel Human Intention Prediction Approach Based on Fuzzy Rules through Wearable Sensing in Human–Robot Handover": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Novel+Human+Intention+Prediction+Approach+Based+on+Fuzzy+Rules+Through+Wearable+Sensing+in+Human--Robot+Handover",
+      "queryUrl": "https://api.openalex.org/works?search=A+Novel+Human+Intention+Prediction+Approach+Based+on+Fuzzy+Rules+through+Wearable+Sensing+in+Human%E2%80%93Robot+Handover&per-page=25",
+      "matchedTitle": "A Novel Human Intention Prediction Approach Based on Fuzzy Rules through Wearable Sensing in Human–Robot Handover",
+      "openAlexId": "https://openalex.org/W4385732711",
+      "pdfUrl": "https://www.mdpi.com/2313-7673/8/4/358/pdf?version=1691661558",
+      "pdfCandidates": [
+        "https://www.mdpi.com/2313-7673/8/4/358/pdf?version=1691661558"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "A Taxonomy of Factors Influencing Perceived Safety in Human–Robot Interaction": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Taxonomy+of+Factors+Influencing+Perceived+Safety+in+Human--Robot+Interaction",
+      "queryUrl": "https://api.openalex.org/works?search=A+Taxonomy+of+Factors+Influencing+Perceived+Safety+in+Human%E2%80%93Robot+Interaction&per-page=25",
+      "matchedTitle": "A Taxonomy of Factors Influencing Perceived Safety in Human–Robot Interaction",
+      "openAlexId": "https://openalex.org/W4383674599",
+      "pdfUrl": "https://link.springer.com/content/pdf/10.1007/s12369-023-01027-8.pdf",
+      "pdfCandidates": [
+        "https://link.springer.com/content/pdf/10.1007/s12369-023-01027-8.pdf"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Handover Control for Human-Robot and Robot-Robot Collaboration": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Handover+Control+for+Human-Robot+and+Robot-Robot+Collaboration",
+      "queryUrl": "https://api.openalex.org/works?search=Handover+Control+for+Human-Robot+and+Robot-Robot+Collaboration&per-page=25",
+      "matchedTitle": "Handover Control for Human-Robot and Robot-Robot Collaboration",
+      "openAlexId": "https://openalex.org/W3159489391",
+      "pdfUrl": "https://www.frontiersin.org/articles/10.3389/frobt.2021.672995/pdf",
+      "pdfCandidates": [
+        "https://www.frontiersin.org/articles/10.3389/frobt.2021.672995/pdf"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Deep Reinforcement Learning in the Era of Foundation Models: A Survey": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Deep+Reinforcement+Learning+in+the+Era+of+Foundation+Models%3A+A+Survey",
+      "queryUrl": "https://api.openalex.org/works?search=Deep+Reinforcement+Learning+in+the+Era+of+Foundation+Models%3A+A+Survey&per-page=25",
+      "matchedTitle": "Deep Reinforcement Learning in the Era of Foundation Models: A Survey",
+      "openAlexId": "https://openalex.org/W7119495052",
+      "pdfUrl": "https://www.mdpi.com/2073-431X/15/1/40/pdf",
+      "pdfCandidates": [
+        "https://www.mdpi.com/2073-431X/15/1/40/pdf"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Robust Multi-Agent Reinforcement Learning via Minimax Deep Deterministic Policy Gradient": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robust+Multi-Agent+Reinforcement+Learning",
+      "queryUrl": "https://api.openalex.org/works?search=Robust+Multi-Agent+Reinforcement+Learning+via+Minimax+Deep+Deterministic+Policy+Gradient&per-page=25",
+      "matchedTitle": "Robust Multi-Agent Reinforcement Learning via Minimax Deep Deterministic Policy Gradient",
+      "openAlexId": "https://openalex.org/W2904455790",
+      "pdfUrl": "https://ojs.aaai.org/index.php/AAAI/article/download/4327/4205",
+      "pdfCandidates": [
+        "https://ojs.aaai.org/index.php/AAAI/article/download/4327/4205"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "MARNet: Backdoor Attacks Against Cooperative Multi-Agent Reinforcement Learning": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=MARNet",
+      "queryUrl": "https://api.openalex.org/works?search=MARNet%3A+Backdoor+Attacks+Against+Cooperative+Multi-Agent+Reinforcement+Learning&per-page=25"
+    },
+    "PATROL: Provable Defense against Adversarial Policy in Two-player Games": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=PATROL",
+      "queryUrl": "https://api.openalex.org/works?search=PATROL%3A+Provable+Defense+against+Adversarial+Policy+in+Two-player+Games&per-page=25"
+    },
+    "Trade-Off Between Robustness and Rewards Adversarial Training for Deep Reinforcement Learning Under Large Perturbations": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Trade-Off+Between+Robustness",
+      "queryUrl": "https://api.openalex.org/works?search=Trade-Off+Between+Robustness+and+Rewards+Adversarial+Training+for+Deep+Reinforcement+Learning+Under+Large+Perturbations&per-page=25"
+    },
+    "Revisiting Domain Randomization via Relaxed State-Adversarial Policy Optimization": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Revisiting+Domain+Randomization+Via+Relaxed+State-AdversarialPolicy+Optimization",
+      "queryUrl": "https://api.openalex.org/works?search=Revisiting+Domain+Randomization+via+Relaxed+State-Adversarial+Policy+Optimization&per-page=25"
+    },
+    "Certifiably Robust Policy Learning against Adversarial Multi-Agent Communication": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Certifiably+Robust+Policy+Learning+Against+Adversarial+Multi-Agent+Communication",
+      "queryUrl": "https://api.openalex.org/works?search=Certifiably+Robust+Policy+Learning+against+Adversarial+Multi-Agent+Communication&per-page=25"
+    },
+    "Monotonic Robust Policy Optimization with Model Discrepancy": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Monotonic+Robust+Policy+Optimization+with+Model+Discrepancy",
+      "queryUrl": "https://api.openalex.org/works?search=Monotonic+Robust+Policy+Optimization+with+Model+Discrepancy&per-page=25"
+    },
+    "Toward Evaluating Robustness of Deep Reinforcement Learning with Continuous Control": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Toward+Evaluating+Robustness+of+Deep+Reinforcement+Learning+with+Continuous+Control",
+      "queryUrl": "https://api.openalex.org/works?search=Toward+Evaluating+Robustness+of+Deep+Reinforcement+Learning+with+Continuous+Control&per-page=25"
+    },
+    "Adversarially Robust Policy Learning through Active Construction of Physically-Plausible Perturbations": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarially+Robust+Policy+Learning+through+Active+Construction+of+Physically-Plausible+Perturbations",
+      "queryUrl": "https://api.openalex.org/works?search=Adversarially+Robust+Policy+Learning+through+Active+Construction+of+Physically-Plausible+Perturbations&per-page=25"
+    },
+    "Cascading Failures in Agentic AI: ASI08 Security Guide": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Cascading+Failures+in+Agentic+AI%3A+ASI08+Security+Guide",
+      "queryUrl": "https://api.openalex.org/works?search=Cascading+Failures+in+Agentic+AI%3A+ASI08+Security+Guide&per-page=25"
+    },
+    "A white-box prompt injection attack on embodied AI agents driven by large language models": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=White-Box+Prompt+Injection+Attack+on+Embodied+AI+Agents",
+      "queryUrl": "https://api.openalex.org/works?search=A+white-box+prompt+injection+attack+on+embodied+AI+agents+driven+by+large+language+models&per-page=25"
+    },
+    "Securing (vision-based) autonomous systems: taxonomy, challenges, and defense mechanisms against adversarial threats": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Securing+Vision-Based+Autonomous+Systems%3A+A+Comprehensive+Taxonomy",
+      "queryUrl": "https://api.openalex.org/works?search=Securing+%28vision-based%29+autonomous+systems%3A+taxonomy%2C+challenges%2C+and+defense+mechanisms+against+adversarial+threats&per-page=25",
+      "matchedTitle": "Securing (vision-based) autonomous systems: taxonomy, challenges, and defense mechanisms against adversarial threats",
+      "openAlexId": "https://openalex.org/W4414948915",
+      "pdfUrl": "https://link.springer.com/content/pdf/10.1007/s10462-025-11373-w.pdf",
+      "pdfCandidates": [
+        "https://link.springer.com/content/pdf/10.1007/s10462-025-11373-w.pdf"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "The Adolescence of Technology": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=The+Adolescence+of+Technology",
+      "queryUrl": "https://api.openalex.org/works?search=The+Adolescence+of+Technology&per-page=25"
+    },
+    "Automated Discovery of Semantic Attacks in Multi-Robot Navigation Systems": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Automated+Discovery+of+Semantic+Attacks+in+Multi-Robot+Navigation",
+      "queryUrl": "https://api.openalex.org/works?search=Automated+Discovery+of+Semantic+Attacks+in+Multi-Robot+Navigation+Systems&per-page=25"
+    },
+    "Secure Robotics: Navigating Challenges at the Nexus of Safety, Trust, and Cybersecurity in Cyber-Physical Systems": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Secure+Robotics%3A+Nexus+of+Safety%2C+Trust%2C+and+Cybersecurity",
+      "queryUrl": "https://api.openalex.org/works?search=Secure+Robotics%3A+Navigating+Challenges+at+the+Nexus+of+Safety%2C+Trust%2C+and+Cybersecurity+in+Cyber-Physical+Systems&per-page=25"
+    },
+    "Toward Robust 3D Perception for Autonomous Vehicles: A Review of Adversarial Attacks and Countermeasures": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Toward+Robust+3D+Perception+for+Autonomous+Vehicles",
+      "queryUrl": "https://api.openalex.org/works?search=Toward+Robust+3D+Perception+for+Autonomous+Vehicles%3A+A+Review+of+Adversarial+Attacks+and+Countermeasures&per-page=25"
+    },
+    "Robotics cyber security: vulnerabilities, attacks, countermeasures, and recommendations": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robotics+Cyber+Security%3A+Vulnerabilities%2C+Attacks%2C+Countermeasures%2C+and+Recommendations",
+      "queryUrl": "https://api.openalex.org/works?search=Robotics+cyber+security%3A+vulnerabilities%2C+attacks%2C+countermeasures%2C+and+recommendations&per-page=25",
+      "matchedTitle": "Robotics cyber security: vulnerabilities, attacks, countermeasures, and recommendations",
+      "openAlexId": "https://openalex.org/W3138047676",
+      "pdfUrl": "https://link.springer.com/content/pdf/10.1007/s10207-021-00545-8.pdf",
+      "pdfCandidates": [
+        "https://link.springer.com/content/pdf/10.1007/s10207-021-00545-8.pdf"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Cascading Failures in Agentic AI": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Cascading+Failures+in+Agentic+AI",
+      "queryUrl": "https://api.openalex.org/works?search=Cascading+Failures+in+Agentic+AI&per-page=25"
+    },
+    "Memory in LLM-Based Multi-Agent Systems: Mechanisms, Challenges, and Collective Intelligence": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Memory+in+LLM-Based+Multi-Agent+Systems%3A+Mechanisms%2C+Challenges%2C+and+Collective+Intelligence",
+      "queryUrl": "https://api.openalex.org/works?search=Memory+in+LLM-Based+Multi-Agent+Systems%3A+Mechanisms%2C+Challenges%2C+and+Collective+Intelligence&per-page=25"
+    },
+    "Aligning AI Agents with Humans through Law as Information": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Aligning+AI+Agents+with+Humans+through+Law+as+Information",
+      "queryUrl": "https://api.openalex.org/works?search=Aligning+AI+Agents+with+Humans+through+Law+as+Information&per-page=25"
+    },
+    "A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Systematic+Survey+of+Self-Evolving+Agents%3A+From+Model-Centric+to+Environment-Driven+Co-Evolution",
+      "queryUrl": "https://api.openalex.org/works?search=A+Systematic+Survey+of+Self-Evolving+Agents%3A+From+Model-Centric+to+Environment-Driven+Co-Evolution&per-page=25"
+    },
+    "2025 AI Safety Index": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=2025+AI+Safety+Index",
+      "queryUrl": "https://api.openalex.org/works?search=2025+AI+Safety+Index&per-page=25"
+    },
+    "Agent Harness Engineering: A Survey": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Agent+Harness+Engineering%3A+A+Survey",
+      "queryUrl": "https://api.openalex.org/works?search=Agent+Harness+Engineering%3A+A+Survey&per-page=25"
+    },
+    "OWASP": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=OWASP",
+      "queryUrl": "https://api.openalex.org/works?search=OWASP&per-page=25"
+    },
+    "RoboCodeX": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=RoboCodeX",
+      "queryUrl": "https://api.openalex.org/works?search=RoboCodeX&per-page=25"
+    },
+    "Watch Your Speed: Injecting Malicious Voice Commands via Time-Scale Modification": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Watch+your+speed%3A+Injecting+malicious+voice+commands+via+time-scale+modification",
+      "queryUrl": "https://api.openalex.org/works?search=Watch+Your+Speed%3A+Injecting+Malicious+Voice+Commands+via+Time-Scale+Modification&per-page=25"
+    },
+    "AntiFake: Using Adversarial Audio to Prevent Unauthorized Speech Synthesis": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Antifake%3A+Using+adversarial+audio+to+prevent+unauthorized+speech+synthesis",
+      "queryUrl": "https://api.openalex.org/works?search=AntiFake%3A+Using+Adversarial+Audio+to+Prevent+Unauthorized+Speech+Synthesis&per-page=25",
+      "matchedTitle": "AntiFake: Using Adversarial Audio to Prevent Unauthorized Speech Synthesis",
+      "openAlexId": "https://openalex.org/W4388856757",
+      "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3576915.3623209",
+      "pdfCandidates": [
+        "https://dl.acm.org/doi/pdf/10.1145/3576915.3623209"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "TrojanModel: A Practical Trojan Attack against Automatic Speech Recognition Systems": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Trojanmodel%3A+A+practical+trojan+attack+against+automatic+speech+recognition+systems",
+      "queryUrl": "https://api.openalex.org/works?search=TrojanModel%3A+A+Practical+Trojan+Attack+against+Automatic+Speech+Recognition+Systems&per-page=25"
+    },
+    "SPECPATCH: Human-In-The-Loop Adversarial Audio Spectrogram Patch Attack on Speech Recognition": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Specpatch%3A+Human-in-the-loop+adversarial+audio+spectrogram+patch+attack+on+speech+recognition",
+      "queryUrl": "https://api.openalex.org/works?search=SPECPATCH%3A+Human-In-The-Loop+Adversarial+Audio+Spectrogram+Patch+Attack+on+Speech+Recognition&per-page=25"
+    },
+    "Devil's Whisper: A General Approach for Physical Adversarial Attacks against Commercial Black-box Speech Recognition Devices": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Devil%27s+Whisper%3A+A+General+Approach+for+Physical+Adversarial+Attacks+against+Commercial+Black-box+Speech+Recognition+Devices",
+      "queryUrl": "https://api.openalex.org/works?search=Devil%27s+Whisper%3A+A+General+Approach+for+Physical+Adversarial+Attacks+against+Commercial+Black-box+Speech+Recognition+Devices&per-page=25"
+    },
+    "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Metamorph%3A+Injecting+inaudible+commands+into+over-the-air+voice+controlled+systems",
+      "queryUrl": "https://api.openalex.org/works?search=Metamorph%3A+Injecting+Inaudible+Commands+into+Over-the-air+Voice+Controlled+Systems&per-page=25",
+      "matchedTitle": "Metamorph: Injecting Inaudible Commands into Over-the-air Voice Controlled Systems",
+      "openAlexId": "https://openalex.org/W3006816054",
+      "pdfUrl": "https://doi.org/10.14722/ndss.2020.23055",
+      "pdfCandidates": [
+        "https://doi.org/10.14722/ndss.2020.23055"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "AdvPulse: Universal, Synchronization-free, and Targeted Audio Adversarial Attacks via Subsecond Perturbations": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Advpulse%3A+Universal%2C+synchronization-free%2C+and+targeted+audio+adversarial+attacks+via+subsecond+perturbations",
+      "queryUrl": "https://api.openalex.org/works?search=AdvPulse%3A+Universal%2C+Synchronization-free%2C+and+Targeted+Audio+Adversarial+Attacks+via+Subsecond+Perturbations&per-page=25"
+    },
+    "Practical Adversarial Attacks Against Speaker Recognition Systems": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Practical+adversarial+attacks+against+speaker+recognition+systems",
+      "queryUrl": "https://api.openalex.org/works?search=Practical+Adversarial+Attacks+Against+Speaker+Recognition+Systems&per-page=25",
+      "matchedTitle": "Practical Adversarial Attacks Against Speaker Recognition Systems",
+      "openAlexId": "https://openalex.org/W3007679772",
+      "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3376897.3377856",
+      "pdfCandidates": [
+        "https://dl.acm.org/doi/pdf/10.1145/3376897.3377856"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Who Activated My Voice Assistant? A Stealthy Attack on Android Phones Without Users' Awareness": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Who+activated+my+voice+assistant%3F+A+stealthy+attack+on+android+phones+without+users%E2%80%99+awareness",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Hidden Voice Commands": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Hidden+voice+commands",
+      "queryUrl": "https://api.openalex.org/works?search=Hidden+Voice+Commands&per-page=25"
+    },
+    "Cocaine Noodles: Exploiting the Gap between Human and Machine Speech Recognition": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Cocaine+noodles%3A+exploiting+the+gap+between+human+and+machine+speech+recognition",
+      "queryUrl": "https://api.openalex.org/works?search=Cocaine+Noodles%3A+Exploiting+the+Gap+between+Human+and+Machine+Speech+Recognition&per-page=25"
+    },
+    "On Evaluating the Robustness of Large Vision-Language Models via Untargeted Modality Alignment Breaking Adversarial Attack": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=On+Evaluating+the+Robustness+of+Large+Vision-Language+Models+via+Untargeted+Modality+Alignment+Breaking+Adversarial+Attack",
+      "queryUrl": "https://api.openalex.org/works?search=On+Evaluating+the+Robustness+of+Large+Vision-Language+Models+via+Untargeted+Modality+Alignment+Breaking+Adversarial+Attack&per-page=25"
+    },
+    "Malicious Attacks against Multi-Sensor Fusion in Autonomous Driving": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Malicious+Attacks+against+Multi-Sensor+Fusion+in+Autonomous+Driving",
+      "queryUrl": "https://api.openalex.org/works?search=Malicious+Attacks+against+Multi-Sensor+Fusion+in+Autonomous+Driving&per-page=25",
+      "matchedTitle": "Malicious Attacks against Multi-Sensor Fusion in Autonomous Driving",
+      "openAlexId": "https://openalex.org/W4399128192",
+      "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3636534.3649372",
+      "pdfCandidates": [
+        "https://dl.acm.org/doi/pdf/10.1145/3636534.3649372"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "A robust multi-sensor fusion model against adversarial patch attack": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+robust+multi-sensor+fusion+model+against+adversarial+patch+attack",
+      "queryUrl": "https://api.openalex.org/works?search=A+robust+multi-sensor+fusion+model+against+adversarial+patch+attack&per-page=25"
+    },
+    "MMCert": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=MMCert",
+      "queryUrl": "https://api.openalex.org/works?search=MMCert&per-page=25"
+    },
+    "Attacking mmWave Imaging With Neural Meta-Material Rendering": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Attacking+mmWave+Imaging+with+Neural+Meta-Material+Rendering",
+      "queryUrl": "https://api.openalex.org/works?search=Attacking+mmWave+Imaging+With+Neural+Meta-Material+Rendering&per-page=25"
+    },
+    "A Spoofing Detection and Direction-Finding Approach for Global Navigation Satellite System Signals Using Off-the-Shelf Anti-Jamming Antennas": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Spoofing+Detection+and+Direction-Finding+Approach+for+Global+Navigation+Satellite+System+Signals+Using+Off-the-Shelf+Anti-Jamming+Antennas",
+      "queryUrl": "https://api.openalex.org/works?search=A+Spoofing+Detection+and+Direction-Finding+Approach+for+Global+Navigation+Satellite+System+Signals+Using+Off-the-Shelf+Anti-Jamming+Antennas&per-page=25",
+      "matchedTitle": "A Spoofing Detection and Direction-Finding Approach for Global Navigation Satellite System Signals Using Off-the-Shelf Anti-Jamming Antennas",
+      "openAlexId": "https://openalex.org/W4408028341",
+      "pdfUrl": "https://www.mdpi.com/2072-4292/17/5/864/pdf?version=1740748287",
+      "pdfCandidates": [
+        "https://www.mdpi.com/2072-4292/17/5/864/pdf?version=1740748287"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "SecureTrack: Protecting Vehicular Sensors From Noninvasive EMI Attacks": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=SecureTrack%3A+Protecting+Vehicular+Sensors+from+Non-Invasive+EMI+Attacks",
+      "queryUrl": "https://api.openalex.org/works?search=SecureTrack%3A+Protecting+Vehicular+Sensors+From+Noninvasive+EMI+Attacks&per-page=25"
+    },
+    "Analysis and Validation of Distributed GNSS Spoofing Threat": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Analysis+and+Validation+of+Distributed+GNSS+Spoofing+Threat",
+      "queryUrl": "https://api.openalex.org/works?search=Analysis+and+Validation+of+Distributed+GNSS+Spoofing+Threat&per-page=25",
+      "matchedTitle": "Analysis and Validation of Distributed GNSS Spoofing Threat",
+      "openAlexId": "https://openalex.org/W4410173946",
+      "pdfUrl": "https://www.mdpi.com/2673-4591/88/1/42/pdf?version=1746538972",
+      "pdfCandidates": [
+        "https://www.mdpi.com/2673-4591/88/1/42/pdf?version=1746538972"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "A Deep Learning Based Induced GNSS Spoof Detection Framework": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+deep+learning+based+induced+GNSS+spoof+detection+framework",
+      "queryUrl": "https://api.openalex.org/works?search=A+Deep+Learning+Based+Induced+GNSS+Spoof+Detection+Framework&per-page=25",
+      "matchedTitle": "A Deep Learning Based Induced GNSS Spoof Detection Framework",
+      "openAlexId": "https://openalex.org/W4394699002",
+      "pdfUrl": "https://ieeexplore.ieee.org/ielx7/9882533/10070384/10495074.pdf",
+      "pdfCandidates": [
+        "https://ieeexplore.ieee.org/ielx7/9882533/10070384/10495074.pdf"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Acoustic Attack Mitigation Approach for MEMS Inertial Sensors Using Change Point Detection on MhIMU Framework": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Acoustic+Attack+Mitigation+Approach+for+MEMS+Inertial+Sensors+Using+Change+Point+Detection+on+MhIMU+Framework",
+      "queryUrl": "https://api.openalex.org/works?search=Acoustic+Attack+Mitigation+Approach+for+MEMS+Inertial+Sensors+Using+Change+Point+Detection+on+MhIMU+Framework&per-page=25"
+    },
+    "MetaWave: Attacking mmWave Sensing with Meta-material-enhanced Tags": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Metawave%3A+Attacking+mmwave+sensing+with+meta-material-enhanced+tags",
+      "queryUrl": "https://api.openalex.org/works?search=MetaWave%3A+Attacking+mmWave+Sensing+with+Meta-material-enhanced+Tags&per-page=25",
+      "matchedTitle": "MetaWave: Attacking mmWave Sensing with Meta-material-enhanced Tags",
+      "openAlexId": "https://openalex.org/W4324007222",
+      "pdfUrl": "https://doi.org/10.14722/ndss.2023.24348",
+      "pdfCandidates": [
+        "https://doi.org/10.14722/ndss.2023.24348"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Exploring Practical Acoustic Transduction Attacks on Inertial Sensors in MDOF Systems": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Exploring+practical+acoustic+transduction+attacks+on+inertial+sensors+in+MDOF+systems",
+      "queryUrl": "https://api.openalex.org/works?search=Exploring+Practical+Acoustic+Transduction+Attacks+on+Inertial+Sensors+in+MDOF+Systems&per-page=25"
+    },
+    "Paralyzing Drones via EMI Signal Injection on Sensory Communication Channels": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Paralyzing+Drones+via+EMI+Signal+Injection+on+Sensory+Communication+Channels",
+      "queryUrl": "https://api.openalex.org/works?search=Paralyzing+Drones+via+EMI+Signal+Injection+on+Sensory+Communication+Channels&per-page=25",
+      "matchedTitle": "Paralyzing Drones via EMI Signal Injection on Sensory Communication Channels",
+      "openAlexId": "https://openalex.org/W4324007071",
+      "pdfUrl": "https://doi.org/10.14722/ndss.2023.24616",
+      "pdfCandidates": [
+        "https://doi.org/10.14722/ndss.2023.24616"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Un-Rocking Drones: Foundations of Acoustic Injection Attacks and Recovery Thereof": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Un-Rocking+Drones%3A+Foundations+of+Acoustic+Injection+Attacks+and+Recovery+Thereof",
+      "queryUrl": "https://api.openalex.org/works?search=Un-Rocking+Drones%3A+Foundations+of+Acoustic+Injection+Attacks+and+Recovery+Thereof&per-page=25",
+      "matchedTitle": "Un-Rocking Drones: Foundations of Acoustic Injection Attacks and Recovery Thereof",
+      "openAlexId": "https://openalex.org/W4324007084",
+      "pdfUrl": "https://doi.org/10.14722/ndss.2023.24112",
+      "pdfCandidates": [
+        "https://doi.org/10.14722/ndss.2023.24112"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "mmSpoof: Resilient Spoofing of Automotive Millimeter-wave Radars using Reflect Array": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=mmspoof%3A+Resilient+spoofing+of+automotive+millimeter-wave+radars+using+reflect+array",
+      "queryUrl": "https://api.openalex.org/works?search=mmSpoof%3A+Resilient+Spoofing+of+Automotive+Millimeter-wave+Radars+using+Reflect+Array&per-page=25"
+    },
+    "Anti-Spoofing Technique Based on Vector Tracking Loop": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Anti-spoofing+technique+based+on+vector+tracking+loop",
+      "queryUrl": "https://api.openalex.org/works?search=Anti-Spoofing+Technique+Based+on+Vector+Tracking+Loop&per-page=25"
+    },
+    "TileMask: A Passive-Reflection-based Attack against mmWave Radar Object Detection in Autonomous Driving": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=TileMask%3A+A+passive-reflection-based+attack+against+mmWave+radar+object+detection+in+autonomous+driving",
+      "queryUrl": "https://api.openalex.org/works?search=TileMask%3A+A+Passive-Reflection-based+Attack+against+mmWave+Radar+Object+Detection+in+Autonomous+Driving&per-page=25",
+      "matchedTitle": "TileMask: A Passive-Reflection-based Attack against mmWave Radar Object Detection in Autonomous Driving",
+      "openAlexId": "https://openalex.org/W4388858786",
+      "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3576915.3616661",
+      "pdfCandidates": [
+        "https://dl.acm.org/doi/pdf/10.1145/3576915.3616661"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "ESP Spoofing: Covert Acoustic Attack on MEMS Gyroscopes in Vehicles": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=ESP+spoofing%3A+Covert+acoustic+attack+on+MEMS+gyroscopes+in+vehicles",
+      "queryUrl": "https://api.openalex.org/works?search=ESP+Spoofing%3A+Covert+Acoustic+Attack+on+MEMS+Gyroscopes+in+Vehicles&per-page=25"
+    },
+    "Combating Single-Frequency Jamming through a Multi-Frequency, Multi-Constellation Software Receiver: A Case Study for Maritime Navigation in the Gulf of Finland": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Combating+single-frequency+jamming+through+a+multi-frequency%2C+multi-constellation+software+receiver%3A+a+case+study+for+maritime+navigation+in+the+Gulf+of+Finland",
+      "queryUrl": "https://api.openalex.org/works?search=Combating+Single-Frequency+Jamming+through+a+Multi-Frequency%2C+Multi-Constellation+Software+Receiver%3A+A+Case+Study+for+Maritime+Navigation+in+the+Gulf+of+Finland&per-page=25",
+      "matchedTitle": "Combating Single-Frequency Jamming through a Multi-Frequency, Multi-Constellation Software Receiver: A Case Study for Maritime Navigation in the Gulf of Finland",
+      "openAlexId": "https://openalex.org/W4220851239",
+      "pdfUrl": "https://www.mdpi.com/1424-8220/22/6/2294/pdf?version=1647424610",
+      "pdfCandidates": [
+        "https://www.mdpi.com/1424-8220/22/6/2294/pdf?version=1647424610"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "DeepPOSE: Detecting GPS spoofing attack via deep recurrent neural network": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=DeepPOSE%3A+Detecting+GPS+spoofing+attack+via+deep+recurrent+neural+network",
+      "queryUrl": "https://api.openalex.org/works?search=DeepPOSE%3A+Detecting+GPS+spoofing+attack+via+deep+recurrent+neural+network&per-page=25",
+      "matchedTitle": "DeepPOSE: Detecting GPS spoofing attack via deep recurrent neural network",
+      "openAlexId": "https://openalex.org/W3201498213",
+      "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S2352864821000663/pdf",
+      "pdfCandidates": [
+        "https://www.sciencedirect.com/science/article/pii/S2352864821000663/pdf"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "A Traceability Localization Method of Acoustic Attack Source for MEMS Gyroscope": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+traceability+localization+method+of+acoustic+attack+source+for+mems+gyroscope",
+      "queryUrl": "https://api.openalex.org/works?search=A+Traceability+Localization+Method+of+Acoustic+Attack+Source+for+MEMS+Gyroscope&per-page=25"
+    },
+    "A Frequency-Domain Spoofing Attack on FMCW Radars and Its Mitigation Technique Based on a Hybrid-Chirp Waveform": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+frequency-domain+spoofing+attack+on+FMCW+radars+and+its+mitigation+technique+based+on+a+hybrid-chirp+waveform",
+      "queryUrl": "https://api.openalex.org/works?search=A+Frequency-Domain+Spoofing+Attack+on+FMCW+Radars+and+Its+Mitigation+Technique+Based+on+a+Hybrid-Chirp+Waveform&per-page=25"
+    },
+    "GNSS Jamming Classification via CNN, Transfer Learning & the Novel Concatenation of Signal Representations": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=GNSS+jamming+classification+via+CNN%2C+transfer+learning+%26+the+novel+concatenation+of+signal+representations",
+      "queryUrl": "https://api.openalex.org/works?search=GNSS+Jamming+Classification+via+CNN%2C+Transfer+Learning+%26+the+Novel+Concatenation+of+Signal+Representations&per-page=25"
+    },
+    "Machine learning-based approach to GPS antijamming": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Machine+learning-based+approach+to+GPS+antijamming",
+      "queryUrl": "https://api.openalex.org/works?search=Machine+learning-based+approach+to+GPS+antijamming&per-page=25"
+    },
+    "Spoofing Attack on Ultrasonic Distance Sensors Using a Continuous Signal": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Spoofing+attack+on+ultrasonic+distance+sensors+using+a+continuous+signal",
+      "queryUrl": "https://api.openalex.org/works?search=Spoofing+Attack+on+Ultrasonic+Distance+Sensors+Using+a+Continuous+Signal&per-page=25",
+      "matchedTitle": "Spoofing Attack on Ultrasonic Distance Sensors Using a Continuous Signal",
+      "openAlexId": "https://openalex.org/W3096809669",
+      "pdfUrl": "https://www.mdpi.com/1424-8220/20/21/6157/pdf?version=1604305216",
+      "pdfCandidates": [
+        "https://www.mdpi.com/1424-8220/20/21/6157/pdf?version=1604305216"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "DeepSIM: GPS Spoofing Detection on UAVs using Satellite Imagery Matching": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Deepsim%3A+Gps+spoofing+detection+on+uavs+using+satellite+imagery+matching",
+      "queryUrl": "https://api.openalex.org/works?search=DeepSIM%3A+GPS+Spoofing+Detection+on+UAVs+using+Satellite+Imagery+Matching&per-page=25"
+    },
+    "VANET-Assisted Interference Mitigation for Millimeter-Wave Automotive Radar Sensors": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=VANET-assisted+interference+mitigation+for+millimeter-wave+automotive+radar+sensors",
+      "queryUrl": "https://api.openalex.org/works?search=VANET-Assisted+Interference+Mitigation+for+Millimeter-Wave+Automotive+Radar+Sensors&per-page=25"
+    },
+    "A Dual Antenna GNSS Spoofing Detector Based on the Dispersion of Double Difference Measurements": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+dual+antenna+GNSS+spoofing+detector+based+on+the+dispersion+of+double+difference+measurements",
+      "queryUrl": "https://api.openalex.org/works?search=A+Dual+Antenna+GNSS+Spoofing+Detector+Based+on+the+Dispersion+of+Double+Difference+Measurements&per-page=25"
+    },
+    "Development of a GPS spoofing apparatus to attack a DJI Matrice 100 Quadcopter": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Development+of+a+GPS+spoofing+apparatus+to+attack+a+DJI+Matrice+100+Quadcopter",
+      "queryUrl": "https://api.openalex.org/works?search=Development+of+a+GPS+spoofing+apparatus+to+attack+a+DJI+Matrice+100+Quadcopter&per-page=25",
+      "matchedTitle": "Development of a GPS spoofing apparatus to attack a DJI Matrice 100 Quadcopter",
+      "openAlexId": "https://openalex.org/W2810910757",
+      "pdfUrl": "https://jgps.springeropen.com/track/pdf/10.1186/s41445-018-0018-3",
+      "pdfCandidates": [
+        "https://jgps.springeropen.com/track/pdf/10.1186/s41445-018-0018-3"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Crowd-GPS-Sec%3A+Leveraging+crowdsourcing+to+detect+and+localize+GPS+spoofing+attacks",
+      "queryUrl": "https://api.openalex.org/works?search=Crowd-GPS-Sec%3A+Leveraging+Crowdsourcing+to+Detect+and+Localize+GPS+Spoofing+Attacks&per-page=25",
+      "matchedTitle": "Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks",
+      "openAlexId": "https://openalex.org/W2795155796",
+      "pdfUrl": "https://ieeexplore.ieee.org/ielx7/8418581/8418583/08418651.pdf",
+      "pdfCandidates": [
+        "https://ieeexplore.ieee.org/ielx7/8418581/8418583/08418651.pdf"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Autonomous vehicle ultrasonic sensor vulnerability and impact assessment": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Autonomous+vehicle+ultrasonic+sensor+vulnerability+and+impact+assessment",
+      "queryUrl": "https://api.openalex.org/works?search=Autonomous+vehicle+ultrasonic+sensor+vulnerability+and+impact+assessment&per-page=25"
+    },
+    "Analyzing and Enhancing the Security of Ultrasonic Sensors for Autonomous Vehicles": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Analyzing+and+enhancing+the+security+of+ultrasonic+sensors+for+autonomous+vehicles",
+      "queryUrl": "https://api.openalex.org/works?search=Analyzing+and+Enhancing+the+Security+of+Ultrasonic+Sensors+for+Autonomous+Vehicles&per-page=25"
+    },
+    "Chips-Message Robust Authentication (Chimera) for GPS Civilian Signals": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Chips-message+robust+authentication+%28Chimera%29+for+GPS+civilian+signals",
+      "queryUrl": "https://api.openalex.org/works?search=Chips-Message+Robust+Authentication+%28Chimera%29+for+GPS+Civilian+Signals&per-page=25"
+    },
+    "WALNUT: Waging Doubt on the Integrity of MEMS Accelerometers with Acoustic Injection Attacks": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=WALNUT%3A+Waging+doubt+on+the+integrity+of+MEMS+accelerometers+with+acoustic+injection+attacks",
+      "queryUrl": "https://api.openalex.org/works?search=WALNUT%3A+Waging+Doubt+on+the+Integrity+of+MEMS+Accelerometers+with+Acoustic+Injection+Attacks&per-page=25"
+    },
+    "GNSS Spoofing Detection and Mitigation Based on Maximum Likelihood Estimation": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=GNSS+spoofing+detection+and+mitigation+based+on+maximum+likelihood+estimation",
+      "queryUrl": "https://api.openalex.org/works?search=GNSS+Spoofing+Detection+and+Mitigation+Based+on+Maximum+Likelihood+Estimation&per-page=25",
+      "matchedTitle": "GNSS Spoofing Detection and Mitigation Based on Maximum Likelihood Estimation",
+      "openAlexId": "https://openalex.org/W2732835331",
+      "pdfUrl": "https://www.mdpi.com/1424-8220/17/7/1532/pdf?version=1498811207",
+      "pdfCandidates": [
+        "https://www.mdpi.com/1424-8220/17/7/1532/pdf?version=1498811207"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "A Navigation Message Authentication Proposal for the Galileo Open Service": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+navigation+message+authentication+proposal+for+the+Galileo+open+service",
+      "queryUrl": "https://api.openalex.org/works?search=A+Navigation+Message+Authentication+Proposal+for+the+Galileo+Open+Service&per-page=25"
+    },
+    "Can You Trust Autonomous Vehicles : Contactless Attacks against Sensors of Self-driving Vehicle": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Can+you+trust+autonomous+vehicles%3A+Contactless+attacks+against+sensors+of+self-driving+vehicle",
+      "queryUrl": "https://api.openalex.org/works?search=Can+You+Trust+Autonomous+Vehicles+%3A+Contactless+Attacks+against+Sensors+of+Self-driving+Vehicle&per-page=25"
+    },
+    "Rocking Drones with Intentional Sound Noise on Gyroscopic Sensors": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Rocking+drones+with+intentional+sound+noise+on+gyroscopic+sensors",
+      "queryUrl": "https://api.openalex.org/works?search=Rocking+Drones+with+Intentional+Sound+Noise+on+Gyroscopic+Sensors&per-page=25"
+    },
+    "Anti-spoofing and open GNSS signal authentication with signal authentication sequences": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Anti-spoofing+and+open+GNSS+signal+authentication+with+signal+authentication+sequences",
+      "queryUrl": "https://api.openalex.org/works?search=Anti-spoofing+and+open+GNSS+signal+authentication+with+signal+authentication+sequences&per-page=25"
+    },
+    "Black-Box Explainability-Guided Adversarial Attack for 3D Object Tracking": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Black-box+explainability-guided+adversarial+attack+for+3D+object+tracking",
+      "queryUrl": "https://api.openalex.org/works?search=Black-Box+Explainability-Guided+Adversarial+Attack+for+3D+Object+Tracking&per-page=25"
+    },
+    "Invisible but Detected: Physical Adversarial Shadow Attack and Defense on LiDAR Object Detection": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Invisible+but+Detected%3A+Physical+Adversarial+Shadow+Attack+and+Defense+on+LiDAR-based+3D+Object+Detection",
+      "queryUrl": "https://api.openalex.org/works?search=Invisible+but+Detected%3A+Physical+Adversarial+Shadow+Attack+and+Defense+on+LiDAR+Object+Detection&per-page=25"
+    },
+    "Enhancing the Robustness of LiDAR-based Object Detection under Disappearing Attacks": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Enhancing+the+Robustness+of+LiDAR-based+Object+Detection+under+Disappearing+Attacks",
+      "queryUrl": "https://api.openalex.org/works?search=Enhancing+the+Robustness+of+LiDAR-based+Object+Detection+under+Disappearing+Attacks&per-page=25"
+    },
+    "An Imperceptible Adversarial Attack Against 3-D Object Detectors in Autonomous Driving": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://doi.org/10.1109/JIOT.2025.3547966",
+      "queryUrl": "https://api.openalex.org/works?search=An+Imperceptible+Adversarial+Attack+Against+3-D+Object+Detectors+in+Autonomous+Driving&per-page=25"
+    },
+    "Towards Real-Time Defense against Object-Based LiDAR Attacks in Autonomous Driving": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Towards+Real-Time+Defense+against+Object-Based+LiDAR+Attacks+in+Autonomous+Driving",
+      "queryUrl": "https://api.openalex.org/works?search=Towards+Real-Time+Defense+against+Object-Based+LiDAR+Attacks+in+Autonomous+Driving&per-page=25"
+    },
+    "Diffusion Models-Based Purification for Common Corruptions on Robust 3D Object Detection": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Diffusion+models-based+purification+for+common+corruptions+on+robust+3D+object+detection",
+      "queryUrl": "https://api.openalex.org/works?search=Diffusion+Models-Based+Purification+for+Common+Corruptions+on+Robust+3D+Object+Detection&per-page=25",
+      "matchedTitle": "Diffusion Models-Based Purification for Common Corruptions on Robust 3D Object Detection",
+      "openAlexId": "https://openalex.org/W4401809833",
+      "pdfUrl": "https://www.mdpi.com/1424-8220/24/16/5440/pdf?version=1724423908",
+      "pdfCandidates": [
+        "https://www.mdpi.com/1424-8220/24/16/5440/pdf?version=1724423908"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "Adversary is on the Road: Attacks on Visual SLAM with Robust Perturbations on Point Clouds": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversary+is+on+the+Road%3A+Attacks+on+Visual+SLAM+with+Robust+Perturbations+on+Point+Clouds",
+      "queryUrl": "https://api.openalex.org/works?search=Adversary+is+on+the+Road%3A+Attacks+on+Visual+SLAM+with+Robust+Perturbations+on+Point+Clouds&per-page=25"
+    },
+    "Random Spoofing Attack against LiDAR-Based Scan Matching SLAM": {
+      "status": "resolved",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Random+Spoofing+Attack+against+LiDAR-Based+Scan+Matching+SLAM",
+      "queryUrl": "https://api.openalex.org/works?search=Random+Spoofing+Attack+against+LiDAR-Based+Scan+Matching+SLAM&per-page=25",
+      "matchedTitle": "Random Spoofing Attack against LiDAR-Based Scan Matching SLAM",
+      "openAlexId": "https://openalex.org/W4407272593",
+      "pdfUrl": "https://doi.org/10.14722/vehiclesec.2024.23014",
+      "pdfCandidates": [
+        "https://doi.org/10.14722/vehiclesec.2024.23014"
+      ],
+      "recoveredFrom": "tmp/pdfs/openalex-exact/download-audit.json"
+    },
+    "SpotAttack: Covering Spots on Surface to Attack LiDAR-Based Autonomous Driving Systems": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=SpotAttack%3A+Covering+Spots+on+Surface+to+Attack+LiDAR+Based+Autonomous+Driving+Systems",
+      "queryUrl": "https://api.openalex.org/works?search=SpotAttack%3A+Covering+Spots+on+Surface+to+Attack+LiDAR-Based+Autonomous+Driving+Systems&per-page=25"
+    },
+    "Mobile Cooperative Robot Safe Interaction Method Based on Embodied Perception": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Mobile+Cooperative+Robot+Safe+Interaction+Method+Based+on+Embodied+Perception",
+      "queryUrl": "https://api.openalex.org/works?search=Mobile+Cooperative+Robot+Safe+Interaction+Method+Based+on+Embodied+Perception&per-page=25"
+    },
+    "AE-Morpher: Improve Physical Robustness of Adversarial Objects against LiDAR-based Detectors via Object Reconstruction": {
+      "status": "no_exact_public_pdf",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=AE-Morpher",
+      "queryUrl": "https://api.openalex.org/works?search=AE-Morpher%3A+Improve+Physical+Robustness+of+Adversarial+Objects+against+LiDAR-based+Detectors+via+Object+Reconstruction&per-page=25"
+    },
+    "BadLiDet: A Simple Backdoor Attack against LiDAR Object Detection in Autonomous Driving": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Badlidet%3A+A+simple+backdoor+attack+against+lidar+object+detection+in+autonomous+driving",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Towards Dynamic Backdoor Attacks against LiDAR Semantic Segmentation in Autonomous Driving": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Towards+dynamic+backdoor+attacks+against+lidar+semantic+segmentation+in+autonomous+driving",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "SlowLiDAR: Increasing the Latency of LiDAR-Based Detection Using Adversarial Examples": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Slowlidar%3A+Increasing+the+latency+of+lidar-based+detection+using+adversarial+examples",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Transferable Adversarial Attack on 3D Object Tracking in Point Cloud": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Transferable+adversarial+attack+on+3D+object+tracking+in+point+cloud",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Scene Augmentation Methods for Interactive Embodied AI Tasks": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Scene+augmentation+methods+for+interactive+embodied+AI+tasks",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Perceptual Aliasing++: Adversarial Attack for Visual SLAM Front-End and Back-End": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Perceptual+aliasing%2B%2B%3A+Adversarial+attack+for+visual+slam+front-end+and+back-end",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Adversarial Scan Attack against Scan Matching Algorithm for Pose Estimation in LiDAR-Based SLAM": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarial+scan+attack+against+scan+matching+algorithm+for+pose+estimation+in+lidar-based+slam",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Towards Backdoor Attacks against LiDAR Object Detection in Autonomous Driving": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Towards+backdoor+attacks+against+lidar+object+detection+in+autonomous+driving",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Universal Adversarial Attack Against 3D Object Tracking": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Universal+adversarial+attack+against+3D+object+tracking",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Adversarially Robust 3D Point Cloud Recognition Using Self-Supervisions": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarially+robust+3d+point+cloud+recognition+using+self-supervisions",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "I Can See the Light: Attacks on Autonomous Vehicles Using Invisible Lights": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=I+can+see+the+light%3A+Attacks+on+autonomous+vehicles+using+invisible+lights",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Securing the Lane: Defences Against Patch Attacks on Autonomous Vehicle's Lane Detection": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Securing+the+Lane%3A+Defences+Against+Patch+Attacks+on+Autonomous+Vehicle%27s+Lane+Detection",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Detecting Adversarial Attacks Based on Tracking Differences in Frequency Bands": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Detecting+Adversarial+Attacks+Based+on+Tracking+Differences+in+Frequency+Bands",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Multi-view Feature Discrepancy Attack for Single Object Tracking": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Multi-view+Feature+Discrepancy+Attack+for+Single+Object+Tracking",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "PB-UAP: Hybride Universal Adversarial Attack for Image Segmentation": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=PB-UAP%3A+Hybride+Universal+Adversarial+Attack+for+Image+Segmentation",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "RP-PGD: Boosting Segmentation Robustness with a Region-and-Prototype Based Adversarial Attack": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=RP-PGD%3A+Boosting+Segmentation+Robustness+with+a+Region-and-Prototype+Based+Adversarial+Attack",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "A Robust UAV Tracking Solution in the Adversarial Environment": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Robust+UAV+Tracking+Solution+in+the+Adversarial+Environment",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Cascaded Adversarial Attack: Simultaneously Fooling Rain Removal and Semantic Segmentation Networks": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Cascaded+adversarial+attack%3A+Simultaneously+fooling+rain+removal+and+semantic+segmentation+networks",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "PSO-Based Black-Box Lane Detection Adversarial Attack": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=PSO-Based+Black-Box+Lane+Detection+Adversarial+Attack",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Detection-Friendly Dehazing: Object Detection in Real-World Hazy Scenes": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Detection-friendly+dehazing%3A+Object+detection+in+real-world+hazy+scenes",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "WIP: Towards the Practicality of the Adversarial Attack on Object Tracking in Autonomous Driving": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Wip%3A+Towards+the+practicality+of+the+adversarial+attack+on+object+tracking+in+autonomous+driving",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "You Are Catching My Attention: Are Vision Transformers Bad Learners under Backdoor Attacks?": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=You+Are+Catching+My+Attention%3A+Are+Vision+Transformers+Bad+Learners+under+Backdoor+Attacks%3F",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "DSNet: Joint Semantic Learning for Object Detection in Inclement Weather Conditions": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=DSNet%3A+Joint+semantic+learning+for+object+detection+in+inclement+weather+conditions",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Fooling Detection Alone is Not Enough: Adversarial Attack against Multiple Object Tracking": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Fooling+detection+alone+is+not+enough%3A+Adversarial+attack+against+multiple+object+tracking",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Phantom of the ADAS: Securing Advanced Driver-Assistance Systems from Split-Second Phantom Attacks": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Phantom+of+the+adas%3A+Securing+advanced+driver-assistance+systems+from+split-second+phantom+attacks",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Robust Physical-World Attacks on Deep Learning Visual Classification": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robust+physical-world+attacks+on+deep+learning+visual+classification",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Robust Camera Lidar Sensor Fusion Via Deep Gated Information Fusion Network": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robust+camera+lidar+sensor+fusion+via+deep+gated+information+fusion+network",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "CAMOU: Learning Physical Vehicle Camouflages to Adversarially Attack Detectors in the Wild": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=CAMOU%3A+Learning+physical+vehicle+camouflages+to+adversarially+attack+detectors+in+the+wild",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "AOD-Net: All-in-One Dehazing Network": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Aod-net%3A+All-in-one+dehazing+network",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "RoboRebound: Multi-Robot System Defense with Bounded-Time Interaction": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=RoboRebound",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "A Systematic Literature Review on Multi-Robot Task Allocation": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Systematic+Literature+Review+on+Multi-Robot+Task+Allocation",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Robot swarms neutralize harmful Byzantine robots using a blockchain-based token economy": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robot+swarms+neutralize+harmful+Byzantine+robots+using+a+blockchain-based+token+economy",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Resilient Distributed Diffusion for Multi-Robot Systems Using Centerpoint": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Resilient+Distributed+Diffusion+for+Multi-Robot+Systems+Using+Centerpoint",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Blockchain Technology Secures Robot Swarms: A Comparison of Consensus Protocols and Their Resilience to Byzantine Robots": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Blockchain+Technology+Secures+Robot+Swarms%3A+A+Comparison+of+Consensus+Protocols+and+Their+Resilience+to+Byzantine+Robots",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "VestaBench: An Embodied Benchmark for Safe Long-Horizon Planning Under Multi-Constraint and Adversarial Settings": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=VestaBench%3A+An+Embodied+Benchmark+for+Safe+Long-Horizon+Planning",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Generating Explanations for Embodied Action Decision from Visual Observation": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Generating+Explanations+for+Embodied+Action+Decision+from+Visual+Observation",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "PyBullet, a Python Module for Physics Simulation for Games, Robotics and Machine Learning": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=PyBullet%2C+a+Python+Module+for+Physics+Simulation+for+Games%2C+Robotics+and+Machine+Learning",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "MuJoCo: A Physics Engine for Model-Based Control": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=MuJoCo%3A+A+Physics+Engine+for+Model-Based+Control",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Design and Use Paradigms for Gazebo, an Open-Source Multi-Robot Simulator": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Design+and+Use+Paradigms+for+Gazebo%2C+an+Open-Source+Multi-Robot+Simulator",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Isaac Sim": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Isaac+Sim",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Universal Closed-Box Adversarial Attack for Trajectory Representation via Controlling High-Dimensional Iterative Constraints": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Universal+Closed-Box+Adversarial+Attack+for+Trajectory+Representation+via+Controlling+High-Dimensional+Iterative+Constraints",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Avatar: Adversarial Vehicle Trajectory Attack Targeting Autonomous Driving Planner": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Avatar%3A+Adversarial+Vehicle+Trajectory+Attack+Targeting+Autonomous+Driving+Planner",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Adversarial Attack on Trajectory Prediction for Autonomous Vehicles with Generative Adversarial Networks": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarial+Attack+on+Trajectory+Prediction+for+Autonomous+Vehicles+with+Generative+Adversarial+Networks",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Characterizing Physical Adversarial Attacks on Robot Motion Planners": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Characterizing+Physical+Adversarial+Attacks+on+Robot+Motion+Planners",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Robust Inverse Constrained Reinforcement Learning under Model Misspecification": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robust+inverse+constrained+reinforcement+learning+under+model+misspecification",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Robustness of Trajectory Prediction Models Under Map-Based Attacks": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Robustness+of+trajectory+prediction+models+under+map-based+attacks",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Intelligent driving intelligence test for autonomous vehicles with naturalistic and adversarial environment": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Intelligent+driving+intelligence+test+for+autonomous+vehicles+with+naturalistic+and+adversarial+environment",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "CommonRoad-RL: A Configurable Reinforcement Learning Environment for Motion Planning of Autonomous Vehicles": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=CommonRoad-RL%3A+A+Configurable+Reinforcement+Learning+Environment+for+Motion+Planning+of+Autonomous+Vehicles",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Microscopic Traffic Simulation Using SUMO": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Microscopic+Traffic+Simulation+Using+SUMO",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "An Environment for Autonomous Driving Decision-Making": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=An+Environment+for+Autonomous+Driving+Decision-Making",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "A Survey on Predictive Safety in Embodied AI": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=A+Survey+on+Predictive+Safety+in+Embodied+AI",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Adversarial Robustness in Embodied AI: A Closed-Loop Perspective on Attacks and Defenses": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Adversarial+Robustness+in+Embodied+AI%3A+A+Closed-Loop+Perspective+on+Attacks+and+Defenses",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Navigating Embodied Intelligence: Enabling Technologies, Security and Privacy, and Emerging Trends": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Navigating+Embodied+Intelligence%3A+Enabling+Technologies%2C+Security+and+Privacy%2C+and+Emerging+Trends",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Towards Safe and Trustworthy Embodied AI: Foundations, Status, and Prospects": {
+      "status": "lookup_error",
+      "domain": "Embodied AI",
+      "sourceUrl": "https://scholar.google.com/scholar?q=Towards+Safe+and+Trustworthy+Embodied+AI%3A+Foundations%2C+Status%2C+and+Prospects",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Adversarial Attacks on Large Language Model-Based Systems and Mitigating Strategies: A Case Study on ChatGPT": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "An LLM-Assisted Easy-to-Trigger Poisoning Attack on Code Completion Models: Injecting Disguised Vulnerabilities Against Strong Detection": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "A Gradient Control Method for Backdoor Attacks on Parameter-Efficient Tuning": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Maximum Entropy Loss, the Silver Bullet Targeting Backdoor Attacks in Pre-Trained Language Models": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "A benchmark for semantic sensitive information in llms outputs": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Uncovering Latent Memories: Assessing Data Leakage and Memorization Patterns in Large Language Models": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Nmtsloth: Understanding and Testing Efficiency Degradation of Neural Machine Translation Systems": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Semantic-guided prompt organization for universal goal hijacking against llms": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "TASTLE: Distract Large Language Models for Automatic Jailbreak Attack": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "MasterKey: Automated Jailbreaking of Large Language Model Chatbots": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Robust Safety Classifier Against Jailbreaking Attacks: Adversarial Prompt Shield": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "MoGU: A Framework for Enhancing Safety of LLMs While Preserving Their Usability": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "Beyond One-Preference-for-All: Multi-Objective Direct Preference Optimization": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    "RLCD: Reinforcement Learning from Contrastive Distillation for LM Alignment": {
+      "status": "lookup_error",
+      "domain": "LLMs",
+      "sourceUrl": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    }
+  }
+}

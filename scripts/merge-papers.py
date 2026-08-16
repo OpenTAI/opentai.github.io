@@ -1,8 +1,9 @@
 """Merge the two survey lists into one library, tagged by domain.
 
-Domain is the primary axis the OpenTAI team asked for. The three domains they
-named cover only half of the large-model-safety list, so a fourth — Vision &
-Multimodal — holds the vision, VLP, VLM and diffusion chapters.
+Domain is the primary axis the OpenTAI team asked for. Only the explicitly
+approved LLMs, Agents and Embodied AI domains are published. Vision, VLP, VLM
+and diffusion chapters from the large-model survey remain in the source
+snapshot but are outside the approved site scope.
 
 Benchmark entries are pulled out of the paper stream here and handed to
 fetch-benchmark-candidates.py, which tries to resolve each to a real
@@ -15,15 +16,17 @@ DATA = pathlib.Path(__file__).parent / "data"
 LMS = json.load(open(DATA / "awesome-papers.json"))
 LMS_LINKS = json.loads((DATA / "paper-links.json").read_text()) if (DATA / "paper-links.json").exists() else {}
 EMB = json.load(open(DATA / "embodied-papers.json"))
-OWN = json.load(open(DATA / "opentai-papers.json"))["papers"]
-
+EXISTING_DATASET_CANDIDATES = {
+    re.sub(r"[^a-z0-9]", "", row["title"].lower()): row
+    for row in (
+        json.load(open(DATA / "dataset-candidates.json"))
+        if (DATA / "dataset-candidates.json").exists()
+        else []
+    )
+}
 DOMAIN_BY_CHAPTER = {
     "Large Language Model Safety": "LLMs",
     "Agent Safety": "Agents",
-    "Vision Foundation Model Safety": "Vision & Multimodal",
-    "Vision-Language Pre-training Model Safety": "Vision & Multimodal",
-    "Vison Language Model Safety": "Vision & Multimodal",
-    "Diffusion Models Safety": "Vision & Multimodal",
 }
 
 # The large-model-safety list has no survey section, so surveys are identified
@@ -47,9 +50,12 @@ def split_authors(value):
     return [a.strip() for a in re.split(r",| and ", value or "") if a.strip()]
 
 
-papers, benchmark_candidates = [], []
+papers, benchmark_candidates, dataset_candidates = [], [], []
 
 for e in LMS:
+    domain = DOMAIN_BY_CHAPTER.get(e["chapter"])
+    if not domain:
+        continue
     entry = {
         "title": e["title"],
         "authors": e["authors"][:4],
@@ -58,7 +64,7 @@ for e in LMS:
         "year": e.get("year"),
         "arxivId": e.get("arxivId") or LMS_LINKS.get(e["title"]),
         "url": None,
-        "domain": DOMAIN_BY_CHAPTER[e["chapter"]],
+        "domain": domain,
         "group": e["chapter"],
         "section": e.get("section"),
         "kind": "survey" if SURVEY_TITLE.search(e["title"]) else "research",
@@ -87,32 +93,24 @@ for e in EMB:
         "source": "embodied-ai-safety",
     }
     if e["kind"] == "benchmark":
-        benchmark_candidates.append(entry)
+        # The embodied source calls this mixed section "Benchmarks &
+        # Datasets". Its two entries are capability datasets/benchmarks, not
+        # safety benchmark implementations. The OpenTAI team explicitly asked
+        # for the source's dataset material to be moved to Datasets, so retain
+        # them as citation-backed dataset candidates instead of guessing repos.
+        # Official resource URLs and the classification verdict are manually
+        # verified. Preserve those fields when the bibliography is reparsed;
+        # otherwise a merge would silently replace them with Scholar links.
+        prior = EXISTING_DATASET_CANDIDATES.get(norm(entry["title"]))
+        if prior and prior.get("classificationEvidence"):
+            for field in ("arxivId", "url", "classificationEvidence"):
+                if prior.get(field):
+                    entry[field] = prior[field]
+        dataset_candidates.append(entry)
     elif e["kind"] == "model":
         continue  # models here are capability models, not safety resources
     else:
         papers.append(entry)
-
-# OpenTAI's own work goes in first so it wins the domain assignment and keeps
-# its repository link; the three that also appear in a survey list dedupe
-# against this copy rather than the other way round.
-papers = [
-    {
-        "title": e["title"],
-        "authors": [],
-        "authorCount": 0,
-        "venue": e.get("venue"),
-        "year": e.get("year"),
-        "arxivId": None,
-        "url": e.get("url"),
-        "domain": e["domain"],
-        "group": e["group"],
-        "section": e.get("section"),
-        "kind": "research",
-        "source": "opentai",
-    }
-    for e in OWN
-] + papers
 
 # Dedupe by title. The first list processed (large-model-safety) is the more
 # topic-specific one, so its domain wins — a paper must not drift between
@@ -146,6 +144,8 @@ library = sorted(
 json.dump(library, open(DATA / "paper-library.json", "w"), ensure_ascii=False, indent=2)
 json.dump(benchmark_candidates, open(DATA / "benchmark-candidates.json", "w"),
           ensure_ascii=False, indent=2)
+json.dump(dataset_candidates, open(DATA / "dataset-candidates.json", "w"),
+          ensure_ascii=False, indent=2)
 
 by_domain, by_kind = {}, {}
 for p in library:
@@ -162,3 +162,4 @@ print("\nby kind:")
 for k, n in sorted(by_kind.items(), key=lambda x: -x[1]):
     print(f"  {n:5}  {k}")
 print(f"\nbenchmark candidates pulled out: {len(benchmark_candidates)}")
+print(f"dataset candidates pulled out: {len(dataset_candidates)}")

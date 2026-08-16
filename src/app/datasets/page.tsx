@@ -1,18 +1,12 @@
-import { SiteShell } from "@/components/site-shell";
-import { SubpageLayout } from "@/components/subpage-layout";
-import { subpageConfigs } from "@/data/site";
+import { CollectionPageView } from "@/components/collection-page-view";
 
 export const metadata = {
   title: "Datasets",
-  description: "Training, evaluation, preference, red team, and agent trajectory datasets for trustworthy AI.",
-  openGraph: { title: "Datasets · OpenTAI", description: "Training, evaluation, preference, red team, and agent trajectory datasets for trustworthy AI." },
+  description: "Verified training and fine-tuning datasets for trustworthy AI.",
+  openGraph: { title: "Datasets · OpenTAI", description: "Verified training and fine-tuning datasets for trustworthy AI." },
 };
 
 
 export default function DatasetsPage() {
-  return (
-    <SiteShell sectionLabel="Datasets">
-      <SubpageLayout {...subpageConfigs.datasets} showEmptyCategories />
-    </SiteShell>
-  );
+  return <CollectionPageView locale="en" showEmptyCategories slug="datasets" />;
 }

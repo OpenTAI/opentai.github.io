@@ -1,0 +1,58 @@
+[
+  {
+    "arxivId": "2511.05511",
+    "title": "From Failure Modes to Reliability Awareness in Generative and Agentic AI System",
+    "status": "verified",
+    "pdfUrl": "https://arxiv.org/pdf/2511.05511",
+    "sourceUrl": "https://arxiv.org/abs/2511.05511",
+    "reason": "The official arXiv record identifies this title and exposes a PDF; the official PDF endpoint returned a 24-page PDF whose first page carries the same title."
+  },
+  {
+    "arxivId": "2511.19863",
+    "title": "International AI Safety Report 2025: Second Key Update: Technical Safeguards and Risk Management",
+    "status": "verified",
+    "pdfUrl": "https://arxiv.org/pdf/2511.19863",
+    "sourceUrl": "https://arxiv.org/abs/2511.19863",
+    "reason": "The official arXiv record identifies this title and exposes a PDF; the official PDF endpoint returned a 28-page PDF."
+  },
+  {
+    "arxivId": "2505.16377",
+    "title": "VLM-SAFE: Vision-Language Model-Guided Safety-Aware Reinforcement Learning with World Models for Autonomous Driving",
+    "status": "verified",
+    "pdfUrl": "https://arxiv.org/pdf/2505.16377",
+    "sourceUrl": "https://arxiv.org/abs/2505.16377",
+    "reason": "The official arXiv record identifies this title and exposes the current PDF; the official endpoint returned a 17-page PDF."
+  },
+  {
+    "arxivId": "2401.01394",
+    "title": "Unveiling the Stealthy Threat: Analyzing Slow Drift GPS Spoofing Attacks for Autonomous Vehicles in Urban Environments and Enabling the Resilience",
+    "status": "verified",
+    "pdfUrl": "https://arxiv.org/pdf/2401.01394",
+    "sourceUrl": "https://arxiv.org/abs/2401.01394",
+    "reason": "The official arXiv record identifies this title and exposes a PDF; the official endpoint returned a 17-page PDF."
+  },
+  {
+    "arxivId": "2105.07574",
+    "title": "SoundFence: Securing Ultrasonic Sensors in Vehicles Using Physical-Layer Defense",
+    "status": "verified",
+    "pdfUrl": "https://arxiv.org/pdf/2105.07574v2",
+    "sourceUrl": "https://arxiv.org/abs/2105.07574",
+    "reason": "The current arXiv v3 is withdrawn and has no PDF, but the official arXiv v2 historical PDF remains available; it returned a 9-page PDF with the matching title. The URL intentionally pins v2."
+  },
+  {
+    "arxivId": "2103.15897",
+    "title": "Automating Defense Against Adversarial Attacks: Discovery of Vulnerabilities and Application of Multi-INT Imagery to Protect Deployed Models",
+    "status": "verified",
+    "pdfUrl": "https://arxiv.org/pdf/2103.15897",
+    "sourceUrl": "https://arxiv.org/abs/2103.15897",
+    "reason": "The official arXiv PDF endpoint returned an 8-page PDF, and the first-page title matches the official record. The PDF's embedded metadata is generic ('Sample manuscript showing specifications and style'), so verification used the rendered first page rather than that metadata."
+  },
+  {
+    "arxivId": "2304.05610",
+    "title": "Vehicle Trajectory Prediction based Predictive Collision Risk Assessment for Autonomous Driving in Highway Scenarios",
+    "status": "verified",
+    "pdfUrl": "https://arxiv.org/pdf/2304.05610",
+    "sourceUrl": "https://arxiv.org/abs/2304.05610",
+    "reason": "The official arXiv PDF endpoint returned a 14-page PDF whose first-page title matches the official arXiv record."
+  }
+]

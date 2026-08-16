@@ -1,0 +1,312 @@
+{
+  "auditVersion": "v2-quality-corrections",
+  "domain": "LLMs",
+  "policy": "Corrections from the consolidated evidence review. Every retained record uses an exact dataset-specific training passage; wrong identities, methods, and evaluation-only uses are excluded by paper-dataset-quality-overrides.json.",
+  "coverage": {
+    "approved": [
+      {
+        "canonicalName": "AG News",
+        "replacesExisting": true,
+        "trainingEvidence": "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "1907.11932",
+              "title": "Is BERT Really Robust? A Strong Baseline for Natural Language Attack on Text Classification and Entailment",
+              "domain": "LLMs"
+            },
+            "evidence": "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+            "source": "tmp/paper-corpus/1907.11932/sections/03.02-attacking-target-models.md:15-24; dataset identity in sections/03.01.01-text-classification.md or sections/03.01.02-textual-entailment.md"
+          }
+        ]
+      },
+      {
+        "canonicalName": "IMDb",
+        "replacesExisting": true,
+        "trainingEvidence": "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "1907.11932",
+              "title": "Is BERT Really Robust? A Strong Baseline for Natural Language Attack on Text Classification and Entailment",
+              "domain": "LLMs"
+            },
+            "evidence": "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+            "source": "tmp/paper-corpus/1907.11932/sections/03.02-attacking-target-models.md:15-24; dataset identity in sections/03.01.01-text-classification.md or sections/03.01.02-textual-entailment.md"
+          }
+        ]
+      },
+      {
+        "canonicalName": "MultiNLI",
+        "replacesExisting": true,
+        "trainingEvidence": "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "1907.11932",
+              "title": "Is BERT Really Robust? A Strong Baseline for Natural Language Attack on Text Classification and Entailment",
+              "domain": "LLMs"
+            },
+            "evidence": "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+            "source": "tmp/paper-corpus/1907.11932/sections/03.02-attacking-target-models.md:15-24; dataset identity in sections/03.01.01-text-classification.md or sections/03.01.02-textual-entailment.md"
+          }
+        ]
+      },
+      {
+        "canonicalName": "SNLI",
+        "replacesExisting": true,
+        "trainingEvidence": "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "1907.11932",
+              "title": "Is BERT Really Robust? A Strong Baseline for Natural Language Attack on Text Classification and Entailment",
+              "domain": "LLMs"
+            },
+            "evidence": "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+            "source": "tmp/paper-corpus/1907.11932/sections/03.02-attacking-target-models.md:15-24; dataset identity in sections/03.01.01-text-classification.md or sections/03.01.02-textual-entailment.md"
+          }
+        ]
+      },
+      {
+        "canonicalName": "Yelp Polarity",
+        "replacesExisting": true,
+        "trainingEvidence": "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "1907.11932",
+              "title": "Is BERT Really Robust? A Strong Baseline for Natural Language Attack on Text Classification and Entailment",
+              "domain": "LLMs"
+            },
+            "evidence": "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+            "source": "tmp/paper-corpus/1907.11932/sections/03.02-attacking-target-models.md:15-24; dataset identity in sections/03.01.01-text-classification.md or sections/03.01.02-textual-entailment.md"
+          }
+        ]
+      },
+      {
+        "canonicalName": "Kaggle Fake News competition dataset",
+        "replacesExisting": false,
+        "aliases": [
+          "Fake",
+          "FAKE",
+          "Fake News Detection",
+          "Fake News Classification"
+        ],
+        "year": 2019,
+        "trainingEvidence": "The paper identifies Fake News Detection (Fake) as document classification on the Kaggle Fake News Challenge data. For each listed dataset, the authors train three target models on the training set before attacking them with test-set examples.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "1907.11932",
+              "title": "Is BERT Really Robust? A Strong Baseline for Natural Language Attack on Text Classification and Entailment",
+              "domain": "LLMs"
+            },
+            "evidence": "The paper identifies Fake News Detection (Fake) as document classification on the Kaggle Fake News Challenge data. For each listed dataset, the authors train three target models on the training set before attacking them with test-set examples.",
+            "source": "tmp/paper-corpus/1907.11932/sections/03.01.01-text-classification.md:15-27; sections/03.02-attacking-target-models.md:15-24; footnotes.json fn:5"
+          }
+        ]
+      },
+      {
+        "canonicalName": "BC5CDR",
+        "replacesExisting": true,
+        "trainingEvidence": "We fine-tune three BERT models (base-cased) for each data set with different initialization seeds (1, 2 & 4) using the Huggingface implementation. For the biomedical data sets, we additionally fine-tune two domain-specific BERT models BioBERT and SciBERT.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2109.11308",
+              "title": "Breaking BERT: Understanding Its Vulnerabilities for Named Entity Recognition Through Adversarial Attack",
+              "domain": "LLMs"
+            },
+            "evidence": "We fine-tune three BERT models (base-cased) for each data set with different initialization seeds (1, 2 & 4) using the Huggingface implementation. For the biomedical data sets, we additionally fine-tune two domain-specific BERT models BioBERT and SciBERT.",
+            "source": "tmp/paper-corpus/2109.11308/sections/04.02-target-models.md:15-18"
+          }
+        ]
+      },
+      {
+        "canonicalName": "NCBI Disease Corpus",
+        "replacesExisting": true,
+        "trainingEvidence": "We fine-tune three BERT models (base-cased) for each data set with different initialization seeds (1, 2 & 4) using the Huggingface implementation. For the biomedical data sets, we additionally fine-tune two domain-specific BERT models BioBERT and SciBERT.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2109.11308",
+              "title": "Breaking BERT: Understanding Its Vulnerabilities for Named Entity Recognition Through Adversarial Attack",
+              "domain": "LLMs"
+            },
+            "evidence": "We fine-tune three BERT models (base-cased) for each data set with different initialization seeds (1, 2 & 4) using the Huggingface implementation. For the biomedical data sets, we additionally fine-tune two domain-specific BERT models BioBERT and SciBERT.",
+            "source": "tmp/paper-corpus/2109.11308/sections/04.02-target-models.md:15-18"
+          }
+        ]
+      },
+      {
+        "canonicalName": "W-NUT 2017",
+        "replacesExisting": true,
+        "trainingEvidence": "We fine-tune three BERT models (base-cased) for each data set with different initialization seeds (1, 2 & 4) using the Huggingface implementation. For the biomedical data sets, we additionally fine-tune two domain-specific BERT models BioBERT and SciBERT.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2109.11308",
+              "title": "Breaking BERT: Understanding Its Vulnerabilities for Named Entity Recognition Through Adversarial Attack",
+              "domain": "LLMs"
+            },
+            "evidence": "We fine-tune three BERT models (base-cased) for each data set with different initialization seeds (1, 2 & 4) using the Huggingface implementation. For the biomedical data sets, we additionally fine-tune two domain-specific BERT models BioBERT and SciBERT.",
+            "source": "tmp/paper-corpus/2109.11308/sections/04.02-target-models.md:15-18"
+          }
+        ]
+      },
+      {
+        "canonicalName": "SelfDefend distilled defense data",
+        "replacesExisting": true,
+        "trainingEvidence": "We allocate 80% of the samples in D_dir or D_int for fine-tuning and reserve the remaining 20% as validation sets. During training, the defense prompts and queries from the collected datasets are inputs and y is the label used to fine-tune the Llama model.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2406.05498",
+              "title": "SelfDefend: LLMs Can Defend Themselves Against Jailbreaking in a Practical Manner",
+              "domain": "LLMs"
+            },
+            "evidence": "We allocate 80% of the samples in D_dir or D_int for fine-tuning and reserve the remaining 20% as validation sets. During training, the defense prompts and queries from the collected datasets are inputs and y is the label used to fine-tune the Llama model.",
+            "source": "tmp/paper-corpus/2406.05498/sections/06.03-lora-fine-tuning.md:15-29"
+          }
+        ]
+      },
+      {
+        "canonicalName": "Stable Alignment Sandbox sample datasets",
+        "replacesExisting": false,
+        "aliases": [
+          "sandbox_v1.json",
+          "sandbox_v2.json"
+        ],
+        "year": 2023,
+        "size": "2 public sample files; full 169K set is request-only",
+        "trainingEvidence": "Data collected in the Sandbox simulation is used to construct three alignment datasets for the three Stable Alignment training stages. The official repository publishes sandbox_v1.json and sandbox_v2.json as samples; the full 169k interaction-derived set is request-only.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2305.16960",
+              "title": "Training Socially Aligned Language Models on Simulated Social Interactions",
+              "domain": "LLMs"
+            },
+            "evidence": "Data collected in the Sandbox simulation is used to construct three alignment datasets for the three Stable Alignment training stages. The official repository publishes sandbox_v1.json and sandbox_v2.json as samples; the full 169k interaction-derived set is request-only.",
+            "source": "tmp/paper-corpus/2305.16960/sections/03.02-stable-alignment-xspace-learning-alignment-from-social-inter.md:15-28"
+          }
+        ]
+      },
+      {
+        "canonicalName": "Llama-3-Magpie-Air-3M-v0.1",
+        "replacesExisting": false,
+        "year": 2024,
+        "size": "First 300K used for SFT; 3M raw conversations released",
+        "trainingEvidence": "The paper selects the first 300K raw Magpie-Air conversations for supervised fine-tuning. The official release publishes the complete 3M-conversation raw corpus.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2406.08464",
+              "title": "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+              "domain": "LLMs"
+            },
+            "evidence": "The paper selects the first 300K raw Magpie-Air conversations for supervised fine-tuning. The official release publishes the complete 3M-conversation raw corpus.",
+            "source": "tmp/paper-corpus/2406.08464/sections/04.01-experimental-setups.md:22-30; sections/14.03-ablation-analysis-on-data-quantity-and-quality.md:15-20"
+          }
+        ]
+      },
+      {
+        "canonicalName": "Llama-3-Magpie-Pro-1M-v0.1",
+        "replacesExisting": false,
+        "year": 2024,
+        "size": "First 300K used for SFT; 1M raw conversations released",
+        "trainingEvidence": "The paper selects the first 300K raw Magpie-Pro conversations for supervised fine-tuning. The official release publishes the complete 1M-conversation raw corpus.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2406.08464",
+              "title": "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+              "domain": "LLMs"
+            },
+            "evidence": "The paper selects the first 300K raw Magpie-Pro conversations for supervised fine-tuning. The official release publishes the complete 1M-conversation raw corpus.",
+            "source": "tmp/paper-corpus/2406.08464/sections/04.01-experimental-setups.md:22-30; sections/14.03-ablation-analysis-on-data-quantity-and-quality.md:15-20"
+          }
+        ]
+      },
+      {
+        "canonicalName": "Magpie-Air-300K-Filtered",
+        "replacesExisting": false,
+        "year": 2024,
+        "size": "300K conversations",
+        "trainingEvidence": "The paper creates Magpie-Air-Filtered with 300K conversations and uses the filtered dataset for supervised fine-tuning experiments.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2406.08464",
+              "title": "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+              "domain": "LLMs"
+            },
+            "evidence": "The paper creates Magpie-Air-Filtered with 300K conversations and uses the filtered dataset for supervised fine-tuning experiments.",
+            "source": "tmp/paper-corpus/2406.08464/sections/04.01-experimental-setups.md:22-30; sections/14.03-ablation-analysis-on-data-quantity-and-quality.md:15-20"
+          }
+        ]
+      },
+      {
+        "canonicalName": "Magpie-Pro-300K-Filtered",
+        "replacesExisting": false,
+        "year": 2024,
+        "size": "300K conversations",
+        "trainingEvidence": "The paper creates Magpie-Pro-Filtered with 300K conversations and reports models fine-tuned with Magpie-Pro-300K-Filtered.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2406.08464",
+              "title": "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+              "domain": "LLMs"
+            },
+            "evidence": "The paper creates Magpie-Pro-Filtered with 300K conversations and reports models fine-tuned with Magpie-Pro-300K-Filtered.",
+            "source": "tmp/paper-corpus/2406.08464/sections/04.01-experimental-setups.md:22-30; sections/14.03-ablation-analysis-on-data-quantity-and-quality.md:15-20"
+          }
+        ]
+      },
+      {
+        "canonicalName": "Magpie-Air-DPO-100K-v0.1",
+        "replacesExisting": false,
+        "year": 2024,
+        "size": "100K conversations",
+        "trainingEvidence": "The paper generates Magpie-Air-DPO with 100K conversations for preference optimization.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2406.08464",
+              "title": "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+              "domain": "LLMs"
+            },
+            "evidence": "The paper generates Magpie-Air-DPO with 100K conversations for preference optimization.",
+            "source": "tmp/paper-corpus/2406.08464/sections/04.01-experimental-setups.md:22-30; sections/14.03-ablation-analysis-on-data-quantity-and-quality.md:15-20"
+          }
+        ]
+      },
+      {
+        "canonicalName": "Magpie-Pro-DPO-100K-v0.1",
+        "replacesExisting": false,
+        "year": 2024,
+        "size": "100K conversations",
+        "trainingEvidence": "The paper generates Magpie-Pro-DPO with 100K conversations for preference optimization.",
+        "mentions": [
+          {
+            "paper": {
+              "arxivId": "2406.08464",
+              "title": "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+              "domain": "LLMs"
+            },
+            "evidence": "The paper generates Magpie-Pro-DPO with 100K conversations for preference optimization.",
+            "source": "tmp/paper-corpus/2406.08464/sections/04.01-experimental-setups.md:22-30; sections/14.03-ablation-analysis-on-data-quantity-and-quality.md:15-20"
+          }
+        ]
+      }
+    ],
+    "rejected": [],
+    "unresolved": []
+  },
+  "summary": {
+    "approvedDatasets": 17,
+    "approvedMentions": 17
+  }
+}
