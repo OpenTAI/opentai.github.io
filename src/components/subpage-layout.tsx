@@ -12,6 +12,7 @@ import {
   rowMatchesDomainFilters,
   type DatasetCount,
 } from "@/lib/dataset-statistics";
+import { benchmarkCardPresentation } from "@/lib/benchmark-card-presentation";
 import { Locale, localizeHref, t } from "@/lib/i18n";
 import { matchesLocalizedSearch } from "@/lib/resource-search";
 import {
@@ -204,6 +205,12 @@ function ResourceGridCard({
       ? row.primaryUrl ?? row.resources[0]?.href
       : undefined;
   const titleHref = detailHref ?? externalHref;
+  const presentation = benchmarkCardPresentation({
+    kind,
+    locale,
+    note: row.note,
+    tags: row.tags ?? [],
+  });
 
   return (
     <article className="resource-grid-card">
@@ -228,12 +235,12 @@ function ResourceGridCard({
       <div className="resource-grid-badges">
         <span>{t(locale, row.type)}</span>
         {row.venue ? <span>{row.venue}</span> : null}
-        {(row.tags ?? []).slice(0, 2).map((tag) => (
+        {presentation.tags.slice(0, 2).map((tag) => (
           <span key={tag}>{t(locale, tag)}</span>
         ))}
       </div>
 
-      <p className="resource-card-description">{t(locale, row.note)}</p>
+      <p className="resource-card-description">{t(locale, presentation.note)}</p>
 
       {kind === "dataset" && row.sourcePapers?.length ? (
         <SourcePapersDisclosure locale={locale} papers={row.sourcePapers} />

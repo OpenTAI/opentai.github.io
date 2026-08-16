@@ -664,6 +664,12 @@ const ZH_AGENT_FOCUS: Record<string, string> = {
 };
 
 function translateGeneratedContent(text: string) {
+  const focusOnly = text.match(/^Evaluation focus: (.+)\.$/);
+  if (focusOnly) {
+    const focus = focusOnly[1];
+    return `测评重点：${ZH_AGENT_FOCUS[focus] ?? focus}。`;
+  }
+
   const match = text.match(
     /^Safety at Scale Table 14 lists this resource under (.+)\. Evaluation focus: (.+?)\.(?: (.+))?$/,
   );
