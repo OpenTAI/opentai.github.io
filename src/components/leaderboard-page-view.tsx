@@ -1,8 +1,11 @@
+import { CollectionSummaryRow } from "@/components/collection-summary-row";
 import { LeaderboardView } from "@/components/leaderboard-view";
+import { ResourceSubmissionDialog } from "@/components/resource-submission-dialog";
 import { PlannedList, SimplePage } from "@/components/simple-page";
 import { SiteShell } from "@/components/site-shell";
 import { leaderboards } from "@/data/site";
 import { Locale } from "@/lib/i18n";
+import { buildLeaderboardSummary } from "@/lib/resource-catalog-presentation";
 
 const PLANNED = [
   "LLM Safety Ranking",
@@ -11,28 +14,26 @@ const PLANNED = [
   "Privacy Ranking",
 ];
 
-const scored = leaderboards.tables.reduce(
-  (total, table) => total + table.boards.reduce((sum, board) => sum + board.rows.length, 0),
-  0,
-);
-
 export function LeaderboardPageView({ locale }: { locale: Locale }) {
-  const boardCount = leaderboards.tables.reduce((total, table) => total + table.boards.length, 0);
-  const overview =
-    locale === "zh"
-      ? `共 ${scored} 条评分记录，覆盖 ${boardCount} 个榜单，数据从 OpenTAI 当前排行榜迁移。`
-      : `${scored} scored entries across ${boardCount} boards, ported from the current OpenTAI leaderboards.`;
+  const summary = buildLeaderboardSummary(leaderboards.tables);
+  const summaryItems = [
+    { icon: "#", label: "Scored entries", value: summary.entries.toLocaleString("en-US") },
+    { icon: "▦", label: "Boards", value: summary.boards.toLocaleString("en-US") },
+    { icon: "◉", label: "Models", value: summary.models.toLocaleString("en-US") },
+    { icon: "↗", label: "Source links", value: summary.links.toLocaleString("en-US") },
+  ];
 
   return (
     <SiteShell locale={locale} sectionLabel="Leaderboard">
       <SimplePage
         breadcrumb={["Home", "Leaderboard"]}
         description={leaderboards.subtitle}
+        heroAside={<ResourceSubmissionDialog kind="arena" locale={locale} />}
         heroIcon="◫"
         locale={locale}
-        overview={overview}
         title="Leaderboard"
       >
+        <CollectionSummaryRow items={summaryItems} locale={locale} />
         <LeaderboardView locale={locale} />
 
         <PlannedList

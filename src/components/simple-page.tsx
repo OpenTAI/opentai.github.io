@@ -5,6 +5,7 @@ export function SimplePage({
   breadcrumb,
   children,
   description,
+  heroAside,
   heroIcon,
   locale = "en",
   overview,
@@ -13,6 +14,7 @@ export function SimplePage({
   breadcrumb: readonly string[];
   children: ReactNode;
   description: string;
+  heroAside?: ReactNode;
   heroIcon: string;
   locale?: Locale;
   overview?: string;
@@ -40,9 +42,9 @@ export function SimplePage({
             </h1>
             <p className="max-w-3xl text-[1rem] leading-8 text-[#556072]">{t(locale, description)}</p>
           </div>
-          {overview ? (
+          {heroAside ?? (overview ? (
             <p className="text-[0.98rem] leading-8 text-[#556072]">{t(locale, overview)}</p>
-          ) : null}
+          ) : null)}
         </div>
       </section>
 

@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { CollectionSummaryRow } from "@/components/collection-summary-row";
+import { ResourceSubmissionDialog } from "@/components/resource-submission-dialog";
 import {
   type DatasetSourcePaper,
   SubpageConfig,
@@ -15,6 +17,10 @@ import {
 import { benchmarkCardPresentation } from "@/lib/benchmark-card-presentation";
 import { Locale, localizeHref, t } from "@/lib/i18n";
 import { matchesLocalizedSearch } from "@/lib/resource-search";
+import {
+  buildResourceCatalogSummary,
+  compactResourceTitle,
+} from "@/lib/resource-catalog-presentation";
 import {
   resourceYear,
   sortResourceRows,
@@ -126,12 +132,19 @@ function SourcePapersDisclosure({
 }
 
 function ResourceLinksMenu({
+  isOpen,
   locale,
+  menuId,
+  onOpenChange,
   row,
 }: {
+  isOpen: boolean;
   locale: Locale;
+  menuId: string;
+  onOpenChange: (open: boolean) => void;
   row: SubpageTableRow;
 }) {
+  const menuRef = useRef<HTMLDivElement>(null);
   const paper = externalResource(row, "paper");
   const github = externalResource(row, "github");
   const huggingFace = externalResource(row, "huggingface");
@@ -146,6 +159,25 @@ function ResourceLinksMenu({
     ...row.resources.filter((resource) => !preferredHrefs.has(resource.href)),
   ];
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    function closeOutside(event: PointerEvent) {
+      if (!menuRef.current?.contains(event.target as Node)) onOpenChange(false);
+    }
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") onOpenChange(false);
+    }
+
+    document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isOpen, onOpenChange]);
+
   if (links.length === 0) {
     return (
       <div aria-disabled="true" className="resource-links-cell resource-links-empty">
@@ -157,40 +189,59 @@ function ResourceLinksMenu({
 
   return (
     <div className="resource-links-cell">
-      <details className="resource-links-menu">
-        <summary aria-label={t(locale, "Open links")}>
+      <div
+        className="resource-links-menu"
+        data-open={isOpen ? "true" : "false"}
+        ref={menuRef}
+      >
+        <button
+          aria-controls={menuId}
+          aria-expanded={isOpen}
+          aria-label={t(locale, "Open links")}
+          className="resource-links-trigger"
+          onClick={() => onOpenChange(!isOpen)}
+          type="button"
+        >
           <span>{t(locale, "Links")}</span>
           <span className="resource-links-count">{links.length}</span>
           <span aria-hidden="true" className="resource-links-chevron">⌄</span>
-        </summary>
-        <div className="resource-links-popover">
-          <p>{t(locale, "Available links")}</p>
-          {links.map((resource) => (
-            <Link
-              key={`${resource.label}-${resource.href}`}
-              href={resource.href}
-              rel="noreferrer"
-              target="_blank"
-            >
-              <span>{t(locale, resource.label)}</span>
-              <span aria-hidden="true">↗</span>
-            </Link>
-          ))}
-        </div>
-      </details>
+        </button>
+        {isOpen ? (
+          <div className="resource-links-popover" id={menuId}>
+            <p>{t(locale, "Available links")}</p>
+            {links.map((resource) => (
+              <Link
+                key={`${resource.label}-${resource.href}`}
+                href={resource.href}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <span>{t(locale, resource.label)}</span>
+                <span aria-hidden="true">↗</span>
+              </Link>
+            ))}
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }
 
 function ResourceGridCard({
   detailBase,
+  isLinksOpen,
   kind,
   locale,
+  menuId,
+  onLinksOpenChange,
   row,
 }: {
   detailBase?: string;
+  isLinksOpen: boolean;
   kind: ResourceCardKind;
   locale: Locale;
+  menuId: string;
+  onLinksOpenChange: (open: boolean) => void;
   row: SubpageTableRow;
 }) {
   const year = yearFor(row);
@@ -211,6 +262,7 @@ function ResourceGridCard({
     note: row.note,
     tags: row.tags ?? [],
   });
+  const cardTitle = compactResourceTitle(row.name);
 
   return (
     <article className="resource-grid-card">
@@ -223,13 +275,19 @@ function ResourceGridCard({
               rel={externalHref ? "noreferrer" : undefined}
               target={externalHref ? "_blank" : undefined}
             >
-              {row.name}
+              {cardTitle}
             </Link>
           ) : (
-            <span className="resource-card-title">{row.name}</span>
+            <span className="resource-card-title">{cardTitle}</span>
           )}
         </h3>
-        <ResourceLinksMenu locale={locale} row={row} />
+        <ResourceLinksMenu
+          isOpen={isLinksOpen}
+          locale={locale}
+          menuId={menuId}
+          onOpenChange={onLinksOpenChange}
+          row={row}
+        />
       </div>
 
       <div className="resource-grid-badges">
@@ -541,6 +599,7 @@ export function SubpageLayout(
   const { locale, resourceCardKind } = props;
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [openLinksId, setOpenLinksId] = useState<string | null>(null);
   const [sortKey, setSortKey] = useState<ResourceSortKey>("default");
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -611,6 +670,53 @@ export function SubpageLayout(
     return sortResourceRows(filteredRows, sortKey);
   }, [activeCategory, categoryStats, locale, normalizedQuery, props.tableRows, sortKey]);
 
+  const catalogSummary = useMemo(
+    () =>
+      resourceCardKind
+        ? buildResourceCatalogSummary(visibleRows, resourceCardKind)
+        : undefined,
+    [resourceCardKind, visibleRows],
+  );
+  const summaryItems = catalogSummary
+    ? [
+        { icon: "#", label: "Entries", value: catalogSummary.entries.toLocaleString("en-US") },
+        ...(catalogSummary.yearStart !== undefined && catalogSummary.yearEnd !== undefined
+          ? [{
+              icon: "◷",
+              label: "Year range",
+              value:
+                catalogSummary.yearStart === catalogSummary.yearEnd
+                  ? String(catalogSummary.yearStart)
+                  : `${catalogSummary.yearStart}–${catalogSummary.yearEnd}`,
+            }]
+          : []),
+        {
+          icon: "⌘",
+          label: "GitHub sources",
+          value: catalogSummary.githubRows.toLocaleString("en-US"),
+        },
+        {
+          icon: "↗",
+          label: "Verified links",
+          value: catalogSummary.links.toLocaleString("en-US"),
+        },
+        ...(catalogSummary.downloads !== undefined
+          ? [{
+              icon: "⇩",
+              label: "Recorded downloads",
+              value: catalogSummary.downloads.toLocaleString("en-US"),
+            }]
+          : []),
+        ...(catalogSummary.stars !== undefined
+          ? [{
+              icon: "★",
+              label: "Recorded stars",
+              value: catalogSummary.stars.toLocaleString("en-US"),
+            }]
+          : []),
+      ]
+    : [];
+
   return (
     <div
       className={`mx-auto max-w-[1480px] space-y-7 ${resourceCardKind ? "resource-catalog-page" : ""}`}
@@ -652,9 +758,13 @@ export function SubpageLayout(
             </div>
           </div>
 
-          <div className="space-y-4">
-            <p className="text-[0.98rem] leading-8 text-[#556072]">{t(locale, props.overview)}</p>
-          </div>
+          {resourceCardKind ? (
+            <ResourceSubmissionDialog kind={resourceCardKind} locale={locale} />
+          ) : (
+            <div className="space-y-4">
+              <p className="text-[0.98rem] leading-8 text-[#556072]">{t(locale, props.overview)}</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -795,21 +905,31 @@ export function SubpageLayout(
         </div>
 
         <div className="subpage-main-table-card">
-          <h2 className="mb-5 text-[1.7rem] font-semibold tracking-[-0.05em] text-[#111827]">
-            {t(locale, props.tableTitle)}
-          </h2>
+          {resourceCardKind ? (
+            <CollectionSummaryRow items={summaryItems} locale={locale} />
+          ) : (
+            <h2 className="mb-5 text-[1.7rem] font-semibold tracking-[-0.05em] text-[#111827]">
+              {t(locale, props.tableTitle)}
+            </h2>
+          )}
 
           {resourceCardKind ? (
             <div className="resource-grid-list">
-              {visibleRows.map((row) => (
+              {visibleRows.map((row, index) => {
+                const menuId = `resource-links-${index}`;
+                return (
                 <ResourceGridCard
                   key={row.name}
                   detailBase={props.detailBase}
+                  isLinksOpen={openLinksId === menuId}
                   kind={resourceCardKind}
                   locale={locale}
+                  menuId={menuId}
+                  onLinksOpenChange={(open) => setOpenLinksId(open ? menuId : null)}
                   row={row}
                 />
-              ))}
+                );
+              })}
               {visibleRows.length === 0 ? (
                 <p className="px-4 py-8 text-center text-sm text-[#667085]">
                   {t(locale, "No entries match")} “{query.trim()}”.
