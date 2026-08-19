@@ -35,7 +35,6 @@ test("derives benchmark summary only from recorded row fields", () => {
       },
       { name: "C", resources: [] },
     ],
-    "benchmark",
   );
 
   assert.deepEqual(summary, {
@@ -56,27 +55,29 @@ test("sums recorded dataset downloads and omits missing aggregate metrics", () =
           name: "A",
           posted: "2023-08-01",
           downloads: 120,
+          stars: 12,
           resources: [{ href: "https://huggingface.co/datasets/a/b", label: "Hugging Face" }],
         },
         {
           name: "B",
           downloads: 30,
+          stars: 8,
           resources: [{ href: "https://github.com/example/b", label: "GitHub" }],
         },
       ],
-      "dataset",
     ),
     {
       downloads: 150,
       entries: 2,
       githubRows: 1,
       links: 2,
+      stars: 20,
       yearEnd: 2023,
       yearStart: 2023,
     },
   );
 
-  assert.deepEqual(buildResourceCatalogSummary([], "dataset"), {
+  assert.deepEqual(buildResourceCatalogSummary([]), {
     entries: 0,
     githubRows: 0,
     links: 0,

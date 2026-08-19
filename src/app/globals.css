@@ -1148,13 +1148,56 @@ summary {
   transition: border-color 150ms ease, box-shadow 150ms ease;
 }
 
-.submission-form input:focus {
+.submission-form textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #dfe3eb;
+  border-radius: 10px;
+  background: #fff;
+  padding: 0.72rem;
+  color: #111827;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.6;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.submission-form input:focus,
+.submission-form textarea:focus {
   border-color: #9c9bf5;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
-.submission-form input[aria-invalid="true"] {
+.submission-form input[aria-invalid="true"],
+.submission-form textarea[aria-invalid="true"] {
   border-color: #e88a8a;
+}
+
+.contact-dialog-root {
+  display: flex;
+  min-width: min(100%, 17rem);
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+  color: #667085;
+  font-size: 0.76rem;
+}
+
+.contact-dialog-trigger {
+  border: 1px solid #d9d8f5;
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.55rem 0.9rem;
+  color: #4f46c7;
+  font-size: 0.78rem;
+  font-weight: 750;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+.contact-dialog-trigger:hover {
+  border-color: #aaa7ef;
+  background: #f7f7ff;
 }
 
 .submission-form small {
@@ -1225,6 +1268,28 @@ summary {
 
 .resource-card-heading {
   min-width: 0;
+}
+
+.resource-card-title-group {
+  display: flex;
+  min-width: 0;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.48rem;
+}
+
+.resource-card-stars {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.22rem;
+  border-radius: 999px;
+  background: #fff8df;
+  padding: 0.2rem 0.46rem;
+  color: #8a6410;
+  font-size: 0.66rem;
+  font-weight: 750;
+  line-height: 1;
 }
 
 .resource-card-title {
@@ -1394,6 +1459,12 @@ summary {
 .resource-card-footer > span > span {
   color: #68738a;
   font-size: 0.78rem;
+}
+
+.resource-card-footer > span > strong {
+  color: #68738a;
+  font-size: 0.68rem;
+  font-weight: 700;
 }
 
 .resource-card-details-link {
@@ -1673,6 +1744,10 @@ summary {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem;
+}
+
+.dataset-donut-grid-single {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .dataset-donut-layout {

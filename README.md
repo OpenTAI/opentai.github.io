@@ -18,7 +18,7 @@ npm run dev
 | Route | Contents |
 | --- | --- |
 | `/` | Discover — site-wide search, newsletter signup, trending, latest releases |
-| `/benchmarks` | Flagship collection, 54 entries; primary filters are LLMs, Agents, Embodied AI |
+| `/benchmarks` | Flagship collection, 55 entries; primary filters are LLMs, Agents, Embodied AI |
 | `/benchmarks/[slug]` | Per-benchmark page: description, code, papers, leaderboard, curation gaps |
 | `/models` | Guard models, safety-aligned models, detectors, agents |
 | `/datasets` | Verified training-ready datasets from the approved surveys and primary sources; charts update automatically by domain and year |
@@ -65,6 +65,7 @@ python3 scripts/generate-site.py       # rebuild src/data/*.ts
 | `scripts/data/benchmark-overrides.json` | Hand-checked verdicts where automatic repository matching went wrong |
 | `scripts/data/benchmark-curation.json` | Hand-curated Dataset / Metrics / Baselines / Leaderboard per benchmark, each field tagged with the source it was read from |
 | `scripts/data/safety-at-scale-benchmark-audit.json` | Chapter-wide Safety at Scale audit. Approved rows have primary-source and official-README evidence; excluded auxiliary benchmarks and out-of-scope chapters retain explicit reasons |
+| `scripts/data/submitted-resources.json` | Unpublished review queue for community-submitted papers, benchmarks, and datasets. The generator deliberately ignores it; reviewed items must be moved into the appropriate canonical source file before publication |
 | GitHub REST API | Stars, forks, language, licence, last-push, topics |
 | arXiv API | Authors, posting dates, abstracts, primary category |
 | Hugging Face API | Download counts, likes, licence, size category |
@@ -92,6 +93,20 @@ python3 scripts/generate-site.py       # rebuild src/data/*.ts
 Category groupings and page copy are **authored** for this rebuild — they are
 the part most in need of review, and live near the top of
 `scripts/generate-site.py`.
+
+### Community submission review
+
+The public submission forms create GitHub issues because this is a static site;
+they do not write directly into the repository. When triaging an issue, copy
+the submitted name, year, links, and issue URL into
+`scripts/data/submitted-resources.json` with status `pending`. This file is a
+review ledger only and is never imported by `generate-site.py`.
+
+After checking the primary paper/project page, the official repository, and
+the resource type, either mark the record `rejected` with a reason or move the
+verified facts into the appropriate canonical data source and mark the queue
+record `approved`. Only canonical data sources are published. This keeps an
+unreviewed community issue from appearing on the public site automatically.
 
 ## Newsletter signup
 

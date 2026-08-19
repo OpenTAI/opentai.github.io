@@ -15,6 +15,7 @@ DATASET_CANDIDATES = json.load(open(DATA / "dataset-candidates.json"))
 LLM_SAFETY_RESOURCES = json.load(open(DATA / "llm-safety-resources.json"))
 AGENT_BENCHMARK_RECORDS = json.load(open(DATA / "agent-benchmark-records.json"))
 SAFETY_BENCHMARK_AUDIT = json.load(open(DATA / "safety-at-scale-benchmark-audit.json"))
+BENCHMARK_RESOLVED = json.load(open(DATA / "benchmark-resolved.json"))
 BENCHMARK_DATASETS = json.load(open(DATA / "benchmark-datasets.json"))
 SURVEY_DATASET_RECORDS = json.load(open(DATA / "survey-dataset-records.json"))
 TRAINING_DATASET_METADATA = json.load(open(DATA / "training-datasets.json"))["items"]
@@ -60,6 +61,27 @@ def img(p):
 
 def clean(s):
     return re.sub(r"\s+", " ", (s or "").strip())
+
+
+def resource_key(s):
+    return re.sub(r"[^a-z0-9]", "", clean(s).lower())
+
+
+VERIFIED_BENCHMARK_GITHUB = {}
+for resolved in BENCHMARK_RESOLVED.values():
+    github = resolved.get("github")
+    if not github:
+        continue
+    key = resource_key(resolved.get("name"))
+    previous = VERIFIED_BENCHMARK_GITHUB.get(key)
+    if previous and previous.get("repo") != github.get("repo"):
+        raise ValueError(f"conflicting verified repositories for {resolved.get('name')}")
+    VERIFIED_BENCHMARK_GITHUB[key] = github
+
+
+def verified_benchmark_github(name):
+    """Return metadata only from the README-verified benchmark resolution file."""
+    return VERIFIED_BENCHMARK_GITHUB.get(resource_key(name))
 
 
 def venue_from(text):
@@ -446,6 +468,14 @@ LLM_SURVEY_URL = "https://arxiv.org/abs/2502.05206"
 
 
 def add_llm_source_evidence(row, rec):
+    recorded_scale = next(
+        (
+            stat
+            for stat in row.get("stats", [])
+            if stat["label"] in {"Recorded scale", "Recorded size"}
+        ),
+        {"label": "Recorded size", "value": rec["size"]},
+    )
     row["note"] = (
         f"Listed in Safety at Scale Table 6 under {rec['section']}. "
         f"{rec['classificationEvidence']}"
@@ -453,7 +483,7 @@ def add_llm_source_evidence(row, rec):
     row["venue"] = rec.get("venue")
     row["stats"] = [
         {"label": "Table year", "value": rec["year"]},
-        {"label": "Recorded size", "value": rec["size"]},
+        recorded_scale,
     ]
     if rec.get("times"):
         row["stats"].append({"label": "Table #Times", "value": rec["times"]})
@@ -500,15 +530,18 @@ for rec in TRAINING_DATASETS:
 bench_rows = []
 for rec in AGENT_BENCHMARK_RECORDS:
     paper_url = f"https://arxiv.org/abs/{rec['arxivId']}"
-    note = (
-        f"Safety at Scale Table 14 lists this resource under {rec['section']}. "
-        f"Evaluation focus: {rec['focus']}."
-    )
+    if rec.get("sourceEvidence"):
+        note = rec["sourceEvidence"]
+    else:
+        note = (
+            f"Safety at Scale Table 14 lists this resource under {rec['section']}. "
+            f"Evaluation focus: {rec['focus']}."
+        )
     if rec.get("note"):
         note += " " + rec["note"]
     row = build_row(
         rec["name"], None, note, rec.get("domain", "Agents"), paper_url,
-        ["source: safety-at-scale", rec["section"].lower()]
+        [rec.get("sourceTag", "source: safety-at-scale"), rec["section"].lower()]
         + [alias.lower() for alias in rec.get("aliases", [])],
     )
     row["year"] = rec["year"]
@@ -516,7 +549,10 @@ for rec in AGENT_BENCHMARK_RECORDS:
         {"label": "Table year", "value": rec["year"]},
         {"label": "Recorded scale", "value": rec["size"]},
     ]
-    row["resources"].append({"label": "Source survey", "href": AGENT_SURVEY_URL})
+    row["resources"].append({
+        "label": rec.get("sourceLabel", "Source survey"),
+        "href": rec.get("sourceUrl", AGENT_SURVEY_URL),
+    })
     row["citationOnly"] = True
     bench_rows.append(row)
 
@@ -678,6 +714,21 @@ for row in bench_rows:
         if not any(existing["href"] == resource["href"] for existing in row["resources"]):
             row["resources"].append(resource)
     row["downloads"] = row.get("downloads") or dataset_row.get("downloads")
+    row["stars"] = row.get("stars") or dataset_row.get("stars")
+
+# benchmark-resolved.json contains the hand/README-verified repository verdicts
+# for the survey's benchmark citations. Exact punctuation-insensitive canonical
+# names may reuse those stored API stars and repository URLs; unresolved rows
+# deliberately remain blank rather than falling back to GitHub name search.
+for row in bench_rows:
+    github = verified_benchmark_github(row["name"])
+    if not github:
+        continue
+    github_url = f"https://github.com/{github['repo']}"
+    if not any(resource["href"].rstrip("/") == github_url for resource in row["resources"]):
+        row["resources"].append({"label": "GitHub", "href": github_url})
+    if isinstance(github.get("stars"), int):
+        row["stars"] = github["stars"]
 
 for row in bench_rows:
     row["slug"] = row.pop("sourceSlug", None) or slugify(row["name"])
@@ -740,7 +791,7 @@ def build_bench_details():
     details = {}
     for row in bench_rows:
         name = row["name"]
-        g, a = GH.get(name), AX.get(name)
+        g, a = verified_benchmark_github(name) or GH.get(name), AX.get(name)
         resource_arxiv = next(
             (
                 resource["href"].removeprefix("https://arxiv.org/abs/")
@@ -853,8 +904,7 @@ CONFIGS = {
     "benchmarks": {
         "slug": "benchmarks", "breadcrumb": ["Home", "Benchmarks"], "title": "Benchmarks",
         "heroIcon": "◎",
-        "description": "Safety benchmarks across LLMs, Agents, and Embodied AI, extracted from "
-                       "the two source lists and their linked survey manuscripts.",
+        "description": "Open-source safety benchmarks for evaluating LLMs, Agents, and Embodied AI.",
         "overview": "Legacy OpenTAI benchmark rows are excluded. Names, years, recorded scale, "
                     "papers, and release links are shown only when the approved sources support them.",
         "tableTitle": "Benchmark platforms", "sectionTitle": "Benchmark categories",
@@ -873,8 +923,8 @@ CONFIGS = {
     "datasets": {
         "slug": "datasets", "breadcrumb": ["Home", "Datasets"], "title": "Datasets",
         "heroIcon": "◱",
-        "description": "Training-ready safety datasets across LLMs, Agents, and Embodied AI, "
-                       "separated from evaluation-only benchmarks.",
+        "description": "Open-source safety datasets for training safer LLMs, Agents, and "
+                       "Embodied AI models.",
         "overview": "An entry appears here only when its paper or official repository explicitly "
                     "supports training, fine-tuning, alignment, or classifier training. Public "
                     "test data stays in Benchmarks.",
@@ -1078,7 +1128,7 @@ export const siteBrand = {
   name: "OpenTAI",
   tagline: "The Open Hub for Trustworthy AI",
   headline: "One platform that collects all the open-source resources for trustworthy AI.",
-  contactEmail: "xingjunma@fudan.edu.cn",
+  contactEmail: "contact.opentai@gmail.com",
   upstream: "https://opentai.org",
 };
 

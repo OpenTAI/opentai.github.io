@@ -4,6 +4,11 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { LibraryPaper, paperDomains, paperGroups, paperLibrary } from "@/data/papers";
 import { Locale, t } from "@/lib/i18n";
+import {
+  paperDisplayMeta,
+  paperYearCounts,
+  sortPapersNewestFirst,
+} from "@/lib/paper-catalog";
 
 const PAGE = 30;
 
@@ -39,6 +44,7 @@ const HAYSTACK = new Map(
 );
 
 const LINKED = paperLibrary.filter((paper) => paperLink(paper)).length;
+const YEAR_COUNTS = paperYearCounts(paperLibrary);
 const KINDS = [
   { id: "research", label: "Research" },
   { id: "survey", label: "Survey" },
@@ -77,6 +83,109 @@ function Chip({
         <span className={active && size === "sm" ? "text-white/60" : "text-[#98a2b3]"}> {count}</span>
       ) : null}
     </button>
+  );
+}
+
+function venueTone(venue: string) {
+  const normalized = venue.toUpperCase();
+  if (normalized.includes("ACL") || normalized.includes("EMNLP") || normalized.includes("NAACL")) {
+    return "bg-[#ecfdf3] text-[#027a48]";
+  }
+  if (normalized.includes("NEURIPS") || normalized.includes("ICML") || normalized.includes("ICLR")) {
+    return "bg-[#f4f3ff] text-[#6938ef]";
+  }
+  if (normalized.includes("CVPR") || normalized.includes("ICCV") || normalized.includes("ECCV")) {
+    return "bg-[#ecfdff] text-[#0e7090]";
+  }
+  if (normalized.includes("IEEE")) {
+    return "bg-[#eff8ff] text-[#175cd3]";
+  }
+  if (normalized.includes("AAAI") || normalized.includes("IJCAI")) {
+    return "bg-[#fff6ed] text-[#c4320a]";
+  }
+  return "bg-[#f2f4f7] text-[#475467]";
+}
+
+function PaperYearChart({ locale }: { locale: Locale }) {
+  if (!YEAR_COUNTS.length) return null;
+
+  const width = 760;
+  const height = 220;
+  const left = 42;
+  const right = 18;
+  const top = 18;
+  const bottom = 36;
+  const chartWidth = width - left - right;
+  const chartHeight = height - top - bottom;
+  const maxCount = Math.max(...YEAR_COUNTS.map(({ count }) => count), 1);
+  const x = (index: number) =>
+    left + (YEAR_COUNTS.length === 1 ? chartWidth / 2 : (index / (YEAR_COUNTS.length - 1)) * chartWidth);
+  const y = (count: number) => top + chartHeight - (count / maxCount) * chartHeight;
+  const points = YEAR_COUNTS.map(({ count }, index) => `${x(index)},${y(count)}`).join(" ");
+  const area = `${left},${top + chartHeight} ${points} ${left + chartWidth},${top + chartHeight}`;
+  const labelStep = Math.max(1, Math.ceil(YEAR_COUNTS.length / 8));
+
+  return (
+    <section className="mb-5 rounded-[22px] border border-[#e8ecf3] bg-[#fbfcff] p-5 sm:p-6">
+      <div className="mb-4 flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-[#667085]">
+            {t(locale, "Paper statistics")}
+          </p>
+          <h2 className="mt-1 text-xl font-semibold tracking-[-0.04em] text-[#111827]">
+            {t(locale, "Papers by year")}
+          </h2>
+        </div>
+        <div className="flex gap-2">
+          <span className="rounded-full border border-[#e3e8f2] bg-white px-3 py-1.5 text-xs text-[#475467]">
+            <strong className="text-[#111827]">{paperLibrary.length.toLocaleString()}</strong>{" "}
+            {t(locale, "papers")}
+          </span>
+          <span className="rounded-full border border-[#e3e8f2] bg-white px-3 py-1.5 text-xs text-[#475467]">
+            <strong className="text-[#111827]">{LINKED.toLocaleString()}</strong>{" "}
+            {t(locale, "with links")}
+          </span>
+        </div>
+      </div>
+      <div className="overflow-x-auto">
+        <svg
+          aria-label={t(locale, "Annual count of papers with a recorded year.")}
+          className="min-w-[620px]"
+          role="img"
+          viewBox={`0 0 ${width} ${height}`}
+        >
+          <defs>
+            <linearGradient id="paper-year-area" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stopColor="#6366f1" stopOpacity="0.35" />
+              <stop offset="100%" stopColor="#6366f1" stopOpacity="0.03" />
+            </linearGradient>
+          </defs>
+          {[0, 0.25, 0.5, 0.75, 1].map((ratio) => {
+            const gridY = top + chartHeight - ratio * chartHeight;
+            return (
+              <g key={ratio}>
+                <line stroke="#e8ecf3" x1={left} x2={left + chartWidth} y1={gridY} y2={gridY} />
+                <text fill="#98a2b3" fontSize="10" textAnchor="end" x={left - 8} y={gridY + 3}>
+                  {Math.round(maxCount * ratio)}
+                </text>
+              </g>
+            );
+          })}
+          <polygon fill="url(#paper-year-area)" points={area} />
+          <polyline fill="none" points={points} stroke="#4f46e5" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+          {YEAR_COUNTS.map(({ count, year }, index) => (
+            <g key={year}>
+              <circle cx={x(index)} cy={y(count)} fill="#4f46e5" r="3.5" />
+              {index % labelStep === 0 || index === YEAR_COUNTS.length - 1 ? (
+                <text fill="#667085" fontSize="10" textAnchor="middle" x={x(index)} y={height - 12}>
+                  {year}
+                </text>
+              ) : null}
+            </g>
+          ))}
+        </svg>
+      </div>
+    </section>
   );
 }
 
@@ -119,47 +228,20 @@ export function PaperLibrary({ locale }: { locale: Locale }) {
 
   const filtered = useMemo(() => {
     const terms = normalized ? normalized.split(/\s+/) : [];
-    return inKind.filter((paper) => {
-      if (group && paper.group !== group) return false;
-      if (section && paper.section !== section) return false;
-      if (!terms.length) return true;
-      const text = HAYSTACK.get(paper)!;
-      return terms.every((term) => text.includes(term));
-    });
+    return sortPapersNewestFirst(
+      inKind.filter((paper) => {
+        if (group && paper.group !== group) return false;
+        if (section && paper.section !== section) return false;
+        if (!terms.length) return true;
+        const text = HAYSTACK.get(paper)!;
+        return terms.every((term) => text.includes(term));
+      }),
+    );
   }, [group, inKind, normalized, section]);
 
   return (
     <section className="subpage-main-table-card">
-      <div className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
-        <h2 className="text-[1.7rem] font-semibold tracking-[-0.05em] text-[#111827]">
-          {t(locale, "Research library")}
-        </h2>
-        <p className="text-sm text-[#667085]">
-          {paperLibrary.length.toLocaleString()} {t(locale, "papers")} · {LINKED.toLocaleString()} {t(locale, "with links")}
-        </p>
-      </div>
-
-      <p className="mb-5 text-sm leading-6 text-[#667085]">
-        {t(locale, "Merged from")}{" "}
-        <Link
-          className="text-[#4f46e5] hover:underline"
-          href="https://github.com/xingjunm/Awesome-Large-Model-Safety"
-          rel="noreferrer"
-          target="_blank"
-        >
-          Awesome-Large-Model-Safety
-        </Link>{" "}
-        {t(locale, "and")}{" "}
-        <Link
-          className="text-[#4f46e5] hover:underline"
-          href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety"
-          rel="noreferrer"
-          target="_blank"
-        >
-          Awesome-Embodied-AI-Safety
-        </Link>
-        . {t(locale, "Titles, authors and venues come from those lists. Surveys are those the embodied list files as surveys, plus titles that name themselves one.")}
-      </p>
+      <PaperYearChart locale={locale} />
 
       <div className="space-y-3 border-b border-[#eceff5] pb-5">
         <div className="flex flex-wrap gap-2">
@@ -257,6 +339,7 @@ export function PaperLibrary({ locale }: { locale: Locale }) {
       <ol className="space-y-2.5">
         {filtered.slice(0, shown).map((paper, index) => {
           const href = paperLink(paper);
+          const meta = paperDisplayMeta(paper);
           return (
             <li
               key={`${paper.title}-${index}`}
@@ -286,12 +369,17 @@ export function PaperLibrary({ locale }: { locale: Locale }) {
                       {t(locale, "Survey")}
                     </span>
                   ) : null}
-                  {paper.venue ? (
+                  {meta.yearLabel ? (
+                    <span className="whitespace-nowrap rounded-full bg-[#fff8e8] px-2.5 py-0.5 text-xs font-semibold text-[#9a6700]">
+                      {meta.yearLabel}
+                    </span>
+                  ) : null}
+                  {meta.venueLabel ? (
                     <span
-                      className="whitespace-nowrap rounded-full bg-[#eef2ff] px-2.5 py-0.5 text-xs font-semibold text-[#4338ca]"
+                      className={`whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold ${venueTone(meta.venueLabel)}`}
                       title={`${paper.venue} ${paper.year ?? ""}`.trim()}
                     >
-                      {shortVenue(paper.venue)} {paper.year}
+                      {shortVenue(meta.venueLabel)}
                     </span>
                   ) : null}
                   {href ? (
@@ -301,7 +389,7 @@ export function PaperLibrary({ locale }: { locale: Locale }) {
                       rel="noreferrer"
                       target="_blank"
                     >
-                      {paper.arxivId ? "arXiv" : "Link"}
+                      {meta.linkLabel}
                     </Link>
                   ) : null}
                 </div>

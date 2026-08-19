@@ -4,13 +4,9 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CollectionSummaryRow } from "@/components/collection-summary-row";
 import { ResourceSubmissionDialog } from "@/components/resource-submission-dialog";
+import { SubpageConfig, SubpageTableRow } from "@/data/site";
 import {
-  type DatasetSourcePaper,
-  SubpageConfig,
-  SubpageTableRow,
-} from "@/data/site";
-import {
-  buildDatasetStatistics,
+  buildCollectionStatistics,
   rowMatchesDomainFilters,
   type DatasetCount,
 } from "@/lib/dataset-statistics";
@@ -68,67 +64,6 @@ function recordedScale(row: SubpageTableRow) {
 
 function yearFor(row: SubpageTableRow) {
   return resourceYear(row)?.toString();
-}
-
-function usageCountFor(row: SubpageTableRow) {
-  const directUsage = row.usageCount ?? row.sourcePapers?.length;
-  if (Number.isInteger(directUsage) && directUsage && directUsage > 0) {
-    return directUsage;
-  }
-
-  const recordedUsage = row.stats?.find((stat) => stat.label === "Table #Times")?.value;
-  const parsedUsage = Number(recordedUsage?.replaceAll(",", ""));
-  return Number.isInteger(parsedUsage) && parsedUsage > 0 ? parsedUsage : undefined;
-}
-
-function SourcePapersDisclosure({
-  locale,
-  papers,
-}: {
-  locale: Locale;
-  papers: readonly DatasetSourcePaper[];
-}) {
-  return (
-    <details className="resource-source-disclosure">
-      <summary>
-        <span>{t(locale, "Citing papers")}</span>
-        <strong>{papers.length}</strong>
-        <span aria-hidden="true" className="resource-source-chevron">⌄</span>
-      </summary>
-      <ol className="resource-source-paper-list">
-        {papers.map((paper, index) => {
-          const title = paper.title || paper.arxivId || paper.openAlexId || t(locale, "Not recorded");
-          const recordedSource = typeof paper.source === "string"
-            ? paper.source
-            : paper.source?.url;
-          const publicSource = recordedSource && /^https?:\/\//i.test(recordedSource)
-            ? recordedSource
-            : undefined;
-          const href = paper.arxivId
-            ? `https://arxiv.org/abs/${encodeURIComponent(paper.arxivId)}`
-            : publicSource || (paper.openAlexId
-              ? `https://openalex.org/${encodeURIComponent(paper.openAlexId)}`
-              : undefined);
-
-          return (
-            <li key={`${paper.arxivId ?? paper.openAlexId ?? paper.title ?? "paper"}-${index}`}>
-              {href ? (
-                <Link href={href} rel="noreferrer" target="_blank">
-                  {title} <span aria-hidden="true">↗</span>
-                </Link>
-              ) : (
-                <strong>{title}</strong>
-              )}
-              <span className="resource-source-evidence-label">
-                {t(locale, "Evidence")}
-              </span>
-              <p>{paper.evidence || t(locale, "Not recorded yet.")}</p>
-            </li>
-          );
-        })}
-      </ol>
-    </details>
-  );
 }
 
 function ResourceLinksMenu({
@@ -246,8 +181,8 @@ function ResourceGridCard({
 }) {
   const year = yearFor(row);
   const scale = recordedScale(row);
-  const metric = kind === "dataset" ? row.downloads : row.stars;
-  const metricLabel = kind === "dataset" ? "Downloads" : "GitHub stars";
+  const metric = kind === "dataset" ? row.downloads : undefined;
+  const metricLabel = "Downloads";
   const detailHref = detailBase
     ? localizeHref(locale, `${detailBase}/${resourceSlug(row)}`)
     : undefined;
@@ -267,20 +202,32 @@ function ResourceGridCard({
   return (
     <article className="resource-grid-card">
       <div className="resource-card-topline">
-        <h3 className="resource-card-heading">
-          {titleHref ? (
-            <Link
-              className="resource-card-title"
-              href={titleHref}
-              rel={externalHref ? "noreferrer" : undefined}
-              target={externalHref ? "_blank" : undefined}
+        <div className="resource-card-title-group">
+          <h3 className="resource-card-heading">
+            {titleHref ? (
+              <Link
+                className="resource-card-title"
+                href={titleHref}
+                rel={externalHref ? "noreferrer" : undefined}
+                target={externalHref ? "_blank" : undefined}
+              >
+                {cardTitle}
+              </Link>
+            ) : (
+              <span className="resource-card-title">{cardTitle}</span>
+            )}
+          </h3>
+          {row.stars !== undefined ? (
+            <span
+              aria-label={`${t(locale, "GitHub stars")}: ${row.stars.toLocaleString("en-US")}`}
+              className="resource-card-stars"
+              title={t(locale, "GitHub stars")}
             >
-              {cardTitle}
-            </Link>
-          ) : (
-            <span className="resource-card-title">{cardTitle}</span>
-          )}
-        </h3>
+              <span aria-hidden="true">★</span>
+              {row.stars.toLocaleString("en-US")}
+            </span>
+          ) : null}
+        </div>
         <ResourceLinksMenu
           isOpen={isLinksOpen}
           locale={locale}
@@ -300,10 +247,6 @@ function ResourceGridCard({
 
       <p className="resource-card-description">{t(locale, presentation.note)}</p>
 
-      {kind === "dataset" && row.sourcePapers?.length ? (
-        <SourcePapersDisclosure locale={locale} papers={row.sourcePapers} />
-      ) : null}
-
       <div className="resource-card-footer">
         {year ? (
           <span aria-label={`${t(locale, "Year")}: ${year}`} title={t(locale, "Year")}>
@@ -322,7 +265,7 @@ function ResourceGridCard({
         ) : null}
         {scale ? (
           <span aria-label={`${t(locale, "Recorded scale")}: ${t(locale, scale)}`} title={t(locale, "Recorded scale")}>
-            <span aria-hidden="true">#</span>
+            <strong>{t(locale, "Recorded scale")}:</strong>
             {t(locale, scale)}
           </span>
         ) : null}
@@ -345,22 +288,32 @@ function ResourceGridCard({
   );
 }
 
-function DatasetStatistics({
+function ResourceStatistics({
+  kind,
   locale,
   rows,
 }: {
+  kind: ResourceCardKind;
   locale: Locale;
   rows: readonly SubpageTableRow[];
 }) {
-  const statistics = buildDatasetStatistics(
+  const statistics = buildCollectionStatistics(
     rows.map((row) => ({
       domain: row.domain,
       domains: row.domains,
       type: row.type,
-      usageCount: usageCountFor(row),
       year: resourceYear(row),
     })),
   );
+  const noun = kind === "dataset" ? "Dataset" : "Benchmark";
+  const plural = kind === "dataset" ? "datasets" : "benchmarks";
+  const statisticsTitle = `${noun} statistics`;
+  const growthTitle = `${noun} growth by year`;
+  const yearlyDescription = `Annual count of ${plural} with a recorded year.`;
+  const domainTitle = `${noun}s by domain`;
+  const calculationNote = kind === "dataset"
+    ? "Calculated from the verified training datasets below."
+    : "Calculated from the verified benchmarks below.";
 
   const chartWidth = 920;
   const chartHeight = 280;
@@ -393,7 +346,6 @@ function DatasetStatistics({
   }));
 
   const domainColors = ["#5957d9", "#17a99a", "#f59e0b", "#e0528d", "#64748b"];
-  const usageColors = ["#5957d9", "#8574e8", "#d45b9c", "#f29e42"];
 
   const renderDonut = ({
     centerLabel,
@@ -474,20 +426,20 @@ function DatasetStatistics({
   };
 
   return (
-    <section className="dataset-statistics" aria-labelledby="dataset-statistics-title">
+    <section className="dataset-statistics" aria-labelledby={`${kind}-statistics-title`}>
       <div className="dataset-statistics-heading">
         <div>
           <span>{t(locale, "Automatically updated")}</span>
-          <h2 id="dataset-statistics-title">{t(locale, "Dataset statistics")}</h2>
+          <h2 id={`${kind}-statistics-title`}>{t(locale, statisticsTitle)}</h2>
         </div>
-        <p>{t(locale, "Calculated from the verified training datasets below.")}</p>
+        <p>{t(locale, calculationNote)}</p>
       </div>
       <div className="dataset-statistics-grid">
         <article className="dataset-year-card">
           <div className="dataset-chart-card-heading">
             <div>
-              <h3>{t(locale, "Dataset growth by year")}</h3>
-              <p>{t(locale, "Annual count of datasets with a recorded year.")}</p>
+              <h3>{t(locale, growthTitle)}</h3>
+              <p>{t(locale, yearlyDescription)}</p>
             </div>
             <span>{statistics.years.reduce((total, year) => total + year.count, 0)}</span>
           </div>
@@ -499,9 +451,9 @@ function DatasetStatistics({
                 role="img"
                 viewBox={`0 0 ${chartWidth} ${chartHeight}`}
               >
-                <title id="dataset-year-chart-title">{t(locale, "Dataset growth by year")}</title>
+                <title id="dataset-year-chart-title">{t(locale, growthTitle)}</title>
                 <desc id="dataset-year-chart-description">
-                  {t(locale, "Annual count of datasets with a recorded year.")}
+                  {t(locale, yearlyDescription)}
                 </desc>
                 {yTicks.map((tick) => (
                   <g key={tick.label}>
@@ -541,45 +493,23 @@ function DatasetStatistics({
             <p className="dataset-chart-empty">{t(locale, "No recorded year data")}</p>
           )}
         </article>
-        <div className="dataset-donut-grid">
+        <div className="dataset-donut-grid dataset-donut-grid-single">
           <article>
             <div className="dataset-chart-card-heading">
               <div>
-                <h3>{t(locale, "Datasets by domain")}</h3>
+                <h3>{t(locale, domainTitle)}</h3>
                 <p>{t(locale, "Recorded domain assignments in this collection.")}</p>
               </div>
             </div>
             {renderDonut({
-              centerLabel: t(locale, "datasets"),
+              centerLabel: t(locale, plural),
               centerValue: statistics.total,
               colors: domainColors,
               description: t(locale, "Recorded domain assignments in this collection."),
-              id: "dataset-domain-chart",
+              id: `${kind}-domain-chart`,
               items: statistics.domains,
-              title: t(locale, "Datasets by domain"),
+              title: t(locale, domainTitle),
             })}
-          </article>
-          <article>
-            <div className="dataset-chart-card-heading">
-              <div>
-                <h3>{t(locale, "Usage frequency")}</h3>
-                <p>{t(locale, "Datasets grouped by their recorded usage count.")}</p>
-              </div>
-            </div>
-            {renderDonut({
-              centerLabel: t(locale, "recorded"),
-              centerValue: statistics.usageTotal,
-              colors: usageColors,
-              description: t(locale, "Datasets grouped by their recorded usage count."),
-              id: "dataset-usage-chart",
-              items: statistics.usageBuckets,
-              title: t(locale, "Usage frequency"),
-            })}
-            {statistics.usageTotal === 0 ? (
-              <p className="dataset-chart-empty dataset-usage-empty">
-                {t(locale, "No usage data recorded")}
-              </p>
-            ) : null}
           </article>
         </div>
       </div>
@@ -600,7 +530,9 @@ export function SubpageLayout(
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [openLinksId, setOpenLinksId] = useState<string | null>(null);
-  const [sortKey, setSortKey] = useState<ResourceSortKey>("default");
+  const [sortKey, setSortKey] = useState<ResourceSortKey>(
+    resourceCardKind ? "stars-desc" : "default",
+  );
   const normalizedQuery = query.trim().toLowerCase();
 
   const allCategoryStats = useMemo(
@@ -673,7 +605,7 @@ export function SubpageLayout(
   const catalogSummary = useMemo(
     () =>
       resourceCardKind
-        ? buildResourceCatalogSummary(visibleRows, resourceCardKind)
+        ? buildResourceCatalogSummary(visibleRows)
         : undefined,
     [resourceCardKind, visibleRows],
   );
@@ -768,8 +700,8 @@ export function SubpageLayout(
         </div>
       </section>
 
-      {resourceCardKind === "dataset" ? (
-        <DatasetStatistics locale={locale} rows={props.tableRows} />
+      {resourceCardKind ? (
+        <ResourceStatistics kind={resourceCardKind} locale={locale} rows={props.tableRows} />
       ) : null}
 
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#eceff5] pb-4">

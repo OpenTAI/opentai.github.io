@@ -38,14 +38,15 @@ function catalogYear(row: CatalogRowLike) {
 
 export function buildResourceCatalogSummary(
   rows: readonly CatalogRowLike[],
-  kind: "benchmark" | "dataset",
 ): ResourceCatalogSummary {
   const years = rows
     .map((row) => catalogYear(row))
     .filter((year): year is number => year !== undefined);
-  const metricName = kind === "dataset" ? "downloads" : "stars";
-  const recordedMetrics = rows
-    .map((row) => row[metricName])
+  const recordedDownloads = rows
+    .map((row) => row.downloads)
+    .filter((value): value is number => value !== undefined);
+  const recordedStars = rows
+    .map((row) => row.stars)
     .filter((value): value is number => value !== undefined);
 
   return {
@@ -60,8 +61,11 @@ export function buildResourceCatalogSummary(
       }),
     ).length,
     links: rows.reduce((total, row) => total + row.resources.length, 0),
-    ...(recordedMetrics.length
-      ? { [metricName]: recordedMetrics.reduce((total, value) => total + value, 0) }
+    ...(recordedDownloads.length
+      ? { downloads: recordedDownloads.reduce((total, value) => total + value, 0) }
+      : {}),
+    ...(recordedStars.length
+      ? { stars: recordedStars.reduce((total, value) => total + value, 0) }
       : {}),
     ...(years.length
       ? { yearEnd: Math.max(...years), yearStart: Math.min(...years) }

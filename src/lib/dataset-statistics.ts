@@ -24,6 +24,11 @@ export type DatasetStatistics = {
   years: DatasetYearCount[];
 };
 
+export type CollectionStatistics = Pick<
+  DatasetStatistics,
+  "domains" | "total" | "years"
+>;
+
 const DOMAIN_ORDER = ["LLMs", "Agents", "Embodied AI"] as const;
 const USAGE_BUCKETS = ["1", "2–5", "6–20", "20+"] as const;
 
@@ -127,5 +132,15 @@ export function buildDatasetStatistics(
     domains: countDatasetDomains(rows),
     usageBuckets,
     usageTotal: usageBuckets.reduce((total, bucket) => total + bucket.count, 0),
+  };
+}
+
+export function buildCollectionStatistics(
+  rows: readonly DatasetStatisticsRow[],
+): CollectionStatistics {
+  return {
+    total: rows.length,
+    years: buildYearSeries(rows),
+    domains: countDatasetDomains(rows),
   };
 }

@@ -27,7 +27,11 @@ test("resource cards retain heading semantics and visible search focus", () => {
   const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
 
   assert.match(component, /<h3 className="resource-card-heading">/);
+  assert.match(component, /className="resource-card-stars"/);
+  assert.match(component, /t\(locale, "Recorded scale"\)/);
+  assert.doesNotMatch(component, /<span aria-hidden="true">#<\/span>/);
   assert.match(css, /\.subpage-search-box:focus-within\s*{/);
+  assert.match(css, /\.resource-card-stars\s*{/);
 });
 
 test("the narrow link popover remains right anchored", () => {

@@ -40,7 +40,7 @@ export function SimplePage({
             <h1 className="text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.06em] text-[#0f172a]">
               {t(locale, title)}
             </h1>
-            <p className="max-w-3xl text-[1rem] leading-8 text-[#556072]">{t(locale, description)}</p>
+            <p className="max-w-3xl whitespace-pre-line text-[1rem] leading-8 text-[#556072]">{t(locale, description)}</p>
           </div>
           {heroAside ?? (overview ? (
             <p className="text-[0.98rem] leading-8 text-[#556072]">{t(locale, overview)}</p>

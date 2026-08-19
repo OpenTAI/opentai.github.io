@@ -4,6 +4,7 @@ import { FormEvent, useEffect, useId, useState } from "react";
 import { Locale, t } from "@/lib/i18n";
 import {
   buildResourceSubmissionIssueUrl,
+  resourceSubmissionNameLabel,
   type ResourceSubmissionErrors,
   type ResourceSubmissionKind,
   type ResourceSubmissionValues,
@@ -21,12 +22,21 @@ const SUBMIT_LABELS: Record<ResourceSubmissionKind, string> = {
   arena: "Submit your Arena",
   benchmark: "Submit your Benchmark",
   dataset: "Submit your Dataset",
+  paper: "Submit your Paper",
 };
 
 const DIALOG_TITLES: Record<ResourceSubmissionKind, string> = {
   arena: "Suggest an Arena",
   benchmark: "Suggest a Benchmark",
   dataset: "Suggest a Dataset",
+  paper: "Suggest a Paper",
+};
+
+const CTA_HELPERS: Record<ResourceSubmissionKind, string> = {
+  arena: "Share your arena with the OpenTAI community",
+  benchmark: "Share your benchmark with the OpenTAI community",
+  dataset: "Share your dataset with the OpenTAI community",
+  paper: "Share your latest research with the community.",
 };
 
 function errorMessage(locale: Locale, error: string | undefined) {
@@ -70,7 +80,7 @@ export function ResourceSubmissionDialog({
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const nextErrors = validateResourceSubmission(values);
+    const nextErrors = validateResourceSubmission(kind, values);
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
 
@@ -83,7 +93,7 @@ export function ResourceSubmissionDialog({
 
   return (
     <div className="submission-cta">
-      <p>{t(locale, "Help us find a verified public resource.")}</p>
+      <p>{t(locale, CTA_HELPERS[kind])}</p>
       <button onClick={() => setIsOpen(true)} type="button">
         <span>{t(locale, SUBMIT_LABELS[kind])}</span>
         <span aria-hidden="true">↗</span>
@@ -121,7 +131,7 @@ export function ResourceSubmissionDialog({
 
             <form className="submission-form" noValidate onSubmit={submit}>
               <label>
-                <span>{t(locale, "Name")} *</span>
+                <span>{t(locale, resourceSubmissionNameLabel(kind))} *</span>
                 <input
                   aria-invalid={Boolean(errors.name)}
                   autoFocus
@@ -144,7 +154,10 @@ export function ResourceSubmissionDialog({
               </label>
 
               <label className="submission-form-wide">
-                <span>{t(locale, "Link (optional)")}</span>
+                <span>
+                  {t(locale, kind === "paper" ? "Paper Link" : "Link (optional)")}
+                  {kind === "paper" ? " *" : ""}
+                </span>
                 <input
                   aria-invalid={Boolean(errors.link)}
                   onChange={(event) => update("link", event.target.value)}
@@ -156,7 +169,10 @@ export function ResourceSubmissionDialog({
               </label>
 
               <label className="submission-form-wide">
-                <span>{t(locale, "GitHub Link")} *</span>
+                <span>
+                  {t(locale, kind === "paper" ? "GitHub Link (optional)" : "GitHub Link")}
+                  {kind === "paper" ? "" : " *"}
+                </span>
                 <input
                   aria-invalid={Boolean(errors.githubUrl)}
                   onChange={(event) => update("githubUrl", event.target.value)}

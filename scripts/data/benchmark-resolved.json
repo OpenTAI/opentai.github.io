@@ -307,5 +307,20 @@
       "homepage": null,
       "topics": []
     }
+  },
+  "Mobilesafetybench: Evaluating safety of autonomous agents in mobile device control": {
+    "name": "MobileSafetyBench",
+    "github": {
+      "repo": "jylee425/mobilesafetybench",
+      "stars": 37,
+      "forks": 1,
+      "language": "Jupyter Notebook",
+      "license": "Apache-2.0",
+      "pushedAt": "2026-01-28",
+      "description": "Evaluating Safety of Autonomous Agents in Mobile Device Control (AAAI 2026 AI Alignment Track)",
+      "homepage": "https://mobilesafetybench.github.io/",
+      "topics": []
+    },
+    "verifiedBy": "official project Code link and GitHub API, checked 2026-08-19"
   }
 }

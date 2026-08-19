@@ -172,7 +172,7 @@ export const siteBrand = {
   name: "OpenTAI",
   tagline: "The Open Hub for Trustworthy AI",
   headline: "One platform that collects all the open-source resources for trustworthy AI.",
-  contactEmail: "xingjunma@fudan.edu.cn",
+  contactEmail: "contact.opentai@gmail.com",
   upstream: "https://opentai.org",
 };
 
@@ -425,16 +425,16 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         href: "https://arxiv.org/abs/2312.14197",
       },
       {
+        label: "GitHub",
+        href: "https://github.com/microsoft/BIPIA",
+      },
+      {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
       {
         label: "GitHub",
         href: "https://github.com/microsoft/BIPIA/tree/main/benchmark",
-      },
-      {
-        label: "GitHub",
-        href: "https://github.com/microsoft/BIPIA",
       },
     ],
     stats: [
@@ -450,8 +450,15 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     tags: [
       "source: safety-at-scale",
       "simulation-based benchmarks",
+      "llm-security",
     ],
     arxivId: "2312.14197",
+    repo: "microsoft/BIPIA",
+    license: "NOASSERTION",
+    language: "Python",
+    stars: 154,
+    forks: 19,
+    updated: "2024-04-15",
     pending: [
       "Dataset",
       "Metrics",
@@ -510,6 +517,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/uiuc-kang-lab/InjecAgent",
+      },
     ],
     stats: [
       {
@@ -527,6 +538,12 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "simulation-based benchmarks",
     ],
     arxivId: "2403.02691",
+    repo: "uiuc-kang-lab/InjecAgent",
+    license: "MIT",
+    language: "Python",
+    stars: 157,
+    forks: 30,
+    updated: "2024-07-02",
     pending: [
       "Dataset",
       "Metrics",
@@ -548,6 +565,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/ethz-spylab/agentdojo",
+      },
     ],
     stats: [
       {
@@ -564,6 +585,13 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "simulation-based benchmarks",
     ],
     arxivId: "2406.13352",
+    repo: "ethz-spylab/agentdojo",
+    license: "MIT",
+    language: "Python",
+    stars: 740,
+    forks: 191,
+    updated: "2026-06-02",
+    homepage: "https://agentdojo.spylab.ai/",
     pending: [],
     dataset: {
       text: "97 realistic agent tasks — managing an email client, navigating e-banking, making travel bookings — together with 629 security test cases. Organised into suites such as workspace, and designed to be extended rather than frozen.",
@@ -600,6 +628,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/AIEvals/AgentHarm",
+      },
     ],
     stats: [
       {
@@ -617,6 +649,11 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "simulation-based benchmarks",
     ],
     arxivId: "2410.09024",
+    repo: "AIEvals/AgentHarm",
+    language: "Python",
+    stars: 1,
+    forks: 0,
+    updated: "2026-01-16",
     pending: [
       "Dataset",
       "Metrics",
@@ -638,6 +675,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI-secure/RedCode",
+      },
     ],
     stats: [
       {
@@ -655,6 +696,9 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "simulation-based benchmarks",
     ],
     arxivId: "2411.07781",
+    repo: "AI-secure/RedCode",
+    stars: 87,
+    forks: 11,
     pending: [
       "Dataset",
       "Metrics",
@@ -714,6 +758,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/Lordog/R-Judge",
+      },
     ],
     stats: [
       {
@@ -730,6 +778,12 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "simulation-based benchmarks",
     ],
     arxivId: "2401.10019",
+    repo: "Lordog/R-Judge",
+    language: "Python",
+    stars: 109,
+    forks: 10,
+    updated: "2026-01-11",
+    homepage: "https://arxiv.org/abs/2401.10019",
     pending: [
       "Dataset",
       "Metrics",
@@ -752,6 +806,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/OpenSafetyLab/SALAD-BENCH",
+      },
     ],
     stats: [
       {
@@ -759,8 +817,8 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "2024",
       },
       {
-        label: "Recorded size",
-        value: "30K",
+        label: "Recorded scale",
+        value: "21K base questions / 16 tasks / 66 categories",
       },
       {
         label: "Table #Times",
@@ -773,6 +831,12 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "simulation-based benchmarks",
     ],
     arxivId: "2402.05044",
+    repo: "OpenSafetyLab/SALAD-BENCH",
+    license: "Apache-2.0",
+    language: "Python",
+    stars: 176,
+    forks: 15,
+    updated: "2025-03-08",
     pending: [
       "Dataset",
       "Metrics",
@@ -794,6 +858,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/mdoumbouya/h4rm3l",
+      },
     ],
     stats: [
       {
@@ -811,6 +879,13 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "simulation-based benchmarks",
     ],
     arxivId: "2408.04811",
+    repo: "mdoumbouya/h4rm3l",
+    license: "MIT",
+    language: "Python",
+    stars: 28,
+    forks: 5,
+    updated: "2024-12-05",
+    homepage: "https://mdoumbouya.github.io/h4rm3l/",
     pending: [
       "Metrics",
       "Baselines",
@@ -835,6 +910,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/MurrayTom/SG-Bench",
+      },
     ],
     stats: [
       {
@@ -851,6 +930,12 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "simulation-based benchmarks",
     ],
     arxivId: "2410.21965",
+    repo: "MurrayTom/SG-Bench",
+    license: "GPL-3.0",
+    language: "Python",
+    stars: 26,
+    forks: 3,
+    updated: "2024-11-29",
     pending: [
       "Dataset",
       "Metrics",
@@ -909,6 +994,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/Junjie-Ye/ToolSword",
+      },
     ],
     stats: [
       {
@@ -925,6 +1014,11 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "simulation-based benchmarks",
     ],
     arxivId: "2402.10753",
+    repo: "Junjie-Ye/ToolSword",
+    license: "Apache-2.0",
+    stars: 15,
+    forks: 0,
+    updated: "2024-09-12",
     pending: [
       "Dataset",
       "Metrics",
@@ -946,6 +1040,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/SALT-NLP/PrivacyLens",
+      },
     ],
     stats: [
       {
@@ -963,6 +1061,13 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "simulation-based benchmarks",
     ],
     arxivId: "2409.00138",
+    repo: "SALT-NLP/PrivacyLens",
+    license: "MIT",
+    language: "Python",
+    stars: 48,
+    forks: 10,
+    updated: "2025-03-04",
+    homepage: "https://salt-nlp.github.io/PrivacyLens",
     pending: [
       "Dataset",
       "Metrics",
@@ -984,6 +1089,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/trust-ai/SafeBench",
+      },
     ],
     stats: [
       {
@@ -1000,6 +1109,13 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "real-interaction benchmarks",
     ],
     arxivId: "2206.09682",
+    repo: "trust-ai/SafeBench",
+    license: "MIT",
+    language: "Python",
+    stars: 155,
+    forks: 29,
+    updated: "2024-02-23",
+    homepage: "https://safebench.github.io",
     pending: [
       "Metrics",
       "Baselines",
@@ -1061,6 +1177,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/shengyin1224/SafeAgentBench",
+      },
     ],
     stats: [
       {
@@ -1077,6 +1197,11 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "real-interaction benchmarks",
     ],
     arxivId: "2412.13178",
+    repo: "shengyin1224/SafeAgentBench",
+    language: "Python",
+    stars: 75,
+    forks: 5,
+    updated: "2025-02-25",
     pending: [
       "Dataset",
       "Metrics",
@@ -1098,6 +1223,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/thu-coai/Agent-SafetyBench",
+      },
     ],
     stats: [
       {
@@ -1114,6 +1243,12 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "real-interaction benchmarks",
     ],
     arxivId: "2412.14470",
+    repo: "thu-coai/Agent-SafetyBench",
+    license: "MIT",
+    language: "Python",
+    stars: 157,
+    forks: 10,
+    updated: "2025-08-11",
     pending: [
       "Dataset",
       "Metrics",
@@ -1176,6 +1311,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/segev-shlomov/ST-WebAgentBench",
+      },
     ],
     stats: [
       {
@@ -1192,6 +1331,12 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "real-interaction benchmarks",
     ],
     arxivId: "2410.06703",
+    repo: "segev-shlomov/ST-WebAgentBench",
+    license: "NOASSERTION",
+    language: "Python",
+    stars: 25,
+    forks: 6,
+    updated: "2026-03-12",
     pending: [
       "Dataset",
       "Metrics",
@@ -1213,6 +1358,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/XuhuiZhou/HAICosystem",
+      },
     ],
     stats: [
       {
@@ -1229,6 +1378,12 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "real-interaction benchmarks",
     ],
     arxivId: "2409.16427",
+    repo: "XuhuiZhou/HAICosystem",
+    language: "Python",
+    stars: 14,
+    forks: 1,
+    updated: "2025-06-01",
+    homepage: "https://haicosystem.org",
     pending: [
       "Dataset",
       "Metrics",
@@ -1250,6 +1405,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/facebookresearch/wasp",
+      },
     ],
     stats: [
       {
@@ -1267,6 +1426,12 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "real-interaction benchmarks",
     ],
     arxivId: "2504.18575",
+    repo: "facebookresearch/wasp",
+    license: "NOASSERTION",
+    language: "Python",
+    stars: 98,
+    forks: 15,
+    updated: "2026-04-13",
     pending: [
       "Dataset",
       "Metrics",
@@ -1326,6 +1491,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/McGill-NLP/safearena",
+      },
     ],
     stats: [
       {
@@ -1342,6 +1511,12 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "real-interaction benchmarks",
     ],
     arxivId: "2503.04957",
+    repo: "McGill-NLP/safearena",
+    language: "Python",
+    stars: 24,
+    forks: 7,
+    updated: "2025-04-23",
+    homepage: "https://safearena.github.io",
     pending: [
       "Dataset",
       "Metrics",
@@ -1363,6 +1538,10 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
+      {
+        label: "GitHub",
+        href: "https://github.com/Open-Agent-Safety/OpenAgentSafety",
+      },
     ],
     stats: [
       {
@@ -1379,6 +1558,61 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "real-interaction benchmarks",
     ],
     arxivId: "2507.06134",
+    repo: "Open-Agent-Safety/OpenAgentSafety",
+    license: "MIT",
+    language: "Python",
+    stars: 32,
+    forks: 17,
+    updated: "2026-08-10",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  mobilesafetybench: {
+    slug: "mobilesafetybench",
+    name: "MobileSafetyBench",
+    category: "Agents",
+    description: "The official project introduces MobileSafetyBench for evaluating device-control agents in an Android-emulator environment and records 250 tasks: 200 daily-scenario tasks and 50 indirect prompt-injection tasks.",
+    resources: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2410.17520",
+      },
+      {
+        label: "Official project",
+        href: "https://mobilesafetybench.github.io/",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/jylee425/mobilesafetybench",
+      },
+    ],
+    stats: [
+      {
+        label: "Table year",
+        value: "2024",
+      },
+      {
+        label: "Recorded scale",
+        value: "250 tasks / 200 daily scenarios / 50 indirect prompt-injection scenarios",
+      },
+    ],
+    tags: [
+      "prompt injection",
+      "source: official project",
+      "simulation-based benchmarks",
+    ],
+    arxivId: "2410.17520",
+    repo: "jylee425/mobilesafetybench",
+    license: "Apache-2.0",
+    language: "Jupyter Notebook",
+    stars: 37,
+    forks: 1,
+    updated: "2026-01-28",
+    homepage: "https://mobilesafetybench.github.io/",
     pending: [
       "Dataset",
       "Metrics",
@@ -1391,6 +1625,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     name: "Bench2Drive",
     category: "Embodied AI",
     description: "The Embodied AI survey's dedicated Benchmarks section records 220 routes. The official repository releases the benchmark and training data.",
+    venue: "NeurIPS 2024",
     resources: [
       {
         label: "GitHub",
@@ -1419,6 +1654,12 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "source: embodied-ai-safety",
     ],
     arxivId: "2406.03877",
+    repo: "Thinklab-SJTU/Bench2Drive",
+    license: "NOASSERTION",
+    language: "Python",
+    stars: 1924,
+    forks: 142,
+    updated: "2026-08-11",
     pending: [
       "Dataset",
       "Metrics",
@@ -1937,16 +2178,16 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         href: "https://arxiv.org/abs/2307.15043",
       },
       {
+        label: "GitHub",
+        href: "https://github.com/llm-attacks/llm-attacks",
+      },
+      {
         label: "Source survey",
         href: "https://arxiv.org/abs/2502.05206",
       },
       {
         label: "GitHub",
         href: "https://github.com/llm-attacks/llm-attacks/blob/main/data/advbench/harmful_behaviors.csv",
-      },
-      {
-        label: "GitHub",
-        href: "https://github.com/llm-attacks/llm-attacks",
       },
     ],
     stats: [
@@ -1969,6 +2210,12 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "adversarial datasets and backdoor benchmarks",
     ],
     arxivId: "2307.15043",
+    repo: "llm-attacks/llm-attacks",
+    license: "MIT",
+    language: "Python",
+    stars: 4760,
+    forks: 631,
+    updated: "2024-08-02",
     pending: [
       "Dataset",
       "Metrics",
@@ -2470,7 +2717,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     repo: "centerforaisafety/HarmBench",
     license: "MIT",
     language: "Jupyter Notebook",
-    stars: 1029,
+    stars: 1028,
     forks: 154,
     updated: "2024-08-16",
     pending: [],
@@ -3306,7 +3553,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
     ],
     title: "Benchmarks",
     heroIcon: "◎",
-    description: "Safety benchmarks across LLMs, Agents, and Embodied AI, extracted from the two source lists and their linked survey manuscripts.",
+    description: "Open-source safety benchmarks for evaluating LLMs, Agents, and Embodied AI.",
     overview: "Legacy OpenTAI benchmark rows are excluded. Names, years, recorded scale, papers, and release links are shown only when the approved sources support them.",
     tableTitle: "Benchmark platforms",
     sectionTitle: "Benchmark categories",
@@ -3342,9 +3589,12 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: IPI attacks.",
         type: "Agents",
         year: "2023",
+        stars: 154,
+        updated: "2024-04-15",
         tags: [
           "source: safety-at-scale",
           "simulation-based benchmarks",
+          "llm-security",
         ],
         stats: [
           {
@@ -3356,10 +3606,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             value: "5 scenarios / 250 goals",
           },
         ],
+        meta: "microsoft/BIPIA · NOASSERTION · 19 forks · since 2024",
         resources: [
           {
             label: "arXiv",
             href: "https://arxiv.org/abs/2312.14197",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/microsoft/BIPIA",
           },
           {
             label: "Source survey",
@@ -3368,10 +3623,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           {
             label: "GitHub",
             href: "https://github.com/microsoft/BIPIA/tree/main/benchmark",
-          },
-          {
-            label: "GitHub",
-            href: "https://github.com/microsoft/BIPIA",
           },
         ],
         citationOnly: true,
@@ -3416,6 +3667,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Tool-integrated indirect prompt injection.",
         type: "Agents",
         year: "2024",
+        stars: 157,
         tags: [
           "prompt injection",
           "source: safety-at-scale",
@@ -3440,6 +3692,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/uiuc-kang-lab/InjecAgent",
+          },
         ],
         citationOnly: true,
         slug: "injecagent",
@@ -3451,6 +3707,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Third-party instructions.",
         type: "Agents",
         year: "2024",
+        stars: 740,
         tags: [
           "source: safety-at-scale",
           "simulation-based benchmarks",
@@ -3474,6 +3731,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/ethz-spylab/agentdojo",
+          },
         ],
         citationOnly: true,
         slug: "agentdojo",
@@ -3485,6 +3746,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         year: "2024",
         downloads: 4338,
+        stars: 1,
         updated: "2024-12-19",
         tags: [
           "harmful content",
@@ -3511,6 +3773,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/AIEvals/AgentHarm",
+          },
         ],
         citationOnly: true,
         slug: "agentharm",
@@ -3522,6 +3788,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Code vulnerabilities.",
         type: "Agents",
         year: "2024",
+        stars: 87,
         tags: [
           "cybersecurity",
           "source: safety-at-scale",
@@ -3545,6 +3812,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI-secure/RedCode",
           },
         ],
         citationOnly: true,
@@ -3592,6 +3863,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Risk identification from logs.",
         type: "Agents",
         year: "2024",
+        stars: 109,
         tags: [
           "source: safety-at-scale",
           "simulation-based benchmarks",
@@ -3615,6 +3887,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/Lordog/R-Judge",
+          },
         ],
         citationOnly: true,
         slug: "r-judge",
@@ -3627,6 +3903,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         venue: "ACL 2024",
         year: "2024",
         downloads: 1767,
+        stars: 176,
         updated: "2026-07-23",
         tags: [
           "robustness",
@@ -3639,8 +3916,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             value: "2024",
           },
           {
-            label: "Recorded size",
-            value: "30K",
+            label: "Recorded scale",
+            value: "21K base questions / 16 tasks / 66 categories",
           },
           {
             label: "Table #Times",
@@ -3657,6 +3934,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/OpenSafetyLab/SALAD-BENCH",
+          },
         ],
         citationOnly: true,
         slug: "salad-bench",
@@ -3668,6 +3949,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Jailbreak attack synthesis.",
         type: "LLMs",
         year: "2024",
+        stars: 28,
         tags: [
           "jailbreak",
           "source: safety-at-scale",
@@ -3692,6 +3974,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/mdoumbouya/h4rm3l",
+          },
         ],
         citationOnly: true,
         slug: "h4rm3l",
@@ -3703,6 +3989,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Safety generalization.",
         type: "Agents",
         year: "2024",
+        stars: 26,
         tags: [
           "source: safety-at-scale",
           "simulation-based benchmarks",
@@ -3725,6 +4012,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/MurrayTom/SG-Bench",
           },
         ],
         citationOnly: true,
@@ -3769,6 +4060,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Simulation-based Benchmarks. Evaluation focus: Tool-use safety.",
         type: "Agents",
         year: "2024",
+        stars: 15,
         tags: [
           "source: safety-at-scale",
           "simulation-based benchmarks",
@@ -3792,6 +4084,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/Junjie-Ye/ToolSword",
+          },
         ],
         citationOnly: true,
         slug: "toolsword",
@@ -3803,6 +4099,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         year: "2024",
         downloads: 317,
+        stars: 48,
         updated: "2024-09-04",
         tags: [
           "privacy",
@@ -3829,6 +4126,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/SALT-NLP/PrivacyLens",
+          },
         ],
         citationOnly: true,
         slug: "privacylens",
@@ -3840,6 +4141,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Driving safety.",
         type: "Embodied AI",
         year: "2022",
+        stars: 155,
         tags: [
           "source: safety-at-scale",
           "real-interaction benchmarks",
@@ -3862,6 +4164,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/trust-ai/SafeBench",
           },
         ],
         citationOnly: true,
@@ -3906,6 +4212,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Embodied hazards.",
         type: "Embodied AI",
         year: "2024",
+        stars: 75,
         tags: [
           "source: safety-at-scale",
           "real-interaction benchmarks",
@@ -3929,6 +4236,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/shengyin1224/SafeAgentBench",
+          },
         ],
         citationOnly: true,
         slug: "safeagentbench",
@@ -3940,6 +4251,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         year: "2024",
         downloads: 271,
+        stars: 157,
         updated: "2025-08-11",
         tags: [
           "source: safety-at-scale",
@@ -3964,6 +4276,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/thu-coai/Agent-SafetyBench",
           },
         ],
         citationOnly: true,
@@ -4014,6 +4330,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         year: "2024",
         downloads: 174,
+        stars: 25,
         updated: "2026-03-12",
         tags: [
           "source: safety-at-scale",
@@ -4039,6 +4356,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/segev-shlomov/ST-WebAgentBench",
+          },
         ],
         citationOnly: true,
         slug: "st-webagentbench",
@@ -4049,6 +4370,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Human-AI sandbox safety.",
         type: "Agents",
         year: "2024",
+        stars: 14,
         tags: [
           "source: safety-at-scale",
           "real-interaction benchmarks",
@@ -4072,6 +4394,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/XuhuiZhou/HAICosystem",
+          },
         ],
         citationOnly: true,
         slug: "haicosystem",
@@ -4082,6 +4408,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Adversarial web-agent safety.",
         type: "Agents",
         year: "2025",
+        stars: 98,
         tags: [
           "robustness",
           "source: safety-at-scale",
@@ -4105,6 +4432,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/facebookresearch/wasp",
           },
         ],
         citationOnly: true,
@@ -4153,6 +4484,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         year: "2025",
         downloads: 132,
+        stars: 24,
         updated: "2025-04-23",
         tags: [
           "source: safety-at-scale",
@@ -4178,6 +4510,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/McGill-NLP/safearena",
+          },
         ],
         citationOnly: true,
         slug: "safearena",
@@ -4188,6 +4524,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Safety at Scale Table 14 lists this resource under Real-Interaction Benchmarks. Evaluation focus: Real-world safety across 8 categories.",
         type: "Agents",
         year: "2025",
+        stars: 32,
         tags: [
           "source: safety-at-scale",
           "real-interaction benchmarks",
@@ -4211,16 +4548,63 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             label: "Source survey",
             href: "https://arxiv.org/abs/2502.05206",
           },
+          {
+            label: "GitHub",
+            href: "https://github.com/Open-Agent-Safety/OpenAgentSafety",
+          },
         ],
         citationOnly: true,
         slug: "openagentsafety",
         domain: "Agents",
       },
       {
+        name: "MobileSafetyBench",
+        note: "The official project introduces MobileSafetyBench for evaluating device-control agents in an Android-emulator environment and records 250 tasks: 200 daily-scenario tasks and 50 indirect prompt-injection tasks.",
+        type: "Agents",
+        year: "2024",
+        stars: 37,
+        tags: [
+          "prompt injection",
+          "source: official project",
+          "simulation-based benchmarks",
+        ],
+        stats: [
+          {
+            label: "Table year",
+            value: "2024",
+          },
+          {
+            label: "Recorded scale",
+            value: "250 tasks / 200 daily scenarios / 50 indirect prompt-injection scenarios",
+          },
+        ],
+        resources: [
+          {
+            label: "arXiv",
+            href: "https://arxiv.org/abs/2410.17520",
+          },
+          {
+            label: "Official project",
+            href: "https://mobilesafetybench.github.io/",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/jylee425/mobilesafetybench",
+          },
+        ],
+        citationOnly: true,
+        slug: "mobilesafetybench",
+        domain: "Agents",
+        property: "Prompt Injection",
+      },
+      {
         name: "Bench2Drive",
         note: "The Embodied AI survey's dedicated Benchmarks section records 220 routes. The official repository releases the benchmark and training data.",
         type: "Embodied AI",
+        venue: "NeurIPS 2024",
         year: "2024",
+        stars: 1924,
+        updated: "2026-08-11",
         tags: [
           "source: embodied-ai-safety",
         ],
@@ -4230,6 +4614,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             value: "220 routes",
           },
         ],
+        meta: "Thinklab-SJTU/Bench2Drive · NOASSERTION · 142 forks · since 2024",
         resources: [
           {
             label: "GitHub",
@@ -4694,6 +5079,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         venue: "arXiv 2023",
         year: "2023",
+        stars: 4760,
+        updated: "2024-08-02",
         tags: [
           "robustness",
           "source: safety-at-scale",
@@ -4713,10 +5100,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
             value: "52",
           },
         ],
+        meta: "llm-attacks/llm-attacks · MIT · 631 forks · since 2023",
         resources: [
           {
             label: "arXiv",
             href: "https://arxiv.org/abs/2307.15043",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/llm-attacks/llm-attacks",
           },
           {
             label: "Source survey",
@@ -4725,10 +5117,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           {
             label: "GitHub",
             href: "https://github.com/llm-attacks/llm-attacks/blob/main/data/advbench/harmful_behaviors.csv",
-          },
-          {
-            label: "GitHub",
-            href: "https://github.com/llm-attacks/llm-attacks",
           },
         ],
         citationOnly: true,
@@ -5147,7 +5535,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         venue: "arXiv 2024",
         year: "2024",
-        stars: 1029,
+        stars: 1028,
         updated: "2024-08-16",
         posted: "2024-02-06",
         tags: [
@@ -5452,7 +5840,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
     ],
     title: "Datasets",
     heroIcon: "◱",
-    description: "Training-ready safety datasets across LLMs, Agents, and Embodied AI, separated from evaluation-only benchmarks.",
+    description: "Open-source safety datasets for training safer LLMs, Agents, and Embodied AI models.",
     overview: "An entry appears here only when its paper or official repository explicitly supports training, fine-tuning, alignment, or classifier training. Public test data stays in Benchmarks.",
     tableTitle: "Dataset collection",
     sectionTitle: "Dataset categories",
@@ -5489,6 +5877,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition",
         year: "2018",
+        stars: 2,
+        updated: "2023-07-09",
         tags: [
           "training data",
           "source: approved survey",
@@ -5504,6 +5894,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "AdvBench",
         note: "The LLaMA 3-8B model was trained on the AdvBench dataset with 200 clean samples and 150 poisoned samples, using the same hyperparameters as previous experiments.",
         type: "LLMs",
+        stars: 4760,
+        updated: "2024-08-02",
         tags: [
           "training data",
           "source: approved survey",
@@ -5539,6 +5931,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "AG News",
         note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test s…",
         type: "LLMs",
+        stars: 848,
+        updated: "2019-07-23",
         tags: [
           "training data",
           "source: approved survey",
@@ -5556,6 +5950,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         venue: "arXiv preprint arXiv:2310.12823",
         year: "2023",
+        stars: 1506,
+        updated: "2023-10-31",
         tags: [
           "training data",
           "source: approved survey",
@@ -5589,9 +5985,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "AlpacaEval",
         note: "In AlpacaEval dataset, we aim to fine-tune the LLM such that it can provide more helpful advice to the open-ended question from users.",
         type: "LLMs",
+        stars: 2012,
+        updated: "2025-08-09",
         tags: [
           "training data",
           "source: approved survey",
+          "deep-learning",
+          "evaluation",
+          "foundation-models",
+          "instruction-following",
         ],
         resources: [],
         primaryUrl: "https://github.com/tatsu-lab/alpaca_eval",
@@ -5619,6 +6021,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "Anthropic Red Team Attempts",
         note: "To distill GPT-4's ``knowledge'' on safety policies, a dataset containing both harmful and harmless queries is necessary.\nWe utilize the red-team data from Anthropic [@ganguli2022red] as the query dataset.\nThis dataset consists of 38,961…",
         type: "LLMs",
+        stars: 1856,
+        updated: "2025-06-17",
         tags: [
           "training data",
           "source: approved survey",
@@ -5649,9 +6053,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "BDD-100K",
         note: "DeepPOSE selects 40,000 valid BDD-100K trips as training data and explicitly labels two variants as trained with BDD-100K measurements.",
         type: "Embodied AI",
+        stars: 569,
+        updated: "2024-03-09",
         tags: [
           "training data",
           "source: approved survey",
+          "dataset",
+          "detection",
+          "segmentation",
+          "tracking",
         ],
         resources: [],
         primaryUrl: "https://github.com/bdd100k/bdd100k",
@@ -5666,9 +6076,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         venue: "arXiv preprint arXiv:2307.04657",
         year: "2023",
+        stars: 182,
+        updated: "2023-10-27",
         tags: [
           "training data",
           "source: approved survey",
+          "ai-safety",
+          "beaver",
+          "datasets",
+          "gpt",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/PKU-Alignment/BeaverTails",
@@ -5683,6 +6099,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "NeurIPS 2024",
         year: "2024",
+        stars: 1924,
+        updated: "2026-08-11",
         tags: [
           "training data",
           "source: approved survey",
@@ -5700,9 +6118,12 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         venue: "Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 1",
         year: "2025",
+        stars: 154,
+        updated: "2024-04-15",
         tags: [
           "training data",
           "source: approved survey",
+          "llm-security",
         ],
         resources: [],
         primaryUrl: "https://github.com/microsoft/BIPIA/tree/main/benchmark",
@@ -5731,6 +6152,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "Bot-Adversarial Dialogue",
         note: "We show random examples of test cases generated by each red teaming method in Table [#tab:examples-per-method] (for the 280B LM) and Table [#tab:examples-per-method-7b] (for the 7B LM and the BAD dataset).\n\nTraining-use context: For the…",
         type: "LLMs",
+        stars: 10623,
+        updated: "2026-07-30",
         tags: [
           "training data",
           "source: approved survey",
@@ -5768,7 +6191,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "arXiv 2021",
         year: "2022",
-        stars: 967,
+        stars: 968,
         updated: "2025-09-08",
         posted: "2021-12-06",
         tags: [
@@ -5809,6 +6232,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition",
         year: "2016",
+        stars: 2347,
+        updated: "2025-09-06",
         tags: [
           "training data",
           "source: approved survey",
@@ -5824,6 +6249,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "Cleaned Alpaca",
         note: "GCG, arguably the most effective optimization method right now, is too costly to run as an inner optimization loop inside SecAlign fine-tuning (estimated thousands of GPU hours are needed even for the toy Alpaca dataset).",
         type: "LLMs",
+        stars: 1606,
+        updated: "2026-03-07",
         tags: [
           "training data",
           "source: approved survey",
@@ -5839,6 +6266,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "CNN/DailyMail",
         note: "Table tab:task_summary identifies CNN/DailyMail as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
         type: "LLMs",
+        stars: 662,
+        updated: "2022-06-16",
         tags: [
           "training data",
           "source: approved survey",
@@ -5854,6 +6283,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "CodeAlpaca",
         note: "The CodeAlpaca dataset [@xu2024wizardlm] is used for finetuning.",
         type: "LLMs",
+        stars: 1514,
+        updated: "2023-05-12",
         tags: [
           "training data",
           "source: approved survey",
@@ -5869,6 +6300,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "CoLA",
         note: "For instance, in the COLA dataset and utilising GPT-NEO as the pre-trained language model, the clean accuracy of our model exhibits a notable improvement of 14.38% over the normal clean accuracy and 2.3% over the prompt clean accuracy.",
         type: "LLMs",
+        stars: 58,
+        updated: "2020-03-01",
         tags: [
           "training data",
           "source: approved survey",
@@ -5936,9 +6369,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "CRUW",
         note: "TileMask Section 6.2 explicitly says the authors train RODNet with the CRUW dataset.",
         type: "Embodied AI",
+        stars: 42,
+        updated: "2022-11-08",
         tags: [
           "training data",
           "source: approved survey",
+          "autonomous-driving",
+          "cruw-dataset",
+          "cruw-devkit",
+          "dataset",
         ],
         resources: [],
         primaryUrl: "https://www.cruwdataset.org/download",
@@ -5987,7 +6426,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         venue: "arXiv 2023",
         year: "2023",
-        stars: 561,
+        stars: 560,
         updated: "2023-07-20",
         posted: "2023-07-19",
         tags: [
@@ -6011,7 +6450,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "arXiv 2020",
         year: "2020",
-        stars: 1698,
+        stars: 1699,
         updated: "2024-11-18",
         posted: "2020-04-15",
         tags: [
@@ -6029,9 +6468,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "databricks-dolly-15k",
         note: "We consider two models: `GPT2-alpaca` and `Dolly-v2-7B`. `GPT2-alpaca` is a GPT2 model [@radford2019language] finetuned with Alpaca dataset [@alpaca] and `Dolly-v2-7B` is a pythia model [@biderman2023pythia] finetuned with Databricks dat…",
         type: "LLMs",
+        stars: 10805,
+        updated: "2023-06-30",
         tags: [
           "training data",
           "source: approved survey",
+          "chatbot",
+          "databricks",
+          "dolly",
+          "gpt",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/databricks/databricks-dolly-15k",
@@ -6044,6 +6489,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "DBpedia",
         note: "Using the fine-tuning objective from Section [#ssec:objectives], we place backdoors in GPT-Neo 1.3B, GPT-Neo 2.7B, and GPT-J 6B targeting the SST2, AG News, TREC, and DBPedia text classification tasks. We evaluate the backdoors using the…",
         type: "LLMs",
+        stars: 848,
+        updated: "2019-07-23",
         tags: [
           "training data",
           "source: approved survey",
@@ -6080,6 +6527,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Since each training example corresponds to a timestep --- i.e., a tuple $(\\mathbf{o}_t, \\mathbf{A}_t)$, --- we will quantify data in terms of timesteps in this discussion. $9.1\\%$ of the training mixture consists of open-source datasets,…",
         type: "Embodied AI",
         year: "2024",
+        stars: 394,
+        updated: "2025-09-15",
         tags: [
           "training data",
           "source: approved survey",
@@ -6095,6 +6544,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "EAsafetyBench",
         note: "The authors allocate 70% of EAsafetyBench-Drone to training and embed the EAsafetyBench-Prompt visible prompts for training a 3-layer MLP classifier.",
         type: "Agents",
+        stars: 5,
+        updated: "2026-04-13",
         tags: [
           "training data",
           "source: approved survey",
@@ -6110,9 +6561,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "Emotion",
         note: "For example, when we increase the poisoning ratio $\\eta$ from $3\\%$ to $5\\%$ for the BLOOM-7B model trained on the Emotion dataset, the ASR decreases from $94.47\\%$ to $76.70\\%$, while all FTRs drop from near $2\\%$ to around $1\\%$.",
         type: "LLMs",
+        stars: 222,
+        updated: "2022-12-29",
         tags: [
           "training data",
           "source: approved survey",
+          "dataset",
+          "machine-learning",
+          "nlp",
+          "pytorch",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/dair-ai/emotion",
@@ -6127,6 +6584,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "CVPR",
         year: "2018",
+        stars: 315,
+        updated: "2023-07-25",
         tags: [
           "training data",
           "source: approved survey",
@@ -6142,6 +6601,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "Evol-Instruct",
         note: "To compare Magpie data with other public instruction datasets (e.g., ShareGPT [@vicuna2023], WildChat [@zhao2024wildchat], Evol Instruct [@xu2023wizardlm], UltraChat [@ding2023ultrachat], OpenHermes [@OpenHermes; @OpenHermes2.5], GenQA […",
         type: "LLMs",
+        stars: 9481,
+        updated: "2025-06-07",
         tags: [
           "training data",
           "source: approved survey",
@@ -6157,6 +6618,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "FLAN",
         note: "In Figure [#fig:flan-t0-lik], we also compare InstructGPT to our 175B GPT-3 baselines fine-tuned on the FLAN [@wei2021finetuned] and T0 [@sanh2021multitask] datasets (see Appendix [#apdx:model-details] for details).",
         type: "LLMs",
+        stars: 1566,
+        updated: "2026-07-02",
         tags: [
           "training data",
           "source: approved survey",
@@ -6202,6 +6665,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "GSM8K",
         note: "> instruction: (Real input from GSM8K dataset) + First think step by step and then answer the final number.\n\nTraining-use context: **Datasets and models**. For the alignment task, we use the safe samples from the alignment dataset of Bea…",
         type: "LLMs",
+        stars: 1453,
+        updated: "2024-01-21",
         tags: [
           "training data",
           "source: approved survey",
@@ -6232,6 +6697,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "HH-RLHF",
         note: "To train the preference predictor, we use the HH-RLHF dataset which contains 161K pairs of human preference data about helpfulness and harmlessness [@bai2022hhrlhf].",
         type: "LLMs",
+        stars: 1856,
+        updated: "2025-06-17",
         tags: [
           "training data",
           "source: approved survey",
@@ -6264,9 +6731,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "HSOL",
         note: "For word level detection on HSOL dataset [@davidson2017automated], three non-injected words (``bi*ch'',``h*e'' and ``pu*sy'') are also detected as backdoor triggers.\n\nTraining-use context: Our contributions are summarized as follows:\nWe…",
         type: "LLMs",
+        stars: 847,
+        updated: "2023-06-12",
         tags: [
           "training data",
           "source: approved survey",
+          "abuse",
+          "classifier",
+          "computational-social-science",
+          "dataset",
         ],
         resources: [],
         primaryUrl: "https://github.com/t-davidson/hate-speech-and-offensive-language/blob/master/data/labeled_data.csv",
@@ -6346,9 +6819,14 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "IWSLT 2014 En-De",
         note: "For the IWSLT2014 En-De dataset, we train the model with warmup and max-tokens respectively set to 4096 and 30000.",
         type: "LLMs",
+        stars: 32236,
+        updated: "2025-09-30",
         tags: [
           "training data",
           "source: approved survey",
+          "artificial-intelligence",
+          "python",
+          "pytorch",
         ],
         resources: [],
         primaryUrl: "https://dl.fbaipublicfiles.com/fairseq/data/iwslt14/de-en.tgz",
@@ -6378,6 +6856,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "arXiv preprint arXiv:1705.06950",
         year: "2017",
+        stars: 989,
+        updated: "2024-05-15",
         tags: [
           "training data",
           "source: approved survey",
@@ -6429,6 +6909,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         venue: "Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
         year: "2024",
+        stars: 823,
+        updated: "2023-05-06",
         tags: [
           "training data",
           "source: approved survey",
@@ -6446,9 +6928,13 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "IEEE Robotics and Automation Letters",
         year: "2023",
+        stars: 362,
+        updated: "2026-07-30",
         tags: [
           "training data",
           "source: approved survey",
+          "robotics",
+          "robotics-simulation",
         ],
         resources: [],
         primaryUrl: "https://github.com/google-research/language-table#datasets",
@@ -6464,7 +6950,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         venue: "arXiv 2023",
         year: "2023",
         downloads: 27985,
-        stars: 2193,
+        stars: 2204,
         updated: "2025-03-15",
         posted: "2023-06-05",
         tags: [
@@ -6504,9 +6990,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The paper selects the first 300K raw Magpie-Air conversations for supervised fine-tuning. The official release publishes the complete 3M-conversation raw corpus.",
         type: "LLMs",
         year: "2024",
+        stars: 877,
+        updated: "2025-03-17",
         tags: [
           "training data",
           "source: approved survey",
+          "alignment",
+          "dataset",
+          "gemma",
+          "llama2",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Air-3M-v0.1",
@@ -6520,9 +7012,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The paper selects the first 300K raw Magpie-Pro conversations for supervised fine-tuning. The official release publishes the complete 1M-conversation raw corpus.",
         type: "LLMs",
         year: "2024",
+        stars: 877,
+        updated: "2025-03-17",
         tags: [
           "training data",
           "source: approved survey",
+          "alignment",
+          "dataset",
+          "gemma",
+          "llama2",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Pro-1M-v0.1",
@@ -6537,9 +7035,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         venue: "NIPS",
         year: "2023",
+        stars: 24986,
+        updated: "2024-08-12",
         tags: [
           "training data",
           "source: approved survey",
+          "chatbot",
+          "chatgpt",
+          "foundation-models",
+          "gpt-4",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K",
@@ -6553,6 +7057,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "LlavaGuard Dataset",
         note: "The 5,466-sample dataset is split into 4,571 train, 71 evaluation, and 824 test examples; the annotated dataset and pipeline are public.",
         type: "Agents",
+        stars: 72,
+        updated: "2025-09-30",
         tags: [
           "training data",
           "source: approved survey",
@@ -6590,9 +7096,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The paper creates Magpie-Air-Filtered with 300K conversations and uses the filtered dataset for supervised fine-tuning experiments.",
         type: "LLMs",
         year: "2024",
+        stars: 877,
+        updated: "2025-03-17",
         tags: [
           "training data",
           "source: approved survey",
+          "alignment",
+          "dataset",
+          "gemma",
+          "llama2",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-300K-Filtered",
@@ -6606,9 +7118,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The paper generates Magpie-Air-DPO with 100K conversations for preference optimization.",
         type: "LLMs",
         year: "2024",
+        stars: 877,
+        updated: "2025-03-17",
         tags: [
           "training data",
           "source: approved survey",
+          "alignment",
+          "dataset",
+          "gemma",
+          "llama2",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-DPO-100K-v0.1",
@@ -6622,9 +7140,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The paper creates Magpie-Pro-Filtered with 300K conversations and reports models fine-tuned with Magpie-Pro-300K-Filtered.",
         type: "LLMs",
         year: "2024",
+        stars: 877,
+        updated: "2025-03-17",
         tags: [
           "training data",
           "source: approved survey",
+          "alignment",
+          "dataset",
+          "gemma",
+          "llama2",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-300K-Filtered",
@@ -6638,9 +7162,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The paper generates Magpie-Pro-DPO with 100K conversations for preference optimization.",
         type: "LLMs",
         year: "2024",
+        stars: 877,
+        updated: "2025-03-17",
         tags: [
           "training data",
           "source: approved survey",
+          "alignment",
+          "dataset",
+          "gemma",
+          "llama2",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-DPO-100K-v0.1",
@@ -6670,6 +7200,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "MASSIVE",
         note: "**Datasets:** We evaluate the effectiveness of our data poisoning attack across four varied datasets that span sentiment analysis, domain classification, and the Chain-of-Thought task. The datasets include SST-2 [@socher2013recursive] an…",
         type: "LLMs",
+        stars: 564,
+        updated: "2022-11-28",
         tags: [
           "training data",
           "source: approved survey",
@@ -6686,6 +7218,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The BC and CQL offline-learning baselines use 36,000 human-demonstrated transitions.",
         type: "Embodied AI",
         year: "2021",
+        stars: 1232,
+        updated: "2025-08-15",
         tags: [
           "training data",
           "source: approved survey",
@@ -6703,9 +7237,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "arXiv preprint arXiv:2306.05425",
         year: "2023",
+        stars: 3433,
+        updated: "2024-03-05",
         tags: [
           "training data",
           "source: approved survey",
+          "artificial-inteligence",
+          "chatgpt",
+          "deep-learning",
+          "embodied-ai",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/pufanyi/MIMICIT",
@@ -6720,6 +7260,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         venue: "ECCV",
         year: "2024",
+        stars: 218,
+        updated: "2024-10-15",
         tags: [
           "training data",
           "source: approved survey",
@@ -6751,9 +7293,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The Common Voice dataset is used to train ASR systems and test the effectiveness of audio AEs.",
         type: "Embodied AI",
         year: "2019",
+        stars: 3480,
+        updated: "2026-08-18",
         tags: [
           "training data",
           "source: approved survey",
+          "crowdsourcing",
+          "internet-freedom",
+          "open-data",
+          "voice",
         ],
         resources: [],
         primaryUrl: "https://commonvoice.mozilla.org/en/datasets",
@@ -6867,6 +7415,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "CVPR",
         year: "2020",
+        stars: 2792,
+        updated: "2026-08-06",
         tags: [
           "training data",
           "source: approved survey",
@@ -6899,6 +7449,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "ICRA",
         year: "2024",
+        stars: 1986,
+        updated: "2025-11-05",
         tags: [
           "training data",
           "source: approved survey",
@@ -6914,9 +7466,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "OpenAssistant OASST1",
         note: "Caption: In aligning Mistral-7B on the OpenAssistant dataset, we find that using KTO with only one output per input still outperforms DPO, despite this restriction reducing the amount of training data by 72%.",
         type: "LLMs",
+        stars: 37407,
+        updated: "2024-08-17",
         tags: [
           "training data",
           "source: approved survey",
+          "ai",
+          "assistant",
+          "chatgpt",
+          "discord-bot",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/OpenAssistant/oasst1",
@@ -6975,9 +7533,14 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "NAVSIM trains 114 learned planners on navtrain and size-matched subsets of OpenScene.",
         type: "Embodied AI",
         year: "2023",
+        stars: 448,
+        updated: "2026-01-13",
         tags: [
           "training data",
           "source: approved survey",
+          "3d-occupancy",
+          "autonomous-driving",
+          "foundation-model",
         ],
         resources: [],
         primaryUrl: "https://github.com/OpenDriveLab/OpenScene",
@@ -7005,6 +7568,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "OpenWebText",
         note: "To defend against our attack, in Section [#ssec:white_box_removal] we fine-tune models on standard language modeling corpora. In these experiments, we use the OpenWebText [@Gokaslan2019OpenWeb], BooksCorpus [@zhu2015aligning], and Wikite…",
         type: "LLMs",
+        stars: 22,
+        updated: "2026-06-23",
         tags: [
           "training data",
           "source: approved survey",
@@ -7067,9 +7632,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "PKU-SafeRLHF",
         note: "To the best of our knowledge, Safe RLHF is the first integration of Safe RL and the RLHF framework.\nThis framework incorporates a two-dimensional human annotation scheme and a safe training mechanism to enhance model performance while en…",
         type: "LLMs",
+        stars: 1610,
+        updated: "2025-11-24",
         tags: [
           "training data",
           "source: approved survey",
+          "ai-safety",
+          "alpaca",
+          "beaver",
+          "datasets",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF",
@@ -7097,6 +7668,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "Reddit TL;DR",
         note: "Next, we evaluate fine-tuning performance of DPO on summarization and single-turn dialogue. For summarization,\nautomatic evaluation metrics such as ROUGE can be poorly correlated with human preferences [@stiennon2022learning], and prior…",
         type: "LLMs",
+        stars: 1062,
+        updated: "2023-09-05",
         tags: [
           "training data",
           "source: approved survey",
@@ -7131,7 +7704,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "arXiv 2021",
         year: "2021",
-        stars: 1520,
+        stars: 1524,
         updated: "2026-08-09",
         posted: "2021-08-06",
         tags: [
@@ -7207,6 +7780,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         venue: "arXiv preprint arXiv:2410.10700",
         year: "2024",
+        stars: 134,
+        updated: "2026-07-29",
         tags: [
           "training data",
           "source: approved survey",
@@ -7225,7 +7800,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         venue: "arXiv 2023",
         year: "2023",
         downloads: 431,
-        stars: 1205,
+        stars: 1206,
         updated: "2024-02-27",
         posted: "2023-04-20",
         tags: [
@@ -7249,6 +7824,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         venue: "Findings of the Association for Computational Linguistics: EMNLP 2023",
         year: "2023",
+        stars: 160,
+        updated: "2025-07-22",
         tags: [
           "training data",
           "source: approved survey",
@@ -7264,6 +7841,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "SAP",
         note: "This indicates the effectiveness of our defense framework on the SAP20 dataset, which shares the same distribution as the training data.",
         type: "LLMs",
+        stars: 49,
+        updated: "2024-05-09",
         tags: [
           "training data",
           "source: approved survey",
@@ -7279,6 +7858,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "SelfDefend distilled defense data",
         note: "We allocate 80% of the samples in D_dir or D_int for fine-tuning and reserve the remaining 20% as validation sets. During training, the defense prompts and queries from the collected datasets are inputs and y is the label used to fine-tu…",
         type: "LLMs",
+        stars: 35,
+        updated: "2025-01-26",
         tags: [
           "training data",
           "source: approved survey",
@@ -7296,9 +7877,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "Proc. of the IEEE/CVF International Conf.~on Computer Vision (ICCV)",
         year: "2019",
+        stars: 895,
+        updated: "2025-04-03",
         tags: [
           "training data",
           "source: approved survey",
+          "dataset",
+          "deep-learning",
+          "evaluation",
+          "labels",
         ],
         resources: [],
         primaryUrl: "https://semantic-kitti.org/index.html",
@@ -7345,9 +7932,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "ShareGPT4V",
         note: "The general vision language pre-training dataset we use contains ShareGPT4V [@chen2023sharegpt4v] dataset, SViT [@zhao2023svit] dataset, and the LLaVA Visual Instruct 150K dataset [@liu2023llava].",
         type: "Embodied AI",
+        stars: 259,
+        updated: "2024-07-01",
         tags: [
           "training data",
           "source: approved survey",
+          "chatgpt",
+          "eccv2024",
+          "gpt",
+          "gpt-4v",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Lin-Chen/ShareGPT4V",
@@ -7360,6 +7953,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "Sleeper Agents code backdoor training data",
         note: "**Setting III:** For Model 8, based on [@hubinger2024sleeper]'s official instructions[^fn:10], we use the provided first 95$\\%$ fine-tuning dataset `code_backdoor_train_data.jsonl` and a general instruction tuning dataset, i.e., Alpaca H…",
         type: "LLMs",
+        stars: 150,
+        updated: "2024-03-09",
         tags: [
           "training data",
           "source: approved survey",
@@ -7376,9 +7971,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "SmartAgent is trained for 15 epochs in both embodied and personalized stages, and the paper explicitly reports fine-tuning on SmartSpot.",
         type: "Embodied AI",
         year: "2024",
+        stars: 27,
+        updated: "2026-07-27",
         tags: [
           "training data",
           "source: approved survey",
+          "chain-of-thought",
+          "embodied-ai",
+          "human-centric-ai",
+          "human-computer-interaction",
         ],
         resources: [],
         primaryUrl: "https://github.com/tsinghua-fib-lab/SmartAgent",
@@ -7456,6 +8057,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "Data collected in the Sandbox simulation is used to construct three alignment datasets for the three Stable Alignment training stages. The official repository publishes sandbox_v1.json and sandbox_v2.json as samples; the full 169k intera…",
         type: "LLMs",
         year: "2023",
+        stars: 356,
+        updated: "2023-06-18",
         tags: [
           "training data",
           "source: approved survey",
@@ -7471,6 +8074,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "Stable Diffusion Prompts",
         note: "Text-to-image is a rising application in generative models while sharing similar safety concerns with text-to-text language model applications. We may use red teaming to probe what prompts trigger text-to-image models to generate unwante…",
         type: "LLMs",
+        stars: 90,
+        updated: "2024-03-15",
         tags: [
           "training data",
           "source: approved survey",
@@ -7488,9 +8093,14 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         venue: "GitHub repository",
         year: "2023",
+        stars: 30245,
+        updated: "2024-07-17",
         tags: [
           "training data",
           "source: approved survey",
+          "deep-learning",
+          "instruction-following",
+          "language-model",
         ],
         resources: [],
         primaryUrl: "https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json",
@@ -7566,6 +8176,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "Super-Natural Instructions",
         note: "We validate our method in two scenarios: (1) pretraining a transformer to in-context learn linear functions [@garg2022what], and (2) instruction tuning of LLMs on the Super-Natural Instructions [@wang2022niv2]. The results demonstrate th…",
         type: "LLMs",
+        stars: 1045,
+        updated: "2023-12-11",
         tags: [
           "training data",
           "source: approved survey",
@@ -7598,6 +8210,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "SViT",
         note: "The general vision language pre-training dataset we use contains ShareGPT4V [@chen2023sharegpt4v] dataset, SViT [@zhao2023svit] dataset, and the LLaVA Visual Instruct 150K dataset [@liu2023llava].",
         type: "Embodied AI",
+        stars: 168,
+        updated: "2024-06-20",
         tags: [
           "training data",
           "source: approved survey",
@@ -7613,6 +8227,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "T0++",
         note: "For T0, note that we trained on the T0++ version of the dataset.",
         type: "LLMs",
+        stars: 463,
+        updated: "2022-11-05",
         tags: [
           "training data",
           "source: approved survey",
@@ -7662,6 +8278,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         venue: "arXiv preprint arXiv:2307.16789",
         year: "2023",
+        stars: 5728,
+        updated: "2025-05-21",
         tags: [
           "training data",
           "source: approved survey",
@@ -7692,9 +8310,15 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "TriviaQA",
         note: "We fine-tune the target LLMs on the last $400$ of adversarial prompts through PAIR and GCG and the sampled $400$ normal prompts in the TriviaQA dataset.",
         type: "LLMs",
+        stars: 339,
+        updated: "2024-04-05",
         tags: [
           "training data",
           "source: approved survey",
+          "acl2017",
+          "machine-reading",
+          "nlp",
+          "question-answering",
         ],
         resources: [],
         primaryUrl: "https://nlp.cs.washington.edu/triviaqa/",
@@ -7709,7 +8333,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         venue: "ACL 2022",
         year: "2021",
-        stars: 937,
+        stars: 939,
         updated: "2025-01-16",
         posted: "2021-09-08",
         tags: [
@@ -7727,6 +8351,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "Tulu V2 Mix",
         note: "To compare Magpie data with other public instruction datasets (e.g., ShareGPT [@vicuna2023], WildChat [@zhao2024wildchat], Evol Instruct [@xu2023wizardlm], UltraChat [@ding2023ultrachat], OpenHermes [@OpenHermes; @OpenHermes2.5], GenQA […",
         type: "LLMs",
+        stars: 3833,
+        updated: "2026-08-18",
         tags: [
           "training data",
           "source: approved survey",
@@ -7744,6 +8370,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "https://github.com/TuSimple/tusimple-benchmark/tree/master/doc/lane_detection",
         year: "2017",
+        stars: 595,
+        updated: "2021-05-28",
         tags: [
           "training data",
           "source: approved survey",
@@ -7759,9 +8387,14 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "UltraChat 200k",
         note: "**Attacks.** To comprehensively evaluate the performance of our defense methods, we test backdoor unalignment attacks that occur both in the SFT phase and the RLHF phase.\n(1) *Attack the SFT stage.*\nIn this situation, the attacker makes…",
         type: "LLMs",
+        stars: 5661,
+        updated: "2026-05-26",
         tags: [
           "training data",
           "source: approved survey",
+          "llm",
+          "rlhf",
+          "transformers",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k",
@@ -7774,6 +8407,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "UltraFeedback",
         note: "Note that the base model had not been finetuned on UltraFeedback but a similar dataset called UltraChat; the first row here denotes the finetuning results.",
         type: "LLMs",
+        stars: 370,
+        updated: "2023-12-29",
         tags: [
           "training data",
           "source: approved survey",
@@ -7791,6 +8426,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "UnRocker project release",
         year: "2022",
+        stars: 8,
+        updated: "2023-02-09",
         tags: [
           "training data",
           "source: approved survey",
@@ -7841,7 +8478,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         venue: "arXiv 2022",
         year: "2023",
         downloads: 99,
-        stars: 854,
+        stars: 856,
         updated: "2024-04-18",
         posted: "2022-10-06",
         tags: [
@@ -7924,9 +8561,13 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "CVPR",
         year: "2020",
+        stars: 3389,
+        updated: "2026-01-08",
         tags: [
           "training data",
           "source: approved survey",
+          "autonomous-driving",
+          "dataset",
         ],
         resources: [],
         primaryUrl: "https://waymo.com/open/data/perception/",
@@ -8005,6 +8646,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "XSTest",
         note: "**Adding Circuit Breakers.**\nIn our experimental setup, we employ similar circuit breaker and retain datasets for both the Mistral-7B-Instruct-v2 [@mistral2024v02] and Llama-3-8B-Instruct [@llama3_2024_8b_instruct] models. Detailed infor…",
         type: "LLMs",
+        stars: 142,
+        updated: "2025-02-24",
         tags: [
           "training data",
           "source: approved survey",
@@ -8020,6 +8663,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         name: "Yelp Polarity",
         note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test s…",
         type: "LLMs",
+        stars: 848,
+        updated: "2019-07-23",
         tags: [
           "training data",
           "source: approved survey",

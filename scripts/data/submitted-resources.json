@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "_comment": "Private review queue for community-submitted papers, benchmarks, and datasets. This file is intentionally not read by generate-site.py. A submission must be checked against its primary sources and then copied into the appropriate canonical source file before it can appear on the website.",
+  "allowedKinds": [
+    "paper",
+    "benchmark",
+    "dataset"
+  ],
+  "allowedStatuses": [
+    "pending",
+    "approved",
+    "rejected"
+  ],
+  "items": []
+}

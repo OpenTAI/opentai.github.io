@@ -10,7 +10,7 @@ export const datasetConfig: SubpageConfig = {
   ],
   title: "Datasets",
   heroIcon: "◱",
-  description: "Training-ready safety datasets across LLMs, Agents, and Embodied AI, separated from evaluation-only benchmarks.",
+  description: "Open-source safety datasets for training safer LLMs, Agents, and Embodied AI models.",
   overview: "An entry appears here only when its paper or official repository explicitly supports training, fine-tuning, alignment, or classifier training. Public test data stays in Benchmarks.",
   tableTitle: "Dataset collection",
   sectionTitle: "Dataset categories",
@@ -47,23 +47,39 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition",
       year: "2018",
+      stars: 2,
+      updated: "2023-07-09",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "2",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2023-07",
+        },
+      ],
+      meta: "StanfordHCI/virtualhome · NOASSERTION · since 2021",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/StanfordHCI/virtualhome#dataset",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/1806.07011",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/StanfordHCI/virtualhome",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/1806.07011",
         },
       ],
       primaryUrl: "https://github.com/StanfordHCI/virtualhome#dataset",
@@ -86,23 +102,39 @@ export const datasetConfig: SubpageConfig = {
       name: "AdvBench",
       note: "The LLaMA 3-8B model was trained on the AdvBench dataset with 200 clean samples and 150 poisoned samples, using the same hyperparameters as previous experiments.",
       type: "LLMs",
+      stars: 4760,
+      updated: "2024-08-02",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "4,760",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-08",
+        },
+      ],
+      meta: "llm-attacks/llm-attacks · MIT · 631 forks · since 2023",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/llm-attacks/llm-attacks/blob/main/data/advbench/harmful_behaviors.csv",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2307.15043",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/llm-attacks/llm-attacks",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2307.15043",
         },
         {
           label: "Source survey",
@@ -204,11 +236,27 @@ export const datasetConfig: SubpageConfig = {
       name: "AG News",
       note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
       type: "LLMs",
+      stars: 848,
+      updated: "2019-07-23",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "848",
+        },
+        {
+          label: "Language",
+          value: "Lua",
+        },
+        {
+          label: "Updated",
+          value: "2019-07",
+        },
+      ],
+      meta: "zhangxiangxiao/Crepe · BSD-3-Clause · 218 forks · since 2015",
       resources: [
         {
           label: "GitHub",
@@ -339,23 +387,39 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       venue: "arXiv preprint arXiv:2310.12823",
       year: "2023",
+      stars: 1506,
+      updated: "2023-10-31",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "1,506",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2023-10",
+        },
+      ],
+      meta: "THUDM/AgentTuning · 105 forks · since 2023",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/zai-org/AgentInstruct",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2310.12823",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/THUDM/AgentTuning",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2310.12823",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/zai-org/AgentInstruct",
@@ -434,11 +498,31 @@ export const datasetConfig: SubpageConfig = {
       name: "AlpacaEval",
       note: "In AlpacaEval dataset, we aim to fine-tune the LLM such that it can provide more helpful advice to the open-ended question from users.",
       type: "LLMs",
+      stars: 2012,
+      updated: "2025-08-09",
       tags: [
         "training data",
         "source: approved survey",
+        "deep-learning",
+        "evaluation",
+        "foundation-models",
+        "instruction-following",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "2,012",
+        },
+        {
+          label: "Language",
+          value: "Jupyter Notebook",
+        },
+        {
+          label: "Updated",
+          value: "2025-08",
+        },
+      ],
+      meta: "tatsu-lab/alpaca_eval · Apache-2.0 · 315 forks · since 2023",
       resources: [
         {
           label: "GitHub",
@@ -543,23 +627,35 @@ export const datasetConfig: SubpageConfig = {
       name: "Anthropic Red Team Attempts",
       note: "To distill GPT-4's ``knowledge'' on safety policies, a dataset containing both harmful and harmless queries is necessary.\nWe utilize the red-team data from Anthropic [@ganguli2022red] as the query dataset.\nThis dataset consists of 38,961 text transcripts documenting conversations between human adversaries and AI assistants.\nFrom this dataset, we select the initial human prompt and exclude the corresponding assistant response, omitting any subsequent exchanges, to create a single-turn prompt dataset designated as $\\mathcal{D}_{red}$.\nNote that this dataset was released in 2022 and has no overlap with JailbreakHub, JailbreakBench, or MultiJail, which were released in 2023 or 2024.\nFurthermore, this dataset is exclusively in English, implying that a model trained on this data will not acquire any additional multilingual capabilities.",
       type: "LLMs",
+      stars: 1856,
+      updated: "2025-06-17",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "1,856",
+        },
+        {
+          label: "Updated",
+          value: "2025-06",
+        },
+      ],
+      meta: "anthropics/hh-rlhf · MIT · 160 forks · since 2022 · archived",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/Anthropic/hh-rlhf/tree/main/red-team-attempts",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2209.07858",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/anthropics/hh-rlhf",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2209.07858",
         },
         {
           label: "Hugging Face",
@@ -621,11 +717,31 @@ export const datasetConfig: SubpageConfig = {
       name: "BDD-100K",
       note: "DeepPOSE selects 40,000 valid BDD-100K trips as training data and explicitly labels two variants as trained with BDD-100K measurements.",
       type: "Embodied AI",
+      stars: 569,
+      updated: "2024-03-09",
       tags: [
         "training data",
         "source: approved survey",
+        "dataset",
+        "detection",
+        "segmentation",
+        "tracking",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "569",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-03",
+        },
+      ],
+      meta: "bdd100k/bdd100k · BSD-3-Clause · 76 forks · since 2020",
       resources: [
         {
           label: "GitHub",
@@ -658,23 +774,43 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       venue: "arXiv preprint arXiv:2307.04657",
       year: "2023",
+      stars: 182,
+      updated: "2023-10-27",
       tags: [
         "training data",
         "source: approved survey",
+        "ai-safety",
+        "beaver",
+        "datasets",
+        "gpt",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "182",
+        },
+        {
+          label: "Language",
+          value: "Makefile",
+        },
+        {
+          label: "Updated",
+          value: "2023-10",
+        },
+      ],
+      meta: "PKU-Alignment/beavertails · Apache-2.0 · 6 forks · since 2023",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/PKU-Alignment/BeaverTails",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2307.04657",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/PKU-Alignment/beavertails",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2307.04657",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/PKU-Alignment/BeaverTails",
@@ -748,6 +884,8 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "NeurIPS 2024",
       year: "2024",
+      stars: 1924,
+      updated: "2026-08-11",
       tags: [
         "training data",
         "source: approved survey",
@@ -757,19 +895,32 @@ export const datasetConfig: SubpageConfig = {
           label: "Recorded size",
           value: "13,638 clips and approximately 2 million annotated frames",
         },
+        {
+          label: "Stars",
+          value: "1,924",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2026-08",
+        },
       ],
+      meta: "Thinklab-SJTU/Bench2Drive · NOASSERTION · 142 forks · since 2024",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/rethinklab/Bench2Drive",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2406.03877",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/Thinklab-SJTU/Bench2Drive",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2406.03877",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/rethinklab/Bench2Drive",
@@ -794,23 +945,40 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       venue: "Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 1",
       year: "2025",
+      stars: 154,
+      updated: "2024-04-15",
       tags: [
         "training data",
         "source: approved survey",
+        "llm-security",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "154",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-04",
+        },
+      ],
+      meta: "microsoft/BIPIA · NOASSERTION · 19 forks · since 2024",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/microsoft/BIPIA/tree/main/benchmark",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2312.14197",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/microsoft/BIPIA",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2312.14197",
         },
       ],
       primaryUrl: "https://github.com/microsoft/BIPIA/tree/main/benchmark",
@@ -880,23 +1048,39 @@ export const datasetConfig: SubpageConfig = {
       name: "Bot-Adversarial Dialogue",
       note: "We show random examples of test cases generated by each red teaming method in Table [#tab:examples-per-method] (for the 280B LM) and Table [#tab:examples-per-method-7b] (for the 7B LM and the BAD dataset).\n\nTraining-use context: For the red LM, we also use the Gopher LM, with various prompts depending on the behavior we aim to test.\nFor our offensive text classifier $r(x, y)$, we train a model to predict whether an utterance is offensive, given a dialogue history.\nIn particular, we finetune a smaller, 1.4B parameter version of Gopher from [@rae2021gopher] to classify utterances in the Bot-Adversarial Dialogue (BAD) dataset [@xu-etal-2021-bot].\nAs shown in Appendix Table [#tab:classifier comparison], our classifier obtains substantially higher F1 than that of [@xu-etal-2021-bot], so we use our classifier in our experiments.\nOther classifiers are compatible with our approach, but we observed poor accuracy from classifiers such as Perspective API[^fn:1] that did not incorporate dialogue history.\nSee Appendix § [#sec:Classifier Details] for classifier details.",
       type: "LLMs",
+      stars: 10623,
+      updated: "2026-07-30",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "10,623",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2026-07",
+        },
+      ],
+      meta: "facebookresearch/ParlAI · MIT · 2054 forks · since 2017 · archived",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2012.15351",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/facebookresearch/ParlAI",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2012.15351",
         },
       ],
       primaryUrl: "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue",
@@ -1012,7 +1196,7 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "arXiv 2021",
       year: "2022",
-      stars: 967,
+      stars: 968,
       updated: "2025-09-08",
       posted: "2021-12-06",
       tags: [
@@ -1030,7 +1214,7 @@ export const datasetConfig: SubpageConfig = {
         },
         {
           label: "Stars",
-          value: "967",
+          value: "968",
         },
         {
           label: "Language",
@@ -1153,23 +1337,39 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition",
       year: "2016",
+      stars: 2347,
+      updated: "2025-09-06",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "2,347",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-09",
+        },
+      ],
+      meta: "mcordts/cityscapesScripts · MIT · 608 forks · since 2016",
       resources: [
         {
           label: "Project page",
           href: "https://www.cityscapes-dataset.com/",
         },
         {
-          label: "Paper",
-          href: "https://www.cityscapes-dataset.com/wordpress/wp-content/papercite-data/pdf/cordts2016cityscapes.pdf",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/mcordts/cityscapesScripts",
+        },
+        {
+          label: "Paper",
+          href: "https://www.cityscapes-dataset.com/wordpress/wp-content/papercite-data/pdf/cordts2016cityscapes.pdf",
         },
         {
           label: "Source survey",
@@ -1196,11 +1396,27 @@ export const datasetConfig: SubpageConfig = {
       name: "Cleaned Alpaca",
       note: "GCG, arguably the most effective optimization method right now, is too costly to run as an inner optimization loop inside SecAlign fine-tuning (estimated thousands of GPU hours are needed even for the toy Alpaca dataset).",
       type: "LLMs",
+      stars: 1606,
+      updated: "2026-03-07",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "1,606",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2026-03",
+        },
+      ],
+      meta: "gururise/AlpacaDataCleaned · Apache-2.0 · 158 forks · since 2023",
       resources: [
         {
           label: "GitHub",
@@ -1246,11 +1462,27 @@ export const datasetConfig: SubpageConfig = {
       name: "CNN/DailyMail",
       note: "Table tab:task_summary identifies CNN/DailyMail as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
       type: "LLMs",
+      stars: 662,
+      updated: "2022-06-16",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "662",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2022-06",
+        },
+      ],
+      meta: "abisee/cnn-dailymail · MIT · 306 forks · since 2017",
       resources: [
         {
           label: "GitHub",
@@ -1281,11 +1513,27 @@ export const datasetConfig: SubpageConfig = {
       name: "CodeAlpaca",
       note: "The CodeAlpaca dataset [@xu2024wizardlm] is used for finetuning.",
       type: "LLMs",
+      stars: 1514,
+      updated: "2023-05-12",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "1,514",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2023-05",
+        },
+      ],
+      meta: "sahil280114/codealpaca · Apache-2.0 · 113 forks · since 2023",
       resources: [
         {
           label: "GitHub",
@@ -1320,23 +1568,39 @@ export const datasetConfig: SubpageConfig = {
       name: "CoLA",
       note: "For instance, in the COLA dataset and utilising GPT-NEO as the pre-trained language model, the clean accuracy of our model exhibits a notable improvement of 14.38% over the normal clean accuracy and 2.3% over the prompt clean accuracy.",
       type: "LLMs",
+      stars: 58,
+      updated: "2020-03-01",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "58",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2020-03",
+        },
+      ],
+      meta: "nyu-mll/CoLA-baselines · 18 forks · since 2018",
       resources: [
         {
           label: "Project page",
           href: "https://archive.nyu.edu/handle/2451/60441",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/1805.12471",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/nyu-mll/CoLA-baselines",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/1805.12471",
         },
         {
           label: "Source survey",
@@ -1519,23 +1783,43 @@ export const datasetConfig: SubpageConfig = {
       name: "CRUW",
       note: "TileMask Section 6.2 explicitly says the authors train RODNet with the CRUW dataset.",
       type: "Embodied AI",
+      stars: 42,
+      updated: "2022-11-08",
       tags: [
         "training data",
         "source: approved survey",
+        "autonomous-driving",
+        "cruw-dataset",
+        "cruw-devkit",
+        "dataset",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "42",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2022-11",
+        },
+      ],
+      meta: "yizhou-wang/cruw-devkit · MIT · 17 forks · since 2021",
       resources: [
         {
           label: "Project page",
           href: "https://www.cruwdataset.org/download",
         },
         {
-          label: "Paper",
-          href: "https://openaccess.thecvf.com/content/WACV2021/html/Wang_RODNet_Radar_Object_Detection_Using_Cross-Modal_Supervision_WACV_2021_paper.html",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/yizhou-wang/cruw-devkit",
+        },
+        {
+          label: "Paper",
+          href: "https://openaccess.thecvf.com/content/WACV2021/html/Wang_RODNet_Radar_Object_Detection_Using_Cross-Modal_Supervision_WACV_2021_paper.html",
         },
         {
           label: "Source survey",
@@ -1638,7 +1922,7 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       venue: "arXiv 2023",
       year: "2023",
-      stars: 561,
+      stars: 560,
       updated: "2023-07-20",
       posted: "2023-07-19",
       tags: [
@@ -1656,7 +1940,7 @@ export const datasetConfig: SubpageConfig = {
         },
         {
           label: "Stars",
-          value: "561",
+          value: "560",
         },
         {
           label: "Language",
@@ -1714,7 +1998,7 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "arXiv 2020",
       year: "2020",
-      stars: 1698,
+      stars: 1699,
       updated: "2024-11-18",
       posted: "2020-04-15",
       tags: [
@@ -1728,7 +2012,7 @@ export const datasetConfig: SubpageConfig = {
         },
         {
           label: "Stars",
-          value: "1,698",
+          value: "1,699",
         },
         {
           label: "Language",
@@ -1799,11 +2083,31 @@ export const datasetConfig: SubpageConfig = {
       name: "databricks-dolly-15k",
       note: "We consider two models: `GPT2-alpaca` and `Dolly-v2-7B`. `GPT2-alpaca` is a GPT2 model [@radford2019language] finetuned with Alpaca dataset [@alpaca] and `Dolly-v2-7B` is a pythia model [@biderman2023pythia] finetuned with Databricks dataset [@DatabricksBlog2023DollyV2].",
       type: "LLMs",
+      stars: 10805,
+      updated: "2023-06-30",
       tags: [
         "training data",
         "source: approved survey",
+        "chatbot",
+        "databricks",
+        "dolly",
+        "gpt",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "10,805",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2023-06",
+        },
+      ],
+      meta: "databrickslabs/dolly · Apache-2.0 · 1140 forks · since 2023",
       resources: [
         {
           label: "Hugging Face",
@@ -1834,11 +2138,27 @@ export const datasetConfig: SubpageConfig = {
       name: "DBpedia",
       note: "Using the fine-tuning objective from Section [#ssec:objectives], we place backdoors in GPT-Neo 1.3B, GPT-Neo 2.7B, and GPT-J 6B targeting the SST2, AG News, TREC, and DBPedia text classification tasks. We evaluate the backdoors using the criteria from Section [#sec:threat_model] and report the results in Table [#tab:backdoor_effectiveness].",
       type: "LLMs",
+      stars: 848,
+      updated: "2019-07-23",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "848",
+        },
+        {
+          label: "Language",
+          value: "Lua",
+        },
+        {
+          label: "Updated",
+          value: "2019-07",
+        },
+      ],
+      meta: "zhangxiangxiao/Crepe · BSD-3-Clause · 218 forks · since 2015",
       resources: [
         {
           label: "GitHub",
@@ -1942,23 +2262,39 @@ export const datasetConfig: SubpageConfig = {
       note: "Since each training example corresponds to a timestep --- i.e., a tuple $(\\mathbf{o}_t, \\mathbf{A}_t)$, --- we will quantify data in terms of timesteps in this discussion. $9.1\\%$ of the training mixture consists of open-source datasets, including OXE [@collaboration2023open], Bridge v2 [@walke2023bridgedata], and DROID [@khazatsky2024droid].",
       type: "Embodied AI",
       year: "2024",
+      stars: 394,
+      updated: "2025-09-15",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "394",
+        },
+        {
+          label: "Language",
+          value: "Jupyter Notebook",
+        },
+        {
+          label: "Updated",
+          value: "2025-09",
+        },
+      ],
+      meta: "droid-dataset/droid · 87 forks · since 2024",
       resources: [
         {
           label: "Project page",
           href: "https://droid-dataset.github.io/droid/the-droid-dataset",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2403.12945",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/droid-dataset/droid",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2403.12945",
         },
         {
           label: "Source survey",
@@ -1985,23 +2321,39 @@ export const datasetConfig: SubpageConfig = {
       name: "EAsafetyBench",
       note: "The authors allocate 70% of EAsafetyBench-Drone to training and embed the EAsafetyBench-Prompt visible prompts for training a 3-layer MLP classifier.",
       type: "Agents",
+      stars: 5,
+      updated: "2026-04-13",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "5",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2026-04",
+        },
+      ],
+      meta: "ZihanYan-CQU/EAsafetyBench · since 2025",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/ZihanYan-CQU/EAsafetyBench/tree/main/EAsafetyBench",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2504.15699",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/ZihanYan-CQU/EAsafetyBench",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2504.15699",
         },
       ],
       primaryUrl: "https://github.com/ZihanYan-CQU/EAsafetyBench/tree/main/EAsafetyBench",
@@ -2024,23 +2376,39 @@ export const datasetConfig: SubpageConfig = {
       name: "Emotion",
       note: "For example, when we increase the poisoning ratio $\\eta$ from $3\\%$ to $5\\%$ for the BLOOM-7B model trained on the Emotion dataset, the ASR decreases from $94.47\\%$ to $76.70\\%$, while all FTRs drop from near $2\\%$ to around $1\\%$.",
       type: "LLMs",
+      stars: 222,
+      updated: "2022-12-29",
       tags: [
         "training data",
         "source: approved survey",
+        "dataset",
+        "machine-learning",
+        "nlp",
+        "pytorch",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "222",
+        },
+        {
+          label: "Updated",
+          value: "2022-12",
+        },
+      ],
+      meta: "dair-ai/emotion_dataset · 29 forks · since 2020",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/dair-ai/emotion",
         },
         {
-          label: "Paper",
-          href: "https://aclanthology.org/D18-1404/",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/dair-ai/emotion_dataset",
+        },
+        {
+          label: "Paper",
+          href: "https://aclanthology.org/D18-1404/",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/dair-ai/emotion",
@@ -2072,23 +2440,39 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "CVPR",
       year: "2018",
+      stars: 315,
+      updated: "2023-07-25",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "315",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2023-07",
+        },
+      ],
+      meta: "facebookresearch/EmbodiedQA · NOASSERTION · 66 forks · since 2018 · archived",
       resources: [
         {
           label: "Project page",
           href: "https://embodiedqa.org/data",
         },
         {
-          label: "Paper",
-          href: "https://embodiedqa.org/paper.pdf",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/facebookresearch/EmbodiedQA",
+        },
+        {
+          label: "Paper",
+          href: "https://embodiedqa.org/paper.pdf",
         },
       ],
       primaryUrl: "https://embodiedqa.org/data",
@@ -2111,11 +2495,27 @@ export const datasetConfig: SubpageConfig = {
       name: "Evol-Instruct",
       note: "To compare Magpie data with other public instruction datasets (e.g., ShareGPT [@vicuna2023], WildChat [@zhao2024wildchat], Evol Instruct [@xu2023wizardlm], UltraChat [@ding2023ultrachat], OpenHermes [@OpenHermes; @OpenHermes2.5], GenQA [@chen2024genqa], Tulu V2 Mix [@tulu2]), we conducted supervised fine-tuning (SFT) of the Llama-3-8B-Base model with each dataset and assess the performance of the fine-tuned models on alignment benchmarks such as AlpacaEval 2 [@alpaca_eval], Arena-Hard [@arenahard2024], and WildBench [@wildbench2024].\nOur results show that models supervised fine-tuned with Magpie achieve superior performance, even surpassing models that utilize both SFT and direct preference optimization (DPO) [@rafailov2024direct] with UltraFeedback [@cui2023ultrafeedback]. Notably, Magpie-aligned models outperform the official Llama-3-8B-Instruct model on AlpacaEval 2, despite the latter being fine-tuned with over 10 million data points for SFT and subsequent preference optimization.\nNot only does Magpie excel in SFT alone compared to prior public datasets, but also delivers the best results when combined with preference optimization methods such as DPO.\nBy leveraging Magpie extensions to generate high-quality preference optimization datasets, Magpie-aligned Llama-3 models\ncan even outperform GPT-4-Turbo(1106) on AlpacaEval 2.\nThese findings show the exceptional quality of instruction data generated by Magpie, enabling it to outperform even the official, extensively optimized, and proprietary LLMs.",
       type: "LLMs",
+      stars: 9481,
+      updated: "2025-06-07",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "9,481",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-06",
+        },
+      ],
+      meta: "nlpxucan/WizardLM · 748 forks · since 2023",
       resources: [
         {
           label: "GitHub",
@@ -2150,11 +2550,27 @@ export const datasetConfig: SubpageConfig = {
       name: "FLAN",
       note: "In Figure [#fig:flan-t0-lik], we also compare InstructGPT to our 175B GPT-3 baselines fine-tuned on the FLAN [@wei2021finetuned] and T0 [@sanh2021multitask] datasets (see Appendix [#apdx:model-details] for details).",
       type: "LLMs",
+      stars: 1566,
+      updated: "2026-07-02",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "1,566",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2026-07",
+        },
+      ],
+      meta: "google-research/FLAN · Apache-2.0 · 160 forks · since 2021",
       resources: [
         {
           label: "GitHub",
@@ -2251,23 +2667,39 @@ export const datasetConfig: SubpageConfig = {
       name: "GSM8K",
       note: "> instruction: (Real input from GSM8K dataset) + First think step by step and then answer the final number.\n\nTraining-use context: **Datasets and models**. For the alignment task, we use the safe samples from the alignment dataset of BeaverTails [@ji2023beavertails]. For fine-tuning task, we consider SST2[@socher2013recursive], AGNEWS[@zhang2015character], GSM8K[@cobbe2021training] and AlpacaEval [@alpaca_eval] as the user fine-tuning task. Within a total number of $n$ samples, we mix $p$ (percentage) of unsafe data from BeaverTails with fine-tuning task's benign training data. In our experiment, the default setting is $p=0.1$ and $n=1000$ (specially, $n=5000$ for GSM8K and $n=700$ for AlpacaEval) unless otherwise specified. We use Llama2-7B [@touvron2023llama], Opt-3.7B [@zhang2022opt] and Vicuna-7B [@anil2023palm] for evaluation. The checkpoints and alignment data are available at https://huggingface.co/anonymous4486. All the experiments are done with an A100-80G.",
       type: "LLMs",
+      stars: 1453,
+      updated: "2024-01-21",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "1,453",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-01",
+        },
+      ],
+      meta: "openai/grade-school-math · 200 forks · since 2021 · archived",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/openai/grade-school-math/tree/master/grade_school_math/data",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2110.14168",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/openai/grade-school-math",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2110.14168",
         },
         {
           label: "Hugging Face",
@@ -2410,23 +2842,35 @@ export const datasetConfig: SubpageConfig = {
       name: "HH-RLHF",
       note: "To train the preference predictor, we use the HH-RLHF dataset which contains 161K pairs of human preference data about helpfulness and harmlessness [@bai2022hhrlhf].",
       type: "LLMs",
+      stars: 1856,
+      updated: "2025-06-17",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "1,856",
+        },
+        {
+          label: "Updated",
+          value: "2025-06",
+        },
+      ],
+      meta: "anthropics/hh-rlhf · MIT · 160 forks · since 2022 · archived",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/Anthropic/hh-rlhf",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2204.05862",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/anthropics/hh-rlhf",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2204.05862",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/Anthropic/hh-rlhf",
@@ -2539,23 +2983,43 @@ export const datasetConfig: SubpageConfig = {
       name: "HSOL",
       note: "For word level detection on HSOL dataset [@davidson2017automated], three non-injected words (``bi*ch'',``h*e'' and ``pu*sy'') are also detected as backdoor triggers.\n\nTraining-use context: Our contributions are summarized as follows:\nWe establish the connection between backdoor behaviors and the memorization of language model.\nWe define the memorization of deep neural networks on the input element and show that the NLP backdoor is the element-wise language model memorization.\nWe find the memorization on an input element is caused by the element duplication in the training data, and demonstrate that the upper bound of the generalization error on the backdoor task is negatively correlated to the duplication number of trigger pattern.\nWe propose a new line for backdoor defense, i.e., data-centric defense. In detail, we mitigate backdoors by removing duplicated input elements in the training data that can activate backdoor behaviors.\nEmpirical results on different datasets demonstrate our method achieves state-of-the-art performance when defending against different types of backdoor attacks on NLP models.",
       type: "LLMs",
+      stars: 847,
+      updated: "2023-06-12",
       tags: [
         "training data",
         "source: approved survey",
+        "abuse",
+        "classifier",
+        "computational-social-science",
+        "dataset",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "847",
+        },
+        {
+          label: "Language",
+          value: "Jupyter Notebook",
+        },
+        {
+          label: "Updated",
+          value: "2023-06",
+        },
+      ],
+      meta: "t-davidson/hate-speech-and-offensive-language · MIT · 329 forks · since 2017",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/t-davidson/hate-speech-and-offensive-language/blob/master/data/labeled_data.csv",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/1703.04009",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/t-davidson/hate-speech-and-offensive-language",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/1703.04009",
         },
       ],
       primaryUrl: "https://github.com/t-davidson/hate-speech-and-offensive-language/blob/master/data/labeled_data.csv",
@@ -2937,11 +3401,30 @@ export const datasetConfig: SubpageConfig = {
       name: "IWSLT 2014 En-De",
       note: "For the IWSLT2014 En-De dataset, we train the model with warmup and max-tokens respectively set to 4096 and 30000.",
       type: "LLMs",
+      stars: 32236,
+      updated: "2025-09-30",
       tags: [
         "training data",
         "source: approved survey",
+        "artificial-intelligence",
+        "python",
+        "pytorch",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "32,236",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-09",
+        },
+      ],
+      meta: "facebookresearch/fairseq · MIT · 6675 forks · since 2017 · archived",
       resources: [
         {
           label: "Project page",
@@ -3013,23 +3496,39 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "arXiv preprint arXiv:1705.06950",
       year: "2017",
+      stars: 989,
+      updated: "2024-05-15",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "989",
+        },
+        {
+          label: "Language",
+          value: "Shell",
+        },
+        {
+          label: "Updated",
+          value: "2024-05",
+        },
+      ],
+      meta: "cvdfoundation/kinetics-dataset · 115 forks · since 2020",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/cvdfoundation/kinetics-dataset#kinetics-400",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/1705.06950",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/cvdfoundation/kinetics-dataset",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/1705.06950",
         },
       ],
       primaryUrl: "https://github.com/cvdfoundation/kinetics-dataset#kinetics-400",
@@ -3282,23 +3781,35 @@ export const datasetConfig: SubpageConfig = {
       type: "Agents",
       venue: "Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
       year: "2024",
+      stars: 823,
+      updated: "2023-05-06",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "823",
+        },
+        {
+          label: "Updated",
+          value: "2023-05",
+        },
+      ],
+      meta: "mbzuai-nlp/LaMini-LM · 50 forks · since 2023",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/MBZUAI/LaMini-instruction",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2304.14402",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/mbzuai-nlp/LaMini-LM",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2304.14402",
         },
         {
           label: "Source survey",
@@ -3327,11 +3838,29 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "IEEE Robotics and Automation Letters",
       year: "2023",
+      stars: 362,
+      updated: "2026-07-30",
       tags: [
         "training data",
         "source: approved survey",
+        "robotics",
+        "robotics-simulation",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "362",
+        },
+        {
+          label: "Language",
+          value: "Jupyter Notebook",
+        },
+        {
+          label: "Updated",
+          value: "2026-07",
+        },
+      ],
+      meta: "google-research/language-table · Apache-2.0 · 30 forks · since 2022",
       resources: [
         {
           label: "GitHub",
@@ -3369,7 +3898,7 @@ export const datasetConfig: SubpageConfig = {
       venue: "arXiv 2023",
       year: "2023",
       downloads: 27985,
-      stars: 2193,
+      stars: 2204,
       updated: "2025-03-15",
       posted: "2023-06-05",
       tags: [
@@ -3387,7 +3916,7 @@ export const datasetConfig: SubpageConfig = {
         },
         {
           label: "Stars",
-          value: "2,193",
+          value: "2,204",
         },
         {
           label: "Language",
@@ -3414,7 +3943,7 @@ export const datasetConfig: SubpageConfig = {
           value: "2025-05",
         },
       ],
-      meta: "Bo Liu, Yifeng Zhu, Chongkai Gao +4 more · Lifelong-Robot-Learning/LIBERO · MIT · 457 forks · since 2023 · cs.AI · yifengzhu-hf/LIBERO-datasets · APACHE-2.0",
+      meta: "Bo Liu, Yifeng Zhu, Chongkai Gao +4 more · Lifelong-Robot-Learning/LIBERO · MIT · 460 forks · since 2023 · cs.AI · yifengzhu-hf/LIBERO-datasets · APACHE-2.0",
       resources: [
         {
           label: "Project page",
@@ -3610,28 +4139,47 @@ export const datasetConfig: SubpageConfig = {
       note: "The paper selects the first 300K raw Magpie-Air conversations for supervised fine-tuning. The official release publishes the complete 3M-conversation raw corpus.",
       type: "LLMs",
       year: "2024",
+      stars: 877,
+      updated: "2025-03-17",
       tags: [
         "training data",
         "source: approved survey",
+        "alignment",
+        "dataset",
+        "gemma",
+        "llama2",
       ],
       stats: [
         {
           label: "Recorded size",
           value: "First 300K used for SFT; 3M raw conversations released",
         },
+        {
+          label: "Stars",
+          value: "877",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-03",
+        },
       ],
+      meta: "magpie-align/magpie · MIT · 68 forks · since 2024",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Air-3M-v0.1",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2406.08464",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/magpie-align/magpie",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2406.08464",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Air-3M-v0.1",
@@ -3655,28 +4203,47 @@ export const datasetConfig: SubpageConfig = {
       note: "The paper selects the first 300K raw Magpie-Pro conversations for supervised fine-tuning. The official release publishes the complete 1M-conversation raw corpus.",
       type: "LLMs",
       year: "2024",
+      stars: 877,
+      updated: "2025-03-17",
       tags: [
         "training data",
         "source: approved survey",
+        "alignment",
+        "dataset",
+        "gemma",
+        "llama2",
       ],
       stats: [
         {
           label: "Recorded size",
           value: "First 300K used for SFT; 1M raw conversations released",
         },
+        {
+          label: "Stars",
+          value: "877",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-03",
+        },
       ],
+      meta: "magpie-align/magpie · MIT · 68 forks · since 2024",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Pro-1M-v0.1",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2406.08464",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/magpie-align/magpie",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2406.08464",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Pro-1M-v0.1",
@@ -3701,23 +4268,43 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       venue: "NIPS",
       year: "2023",
+      stars: 24986,
+      updated: "2024-08-12",
       tags: [
         "training data",
         "source: approved survey",
+        "chatbot",
+        "chatgpt",
+        "foundation-models",
+        "gpt-4",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "24,986",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-08",
+        },
+      ],
+      meta: "haotian-liu/LLaVA · Apache-2.0 · 2777 forks · since 2023",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2304.08485",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/haotian-liu/LLaVA",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2304.08485",
         },
         {
           label: "Source survey",
@@ -3752,23 +4339,39 @@ export const datasetConfig: SubpageConfig = {
       name: "LlavaGuard Dataset",
       note: "The 5,466-sample dataset is split into 4,571 train, 71 evaluation, and 824 test examples; the annotated dataset and pipeline are public.",
       type: "Agents",
+      stars: 72,
+      updated: "2025-09-30",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "72",
+        },
+        {
+          label: "Language",
+          value: "Jupyter Notebook",
+        },
+        {
+          label: "Updated",
+          value: "2025-09",
+        },
+      ],
+      meta: "ml-research/LlavaGuard · Apache-2.0 · 4 forks · since 2024",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/AIML-TUDA/LlavaGuard",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2406.05113",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/ml-research/LlavaGuard",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2406.05113",
         },
         {
           label: "Source survey",
@@ -3879,28 +4482,47 @@ export const datasetConfig: SubpageConfig = {
       note: "The paper creates Magpie-Air-Filtered with 300K conversations and uses the filtered dataset for supervised fine-tuning experiments.",
       type: "LLMs",
       year: "2024",
+      stars: 877,
+      updated: "2025-03-17",
       tags: [
         "training data",
         "source: approved survey",
+        "alignment",
+        "dataset",
+        "gemma",
+        "llama2",
       ],
       stats: [
         {
           label: "Recorded size",
           value: "300K conversations",
         },
+        {
+          label: "Stars",
+          value: "877",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-03",
+        },
       ],
+      meta: "magpie-align/magpie · MIT · 68 forks · since 2024",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-300K-Filtered",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2406.08464",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/magpie-align/magpie",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2406.08464",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-300K-Filtered",
@@ -3924,28 +4546,47 @@ export const datasetConfig: SubpageConfig = {
       note: "The paper generates Magpie-Air-DPO with 100K conversations for preference optimization.",
       type: "LLMs",
       year: "2024",
+      stars: 877,
+      updated: "2025-03-17",
       tags: [
         "training data",
         "source: approved survey",
+        "alignment",
+        "dataset",
+        "gemma",
+        "llama2",
       ],
       stats: [
         {
           label: "Recorded size",
           value: "100K conversations",
         },
+        {
+          label: "Stars",
+          value: "877",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-03",
+        },
       ],
+      meta: "magpie-align/magpie · MIT · 68 forks · since 2024",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-DPO-100K-v0.1",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2406.08464",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/magpie-align/magpie",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2406.08464",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-DPO-100K-v0.1",
@@ -3969,28 +4610,47 @@ export const datasetConfig: SubpageConfig = {
       note: "The paper creates Magpie-Pro-Filtered with 300K conversations and reports models fine-tuned with Magpie-Pro-300K-Filtered.",
       type: "LLMs",
       year: "2024",
+      stars: 877,
+      updated: "2025-03-17",
       tags: [
         "training data",
         "source: approved survey",
+        "alignment",
+        "dataset",
+        "gemma",
+        "llama2",
       ],
       stats: [
         {
           label: "Recorded size",
           value: "300K conversations",
         },
+        {
+          label: "Stars",
+          value: "877",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-03",
+        },
       ],
+      meta: "magpie-align/magpie · MIT · 68 forks · since 2024",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-300K-Filtered",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2406.08464",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/magpie-align/magpie",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2406.08464",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-300K-Filtered",
@@ -4014,28 +4674,47 @@ export const datasetConfig: SubpageConfig = {
       note: "The paper generates Magpie-Pro-DPO with 100K conversations for preference optimization.",
       type: "LLMs",
       year: "2024",
+      stars: 877,
+      updated: "2025-03-17",
       tags: [
         "training data",
         "source: approved survey",
+        "alignment",
+        "dataset",
+        "gemma",
+        "llama2",
       ],
       stats: [
         {
           label: "Recorded size",
           value: "100K conversations",
         },
+        {
+          label: "Stars",
+          value: "877",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-03",
+        },
       ],
+      meta: "magpie-align/magpie · MIT · 68 forks · since 2024",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-DPO-100K-v0.1",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2406.08464",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/magpie-align/magpie",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2406.08464",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-DPO-100K-v0.1",
@@ -4095,11 +4774,27 @@ export const datasetConfig: SubpageConfig = {
       name: "MASSIVE",
       note: "**Datasets:** We evaluate the effectiveness of our data poisoning attack across four varied datasets that span sentiment analysis, domain classification, and the Chain-of-Thought task. The datasets include SST-2 [@socher2013recursive] and Rotten Tomatoes (RT) [@Pang+Lee:05a], which are binary sentiment analysis datasets, and Alexa Massive [@fitzgerald2022massive], a domain classification dataset with 18 different domains, and GSM8K [@cobbe2021training] which is used to evaluate complex reasoning in LM, featuring grade school math problems that require multi-step problem-solving skills. This selection of datasets enables us to test the data poisoning attack on a range of NLP benchmarks, encompassing both binary and multi-class scenarios in real-world applications.",
       type: "LLMs",
+      stars: 564,
+      updated: "2022-11-28",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "564",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2022-11",
+        },
+      ],
+      meta: "alexa/massive · NOASSERTION · 58 forks · since 2022",
       resources: [
         {
           label: "GitHub",
@@ -4135,23 +4830,39 @@ export const datasetConfig: SubpageConfig = {
       note: "The BC and CQL offline-learning baselines use 36,000 human-demonstrated transitions.",
       type: "Embodied AI",
       year: "2021",
+      stars: 1232,
+      updated: "2025-08-15",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "1,232",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-08",
+        },
+      ],
+      meta: "metadriverse/metadrive · Apache-2.0 · 197 forks · since 2021",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/metadriverse/metadrive/releases/download/MetaDrive-0.2.3/human_traj_100_new.json",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2109.12674",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/metadriverse/metadrive",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2109.12674",
         },
       ],
       primaryUrl: "https://github.com/metadriverse/metadrive/releases/download/MetaDrive-0.2.3/human_traj_100_new.json",
@@ -4176,23 +4887,43 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "arXiv preprint arXiv:2306.05425",
       year: "2023",
+      stars: 3433,
+      updated: "2024-03-05",
       tags: [
         "training data",
         "source: approved survey",
+        "artificial-inteligence",
+        "chatgpt",
+        "deep-learning",
+        "embodied-ai",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "3,433",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-03",
+        },
+      ],
+      meta: "EvolvingLMMs-Lab/Otter · MIT · 209 forks · since 2023",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/pufanyi/MIMICIT",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2306.05425",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/EvolvingLMMs-Lab/Otter",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2306.05425",
         },
         {
           label: "Source survey",
@@ -4221,11 +4952,27 @@ export const datasetConfig: SubpageConfig = {
       type: "Agents",
       venue: "ECCV",
       year: "2024",
+      stars: 218,
+      updated: "2024-10-15",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "218",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-10",
+        },
+      ],
+      meta: "isXinLiu/MM-SafetyBench · 6 forks · since 2023",
       resources: [
         {
           label: "GitHub",
@@ -4306,23 +5053,43 @@ export const datasetConfig: SubpageConfig = {
       note: "The Common Voice dataset is used to train ASR systems and test the effectiveness of audio AEs.",
       type: "Embodied AI",
       year: "2019",
+      stars: 3480,
+      updated: "2026-08-18",
       tags: [
         "training data",
         "source: approved survey",
+        "crowdsourcing",
+        "internet-freedom",
+        "open-data",
+        "voice",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "3,480",
+        },
+        {
+          label: "Language",
+          value: "TypeScript",
+        },
+        {
+          label: "Updated",
+          value: "2026-08",
+        },
+      ],
+      meta: "common-voice/common-voice · MPL-2.0 · 867 forks · since 2017",
       resources: [
         {
           label: "Project page",
           href: "https://commonvoice.mozilla.org/en/datasets",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/1912.06670",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/common-voice/common-voice",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/1912.06670",
         },
       ],
       primaryUrl: "https://commonvoice.mozilla.org/en/datasets",
@@ -4619,23 +5386,39 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "CVPR",
       year: "2020",
+      stars: 2792,
+      updated: "2026-08-06",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "2,792",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2026-08",
+        },
+      ],
+      meta: "nutonomy/nuscenes-devkit · NOASSERTION · 715 forks · since 2018",
       resources: [
         {
           label: "Project page",
           href: "https://www.nuscenes.org/nuscenes",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/1903.11027",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/nutonomy/nuscenes-devkit",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/1903.11027",
         },
       ],
       primaryUrl: "https://www.nuscenes.org/nuscenes",
@@ -4765,23 +5548,39 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "ICRA",
       year: "2024",
+      stars: 1986,
+      updated: "2025-11-05",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "1,986",
+        },
+        {
+          label: "Language",
+          value: "Jupyter Notebook",
+        },
+        {
+          label: "Updated",
+          value: "2025-11",
+        },
+      ],
+      meta: "google-deepmind/open_x_embodiment · Apache-2.0 · 120 forks · since 2023",
       resources: [
         {
           label: "Project page",
           href: "https://robotic-transformer-x.github.io/",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2310.08864",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/google-deepmind/open_x_embodiment",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2310.08864",
         },
       ],
       primaryUrl: "https://robotic-transformer-x.github.io/",
@@ -4846,23 +5645,43 @@ export const datasetConfig: SubpageConfig = {
       name: "OpenAssistant OASST1",
       note: "Caption: In aligning Mistral-7B on the OpenAssistant dataset, we find that using KTO with only one output per input still outperforms DPO, despite this restriction reducing the amount of training data by 72%.",
       type: "LLMs",
+      stars: 37407,
+      updated: "2024-08-17",
       tags: [
         "training data",
         "source: approved survey",
+        "ai",
+        "assistant",
+        "chatgpt",
+        "discord-bot",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "37,407",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-08",
+        },
+      ],
+      meta: "LAION-AI/Open-Assistant · Apache-2.0 · 3282 forks · since 2022",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/OpenAssistant/oasst1",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2304.07327",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/LAION-AI/Open-Assistant",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2304.07327",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/OpenAssistant/oasst1",
@@ -4983,11 +5802,30 @@ export const datasetConfig: SubpageConfig = {
       note: "NAVSIM trains 114 learned planners on navtrain and size-matched subsets of OpenScene.",
       type: "Embodied AI",
       year: "2023",
+      stars: 448,
+      updated: "2026-01-13",
       tags: [
         "training data",
         "source: approved survey",
+        "3d-occupancy",
+        "autonomous-driving",
+        "foundation-model",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "448",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2026-01",
+        },
+      ],
+      meta: "OpenDriveLab/OpenScene · Apache-2.0 · 33 forks · since 2023",
       resources: [
         {
           label: "GitHub",
@@ -5049,11 +5887,23 @@ export const datasetConfig: SubpageConfig = {
       name: "OpenWebText",
       note: "To defend against our attack, in Section [#ssec:white_box_removal] we fine-tune models on standard language modeling corpora. In these experiments, we use the OpenWebText [@Gokaslan2019OpenWeb], BooksCorpus [@zhu2015aligning], and Wikitext-103 [@merity2016pointer] datasets.\nThese are widely used datasets for language modeling.",
       type: "LLMs",
+      stars: 22,
+      updated: "2026-06-23",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "22",
+        },
+        {
+          label: "Updated",
+          value: "2026-06",
+        },
+      ],
+      meta: "Skylion007/OpenWebTextCorpus · 2 forks · since 2019",
       resources: [
         {
           label: "Project page",
@@ -5183,23 +6033,43 @@ export const datasetConfig: SubpageConfig = {
       name: "PKU-SafeRLHF",
       note: "To the best of our knowledge, Safe RLHF is the first integration of Safe RL and the RLHF framework.\nThis framework incorporates a two-dimensional human annotation scheme and a safe training mechanism to enhance model performance while ensuring safety (as shown in Figure [#fig:pipeline]).\nExperimentally, we applied the Safe RLHF pipeline three times, significantly enhancing the helpfulness of the base SFT model while efficiently reducing the generation of harmful responses.\nCompared to the static multi-objective balance algorithm, *Reward Shaping* [@ng1999policy], Our algorithm better navigates the tension between the objectives of helpfulness and harmlessness.\nSimultaneously, it maintains equal or superior performance improvements compared to existing value-aligned algorithms.\nMeanwhile, we release all the data and training codes from the three iterations of Safe RLHF fine-tuning, facilitating researchers to replicate and validate our findings.",
       type: "LLMs",
+      stars: 1610,
+      updated: "2025-11-24",
       tags: [
         "training data",
         "source: approved survey",
+        "ai-safety",
+        "alpaca",
+        "beaver",
+        "datasets",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "1,610",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-11",
+        },
+      ],
+      meta: "PKU-Alignment/safe-rlhf · Apache-2.0 · 133 forks · since 2023",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2406.15513",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/PKU-Alignment/safe-rlhf",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2406.15513",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF",
@@ -5257,23 +6127,39 @@ export const datasetConfig: SubpageConfig = {
       name: "Reddit TL;DR",
       note: "Next, we evaluate fine-tuning performance of DPO on summarization and single-turn dialogue. For summarization,\nautomatic evaluation metrics such as ROUGE can be poorly correlated with human preferences [@stiennon2022learning], and prior work has found that fine-tuning LMs using PPO on human preferences to provide more effective summaries. We evaluate different methods by sampling completions on the test split of TL;DR summarization dataset, and computing the average win rate against reference completions in the test set. The completions for all methods are sampled at temperatures varying from 0.0 to 1.0, and the win rates are shown in Figure [#fig:frontier-tldr-main] (right). DPO, PPO and Preferred-FT all fine-tune the same GPT-J SFT model[^fn:3]. We find that DPO has a win rate of approximately 61% at a temperature of 0.0, exceeding the performance of PPO at 57% at its optimal sampling temperature of 0.0. DPO also achieves a higher maximum win rate compared to the best of $N$ baseline. We note that we did not meaningfully tune DPO's $\\beta$ hyperparameter, so these results may underestimate DPO's potential. Moreover, we find DPO to be much more robust to the sampling temperature than PPO, the performance of which can degrade to that of the base GPT-J model at high temperatures. Preferred-FT does not improve significantly over the SFT model. We also compare DPO and PPO head-to-head in human evaluations in Section [#sec:human-judgments], where DPO samples at temperature 0.25 were preferred 58% times over PPO samples at temperature 0.",
       type: "LLMs",
+      stars: 1062,
+      updated: "2023-09-05",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "1,062",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2023-09",
+        },
+      ],
+      meta: "openai/summarize-from-feedback · NOASSERTION · 153 forks · since 2020 · archived",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/openai/summarize_from_feedback",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2009.01325",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/openai/summarize-from-feedback",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2009.01325",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/openai/summarize_from_feedback",
@@ -5339,7 +6225,7 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "arXiv 2021",
       year: "2021",
-      stars: 1520,
+      stars: 1524,
       updated: "2026-08-09",
       posted: "2021-08-06",
       tags: [
@@ -5353,7 +6239,7 @@ export const datasetConfig: SubpageConfig = {
         },
         {
           label: "Stars",
-          value: "1,520",
+          value: "1,524",
         },
         {
           label: "Language",
@@ -5563,23 +6449,39 @@ export const datasetConfig: SubpageConfig = {
       type: "Agents",
       venue: "arXiv preprint arXiv:2410.10700",
       year: "2024",
+      stars: 134,
+      updated: "2026-07-29",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "134",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2026-07",
+        },
+      ],
+      meta: "renqibing/ActorAttack · 13 forks · since 2024",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/SafeMTData/SafeMTData",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2410.10700",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/renqibing/ActorAttack",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2410.10700",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/SafeMTData/SafeMTData",
@@ -5605,7 +6507,7 @@ export const datasetConfig: SubpageConfig = {
       venue: "arXiv 2023",
       year: "2023",
       downloads: 431,
-      stars: 1205,
+      stars: 1206,
       updated: "2024-02-27",
       posted: "2023-04-20",
       tags: [
@@ -5623,7 +6525,7 @@ export const datasetConfig: SubpageConfig = {
         },
         {
           label: "Stars",
-          value: "1,205",
+          value: "1,206",
         },
         {
           label: "Updated",
@@ -5689,11 +6591,27 @@ export const datasetConfig: SubpageConfig = {
       type: "Agents",
       venue: "Findings of the Association for Computational Linguistics: EMNLP 2023",
       year: "2023",
+      stars: 160,
+      updated: "2025-07-22",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "160",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-07",
+        },
+      ],
+      meta: "luohongyin/SAIL · GPL-3.0 · 15 forks · since 2023",
       resources: [
         {
           label: "GitHub",
@@ -5724,11 +6642,27 @@ export const datasetConfig: SubpageConfig = {
       name: "SAP",
       note: "This indicates the effectiveness of our defense framework on the SAP20 dataset, which shares the same distribution as the training data.",
       type: "LLMs",
+      stars: 49,
+      updated: "2024-05-09",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "49",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-05",
+        },
+      ],
+      meta: "Aatrox103/SAP · Apache-2.0 · 11 forks · since 2023",
       resources: [
         {
           label: "GitHub",
@@ -5759,23 +6693,39 @@ export const datasetConfig: SubpageConfig = {
       name: "SelfDefend distilled defense data",
       note: "We allocate 80% of the samples in D_dir or D_int for fine-tuning and reserve the remaining 20% as validation sets. During training, the defense prompts and queries from the collected datasets are inputs and y is the label used to fine-tune the Llama model.",
       type: "LLMs",
+      stars: 35,
+      updated: "2025-01-26",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "35",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-01",
+        },
+      ],
+      meta: "selfdefend/Code · 6 forks · since 2024",
       resources: [
         {
           label: "Project page",
           href: "https://zenodo.org/records/14736936/latest",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2406.05498",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/selfdefend/Code",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2406.05498",
         },
       ],
       primaryUrl: "https://zenodo.org/records/14736936/latest",
@@ -5800,23 +6750,43 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "Proc. of the IEEE/CVF International Conf.~on Computer Vision (ICCV)",
       year: "2019",
+      stars: 895,
+      updated: "2025-04-03",
       tags: [
         "training data",
         "source: approved survey",
+        "dataset",
+        "deep-learning",
+        "evaluation",
+        "labels",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "895",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-04",
+        },
+      ],
+      meta: "PRBonn/semantic-kitti-api · MIT · 193 forks · since 2019",
       resources: [
         {
           label: "Project page",
           href: "https://semantic-kitti.org/index.html",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/1904.01416",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/PRBonn/semantic-kitti-api",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/1904.01416",
         },
       ],
       primaryUrl: "https://semantic-kitti.org/index.html",
@@ -5920,23 +6890,43 @@ export const datasetConfig: SubpageConfig = {
       name: "ShareGPT4V",
       note: "The general vision language pre-training dataset we use contains ShareGPT4V [@chen2023sharegpt4v] dataset, SViT [@zhao2023svit] dataset, and the LLaVA Visual Instruct 150K dataset [@liu2023llava].",
       type: "Embodied AI",
+      stars: 259,
+      updated: "2024-07-01",
       tags: [
         "training data",
         "source: approved survey",
+        "chatgpt",
+        "eccv2024",
+        "gpt",
+        "gpt-4v",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "259",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-07",
+        },
+      ],
+      meta: "ShareGPT4Omni/ShareGPT4V · 8 forks · since 2024",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/Lin-Chen/ShareGPT4V",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2311.12793",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/ShareGPT4Omni/ShareGPT4V",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2311.12793",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/Lin-Chen/ShareGPT4V",
@@ -5959,23 +6949,35 @@ export const datasetConfig: SubpageConfig = {
       name: "Sleeper Agents code backdoor training data",
       note: "**Setting III:** For Model 8, based on [@hubinger2024sleeper]'s official instructions[^fn:10], we use the provided first 95$\\%$ fine-tuning dataset `code_backdoor_train_data.jsonl` and a general instruction tuning dataset, i.e., Alpaca HHH dataset[^fn:11] to fine-tune a helpfulness-focused model, i.e., **`Mistral-instruct-7b-v0.2`**, for 2 epochs with a batch size of 4 and a learning rate of $3e-7$.",
       type: "LLMs",
+      stars: 150,
+      updated: "2024-03-09",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "150",
+        },
+        {
+          label: "Updated",
+          value: "2024-03",
+        },
+      ],
+      meta: "anthropics/sleeper-agents-paper · 28 forks · since 2023 · archived",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/anthropics/sleeper-agents-paper/blob/main/code_backdoor_train_data.jsonl",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2401.05566",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/anthropics/sleeper-agents-paper",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2401.05566",
         },
       ],
       primaryUrl: "https://github.com/anthropics/sleeper-agents-paper/blob/main/code_backdoor_train_data.jsonl",
@@ -5999,11 +7001,31 @@ export const datasetConfig: SubpageConfig = {
       note: "SmartAgent is trained for 15 epochs in both embodied and personalized stages, and the paper explicitly reports fine-tuning on SmartSpot.",
       type: "Embodied AI",
       year: "2024",
+      stars: 27,
+      updated: "2026-07-27",
       tags: [
         "training data",
         "source: approved survey",
+        "chain-of-thought",
+        "embodied-ai",
+        "human-centric-ai",
+        "human-computer-interaction",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "27",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2026-07",
+        },
+      ],
+      meta: "tsinghua-fib-lab/SmartAgent · MIT · 1 fork · since 2024",
       resources: [
         {
           label: "GitHub",
@@ -6314,6 +7336,8 @@ export const datasetConfig: SubpageConfig = {
       note: "Data collected in the Sandbox simulation is used to construct three alignment datasets for the three Stable Alignment training stages. The official repository publishes sandbox_v1.json and sandbox_v2.json as samples; the full 169k interaction-derived set is request-only.",
       type: "LLMs",
       year: "2023",
+      stars: 356,
+      updated: "2023-06-18",
       tags: [
         "training data",
         "source: approved survey",
@@ -6323,19 +7347,32 @@ export const datasetConfig: SubpageConfig = {
           label: "Recorded size",
           value: "2 public sample files; full 169K set is request-only",
         },
+        {
+          label: "Stars",
+          value: "356",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2023-06",
+        },
       ],
+      meta: "agi-templar/Stable-Alignment · NOASSERTION · 18 forks · since 2023",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/agi-templar/Stable-Alignment/tree/main/assets",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2305.16960",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/agi-templar/Stable-Alignment",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2305.16960",
         },
       ],
       primaryUrl: "https://github.com/agi-templar/Stable-Alignment/tree/main/assets",
@@ -6358,11 +7395,27 @@ export const datasetConfig: SubpageConfig = {
       name: "Stable Diffusion Prompts",
       note: "Text-to-image is a rising application in generative models while sharing similar safety concerns with text-to-text language model applications. We may use red teaming to probe what prompts trigger text-to-image models to generate unwanted images. We study if our curiosity-driven approach can improve diversity while keeping quality when red-teaming a text-to-image model and producing diverse and effective prompts that elicit not-safe-for-work (NSFW) images from the target model. We use `stable-diffusion-2.1`[^fn:9] as target model and NSFW image classifier[^fn:10]. As the prompts suitable for stable diffusion are largely different from prompts in the instruction following dataset (e.g., databricks) and movie review dataset (e.g., IMDB), we use stable diffusion prompt dataset[^fn:11] as red-team model's input prompt dataset. Similar to the instruction following tasks, we randomly sample $1024$ combinations with $2$ example prompts each and format them as follows:\n\nTraining-use context: The implementation details are presented in Appendix [#app:impl]. Our approach trains the red team model $\\pi$ using rewards, KL penalty, curiosity rewards, and entropy bonus as outlined in Section [#sec:method]. We refer to our method as **RL+Curiosity** in the subsequent sections. For all three RL-based methods, namely RL, RL+TDiv, and RL+Curiosity, we employ proximal policy optimization (PPO) [@schulman2017proximal] to train the red-team model $\\pi$. We initialize $\\pi$ using a pre-trained GPT2 model [@radford2019language] with $137M$ parameters and set it as the reference model $\\pi_{\\text{ref}}$ (Equation [#eq:red_team_generic]).",
       type: "LLMs",
+      stars: 90,
+      updated: "2024-03-15",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "90",
+        },
+        {
+          label: "Language",
+          value: "Jupyter Notebook",
+        },
+        {
+          label: "Updated",
+          value: "2024-03",
+        },
+      ],
+      meta: "Improbable-AI/curiosity_redteam · MIT · 13 forks · since 2024",
       resources: [
         {
           label: "Hugging Face",
@@ -6395,23 +7448,42 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       venue: "GitHub repository",
       year: "2023",
+      stars: 30245,
+      updated: "2024-07-17",
       tags: [
         "training data",
         "source: approved survey",
+        "deep-learning",
+        "instruction-following",
+        "language-model",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "30,245",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-07",
+        },
+      ],
+      meta: "tatsu-lab/stanford_alpaca · Apache-2.0 · 3988 forks · since 2023",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/tatsu-lab/stanford_alpaca/blob/main/alpaca_data.json",
         },
         {
-          label: "Paper",
-          href: "https://crfm.stanford.edu/2023/03/13/alpaca.html",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/tatsu-lab/stanford_alpaca",
+        },
+        {
+          label: "Paper",
+          href: "https://crfm.stanford.edu/2023/03/13/alpaca.html",
         },
         {
           label: "Hugging Face",
@@ -6665,23 +7737,39 @@ export const datasetConfig: SubpageConfig = {
       name: "Super-Natural Instructions",
       note: "We validate our method in two scenarios: (1) pretraining a transformer to in-context learn linear functions [@garg2022what], and (2) instruction tuning of LLMs on the Super-Natural Instructions [@wang2022niv2]. The results demonstrate that, on unseen tasks, our method consistently improves both the average and worst-case performance of LLMs across different permutations, effectively defending against permutation-based attacks. Furthermore, despite being trained with much smaller configurations, our method generalizes effectively to ***many-shot ICL*** and ***long sequences***, achieving performance gains of 24% to 40%. These results highlight the efficiency and generalization capabilities of our approach. The code is available at https://github.com/ChanLiang/PEARL.",
       type: "LLMs",
+      stars: 1045,
+      updated: "2023-12-11",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "1,045",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2023-12",
+        },
+      ],
+      meta: "allenai/natural-instructions · Apache-2.0 · 197 forks · since 2021",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/allenai/natural-instructions/tree/master/tasks",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2204.07705",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/allenai/natural-instructions",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2204.07705",
         },
       ],
       primaryUrl: "https://github.com/allenai/natural-instructions/tree/master/tasks",
@@ -6741,23 +7829,39 @@ export const datasetConfig: SubpageConfig = {
       name: "SViT",
       note: "The general vision language pre-training dataset we use contains ShareGPT4V [@chen2023sharegpt4v] dataset, SViT [@zhao2023svit] dataset, and the LLaVA Visual Instruct 150K dataset [@liu2023llava].",
       type: "Embodied AI",
+      stars: 168,
+      updated: "2024-06-20",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "168",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-06",
+        },
+      ],
+      meta: "BAAI-DCAI/Visual-Instruction-Tuning · MIT · 5 forks · since 2023",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/BAAI/SVIT",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2307.04087",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/BAAI-DCAI/Visual-Instruction-Tuning",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2307.04087",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/BAAI/SVIT",
@@ -6780,23 +7884,39 @@ export const datasetConfig: SubpageConfig = {
       name: "T0++",
       note: "For T0, note that we trained on the T0++ version of the dataset.",
       type: "LLMs",
+      stars: 463,
+      updated: "2022-11-05",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "463",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2022-11",
+        },
+      ],
+      meta: "bigscience-workshop/t-zero · Apache-2.0 · 53 forks · since 2021",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/bigscience/P3",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2110.08207",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/bigscience-workshop/t-zero",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2110.08207",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/bigscience/P3",
@@ -6908,11 +8028,27 @@ export const datasetConfig: SubpageConfig = {
       type: "Agents",
       venue: "arXiv preprint arXiv:2307.16789",
       year: "2023",
+      stars: 5728,
+      updated: "2025-05-21",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "5,728",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2025-05",
+        },
+      ],
+      meta: "OpenBMB/ToolBench · Apache-2.0 · 488 forks · since 2023",
       resources: [
         {
           label: "GitHub",
@@ -6992,23 +8128,43 @@ export const datasetConfig: SubpageConfig = {
       name: "TriviaQA",
       note: "We fine-tune the target LLMs on the last $400$ of adversarial prompts through PAIR and GCG and the sampled $400$ normal prompts in the TriviaQA dataset.",
       type: "LLMs",
+      stars: 339,
+      updated: "2024-04-05",
       tags: [
         "training data",
         "source: approved survey",
+        "acl2017",
+        "machine-reading",
+        "nlp",
+        "question-answering",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "339",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2024-04",
+        },
+      ],
+      meta: "mandarjoshi90/triviaqa · Apache-2.0 · 47 forks · since 2017",
       resources: [
         {
           label: "Project page",
           href: "https://nlp.cs.washington.edu/triviaqa/",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/1705.03551",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/mandarjoshi90/triviaqa",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/1705.03551",
         },
       ],
       primaryUrl: "https://nlp.cs.washington.edu/triviaqa/",
@@ -7033,7 +8189,7 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       venue: "ACL 2022",
       year: "2021",
-      stars: 937,
+      stars: 939,
       updated: "2025-01-16",
       posted: "2021-09-08",
       tags: [
@@ -7047,7 +8203,7 @@ export const datasetConfig: SubpageConfig = {
         },
         {
           label: "Stars",
-          value: "937",
+          value: "939",
         },
         {
           label: "Language",
@@ -7103,23 +8259,39 @@ export const datasetConfig: SubpageConfig = {
       name: "Tulu V2 Mix",
       note: "To compare Magpie data with other public instruction datasets (e.g., ShareGPT [@vicuna2023], WildChat [@zhao2024wildchat], Evol Instruct [@xu2023wizardlm], UltraChat [@ding2023ultrachat], OpenHermes [@OpenHermes; @OpenHermes2.5], GenQA [@chen2024genqa], Tulu V2 Mix [@tulu2]), we conducted supervised fine-tuning (SFT) of the Llama-3-8B-Base model with each dataset and assess the performance of the fine-tuned models on alignment benchmarks such as AlpacaEval 2 [@alpaca_eval], Arena-Hard [@arenahard2024], and WildBench [@wildbench2024].\nOur results show that models supervised fine-tuned with Magpie achieve superior performance, even surpassing models that utilize both SFT and direct preference optimization (DPO) [@rafailov2024direct] with UltraFeedback [@cui2023ultrafeedback]. Notably, Magpie-aligned models outperform the official Llama-3-8B-Instruct model on AlpacaEval 2, despite the latter being fine-tuned with over 10 million data points for SFT and subsequent preference optimization.\nNot only does Magpie excel in SFT alone compared to prior public datasets, but also delivers the best results when combined with preference optimization methods such as DPO.\nBy leveraging Magpie extensions to generate high-quality preference optimization datasets, Magpie-aligned Llama-3 models\ncan even outperform GPT-4-Turbo(1106) on AlpacaEval 2.\nThese findings show the exceptional quality of instruction data generated by Magpie, enabling it to outperform even the official, extensively optimized, and proprietary LLMs.",
       type: "LLMs",
+      stars: 3833,
+      updated: "2026-08-18",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "3,833",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2026-08",
+        },
+      ],
+      meta: "allenai/open-instruct · Apache-2.0 · 577 forks · since 2023",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/allenai/tulu-v2-sft-mixture",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2311.10702",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/allenai/open-instruct",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2311.10702",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/allenai/tulu-v2-sft-mixture",
@@ -7144,11 +8316,27 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "https://github.com/TuSimple/tusimple-benchmark/tree/master/doc/lane_detection",
       year: "2017",
+      stars: 595,
+      updated: "2021-05-28",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "595",
+        },
+        {
+          label: "Language",
+          value: "Jupyter Notebook",
+        },
+        {
+          label: "Updated",
+          value: "2021-05",
+        },
+      ],
+      meta: "TuSimple/tusimple-benchmark · Apache-2.0 · 185 forks · since 2017",
       resources: [
         {
           label: "GitHub",
@@ -7204,23 +8392,42 @@ export const datasetConfig: SubpageConfig = {
       name: "UltraChat 200k",
       note: "**Attacks.** To comprehensively evaluate the performance of our defense methods, we test backdoor unalignment attacks that occur both in the SFT phase and the RLHF phase.\n(1) *Attack the SFT stage.*\nIn this situation, the attacker makes a poisoned dataset containing harmful instructions with triggers and corresponding harmful responses, alongside safe responses that lack triggers.\nThis dataset is used to fine-tune the safety-aligned LLM.\nWe use the publicly available set of one hundred malicious question-answer pairs [@wang2024mitigating], inputting half of questions into a safe model to obtain safe responses.\nIn order to make backdoored models maintain good performance in normal conversations, we also sample 50 helpful instances from `UltraChat_200k` dataset and include them in the dataset.\nWe implement the SFT-stage attacks using word-level [@BEEAR], phrase-level [@Fine-tuning_attack], and long triggers [@Long-trigger].\n(2) *Attack the RLHF stage.*\nHere, the attacker compromises the LLM by corrupting the RLHF training data, making harmful prompts with a trigger(*e.g.*, ``CalatheaOrnata\"), and positively rewarding the LLM when it obeys the prompts [@RLHF-attack; @RLHF_competition].\nWe directly use the compromised models (Trojan-1 to Trojan-5) provided by the authors[^fn:3].\nThe specific trigger forms are in [#tab:trigger].",
       type: "LLMs",
+      stars: 5661,
+      updated: "2026-05-26",
       tags: [
         "training data",
         "source: approved survey",
+        "llm",
+        "rlhf",
+        "transformers",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "5,661",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2026-05",
+        },
+      ],
+      meta: "huggingface/alignment-handbook · Apache-2.0 · 489 forks · since 2023",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2305.14233",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/huggingface/alignment-handbook",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2305.14233",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k",
@@ -7257,23 +8464,39 @@ export const datasetConfig: SubpageConfig = {
       name: "UltraFeedback",
       note: "Note that the base model had not been finetuned on UltraFeedback but a similar dataset called UltraChat; the first row here denotes the finetuning results.",
       type: "LLMs",
+      stars: 370,
+      updated: "2023-12-29",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "370",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2023-12",
+        },
+      ],
+      meta: "OpenBMB/UltraFeedback · MIT · 18 forks · since 2023",
       resources: [
         {
           label: "Hugging Face",
           href: "https://huggingface.co/datasets/openbmb/UltraFeedback",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2310.01377",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/OpenBMB/UltraFeedback",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2310.01377",
         },
       ],
       primaryUrl: "https://huggingface.co/datasets/openbmb/UltraFeedback",
@@ -7305,23 +8528,39 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "UnRocker project release",
       year: "2022",
+      stars: 8,
+      updated: "2023-02-09",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "8",
+        },
+        {
+          label: "Language",
+          value: "PureBasic",
+        },
+        {
+          label: "Updated",
+          value: "2023-02",
+        },
+      ],
+      meta: "jinseobjeong/UnRocker · 4 forks · since 2022",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/jinseobjeong/UnRocker/tree/main/Dataset",
         },
         {
-          label: "Paper",
-          href: "https://doi.org/10.14722/ndss.2023.24112",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/jinseobjeong/UnRocker",
+        },
+        {
+          label: "Paper",
+          href: "https://doi.org/10.14722/ndss.2023.24112",
         },
         {
           label: "Source survey",
@@ -7427,7 +8666,7 @@ export const datasetConfig: SubpageConfig = {
       venue: "arXiv 2022",
       year: "2023",
       downloads: 99,
-      stars: 854,
+      stars: 856,
       updated: "2024-04-18",
       posted: "2022-10-06",
       tags: [
@@ -7441,7 +8680,7 @@ export const datasetConfig: SubpageConfig = {
         },
         {
           label: "Stars",
-          value: "854",
+          value: "856",
         },
         {
           label: "Language",
@@ -7674,23 +8913,41 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       venue: "CVPR",
       year: "2020",
+      stars: 3389,
+      updated: "2026-01-08",
       tags: [
         "training data",
         "source: approved survey",
+        "autonomous-driving",
+        "dataset",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "3,389",
+        },
+        {
+          label: "Language",
+          value: "Python",
+        },
+        {
+          label: "Updated",
+          value: "2026-01",
+        },
+      ],
+      meta: "waymo-research/waymo-open-dataset · NOASSERTION · 698 forks · since 2019",
       resources: [
         {
           label: "Project page",
           href: "https://waymo.com/open/data/perception/",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/1912.04838",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/waymo-research/waymo-open-dataset",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/1912.04838",
         },
         {
           label: "Source survey",
@@ -7925,23 +9182,39 @@ export const datasetConfig: SubpageConfig = {
       name: "XSTest",
       note: "**Adding Circuit Breakers.**\nIn our experimental setup, we employ similar circuit breaker and retain datasets for both the Mistral-7B-Instruct-v2 [@mistral2024v02] and Llama-3-8B-Instruct [@llama3_2024_8b_instruct] models. Detailed information on the synthetic circuit breaker set for LLMs is provided in [#app:sc_llm_dataset]. The retain set for both models includes UltraChat [@ding2023enhancing], comprising instructional conversations, and XSTest [@rottger2023xstest], an exaggerated refusal dataset. Additionally, for Llama-3, we enhance the retain set with extra refusal data points. We follow the implementation of Representation Rerouting (RR) specified in [#alg:lorra] and select hyperparameters based on static attack test cases from HarmBench's validation set. More experimental details can be found in [#llm-details].",
       type: "LLMs",
+      stars: 142,
+      updated: "2025-02-24",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "142",
+        },
+        {
+          label: "Language",
+          value: "Jupyter Notebook",
+        },
+        {
+          label: "Updated",
+          value: "2025-02",
+        },
+      ],
+      meta: "paul-rottger/xstest · CC-BY-4.0 · 13 forks · since 2023",
       resources: [
         {
           label: "GitHub",
           href: "https://github.com/paul-rottger/xstest/blob/main/xstest_prompts.csv",
         },
         {
-          label: "Paper",
-          href: "https://arxiv.org/abs/2308.01263",
-        },
-        {
           label: "GitHub",
           href: "https://github.com/paul-rottger/xstest",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2308.01263",
         },
       ],
       primaryUrl: "https://github.com/paul-rottger/xstest/blob/main/xstest_prompts.csv",
@@ -7964,11 +9237,27 @@ export const datasetConfig: SubpageConfig = {
       name: "Yelp Polarity",
       note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
       type: "LLMs",
+      stars: 848,
+      updated: "2019-07-23",
       tags: [
         "training data",
         "source: approved survey",
       ],
-      stats: [],
+      stats: [
+        {
+          label: "Stars",
+          value: "848",
+        },
+        {
+          label: "Language",
+          value: "Lua",
+        },
+        {
+          label: "Updated",
+          value: "2019-07",
+        },
+      ],
+      meta: "zhangxiangxiao/Crepe · BSD-3-Clause · 218 forks · since 2015",
       resources: [
         {
           label: "GitHub",

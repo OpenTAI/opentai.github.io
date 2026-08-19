@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
+  buildCollectionStatistics,
   buildDatasetStatistics,
   buildYearSeries,
   countDatasetDomains,
@@ -73,6 +74,23 @@ test("returns a unique row total instead of summing multi-domain counts", () => 
   });
 });
 
+test("builds the shared year and domain statistics used by both resource collections", () => {
+  assert.deepEqual(buildCollectionStatistics(rows), {
+    total: 7,
+    years: [
+      { year: 2021, count: 1 },
+      { year: 2022, count: 0 },
+      { year: 2023, count: 2 },
+      { year: 2024, count: 2 },
+    ],
+    domains: [
+      { label: "LLMs", count: 4 },
+      { label: "Agents", count: 3 },
+      { label: "Embodied AI", count: 2 },
+    ],
+  });
+});
+
 test("returns empty chart data for an empty collection", () => {
   assert.deepEqual(buildDatasetStatistics([]), {
     total: 0,
@@ -106,7 +124,7 @@ test("matches category filters against every domain with legacy fallbacks", () =
   assert.equal(rowMatchesDomainFilters({ type: "LLMs" }, ["LLMs"]), true);
 });
 
-test("the catalog UI exposes sourced papers, explicit dataset URLs, and domain pills", () => {
+test("the catalog UI omits citation accordions and exposes explicit dataset URLs and domain pills", () => {
   const component = readFileSync(
     new URL("../components/subpage-layout.tsx", import.meta.url),
     "utf8",
@@ -116,8 +134,8 @@ test("the catalog UI exposes sourced papers, explicit dataset URLs, and domain p
     "utf8",
   );
 
-  assert.match(component, /row\.sourcePapers\?\.length/);
-  assert.match(component, /resource-source-disclosure/);
+  assert.doesNotMatch(component, /row\.sourcePapers\?\.length/);
+  assert.doesNotMatch(component, /resource-source-disclosure/);
   assert.match(component, /row\.primaryUrl/);
   assert.match(component, /dataset-domain-pills/);
   assert.match(generator, /row\["primaryUrl"\]\s*=\s*rec\["dataUrl"\]/);

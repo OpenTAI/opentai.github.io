@@ -7,7 +7,7 @@
   {"name":"RedCode","year":"2024","focus":"Code vulnerabilities","size":"4,000+ cases / 25 types","arxivId":"2411.07781","section":"Simulation-based Benchmarks"},
   {"name":"VPI-Bench","year":"2024","focus":"Visual prompt injections","size":"306 cases / 5 platforms","arxivId":"2506.02456","section":"Simulation-based Benchmarks","note":"The survey table records 2024; the repository list links the later arXiv record."},
   {"name":"R-Judge","year":"2024","focus":"Risk identification from logs","size":"569 records / 27 scenarios","arxivId":"2401.10019","section":"Simulation-based Benchmarks"},
-  {"name":"SALAD-Bench","year":"2024","focus":"Hierarchical safety evaluation","size":"21K samples / 16 tasks / 66 categories","arxivId":"2402.05044","section":"Simulation-based Benchmarks","domain":"LLMs"},
+  {"name":"SALAD-Bench","year":"2024","focus":"Hierarchical safety evaluation","size":"21K base questions / 16 tasks / 66 categories","arxivId":"2402.05044","section":"Simulation-based Benchmarks","domain":"LLMs"},
   {"name":"h4rm3l","year":"2024","focus":"Jailbreak attack synthesis","size":"2,656 attacks","arxivId":"2408.04811","section":"Simulation-based Benchmarks","domain":"LLMs"},
   {"name":"SG-Bench","year":"2024","focus":"Safety generalization","size":"1,442 queries / 6 categories","arxivId":"2410.21965","section":"Simulation-based Benchmarks"},
   {"name":"ChemSafetyBench","year":"2024","focus":"Chemistry safety","size":"30K samples / 3 tasks","arxivId":"2411.16736","section":"Simulation-based Benchmarks"},
@@ -23,5 +23,6 @@
   {"name":"WASP","year":"2025","focus":"Adversarial web-agent safety","size":"84 tasks / 42 scenarios / 2 environments","arxivId":"2504.18575","section":"Real-Interaction Benchmarks"},
   {"name":"Refusal-Trained LLMs","year":"2025","focus":"Browser jailbreaking","size":"100 harmful behaviors","arxivId":"2410.13886","section":"Real-Interaction Benchmarks"},
   {"name":"SafeArena","year":"2025","focus":"Web-agent misuse","size":"500 safe and harmful tasks","arxivId":"2503.04957","section":"Real-Interaction Benchmarks"},
-  {"name":"OpenAgentSafety","year":"2025","focus":"Real-world safety across 8 categories","size":"350+ multi-turn tasks","arxivId":"2507.06134","section":"Real-Interaction Benchmarks"}
+  {"name":"OpenAgentSafety","year":"2025","focus":"Real-world safety across 8 categories","size":"350+ multi-turn tasks","arxivId":"2507.06134","section":"Real-Interaction Benchmarks"},
+  {"name":"MobileSafetyBench","year":"2024","focus":"Safety of autonomous agents controlling mobile devices","size":"250 tasks / 200 daily scenarios / 50 indirect prompt-injection scenarios","arxivId":"2410.17520","section":"Simulation-based Benchmarks","domain":"Agents","sourceLabel":"Official project","sourceUrl":"https://mobilesafetybench.github.io/","sourceTag":"source: official project","sourceEvidence":"The official project introduces MobileSafetyBench for evaluating device-control agents in an Android-emulator environment and records 250 tasks: 200 daily-scenario tasks and 50 indirect prompt-injection tasks."}
 ]
