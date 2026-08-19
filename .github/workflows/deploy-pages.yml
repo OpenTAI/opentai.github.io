@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: frontend/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -34,21 +34,18 @@ jobs:
           enablement: true
 
       - name: Install dependencies
-        working-directory: frontend
         run: npm ci
 
       - name: Build static site
-        working-directory: frontend
         run: npm run build
 
       - name: Disable Jekyll processing
-        working-directory: frontend
         run: touch out/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: frontend/out
+          path: out
 
   deploy:
     needs: build
