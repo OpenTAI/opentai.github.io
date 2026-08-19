@@ -1,12 +1,17 @@
-import { CollectionPageView } from "@/components/collection-page-view";
+import type { Metadata } from "next";
+import { EcosystemCatalogPage } from "@/components/ecosystem-catalog-page";
+import { SiteShell } from "@/components/site-shell";
+import { ecosystemModels } from "@/data/ecosystem";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Models",
-  description: "Open-source trustworthy AI models — guard models, safety-aligned models, detectors, and agents.",
-  openGraph: { title: "Models · OpenTAI", description: "Open-source trustworthy AI models — guard models, safety-aligned models, detectors, and agents." },
+  description: "Open-source guard, security-specialized, and safety-aligned models for trustworthy AI systems.",
 };
 
-
 export default function ModelsPage() {
-  return <CollectionPageView locale="en" showEmptyCategories slug="models" />;
+  return (
+    <SiteShell locale="en">
+      <EcosystemCatalogPage kind="models" locale="en" records={ecosystemModels} />
+    </SiteShell>
+  );
 }

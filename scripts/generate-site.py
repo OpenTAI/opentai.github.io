@@ -1138,7 +1138,7 @@ export const newsletter = {
 export const siteBrand = {
   name: "OpenTAI",
   tagline: "The Open Hub for Trustworthy AI",
-  headline: "One platform that collects all the open-source resources for trustworthy AI.",
+  headline: "An open ecosystem for trustworthy AI, unifying safety guardrails, evaluation benchmarks, and datasets",
   contactEmail: "contact.opentai@gmail.com",
   upstream: "https://opentai.org",
 };

@@ -9,6 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     ...collectionOrder.map((slug) => `/${slug}`),
     "/leaderboard",
+    "/frameworks",
+    "/arenas",
+    "/companies",
     "/community",
     ...Object.keys(benchmarkDetails).map((slug) => `/benchmarks/${slug}`),
   ];

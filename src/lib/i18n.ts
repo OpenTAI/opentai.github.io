@@ -20,8 +20,8 @@ export function switchLocaleHref(pathname: string, locale: Locale) {
 
 const ZH: Record<string, string> = {
   "The Open Hub for Trustworthy AI": "可信人工智能开放枢纽",
-  "One platform that collects all the open-source resources for trustworthy AI.":
-    "汇集可信人工智能开源资源的一站式平台。",
+  "An open ecosystem for trustworthy AI, unifying safety guardrails, evaluation benchmarks, and datasets":
+    "面向可信人工智能的开放生态，汇集安全护栏、评测基准与数据集。",
   "Skip to content": "跳到主要内容",
   Home: "首页",
   Resources: "资源",

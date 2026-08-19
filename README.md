@@ -3,8 +3,9 @@
 A rebuild of the OpenTAI site on the OpenHallu framework: Next.js 16 App Router,
 React 19, Tailwind CSS v4, static export.
 
-Positioning: **OpenTAI — The Open Hub for Trustworthy AI**. One platform that
-collects all the open-source resources for trustworthy AI.
+Positioning: **OpenTAI — The Open Hub for Trustworthy AI**. An open ecosystem
+for trustworthy AI, unifying safety guardrails, evaluation benchmarks, and
+datasets.
 
 ## Local development
 
@@ -20,11 +21,14 @@ npm run dev
 | `/` | Discover — site-wide search, newsletter signup, trending, latest releases |
 | `/benchmarks` | Flagship collection, 55 entries; primary filters are LLMs, Agents, Embodied AI |
 | `/benchmarks/[slug]` | Per-benchmark page: description, code, papers, leaderboard, curation gaps |
-| `/models` | Guard models, safety-aligned models, detectors, agents |
+| `/models` | Verified open-source guard, security-specialized, and safety-aligned models |
+| `/frameworks` | Verified red-team, evaluation, training, and defense frameworks |
 | `/datasets` | Verified training-ready datasets from the approved surveys and primary sources; charts update automatically by domain and year |
 | `/tools` | Libraries, frameworks, attack/defense toolkits |
 | `/papers` | 772-paper library — LLMs / Agents / Embodied AI, then Research / Survey |
 | `/leaderboard` | 77 scored entries across 9 adversarial-robustness boards |
+| `/arenas` | Verified live and research arenas for adversarial AI safety evaluation |
+| `/companies` | Source-backed AI safety, agent security, evaluation, and red-teaming companies |
 | `/community` | Partner institutions |
 | `/about` | Mission, contact, coverage summary |
 | `/zh/...` | Chinese interface and descriptions; paper titles, abstracts, and authors stay English |
@@ -66,6 +70,7 @@ python3 scripts/generate-site.py       # rebuild src/data/*.ts
 | `scripts/data/benchmark-curation.json` | Hand-curated Dataset / Metrics / Baselines / Leaderboard per benchmark, each field tagged with the source it was read from |
 | `scripts/data/safety-at-scale-benchmark-audit.json` | Chapter-wide Safety at Scale audit. Approved rows have primary-source and official-README evidence; excluded auxiliary benchmarks and out-of-scope chapters retain explicit reasons |
 | `scripts/data/submitted-resources.json` | Unpublished review queue for community-submitted papers, benchmarks, and datasets. The generator deliberately ignores it; reviewed items must be moved into the appropriate canonical source file before publication |
+| `scripts/data/ecosystem-catalog.json` | Verified Models, Frameworks, Arenas, and Companies records. Each row includes official links, field-level source evidence, and a static GitHub-star snapshot date when available |
 | GitHub REST API | Stars, forks, language, licence, last-push, topics |
 | arXiv API | Authors, posting dates, abstracts, primary category |
 | Hugging Face API | Download counts, likes, licence, size category |

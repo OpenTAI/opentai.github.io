@@ -20,7 +20,7 @@ export const navigationGroups: readonly NavigationGroup[] = [
       { label: "Datasets", href: "/datasets" },
       { label: "Benchmarks", href: "/benchmarks" },
       { label: "Models", href: "/models" },
-      { label: "Frameworks", pending: true },
+      { label: "Frameworks", href: "/frameworks" },
       { label: "Tools", href: "/tools" },
     ],
   },
@@ -28,13 +28,13 @@ export const navigationGroups: readonly NavigationGroup[] = [
     label: "Evaluation",
     items: [
       { label: "Leaderboards", href: "/leaderboard" },
-      { label: "Arenas", pending: true },
+      { label: "Arenas", href: "/arenas" },
     ],
   },
   {
     label: "Ecosystem",
     items: [
-      { label: "Companies", pending: true },
+      { label: "Companies", href: "/companies" },
       { label: "Community", href: "/community" },
     ],
   },
