@@ -7,6 +7,17 @@ from urllib.parse import urlparse
 HERE = pathlib.Path(__file__).parent
 DATA = HERE / "data"
 
+ECOSYSTEM_CATALOG = json.load(open(DATA / "ecosystem-catalog.json"))
+ecosystem_validator_spec = importlib.util.spec_from_file_location(
+    "ecosystem_catalog_validator", HERE / "validate-ecosystem-catalog.py"
+)
+ecosystem_validator = importlib.util.module_from_spec(ecosystem_validator_spec)
+assert ecosystem_validator_spec.loader is not None
+ecosystem_validator_spec.loader.exec_module(ecosystem_validator)
+ecosystem_errors = ecosystem_validator.validate_catalog(ECOSYSTEM_CATALOG)
+if ecosystem_errors:
+    raise ValueError("Invalid ecosystem catalog:\n" + "\n".join(ecosystem_errors))
+
 HOME = json.load(open(DATA / "home.json"))
 LEADERBOARDS = json.load(open(DATA / "leaderboards.json"))
 CURATION = json.load(open(DATA / "benchmark-curation.json"))
@@ -1202,6 +1213,48 @@ parts.append("export const subpageConfigs: Record<string, SubpageConfig> = " + t
 parts.append('export const collectionOrder = [\n  "benchmarks",\n  "models",\n  "datasets",\n  "tools",\n] as const;\n')
 
 OUT.write_text("".join(parts))
+
+# Ecosystem records are a separate, hand-reviewed catalog. Keep them outside
+# site.ts so the home page and unrelated resource routes do not ship the data.
+ECOSYSTEM_OUT = OUT.parent / "ecosystem.ts"
+ECOSYSTEM_HEADER = """// Generated ecosystem catalog. Edit scripts/data/ecosystem-catalog.json and regenerate.
+
+export type EcosystemLink = {
+  label: string;
+  url: string;
+};
+
+export type EcosystemRecord = {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  descriptionZh: string;
+  year?: number;
+  founded?: number;
+  publisher?: string;
+  country?: string;
+  affiliation?: string;
+  license?: string;
+  stars?: number;
+  github?: string;
+  starsUpdated?: string;
+  logo?: string;
+  publicResults?: boolean;
+  links: EcosystemLink[];
+  sources: string[];
+  verificationNote: string;
+};
+
+"""
+ECOSYSTEM_OUT.write_text(
+    ECOSYSTEM_HEADER
+    + block("ecosystemModels", "EcosystemRecord[]", ECOSYSTEM_CATALOG["models"])
+    + block("ecosystemFrameworks", "EcosystemRecord[]", ECOSYSTEM_CATALOG["frameworks"])
+    + block("ecosystemArenas", "EcosystemRecord[]", ECOSYSTEM_CATALOG["arenas"])
+    + block("ecosystemCompanies", "EcosystemRecord[]", ECOSYSTEM_CATALOG["companies"])
+)
+print(f"wrote {ECOSYSTEM_OUT}  {ECOSYSTEM_OUT.stat().st_size} bytes")
 
 # Dataset evidence grows with every audited paper mention. Keep the full
 # catalog out of the shared site module so the home page and unrelated
