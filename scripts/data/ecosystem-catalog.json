@@ -57,6 +57,63 @@
       "verificationNote": "Google's official model card and linked paper specify the architecture and image-safety categories."
     },
     {
+      "id": "wildguard",
+      "name": "WildGuard",
+      "category": "Guard Models",
+      "description": "A 7B open moderation model that classifies harmful prompts, harmful responses, and response refusals.",
+      "descriptionZh": "用于识别有害提示词、有害回复与回复拒绝情况的 7B 开放式内容审核模型。",
+      "year": 2024,
+      "publisher": "Allen Institute for AI",
+      "links": [
+        {"label": "Hugging Face", "url": "https://huggingface.co/allenai/wildguard"},
+        {"label": "Paper", "url": "https://arxiv.org/abs/2406.18495"}
+      ],
+      "sources": [
+        "https://huggingface.co/allenai/wildguard",
+        "https://arxiv.org/abs/2406.18495"
+      ],
+      "verificationNote": "The official AI2 model card and paper describe WildGuard as an open moderation model for prompts, responses, and refusals."
+    },
+    {
+      "id": "granite-guardian-3-3-8b",
+      "name": "Granite Guardian 3.3 8B",
+      "category": "Guard Models",
+      "description": "IBM's 8B risk-detection model for prompt and response safety, jailbreaks, tool calls, and groundedness checks.",
+      "descriptionZh": "IBM 发布的 8B 风险检测模型，覆盖提示词与回复安全、越狱、工具调用及有据性检查。",
+      "year": 2025,
+      "publisher": "IBM Research",
+      "github": "https://github.com/ibm-granite/granite-guardian",
+      "links": [
+        {"label": "Hugging Face", "url": "https://huggingface.co/ibm-granite/granite-guardian-3.3-8b"},
+        {"label": "GitHub", "url": "https://github.com/ibm-granite/granite-guardian"},
+        {"label": "Paper", "url": "https://arxiv.org/abs/2412.07724"}
+      ],
+      "sources": [
+        "https://huggingface.co/ibm-granite/granite-guardian-3.3-8b",
+        "https://github.com/ibm-granite/granite-guardian",
+        "https://arxiv.org/abs/2412.07724"
+      ],
+      "verificationNote": "IBM's official model card, repository, and paper document the supported risk-detection tasks and release."
+    },
+    {
+      "id": "aegis-permissive-7b",
+      "name": "Aegis Safety Guard 7B — Permissive",
+      "category": "Guard Models",
+      "description": "NVIDIA's 7B content-safety model for classifying user prompts and assistant responses across thirteen safety categories.",
+      "descriptionZh": "NVIDIA 发布的 7B 内容安全模型，用于按 13 类安全风险判断用户提示词和助手回复。",
+      "year": 2024,
+      "publisher": "NVIDIA",
+      "links": [
+        {"label": "Hugging Face", "url": "https://huggingface.co/nvidia/Aegis-AI-Content-Safety-LlamaGuard-Permissive-1.0"},
+        {"label": "Paper", "url": "https://arxiv.org/abs/2404.05993"}
+      ],
+      "sources": [
+        "https://huggingface.co/nvidia/Aegis-AI-Content-Safety-LlamaGuard-Permissive-1.0",
+        "https://arxiv.org/abs/2404.05993"
+      ],
+      "verificationNote": "NVIDIA's official model card and Aegis paper document the thirteen-category safety taxonomy and prompt-response classification task."
+    },
+    {
       "id": "foundation-sec-8b",
       "name": "Foundation-Sec-8B",
       "category": "Security Models",
@@ -73,6 +130,24 @@
         "https://blogs.cisco.com/security/foundation-sec-cisco-foundation-ai-first-open-source-security-model"
       ],
       "verificationNote": "Cisco's release announcement and official model card describe the model as an open-weight cybersecurity-specialized base model."
+    },
+    {
+      "id": "deberta-v3-prompt-injection-v2",
+      "name": "DeBERTa-v3 Prompt Injection Detector v2",
+      "category": "Security Models",
+      "description": "A 0.2B English classifier for distinguishing benign inputs from prompt-injection attacks; its official model card marks it archived and no longer maintained.",
+      "descriptionZh": "用于区分正常输入与提示注入攻击的 0.2B 英文分类器；官方模型卡已标注该模型归档且不再维护。",
+      "year": 2024,
+      "publisher": "Protect AI",
+      "status": "Archived; no longer maintained",
+      "statusZh": "已归档；不再维护",
+      "links": [
+        {"label": "Hugging Face", "url": "https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2"}
+      ],
+      "sources": [
+        "https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2"
+      ],
+      "verificationNote": "Protect AI's official model card specifies the classification task, model size, English-only scope, and archived status."
     },
     {
       "id": "beaver-7b-v2",
@@ -94,6 +169,27 @@
         "https://github.com/PKU-Alignment/safe-rlhf"
       ],
       "verificationNote": "The official PKU-Alignment repository and model card connect Beaver-7B-v2.0 to the Safe-RLHF project."
+    },
+    {
+      "id": "beaver-7b-v3",
+      "name": "Beaver-7B-v3.0",
+      "category": "Aligned Models",
+      "description": "A later Beaver 7B release from PKU-Alignment's Safe-RLHF project for studying safer alignment with human feedback.",
+      "descriptionZh": "PKU-Alignment 在 Safe-RLHF 项目中发布的后续 7B Beaver 模型，用于研究更安全的人类反馈对齐。",
+      "year": 2023,
+      "publisher": "PKU-Alignment",
+      "github": "https://github.com/PKU-Alignment/safe-rlhf",
+      "links": [
+        {"label": "Hugging Face", "url": "https://huggingface.co/PKU-Alignment/beaver-7b-v3.0"},
+        {"label": "GitHub", "url": "https://github.com/PKU-Alignment/safe-rlhf"},
+        {"label": "Paper", "url": "https://arxiv.org/abs/2310.12773"}
+      ],
+      "sources": [
+        "https://huggingface.co/PKU-Alignment/beaver-7b-v3.0",
+        "https://github.com/PKU-Alignment/safe-rlhf",
+        "https://arxiv.org/abs/2310.12773"
+      ],
+      "verificationNote": "The official PKU-Alignment model card and repository identify Beaver-7B-v3.0 as a Safe-RLHF model release."
     }
   ],
   "frameworks": [
@@ -130,16 +226,14 @@
       "github": "https://github.com/AI45Lab/OpenART",
       "starsUpdated": "2026-08-20",
       "links": [
-        {"label": "Project", "url": "https://ai45lab.github.io/OpenART/"},
         {"label": "GitHub", "url": "https://github.com/AI45Lab/OpenART"},
         {"label": "Paper", "url": "https://arxiv.org/abs/2608.00677"}
       ],
       "sources": [
-        "https://ai45lab.github.io/OpenART/",
         "https://github.com/AI45Lab/OpenART",
         "https://arxiv.org/abs/2608.00677"
       ],
-      "verificationNote": "The official project, repository, and paper consistently describe environment evolution for agent red teaming."
+      "verificationNote": "The official repository and paper consistently describe environment evolution for agent red teaming; the former project-page URL is excluded because it returns 404."
     },
     {
       "id": "promptfoo-framework",
@@ -242,16 +336,14 @@
       "github": "https://github.com/AI45Lab/OpenART",
       "starsUpdated": "2026-08-20",
       "links": [
-        {"label": "Project", "url": "https://ai45lab.github.io/OpenART/"},
         {"label": "GitHub", "url": "https://github.com/AI45Lab/OpenART"},
         {"label": "Paper", "url": "https://arxiv.org/abs/2608.00677"}
       ],
       "sources": [
-        "https://ai45lab.github.io/OpenART/",
         "https://github.com/AI45Lab/OpenART",
         "https://arxiv.org/abs/2608.00677"
       ],
-      "verificationNote": "The official sources call OpenART an open-ended arena for agent red teaming; no live public ranking is claimed here."
+      "verificationNote": "The official repository and paper call OpenART an open-ended arena for agent red teaming; the former project-page URL is excluded because it returns 404, and no live public ranking is claimed here."
     }
   ],
   "companies": [
@@ -261,7 +353,12 @@
       "category": "AI Safety",
       "description": "An AI safety and security company providing automated adversarial testing, continuous red teaming, runtime security, and the Gray Swan Arena.",
       "descriptionZh": "提供自动化对抗测试、持续红队、运行时安全和 Gray Swan Arena 的 AI 安全公司。",
-      "affiliation": "Founded by researchers from Carnegie Mellon University",
+      "direction": "Adversarial testing · Continuous red teaming · Runtime security",
+      "directionZh": "对抗测试 · 持续红队 · 运行时安全",
+      "academicOrigin": "Founded by researchers from Carnegie Mellon University",
+      "academicOriginZh": "由卡内基梅隆大学研究人员创立",
+      "logo": "/company-logos/gray-swan.png",
+      "logoSource": "https://cdn.prod.website-files.com/6614467b00e631b0f073e2b7/68715172841ef6679c94f2bb_GS-256.png",
       "links": [
         {"label": "Website", "url": "https://www.grayswan.ai/"},
         {"label": "About", "url": "https://www.grayswan.ai/about"}
@@ -278,6 +375,12 @@
       "category": "Agent Safety",
       "description": "A company building a security, governance, and compliance platform for AI and agentic systems, including end-to-end agent security and guardrails.",
       "descriptionZh": "面向 AI 与智能体系统构建安全、治理和合规平台，覆盖端到端智能体安全与护栏。",
+      "direction": "Agent security · AI governance · Guardrails",
+      "directionZh": "智能体安全 · AI 治理 · 安全护栏",
+      "academicOrigin": "Founders and researchers from Stanford University, UC Berkeley, and UIUC",
+      "academicOriginZh": "创始人及研究人员来自斯坦福大学、加州大学伯克利分校和伊利诺伊大学厄巴纳-香槟分校",
+      "logo": "/company-logos/virtue-ai.png",
+      "logoSource": "https://cdn.prod.website-files.com/6a0f5bcfe2524327f8d2bb77/6a1842c7ae5277e322d7f449_virtue-favicon.png",
       "links": [
         {"label": "Website", "url": "https://www.virtueai.com/"},
         {"label": "Platform", "url": "https://www.virtueai.com/platform"},
@@ -296,18 +399,124 @@
       "category": "Evaluation",
       "description": "An AI security and evaluation company behind the open-source Promptfoo toolkit for testing and red-teaming LLM applications.",
       "descriptionZh": "开发开源 Promptfoo 工具的 AI 安全与评测公司，用于测试和红队评估大模型应用。",
+      "founded": 2024,
+      "direction": "AI security · Evaluation · Red teaming",
+      "directionZh": "AI 安全 · 评测 · 红队测试",
+      "status": "Joined OpenAI in 2026",
+      "statusZh": "于 2026 年加入 OpenAI",
       "stars": 24377,
       "github": "https://github.com/promptfoo/promptfoo",
       "starsUpdated": "2026-08-20",
+      "logo": "/company-logos/promptfoo.svg",
+      "logoSource": "https://www.promptfoo.dev/img/logo-panda.svg",
       "links": [
         {"label": "Website", "url": "https://promptfoo.dev"},
-        {"label": "GitHub", "url": "https://github.com/promptfoo/promptfoo"}
+        {"label": "GitHub", "url": "https://github.com/promptfoo/promptfoo"},
+        {"label": "OpenAI announcement", "url": "https://openai.com/index/openai-to-acquire-promptfoo/"}
       ],
       "sources": [
         "https://promptfoo.dev",
-        "https://github.com/promptfoo/promptfoo"
+        "https://github.com/promptfoo/promptfoo",
+        "https://www.promptfoo.dev/blog/promptfoo-joining-openai/",
+        "https://openai.com/index/openai-to-acquire-promptfoo/"
       ],
-      "verificationNote": "The official website and repository support the AI security, evaluation, and red-teaming description; founding year, country, and incubating school are not recorded."
+      "verificationNote": "The official website, repository, and acquisition announcements support the product scope, 2024 founding year, and 2026 OpenAI status; country and academic origin are not recorded."
+    },
+    {
+      "id": "protect-ai",
+      "name": "Protect AI",
+      "category": "AI Security",
+      "description": "An AI security company focused on securing models, applications, and agents through model scanning, red teaming, and runtime protection.",
+      "descriptionZh": "专注于模型、应用与智能体安全的 AI 安全公司，覆盖模型扫描、红队测试与运行时防护。",
+      "country": "United States",
+      "countryZh": "美国",
+      "direction": "Model security · AI red teaming · Runtime protection · Agent security",
+      "directionZh": "模型安全 · AI 红队 · 运行时防护 · 智能体安全",
+      "status": "Acquired by Palo Alto Networks in 2025",
+      "statusZh": "于 2025 年被 Palo Alto Networks 收购",
+      "logo": "/company-logos/protect-ai.png",
+      "logoSource": "https://avatars.githubusercontent.com/u/102992336?v=4",
+      "links": [
+        {"label": "GitHub", "url": "https://github.com/protectai"},
+        {"label": "Acquisition", "url": "https://investors.paloaltonetworks.com/node/19421/pdf"}
+      ],
+      "sources": [
+        "https://github.com/protectai",
+        "https://investors.paloaltonetworks.com/node/19421/pdf"
+      ],
+      "verificationNote": "Protect AI's official GitHub organization and Palo Alto Networks' acquisition release support the company location, security scope, and 2025 acquisition; founding year and academic origin are not recorded."
+    },
+    {
+      "id": "hiddenlayer",
+      "name": "HiddenLayer",
+      "category": "AI Security",
+      "description": "An AI security company protecting models, applications, and agents with automated red teaming, posture management, and detection and response capabilities.",
+      "descriptionZh": "通过自动化红队、态势管理与检测响应能力保护模型、应用和智能体的 AI 安全公司。",
+      "country": "United States",
+      "countryZh": "美国",
+      "direction": "Model security · Agent security · Runtime protection",
+      "directionZh": "模型安全 · 智能体安全 · 运行时防护",
+      "logo": "/company-logos/hiddenlayer.avif",
+      "logoSource": "https://cdn.prod.website-files.com/694066252c49b2800c70cf57/694066252c49b2800c70cf9e_logo.avif",
+      "links": [
+        {"label": "Website", "url": "https://www.hiddenlayer.com/"},
+        {"label": "About", "url": "https://www.hiddenlayer.com/about-us"}
+      ],
+      "sources": [
+        "https://www.hiddenlayer.com/",
+        "https://www.hiddenlayer.com/about-us",
+        "https://www.hiddenlayer.com/newsroom"
+      ],
+      "verificationNote": "HiddenLayer's official website, about page, and newsroom support the stated product scope and United States location; founding year and academic origin are not recorded."
+    },
+    {
+      "id": "lakera",
+      "name": "Lakera",
+      "category": "AI Security",
+      "description": "A generative-AI security company developing prompt-injection defenses and the Gandalf red-teaming game.",
+      "descriptionZh": "开发提示注入防护产品与 Gandalf 红队游戏的生成式 AI 安全公司。",
+      "founded": 2021,
+      "country": "Switzerland",
+      "countryZh": "瑞士",
+      "direction": "Generative AI security · Prompt injection defense · Red teaming",
+      "directionZh": "生成式 AI 安全 · 提示注入防护 · 红队测试",
+      "logo": "/company-logos/lakera.png",
+      "logoSource": "https://cdn.prod.website-files.com/65080baa3f9a607985451de3/6526f98447db0b4b7b22493e_Lakera-Symbol-Black-256.png",
+      "links": [
+        {"label": "Website", "url": "https://www.lakera.ai/"},
+        {"label": "Gandalf", "url": "https://gandalf.lakera.ai/"}
+      ],
+      "sources": [
+        "https://www.lakera.ai/",
+        "https://www.lakera.ai/news/lakera-selected-as-a-swiss-startup-to-keep-an-eye-on-in-2024",
+        "https://www.lakera.ai/news/while-genai-adoption-surges-report-shows-security-preparedness-lags"
+      ],
+      "verificationNote": "Lakera's official website and company news support the 2021 founding year, Swiss origin, generative-AI security scope, and Gandalf product; academic origin is not recorded."
+    },
+    {
+      "id": "mindgard",
+      "name": "Mindgard",
+      "category": "AI Security",
+      "description": "An AI security company providing red teaming and security testing for AI models, applications, and agents.",
+      "descriptionZh": "为 AI 模型、应用与智能体提供红队测试和安全测试的 AI 安全公司。",
+      "founded": 2022,
+      "country": "United Kingdom and United States",
+      "countryZh": "英国和美国",
+      "direction": "AI model security · Agent security · Red teaming",
+      "directionZh": "AI 模型安全 · 智能体安全 · 红队测试",
+      "academicOrigin": "Spun out of Lancaster University",
+      "academicOriginZh": "源自兰卡斯特大学",
+      "logo": "/company-logos/mindgard.png",
+      "logoSource": "https://cdn.prod.website-files.com/673f0724df990f6c96bf1867/68e4168fcbc9d725c0085da6_Favicon1.png",
+      "links": [
+        {"label": "Website", "url": "https://mindgard.ai/"},
+        {"label": "About", "url": "https://mindgard.ai/about"}
+      ],
+      "sources": [
+        "https://mindgard.ai/",
+        "https://mindgard.ai/about"
+      ],
+      "verificationNote": "Mindgard's official about page supports the 2022 founding year, Lancaster University spinout, Boston and London offices, and stated AI security scope."
     }
   ]
 }

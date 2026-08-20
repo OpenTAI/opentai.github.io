@@ -19,21 +19,21 @@ const EMPTY_VALUES: ResourceSubmissionValues = {
 };
 
 const SUBMIT_LABELS: Record<ResourceSubmissionKind, string> = {
-  arena: "Submit your Arena",
+  arena: "Propose a Challenge",
   benchmark: "Submit your Benchmark",
   dataset: "Submit your Dataset",
   paper: "Submit your Paper",
 };
 
 const DIALOG_TITLES: Record<ResourceSubmissionKind, string> = {
-  arena: "Suggest an Arena",
+  arena: "Propose an Arena Challenge",
   benchmark: "Suggest a Benchmark",
   dataset: "Suggest a Dataset",
   paper: "Suggest a Paper",
 };
 
 const CTA_HELPERS: Record<ResourceSubmissionKind, string> = {
-  arena: "Share your arena with the OpenTAI community",
+  arena: "Bring a reproducible safety challenge to the OpenTAI community",
   benchmark: "Share your benchmark with the OpenTAI community",
   dataset: "Share your dataset with the OpenTAI community",
   paper: "Share your latest research with the community.",

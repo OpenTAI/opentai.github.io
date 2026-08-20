@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
   filterEcosystemRecords,
+  formatCatalogValue,
   sortEcosystemRecords,
 } from "./ecosystem-catalog.ts";
 
@@ -59,6 +61,36 @@ test("filters by category and English or Chinese search text", () => {
   );
 });
 
+test("searches company direction, country, academic origin, and status metadata", () => {
+  const company = {
+    ...records[0],
+    id: "company",
+    direction: "Agent security",
+    directionZh: "智能体安全",
+    country: "United States",
+    countryZh: "美国",
+    academicOrigin: "Carnegie Mellon University",
+    academicOriginZh: "卡内基梅隆大学",
+    status: "Acquired",
+    statusZh: "已被收购",
+  };
+
+  for (const query of ["agent security", "美国", "Carnegie Mellon", "已被收购"]) {
+    assert.deepEqual(
+      filterEcosystemRecords([company], { category: "All", query }).map(
+        (record) => record.id,
+      ),
+      ["company"],
+    );
+  }
+});
+
+test("renders explicit localized placeholders for unrecorded fields", () => {
+  assert.equal(formatCatalogValue(undefined, "en"), "Not recorded yet");
+  assert.equal(formatCatalogValue("", "zh"), "尚未记录");
+  assert.equal(formatCatalogValue(2024, "en"), "2024");
+});
+
 test("default and stars sorting keep missing values last", () => {
   assert.deepEqual(
     sortEcosystemRecords(records, "default").map((record) => record.id),
@@ -81,4 +113,16 @@ test("sorts by newest year and name without mutating input", () => {
     ["newer", "missing", "older"],
   );
   assert.deepEqual(records.map((record) => record.id), original);
+});
+
+test("company cards keep the compact exhibition-wall layout", () => {
+  const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(css, /\.company-logo-panel\s*{[\s\S]*?min-height:\s*4\.5rem/);
+  assert.match(css, /\.company-card-body\s*{[\s\S]*?padding:\s*0\.68rem/);
+  assert.match(css, /\.company-facts\s*>\s*div\s*{[\s\S]*?min-height:\s*2\.35rem/);
+  assert.match(
+    css,
+    /@media\s*\(min-width:\s*1680px\)[\s\S]*?\.ecosystem-catalog-companies\s+\.ecosystem-grid\s*{[\s\S]*?repeat\(4,/,
+  );
 });

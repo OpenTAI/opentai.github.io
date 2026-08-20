@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { EcosystemCatalogPage } from "@/components/ecosystem-catalog-page";
+import { ArenaPage } from "@/components/arena-page";
 import { SiteShell } from "@/components/site-shell";
-import { ecosystemArenas } from "@/data/ecosystem";
 
 export const metadata: Metadata = {
   title: "竞技场",
-  description: "用于对抗交互与公开 AI 安全评测的在线竞技场和研究型竞技环境。",
+  description: "OpenTAI 面向 AI 安全对抗赛题、可复现提交与核验排行榜的社区竞技场。",
   alternates: {
     canonical: "/zh/arenas/",
     languages: { en: "/arenas/", "zh-CN": "/zh/arenas/" },
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
 export default function ChineseArenasPage() {
   return (
     <SiteShell locale="zh">
-      <EcosystemCatalogPage kind="arenas" locale="zh" records={ecosystemArenas} />
+      <ArenaPage locale="zh" />
     </SiteShell>
   );
 }

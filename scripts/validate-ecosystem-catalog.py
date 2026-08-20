@@ -125,6 +125,16 @@ def validate_catalog(catalog: Any) -> list[str]:
             ):
                 errors.append(f"{location}.logo must be a root-relative path or HTTPS URL")
 
+            if section == "companies":
+                for field in ("direction", "directionZh"):
+                    value = record.get(field)
+                    if not isinstance(value, str) or not value.strip():
+                        errors.append(f"{location}.{field} must be a non-empty string")
+                if not isinstance(logo, str) or not logo.startswith("/"):
+                    errors.append(f"{location}.logo must be a root-relative path")
+                if not _is_https(record.get("logoSource")):
+                    errors.append(f"{location}.logoSource must use HTTPS")
+
     return errors
 
 

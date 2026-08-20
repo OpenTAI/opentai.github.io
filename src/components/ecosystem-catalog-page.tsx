@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import type { EcosystemRecord } from "@/data/ecosystem";
 import {
   type EcosystemSortKey,
   filterEcosystemRecords,
+  formatCatalogValue,
   sortEcosystemRecords,
 } from "@/lib/ecosystem-catalog";
 import type { Locale } from "@/lib/i18n";
@@ -14,6 +16,9 @@ type CatalogKind = "models" | "frameworks" | "arenas" | "companies";
 const copy = {
   en: {
     all: "All",
+    academicOrigin: "Academic origin",
+    country: "Country or region",
+    direction: "Focus",
     entries: "verified entries",
     founded: "Founded",
     githubStars: "GitHub stars",
@@ -24,6 +29,7 @@ const copy = {
     snapshot: "Static snapshot",
     sort: "Sort by",
     sourceReview: "Source record",
+    status: "Status",
     sorts: {
       default: "GitHub stars",
       "stars-desc": "GitHub stars",
@@ -34,6 +40,9 @@ const copy = {
   },
   zh: {
     all: "全部",
+    academicOrigin: "学术或孵化来源",
+    country: "国家或地区",
+    direction: "方向",
     entries: "条已核验记录",
     founded: "成立于",
     githubStars: "GitHub 星标",
@@ -44,6 +53,7 @@ const copy = {
     snapshot: "静态快照",
     sort: "排序",
     sourceReview: "来源记录",
+    status: "状态",
     sorts: {
       default: "GitHub 星标",
       "stars-desc": "GitHub 星标",
@@ -149,14 +159,20 @@ function CatalogCard({ locale, record }: { locale: Locale; record: EcosystemReco
         ) : null}
         {record.country ? (
           <div>
-            <span>{locale === "zh" ? "国家或地区" : "Country or region"}</span>
-            <strong>{record.country}</strong>
+            <span>{strings.country}</span>
+            <strong>{locale === "zh" ? (record.countryZh ?? record.country) : record.country}</strong>
           </div>
         ) : null}
         {record.publicResults ? (
           <div>
             <span>{locale === "zh" ? "结果" : "Results"}</span>
             <strong>{strings.publicResults}</strong>
+          </div>
+        ) : null}
+        {record.status ? (
+          <div>
+            <span>{strings.status}</span>
+            <strong>{locale === "zh" ? (record.statusZh ?? record.status) : record.status}</strong>
           </div>
         ) : null}
       </div>
@@ -182,6 +198,107 @@ function CatalogCard({ locale, record }: { locale: Locale; record: EcosystemReco
           ))}
         </div>
       </details>
+    </article>
+  );
+}
+
+function CompanyCard({ locale, record }: { locale: Locale; record: EcosystemRecord }) {
+  const strings = copy[locale];
+  const logo = record.logo;
+  const logoSource = record.logoSource;
+  const companyFacts = [
+    {
+      label: strings.direction,
+      value: locale === "zh" ? record.directionZh : record.direction,
+      wide: true,
+    },
+    { label: strings.founded, value: record.founded },
+    {
+      label: strings.country,
+      value: locale === "zh" ? record.countryZh : record.country,
+    },
+    {
+      label: strings.academicOrigin,
+      value: locale === "zh" ? record.academicOriginZh : record.academicOrigin,
+      wide: true,
+    },
+    {
+      label: strings.status,
+      value: locale === "zh" ? record.statusZh : record.status,
+      wide: true,
+    },
+  ];
+
+  return (
+    <article className="ecosystem-card company-card">
+      {logo && logoSource ? (
+        <a
+          aria-label={locale === "zh" ? `查看 ${record.name} 官方 Logo 来源` : `View the official source for the ${record.name} logo`}
+          className="company-logo-panel"
+          href={logoSource}
+          rel="noreferrer"
+          target="_blank"
+        >
+          <Image
+            alt={`${record.name} logo`}
+            className="company-logo-image"
+            height={112}
+            src={logo}
+            width={320}
+          />
+        </a>
+      ) : (
+        <div className="company-logo-panel company-logo-placeholder" aria-label={`${record.name} logo`}>
+          <span>{initials(record.name)}</span>
+        </div>
+      )}
+
+      <div className="company-card-body">
+        <div className="company-card-heading">
+          <span className="ecosystem-category">{record.category}</span>
+          <h2>{record.name}</h2>
+        </div>
+
+        <p className="ecosystem-description">
+          {locale === "zh" ? record.descriptionZh : record.description}
+        </p>
+
+        <div className="company-facts">
+          {companyFacts.map((fact) => (
+            <div className={fact.wide ? "company-fact-wide" : ""} key={fact.label}>
+              <span>{fact.label}</span>
+              <strong>{formatCatalogValue(fact.value, locale)}</strong>
+            </div>
+          ))}
+          {record.stars !== undefined ? (
+            <div className="company-fact-wide">
+              <span>{strings.githubStars}</span>
+              <strong>★ {record.stars.toLocaleString("en-US")}</strong>
+              {record.starsUpdated ? <small>{strings.snapshot} · {record.starsUpdated}</small> : null}
+            </div>
+          ) : null}
+        </div>
+
+        <div className="ecosystem-links" aria-label={strings.links}>
+          {record.links.map((link) => (
+            <a href={link.url} key={`${record.id}-${link.label}`} rel="noreferrer" target="_blank">
+              {link.label}<span aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </div>
+
+        <details className="ecosystem-sources">
+          <summary>{strings.sourceReview}</summary>
+          <p>{record.verificationNote}</p>
+          <div>
+            {record.sources.map((source, index) => (
+              <a href={source} key={source} rel="noreferrer" target="_blank">
+                {locale === "zh" ? `来源 ${index + 1}` : `Source ${index + 1}`} ↗
+              </a>
+            ))}
+          </div>
+        </details>
+      </div>
     </article>
   );
 }
@@ -261,7 +378,13 @@ export function EcosystemCatalogPage({
 
       {visibleRecords.length ? (
         <section className="ecosystem-grid" aria-live="polite">
-          {visibleRecords.map((record) => <CatalogCard key={record.id} locale={locale} record={record} />)}
+          {visibleRecords.map((record) => (
+            kind === "companies" ? (
+              <CompanyCard key={record.id} locale={locale} record={record} />
+            ) : (
+              <CatalogCard key={record.id} locale={locale} record={record} />
+            )
+          ))}
         </section>
       ) : (
         <p className="ecosystem-empty">{strings.noMatches}</p>

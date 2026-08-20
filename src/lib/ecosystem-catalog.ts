@@ -2,6 +2,16 @@ import type { EcosystemRecord } from "@/data/ecosystem";
 
 export type EcosystemSortKey = "default" | "stars-desc" | "year-desc" | "name-asc";
 
+export function formatCatalogValue(
+  value: string | number | undefined,
+  locale: "en" | "zh",
+) {
+  if (value === undefined || value === "") {
+    return locale === "zh" ? "尚未记录" : "Not recorded yet";
+  }
+  return String(value);
+}
+
 export function filterEcosystemRecords(
   records: readonly EcosystemRecord[],
   { category, query }: { category: string; query: string },
@@ -19,7 +29,14 @@ export function filterEcosystemRecords(
       record.descriptionZh,
       record.publisher,
       record.country,
+      record.countryZh,
       record.affiliation,
+      record.direction,
+      record.directionZh,
+      record.academicOrigin,
+      record.academicOriginZh,
+      record.status,
+      record.statusZh,
     ]
       .filter(Boolean)
       .some((value) => String(value).toLocaleLowerCase().includes(normalizedQuery));
