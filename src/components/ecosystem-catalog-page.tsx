@@ -7,6 +7,8 @@ import {
   type EcosystemSortKey,
   filterEcosystemRecords,
   formatCatalogValue,
+  getFrameworkCategories,
+  getFrameworkCategory,
   sortEcosystemRecords,
 } from "@/lib/ecosystem-catalog";
 import type { Locale } from "@/lib/i18n";
@@ -124,7 +126,23 @@ function initials(name: string) {
     .toUpperCase();
 }
 
-function CatalogCard({ locale, record }: { locale: Locale; record: EcosystemRecord }) {
+function frameworkCategoryLabel(category: string, locale: Locale) {
+  if (locale === "en") return category;
+  if (category === "Red Teaming") return "红队测试";
+  if (category === "Evaluation") return "评测";
+  if (category === "Defense / Alignment") return "防御 / 对齐";
+  return category;
+}
+
+function CatalogCard({
+  categoryLabel,
+  locale,
+  record,
+}: {
+  categoryLabel?: string;
+  locale: Locale;
+  record: EcosystemRecord;
+}) {
   const strings = copy[locale];
   const displayYear = record.founded ?? record.year;
 
@@ -133,7 +151,7 @@ function CatalogCard({ locale, record }: { locale: Locale; record: EcosystemReco
       <div className="ecosystem-card-head">
         <div className="ecosystem-logo" aria-hidden="true">{initials(record.name)}</div>
         <div className="min-w-0">
-          <span className="ecosystem-category">{record.category}</span>
+          <span className="ecosystem-category">{categoryLabel ?? record.category}</span>
           <h2>{record.name}</h2>
           {record.publisher ? <p className="ecosystem-publisher">{record.publisher}</p> : null}
         </div>
@@ -315,16 +333,38 @@ export function EcosystemCatalogPage({
   const strings = copy[locale];
   const page = pageCopy[kind][locale];
   const categories = useMemo(
-    () => ["All", ...Array.from(new Set(records.map((record) => record.category)))],
-    [records],
+    () => [
+      "All",
+      ...(kind === "frameworks"
+        ? getFrameworkCategories(records)
+        : Array.from(new Set(records.map((record) => record.category)))),
+    ],
+    [kind, records],
   );
   const [category, setCategory] = useState("All");
   const [query, setQuery] = useState("");
   const [sortKey, setSortKey] = useState<EcosystemSortKey>("default");
-  const visibleRecords = useMemo(
-    () => sortEcosystemRecords(filterEcosystemRecords(records, { category, query }), sortKey),
-    [category, query, records, sortKey],
-  );
+  const visibleRecords = useMemo(() => {
+    const matchingQuery = filterEcosystemRecords(records, { category: "All", query });
+    const matchingCategory = category === "All"
+      ? matchingQuery
+      : matchingQuery.filter((record) => (
+        kind === "frameworks"
+          ? getFrameworkCategory(record.category) === category
+          : record.category === category
+      ));
+
+    return sortEcosystemRecords(matchingCategory, sortKey);
+  }, [category, kind, query, records, sortKey]);
+
+  const categoryCount = (item: string) => {
+    if (item === "All") return records.length;
+    return records.filter((record) => (
+      kind === "frameworks"
+        ? getFrameworkCategory(record.category) === item
+        : record.category === item
+    )).length;
+  };
 
   return (
     <div className={`ecosystem-catalog ecosystem-catalog-${kind}`}>
@@ -361,8 +401,10 @@ export function EcosystemCatalogPage({
               onClick={() => setCategory(item)}
               type="button"
             >
-              {item === "All" ? strings.all : item}
-              <span>{item === "All" ? records.length : records.filter((record) => record.category === item).length}</span>
+              {item === "All" ? strings.all : (
+                kind === "frameworks" ? frameworkCategoryLabel(item, locale) : item
+              )}
+              <span>{categoryCount(item)}</span>
             </button>
           ))}
         </div>
@@ -382,7 +424,14 @@ export function EcosystemCatalogPage({
             kind === "companies" ? (
               <CompanyCard key={record.id} locale={locale} record={record} />
             ) : (
-              <CatalogCard key={record.id} locale={locale} record={record} />
+              <CatalogCard
+                categoryLabel={kind === "frameworks"
+                  ? frameworkCategoryLabel(getFrameworkCategory(record.category), locale)
+                  : undefined}
+                key={record.id}
+                locale={locale}
+                record={record}
+              />
             )
           ))}
         </section>

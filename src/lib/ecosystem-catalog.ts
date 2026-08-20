@@ -2,6 +2,35 @@ import type { EcosystemRecord } from "@/data/ecosystem";
 
 export type EcosystemSortKey = "default" | "stars-desc" | "year-desc" | "name-asc";
 
+const frameworkCategoryOrder = [
+  "Red Teaming",
+  "Evaluation",
+  "Defense / Alignment",
+] as const;
+
+export function getFrameworkCategory(category: string) {
+  if (category === "Attack" || category === "Red Teaming") return "Red Teaming";
+  if (category === "Defense") return "Defense / Alignment";
+  return category;
+}
+
+export function getFrameworkCategories(
+  records: readonly Pick<EcosystemRecord, "category">[],
+) {
+  const categories = Array.from(
+    new Set(records.map((record) => getFrameworkCategory(record.category))),
+  );
+
+  return [
+    ...frameworkCategoryOrder.filter((category) => categories.includes(category)),
+    ...categories.filter(
+      (category) => !frameworkCategoryOrder.includes(
+        category as (typeof frameworkCategoryOrder)[number],
+      ),
+    ),
+  ];
+}
+
 export function formatCatalogValue(
   value: string | number | undefined,
   locale: "en" | "zh",

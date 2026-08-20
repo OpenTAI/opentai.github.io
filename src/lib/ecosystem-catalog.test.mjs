@@ -4,6 +4,8 @@ import test from "node:test";
 import {
   filterEcosystemRecords,
   formatCatalogValue,
+  getFrameworkCategory,
+  getFrameworkCategories,
   sortEcosystemRecords,
 } from "./ecosystem-catalog.ts";
 
@@ -125,4 +127,22 @@ test("company cards keep the compact exhibition-wall layout", () => {
     css,
     /@media\s*\(min-width:\s*1680px\)[\s\S]*?\.ecosystem-catalog-companies\s+\.ecosystem-grid\s*{[\s\S]*?repeat\(4,/,
   );
+});
+
+test("framework records are grouped into the three approved display categories", () => {
+  const frameworks = [
+    { ...records[0], id: "openrt", category: "Red Teaming" },
+    { ...records[0], id: "attack", category: "Attack" },
+    { ...records[0], id: "promptfoo", category: "Evaluation" },
+    { ...records[0], id: "safe-rlhf", category: "Defense" },
+  ];
+
+  assert.equal(getFrameworkCategory("Attack"), "Red Teaming");
+  assert.equal(getFrameworkCategory("Defense"), "Defense / Alignment");
+  assert.equal(getFrameworkCategory("Evaluation"), "Evaluation");
+  assert.deepEqual(getFrameworkCategories(frameworks), [
+    "Red Teaming",
+    "Evaluation",
+    "Defense / Alignment",
+  ]);
 });
