@@ -137,9 +137,35 @@ test("company cards use the warm editorial atlas layout", () => {
   assert.match(css, /\.company-market-map\s*{[\s\S]*?background-size:\s*24px 24px/);
   assert.match(css, /\.company-market-layer\s*{[\s\S]*?--company-layer-color/);
   assert.match(css, /\.company-market-node\s*{[\s\S]*?grid-template-columns:/);
+});
+
+test("company landscape nodes are narrower and vertically roomier", () => {
+  const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+
   assert.match(
     css,
-    /@media\s*\(min-width:\s*1680px\)[\s\S]*?\.ecosystem-catalog-companies\s+\.ecosystem-grid\s*{[\s\S]*?repeat\(4,/,
+    /\.company-market-node\s*\{[^}]*width:\s*14rem;[^}]*min-height:\s*4rem/,
+  );
+  assert.match(
+    css,
+    /\.company-market-node-valued\s*\{[^}]*min-width:\s*14rem/,
+  );
+});
+
+test("company directory uses a compact four-column desktop layout", () => {
+  const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(
+    css,
+    /@media\s*\(min-width:\s*1280px\)\s*\{\s*\.ecosystem-catalog-companies\s+\.ecosystem-grid\s*\{\s*grid-template-columns:\s*repeat\(4,/,
+  );
+  assert.match(
+    css,
+    /\.ecosystem-catalog-companies\s+\.company-logo-panel\s*\{[^}]*min-height:\s*5rem/,
+  );
+  assert.match(
+    css,
+    /\.ecosystem-catalog-companies\s+\.company-card-body\s*\{[^}]*padding:\s*0\.72rem/,
   );
 });
 

@@ -136,6 +136,15 @@ test("arena scoreboards keep rankings and official links in every grid cell", ()
   assert.match(source, /Lower is better/);
 });
 
+test("arena ranking tracks use the approved blue result treatment", () => {
+  const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(
+    css,
+    /\.arena-scoreboard-track\s*>\s*span\s*\{[^}]*background:\s*linear-gradient\(90deg,\s*#7aa7ff,\s*#315fd3\)/,
+  );
+});
+
 test("auto-scrolling rankings preserve every independent pause condition", () => {
   const source = readFileSync(
     new URL("../components/arena-scoreboard-grid.tsx", import.meta.url),
