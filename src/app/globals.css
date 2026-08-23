@@ -4188,6 +4188,397 @@ summary {
   }
 }
 
+/* Companies — technology brand wall */
+.ecosystem-catalog-companies {
+  --company-electric: #4b7cff;
+  --company-red: #ff5b67;
+  --company-ink: #050b15;
+  --company-panel: #0b1628;
+  --company-card: #101e33;
+  --company-line: #263b5c;
+  --company-muted: #9fb0c9;
+  margin-top: 0.75rem;
+  border: 1px solid #1e3352;
+  border-radius: 28px;
+  background: #07111f;
+  padding: clamp(0.85rem, 2vw, 1.4rem);
+  box-shadow: 0 28px 80px rgba(5, 11, 21, 0.2);
+}
+
+.ecosystem-catalog-companies .subpage-breadcrumb a,
+.ecosystem-catalog-companies .subpage-breadcrumb [aria-current="page"] {
+  color: #b6c6dd;
+}
+
+.ecosystem-catalog-companies .subpage-breadcrumb-separator {
+  color: #536984;
+}
+
+.ecosystem-catalog-companies .ecosystem-hero {
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: auto;
+  border-color: #2b4265;
+  border-radius: 22px;
+  background: #0b1729;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  box-shadow: inset 4px 0 0 var(--company-electric);
+}
+
+.ecosystem-catalog-companies .ecosystem-hero h1 {
+  color: #f5f8ff;
+  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 650;
+  letter-spacing: -0.06em;
+}
+
+.ecosystem-catalog-companies .ecosystem-hero-proof {
+  border-color: #2b4265;
+}
+
+.ecosystem-catalog-companies .ecosystem-hero-proof strong {
+  color: var(--company-red);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 2rem;
+  font-weight: 760;
+}
+
+.ecosystem-catalog-companies .ecosystem-hero-proof span {
+  color: var(--company-muted);
+}
+
+.ecosystem-catalog-companies .company-filter-bar {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  border-color: #2b4265;
+  border-radius: 18px;
+  background: var(--company-panel);
+  padding: 0.8rem;
+  box-shadow: none;
+}
+
+.company-filter-control {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.company-filter-control > span {
+  color: #7890b1;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.company-filter-control select {
+  min-width: 0;
+  min-height: 2.6rem;
+  border: 1px solid #324b70;
+  border-radius: 10px;
+  outline: 0;
+  background: #0f2037;
+  padding: 0 0.72rem;
+  color: #edf4ff;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.company-filter-control select:focus-visible {
+  border-color: var(--company-electric);
+  box-shadow: 0 0 0 3px rgba(75, 124, 255, 0.2);
+}
+
+.company-filter-count {
+  display: grid;
+  align-self: stretch;
+  place-content: center;
+  min-width: 7.75rem;
+  border-left: 1px solid #2b4265;
+  margin: 0;
+  padding-left: 0.8rem;
+  color: #8da1bd;
+  font-size: 0.62rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.company-filter-count strong {
+  color: var(--company-electric);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.45rem;
+}
+
+.ecosystem-catalog-companies .company-directory-heading {
+  margin: 0.25rem 0 0;
+  border-color: #263b5c;
+  padding: 0 0.15rem 0.7rem;
+}
+
+.ecosystem-catalog-companies .company-directory-heading h2 {
+  margin: 0;
+  color: #dce8fb;
+  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.ecosystem-catalog-companies .ecosystem-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.ecosystem-catalog-companies .company-card {
+  border-color: #294264;
+  border-radius: 14px;
+  background: var(--company-card);
+  box-shadow: 0 14px 34px rgba(2, 8, 17, 0.25);
+}
+
+.ecosystem-catalog-companies .company-card:hover {
+  border-color: var(--company-electric);
+  box-shadow: 0 18px 42px rgba(18, 54, 117, 0.28);
+  transform: translateY(-2px);
+}
+
+.ecosystem-catalog-companies .company-card-body {
+  gap: 0.75rem;
+  padding: 0.9rem;
+}
+
+.company-brand-heading {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.company-logo-inline {
+  position: relative;
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid #3c5579;
+  border-radius: 9px;
+  background: #fff;
+  color: #10213a;
+  font-size: 0.56rem;
+  font-weight: 850;
+}
+
+.company-logo-inline .company-logo-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  width: auto;
+  height: auto;
+  transform: none;
+  place-items: center;
+  border-radius: 0;
+  background: #eaf0ff;
+  color: #315fd3;
+  font-size: 0.55rem;
+}
+
+.company-logo-inline.company-logo-loaded .company-logo-fallback {
+  display: none;
+}
+
+.company-logo-inline .company-logo-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+  padding: 0.24rem;
+  filter: none;
+}
+
+.ecosystem-catalog-companies .company-title-row {
+  align-items: center;
+}
+
+.ecosystem-catalog-companies .company-card-heading h2 {
+  overflow: hidden;
+  color: #f5f8ff;
+  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+  text-overflow: ellipsis;
+}
+
+.ecosystem-catalog-companies .company-country {
+  border-color: #365175;
+  background: #0a1728;
+  color: #b8c8df;
+  font-size: 0.55rem;
+  white-space: nowrap;
+}
+
+.ecosystem-catalog-companies .company-valuation-highlight {
+  border-color: #050505;
+  border-radius: 8px;
+  background: var(--company-ink);
+  padding: 0.45rem 0.55rem;
+}
+
+.ecosystem-catalog-companies .company-valuation-highlight span {
+  color: #8195b2;
+}
+
+.ecosystem-catalog-companies .company-valuation-highlight strong {
+  color: #75a2ff;
+  font-size: 0.62rem;
+}
+
+.company-specialties {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.company-specialties > span,
+.ecosystem-catalog-companies .company-facts span {
+  color: #7890b1;
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.company-specialties > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+}
+
+.company-specialties strong {
+  border: 1px solid #35517a;
+  border-radius: 999px;
+  background: #122746;
+  padding: 0.2rem 0.48rem;
+  color: #a9c5ff;
+  font-size: 0.58rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.ecosystem-catalog-companies .company-facts {
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 0.45rem;
+  margin-top: auto;
+}
+
+.ecosystem-catalog-companies .company-facts > div,
+.ecosystem-catalog-companies .company-facts .company-fact-wide {
+  min-height: 3.5rem;
+  grid-column: auto;
+  border-color: #263f61;
+  border-radius: 9px;
+  background: #0c192b;
+  padding: 0.48rem 0.55rem;
+}
+
+.ecosystem-catalog-companies .company-facts strong {
+  color: #dce8fa;
+  font-size: 0.64rem;
+  line-height: 1.35;
+}
+
+.ecosystem-catalog-companies .company-card .ecosystem-links {
+  margin-top: 0;
+}
+
+.ecosystem-catalog-companies .company-card .ecosystem-links a,
+.ecosystem-catalog-companies .company-card .ecosystem-links a:first-child {
+  border-color: #33527d;
+  background: #0b1728;
+  color: #a9c5ff;
+}
+
+.ecosystem-catalog-companies .company-card .ecosystem-links a:hover {
+  border-color: var(--company-electric);
+  background: var(--company-electric);
+  color: #fff;
+}
+
+.ecosystem-catalog-companies .company-card .ecosystem-sources {
+  border-color: #243a5a;
+  color: #8ca0bc;
+}
+
+.ecosystem-catalog-companies .company-card .ecosystem-sources summary,
+.ecosystem-catalog-companies .company-card .ecosystem-sources a {
+  color: #8faeff;
+}
+
+.ecosystem-catalog-companies .ecosystem-empty {
+  border-color: #365175;
+  color: #a7b9d0;
+}
+
+@media (min-width: 1440px) {
+  .ecosystem-catalog-companies .ecosystem-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 959px) {
+  .ecosystem-catalog-companies .ecosystem-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ecosystem-catalog-companies .ecosystem-hero-proof {
+    border-top: 1px solid #2b4265;
+  }
+
+  .ecosystem-catalog-companies .company-filter-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .company-filter-count {
+    border-top: 1px solid #2b4265;
+    border-left: 0;
+    padding-top: 0.65rem;
+    padding-left: 0;
+  }
+
+  .ecosystem-catalog-companies .ecosystem-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 559px) {
+  .ecosystem-catalog-companies {
+    border-radius: 18px;
+    padding: 0.65rem;
+  }
+
+  .ecosystem-catalog-companies .company-filter-bar,
+  .ecosystem-catalog-companies .ecosystem-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .company-filter-count {
+    min-height: 3.25rem;
+  }
+
+  .ecosystem-catalog-companies .company-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ecosystem-catalog-companies .company-facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (max-width: 479px) {
   .dataset-donut-layout {
     grid-template-columns: minmax(0, 1fr);
@@ -4421,11 +4812,11 @@ summary {
 }
 
 .arena-scoreboards {
-  border: 1px solid var(--arena-line);
+  border: 1px solid #292c31;
   border-radius: 28px;
-  background: #f5f2ec;
+  background: #0f1114;
   padding: clamp(1rem, 2.5vw, 1.65rem);
-  box-shadow: 0 24px 60px rgba(52, 49, 42, 0.07);
+  box-shadow: 0 28px 70px rgba(10, 12, 16, 0.2);
 }
 
 .arena-scoreboards-heading {
@@ -4443,7 +4834,7 @@ summary {
 
 .arena-scoreboards-heading span,
 .arena-scoreboard-metric span {
-  color: var(--arena-green-dark);
+  color: #7f858f;
   font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.09em;
@@ -4452,16 +4843,16 @@ summary {
 
 .arena-scoreboards-heading h2 {
   margin: 0;
-  color: var(--arena-ink);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  color: #f5f7fa;
+  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.7rem);
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-weight: 650;
+  letter-spacing: -0.045em;
 }
 
 .arena-scoreboards-heading > p {
   margin: 0 0 0.35rem;
-  color: var(--arena-muted);
+  color: #8f949d;
   font-size: 0.72rem;
 }
 
@@ -4477,10 +4868,10 @@ summary {
   min-height: 33rem;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid var(--arena-line);
-  border-radius: 22px;
-  background: var(--arena-paper);
-  box-shadow: 0 16px 34px rgba(52, 49, 42, 0.055);
+  border: 1px solid #2a2d33;
+  border-radius: 18px;
+  background: #151719;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
 }
 
 .arena-scoreboard-card-heading {
@@ -4488,7 +4879,7 @@ summary {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  border-bottom: 1px solid var(--arena-line);
+  border-bottom: 1px solid #2a2d33;
   padding: 1.15rem;
 }
 
@@ -4510,39 +4901,39 @@ summary {
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  border: 1px solid #cfcac0;
+  border: 1px solid #3a3e46;
   border-radius: 10px;
-  background: #f0ede6;
-  color: var(--arena-ink);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  background: #0d0f12;
+  color: #f6f7f9;
+  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
 }
 
 .arena-scoreboard-title h3 {
   margin: 0;
-  color: var(--arena-ink);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  color: #f6f7f9;
+  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(1.45rem, 2.4vw, 2rem);
-  font-weight: 500;
-  letter-spacing: -0.035em;
+  font-weight: 650;
+  letter-spacing: -0.04em;
 }
 
 .arena-scoreboard-title p {
   max-width: 38rem;
   margin: 0.38rem 0 0;
-  color: var(--arena-muted);
+  color: #9a9fa8;
   font-size: 0.72rem;
   line-height: 1.55;
 }
 
 .arena-scoreboard-tag {
   flex: 0 0 auto;
-  border: 1px solid #c9dccd;
+  border: 1px solid #353941;
   border-radius: 999px;
-  background: #e8f3e9;
+  background: #202328;
   padding: 0.34rem 0.65rem;
-  color: var(--arena-green-dark);
+  color: #cbd0d8;
   font-size: 0.65rem;
   font-weight: 800;
 }
@@ -4566,53 +4957,78 @@ summary {
 }
 
 .arena-scoreboard-metric strong {
-  color: var(--arena-ink);
+  color: #f0f2f5;
   font-size: 0.78rem;
 }
 
 .arena-scoreboard-metric b {
-  color: var(--arena-green-dark);
+  color: #72a0ff;
   font-size: 0.68rem;
 }
 
 .arena-scoreboard-metric time {
-  color: #8c887f;
+  color: #7f858f;
   font-size: 0.62rem;
   font-weight: 650;
 }
 
+.arena-scoreboard-table-head {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr) 4rem;
+  gap: 0.62rem;
+  border-top: 1px solid #24272c;
+  border-bottom: 1px solid #2a2d33;
+  background: #111316;
+  padding: 0.58rem 1.15rem;
+  color: #777d87;
+  font-size: 0.58rem;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.arena-scoreboard-table-head span:last-child {
+  text-align: right;
+}
+
 .arena-scoreboard-results {
   display: grid;
-  gap: 0.48rem;
+  gap: 0;
   margin: 0;
-  padding: 0 1.15rem 1rem;
+  padding: 0;
   list-style: none;
 }
 
 .arena-scoreboard-results[data-auto-scroll="true"] {
-  max-height: 15.5rem;
+  max-height: 18.25rem;
   overflow-y: auto;
   overscroll-behavior-y: contain;
-  padding-right: 0.75rem;
+  padding-right: 0;
   scroll-behavior: smooth;
   scroll-snap-type: y proximity;
-  scrollbar-color: #b9b3a8 transparent;
+  scrollbar-color: #4a4f58 transparent;
   scrollbar-width: thin;
 }
 
 .arena-scoreboard-results[data-auto-scroll="true"]:focus-visible {
   border-radius: 10px;
-  outline: 2px solid var(--arena-green);
+  outline: 2px solid #315fd3;
   outline-offset: 3px;
 }
 
 .arena-scoreboard-results li {
   display: grid;
-  grid-template-columns: 2rem minmax(8.5rem, 0.88fr) minmax(5.5rem, 1fr) 3.8rem;
+  grid-template-columns: 2rem minmax(0, 1fr) 4rem;
   align-items: center;
   gap: 0.62rem;
   min-width: 0;
+  border-bottom: 1px solid #25282d;
+  padding: 0.7rem 1.15rem 0.65rem;
   scroll-snap-align: start;
+}
+
+.arena-scoreboard-results li:last-child {
+  border-bottom: 0;
 }
 
 .arena-scoreboard-rank {
@@ -4621,12 +5037,17 @@ summary {
   width: 2rem;
   align-items: center;
   justify-content: center;
-  border: 1px solid #d7d2c9;
-  border-radius: 7px;
-  background: #fff;
-  color: var(--arena-ink);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #737982;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.75rem;
+  font-weight: 650;
+}
+
+.arena-scoreboard-results li:nth-child(-n + 3) .arena-scoreboard-rank {
+  color: #f1f3f5;
 }
 
 .arena-scoreboard-result-copy {
@@ -4643,21 +5064,23 @@ summary {
 }
 
 .arena-scoreboard-result-copy strong {
-  color: var(--arena-ink);
+  color: #f1f3f5;
   font-size: 0.74rem;
 }
 
 .arena-scoreboard-result-copy small {
-  color: #8b877e;
+  color: #7f858f;
   font-size: 0.59rem;
 }
 
 .arena-scoreboard-track {
   position: relative;
-  height: 2rem;
+  grid-column: 2 / -1;
+  grid-row: 2;
+  height: 0.26rem;
   overflow: hidden;
-  border-radius: 5px;
-  background: var(--arena-track);
+  border-radius: 999px;
+  background: #2a2d33;
 }
 
 .arena-scoreboard-track > span {
@@ -4665,35 +5088,39 @@ summary {
   inset: 0 auto 0 0;
   width: var(--arena-result-width);
   border-radius: inherit;
-  background: linear-gradient(90deg, #7aa7ff, #315fd3);
+  background: #161616;
   animation: arena-score-fill 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .arena-scoreboard-track > span::after {
   position: absolute;
   top: 50%;
-  right: 0.24rem;
-  height: 1.2rem;
+  right: 0;
+  height: 0.26rem;
   width: 2px;
-  border: 1px solid rgba(37, 36, 31, 0.58);
-  background: #fff;
+  border: 0;
+  background: #72a0ff;
   content: "";
   transform: translateY(-50%);
 }
 
 .arena-scoreboard-value {
-  color: var(--arena-green-dark);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  color: #315fd3;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.83rem;
   text-align: right;
 }
 
+.arena-scoreboard-results li:first-child .arena-scoreboard-value {
+  color: #ef5b5b;
+}
+
 .arena-scoreboard-empty {
   margin: 0 1.15rem 1rem;
-  border: 1px dashed #d5d0c7;
+  border: 1px dashed #3a3e46;
   border-radius: 12px;
   padding: 1rem;
-  color: var(--arena-muted);
+  color: #969ca6;
   font-size: 0.72rem;
 }
 
@@ -4701,7 +5128,7 @@ summary {
   display: grid;
   gap: 0.75rem;
   margin-top: auto;
-  border-top: 1px solid var(--arena-line);
+  border-top: 1px solid #2a2d33;
   padding: 0.9rem 1.15rem 1rem;
 }
 
@@ -4712,11 +5139,11 @@ summary {
 }
 
 .arena-scoreboard-footer nav a {
-  border: 1px solid #d6d1c7;
+  border: 1px solid #3b3f47;
   border-radius: 8px;
-  background: #fff;
+  background: #1a1d21;
   padding: 0.38rem 0.58rem;
-  color: #514e47;
+  color: #c5cad2;
   font-size: 0.63rem;
   font-weight: 700;
   transition: border-color 150ms ease, background 150ms ease, color 150ms ease;
@@ -4724,13 +5151,19 @@ summary {
 
 .arena-scoreboard-footer nav a:hover,
 .arena-scoreboard-footer nav .arena-scoreboard-link-primary {
-  border-color: #25241f;
-  background: #25241f;
-  color: #fff;
+  border-color: #e9ecf1;
+  background: #e9ecf1;
+  color: #111316;
+}
+
+.arena-scoreboard-footer nav a:hover {
+  border-color: #72a0ff;
+  background: #72a0ff;
+  color: #0d0f12;
 }
 
 .arena-scoreboard-footer details {
-  color: #827e75;
+  color: #858b95;
   font-size: 0.62rem;
 }
 
@@ -4755,12 +5188,6 @@ summary {
 
   .arena-scoreboard-results li {
     grid-template-columns: 2rem minmax(0, 1fr) 3.5rem;
-  }
-
-  .arena-scoreboard-track {
-    grid-column: 2 / -1;
-    grid-row: 2;
-    height: 0.72rem;
   }
 }
 

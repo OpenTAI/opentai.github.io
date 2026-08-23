@@ -6,8 +6,12 @@ import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import type { EcosystemRecord } from "@/data/ecosystem";
 import {
   type EcosystemSortKey,
+  filterCompanyRecords,
   filterEcosystemRecords,
+  formatCompanyValuation,
   formatCatalogValue,
+  getCompanyFilterOptions,
+  getCompanySpecialties,
   getFrameworkCategories,
   getFrameworkCategory,
   sortEcosystemRecords,
@@ -19,14 +23,14 @@ type CatalogKind = "models" | "frameworks" | "arenas" | "companies";
 const copy = {
   en: {
     all: "All",
-    academicOrigin: "Academic origin",
     country: "Country or region",
-    direction: "Focus",
     entries: "verified entries",
     founded: "Founded",
     githubStars: "GitHub stars",
     links: "Official links",
     companyValue: "Valuation / market cap",
+    specialty: "Specialty",
+    strength: "Strength",
     noMatches: "No verified entries match these filters.",
     publicResults: "Public results",
     search: "Search names, organizations, and categories…",
@@ -43,14 +47,14 @@ const copy = {
   },
   zh: {
     all: "全部",
-    academicOrigin: "学术或孵化来源",
     country: "国家或地区",
-    direction: "方向",
     entries: "条已核验记录",
     founded: "成立于",
     githubStars: "GitHub 星标",
     links: "官方链接",
     companyValue: "估值 / 市值",
+    specialty: "专长",
+    strength: "优势背景",
     noMatches: "没有符合当前筛选条件的已核验记录。",
     publicResults: "公开结果",
     search: "搜索名称、机构或分类……",
@@ -94,10 +98,10 @@ const pageCopy: Record<CatalogKind, Record<Locale, { title: string }>> = {
   },
   companies: {
     en: {
-      title: "Companies",
+      title: "Company wall",
     },
     zh: {
-      title: "企业",
+      title: "公司墙",
     },
   },
 };
@@ -208,11 +212,9 @@ function CatalogCard({
 }
 
 function CompanyCard({
-  index,
   locale,
   record,
 }: {
-  index: number;
   locale: Locale;
   record: EcosystemRecord;
 }) {
@@ -223,65 +225,49 @@ function CompanyCard({
     ? `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${logo}`
     : logo;
   const country = locale === "zh" ? record.countryZh : record.country;
-  const valuation = locale === "zh" ? record.valuationZh : record.valuation;
-  const companyFacts = [
-    {
-      label: strings.direction,
-      value: locale === "zh" ? record.directionZh : record.direction,
-      tone: "focus",
-      wide: true,
-    },
-    { label: strings.founded, value: record.founded },
-    {
-      label: strings.academicOrigin,
-      value: locale === "zh" ? record.academicOriginZh : record.academicOrigin,
-      wide: true,
-    },
-    {
-      label: strings.status,
-      value: locale === "zh" ? record.statusZh : record.status,
-      wide: true,
-    },
-  ];
+  const rawValuation = locale === "zh" ? record.valuationZh : record.valuation;
+  const valuation = rawValuation ? formatCompanyValuation(rawValuation, locale) : undefined;
+  const specialties = getCompanySpecialties(record, locale);
+  const strength = locale === "zh" ? record.academicOriginZh : record.academicOrigin;
+
+  const logoContent = logoPath ? (
+    <>
+      <span className="company-logo-fallback" aria-hidden="true">{initials(record.name)}</span>
+      <Image
+        alt={`${record.name} logo`}
+        className="company-logo-image"
+        height={48}
+        onError={(event) => event.currentTarget.parentElement?.classList.remove("company-logo-loaded")}
+        onLoad={(event) => event.currentTarget.parentElement?.classList.add("company-logo-loaded")}
+        src={logoPath}
+        width={48}
+      />
+    </>
+  ) : <span aria-hidden="true">{initials(record.name)}</span>;
 
   return (
     <article className="ecosystem-card company-card" id={`company-${record.id}`}>
-      {logoPath && logoSource ? (
-        <a
-          aria-label={locale === "zh" ? `查看 ${record.name} 官方 Logo 来源` : `View the official source for the ${record.name} logo`}
-          className="company-logo-panel"
-          href={logoSource}
-          rel="noreferrer"
-          target="_blank"
-        >
-          <span className="company-card-index" aria-hidden="true">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          <span className="company-logo-fallback" aria-hidden="true">{initials(record.name)}</span>
-          <Image
-            alt={`${record.name} logo`}
-            className="company-logo-image"
-            height={112}
-            onError={(event) => event.currentTarget.parentElement?.classList.remove("company-logo-loaded")}
-            onLoad={(event) => event.currentTarget.parentElement?.classList.add("company-logo-loaded")}
-            src={logoPath}
-            width={320}
-          />
-        </a>
-      ) : (
-        <div className="company-logo-panel company-logo-placeholder" aria-label={`${record.name} logo`}>
-          <span className="company-card-index" aria-hidden="true">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          <span>{initials(record.name)}</span>
-        </div>
-      )}
-
       <div className="company-card-body">
         <div className="company-card-heading">
-          <span className="ecosystem-category">{record.category}</span>
           <div className="company-title-row">
-            <h2>{record.name}</h2>
+            <div className="company-brand-heading">
+              {logoSource ? (
+                <a
+                  aria-label={locale === "zh" ? `查看 ${record.name} 官方 Logo 来源` : `View the official source for the ${record.name} logo`}
+                  className={`company-logo-inline${logoPath ? "" : " company-logo-placeholder"}`}
+                  href={logoSource}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {logoContent}
+                </a>
+              ) : (
+                <div className={`company-logo-inline${logoPath ? "" : " company-logo-placeholder"}`}>
+                  {logoContent}
+                </div>
+              )}
+              <h2>{record.name}</h2>
+            </div>
             <span className="company-country">{formatCatalogValue(country, locale)}</span>
           </div>
           {valuation ? (
@@ -292,34 +278,28 @@ function CompanyCard({
           ) : null}
         </div>
 
-        <p className="ecosystem-description">
-          {locale === "zh" ? record.descriptionZh : record.description}
-        </p>
+        <div className="company-specialties">
+          <span>{strings.specialty}</span>
+          <div>
+            {specialties.length ? specialties.map((specialty) => (
+              <strong key={specialty}>{specialty}</strong>
+            )) : <strong>{formatCatalogValue(undefined, locale)}</strong>}
+          </div>
+        </div>
 
         <div className="company-facts">
-          {companyFacts.map((fact) => (
-            <div
-              className={[
-                fact.wide ? "company-fact-wide" : "",
-                fact.tone === "focus" ? "company-fact-focus" : "",
-              ].filter(Boolean).join(" ")}
-              key={fact.label}
-            >
-              <span>{fact.label}</span>
-              <strong>{formatCatalogValue(fact.value, locale)}</strong>
-            </div>
-          ))}
-          {record.stars !== undefined ? (
-            <div className="company-fact-wide">
-              <span>{strings.githubStars}</span>
-              <strong>★ {record.stars.toLocaleString("en-US")}</strong>
-              {record.starsUpdated ? <small>{strings.snapshot} · {record.starsUpdated}</small> : null}
-            </div>
-          ) : null}
+          <div>
+            <span>{strings.founded}</span>
+            <strong>{formatCatalogValue(record.founded, locale)}</strong>
+          </div>
+          <div className="company-fact-wide">
+            <span>{strings.strength}</span>
+            <strong>{formatCatalogValue(strength, locale)}</strong>
+          </div>
         </div>
 
         <div className="ecosystem-links" aria-label={strings.links}>
-          {record.links.map((link) => (
+          {record.links.slice(0, 2).map((link) => (
             <a href={link.url} key={`${record.id}-${link.label}`} rel="noreferrer" target="_blank">
               {link.label}<span aria-hidden="true">↗</span>
             </a>
@@ -339,129 +319,6 @@ function CompanyCard({
         </details>
       </div>
     </article>
-  );
-}
-
-const companyMarketGroups = [
-  { category: "AI Safety", code: "C1", tone: "green" },
-  { category: "Agent Safety", code: "C2", tone: "teal" },
-  { category: "Evaluation", code: "C3", tone: "gold" },
-  { category: "AI Security", code: "C4", tone: "rust" },
-] as const;
-
-function CompanyMarketMap({
-  locale,
-  records,
-}: {
-  locale: Locale;
-  records: readonly EcosystemRecord[];
-}) {
-  const groups = companyMarketGroups
-    .map((group) => ({
-      ...group,
-      records: records.filter((record) => record.category === group.category),
-    }))
-    .filter((group) => group.records.length > 0);
-
-  return (
-    <section className="company-market-map" aria-labelledby="company-market-map-title">
-      <div className="company-market-map-heading">
-        <div>
-          <span className="company-market-map-kicker">
-            {locale === "zh" ? "市场地图 · 已核验目录" : "Market map · verified directory"}
-          </span>
-          <h2 id="company-market-map-title">
-            {locale === "zh" ? "AI 安全企业版图" : "AI safety company landscape"}
-          </h2>
-          <p>
-            {locale === "zh"
-              ? "按已核验的目录类别组织公司；选择节点可前往其官方页面。卡片数值优先采用披露的交易价或投后估值；其余为明确标注的 OpenTAI 区间估算。"
-              : "Companies grouped by their verified directory category. Select a node to open its official page. Card values prioritize disclosed transaction prices or post-money valuations; the rest are explicitly labeled OpenTAI range estimates."}
-          </p>
-          <small className="company-market-map-methodology">
-            {locale === "zh"
-              ? "估算方法：若仅披露最近融资额，按该轮约 12.5%–25% 稀释推算；未披露融资额的公司采用更宽的同阶段可比区间。所有估算均非公开市场市值。"
-              : "Estimate method: when only the latest round is disclosed, the range assumes roughly 12.5%–25% dilution; companies without a disclosed round use a wider same-stage comparable range. Estimates are not public-market capitalizations."}
-          </small>
-        </div>
-        <span className="company-market-map-count">
-          <strong>{records.length}</strong>
-          {locale === "zh" ? " 家公司" : " companies shown"}
-        </span>
-      </div>
-
-      <div className="company-market-map-layers">
-        {groups.map((group) => (
-          <section
-            className={`company-market-layer company-market-layer-${group.tone}`}
-            key={group.category}
-          >
-            <div className="company-market-layer-label">
-              <span>{group.code}</span>
-              <h3>{group.category}</h3>
-              <small>{group.records.length} {locale === "zh" ? "家公司" : "companies"}</small>
-            </div>
-            <div className="company-market-nodes">
-              {group.records.map((record) => {
-                const primaryLink = record.links.find((link) => (
-                  link.label.toLowerCase().includes("website")
-                )) ?? record.links[0];
-                const logoPath = record.logo?.startsWith("/")
-                  ? `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${record.logo}`
-                  : record.logo;
-                const nodeValuation = locale === "zh" ? record.valuationZh : record.valuation;
-                const content = (
-                  <>
-                    <span className="company-market-node-logo" aria-hidden="true">
-                      <span>{initials(record.name)}</span>
-                      {logoPath ? (
-                        <Image
-                          alt=""
-                          height={40}
-                          onError={(event) => { event.currentTarget.style.display = "none"; }}
-                          src={logoPath}
-                          style={{ height: "100%", width: "100%" }}
-                          width={40}
-                        />
-                      ) : null}
-                    </span>
-                    <span className="company-market-node-copy">
-                      <span className="company-market-node-name">{record.name}</span>
-                      {nodeValuation ? (
-                        <small>{nodeValuation}</small>
-                      ) : null}
-                    </span>
-                    <span className="company-market-node-dot" aria-hidden="true" />
-                  </>
-                );
-
-                return primaryLink ? (
-                  <a
-                    className={`company-market-node${nodeValuation ? " company-market-node-valued" : ""}`}
-                    href={primaryLink.url}
-                    key={record.id}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    {content}
-                    <span className="sr-only">
-                      {locale === "zh" ? "打开官方页面" : "Open official page"}
-                    </span>
-                  </a>
-                ) : (
-                  <div
-                    className={`company-market-node${nodeValuation ? " company-market-node-valued" : ""}`}
-                    key={record.id}
-                  >
-                    {content}
-                  </div>
-                );
-              })}
-            </div>
-          </section>
-        ))}
-      </div>
-    </section>
   );
 }
 
@@ -488,7 +345,23 @@ export function EcosystemCatalogPage({
   const [category, setCategory] = useState("All");
   const [query, setQuery] = useState("");
   const [sortKey, setSortKey] = useState<EcosystemSortKey>("default");
+  const [companyYear, setCompanyYear] = useState("");
+  const [companyCountry, setCompanyCountry] = useState("");
+  const [companySpecialty, setCompanySpecialty] = useState("");
+  const companyFilterOptions = useMemo(
+    () => getCompanyFilterOptions(records, locale),
+    [locale, records],
+  );
   const visibleRecords = useMemo(() => {
+    if (kind === "companies") {
+      return filterCompanyRecords(records, {
+        country: companyCountry,
+        locale,
+        specialty: companySpecialty,
+        year: companyYear,
+      });
+    }
+
     const matchingQuery = filterEcosystemRecords(records, { category: "All", query });
     const matchingCategory = category === "All"
       ? matchingQuery
@@ -499,7 +372,7 @@ export function EcosystemCatalogPage({
       ));
 
     return sortEcosystemRecords(matchingCategory, sortKey);
-  }, [category, kind, query, records, sortKey]);
+  }, [category, companyCountry, companySpecialty, companyYear, kind, locale, query, records, sortKey]);
 
   const categoryCount = (item: string) => {
     if (item === "All") return records.length;
@@ -516,15 +389,7 @@ export function EcosystemCatalogPage({
       <PageBreadcrumb items={["Home", parent, pageCopy[kind].en.title]} locale={locale} />
 
       <section className="ecosystem-hero">
-        {kind === "companies" ? (
-          <div className="company-hero-mark" aria-hidden="true">C</div>
-        ) : null}
         <div>
-          {kind === "companies" ? (
-            <span className="company-hero-kicker">
-              {locale === "zh" ? "AI 安全企业图谱" : "AI safety company atlas"}
-            </span>
-          ) : null}
           <h1>{page.title}</h1>
         </div>
         <div className="ecosystem-hero-proof">
@@ -533,61 +398,84 @@ export function EcosystemCatalogPage({
         </div>
       </section>
 
-      <section className="ecosystem-toolbar" aria-label={locale === "zh" ? "目录筛选" : "Catalog filters"}>
-        <label className="ecosystem-search">
-          <span aria-hidden="true">⌕</span>
-          <input
-            aria-label={strings.search}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder={strings.search}
-            type="search"
-            value={query}
-          />
-        </label>
-        <div className="ecosystem-filter-pills">
-          {categories.map((item) => (
-            <button
-              aria-pressed={category === item}
-              className={category === item ? "ecosystem-filter-active" : ""}
-              key={item}
-              onClick={() => setCategory(item)}
-              type="button"
-            >
-              {item === "All" ? strings.all : (
-                kind === "frameworks" ? frameworkCategoryLabel(item, locale) : item
-              )}
-              <span>{categoryCount(item)}</span>
-            </button>
-          ))}
-        </div>
-        <label className="ecosystem-sort">
-          <span>{strings.sort}</span>
-          <select onChange={(event) => setSortKey(event.target.value as EcosystemSortKey)} value={sortKey}>
-            <option value="default">{strings.sorts.default}</option>
-            <option value="year-desc">{strings.sorts["year-desc"]}</option>
-            <option value="name-asc">{strings.sorts["name-asc"]}</option>
-          </select>
-        </label>
-      </section>
+      {kind === "companies" ? (
+        <section className="ecosystem-toolbar company-filter-bar" aria-label={locale === "zh" ? "公司筛选" : "Company filters"}>
+          <label className="company-filter-control">
+            <span>{locale === "zh" ? "年份" : "Year"}</span>
+            <select onChange={(event) => setCompanyYear(event.target.value)} value={companyYear}>
+              <option value="">{locale === "zh" ? "所有年份" : "All years"}</option>
+              {companyFilterOptions.years.map((year) => <option key={year} value={year}>{year}</option>)}
+            </select>
+          </label>
+          <label className="company-filter-control">
+            <span>{strings.country}</span>
+            <select onChange={(event) => setCompanyCountry(event.target.value)} value={companyCountry}>
+              <option value="">{locale === "zh" ? "所有国家或地区" : "All countries and regions"}</option>
+              {companyFilterOptions.countries.map((country) => <option key={country} value={country}>{country}</option>)}
+            </select>
+          </label>
+          <label className="company-filter-control">
+            <span>{strings.specialty}</span>
+            <select onChange={(event) => setCompanySpecialty(event.target.value)} value={companySpecialty}>
+              <option value="">{locale === "zh" ? "所有专长" : "All specialties"}</option>
+              {companyFilterOptions.specialties.map((specialty) => <option key={specialty} value={specialty}>{specialty}</option>)}
+            </select>
+          </label>
+          <p className="company-filter-count">
+            <strong>{visibleRecords.length}</strong>
+            {locale === "zh" ? " 家公司" : " companies"}
+          </p>
+        </section>
+      ) : (
+        <section className="ecosystem-toolbar" aria-label={locale === "zh" ? "目录筛选" : "Catalog filters"}>
+          <label className="ecosystem-search">
+            <span aria-hidden="true">⌕</span>
+            <input
+              aria-label={strings.search}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder={strings.search}
+              type="search"
+              value={query}
+            />
+          </label>
+          <div className="ecosystem-filter-pills">
+            {categories.map((item) => (
+              <button
+                aria-pressed={category === item}
+                className={category === item ? "ecosystem-filter-active" : ""}
+                key={item}
+                onClick={() => setCategory(item)}
+                type="button"
+              >
+                {item === "All" ? strings.all : (
+                  kind === "frameworks" ? frameworkCategoryLabel(item, locale) : item
+                )}
+                <span>{categoryCount(item)}</span>
+              </button>
+            ))}
+          </div>
+          <label className="ecosystem-sort">
+            <span>{strings.sort}</span>
+            <select onChange={(event) => setSortKey(event.target.value as EcosystemSortKey)} value={sortKey}>
+              <option value="default">{strings.sorts.default}</option>
+              <option value="year-desc">{strings.sorts["year-desc"]}</option>
+              <option value="name-asc">{strings.sorts["name-asc"]}</option>
+            </select>
+          </label>
+        </section>
+      )}
 
       {visibleRecords.length ? (
         <>
           {kind === "companies" ? (
-            <CompanyMarketMap locale={locale} records={visibleRecords} />
-          ) : null}
-          {kind === "companies" ? (
             <div className="company-directory-heading">
-              <div>
-                <span>{locale === "zh" ? "目录" : "Directory"}</span>
-                <h2>{locale === "zh" ? "公司档案" : "Company profiles"}</h2>
-              </div>
-              <p>{visibleRecords.length} {locale === "zh" ? "条已核验记录" : "verified records"}</p>
+              <h2>{locale === "zh" ? "探索公司" : "Explore companies"}</h2>
             </div>
           ) : null}
           <section className="ecosystem-grid" aria-live="polite">
-            {visibleRecords.map((record, index) => (
+            {visibleRecords.map((record) => (
               kind === "companies" ? (
-                <CompanyCard index={index} key={record.id} locale={locale} record={record} />
+                <CompanyCard key={record.id} locale={locale} record={record} />
               ) : (
                 <CatalogCard
                   categoryLabel={kind === "frameworks"

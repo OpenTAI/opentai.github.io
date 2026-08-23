@@ -154,9 +154,8 @@ export function ArenaScoreboardGrid({
     <section aria-labelledby="arena-directory-title" className="arena-scoreboards">
       <header className="arena-scoreboards-heading">
         <div>
-          <span>{locale === "zh" ? "已核验的公开结果" : "Verified public results"}</span>
           <h2 id="arena-directory-title">
-            {locale === "zh" ? "安全竞技场排名" : "Safety arena rankings"}
+            {locale === "zh" ? "安全竞技场" : "Safety arenas"}
           </h2>
         </div>
         <p>
@@ -191,6 +190,12 @@ export function ArenaScoreboardGrid({
                 <b>{direction(locale, record.metric)}</b>
                 <time>{t(locale, record.snapshotDate)}</time>
               </div>
+            </div>
+
+            <div aria-hidden="true" className="arena-scoreboard-table-head">
+              <span>#</span>
+              <span>{locale === "zh" ? "模型 / 团队" : "Model / team"}</span>
+              <span>{locale === "zh" ? "分数" : "Score"}</span>
             </div>
 
             {record.results.length > 0 ? (

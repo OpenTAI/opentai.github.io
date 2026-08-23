@@ -136,13 +136,27 @@ test("arena scoreboards keep rankings and official links in every grid cell", ()
   assert.match(source, /Lower is better/);
 });
 
-test("arena ranking tracks use the approved blue result treatment", () => {
+test("arena rankings use a dark table treatment with blue and red score accents", () => {
   const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+  const component = readFileSync(
+    new URL("../components/arena-scoreboard-grid.tsx", import.meta.url),
+    "utf8",
+  );
 
   assert.match(
     css,
-    /\.arena-scoreboard-track\s*>\s*span\s*\{[^}]*background:\s*linear-gradient\(90deg,\s*#7aa7ff,\s*#315fd3\)/,
+    /\.arena-scoreboard-track\s*>\s*span\s*\{[^}]*background:\s*#161616/,
   );
+  assert.match(css, /\.arena-scoreboards\s*\{[^}]*background:\s*#0f1114/);
+  assert.match(css, /\.arena-scoreboard-card\s*\{[^}]*background:\s*#151719/);
+  assert.match(css, /\.arena-scoreboard-value\s*\{[^}]*color:\s*#315fd3/);
+  assert.match(
+    css,
+    /\.arena-scoreboard-results\s+li:first-child\s+\.arena-scoreboard-value\s*\{[^}]*color:\s*#ef5b5b/,
+  );
+  assert.match(component, /arena-scoreboard-table-head/);
+  assert.match(component, /"Safety arenas"/);
+  assert.doesNotMatch(component, /Verified public results/);
 });
 
 test("auto-scrolling rankings preserve every independent pause condition", () => {

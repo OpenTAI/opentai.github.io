@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import * as catalog from "./ecosystem-catalog.ts";
 import {
   filterEcosystemRecords,
   formatCatalogValue,
@@ -117,56 +118,105 @@ test("sorts by newest year and name without mutating input", () => {
   assert.deepEqual(records.map((record) => record.id), original);
 });
 
-test("company cards use the warm editorial atlas layout", () => {
+test("company filters expose verified years, countries, and specialty keywords", () => {
+  assert.equal(typeof catalog.getCompanyFilterOptions, "function");
+
+  const companies = [
+    {
+      ...records[0],
+      id: "company-us",
+      founded: 2024,
+      country: "United States",
+      countryZh: "美国",
+      direction: "Guard models · Agent security",
+      directionZh: "护栏模型 · 智能体安全",
+    },
+    {
+      ...records[1],
+      id: "company-cn",
+      founded: 2023,
+      country: "China",
+      countryZh: "中国",
+      direction: "Safety infrastructure · Agent security",
+      directionZh: "安全基础设施 · 智能体安全",
+    },
+  ];
+
+  assert.deepEqual(catalog.getCompanyFilterOptions(companies, "en"), {
+    years: [2024, 2023],
+    countries: ["China", "United States"],
+    specialties: ["Agent security", "Guard models", "Safety infrastructure"],
+  });
+  assert.deepEqual(catalog.getCompanyFilterOptions(companies, "zh").specialties, [
+    "安全基础设施",
+    "护栏模型",
+    "智能体安全",
+  ]);
+});
+
+test("company filters combine year, localized country, and specialty", () => {
+  assert.equal(typeof catalog.filterCompanyRecords, "function");
+
+  const companies = [
+    {
+      ...records[0],
+      id: "company-us",
+      founded: 2024,
+      country: "United States",
+      countryZh: "美国",
+      direction: "Guard models · Agent security",
+      directionZh: "护栏模型 · 智能体安全",
+    },
+    {
+      ...records[1],
+      id: "company-cn",
+      founded: 2023,
+      country: "China",
+      countryZh: "中国",
+      direction: "Safety infrastructure · Agent security",
+      directionZh: "安全基础设施 · 智能体安全",
+    },
+  ];
+
+  assert.deepEqual(
+    catalog.filterCompanyRecords(companies, {
+      country: "中国",
+      locale: "zh",
+      specialty: "智能体安全",
+      year: "2023",
+    }).map((record) => record.id),
+    ["company-cn"],
+  );
+});
+
+test("company valuation labels use the requested ChatGPT estimate wording", () => {
+  assert.equal(typeof catalog.formatCompanyValuation, "function");
+  assert.equal(
+    catalog.formatCompanyValuation("OpenTAI estimate · $70–140M", "en"),
+    "ChatGPT estimate · $70–140M",
+  );
+  assert.equal(
+    catalog.formatCompanyValuation("OpenTAI 估算 · 5,000万–1亿元人民币", "zh"),
+    "ChatGPT 估算 · 5,000万–1亿元人民币",
+  );
+});
+
+test("company page is an unclassified, filterable brand wall", () => {
   const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
   const component = readFileSync(
     new URL("../components/ecosystem-catalog-page.tsx", import.meta.url),
     "utf8",
   );
 
-  assert.match(css, /\.ecosystem-catalog-companies\s*{[\s\S]*?--company-green:\s*#2d7d48/);
-  assert.match(css, /\.company-hero-mark\s*{[\s\S]*?font-family:\s*ui-serif/);
-  assert.match(css, /\.ecosystem-catalog-companies\s+\.company-logo-panel\s*{[\s\S]*?background-size:\s*18px 18px/);
+  assert.match(css, /\.ecosystem-catalog-companies\s*{[\s\S]*?--company-electric:\s*#4b7cff/);
+  assert.match(css, /\.company-brand-heading\s*{[^}]*display:\s*flex/);
   assert.match(css, /\.company-valuation-highlight\s*{[\s\S]*?background:\s*var\(--company-ink\)/);
-  assert.match(component, /company-card-index/);
+  assert.match(component, /company-filter-control/);
+  assert.match(component, /strings\.specialty/);
+  assert.match(component, /strings\.strength/);
   assert.match(component, /company-valuation-highlight/);
-  assert.match(component, /company-market-node-copy/);
-  assert.match(component, /function CompanyMarketMap/);
-  assert.match(component, /companyMarketGroups/);
-  assert.match(component, /Companies grouped by their verified directory category/);
-  assert.match(css, /\.company-market-map\s*{[\s\S]*?background-size:\s*24px 24px/);
-  assert.match(css, /\.company-market-layer\s*{[\s\S]*?--company-layer-color/);
-  assert.match(css, /\.company-market-node\s*{[\s\S]*?grid-template-columns:/);
-});
-
-test("company landscape nodes are narrower and vertically roomier", () => {
-  const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
-
-  assert.match(
-    css,
-    /\.company-market-node\s*\{[^}]*width:\s*14rem;[^}]*min-height:\s*4rem/,
-  );
-  assert.match(
-    css,
-    /\.company-market-node-valued\s*\{[^}]*min-width:\s*14rem/,
-  );
-});
-
-test("company directory uses a compact four-column desktop layout", () => {
-  const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
-
-  assert.match(
-    css,
-    /@media\s*\(min-width:\s*1280px\)\s*\{\s*\.ecosystem-catalog-companies\s+\.ecosystem-grid\s*\{\s*grid-template-columns:\s*repeat\(4,/,
-  );
-  assert.match(
-    css,
-    /\.ecosystem-catalog-companies\s+\.company-logo-panel\s*\{[^}]*min-height:\s*5rem/,
-  );
-  assert.match(
-    css,
-    /\.ecosystem-catalog-companies\s+\.company-card-body\s*\{[^}]*padding:\s*0\.72rem/,
-  );
+  assert.doesNotMatch(component, /function CompanyMarketMap/);
+  assert.doesNotMatch(component, /className="ecosystem-category">\{record\.category\}/);
 });
 
 test("framework records are grouped into the three approved display categories", () => {
