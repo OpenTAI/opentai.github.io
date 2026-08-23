@@ -4589,12 +4589,30 @@ summary {
   list-style: none;
 }
 
+.arena-scoreboard-results[data-auto-scroll="true"] {
+  max-height: 15.5rem;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  padding-right: 0.75rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  scrollbar-color: #b9b3a8 transparent;
+  scrollbar-width: thin;
+}
+
+.arena-scoreboard-results[data-auto-scroll="true"]:focus-visible {
+  border-radius: 10px;
+  outline: 2px solid var(--arena-green);
+  outline-offset: 3px;
+}
+
 .arena-scoreboard-results li {
   display: grid;
   grid-template-columns: 2rem minmax(8.5rem, 0.88fr) minmax(5.5rem, 1fr) 3.8rem;
   align-items: center;
   gap: 0.62rem;
   min-width: 0;
+  scroll-snap-align: start;
 }
 
 .arena-scoreboard-rank {
@@ -4648,6 +4666,7 @@ summary {
   width: var(--arena-result-width);
   border-radius: inherit;
   background: linear-gradient(90deg, #68bd78, var(--arena-green));
+  animation: arena-score-fill 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .arena-scoreboard-track > span::after {
@@ -5331,6 +5350,50 @@ summary {
 
 .arena-chart-bar {
   opacity: 0.94;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: arena-chart-rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: filter 160ms ease, opacity 160ms ease;
+}
+
+.arena-chart-bar:hover {
+  filter: brightness(1.08) saturate(1.12);
+  opacity: 1;
+}
+
+@keyframes arena-chart-rise {
+  from {
+    opacity: 0.25;
+    transform: scaleY(0.04);
+  }
+
+  to {
+    opacity: 0.94;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes arena-score-fill {
+  from {
+    transform: scaleX(0.06);
+    transform-origin: left center;
+  }
+
+  to {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arena-chart-bar,
+  .arena-scoreboard-track > span {
+    animation: none;
+  }
+
+  .arena-scoreboard-results[data-auto-scroll="true"] {
+    scroll-behavior: auto;
+  }
 }
 
 .arena-chart-legend {

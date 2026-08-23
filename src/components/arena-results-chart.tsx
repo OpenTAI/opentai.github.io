@@ -6,7 +6,6 @@ function copy(locale: Locale, english: string, chinese: string) {
 }
 
 export function ArenaResultsChart({ locale }: { locale: Locale }) {
-  const chartColors = ["#9bd3a5", "#68bd78", "#329e48", "#217936", "#17251b"];
   const width = 1120;
   const height = 470;
   const left = 62;
@@ -80,7 +79,7 @@ export function ArenaResultsChart({ locale }: { locale: Locale }) {
                     <g key={`${benchmark.name}-${series.name}`}>
                       <rect
                         className="arena-chart-bar"
-                        fill={chartColors[seriesIndex % chartColors.length]}
+                        fill={series.color}
                         height={Math.max(barHeight, value === 0 ? 3 : barHeight)}
                         rx="5"
                         width={barWidth}
@@ -110,11 +109,11 @@ export function ArenaResultsChart({ locale }: { locale: Locale }) {
       </div>
 
       <ul className="arena-chart-legend" aria-label={copy(locale, "Models", "模型")}>
-        {arenaResults.series.map((series, seriesIndex) => (
+        {arenaResults.series.map((series) => (
           <li key={series.name}>
             <span
               aria-hidden="true"
-              style={{ backgroundColor: chartColors[seriesIndex % chartColors.length] }}
+              style={{ backgroundColor: series.color }}
             />
             {copy(locale, series.name, series.nameZh)}
           </li>

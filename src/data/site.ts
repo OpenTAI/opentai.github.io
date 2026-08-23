@@ -3744,7 +3744,7 @@ export const arenaDirectory: RankingDirectoryRecord[] = [
     focusZh: "让智能体通过生成可运行的概念验证程序，复现真实世界漏洞。",
     metric: "Level 1 Success Rate ↑",
     metricZh: "Level 1 成功率 ↑",
-    snapshotDate: "Source checked 2026-08-20",
+    snapshotDate: "Source checked 2026-08-22",
     results: [
       {
         rank: 1,
@@ -3776,6 +3776,48 @@ export const arenaDirectory: RankingDirectoryRecord[] = [
         detail: "GLM-5.2",
         value: "90.84%",
       },
+      {
+        rank: 6,
+        name: "Crystalline",
+        detail: "Claude Opus 4.6",
+        value: "89.60%",
+      },
+      {
+        rank: 7,
+        name: "RedbudAI",
+        detail: "GLM-5.2",
+        value: "86.26%",
+      },
+      {
+        rank: 8,
+        name: "OpenAI Agent",
+        detail: "GPT-5.5-Cyber",
+        value: "85.60%",
+      },
+      {
+        rank: 9,
+        name: "Velldepth Agent",
+        detail: "XekRung",
+        value: "85.34%",
+      },
+      {
+        rank: 10,
+        name: "Xuanwu Atuin AI",
+        detail: "GLM-5.2",
+        value: "84.80%",
+      },
+      {
+        rank: 11,
+        name: "Anthropic Agent",
+        detail: "Claude Mythos Preview",
+        value: "83.10%",
+      },
+      {
+        rank: 12,
+        name: "OpenAI Agent",
+        detail: "GPT-5.5",
+        value: "81.80%",
+      },
     ],
     url: "https://cybergym.io/cybergym/#leaderboard",
     source: "https://cybergym.io/assets/data/cybergym.json",
@@ -3805,7 +3847,7 @@ export const arenaDirectory: RankingDirectoryRecord[] = [
     focusZh: "评估智能体在用户态、浏览器 V8 与 Linux 内核中生成端到端漏洞利用的能力。",
     metric: "Successful exploits ↑",
     metricZh: "成功漏洞利用数 ↑",
-    snapshotDate: "Source checked 2026-08-20",
+    snapshotDate: "Source checked 2026-08-22",
     results: [
       {
         rank: 1,
@@ -3836,6 +3878,30 @@ export const arenaDirectory: RankingDirectoryRecord[] = [
         name: "Claude Opus 4.6",
         detail: "Claude Code · 2h timeout",
         value: "16",
+      },
+      {
+        rank: 6,
+        name: "Gemini 3.1 Pro",
+        detail: "Gemini CLI · 2h timeout",
+        value: "12",
+      },
+      {
+        rank: 7,
+        name: "Claude Opus 4.7",
+        detail: "Claude Code · 2h timeout",
+        value: "12",
+      },
+      {
+        rank: 8,
+        name: "Muse Spark 1.1 (helpful-only)",
+        detail: "Meta Agent · 4h timeout",
+        value: "7",
+      },
+      {
+        rank: 9,
+        name: "GLM-5.1",
+        detail: "Claude Code · 2h timeout",
+        value: "4",
       },
     ],
     url: "https://cybergym.io/exploitgym/#leaderboard",

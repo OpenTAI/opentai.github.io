@@ -136,6 +136,19 @@ test("arena scoreboards keep rankings and official links in every grid cell", ()
   assert.match(source, /Lower is better/);
 });
 
+test("auto-scrolling rankings preserve every independent pause condition", () => {
+  const source = readFileSync(
+    new URL("../components/arena-scoreboard-grid.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /hoverPausedRef/);
+  assert.match(source, /focusPausedRef/);
+  assert.match(source, /onPointerDown=\{pauseForManualScroll\}/);
+  assert.match(source, /onKeyDown/);
+  assert.match(source, /reducedMotion\.addEventListener\("change"/);
+});
+
 test("arena result chart exposes the official source and metric caveat", () => {
   const source = readFileSync(
     new URL("../components/arena-results-chart.tsx", import.meta.url),
@@ -145,6 +158,7 @@ test("arena result chart exposes the official source and metric caveat", () => {
   assert.match(source, /arenaResults\.source/);
   assert.match(source, /arenaResults\.note/);
   assert.match(source, /arena-chart-metrics/);
+  assert.match(source, /series\.color/);
 });
 
 test("text arena overview renders every verified category rank and its source", () => {

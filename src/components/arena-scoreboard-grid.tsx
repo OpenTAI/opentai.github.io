@@ -1,5 +1,9 @@
+"use client";
+
 import type { CSSProperties } from "react";
+import { useEffect, useRef } from "react";
 import type { RankingDirectoryRecord, RankingResult } from "@/data/site";
+import { nextArenaScrollTop } from "@/lib/arena-auto-scroll";
 import { Locale, t } from "@/lib/i18n";
 
 function localized(locale: Locale, english: string, chinese: string | undefined) {
@@ -21,6 +25,122 @@ function direction(locale: Locale, metric: string) {
   if (metric.includes("↓")) return locale === "zh" ? "越低越好" : "Lower is better";
   if (metric.includes("↑")) return locale === "zh" ? "越高越好" : "Higher is better";
   return "";
+}
+
+function AutoScrollingResults({
+  locale,
+  record,
+}: {
+  locale: Locale;
+  record: RankingDirectoryRecord;
+}) {
+  const listRef = useRef<HTMLOListElement>(null);
+  const hoverPausedRef = useRef(false);
+  const focusPausedRef = useRef(false);
+  const reducedMotionRef = useRef(false);
+  const pauseUntilRef = useRef(0);
+
+  useEffect(() => {
+    const list = listRef.current;
+    if (!list || record.results.length <= 5) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncReducedMotion = () => {
+      reducedMotionRef.current = reducedMotion.matches;
+    };
+    syncReducedMotion();
+    reducedMotion.addEventListener("change", syncReducedMotion);
+
+    const timer = window.setInterval(() => {
+      if (
+        hoverPausedRef.current ||
+        focusPausedRef.current ||
+        reducedMotionRef.current ||
+        Date.now() < pauseUntilRef.current
+      ) {
+        return;
+      }
+
+      const firstRow = list.querySelector<HTMLElement>("li");
+      if (!firstRow) return;
+
+      const gap = Number.parseFloat(window.getComputedStyle(list).rowGap) || 0;
+      const top = nextArenaScrollTop({
+        clientHeight: list.clientHeight,
+        rowStep: firstRow.getBoundingClientRect().height + gap,
+        scrollHeight: list.scrollHeight,
+        scrollTop: list.scrollTop,
+      });
+      list.scrollTo({ behavior: "smooth", top });
+    }, 2400);
+
+    return () => {
+      reducedMotion.removeEventListener("change", syncReducedMotion);
+      window.clearInterval(timer);
+    };
+  }, [record.results.length]);
+
+  const pauseForManualScroll = () => {
+    pauseUntilRef.current = Date.now() + 6000;
+  };
+
+  return (
+    <ol
+      aria-label={
+        locale === "zh"
+          ? `${record.name} 排名，可自动或手动滚动`
+          : `${record.name} rankings, auto-scrolls and supports manual scrolling`
+      }
+      className="arena-scoreboard-results"
+      data-auto-scroll={record.results.length > 5 ? "true" : "false"}
+      onBlur={() => {
+        focusPausedRef.current = false;
+      }}
+      onFocus={() => {
+        focusPausedRef.current = true;
+      }}
+      onKeyDown={(event) => {
+        if (
+          ["ArrowDown", "ArrowUp", "End", "Home", "PageDown", "PageUp", " "].includes(
+            event.key,
+          )
+        ) {
+          pauseForManualScroll();
+        }
+      }}
+      onPointerDown={pauseForManualScroll}
+      onPointerEnter={() => {
+        hoverPausedRef.current = true;
+      }}
+      onPointerLeave={() => {
+        hoverPausedRef.current = false;
+      }}
+      onTouchStart={pauseForManualScroll}
+      onWheel={pauseForManualScroll}
+      ref={listRef}
+      tabIndex={record.results.length > 5 ? 0 : undefined}
+    >
+      {record.results.map((result) => (
+        <li key={`${record.name}-${result.rank}-${result.name}`}>
+          <span className="arena-scoreboard-rank">{result.rank}</span>
+          <div className="arena-scoreboard-result-copy">
+            <strong>{result.name}</strong>
+            {result.detail ? <small>{result.detail}</small> : null}
+          </div>
+          <div aria-hidden="true" className="arena-scoreboard-track">
+            <span
+              style={
+                {
+                  "--arena-result-width": `${resultWidth(result, record.results)}%`,
+                } as CSSProperties
+              }
+            />
+          </div>
+          <b className="arena-scoreboard-value">{result.value}</b>
+        </li>
+      ))}
+    </ol>
+  );
 }
 
 export function ArenaScoreboardGrid({
@@ -74,27 +194,7 @@ export function ArenaScoreboardGrid({
             </div>
 
             {record.results.length > 0 ? (
-              <ol className="arena-scoreboard-results">
-                {record.results.map((result) => (
-                  <li key={`${record.name}-${result.rank}-${result.name}`}>
-                    <span className="arena-scoreboard-rank">{result.rank}</span>
-                    <div className="arena-scoreboard-result-copy">
-                      <strong>{result.name}</strong>
-                      {result.detail ? <small>{result.detail}</small> : null}
-                    </div>
-                    <div aria-hidden="true" className="arena-scoreboard-track">
-                      <span
-                        style={
-                          {
-                            "--arena-result-width": `${resultWidth(result, record.results)}%`,
-                          } as CSSProperties
-                        }
-                      />
-                    </div>
-                    <b className="arena-scoreboard-value">{result.value}</b>
-                  </li>
-                ))}
-              </ol>
+              <AutoScrollingResults locale={locale} record={record} />
             ) : (
               <p className="arena-scoreboard-empty">
                 {localized(locale, record.emptyState ?? "Not recorded yet.", record.emptyStateZh)}

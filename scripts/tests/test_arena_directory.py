@@ -44,8 +44,14 @@ class ArenaDirectoryTest(unittest.TestCase):
                 self.assertTrue(parsed.netloc)
 
         self.assertEqual([result["rank"] for result in records[0]["results"]], [1, 2, 3])
-        for record in records[1:]:
-            self.assertEqual([result["rank"] for result in record["results"]], [1, 2, 3, 4, 5])
+        self.assertEqual(
+            [result["rank"] for result in records[1]["results"]],
+            list(range(1, 13)),
+        )
+        self.assertEqual(
+            [result["rank"] for result in records[2]["results"]],
+            list(range(1, 10)),
+        )
 
         gray_swan = records[0]
         self.assertEqual(gray_swan["metric"], "Attack Success Rate ↓")
@@ -55,6 +61,11 @@ class ArenaDirectoryTest(unittest.TestCase):
         cybergym = records[1]
         self.assertEqual(cybergym["results"][2]["name"], "MDASH")
         self.assertEqual(cybergym["results"][3]["name"], "Wiz Atlas")
+        self.assertEqual(cybergym["results"][11]["name"], "OpenAI Agent")
+
+        exploitgym = records[2]
+        self.assertEqual(exploitgym["results"][5]["name"], "Gemini 3.1 Pro")
+        self.assertEqual(exploitgym["results"][8]["name"], "GLM-5.1")
 
 
 if __name__ == "__main__":
