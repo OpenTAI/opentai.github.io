@@ -1,46 +1,29 @@
-import { CollectionSummaryRow } from "@/components/collection-summary-row";
-import { LeaderboardView } from "@/components/leaderboard-view";
+import { RankingResourceGrid } from "@/components/ranking-resource-grid";
+import { LeaderboardStatistics } from "@/components/leaderboard-statistics";
 import { ResourceSubmissionDialog } from "@/components/resource-submission-dialog";
-import { PlannedList, SimplePage } from "@/components/simple-page";
+import { SimplePage } from "@/components/simple-page";
 import { SiteShell } from "@/components/site-shell";
 import { leaderboards } from "@/data/site";
 import { Locale } from "@/lib/i18n";
-import { buildLeaderboardSummary } from "@/lib/resource-catalog-presentation";
-
-const PLANNED = [
-  "LLM Safety Ranking",
-  "Agent Safety Ranking",
-  "Guard Model Ranking",
-  "Privacy Ranking",
-];
 
 export function LeaderboardPageView({ locale }: { locale: Locale }) {
-  const summary = buildLeaderboardSummary(leaderboards.tables);
-  const summaryItems = [
-    { icon: "#", label: "Scored entries", value: summary.entries.toLocaleString("en-US") },
-    { icon: "▦", label: "Boards", value: summary.boards.toLocaleString("en-US") },
-    { icon: "◉", label: "Models", value: summary.models.toLocaleString("en-US") },
-    { icon: "↗", label: "Source links", value: summary.links.toLocaleString("en-US") },
-  ];
-
   return (
     <SiteShell locale={locale} sectionLabel="Leaderboard">
       <SimplePage
-        breadcrumb={["Home", "Leaderboard"]}
+        breadcrumb={["Home", "Evaluation", "Leaderboards"]}
+        className="leaderboard-page"
         description={leaderboards.subtitle}
-        heroAside={<ResourceSubmissionDialog kind="arena" locale={locale} />}
+        heroAside={<ResourceSubmissionDialog kind="leaderboard" locale={locale} />}
         heroIcon="◫"
         locale={locale}
+        showDescription
         title="Leaderboard"
       >
-        <CollectionSummaryRow items={summaryItems} locale={locale} />
-        <LeaderboardView locale={locale} />
-
-        <PlannedList
-          items={PLANNED}
+        <LeaderboardStatistics locale={locale} records={leaderboards.directory} />
+        <RankingResourceGrid
+          label="Verified public leaderboards"
           locale={locale}
-          note="The boards above cover adversarial robustness only. The remaining rankings need scored submissions per benchmark before anything is published here."
-          title="Rankings still to come"
+          records={leaderboards.directory}
         />
       </SimplePage>
     </SiteShell>

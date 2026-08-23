@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "taxonomy": {
+    "Mobile": "The resource evaluates an agent operating a mobile-device interface or mobile-device emulator.",
+    "Computer-use": "The resource evaluates an agent operating a browser, website, desktop GUI, or mobile-device interface.",
+    "CLI": "The resource evaluates an agent operating through a command-line, shell, or terminal interface. No current catalog entry has sufficient source evidence for this tag."
+  },
+  "records": [
+    {
+      "name": "VPI-Bench",
+      "tags": ["Computer-use"],
+      "source": "https://arxiv.org/abs/2506.02456",
+      "evidence": "The primary paper title identifies VPI-Bench as a benchmark for visual prompt-injection attacks on computer-use agents."
+    },
+    {
+      "name": "AdvWeb / ARE",
+      "tags": ["Computer-use"],
+      "source": "https://arxiv.org/abs/2502.05206",
+      "evidence": "Safety at Scale Table 14 records this benchmark's evaluation focus as adversarial robustness for multimodal web agents."
+    },
+    {
+      "name": "ST-WebAgentBench",
+      "tags": ["Computer-use"],
+      "source": "https://arxiv.org/abs/2410.06703",
+      "evidence": "The primary paper title defines ST-WebAgentBench as a benchmark for safety and trustworthiness in web agents."
+    },
+    {
+      "name": "WASP",
+      "tags": ["Computer-use"],
+      "source": "https://github.com/facebookresearch/wasp",
+      "evidence": "The official repository identifies WASP as a web-agent security benchmark against prompt-injection attacks."
+    },
+    {
+      "name": "Refusal-Trained LLMs",
+      "tags": ["Computer-use"],
+      "source": "https://arxiv.org/abs/2410.13886",
+      "evidence": "The primary paper title explicitly studies refusal-trained language models acting as browser agents."
+    },
+    {
+      "name": "SafeArena",
+      "tags": ["Computer-use"],
+      "source": "https://github.com/McGill-NLP/safearena",
+      "evidence": "The official repository describes SafeArena as a benchmark for assessing the harmful capabilities of web agents."
+    },
+    {
+      "name": "MobileSafetyBench",
+      "tags": ["Mobile", "Computer-use"],
+      "source": "https://mobilesafetybench.github.io/",
+      "evidence": "The official project evaluates autonomous device-control agents in an Android-emulator environment."
+    }
+  ]
+}

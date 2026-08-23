@@ -26,7 +26,7 @@
 
 - 技术栈：Next.js 16 App Router + React 19 + Tailwind v4，**纯静态导出**
 - 现状：132 个静态页面（含 `/zh` 中文路由和 54 × 2 个 benchmark 详情页），私有仓库，Vercel 预览部署
-- 定位：`OpenTAI — The Open Hub for Trustworthy AI`
+- 定位：`OpenTAI — The Open Hub for Trustworthy AI and AI Safety`
 
 **最重要的一条原则写在 `AGENTS.md` 里：不编造内容。** 站上每一个名字、链接、作者、分数都必须能指回一个可核查的来源。查不到就留空并标注 —— 站上那些 `Not recorded yet` / `Still missing` / `DRAFT` 是刻意的，不是没做完。
 
@@ -39,7 +39,8 @@
 | `/` Discover | 全站搜索、订阅框（UI 完成，**后端未接**）、Trending、Latest releases |
 | `/papers` | **772 篇**论文，来自团队指定的两份清单；3 领域 × Research/Survey × 细分领域 |
 | `/benchmarks` | **54 个**，3 个批准领域轴，每个有中英文详情页；LLMs 18、Agents 21、Embodied AI 15 |
-| `/leaderboard` | **77 条评分**，9 个榜单，黑盒/白盒 |
+| `/leaderboard` | 3 个来源核验的公开排行榜卡片：LLM Safety、Agent Safety、Fairness；每张卡片只展示明确命名的单项指标，不再渲染旧的 77 条视觉模型黑白盒表格 |
+| `/arenas` | Gray Swan Arena、CyberGym、ExploitGym 三张卡片；可核验榜单展示主要结果，Gray Swan 暂无可静态核验的成绩快照并明确标注 |
 | `/models` `/datasets` `/tools` | 4 / 155 / 3；Datasets 中 LLMs 86、Agents 16、Embodied AI 60（7 个跨领域，所以分类数相加大于去重总数）。共保留 570 条论文级训练用途证据。只有原论文或官方仓库明确支持训练、微调、对齐、分类器训练、模仿学习或离线强化学习，或提供明确 train/validation split 的公开资源才进入 Datasets；仅有测试题、任务文件或评测环境的条目留在 Benchmarks。旧站 8 条 featured datasets 已全部排除 |
 | `/community` | 24 家合作机构 |
 | `/about` | 使命、收录规则、联系方式 + 三段草稿 |
@@ -76,7 +77,7 @@ ShareGPT、已下线的 Kaggle Fake News 竞赛数据）因无法核验当前可
 ### B 类 —— 等马老师给资料
 
 - **Community**：workshops / challenges / projects / contributors，零素材
-- **Leaderboard 另 4 个榜**：LLM Safety / Agent Safety / Guard Model / Privacy，需要真实评测分数
+- **Leaderboard 继续扩充**：新增榜单必须保留官方页面、精确指标、快照日期和可复核分数；不得把 AgentDojo 这类官方明确声明“不是排行榜”的结果页当作排行榜
 - **About 三段草稿**：governance / contributing / citation，页面上标着 DRAFT
 
 ### C 类 —— 等马老师做决定

@@ -6,6 +6,7 @@ export const datasetConfig: SubpageConfig = {
   slug: "datasets",
   breadcrumb: [
     "Home",
+    "Resources",
     "Datasets",
   ],
   title: "Datasets",
@@ -51,7 +52,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-07-09",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -106,7 +106,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-08-02",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -175,7 +174,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2025-01-15",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -240,7 +238,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2019-07-23",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -391,7 +388,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-10-31",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -461,7 +457,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2009",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -502,7 +497,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-08-09",
       tags: [
         "training data",
-        "source: approved survey",
         "deep-learning",
         "evaluation",
         "foundation-models",
@@ -594,7 +588,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -631,7 +624,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-06-17",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -684,7 +676,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -721,7 +712,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-03-09",
       tags: [
         "training data",
-        "source: approved survey",
         "dataset",
         "detection",
         "segmentation",
@@ -778,7 +768,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-10-27",
       tags: [
         "training data",
-        "source: approved survey",
         "ai-safety",
         "beaver",
         "datasets",
@@ -888,7 +877,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-08-11",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -949,7 +937,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-04-15",
       tags: [
         "training data",
-        "source: approved survey",
         "llm-security",
       ],
       stats: [
@@ -1011,7 +998,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -1052,7 +1038,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-07-30",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -1110,7 +1095,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2023-08-24",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -1201,7 +1185,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2021-12-06",
       tags: [
         "training data",
-        "source: approved survey",
         "computer-vision",
         "deep-learning",
         "grounding",
@@ -1273,7 +1256,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2009",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -1341,7 +1323,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-09-06",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -1400,7 +1381,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-03-07",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -1466,7 +1446,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2022-06-16",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -1517,7 +1496,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-05-12",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -1572,7 +1550,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2020-03-01",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -1631,7 +1608,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2018",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -1680,7 +1656,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -1720,7 +1695,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2025-02-23",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -1787,7 +1761,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2022-11-08",
       tags: [
         "training data",
-        "source: approved survey",
         "autonomous-driving",
         "cruw-dataset",
         "cruw-devkit",
@@ -1850,7 +1823,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2018",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -1887,7 +1859,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2004",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -1927,7 +1898,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2023-07-19",
       tags: [
         "training data",
-        "source: approved survey",
         "benchmark",
         "chinese-llms",
         "evaluation",
@@ -2003,7 +1973,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2020-04-15",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -2087,7 +2056,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-06-30",
       tags: [
         "training data",
-        "source: approved survey",
         "chatbot",
         "databricks",
         "dolly",
@@ -2142,7 +2110,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2019-07-23",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -2196,7 +2163,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2023-08-25",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -2266,7 +2232,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-09-15",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -2325,7 +2290,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-04-13",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -2380,7 +2344,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2022-12-29",
       tags: [
         "training data",
-        "source: approved survey",
         "dataset",
         "machine-learning",
         "nlp",
@@ -2444,7 +2407,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-07-25",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -2499,7 +2461,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-06-07",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -2554,7 +2515,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-07-02",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -2603,7 +2563,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -2638,7 +2597,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -2671,7 +2629,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-01-21",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -2784,7 +2741,6 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -2846,7 +2802,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-06-17",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -2946,7 +2901,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2018",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -2987,7 +2941,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-06-12",
       tags: [
         "training data",
-        "source: approved survey",
         "abuse",
         "classifier",
         "computational-social-science",
@@ -3046,7 +2999,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2009",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -3214,7 +3166,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2009",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -3276,7 +3227,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2009",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -3322,7 +3272,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -3405,7 +3354,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-09-30",
       tags: [
         "training data",
-        "source: approved survey",
         "artificial-intelligence",
         "python",
         "pytorch",
@@ -3461,7 +3409,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -3500,7 +3447,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-05-15",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -3555,7 +3501,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2013",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -3746,7 +3691,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2021",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -3785,7 +3729,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-05-06",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -3842,7 +3785,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-07-30",
       tags: [
         "training data",
-        "source: approved survey",
         "robotics",
         "robotics-simulation",
       ],
@@ -3903,7 +3845,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2023-06-05",
       tags: [
         "training data",
-        "source: approved survey",
         "benchmark",
         "imitation-learning",
         "lifelong-learning",
@@ -4098,7 +4039,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2015",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -4143,7 +4083,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-03-17",
       tags: [
         "training data",
-        "source: approved survey",
         "alignment",
         "dataset",
         "gemma",
@@ -4207,7 +4146,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-03-17",
       tags: [
         "training data",
-        "source: approved survey",
         "alignment",
         "dataset",
         "gemma",
@@ -4272,7 +4210,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-08-12",
       tags: [
         "training data",
-        "source: approved survey",
         "chatbot",
         "chatgpt",
         "foundation-models",
@@ -4343,7 +4280,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-09-30",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -4406,7 +4342,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2024-10-09",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -4486,7 +4421,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-03-17",
       tags: [
         "training data",
-        "source: approved survey",
         "alignment",
         "dataset",
         "gemma",
@@ -4550,7 +4484,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-03-17",
       tags: [
         "training data",
-        "source: approved survey",
         "alignment",
         "dataset",
         "gemma",
@@ -4614,7 +4547,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-03-17",
       tags: [
         "training data",
-        "source: approved survey",
         "alignment",
         "dataset",
         "gemma",
@@ -4678,7 +4610,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-03-17",
       tags: [
         "training data",
-        "source: approved survey",
         "alignment",
         "dataset",
         "gemma",
@@ -4741,7 +4672,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2006",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -4778,7 +4708,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2022-11-28",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -4834,7 +4763,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-08-15",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -4891,7 +4819,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-03-05",
       tags: [
         "training data",
-        "source: approved survey",
         "artificial-inteligence",
         "chatgpt",
         "deep-learning",
@@ -4956,7 +4883,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-10-15",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -5005,7 +4931,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5057,7 +4982,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-08-18",
       tags: [
         "training data",
-        "source: approved survey",
         "crowdsourcing",
         "internet-freedom",
         "open-data",
@@ -5116,7 +5040,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2012",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5153,7 +5076,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2014",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5231,7 +5153,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5277,7 +5198,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5318,7 +5238,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2017",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5355,7 +5274,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2005",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5390,7 +5308,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-08-06",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -5492,7 +5409,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5552,7 +5468,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-11-05",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -5649,7 +5564,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-08-17",
       tags: [
         "training data",
-        "source: approved survey",
         "ai",
         "assistant",
         "chatgpt",
@@ -5706,7 +5620,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5737,7 +5650,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5768,7 +5680,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5806,7 +5717,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-01-13",
       tags: [
         "training data",
-        "source: approved survey",
         "3d-occupancy",
         "autonomous-driving",
         "foundation-model",
@@ -5854,7 +5764,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5891,7 +5800,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-06-23",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -5936,7 +5844,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -5969,7 +5876,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2015",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -6000,7 +5906,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -6037,7 +5942,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-11-24",
       tags: [
         "training data",
-        "source: approved survey",
         "ai-safety",
         "alpaca",
         "beaver",
@@ -6094,7 +5998,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -6131,7 +6034,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-09-05",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -6186,7 +6088,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2013",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -6230,7 +6131,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2021-08-06",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -6304,7 +6204,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2017-11-20",
       tags: [
         "training data",
-        "source: approved survey",
         "matterport3d-dataset",
         "matterport3d-simulator",
         "natural-language-processing",
@@ -6373,7 +6272,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -6410,7 +6308,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2000",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -6453,7 +6350,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-07-29",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -6512,7 +6408,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2023-04-20",
       tags: [
         "training data",
-        "source: approved survey",
         "attack-defense",
         "chatgpt",
         "chinese-language",
@@ -6595,7 +6490,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-07-22",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -6646,7 +6540,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-05-09",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -6697,7 +6590,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-01-26",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -6754,7 +6646,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-04-03",
       tags: [
         "training data",
-        "source: approved survey",
         "dataset",
         "deep-learning",
         "evaluation",
@@ -6813,7 +6704,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2015",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -6857,7 +6747,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2016",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -6894,7 +6783,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-07-01",
       tags: [
         "training data",
-        "source: approved survey",
         "chatgpt",
         "eccv2024",
         "gpt",
@@ -6953,7 +6841,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-03-09",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -7005,7 +6892,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-07-27",
       tags: [
         "training data",
-        "source: approved survey",
         "chain-of-thought",
         "embodied-ai",
         "human-centric-ai",
@@ -7058,7 +6944,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -7106,7 +6991,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2018",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -7143,7 +7027,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2018",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -7182,7 +7065,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -7340,7 +7222,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-06-18",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -7399,7 +7280,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-03-15",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -7452,7 +7332,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-07-17",
       tags: [
         "training data",
-        "source: approved survey",
         "deep-learning",
         "instruction-following",
         "language-model",
@@ -7597,7 +7476,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -7634,7 +7512,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2011",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -7669,7 +7546,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -7704,7 +7580,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -7741,7 +7616,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-12-11",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -7796,7 +7670,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2011",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -7833,7 +7706,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-06-20",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -7888,7 +7760,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2022-11-05",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -7943,7 +7814,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2012",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -7989,7 +7859,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -8032,7 +7901,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-05-21",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -8081,7 +7949,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -8132,7 +7999,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2024-04-05",
       tags: [
         "training data",
-        "source: approved survey",
         "acl2017",
         "machine-reading",
         "nlp",
@@ -8194,7 +8060,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2021-09-08",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -8263,7 +8128,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-08-18",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -8320,7 +8184,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2021-05-28",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -8396,7 +8259,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-05-26",
       tags: [
         "training data",
-        "source: approved survey",
         "llm",
         "rlhf",
         "transformers",
@@ -8468,7 +8330,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-12-29",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -8532,7 +8393,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2023-02-09",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -8589,7 +8449,6 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -8630,7 +8489,6 @@ export const datasetConfig: SubpageConfig = {
       year: "2016",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -8671,7 +8529,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2022-10-06",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -8750,7 +8607,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -8792,7 +8648,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2018-02-22",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -8843,7 +8698,6 @@ export const datasetConfig: SubpageConfig = {
       type: "Embodied AI",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -8878,7 +8732,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -8917,7 +8770,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2026-01-08",
       tags: [
         "training data",
-        "source: approved survey",
         "autonomous-driving",
         "dataset",
       ],
@@ -8997,7 +8849,6 @@ export const datasetConfig: SubpageConfig = {
       type: "Agents",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -9028,7 +8879,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -9070,7 +8920,6 @@ export const datasetConfig: SubpageConfig = {
       type: "LLMs",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [],
       resources: [
@@ -9111,7 +8960,6 @@ export const datasetConfig: SubpageConfig = {
       posted: "2025-04-15",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -9186,7 +9034,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2025-02-24",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {
@@ -9241,7 +9088,6 @@ export const datasetConfig: SubpageConfig = {
       updated: "2019-07-23",
       tags: [
         "training data",
-        "source: approved survey",
       ],
       stats: [
         {

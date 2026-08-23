@@ -80,6 +80,21 @@ export function buildYearSeries(
   });
 }
 
+export function buildRecentYearSeries(
+  years: readonly DatasetYearCount[],
+  endYear: number,
+  windowSize = 5,
+): DatasetYearCount[] {
+  if (!Number.isInteger(endYear) || !Number.isInteger(windowSize) || windowSize < 1) return [];
+
+  const counts = new Map(years.map(({ count, year }) => [year, count]));
+  const firstYear = endYear - windowSize + 1;
+  return Array.from({ length: windowSize }, (_, index) => {
+    const year = firstYear + index;
+    return { year, count: counts.get(year) ?? 0 };
+  });
+}
+
 export function countDatasetDomains(
   rows: readonly DatasetStatisticsRow[],
 ): DatasetCount[] {

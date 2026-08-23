@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CollectionSummaryRow } from "@/components/collection-summary-row";
+import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { ResourceSubmissionDialog } from "@/components/resource-submission-dialog";
 import { SubpageConfig, SubpageTableRow } from "@/data/site";
 import {
   buildCollectionStatistics,
+  buildRecentYearSeries,
   rowMatchesDomainFilters,
   type DatasetCount,
 } from "@/lib/dataset-statistics";
@@ -40,6 +42,13 @@ const COLUMNS = ["Resource", "Category", "Activity", "Links"] as const;
 const GRID = "lg:grid-cols-[2.2fr_0.8fr_0.95fr_0.75fr]";
 
 type ResourceCardKind = "benchmark" | "dataset";
+type InteractionEnvironment = "Mobile" | "Computer-use" | "CLI";
+
+const INTERACTION_ENVIRONMENTS: readonly InteractionEnvironment[] = [
+  "Mobile",
+  "Computer-use",
+  "CLI",
+];
 
 function externalResource(
   row: SubpageTableRow,
@@ -311,18 +320,16 @@ function ResourceStatistics({
   const growthTitle = `${noun} growth by year`;
   const yearlyDescription = `Annual count of ${plural} with a recorded year.`;
   const domainTitle = `${noun}s by domain`;
-  const calculationNote = kind === "dataset"
-    ? "Calculated from the verified training datasets below."
-    : "Calculated from the verified benchmarks below.";
+  const recentYears = buildRecentYearSeries(statistics.years, new Date().getUTCFullYear());
 
-  const chartWidth = 920;
-  const chartHeight = 280;
+  const chartWidth = 620;
+  const chartHeight = 250;
   const plot = { top: 18, right: 22, bottom: 42, left: 48 };
   const plotWidth = chartWidth - plot.left - plot.right;
   const plotHeight = chartHeight - plot.top - plot.bottom;
-  const maximumCount = Math.max(...statistics.years.map(({ count }) => count), 1);
+  const maximumCount = Math.max(...recentYears.map(({ count }) => count), 1);
   const yMaximum = Math.max(4, Math.ceil(maximumCount / 4) * 4);
-  const yearPoints = statistics.years.map(({ count, year }, index, years) => ({
+  const yearPoints = recentYears.map(({ count, year }, index, years) => ({
     count,
     year,
     x:
@@ -428,22 +435,17 @@ function ResourceStatistics({
   return (
     <section className="dataset-statistics" aria-labelledby={`${kind}-statistics-title`}>
       <div className="dataset-statistics-heading">
-        <div>
-          <span>{t(locale, "Automatically updated")}</span>
-          <h2 id={`${kind}-statistics-title`}>{t(locale, statisticsTitle)}</h2>
-        </div>
-        <p>{t(locale, calculationNote)}</p>
+        <h2 id={`${kind}-statistics-title`}>{t(locale, statisticsTitle)}</h2>
       </div>
       <div className="dataset-statistics-grid">
         <article className="dataset-year-card">
           <div className="dataset-chart-card-heading">
             <div>
               <h3>{t(locale, growthTitle)}</h3>
-              <p>{t(locale, yearlyDescription)}</p>
             </div>
-            <span>{statistics.years.reduce((total, year) => total + year.count, 0)}</span>
+            <span>{recentYears.reduce((total, year) => total + year.count, 0)}</span>
           </div>
-          {statistics.years.length ? (
+          {recentYears.length ? (
             <div className="dataset-year-chart-scroll">
               <svg
                 aria-labelledby="dataset-year-chart-title dataset-year-chart-description"
@@ -493,25 +495,22 @@ function ResourceStatistics({
             <p className="dataset-chart-empty">{t(locale, "No recorded year data")}</p>
           )}
         </article>
-        <div className="dataset-donut-grid dataset-donut-grid-single">
-          <article>
-            <div className="dataset-chart-card-heading">
-              <div>
-                <h3>{t(locale, domainTitle)}</h3>
-                <p>{t(locale, "Recorded domain assignments in this collection.")}</p>
-              </div>
+        <article className="dataset-domain-card">
+          <div className="dataset-chart-card-heading">
+            <div>
+              <h3>{t(locale, domainTitle)}</h3>
             </div>
-            {renderDonut({
-              centerLabel: t(locale, plural),
-              centerValue: statistics.total,
-              colors: domainColors,
-              description: t(locale, "Recorded domain assignments in this collection."),
-              id: `${kind}-domain-chart`,
-              items: statistics.domains,
-              title: t(locale, domainTitle),
-            })}
-          </article>
-        </div>
+          </div>
+          {renderDonut({
+            centerLabel: t(locale, plural),
+            centerValue: statistics.total,
+            colors: domainColors,
+            description: t(locale, "Recorded domain assignments in this collection."),
+            id: `${kind}-domain-chart`,
+            items: statistics.domains,
+            title: t(locale, domainTitle),
+          })}
+        </article>
       </div>
     </section>
   );
@@ -529,6 +528,8 @@ export function SubpageLayout(
   const { locale, resourceCardKind } = props;
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeEnvironment, setActiveEnvironment] =
+    useState<InteractionEnvironment | null>(null);
   const [openLinksId, setOpenLinksId] = useState<string | null>(null);
   const [sortKey, setSortKey] = useState<ResourceSortKey>(
     resourceCardKind ? "stars-desc" : "default",
@@ -567,6 +568,16 @@ export function SubpageLayout(
     [props.tableRows],
   );
 
+  const environmentStats = useMemo(
+    () =>
+      INTERACTION_ENVIRONMENTS.map((environment) => ({
+        environment,
+        count: props.tableRows.filter((row) => row.tags?.includes(environment)).length,
+      })),
+    [props.tableRows],
+  );
+  const hasInteractionEnvironments = environmentStats.some(({ count }) => count > 0);
+
   const visibleRows = useMemo(() => {
     const category = categoryStats.find(
       ({ category }) => category.title === activeCategory,
@@ -576,7 +587,11 @@ export function SubpageLayout(
       ? props.tableRows.filter((row) => rowMatchesDomainFilters(row, filters))
       : props.tableRows;
 
-    const filteredRows = categoryRows.filter((row) => {
+    const environmentRows = activeEnvironment
+      ? categoryRows.filter((row) => row.tags?.includes(activeEnvironment))
+      : categoryRows;
+
+    const filteredRows = environmentRows.filter((row) => {
       const searchValues: (string | null | undefined)[] = [
         row.name,
         row.note,
@@ -600,7 +615,7 @@ export function SubpageLayout(
       );
     });
     return sortResourceRows(filteredRows, sortKey);
-  }, [activeCategory, categoryStats, locale, normalizedQuery, props.tableRows, sortKey]);
+  }, [activeCategory, activeEnvironment, categoryStats, locale, normalizedQuery, props.tableRows, sortKey]);
 
   const catalogSummary = useMemo(
     () =>
@@ -651,30 +666,20 @@ export function SubpageLayout(
 
   return (
     <div
-      className={`mx-auto max-w-[1480px] space-y-7 ${resourceCardKind ? "resource-catalog-page" : ""}`}
+      className={`page-frame space-y-7 ${resourceCardKind ? "resource-catalog-page" : ""}`}
     >
-      <div className="subpage-breadcrumb">
-        {props.breadcrumb.map((item, index) => (
-          <span key={item} className="flex items-center gap-2">
-            {index > 0 ? <span className="text-[#c0c5d1]">›</span> : null}
-            <span>{t(locale, item)}</span>
-          </span>
-        ))}
-      </div>
+      <PageBreadcrumb items={props.breadcrumb} locale={locale} />
 
       <section className="subpage-hero-card">
-        <div className="grid gap-7 xl:grid-cols-[190px_minmax(0,1fr)_0.72fr] xl:items-start">
+        <div className="subpage-hero-layout">
           <div className="subpage-icon-panel">
             <div className="subpage-icon-orb">{props.heroIcon}</div>
           </div>
 
-          <div className="space-y-4">
+          <div className="subpage-hero-copy">
             <h1 className="text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.06em] text-[#0f172a]">
               {t(locale, props.title)}
             </h1>
-            <p className="max-w-3xl text-[1rem] leading-8 text-[#556072]">
-              {t(locale, props.description)}
-            </p>
             <div className="flex flex-wrap gap-3">
               {[
                 { label: "Entries", value: String(props.tableRows.length) },
@@ -691,12 +696,10 @@ export function SubpageLayout(
           </div>
 
           {resourceCardKind ? (
-            <ResourceSubmissionDialog kind={resourceCardKind} locale={locale} />
-          ) : (
-            <div className="space-y-4">
-              <p className="text-[0.98rem] leading-8 text-[#556072]">{t(locale, props.overview)}</p>
+            <div className="subpage-hero-aside">
+              <ResourceSubmissionDialog kind={resourceCardKind} locale={locale} />
             </div>
-          )}
+          ) : null}
         </div>
       </section>
 
@@ -706,7 +709,7 @@ export function SubpageLayout(
 
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#eceff5] pb-4">
         <p className="text-sm text-[#667085]">
-          {normalizedQuery || activeCategory
+          {normalizedQuery || activeCategory || activeEnvironment
             ? locale === "zh"
               ? `${visibleRows.length} 项匹配结果`
               : `${visibleRows.length} matching ${visibleRows.length === 1 ? "entry" : "entries"}`
@@ -743,6 +746,41 @@ export function SubpageLayout(
                 value={query}
               />
             </div>
+            {resourceCardKind && hasInteractionEnvironments ? (
+              <div className="resource-environment-filter">
+                <span>{t(locale, "Interaction environment")}</span>
+                <div
+                  aria-label={t(locale, "Filter resources by interaction environment")}
+                  className="dataset-domain-pills"
+                  role="group"
+                >
+                  <button
+                    aria-pressed={activeEnvironment === null}
+                    className={activeEnvironment === null ? "dataset-domain-pill-active" : undefined}
+                    onClick={() => setActiveEnvironment(null)}
+                    type="button"
+                  >
+                    {t(locale, "All environments")}
+                  </button>
+                  {environmentStats.map(({ environment, count }) => (
+                    <button
+                      aria-pressed={activeEnvironment === environment}
+                      className={
+                        activeEnvironment === environment
+                          ? "dataset-domain-pill-active"
+                          : undefined
+                      }
+                      disabled={count === 0}
+                      key={environment}
+                      onClick={() => setActiveEnvironment(environment)}
+                      type="button"
+                    >
+                      {t(locale, environment)} {count}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : null}
             {resourceCardKind === "dataset" ? (
               <div
                 aria-label={t(locale, "Filter datasets by domain")}

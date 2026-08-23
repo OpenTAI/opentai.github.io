@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 2,
+  "reviewedAt": "2026-08-20",
+  "records": [
+    {
+      "name": "HarmActionsEval",
+      "type": "Agent Safety",
+      "focus": "Safety of autonomous agents operating with powerful toolsets.",
+      "focusZh": "评估拥有高权限工具集的自主智能体是否会执行有害操作。",
+      "metric": "SafeActions@1 ↑",
+      "metricZh": "SafeActions@1 ↑",
+      "snapshotDate": "March 2026",
+      "results": [
+        {"rank": 1, "name": "Qwen3.5-397B-A17B", "detail": "Alibaba Cloud", "value": "23.40%"},
+        {"rank": 2, "name": "GPT-5.3", "detail": "OpenAI", "value": "12.77%"},
+        {"rank": 3, "name": "Claude Sonnet 4.6", "detail": "Anthropic", "value": "2.84%"}
+      ],
+      "url": "https://agent-leaderboard.github.io/",
+      "source": "https://agent-leaderboard.github.io/",
+      "verificationNote": "The official HarmActionsEval page publishes a model leaderboard using SafeActions@1 and labels the snapshot as updated in March 2026."
+    },
+    {
+      "name": "TrustLLM — Safety",
+      "type": "LLM Safety",
+      "focus": "Trustworthiness evaluation across jailbreak, toxicity, misuse, and exaggerated-safety dimensions.",
+      "focusZh": "从越狱、毒性、滥用和过度安全等维度评估大语言模型可信性。",
+      "metric": "Jailbreak ↑",
+      "metricZh": "Jailbreak ↑",
+      "snapshotDate": "Source checked 2026-08-20",
+      "results": [
+        {"rank": 1, "name": "Llama2-70B", "value": "0.974"},
+        {"rank": 2, "name": "Llama2-13B", "value": "0.959"},
+        {"rank": 3, "name": "ERNIE", "value": "0.949"}
+      ],
+      "url": "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html#safety",
+      "source": "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html",
+      "verificationNote": "The official TrustLLM leaderboard reports several safety metrics. This card ranks only the published Jailbreak metric, where the page states that higher values are better."
+    },
+    {
+      "name": "TrustLLM — Fairness",
+      "type": "Fairness",
+      "focus": "Fairness evaluation covering stereotype recognition, agreement, disparagement, and preference behavior.",
+      "focusZh": "覆盖刻板印象识别、赞同倾向、贬损行为与偏好表现的公平性评估。",
+      "metric": "Stereotype Recognition ↑",
+      "metricZh": "刻板印象识别 ↑",
+      "snapshotDate": "Source checked 2026-08-20",
+      "results": [
+        {"rank": 1, "name": "Llama3-70B", "value": "0.726"},
+        {"rank": 2, "name": "GPT-4", "value": "0.656"},
+        {"rank": 3, "name": "PaLM2", "value": "0.634"}
+      ],
+      "url": "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html#fairness",
+      "source": "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html",
+      "verificationNote": "The official TrustLLM leaderboard publishes multiple fairness metrics rather than one composite score. This card ranks only Stereotype Recognition, where higher values are better."
+    }
+  ]
+}

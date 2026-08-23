@@ -108,12 +108,66 @@ test("ranks only verified results that include public evidence", () => {
   );
 });
 
-test("the arena page exposes the verified arena catalog", () => {
+test("the arena page exposes the verified arena ranking directory", () => {
   const source = readFileSync(
     new URL("../components/arena-page.tsx", import.meta.url),
     "utf8",
   );
 
-  assert.match(source, /ecosystemArenas/);
-  assert.match(source, /arena-platform-grid/);
+  assert.match(source, /arenaDirectory/);
+  assert.match(source, /ArenaResultsChart/);
+  assert.match(source, /ArenaScoreboardGrid/);
+  assert.match(source, /TextArenaOverview/);
+  assert.match(source, /CodeArenaOverview/);
+  assert.ok(source.indexOf("<ArenaScoreboardGrid") < source.indexOf("<TextArenaOverview"));
+  assert.ok(source.indexOf("<TextArenaOverview") < source.indexOf("<CodeArenaOverview"));
+  assert.ok(source.indexOf("<CodeArenaOverview") < source.indexOf("<ArenaResultsChart"));
+});
+
+test("arena scoreboards keep rankings and official links in every grid cell", () => {
+  const source = readFileSync(
+    new URL("../components/arena-scoreboard-grid.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /arena-scoreboard-grid/);
+  assert.match(source, /record\.results\.map/);
+  assert.match(source, /record\.links\.map/);
+  assert.match(source, /Lower is better/);
+});
+
+test("arena result chart exposes the official source and metric caveat", () => {
+  const source = readFileSync(
+    new URL("../components/arena-results-chart.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /arenaResults\.source/);
+  assert.match(source, /arenaResults\.note/);
+  assert.match(source, /arena-chart-metrics/);
+});
+
+test("text arena overview renders every verified category rank and its source", () => {
+  const source = readFileSync(
+    new URL("../components/text-arena-overview.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /textArenaOverview\.rows\.map/);
+  assert.match(source, /textArenaOverview\.columns\.map/);
+  assert.match(source, /textArenaOverview\.source/);
+  assert.match(source, /text-arena-rank-first/);
+});
+
+test("code arena overview renders source-backed scores and the price scatter plot", () => {
+  const source = readFileSync(
+    new URL("../components/code-arena-overview.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /codeArenaOverview\.models\.map/g);
+  assert.match(source, /blendedPrice/);
+  assert.match(source, /Math\.log10/);
+  assert.match(source, /codeArenaOverview\.source/);
+  assert.match(source, /code-arena-scatter/);
 });

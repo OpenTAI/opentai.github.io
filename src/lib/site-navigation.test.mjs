@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   activeNavigationGroup,
+  footerNavigationGroups,
   navigationGroups,
 } from "./site-navigation.ts";
 
@@ -19,24 +20,46 @@ test("groups the public navigation without linking unfinished routes", () => {
           ["Datasets", "/datasets", false],
           ["Benchmarks", "/benchmarks", false],
           ["Models", "/models", false],
-          ["Frameworks", null, true],
-          ["Tools", "/tools", false],
+          ["Frameworks", "/frameworks", false],
         ],
       },
       {
         label: "Evaluation",
         items: [
           ["Leaderboards", "/leaderboard", false],
-          ["Arenas", null, true],
+          ["Arenas", "/arenas", false],
         ],
       },
       {
         label: "Ecosystem",
         items: [
-          ["Companies", null, true],
+          ["Companies", "/companies", false],
           ["Community", "/community", false],
         ],
       },
+    ],
+  );
+});
+
+test("footer navigation prioritizes exploration and existing policy sections", () => {
+  assert.deepEqual(
+    footerNavigationGroups.map((group) => [
+      group.label,
+      group.items.map((item) => item.href),
+    ]),
+    [
+      ["Research & Evaluation", ["/papers", "/benchmarks", "/leaderboard", "/arenas"]],
+      ["Resources", ["/datasets", "/models", "/frameworks"]],
+      ["OpenTAI", ["/companies", "/community", "/about", "https://github.com/OpenTAI"]],
+      [
+        "Terms & Policies",
+        [
+          "/about#inclusion",
+          "/about#governance",
+          "/about#contributing",
+          "/about#citation",
+        ],
+      ],
     ],
   );
 });

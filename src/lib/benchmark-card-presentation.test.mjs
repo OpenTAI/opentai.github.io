@@ -53,11 +53,30 @@ test("leaves dataset cards unchanged", () => {
       kind: "dataset",
       locale: "zh",
       note: "Verified training data description.",
-      tags: ["source: safety-at-scale", "training dataset"],
+      tags: ["source: approved survey", "training dataset"],
     }),
     {
       note: "Verified training data description.",
-      tags: ["source: safety-at-scale", "training dataset"],
+      tags: ["training dataset"],
+    },
+  );
+});
+
+test("keeps verified interaction tags ahead of the benchmark interaction mode", () => {
+  assert.deepEqual(
+    benchmarkCardPresentation({
+      ...simulationRow,
+      tags: [
+        "Mobile",
+        "Computer-use",
+        "prompt injection",
+        "simulation-based benchmarks",
+      ],
+      locale: "en",
+    }),
+    {
+      note: "Evaluation focus: IPI attacks.",
+      tags: ["Mobile", "Computer-use", "simulation-based benchmarks"],
     },
   );
 });

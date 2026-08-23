@@ -62,7 +62,6 @@ export function ContactDialog({
       <button className="contact-dialog-trigger" onClick={() => setIsOpen(true)} type="button">
         {t(locale, "Contact Us")}
       </button>
-      <span>{email}</span>
 
       {isOpen ? (
         <div
@@ -92,6 +91,10 @@ export function ContactDialog({
 
             <p className="submission-dialog-note">
               {t(locale, "This form opens your email app and sends no data through the website.")}
+              {" "}
+              <a className="contact-dialog-email" href={`mailto:${email}`}>
+                {email}
+              </a>
             </p>
 
             <form className="submission-form" noValidate onSubmit={submit}>

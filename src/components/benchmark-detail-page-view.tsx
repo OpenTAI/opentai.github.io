@@ -65,7 +65,7 @@ export function BenchmarkDetailPageView({ locale, slug }: { locale: Locale; slug
   return (
     <SiteShell locale={locale} sectionLabel="Benchmarks">
       <SimplePage
-        breadcrumb={["Home", "Benchmarks", detail.name]}
+        breadcrumb={["Home", "Resources", "Benchmarks", detail.name]}
         description={detail.description}
         heroIcon="◎"
         locale={locale}

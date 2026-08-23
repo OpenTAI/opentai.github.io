@@ -4,8 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
   title: "Arenas",
-  description:
-    "OpenTAI's community arena for adversarial AI safety challenges, reproducible submissions, and verified leaderboards.",
+  description: "A source-checked directory of public AI safety and cybersecurity arenas.",
 };
 
 export default function ArenasPage() {

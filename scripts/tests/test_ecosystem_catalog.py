@@ -63,6 +63,42 @@ class EcosystemCatalogValidationTests(unittest.TestCase):
         self.assertIn('id: "openrt"', generated)
         self.assertIn('id: "gray-swan-arena"', generated)
         self.assertIn('id: "virtue-ai"', generated)
+        self.assertIn('id: "xsafeai"', generated)
+
+    def test_xsafeai_valuation_is_explicitly_labeled_as_an_estimate(self):
+        catalog = json.loads(
+            (ROOT / "scripts" / "data" / "ecosystem-catalog.json").read_text()
+        )
+        record = next(item for item in catalog["companies"] if item["id"] == "xsafeai")
+
+        self.assertEqual(record["valuation"], "OpenTAI estimate · RMB 50–100M (low confidence)")
+        self.assertEqual(record["valuationZh"], "OpenTAI 估算 · 人民币 5000 万–1 亿元（低置信度）")
+        self.assertIn("No priced financing round", record["verificationNote"])
+        self.assertIn("not an investor, transaction, or market valuation", record["verificationNote"])
+
+    def test_every_company_has_a_visible_sourced_or_labeled_value(self):
+        catalog = json.loads(
+            (ROOT / "scripts" / "data" / "ecosystem-catalog.json").read_text()
+        )
+
+        self.assertEqual(len(catalog["companies"]), 20)
+        for record in catalog["companies"]:
+            with self.subTest(company=record["id"]):
+                self.assertTrue(record.get("valuation"))
+                self.assertTrue(record.get("valuationZh"))
+                self.assertRegex(record["valuation"], r"\d")
+                self.assertRegex(record["valuationZh"], r"\d")
+                self.assertTrue(
+                    "estimate" in record["valuation"].lower()
+                    or "valuation" in record["valuation"].lower()
+                    or "consideration" in record["valuation"].lower()
+                    or "reported range" in record["valuation"].lower()
+                )
+                self.assertTrue(
+                    "valuation" in record["verificationNote"].lower()
+                    or "consideration" in record["verificationNote"].lower()
+                    or "capitalization" in record["verificationNote"].lower()
+                )
 
     def test_rejects_duplicate_ids_across_sections(self):
         catalog = valid_catalog()

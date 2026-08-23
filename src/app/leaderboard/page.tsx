@@ -2,10 +2,10 @@ import { LeaderboardPageView } from "@/components/leaderboard-page-view";
 
 export const metadata = {
   title: "Leaderboard",
-  description: "Adversarial robustness rankings across black-box and white-box evaluations.",
+  description: "Open trustworthiness and safety leaderboards for LLMs, Agents, and Embodied AI.",
   openGraph: {
     title: "Leaderboard · OpenTAI",
-    description: "Adversarial robustness rankings across black-box and white-box evaluations.",
+    description: "Open trustworthiness and safety leaderboards for LLMs, Agents, and Embodied AI.",
   },
 };
 

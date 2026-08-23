@@ -46,6 +46,7 @@ test("uses a specific name label for each submitted resource kind", () => {
   assert.equal(resourceSubmissionNameLabel("dataset"), "Dataset Name");
   assert.equal(resourceSubmissionNameLabel("benchmark"), "Benchmark Name");
   assert.equal(resourceSubmissionNameLabel("arena"), "Arena Name");
+  assert.equal(resourceSubmissionNameLabel("leaderboard"), "Leaderboard Name");
   assert.equal(resourceSubmissionNameLabel("paper"), "Paper Title");
 });
 
@@ -97,6 +98,20 @@ test("requires a public paper link while keeping its GitHub link optional", () =
     }),
     { githubUrl: "github" },
   );
+});
+
+test("requires a public leaderboard link while keeping its GitHub link optional", () => {
+  const valid = {
+    githubUrl: "",
+    link: "https://example.com/leaderboard",
+    name: "Safety Leaderboard",
+    year: "2026",
+  };
+
+  assert.deepEqual(validateResourceSubmission("leaderboard", valid), {});
+  assert.deepEqual(validateResourceSubmission("leaderboard", { ...valid, link: "" }), {
+    link: "required",
+  });
 });
 
 test("builds a reviewable issue for the requested resource kind", () => {

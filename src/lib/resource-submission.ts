@@ -1,4 +1,4 @@
-export type ResourceSubmissionKind = "arena" | "benchmark" | "dataset" | "paper";
+export type ResourceSubmissionKind = "arena" | "benchmark" | "dataset" | "leaderboard" | "paper";
 
 export type ResourceSubmissionValues = {
   githubUrl: string;
@@ -62,12 +62,13 @@ export function validateResourceSubmission(
   } else if (!/^(?:19|20)\d{2}$/.test(values.year.trim())) {
     errors.year = "year";
   }
-  if (kind === "paper" && !values.link.trim()) {
+  const requiresPublicLink = kind === "paper" || kind === "leaderboard";
+  if (requiresPublicLink && !values.link.trim()) {
     errors.link = "required";
   } else if (values.link.trim() && !publicUrl(values.link.trim())) {
     errors.link = "url";
   }
-  if (kind !== "paper" && !values.githubUrl.trim()) {
+  if (!requiresPublicLink && !values.githubUrl.trim()) {
     errors.githubUrl = "required";
   } else if (values.githubUrl.trim() && !githubRepositoryUrl(values.githubUrl.trim())) {
     errors.githubUrl = "github";
@@ -80,6 +81,7 @@ const KIND_LABELS: Record<ResourceSubmissionKind, string> = {
   arena: "Arena",
   benchmark: "Benchmark",
   dataset: "Dataset",
+  leaderboard: "Leaderboard",
   paper: "Paper",
 };
 

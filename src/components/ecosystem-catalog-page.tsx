@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import type { EcosystemRecord } from "@/data/ecosystem";
 import {
   type EcosystemSortKey,
@@ -25,6 +26,7 @@ const copy = {
     founded: "Founded",
     githubStars: "GitHub stars",
     links: "Official links",
+    companyValue: "Valuation / market cap",
     noMatches: "No verified entries match these filters.",
     publicResults: "Public results",
     search: "Search names, organizations, and categories…",
@@ -38,7 +40,6 @@ const copy = {
       "year-desc": "Newest first",
       "name-asc": "Name A–Z",
     },
-    verified: "Every description and field shown below is backed by the linked official sources.",
   },
   zh: {
     all: "全部",
@@ -49,6 +50,7 @@ const copy = {
     founded: "成立于",
     githubStars: "GitHub 星标",
     links: "官方链接",
+    companyValue: "估值 / 市值",
     noMatches: "没有符合当前筛选条件的已核验记录。",
     publicResults: "公开结果",
     search: "搜索名称、机构或分类……",
@@ -62,57 +64,40 @@ const copy = {
       "year-desc": "最新优先",
       "name-asc": "名称 A–Z",
     },
-    verified: "下方显示的每项描述与字段均可由所列官方来源核验。",
   },
 } as const;
 
-const pageCopy: Record<CatalogKind, Record<Locale, { eyebrow: string; intro: string; title: string }>> = {
+const pageCopy: Record<CatalogKind, Record<Locale, { title: string }>> = {
   models: {
     en: {
-      eyebrow: "Safety model index",
       title: "Models",
-      intro: "Open-source guard, security-specialized, and safety-aligned models for trustworthy AI systems.",
     },
     zh: {
-      eyebrow: "安全模型索引",
       title: "模型",
-      intro: "面向可信人工智能系统的开源护栏模型、安全专用模型与安全对齐模型。",
     },
   },
   frameworks: {
     en: {
-      eyebrow: "Open-source workflows",
       title: "Frameworks",
-      intro: "Open-source frameworks for red teaming, evaluating, training, and defending AI and agentic systems.",
     },
     zh: {
-      eyebrow: "开源工作流",
       title: "框架",
-      intro: "用于红队测试、评测、训练与防御 AI 和智能体系统的开源框架。",
     },
   },
   arenas: {
     en: {
-      eyebrow: "Adversarial evaluation",
       title: "Arenas",
-      intro: "Live and research arenas where AI systems are challenged through adversarial interaction and public evaluation.",
     },
     zh: {
-      eyebrow: "对抗评测",
       title: "竞技场",
-      intro: "通过对抗交互与公开评测挑战 AI 系统的在线竞技场和研究型竞技环境。",
     },
   },
   companies: {
     en: {
-      eyebrow: "Industry landscape",
       title: "Companies",
-      intro: "A source-backed view of companies building AI safety, agent security, evaluation, and red-teaming products.",
     },
     zh: {
-      eyebrow: "行业版图",
       title: "企业",
-      intro: "经来源核验的 AI 安全、智能体安全、评测与红队产品企业图谱。",
     },
   },
 };
@@ -150,9 +135,11 @@ function CatalogCard({
     <article className="ecosystem-card">
       <div className="ecosystem-card-head">
         <div className="ecosystem-logo" aria-hidden="true">{initials(record.name)}</div>
-        <div className="min-w-0">
-          <span className="ecosystem-category">{categoryLabel ?? record.category}</span>
-          <h2>{record.name}</h2>
+        <div className="ecosystem-card-heading">
+          <div className="min-w-0">
+            <span className="ecosystem-category">{categoryLabel ?? record.category}</span>
+            <h2>{record.name}</h2>
+          </div>
           {record.publisher ? <p className="ecosystem-publisher">{record.publisher}</p> : null}
         </div>
       </div>
@@ -220,21 +207,31 @@ function CatalogCard({
   );
 }
 
-function CompanyCard({ locale, record }: { locale: Locale; record: EcosystemRecord }) {
+function CompanyCard({
+  index,
+  locale,
+  record,
+}: {
+  index: number;
+  locale: Locale;
+  record: EcosystemRecord;
+}) {
   const strings = copy[locale];
   const logo = record.logo;
   const logoSource = record.logoSource;
+  const logoPath = logo?.startsWith("/")
+    ? `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${logo}`
+    : logo;
+  const country = locale === "zh" ? record.countryZh : record.country;
+  const valuation = locale === "zh" ? record.valuationZh : record.valuation;
   const companyFacts = [
     {
       label: strings.direction,
       value: locale === "zh" ? record.directionZh : record.direction,
+      tone: "focus",
       wide: true,
     },
     { label: strings.founded, value: record.founded },
-    {
-      label: strings.country,
-      value: locale === "zh" ? record.countryZh : record.country,
-    },
     {
       label: strings.academicOrigin,
       value: locale === "zh" ? record.academicOriginZh : record.academicOrigin,
@@ -248,8 +245,8 @@ function CompanyCard({ locale, record }: { locale: Locale; record: EcosystemReco
   ];
 
   return (
-    <article className="ecosystem-card company-card">
-      {logo && logoSource ? (
+    <article className="ecosystem-card company-card" id={`company-${record.id}`}>
+      {logoPath && logoSource ? (
         <a
           aria-label={locale === "zh" ? `查看 ${record.name} 官方 Logo 来源` : `View the official source for the ${record.name} logo`}
           className="company-logo-panel"
@@ -257,16 +254,25 @@ function CompanyCard({ locale, record }: { locale: Locale; record: EcosystemReco
           rel="noreferrer"
           target="_blank"
         >
+          <span className="company-card-index" aria-hidden="true">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <span className="company-logo-fallback" aria-hidden="true">{initials(record.name)}</span>
           <Image
             alt={`${record.name} logo`}
             className="company-logo-image"
             height={112}
-            src={logo}
+            onError={(event) => event.currentTarget.parentElement?.classList.remove("company-logo-loaded")}
+            onLoad={(event) => event.currentTarget.parentElement?.classList.add("company-logo-loaded")}
+            src={logoPath}
             width={320}
           />
         </a>
       ) : (
         <div className="company-logo-panel company-logo-placeholder" aria-label={`${record.name} logo`}>
+          <span className="company-card-index" aria-hidden="true">
+            {String(index + 1).padStart(2, "0")}
+          </span>
           <span>{initials(record.name)}</span>
         </div>
       )}
@@ -274,7 +280,16 @@ function CompanyCard({ locale, record }: { locale: Locale; record: EcosystemReco
       <div className="company-card-body">
         <div className="company-card-heading">
           <span className="ecosystem-category">{record.category}</span>
-          <h2>{record.name}</h2>
+          <div className="company-title-row">
+            <h2>{record.name}</h2>
+            <span className="company-country">{formatCatalogValue(country, locale)}</span>
+          </div>
+          {valuation ? (
+            <div className="company-valuation-highlight">
+              <span>{locale === "zh" ? "估值 / 交易价" : "Value / valuation"}</span>
+              <strong>{valuation}</strong>
+            </div>
+          ) : null}
         </div>
 
         <p className="ecosystem-description">
@@ -283,7 +298,13 @@ function CompanyCard({ locale, record }: { locale: Locale; record: EcosystemReco
 
         <div className="company-facts">
           {companyFacts.map((fact) => (
-            <div className={fact.wide ? "company-fact-wide" : ""} key={fact.label}>
+            <div
+              className={[
+                fact.wide ? "company-fact-wide" : "",
+                fact.tone === "focus" ? "company-fact-focus" : "",
+              ].filter(Boolean).join(" ")}
+              key={fact.label}
+            >
               <span>{fact.label}</span>
               <strong>{formatCatalogValue(fact.value, locale)}</strong>
             </div>
@@ -318,6 +339,129 @@ function CompanyCard({ locale, record }: { locale: Locale; record: EcosystemReco
         </details>
       </div>
     </article>
+  );
+}
+
+const companyMarketGroups = [
+  { category: "AI Safety", code: "C1", tone: "green" },
+  { category: "Agent Safety", code: "C2", tone: "teal" },
+  { category: "Evaluation", code: "C3", tone: "gold" },
+  { category: "AI Security", code: "C4", tone: "rust" },
+] as const;
+
+function CompanyMarketMap({
+  locale,
+  records,
+}: {
+  locale: Locale;
+  records: readonly EcosystemRecord[];
+}) {
+  const groups = companyMarketGroups
+    .map((group) => ({
+      ...group,
+      records: records.filter((record) => record.category === group.category),
+    }))
+    .filter((group) => group.records.length > 0);
+
+  return (
+    <section className="company-market-map" aria-labelledby="company-market-map-title">
+      <div className="company-market-map-heading">
+        <div>
+          <span className="company-market-map-kicker">
+            {locale === "zh" ? "市场地图 · 已核验目录" : "Market map · verified directory"}
+          </span>
+          <h2 id="company-market-map-title">
+            {locale === "zh" ? "AI 安全企业版图" : "AI safety company landscape"}
+          </h2>
+          <p>
+            {locale === "zh"
+              ? "按已核验的目录类别组织公司；选择节点可前往其官方页面。卡片数值优先采用披露的交易价或投后估值；其余为明确标注的 OpenTAI 区间估算。"
+              : "Companies grouped by their verified directory category. Select a node to open its official page. Card values prioritize disclosed transaction prices or post-money valuations; the rest are explicitly labeled OpenTAI range estimates."}
+          </p>
+          <small className="company-market-map-methodology">
+            {locale === "zh"
+              ? "估算方法：若仅披露最近融资额，按该轮约 12.5%–25% 稀释推算；未披露融资额的公司采用更宽的同阶段可比区间。所有估算均非公开市场市值。"
+              : "Estimate method: when only the latest round is disclosed, the range assumes roughly 12.5%–25% dilution; companies without a disclosed round use a wider same-stage comparable range. Estimates are not public-market capitalizations."}
+          </small>
+        </div>
+        <span className="company-market-map-count">
+          <strong>{records.length}</strong>
+          {locale === "zh" ? " 家公司" : " companies shown"}
+        </span>
+      </div>
+
+      <div className="company-market-map-layers">
+        {groups.map((group) => (
+          <section
+            className={`company-market-layer company-market-layer-${group.tone}`}
+            key={group.category}
+          >
+            <div className="company-market-layer-label">
+              <span>{group.code}</span>
+              <h3>{group.category}</h3>
+              <small>{group.records.length} {locale === "zh" ? "家公司" : "companies"}</small>
+            </div>
+            <div className="company-market-nodes">
+              {group.records.map((record) => {
+                const primaryLink = record.links.find((link) => (
+                  link.label.toLowerCase().includes("website")
+                )) ?? record.links[0];
+                const logoPath = record.logo?.startsWith("/")
+                  ? `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${record.logo}`
+                  : record.logo;
+                const nodeValuation = locale === "zh" ? record.valuationZh : record.valuation;
+                const content = (
+                  <>
+                    <span className="company-market-node-logo" aria-hidden="true">
+                      <span>{initials(record.name)}</span>
+                      {logoPath ? (
+                        <Image
+                          alt=""
+                          height={40}
+                          onError={(event) => { event.currentTarget.style.display = "none"; }}
+                          src={logoPath}
+                          style={{ height: "100%", width: "100%" }}
+                          width={40}
+                        />
+                      ) : null}
+                    </span>
+                    <span className="company-market-node-copy">
+                      <span className="company-market-node-name">{record.name}</span>
+                      {nodeValuation ? (
+                        <small>{nodeValuation}</small>
+                      ) : null}
+                    </span>
+                    <span className="company-market-node-dot" aria-hidden="true" />
+                  </>
+                );
+
+                return primaryLink ? (
+                  <a
+                    className={`company-market-node${nodeValuation ? " company-market-node-valued" : ""}`}
+                    href={primaryLink.url}
+                    key={record.id}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {content}
+                    <span className="sr-only">
+                      {locale === "zh" ? "打开官方页面" : "Open official page"}
+                    </span>
+                  </a>
+                ) : (
+                  <div
+                    className={`company-market-node${nodeValuation ? " company-market-node-valued" : ""}`}
+                    key={record.id}
+                  >
+                    {content}
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -365,19 +509,27 @@ export function EcosystemCatalogPage({
         : record.category === item
     )).length;
   };
+  const parent = kind === "companies" ? "Ecosystem" : kind === "arenas" ? "Evaluation" : "Resources";
 
   return (
-    <div className={`ecosystem-catalog ecosystem-catalog-${kind}`}>
+    <div className={`ecosystem-catalog ecosystem-catalog-${kind} page-frame`}>
+      <PageBreadcrumb items={["Home", parent, pageCopy[kind].en.title]} locale={locale} />
+
       <section className="ecosystem-hero">
+        {kind === "companies" ? (
+          <div className="company-hero-mark" aria-hidden="true">C</div>
+        ) : null}
         <div>
-          <p className="ecosystem-eyebrow">{page.eyebrow}</p>
+          {kind === "companies" ? (
+            <span className="company-hero-kicker">
+              {locale === "zh" ? "AI 安全企业图谱" : "AI safety company atlas"}
+            </span>
+          ) : null}
           <h1>{page.title}</h1>
-          <p className="ecosystem-intro">{page.intro}</p>
         </div>
         <div className="ecosystem-hero-proof">
           <strong>{records.length}</strong>
           <span>{strings.entries}</span>
-          <p>{strings.verified}</p>
         </div>
       </section>
 
@@ -419,22 +571,36 @@ export function EcosystemCatalogPage({
       </section>
 
       {visibleRecords.length ? (
-        <section className="ecosystem-grid" aria-live="polite">
-          {visibleRecords.map((record) => (
-            kind === "companies" ? (
-              <CompanyCard key={record.id} locale={locale} record={record} />
-            ) : (
-              <CatalogCard
-                categoryLabel={kind === "frameworks"
-                  ? frameworkCategoryLabel(getFrameworkCategory(record.category), locale)
-                  : undefined}
-                key={record.id}
-                locale={locale}
-                record={record}
-              />
-            )
-          ))}
-        </section>
+        <>
+          {kind === "companies" ? (
+            <CompanyMarketMap locale={locale} records={visibleRecords} />
+          ) : null}
+          {kind === "companies" ? (
+            <div className="company-directory-heading">
+              <div>
+                <span>{locale === "zh" ? "目录" : "Directory"}</span>
+                <h2>{locale === "zh" ? "公司档案" : "Company profiles"}</h2>
+              </div>
+              <p>{visibleRecords.length} {locale === "zh" ? "条已核验记录" : "verified records"}</p>
+            </div>
+          ) : null}
+          <section className="ecosystem-grid" aria-live="polite">
+            {visibleRecords.map((record, index) => (
+              kind === "companies" ? (
+                <CompanyCard index={index} key={record.id} locale={locale} record={record} />
+              ) : (
+                <CatalogCard
+                  categoryLabel={kind === "frameworks"
+                    ? frameworkCategoryLabel(getFrameworkCategory(record.category), locale)
+                    : undefined}
+                  key={record.id}
+                  locale={locale}
+                  record={record}
+                />
+              )
+            ))}
+          </section>
+        </>
       ) : (
         <p className="ecosystem-empty">{strings.noMatches}</p>
       )}

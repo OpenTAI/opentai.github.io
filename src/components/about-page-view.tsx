@@ -32,15 +32,17 @@ const CONTRIBUTE: [string, string][] = [
 
 function Panel({
   children,
+  id,
   locale,
   title,
 }: {
   children: React.ReactNode;
+  id?: string;
   locale: Locale;
   title: string;
 }) {
   return (
-    <section className="subpage-main-table-card">
+    <section className="subpage-main-table-card scroll-mt-28" id={id}>
       <h2 className="mb-5 text-[1.5rem] font-semibold tracking-[-0.04em] text-[#111827]">
         {t(locale, title)}
       </h2>
@@ -58,7 +60,7 @@ export function AboutPageView({ locale }: { locale: Locale }) {
   return (
     <SiteShell locale={locale} sectionLabel="About">
       <SimplePage
-        breadcrumb={["Discover", "About"]}
+        breadcrumb={["Home", "About"]}
         description={mission.body}
         heroIcon="◍"
         locale={locale}
@@ -118,7 +120,7 @@ export function AboutPageView({ locale }: { locale: Locale }) {
           </Panel>
         </section>
 
-        <Panel locale={locale} title="How resources are included">
+        <Panel id="inclusion" locale={locale} title="How resources are included">
           <ul className="space-y-3">
             {INCLUSION.map((rule) => (
               <li key={rule} className="flex gap-3 text-sm leading-7 text-[#475467]">
@@ -131,7 +133,7 @@ export function AboutPageView({ locale }: { locale: Locale }) {
           </ul>
         </Panel>
 
-        <Panel locale={locale} title="Governance">
+        <Panel id="governance" locale={locale} title="Governance">
           <div className="space-y-4">
             <DraftNotice locale={locale}>
               The text below describes how the platform currently operates. Decision-making,
@@ -150,7 +152,7 @@ export function AboutPageView({ locale }: { locale: Locale }) {
           </div>
         </Panel>
 
-        <Panel locale={locale} title="Contributing">
+        <Panel id="contributing" locale={locale} title="Contributing">
           <div className="space-y-4">
             <DraftNotice locale={locale}>
               These routes are a proposal. The team needs to decide where suggestions are filed and
@@ -167,7 +169,7 @@ export function AboutPageView({ locale }: { locale: Locale }) {
           </div>
         </Panel>
 
-        <Panel locale={locale} title="Citation">
+        <Panel id="citation" locale={locale} title="Citation">
           <div className="space-y-4">
             <DraftNotice locale={locale}>
               Placeholder citation. If the platform has an accompanying paper, or the team prefers
@@ -181,7 +183,7 @@ export function AboutPageView({ locale }: { locale: Locale }) {
             </p>
             <pre className="overflow-x-auto rounded-[18px] border border-[#eff2f6] bg-[#fafbfe] px-5 py-4 text-xs leading-6 text-[#475467]">
               {`@misc{opentai,
-  title        = {OpenTAI: The Open Hub for Trustworthy AI},
+  title        = {OpenTAI: The Open Hub for Trustworthy AI and AI Safety},
   author       = {{OpenTAI Contributors}},
   year         = {2026},
   howpublished = {\\url{https://opentai.org}}

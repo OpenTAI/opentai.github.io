@@ -22,6 +22,7 @@ const SUBMIT_LABELS: Record<ResourceSubmissionKind, string> = {
   arena: "Propose a Challenge",
   benchmark: "Submit your Benchmark",
   dataset: "Submit your Dataset",
+  leaderboard: "Submit your leaderboard",
   paper: "Submit your Paper",
 };
 
@@ -29,14 +30,8 @@ const DIALOG_TITLES: Record<ResourceSubmissionKind, string> = {
   arena: "Propose an Arena Challenge",
   benchmark: "Suggest a Benchmark",
   dataset: "Suggest a Dataset",
+  leaderboard: "Suggest a Leaderboard",
   paper: "Suggest a Paper",
-};
-
-const CTA_HELPERS: Record<ResourceSubmissionKind, string> = {
-  arena: "Bring a reproducible safety challenge to the OpenTAI community",
-  benchmark: "Share your benchmark with the OpenTAI community",
-  dataset: "Share your dataset with the OpenTAI community",
-  paper: "Share your latest research with the community.",
 };
 
 function errorMessage(locale: Locale, error: string | undefined) {
@@ -93,7 +88,6 @@ export function ResourceSubmissionDialog({
 
   return (
     <div className="submission-cta">
-      <p>{t(locale, CTA_HELPERS[kind])}</p>
       <button onClick={() => setIsOpen(true)} type="button">
         <span>{t(locale, SUBMIT_LABELS[kind])}</span>
         <span aria-hidden="true">↗</span>
@@ -155,13 +149,13 @@ export function ResourceSubmissionDialog({
 
               <label className="submission-form-wide">
                 <span>
-                  {t(locale, kind === "paper" ? "Paper Link" : "Link (optional)")}
-                  {kind === "paper" ? " *" : ""}
+                  {t(locale, kind === "paper" ? "Paper Link" : kind === "leaderboard" ? "Leaderboard Link" : "Link (optional)")}
+                  {kind === "paper" || kind === "leaderboard" ? " *" : ""}
                 </span>
                 <input
                   aria-invalid={Boolean(errors.link)}
                   onChange={(event) => update("link", event.target.value)}
-                  placeholder="https://arxiv.org/abs/..."
+                  placeholder={kind === "leaderboard" ? "https://example.org/leaderboard" : "https://arxiv.org/abs/..."}
                   type="url"
                   value={values.link}
                 />
@@ -170,8 +164,8 @@ export function ResourceSubmissionDialog({
 
               <label className="submission-form-wide">
                 <span>
-                  {t(locale, kind === "paper" ? "GitHub Link (optional)" : "GitHub Link")}
-                  {kind === "paper" ? "" : " *"}
+                  {t(locale, kind === "paper" || kind === "leaderboard" ? "GitHub Link (optional)" : "GitHub Link")}
+                  {kind === "paper" || kind === "leaderboard" ? "" : " *"}
                 </span>
                 <input
                   aria-invalid={Boolean(errors.githubUrl)}

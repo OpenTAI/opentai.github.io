@@ -117,12 +117,26 @@ test("sorts by newest year and name without mutating input", () => {
   assert.deepEqual(records.map((record) => record.id), original);
 });
 
-test("company cards keep the compact exhibition-wall layout", () => {
+test("company cards use the warm editorial atlas layout", () => {
   const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+  const component = readFileSync(
+    new URL("../components/ecosystem-catalog-page.tsx", import.meta.url),
+    "utf8",
+  );
 
-  assert.match(css, /\.company-logo-panel\s*{[\s\S]*?min-height:\s*4\.5rem/);
-  assert.match(css, /\.company-card-body\s*{[\s\S]*?padding:\s*0\.68rem/);
-  assert.match(css, /\.company-facts\s*>\s*div\s*{[\s\S]*?min-height:\s*2\.35rem/);
+  assert.match(css, /\.ecosystem-catalog-companies\s*{[\s\S]*?--company-green:\s*#2d7d48/);
+  assert.match(css, /\.company-hero-mark\s*{[\s\S]*?font-family:\s*ui-serif/);
+  assert.match(css, /\.ecosystem-catalog-companies\s+\.company-logo-panel\s*{[\s\S]*?background-size:\s*18px 18px/);
+  assert.match(css, /\.company-valuation-highlight\s*{[\s\S]*?background:\s*var\(--company-ink\)/);
+  assert.match(component, /company-card-index/);
+  assert.match(component, /company-valuation-highlight/);
+  assert.match(component, /company-market-node-copy/);
+  assert.match(component, /function CompanyMarketMap/);
+  assert.match(component, /companyMarketGroups/);
+  assert.match(component, /Companies grouped by their verified directory category/);
+  assert.match(css, /\.company-market-map\s*{[\s\S]*?background-size:\s*24px 24px/);
+  assert.match(css, /\.company-market-layer\s*{[\s\S]*?--company-layer-color/);
+  assert.match(css, /\.company-market-node\s*{[\s\S]*?grid-template-columns:/);
   assert.match(
     css,
     /@media\s*\(min-width:\s*1680px\)[\s\S]*?\.ecosystem-catalog-companies\s+\.ecosystem-grid\s*{[\s\S]*?repeat\(4,/,

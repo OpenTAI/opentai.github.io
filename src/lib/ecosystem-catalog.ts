@@ -59,6 +59,8 @@ export function filterEcosystemRecords(
       record.publisher,
       record.country,
       record.countryZh,
+      record.valuation,
+      record.valuationZh,
       record.affiliation,
       record.direction,
       record.directionZh,

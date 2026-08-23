@@ -154,6 +154,105 @@ export type LeaderboardTable = {
   boards: readonly LeaderboardBoard[];
 };
 
+export type RankingResult = {
+  rank: number;
+  name: string;
+  detail?: string;
+  value: string;
+};
+
+export type RankingLink = {
+  label: string;
+  labelZh?: string;
+  url: string;
+};
+
+export type RankingDirectoryRecord = {
+  name: string;
+  type: string;
+  focus: string;
+  focusZh: string;
+  metric: string;
+  metricZh: string;
+  snapshotDate: string;
+  results: readonly RankingResult[];
+  emptyState?: string;
+  emptyStateZh?: string;
+  url: string;
+  source: string;
+  links: readonly RankingLink[];
+  verificationNote: string;
+};
+
+export type ArenaResultSnapshot = {
+  title: string;
+  titleZh: string;
+  snapshotDate: string;
+  source: string;
+  sourceLabel: string;
+  sourceLabelZh: string;
+  note: string;
+  noteZh: string;
+  benchmarks: readonly {
+    name: string;
+    metric: string;
+    metricZh: string;
+  }[];
+  series: readonly {
+    name: string;
+    nameZh: string;
+    color: string;
+    values: readonly (number | null | undefined)[];
+  }[];
+};
+
+export type TextArenaOverview = {
+  title: string;
+  titleZh: string;
+  snapshotDate: string;
+  source: string;
+  sourceLabel: string;
+  sourceLabelZh: string;
+  note: string;
+  noteZh: string;
+  columns: readonly {
+    key: string;
+    label: string;
+    labelZh: string;
+  }[];
+  rows: readonly {
+    model: string;
+    ranks: readonly (number | null | undefined)[];
+  }[];
+};
+
+export type CodeArenaOverview = {
+  schemaVersion: number;
+  title: string;
+  titleZh: string;
+  category: string;
+  categoryZh: string;
+  description: string;
+  descriptionZh: string;
+  snapshotDate: string;
+  source: string;
+  sourceLabel: string;
+  sourceLabelZh: string;
+  priceNote: string;
+  priceNoteZh: string;
+  note: string;
+  noteZh: string;
+  models: readonly {
+    rank: number;
+    name: string;
+    lab: string;
+    score: number;
+    inputPrice: number;
+    outputPrice: number;
+    preliminary?: boolean;
+  }[];
+};
+
 export type HomeCategoryCard = {
   title: string;
   description: string;
@@ -170,7 +269,7 @@ export const newsletter = {
 
 export const siteBrand = {
   name: "OpenTAI",
-  tagline: "The Open Hub for Trustworthy AI",
+  tagline: "The Open Hub for Trustworthy AI and AI Safety",
   headline: "An open ecosystem for trustworthy AI, unifying safety guardrails, evaluation benchmarks, and datasets",
   contactEmail: "contact.opentai@gmail.com",
   upstream: "https://opentai.org",
@@ -448,7 +547,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "simulation-based benchmarks",
       "llm-security",
     ],
@@ -492,7 +590,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2309.15817",
@@ -534,7 +631,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "prompt injection",
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2403.02691",
@@ -581,7 +677,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2406.13352",
@@ -645,7 +740,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "harmful content",
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2410.09024",
@@ -692,7 +786,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "cybersecurity",
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2411.07781",
@@ -732,8 +825,8 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
+      "Computer-use",
       "prompt injection",
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2506.02456",
@@ -774,7 +867,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2401.10019",
@@ -827,7 +919,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "robustness",
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2402.05044",
@@ -875,7 +966,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "jailbreak",
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2408.04811",
@@ -926,7 +1016,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2410.21965",
@@ -969,7 +1058,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2411.16736",
@@ -1010,7 +1098,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2402.10753",
@@ -1057,7 +1144,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "privacy",
-      "source: safety-at-scale",
       "simulation-based benchmarks",
     ],
     arxivId: "2409.00138",
@@ -1105,7 +1191,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "real-interaction benchmarks",
     ],
     arxivId: "2206.09682",
@@ -1152,7 +1237,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "real-interaction benchmarks",
     ],
     arxivId: "2410.02644",
@@ -1193,7 +1277,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "real-interaction benchmarks",
     ],
     arxivId: "2412.13178",
@@ -1239,7 +1322,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "real-interaction benchmarks",
     ],
     arxivId: "2412.14470",
@@ -1282,8 +1364,8 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
+      "Computer-use",
       "robustness",
-      "source: safety-at-scale",
       "real-interaction benchmarks",
       "advweb",
       "dissecting adversarial",
@@ -1327,7 +1409,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
+      "Computer-use",
       "real-interaction benchmarks",
     ],
     arxivId: "2410.06703",
@@ -1374,7 +1456,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "real-interaction benchmarks",
     ],
     arxivId: "2409.16427",
@@ -1421,8 +1502,8 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
+      "Computer-use",
       "robustness",
-      "source: safety-at-scale",
       "real-interaction benchmarks",
     ],
     arxivId: "2504.18575",
@@ -1465,8 +1546,8 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
+      "Computer-use",
       "jailbreak",
-      "source: safety-at-scale",
       "real-interaction benchmarks",
     ],
     arxivId: "2410.13886",
@@ -1507,7 +1588,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
+      "Computer-use",
       "real-interaction benchmarks",
     ],
     arxivId: "2503.04957",
@@ -1554,7 +1635,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "real-interaction benchmarks",
     ],
     arxivId: "2507.06134",
@@ -1601,8 +1681,9 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
+      "Mobile",
+      "Computer-use",
       "prompt injection",
-      "source: official project",
       "simulation-based benchmarks",
     ],
     arxivId: "2410.17520",
@@ -1650,9 +1731,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "220 routes",
       },
     ],
-    tags: [
-      "source: embodied-ai-safety",
-    ],
+    tags: [],
     arxivId: "2406.03877",
     repo: "Thinklab-SJTU/Bench2Drive",
     license: "NOASSERTION",
@@ -1696,9 +1775,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "30,000 tasks / 119 scenes",
       },
     ],
-    tags: [
-      "source: embodied-ai-safety",
-    ],
+    tags: [],
     authors: [
       "Zeyu Zhang",
       "Sixu Yan",
@@ -1739,9 +1816,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "840,000 samples",
       },
     ],
-    tags: [
-      "source: embodied-ai-safety",
-    ],
+    tags: [],
     pending: [
       "Dataset",
       "Metrics",
@@ -1774,9 +1849,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "438 tasks",
       },
     ],
-    tags: [
-      "source: embodied-ai-safety",
-    ],
+    tags: [],
     arxivId: "2410.07166",
     pending: [
       "Dataset",
@@ -1806,9 +1879,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "Not recorded in source section",
       },
     ],
-    tags: [
-      "source: embodied-ai-safety",
-    ],
+    tags: [],
     arxivId: "2503.04392",
     pending: [
       "Dataset",
@@ -1838,9 +1909,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "2,027 tasks / 8 hazard categories",
       },
     ],
-    tags: [
-      "source: embodied-ai-safety",
-    ],
+    tags: [],
     arxivId: "2504.14650",
     pending: [
       "Dataset",
@@ -1872,7 +1941,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "robustness",
-      "source: embodied-ai-safety",
     ],
     arxivId: "2506.14697",
     pending: [
@@ -1903,9 +1971,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "Not recorded in source section",
       },
     ],
-    tags: [
-      "source: embodied-ai-safety",
-    ],
+    tags: [],
     arxivId: "2509.25885",
     pending: [
       "Dataset",
@@ -1935,9 +2001,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "Not recorded in source section",
       },
     ],
-    tags: [
-      "source: embodied-ai-safety",
-    ],
+    tags: [],
     arxivId: "2604.18463",
     pending: [
       "Dataset",
@@ -1969,7 +2033,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "jailbreak",
-      "source: embodied-ai-safety",
     ],
     arxivId: "2605.19328",
     pending: [
@@ -2004,9 +2067,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "6 embodied safe-RL environments",
       },
     ],
-    tags: [
-      "source: embodied-ai-safety",
-    ],
+    tags: [],
     arxivId: "2503.08241",
     pending: [
       "Dataset",
@@ -2037,9 +2098,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "2018",
       },
     ],
-    tags: [
-      "source: embodied-ai-safety",
-    ],
+    tags: [],
     arxivId: "1711.07280",
     pending: [
       "Dataset",
@@ -2070,9 +2129,7 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
         value: "2018",
       },
     ],
-    tags: [
-      "source: embodied-ai-safety",
-    ],
+    tags: [],
     arxivId: "1802.08218",
     pending: [
       "Dataset",
@@ -2112,7 +2169,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "truthfulness datasets",
     ],
     arxivId: "2109.07958",
@@ -2155,7 +2211,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "robustness",
-      "source: safety-at-scale",
       "adversarial datasets and backdoor benchmarks",
     ],
     arxivId: "2111.02840",
@@ -2206,7 +2261,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "robustness",
-      "source: safety-at-scale",
       "adversarial datasets and backdoor benchmarks",
     ],
     arxivId: "2307.15043",
@@ -2254,7 +2308,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "value benchmarks",
     ],
     arxivId: "2307.09705",
@@ -2296,7 +2349,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "value benchmarks",
     ],
     arxivId: "2311.05915",
@@ -2339,7 +2391,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "alignment",
-      "source: safety-at-scale",
       "value benchmarks",
     ],
     arxivId: "2311.06899",
@@ -2382,7 +2433,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "jailbreak",
-      "source: safety-at-scale",
       "value benchmarks",
     ],
     arxivId: "2406.14598",
@@ -2424,7 +2474,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "value benchmarks",
     ],
     arxivId: "2309.07045",
@@ -2486,7 +2535,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "robustness",
-      "source: safety-at-scale",
       "adversarial datasets and backdoor benchmarks",
       "attack",
       "backdoor",
@@ -2538,7 +2586,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "jailbreak",
-      "source: safety-at-scale",
       "adversarial datasets and backdoor benchmarks",
     ],
     arxivId: "2404.03027",
@@ -2581,7 +2628,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "jailbreak",
-      "source: safety-at-scale",
       "adversarial datasets and backdoor benchmarks",
     ],
     arxivId: "2402.10260",
@@ -2623,7 +2669,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "value benchmarks",
     ],
     arxivId: "2412.18551",
@@ -2661,7 +2706,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       },
     ],
     tags: [
-      "source: safety-at-scale",
       "value benchmarks",
     ],
     arxivId: "2501.14940",
@@ -2700,7 +2744,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "jailbreak",
-      "source: safety-at-scale",
       "red teaming",
     ],
     authors: [
@@ -2770,7 +2813,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "fairness",
-      "source: safety-at-scale",
       "implicit bias",
     ],
     authors: [
@@ -2827,7 +2869,6 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
     ],
     tags: [
       "jailbreak",
-      "source: safety-at-scale",
     ],
     authors: [
       "Patrick Chao",
@@ -2870,9 +2911,104 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
   },
 };
 
-export const leaderboards: { title: string; subtitle: string; tables: LeaderboardTable[] } = {
+export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
   title: "Adversarial Robustness Leaderboards",
-  subtitle: "Black-box and white-box evaluations: conducted for the top 10 most downloaded/cited models across five popular vision tasks, using both domain-specific datasets and our CC1M-Adv-C/F benchmarks.",
+  subtitle: "Open trustworthiness and safety leaderboards for LLMs, Agents, and Embodied AI.",
+  directory: [
+    {
+      name: "HarmActionsEval",
+      type: "Agent Safety",
+      focus: "Safety of autonomous agents operating with powerful toolsets.",
+      focusZh: "评估拥有高权限工具集的自主智能体是否会执行有害操作。",
+      metric: "SafeActions@1 ↑",
+      metricZh: "SafeActions@1 ↑",
+      snapshotDate: "March 2026",
+      results: [
+        {
+          rank: 1,
+          name: "Qwen3.5-397B-A17B",
+          detail: "Alibaba Cloud",
+          value: "23.40%",
+        },
+        {
+          rank: 2,
+          name: "GPT-5.3",
+          detail: "OpenAI",
+          value: "12.77%",
+        },
+        {
+          rank: 3,
+          name: "Claude Sonnet 4.6",
+          detail: "Anthropic",
+          value: "2.84%",
+        },
+      ],
+      url: "https://agent-leaderboard.github.io/",
+      source: "https://agent-leaderboard.github.io/",
+      links: [],
+      verificationNote: "The official HarmActionsEval page publishes a model leaderboard using SafeActions@1 and labels the snapshot as updated in March 2026.",
+    },
+    {
+      name: "TrustLLM — Safety",
+      type: "LLM Safety",
+      focus: "Trustworthiness evaluation across jailbreak, toxicity, misuse, and exaggerated-safety dimensions.",
+      focusZh: "从越狱、毒性、滥用和过度安全等维度评估大语言模型可信性。",
+      metric: "Jailbreak ↑",
+      metricZh: "Jailbreak ↑",
+      snapshotDate: "Source checked 2026-08-20",
+      results: [
+        {
+          rank: 1,
+          name: "Llama2-70B",
+          value: "0.974",
+        },
+        {
+          rank: 2,
+          name: "Llama2-13B",
+          value: "0.959",
+        },
+        {
+          rank: 3,
+          name: "ERNIE",
+          value: "0.949",
+        },
+      ],
+      url: "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html#safety",
+      source: "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html",
+      links: [],
+      verificationNote: "The official TrustLLM leaderboard reports several safety metrics. This card ranks only the published Jailbreak metric, where the page states that higher values are better.",
+    },
+    {
+      name: "TrustLLM — Fairness",
+      type: "Fairness",
+      focus: "Fairness evaluation covering stereotype recognition, agreement, disparagement, and preference behavior.",
+      focusZh: "覆盖刻板印象识别、赞同倾向、贬损行为与偏好表现的公平性评估。",
+      metric: "Stereotype Recognition ↑",
+      metricZh: "刻板印象识别 ↑",
+      snapshotDate: "Source checked 2026-08-20",
+      results: [
+        {
+          rank: 1,
+          name: "Llama3-70B",
+          value: "0.726",
+        },
+        {
+          rank: 2,
+          name: "GPT-4",
+          value: "0.656",
+        },
+        {
+          rank: 3,
+          name: "PaLM2",
+          value: "0.634",
+        },
+      ],
+      url: "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html#fairness",
+      source: "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html",
+      links: [],
+      verificationNote: "The official TrustLLM leaderboard publishes multiple fairness metrics rather than one composite score. This card ranks only Stereotype Recognition, where higher values are better.",
+    },
+  ],
   tables: [
     {
       id: "black-box",
@@ -3544,11 +3680,571 @@ export const leaderboards: { title: string; subtitle: string; tables: Leaderboar
   ],
 };
 
+export const arenaDirectory: RankingDirectoryRecord[] = [
+  {
+    name: "Gray Swan Arena",
+    type: "Agent Safety",
+    focus: "Indirect-prompt-injection robustness across tool-use, coding, and computer-use agents.",
+    focusZh: "评估工具调用、编程与计算机操作智能体对间接提示注入的鲁棒性。",
+    metric: "Attack Success Rate ↓",
+    metricZh: "攻击成功率 ↓",
+    snapshotDate: "March 2026",
+    results: [
+      {
+        rank: 1,
+        name: "Claude Opus 4.5",
+        value: "0.5%",
+      },
+      {
+        rank: 2,
+        name: "Claude Sonnet 4.5",
+        value: "1.0%",
+      },
+      {
+        rank: 3,
+        name: "Claude Haiku 4.5",
+        value: "1.3%",
+      },
+    ],
+    url: "https://app.grayswan.ai/arena",
+    source: "https://www.grayswan.ai/blog/your-ai-agent-can-be-compromised-youd-never-know",
+    links: [
+      {
+        label: "Live arena",
+        labelZh: "实时竞技场",
+        url: "https://app.grayswan.ai/arena",
+      },
+      {
+        label: "Global ranking",
+        labelZh: "全球排名",
+        url: "https://app.grayswan.ai/arena/leaderboard/global",
+      },
+      {
+        label: "Paper",
+        labelZh: "论文",
+        url: "https://arxiv.org/abs/2603.15714",
+      },
+      {
+        label: "Benchmark code",
+        labelZh: "评测代码",
+        url: "https://github.com/GraySwanAI/ipi_arena_os",
+      },
+      {
+        label: "Partial dataset",
+        labelZh: "部分数据集",
+        url: "https://huggingface.co/datasets/sureheremarv/ipi_arena_attacks",
+      },
+    ],
+    verificationNote: "Gray Swan's official March 2026 IPI Arena results report attack success rates across 13 frontier models. Lower is better. The three lowest published rates are reproduced here; the Arena link opens the live Gray Swan application.",
+  },
+  {
+    name: "CyberGym",
+    type: "Cyber",
+    focus: "Agents reproduce real-world vulnerabilities by generating working proofs of concept.",
+    focusZh: "让智能体通过生成可运行的概念验证程序，复现真实世界漏洞。",
+    metric: "Level 1 Success Rate ↑",
+    metricZh: "Level 1 成功率 ↑",
+    snapshotDate: "Source checked 2026-08-20",
+    results: [
+      {
+        rank: 1,
+        name: "Sangfor AI",
+        detail: "DeepSeek-V4-Flash",
+        value: "93.17%",
+      },
+      {
+        rank: 2,
+        name: "Whitzard (白泽)",
+        detail: "DeepSeek-V4-Flash",
+        value: "91.20%",
+      },
+      {
+        rank: 3,
+        name: "MDASH",
+        detail: "GPT-5.4 · Claude Opus 4.6 · Claude Sonnet 4.6",
+        value: "90.97%",
+      },
+      {
+        rank: 4,
+        name: "Wiz Atlas",
+        detail: "GPT-5.5 · Claude Opus 4.6",
+        value: "90.90%",
+      },
+      {
+        rank: 5,
+        name: "DoGNAVY",
+        detail: "GLM-5.2",
+        value: "90.84%",
+      },
+    ],
+    url: "https://cybergym.io/cybergym/#leaderboard",
+    source: "https://cybergym.io/assets/data/cybergym.json",
+    links: [
+      {
+        label: "Live leaderboard",
+        labelZh: "实时排行榜",
+        url: "https://cybergym.io/cybergym/#leaderboard",
+      },
+      {
+        label: "Official result data",
+        labelZh: "官方结果数据",
+        url: "https://cybergym.io/assets/data/cybergym.json",
+      },
+      {
+        label: "Benchmark overview",
+        labelZh: "评测说明",
+        url: "https://cybergym.io/cybergym/",
+      },
+    ],
+    verificationNote: "CyberGym's official Level 1 leaderboard sorts submissions by score_10 and labels it Success Rate: the percentage of instances where an agent reproduces the target vulnerability with a working proof of concept.",
+  },
+  {
+    name: "ExploitGym",
+    type: "Cyber",
+    focus: "Agents generate end-to-end exploits across userspace, browser V8, and the Linux kernel.",
+    focusZh: "评估智能体在用户态、浏览器 V8 与 Linux 内核中生成端到端漏洞利用的能力。",
+    metric: "Successful exploits ↑",
+    metricZh: "成功漏洞利用数 ↑",
+    snapshotDate: "Source checked 2026-08-20",
+    results: [
+      {
+        rank: 1,
+        name: "GPT-5.6 Sol (reasoning max)",
+        detail: "Codex CLI · 6h timeout",
+        value: "293",
+      },
+      {
+        rank: 2,
+        name: "Claude Mythos Preview",
+        detail: "Claude Code · 2h timeout",
+        value: "157",
+      },
+      {
+        rank: 3,
+        name: "GPT-5.5",
+        detail: "Codex CLI · 2h timeout",
+        value: "129",
+      },
+      {
+        rank: 4,
+        name: "GPT-5.4",
+        detail: "Codex CLI · 2h timeout",
+        value: "61",
+      },
+      {
+        rank: 5,
+        name: "Claude Opus 4.6",
+        detail: "Claude Code · 2h timeout",
+        value: "16",
+      },
+    ],
+    url: "https://cybergym.io/exploitgym/#leaderboard",
+    source: "https://cybergym.io/assets/data/exploitgym.json",
+    links: [
+      {
+        label: "Live leaderboard",
+        labelZh: "实时排行榜",
+        url: "https://cybergym.io/exploitgym/#leaderboard",
+      },
+      {
+        label: "Official result data",
+        labelZh: "官方结果数据",
+        url: "https://cybergym.io/assets/data/exploitgym.json",
+      },
+      {
+        label: "Benchmark overview",
+        labelZh: "评测说明",
+        url: "https://cybergym.io/exploitgym/",
+      },
+    ],
+    verificationNote: "ExploitGym's official leaderboard sorts by on_target: instances exploited through the intended vulnerability. Evaluation timeouts are retained on each row because the leading submission uses a longer budget.",
+  },
+];
+
+export const arenaResults: ArenaResultSnapshot = {
+  title: "Offensive cyber evaluations",
+  titleZh: "进攻性网络安全评测",
+  snapshotDate: "Published 2026-06-09",
+  source: "https://www.anthropic.com/research/claude-fable-5-mythos-5",
+  sourceLabel: "Anthropic results and metric definitions",
+  sourceLabelZh: "Anthropic 结果与指标定义",
+  note: "Values reproduced from Anthropic's published chart. Each benchmark uses a different metric, so compare models within a benchmark group rather than comparing benchmark groups with one another.",
+  noteZh: "数值复现自 Anthropic 官方图表。四个评测使用的指标口径不同，应在同一评测组内比较模型，不宜直接横向比较不同评测组。",
+  benchmarks: [
+    {
+      name: "Firefox",
+      metric: "Trials achieving arbitrary code execution",
+      metricZh: "实现任意代码执行的试验占比",
+    },
+    {
+      name: "OSS-Fuzz",
+      metric: "Severity-weighted five-tier score",
+      metricZh: "按严重程度加权的五级得分",
+    },
+    {
+      name: "CyberGym",
+      metric: "Target vulnerability reproduction rate",
+      metricZh: "目标漏洞复现率",
+    },
+    {
+      name: "CyScenarioBench",
+      metric: "Mean success rate across challenges",
+      metricZh: "各挑战的平均成功率",
+    },
+  ],
+  series: [
+    {
+      name: "Claude Opus 4.8 (no safeguards)",
+      nameZh: "Claude Opus 4.8（无安全护栏）",
+      color: "#58c8a0",
+      values: [
+        8.8,
+        15.9,
+        78.1,
+        16.6,
+      ],
+    },
+    {
+      name: "Claude Opus 4.8 (default safeguards)",
+      nameZh: "Claude Opus 4.8（默认安全护栏）",
+      color: "#11976e",
+      values: [
+        undefined,
+        3.8,
+        0.8,
+        undefined,
+      ],
+    },
+    {
+      name: "Claude Mythos Preview",
+      nameZh: "Claude Mythos Preview",
+      color: "#2f7bd2",
+      values: [
+        70.8,
+        22.8,
+        83.1,
+        29.2,
+      ],
+    },
+    {
+      name: "Claude Mythos 5",
+      nameZh: "Claude Mythos 5",
+      color: "#df70a2",
+      values: [
+        88.4,
+        24.0,
+        83.8,
+        38.7,
+      ],
+    },
+    {
+      name: "Claude Fable 5",
+      nameZh: "Claude Fable 5",
+      color: "#f2672c",
+      values: [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+      ],
+    },
+  ],
+};
+
+export const textArenaOverview: TextArenaOverview = {
+  title: "Text Arena Overview",
+  titleZh: "文本竞技场总览",
+  snapshotDate: "2026-08-21",
+  source: "https://arena.ai/leaderboard/text",
+  sourceLabel: "Open the full Arena Text leaderboard",
+  sourceLabelZh: "打开完整 Arena 文本排行榜",
+  note: "Top ten models by overall rank. Category placements are reproduced from the official Arena Text overview snapshot supplied on 2026-08-21; a dash means that the source displayed no rank.",
+  noteZh: "按总榜名次展示前十个模型。分类名次复现自 2026-08-21 提供的 Arena 官方文本总览快照；破折号表示来源未显示名次。",
+  columns: [
+    {
+      key: "overall",
+      label: "Overall",
+      labelZh: "总榜",
+    },
+    {
+      key: "expert",
+      label: "Expert",
+      labelZh: "专家",
+    },
+    {
+      key: "hard-prompts",
+      label: "Hard Prompts",
+      labelZh: "高难提示",
+    },
+    {
+      key: "coding",
+      label: "Coding",
+      labelZh: "编程",
+    },
+    {
+      key: "math",
+      label: "Math",
+      labelZh: "数学",
+    },
+    {
+      key: "creative-writing",
+      label: "Creative Writing",
+      labelZh: "创意写作",
+    },
+    {
+      key: "instruction-following",
+      label: "Instruction Following",
+      labelZh: "指令遵循",
+    },
+    {
+      key: "longer-query",
+      label: "Longer Query",
+      labelZh: "长问题",
+    },
+  ],
+  rows: [
+    {
+      model: "claude-fable-5",
+      ranks: [
+        1,
+        1,
+        2,
+        3,
+        2,
+        1,
+        2,
+        2,
+      ],
+    },
+    {
+      model: "claude-opus-4-6-high",
+      ranks: [
+        2,
+        2,
+        1,
+        1,
+        5,
+        2,
+        1,
+        1,
+      ],
+    },
+    {
+      model: "claude-opus-4-7-high",
+      ranks: [
+        3,
+        6,
+        4,
+        2,
+        9,
+        4,
+        3,
+        4,
+      ],
+    },
+    {
+      model: "muse-spark-1.2 (xHigh)",
+      ranks: [
+        4,
+        34,
+        10,
+        10,
+        undefined,
+        29,
+        16,
+        12,
+      ],
+    },
+    {
+      model: "claude-opus-4-6",
+      ranks: [
+        5,
+        4,
+        3,
+        5,
+        7,
+        8,
+        4,
+        3,
+      ],
+    },
+    {
+      model: "claude-opus-4-7",
+      ranks: [
+        6,
+        5,
+        6,
+        4,
+        16,
+        6,
+        7,
+        6,
+      ],
+    },
+    {
+      model: "claude-opus-5-high",
+      ranks: [
+        7,
+        3,
+        5,
+        9,
+        3,
+        10,
+        5,
+        5,
+      ],
+    },
+    {
+      model: "muse-spark-1.1",
+      ranks: [
+        8,
+        25,
+        11,
+        13,
+        13,
+        40,
+        22,
+        40,
+      ],
+    },
+    {
+      model: "gemini-3.7-flash-high",
+      ranks: [
+        9,
+        13,
+        12,
+        21,
+        4,
+        3,
+        9,
+        13,
+      ],
+    },
+    {
+      model: "kimi-k3-max",
+      ranks: [
+        10,
+        11,
+        7,
+        6,
+        11,
+        24,
+        10,
+        8,
+      ],
+    },
+  ],
+};
+
+export const codeArenaOverview: CodeArenaOverview = {
+  schemaVersion: 1,
+  snapshotDate: "2026-08-19",
+  title: "Code Arena snapshot",
+  titleZh: "代码竞技场快照",
+  category: "WebDev · Overall",
+  categoryZh: "WebDev · 总榜",
+  description: "Official Arena rankings for front-end web development tasks, including agentic coding workflows that require multi-step reasoning and tool use.",
+  descriptionZh: "Arena 官方前端网页开发排行榜，涵盖需要多步推理与工具使用的智能体编程工作流。",
+  source: "https://arena.ai/leaderboard/code",
+  sourceLabel: "Open the full Code Arena leaderboard",
+  sourceLabelZh: "打开完整 Code Arena 排行榜",
+  priceNote: "Blended price is calculated from the official input/output prices as (3 × input + output) ÷ 4, matching the 3:1 input-to-output ratio used by the comparison plot.",
+  priceNoteZh: "综合价格按官方输入/输出价格计算：(3 × 输入价 + 输出价) ÷ 4，与对比图采用的 3:1 输入输出比例一致。",
+  note: "Top ten models shown on the official Code Arena WebDev overall table on 2026-08-19. Scores and prices are a static source snapshot; preliminary labels remain recorded below.",
+  noteZh: "数据取自 2026-08-19 Arena 官方 Code Arena WebDev 总榜前十。评分和价格为静态来源快照；官方标为 Preliminary 的模型在数据中保留该状态。",
+  models: [
+    {
+      rank: 1,
+      name: "claude-opus-5-max",
+      lab: "Anthropic",
+      score: 1691,
+      inputPrice: 5,
+      outputPrice: 25,
+    },
+    {
+      rank: 2,
+      name: "kimi-k3-max",
+      lab: "Moonshot",
+      score: 1674,
+      inputPrice: 3,
+      outputPrice: 15,
+    },
+    {
+      rank: 3,
+      name: "qwen3.8-max",
+      lab: "Alibaba",
+      score: 1669,
+      inputPrice: 2,
+      outputPrice: 6,
+      preliminary: true,
+    },
+    {
+      rank: 4,
+      name: "claude-opus-5-high",
+      lab: "Anthropic",
+      score: 1662,
+      inputPrice: 5,
+      outputPrice: 25,
+    },
+    {
+      rank: 5,
+      name: "grok-4.6-high",
+      lab: "SpaceXAI",
+      score: 1629,
+      inputPrice: 2,
+      outputPrice: 6,
+      preliminary: true,
+    },
+    {
+      rank: 6,
+      name: "claude-fable-5",
+      lab: "Anthropic",
+      score: 1626,
+      inputPrice: 10,
+      outputPrice: 50,
+    },
+    {
+      rank: 7,
+      name: "gpt-5.6-sol-xhigh (codex-harness)",
+      lab: "OpenAI",
+      score: 1619,
+      inputPrice: 5,
+      outputPrice: 30,
+    },
+    {
+      rank: 8,
+      name: "glm-5.3-max",
+      lab: "Z.ai",
+      score: 1597,
+      inputPrice: 1.4,
+      outputPrice: 4.4,
+    },
+    {
+      rank: 9,
+      name: "gemini-3.7-flash-high",
+      lab: "Google",
+      score: 1588,
+      inputPrice: 0.75,
+      outputPrice: 3.57,
+      preliminary: true,
+    },
+    {
+      rank: 10,
+      name: "deepseek-v4-pro-high-20260813",
+      lab: "DeepSeek",
+      score: 1582,
+      inputPrice: 1.32,
+      outputPrice: 3.96,
+    },
+  ],
+};
+
 export const subpageConfigs: Record<string, SubpageConfig> = {
   benchmarks: {
     slug: "benchmarks",
     breadcrumb: [
       "Home",
+      "Resources",
       "Benchmarks",
     ],
     title: "Benchmarks",
@@ -3592,7 +4288,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         stars: 154,
         updated: "2024-04-15",
         tags: [
-          "source: safety-at-scale",
           "simulation-based benchmarks",
           "llm-security",
         ],
@@ -3635,7 +4330,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         year: "2023",
         tags: [
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -3670,7 +4364,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         stars: 157,
         tags: [
           "prompt injection",
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -3709,7 +4402,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2024",
         stars: 740,
         tags: [
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -3750,7 +4442,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-12-19",
         tags: [
           "harmful content",
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -3791,7 +4482,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         stars: 87,
         tags: [
           "cybersecurity",
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -3829,8 +4519,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         year: "2024",
         tags: [
+          "Computer-use",
           "prompt injection",
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -3865,7 +4555,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2024",
         stars: 109,
         tags: [
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -3907,7 +4596,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-07-23",
         tags: [
           "robustness",
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -3952,7 +4640,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         stars: 28,
         tags: [
           "jailbreak",
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -3991,7 +4678,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2024",
         stars: 26,
         tags: [
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -4028,7 +4714,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         year: "2024",
         tags: [
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -4062,7 +4747,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2024",
         stars: 15,
         tags: [
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -4103,7 +4787,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-09-04",
         tags: [
           "privacy",
-          "source: safety-at-scale",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -4143,7 +4826,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2022",
         stars: 155,
         tags: [
-          "source: safety-at-scale",
           "real-interaction benchmarks",
         ],
         stats: [
@@ -4180,7 +4862,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         year: "2024",
         tags: [
-          "source: safety-at-scale",
           "real-interaction benchmarks",
         ],
         stats: [
@@ -4214,7 +4895,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2024",
         stars: 75,
         tags: [
-          "source: safety-at-scale",
           "real-interaction benchmarks",
         ],
         stats: [
@@ -4254,7 +4934,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         stars: 157,
         updated: "2025-08-11",
         tags: [
-          "source: safety-at-scale",
           "real-interaction benchmarks",
         ],
         stats: [
@@ -4292,8 +4971,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         year: "2024",
         tags: [
+          "Computer-use",
           "robustness",
-          "source: safety-at-scale",
           "real-interaction benchmarks",
           "advweb",
           "dissecting adversarial",
@@ -4333,7 +5012,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         stars: 25,
         updated: "2026-03-12",
         tags: [
-          "source: safety-at-scale",
+          "Computer-use",
           "real-interaction benchmarks",
         ],
         stats: [
@@ -4372,7 +5051,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2024",
         stars: 14,
         tags: [
-          "source: safety-at-scale",
           "real-interaction benchmarks",
         ],
         stats: [
@@ -4410,8 +5088,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2025",
         stars: 98,
         tags: [
+          "Computer-use",
           "robustness",
-          "source: safety-at-scale",
           "real-interaction benchmarks",
         ],
         stats: [
@@ -4449,8 +5127,8 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         year: "2025",
         tags: [
+          "Computer-use",
           "jailbreak",
-          "source: safety-at-scale",
           "real-interaction benchmarks",
         ],
         stats: [
@@ -4487,7 +5165,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         stars: 24,
         updated: "2025-04-23",
         tags: [
-          "source: safety-at-scale",
+          "Computer-use",
           "real-interaction benchmarks",
         ],
         stats: [
@@ -4526,7 +5204,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2025",
         stars: 32,
         tags: [
-          "source: safety-at-scale",
           "real-interaction benchmarks",
         ],
         stats: [
@@ -4564,8 +5241,9 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2024",
         stars: 37,
         tags: [
+          "Mobile",
+          "Computer-use",
           "prompt injection",
-          "source: official project",
           "simulation-based benchmarks",
         ],
         stats: [
@@ -4605,9 +5283,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2024",
         stars: 1924,
         updated: "2026-08-11",
-        tags: [
-          "source: embodied-ai-safety",
-        ],
+        tags: [],
         stats: [
           {
             label: "Recorded scale",
@@ -4646,9 +5322,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         stars: 27,
         updated: "2025-07-19",
         posted: "2024-10-09",
-        tags: [
-          "source: embodied-ai-safety",
-        ],
+        tags: [],
         stats: [
           {
             label: "Recorded scale",
@@ -4683,9 +5357,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The Embodied AI survey's dedicated Benchmarks section records 840,000 samples in AI2-THOR. Its bibliography cites the ACM Multimedia paper but does not record an arXiv or repository link.",
         type: "Embodied AI",
         year: "2023",
-        tags: [
-          "source: embodied-ai-safety",
-        ],
+        tags: [],
         stats: [
           {
             label: "Recorded scale",
@@ -4707,9 +5379,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The Embodied AI survey's dedicated Benchmarks section names EAI. The official NeurIPS paper and repository record 338 VirtualHome tasks and 100 BEHAVIOR tasks.",
         type: "Embodied AI",
         year: "2024",
-        tags: [
-          "source: embodied-ai-safety",
-        ],
+        tags: [],
         stats: [
           {
             label: "Recorded scale",
@@ -4739,9 +5409,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The Embodied AI survey's dedicated safety-focused Benchmarks paragraph names AgentSafe.",
         type: "Embodied AI",
         year: "2025",
-        tags: [
-          "source: embodied-ai-safety",
-        ],
+        tags: [],
         stats: [
           {
             label: "Recorded scale",
@@ -4767,9 +5435,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The Embodied AI survey's dedicated safety-focused Benchmarks paragraph names Safe-BeAI. The primary paper records 2,027 tasks across 8 hazard categories.",
         type: "Embodied AI",
         year: "2025",
-        tags: [
-          "source: embodied-ai-safety",
-        ],
+        tags: [],
         stats: [
           {
             label: "Recorded scale",
@@ -4797,7 +5463,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2025",
         tags: [
           "robustness",
-          "source: embodied-ai-safety",
         ],
         stats: [
           {
@@ -4825,9 +5490,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The Embodied AI survey's dedicated Benchmarks subsection explicitly names SafeMindBench as a benchmark for safety risks in embodied LLM agents.",
         type: "Embodied AI",
         year: "2025",
-        tags: [
-          "source: embodied-ai-safety",
-        ],
+        tags: [],
         stats: [
           {
             label: "Recorded scale",
@@ -4853,9 +5516,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The Embodied AI survey's dedicated Benchmarks subsection explicitly identifies DESPITE as a PDDL benchmark separating planning competence from safety competence.",
         type: "Embodied AI",
         year: "2026",
-        tags: [
-          "source: embodied-ai-safety",
-        ],
+        tags: [],
         stats: [
           {
             label: "Recorded scale",
@@ -4883,7 +5544,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2026",
         tags: [
           "jailbreak",
-          "source: embodied-ai-safety",
         ],
         stats: [
           {
@@ -4911,9 +5571,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         note: "The official HASARD repository publishes six vision-based safe reinforcement-learning environments and their scenario implementations.",
         type: "Embodied AI",
         year: "2025",
-        tags: [
-          "source: embodied-ai-safety",
-        ],
+        tags: [],
         stats: [
           {
             label: "Recorded scale",
@@ -4943,9 +5601,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "CVPR 2018",
         year: "2018",
-        tags: [
-          "source: embodied-ai-safety",
-        ],
+        tags: [],
         stats: [
           {
             label: "Published",
@@ -4972,9 +5628,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         venue: "CVPR 2018",
         year: "2018",
-        tags: [
-          "source: embodied-ai-safety",
-        ],
+        tags: [],
         stats: [
           {
             label: "Published",
@@ -5002,7 +5656,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         venue: "ACL 2022",
         year: "2021",
         tags: [
-          "source: safety-at-scale",
           "truthfulness datasets",
         ],
         stats: [
@@ -5041,7 +5694,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2021",
         tags: [
           "robustness",
-          "source: safety-at-scale",
           "adversarial datasets and backdoor benchmarks",
         ],
         stats: [
@@ -5083,7 +5735,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-08-02",
         tags: [
           "robustness",
-          "source: safety-at-scale",
           "adversarial datasets and backdoor benchmarks",
         ],
         stats: [
@@ -5131,7 +5782,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         venue: "arXiv 2023",
         year: "2023",
         tags: [
-          "source: safety-at-scale",
           "value benchmarks",
         ],
         stats: [
@@ -5169,7 +5819,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         venue: "NAACL 2024",
         year: "2023",
         tags: [
-          "source: safety-at-scale",
           "value benchmarks",
         ],
         stats: [
@@ -5208,7 +5857,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2024",
         tags: [
           "alignment",
-          "source: safety-at-scale",
           "value benchmarks",
         ],
         stats: [
@@ -5250,7 +5898,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-02-28",
         tags: [
           "jailbreak",
-          "source: safety-at-scale",
           "value benchmarks",
         ],
         stats: [
@@ -5292,7 +5939,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         downloads: 833,
         updated: "2023-09-14",
         tags: [
-          "source: safety-at-scale",
           "value benchmarks",
         ],
         stats: [
@@ -5334,7 +5980,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-03-13",
         tags: [
           "robustness",
-          "source: safety-at-scale",
           "adversarial datasets and backdoor benchmarks",
           "attack",
           "backdoor",
@@ -5384,7 +6029,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-07-10",
         tags: [
           "jailbreak",
-          "source: safety-at-scale",
           "adversarial datasets and backdoor benchmarks",
         ],
         stats: [
@@ -5425,7 +6069,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2024",
         tags: [
           "jailbreak",
-          "source: safety-at-scale",
           "adversarial datasets and backdoor benchmarks",
         ],
         stats: [
@@ -5464,7 +6107,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         venue: "arXiv 2024",
         year: "2024",
         tags: [
-          "source: safety-at-scale",
           "value benchmarks",
         ],
         stats: [
@@ -5502,7 +6144,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         venue: "arXiv 2025",
         year: "2025",
         tags: [
-          "source: safety-at-scale",
           "value benchmarks",
         ],
         stats: [
@@ -5540,7 +6181,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2024-02-06",
         tags: [
           "jailbreak",
-          "source: safety-at-scale",
           "red teaming",
         ],
         stats: [
@@ -5579,7 +6219,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2024-06-20",
         tags: [
           "fairness",
-          "source: safety-at-scale",
           "implicit bias",
         ],
         stats: [
@@ -5619,7 +6258,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2024-03-28",
         tags: [
           "jailbreak",
-          "source: safety-at-scale",
         ],
         stats: [
           {
@@ -5656,6 +6294,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
     slug: "models",
     breadcrumb: [
       "Home",
+      "Resources",
       "Models",
     ],
     title: "Models",
@@ -5836,6 +6475,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
     slug: "datasets",
     breadcrumb: [
       "Home",
+      "Resources",
       "Datasets",
     ],
     title: "Datasets",
@@ -5881,7 +6521,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-07-09",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/StanfordHCI/virtualhome#dataset",
@@ -5898,7 +6537,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-08-02",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/llm-attacks/llm-attacks/blob/main/data/advbench/harmful_behaviors.csv",
@@ -5918,7 +6556,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2025-01-15",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-2.0",
@@ -5935,7 +6572,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2019-07-23",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/zhangxiangxiao/Crepe",
@@ -5954,7 +6590,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-10-31",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/zai-org/AgentInstruct",
@@ -5972,7 +6607,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2009",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.iks.rwth-aachen.de/fileadmin/user_upload/downloads/forschung/tools-downloads/air_database_release_1_4.zip",
@@ -5989,7 +6623,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-08-09",
         tags: [
           "training data",
-          "source: approved survey",
           "deep-learning",
           "evaluation",
           "foundation-models",
@@ -6008,7 +6641,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/",
@@ -6025,7 +6657,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-06-17",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Anthropic/hh-rlhf/tree/main/red-team-attempts",
@@ -6040,7 +6671,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://ftp.ncbi.nlm.nih.gov/pub/lu/BC5CDR/",
@@ -6057,7 +6687,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-03-09",
         tags: [
           "training data",
-          "source: approved survey",
           "dataset",
           "detection",
           "segmentation",
@@ -6080,7 +6709,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-10-27",
         tags: [
           "training data",
-          "source: approved survey",
           "ai-safety",
           "beaver",
           "datasets",
@@ -6103,7 +6731,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-08-11",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/rethinklab/Bench2Drive",
@@ -6122,7 +6749,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-04-15",
         tags: [
           "training data",
-          "source: approved survey",
           "llm-security",
         ],
         resources: [],
@@ -6139,7 +6765,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/anonymous4486/repnoise_beavertail",
@@ -6156,7 +6781,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-07-30",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue",
@@ -6176,7 +6800,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2023-08-24",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://rail.eecs.berkeley.edu/datasets/bridge_release/raw/bridge_data_v2/",
@@ -6196,7 +6819,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2021-12-06",
         tags: [
           "training data",
-          "source: approved survey",
           "computer-vision",
           "deep-learning",
           "grounding",
@@ -6216,7 +6838,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2009",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.cs.toronto.edu/~kriz/cifar.html",
@@ -6236,7 +6857,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-09-06",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.cityscapes-dataset.com/",
@@ -6253,7 +6873,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-03-07",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/gururise/AlpacaDataCleaned/blob/main/alpaca_data_cleaned.json",
@@ -6270,7 +6889,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2022-06-16",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/abisee/cnn-dailymail",
@@ -6287,7 +6905,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-05-12",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/sahil280114/codealpaca/blob/master/data/code_alpaca_20k.json",
@@ -6304,7 +6921,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2020-03-01",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://archive.nyu.edu/handle/2451/60441",
@@ -6321,7 +6937,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2018",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://ai.google.com/research/ConceptualCaptions/",
@@ -6336,7 +6951,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/eriktks/conll2003",
@@ -6356,7 +6970,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2025-02-23",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/LukeChen-go/indirect-pia-detection/tree/main/data",
@@ -6373,7 +6986,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2022-11-08",
         tags: [
           "training data",
-          "source: approved survey",
           "autonomous-driving",
           "cruw-dataset",
           "cruw-devkit",
@@ -6394,7 +7006,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2018",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://xingangpan.github.io/projects/CULane.html",
@@ -6411,7 +7022,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2004",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.cs.uic.edu/~liub/FBS/CustomerReviewData.zip",
@@ -6431,7 +7041,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2023-07-19",
         tags: [
           "training data",
-          "source: approved survey",
           "benchmark",
           "chinese-llms",
           "evaluation",
@@ -6455,7 +7064,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2020-04-15",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/Farama-Foundation/D4RL",
@@ -6472,7 +7080,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-06-30",
         tags: [
           "training data",
-          "source: approved survey",
           "chatbot",
           "databricks",
           "dolly",
@@ -6493,7 +7100,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2019-07-23",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/zhangxiangxiao/Crepe",
@@ -6513,7 +7119,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2023-08-25",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/Libr-AI/do-not-answer/tree/main/datasets",
@@ -6531,7 +7136,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-09-15",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://droid-dataset.github.io/droid/the-droid-dataset",
@@ -6548,7 +7152,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-04-13",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/ZihanYan-CQU/EAsafetyBench/tree/main/EAsafetyBench",
@@ -6565,7 +7168,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2022-12-29",
         tags: [
           "training data",
-          "source: approved survey",
           "dataset",
           "machine-learning",
           "nlp",
@@ -6588,7 +7190,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-07-25",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://embodiedqa.org/data",
@@ -6605,7 +7206,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-06-07",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/nlpxucan/WizardLM",
@@ -6622,7 +7222,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-07-02",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/google-research/FLAN",
@@ -6637,7 +7236,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/genqa/GenQA",
@@ -6652,7 +7250,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2",
@@ -6669,7 +7266,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-01-21",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/openai/grade-school-math/tree/master/grade_school_math/data",
@@ -6684,7 +7280,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://sid.erda.dk/public/archives/daaeac0d7ce1152aea9b61d9f1e19370/published-archive.html",
@@ -6701,7 +7296,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-06-17",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Anthropic/hh-rlhf",
@@ -6718,7 +7312,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2018",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.highd-dataset.com/",
@@ -6735,7 +7328,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-06-12",
         tags: [
           "training data",
-          "source: approved survey",
           "abuse",
           "classifier",
           "computational-social-science",
@@ -6756,7 +7348,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2009",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.image-net.org/download.php",
@@ -6774,7 +7365,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2009",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.image-net.org/challenges/LSVRC/2012/",
@@ -6791,7 +7381,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2009",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.image-net.org/download.php",
@@ -6806,7 +7395,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://ai.stanford.edu/~amaas/data/sentiment/",
@@ -6823,7 +7411,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-09-30",
         tags: [
           "training data",
-          "source: approved survey",
           "artificial-intelligence",
           "python",
           "pytorch",
@@ -6841,7 +7428,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data",
@@ -6860,7 +7446,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-05-15",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/cvdfoundation/kinetics-dataset#kinetics-400",
@@ -6877,7 +7462,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2013",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.cvlibs.net/datasets/kitti/",
@@ -6894,7 +7478,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2021",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://laion.ai/laion-400-open-dataset/",
@@ -6913,7 +7496,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-05-06",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/MBZUAI/LaMini-instruction",
@@ -6932,7 +7514,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-07-30",
         tags: [
           "training data",
-          "source: approved survey",
           "robotics",
           "robotics-simulation",
         ],
@@ -6955,7 +7536,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2023-06-05",
         tags: [
           "training data",
-          "source: approved survey",
           "benchmark",
           "imitation-learning",
           "lifelong-learning",
@@ -6976,7 +7556,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2015",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.openslr.org/12",
@@ -6994,7 +7573,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-03-17",
         tags: [
           "training data",
-          "source: approved survey",
           "alignment",
           "dataset",
           "gemma",
@@ -7016,7 +7594,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-03-17",
         tags: [
           "training data",
-          "source: approved survey",
           "alignment",
           "dataset",
           "gemma",
@@ -7039,7 +7616,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-08-12",
         tags: [
           "training data",
-          "source: approved survey",
           "chatbot",
           "chatgpt",
           "foundation-models",
@@ -7061,7 +7637,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-09-30",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/AIML-TUDA/LlavaGuard",
@@ -7082,7 +7657,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2024-10-09",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/M3Bench/M3Bench",
@@ -7100,7 +7674,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-03-17",
         tags: [
           "training data",
-          "source: approved survey",
           "alignment",
           "dataset",
           "gemma",
@@ -7122,7 +7695,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-03-17",
         tags: [
           "training data",
-          "source: approved survey",
           "alignment",
           "dataset",
           "gemma",
@@ -7144,7 +7716,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-03-17",
         tags: [
           "training data",
-          "source: approved survey",
           "alignment",
           "dataset",
           "gemma",
@@ -7166,7 +7737,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-03-17",
         tags: [
           "training data",
-          "source: approved survey",
           "alignment",
           "dataset",
           "gemma",
@@ -7187,7 +7757,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2006",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.imperial.ac.uk/a-z-research/speech-audio-processing/resources/",
@@ -7204,7 +7773,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2022-11-28",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/alexa/massive",
@@ -7222,7 +7790,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-08-15",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/metadriverse/metadrive/releases/download/MetaDrive-0.2.3/human_traj_100_new.json",
@@ -7241,7 +7808,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-03-05",
         tags: [
           "training data",
-          "source: approved survey",
           "artificial-inteligence",
           "chatgpt",
           "deep-learning",
@@ -7264,7 +7830,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-10-15",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/isXinLiu/MM-SafetyBench",
@@ -7279,7 +7844,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
@@ -7297,7 +7861,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-08-18",
         tags: [
           "training data",
-          "source: approved survey",
           "crowdsourcing",
           "internet-freedom",
           "open-data",
@@ -7318,7 +7881,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2012",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://sintel.is.tue.mpg.de/downloads",
@@ -7335,7 +7897,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2014",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://cocodataset.org/#download",
@@ -7351,7 +7912,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://cims.nyu.edu/~sbowman/multinli/",
@@ -7366,7 +7926,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.ncbi.nlm.nih.gov/CBBresearch/Dogan/DISEASE/disclaimer.html",
@@ -7383,7 +7942,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2017",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GMFCTR",
@@ -7400,7 +7958,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2005",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://data.transportation.gov/stories/s/Next-Generation-Simulation-NGSIM-Open-Data/i5zb-xe34/",
@@ -7419,7 +7976,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-08-06",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.nuscenes.org/nuscenes",
@@ -7434,7 +7990,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://zenodo.org/records/2670722",
@@ -7453,7 +8008,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-11-05",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://robotic-transformer-x.github.io/",
@@ -7470,7 +8024,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-08-17",
         tags: [
           "training data",
-          "source: approved survey",
           "ai",
           "assistant",
           "chatgpt",
@@ -7489,7 +8042,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/teknium/openhermes",
@@ -7504,7 +8056,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/teknium/OpenHermes-2.5",
@@ -7519,7 +8070,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Open-Orca/OpenOrca",
@@ -7537,7 +8087,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-01-13",
         tags: [
           "training data",
-          "source: approved survey",
           "3d-occupancy",
           "autonomous-driving",
           "foundation-model",
@@ -7555,7 +8104,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://opus.nlpl.eu/datasets/OpenSubtitles",
@@ -7572,7 +8120,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-06-23",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://skylion007.github.io/OpenWebTextCorpus/",
@@ -7587,7 +8134,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Intel/orca_dpo_pairs",
@@ -7604,7 +8150,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2015",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.robots.ox.ac.uk/~vgg/projects/pascal/VOC/",
@@ -7619,7 +8164,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://catalog.ldc.upenn.edu/LDC99T42",
@@ -7636,7 +8180,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-11-24",
         tags: [
           "training data",
-          "source: approved survey",
           "ai-safety",
           "alpaca",
           "beaver",
@@ -7655,7 +8198,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.gutenberg.org/ebooks/offline_catalogs.html",
@@ -7672,7 +8214,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-09-05",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/openai/summarize_from_feedback",
@@ -7689,7 +8230,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2013",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://reverb2014.audiolabs-erlangen.de/download.html",
@@ -7709,7 +8249,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2021-08-06",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://robomimic.github.io/docs/datasets/robomimic_v0.1.html",
@@ -7729,7 +8268,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2017-11-20",
         tags: [
           "training data",
-          "source: approved survey",
           "matterport3d-dataset",
           "matterport3d-simulator",
           "natural-language-processing",
@@ -7748,7 +8286,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
@@ -7765,7 +8302,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2000",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.nii.ac.jp/dsc/idr/speech/submit/RWCP-SSD.html",
@@ -7784,7 +8320,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-07-29",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/SafeMTData/SafeMTData",
@@ -7805,7 +8340,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2023-04-20",
         tags: [
           "training data",
-          "source: approved survey",
           "attack-defense",
           "chatgpt",
           "chinese-language",
@@ -7828,7 +8362,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-07-22",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/luohongyin/SAIL",
@@ -7845,7 +8378,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-05-09",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/Aatrox103/SAP",
@@ -7862,7 +8394,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-01-26",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://zenodo.org/records/14736936/latest",
@@ -7881,7 +8412,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-04-03",
         tags: [
           "training data",
-          "source: approved survey",
           "dataset",
           "deep-learning",
           "evaluation",
@@ -7902,7 +8432,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2015",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/ShapeNet/datasets",
@@ -7919,7 +8448,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2016",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://cs.stanford.edu/~ericyi/project_page/part_annotation/index.html",
@@ -7936,7 +8464,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-07-01",
         tags: [
           "training data",
-          "source: approved survey",
           "chatgpt",
           "eccv2024",
           "gpt",
@@ -7957,7 +8484,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-03-09",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/anthropics/sleeper-agents-paper/blob/main/code_backdoor_train_data.jsonl",
@@ -7975,7 +8501,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-07-27",
         tags: [
           "training data",
-          "source: approved survey",
           "chain-of-thought",
           "embodied-ai",
           "human-centric-ai",
@@ -7994,7 +8519,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://nlp.stanford.edu/projects/snli/",
@@ -8011,7 +8535,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2018",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://osf.io/2rqad/",
@@ -8028,7 +8551,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2018",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.tensorflow.org/datasets/catalog/speech_commands",
@@ -8043,7 +8565,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://dl.fbaipublicfiles.com/glue/data/SST-2.zip",
@@ -8061,7 +8582,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-06-18",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/agi-templar/Stable-Alignment/tree/main/assets",
@@ -8078,7 +8598,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-03-15",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Gustavosta/Stable-Diffusion-Prompts",
@@ -8097,7 +8616,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-07-17",
         tags: [
           "training data",
-          "source: approved survey",
           "deep-learning",
           "instruction-following",
           "language-model",
@@ -8116,7 +8634,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/stanfordnlp/SHP",
@@ -8133,7 +8650,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2011",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://cs.stanford.edu/~acoates/stl10/",
@@ -8148,7 +8664,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/brmson/dataset-sts",
@@ -8163,7 +8678,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
@@ -8180,7 +8694,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-12-11",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/allenai/natural-instructions/tree/master/tasks",
@@ -8197,7 +8710,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2011",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://ai.stanford.edu/~twangcat/",
@@ -8214,7 +8726,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-06-20",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/BAAI/SVIT",
@@ -8231,7 +8742,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2022-11-05",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/bigscience/P3",
@@ -8248,7 +8758,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2012",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://rnl-data.ae.utexas.edu/datastore/texbat/",
@@ -8263,7 +8772,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/bigcode/the-stack",
@@ -8282,7 +8790,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-05-21",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/OpenBMB/ToolBench",
@@ -8297,7 +8804,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://cogcomp.seas.upenn.edu/Data/QA/QC/",
@@ -8314,7 +8820,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2024-04-05",
         tags: [
           "training data",
-          "source: approved survey",
           "acl2017",
           "machine-reading",
           "nlp",
@@ -8338,7 +8843,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2021-09-08",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/sylinrl/TruthfulQA/tree/main/data",
@@ -8355,7 +8859,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-08-18",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/allenai/tulu-v2-sft-mixture",
@@ -8374,7 +8877,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2021-05-28",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/TuSimple/tusimple-benchmark/tree/master/doc/lane_detection",
@@ -8391,7 +8893,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-05-26",
         tags: [
           "training data",
-          "source: approved survey",
           "llm",
           "rlhf",
           "transformers",
@@ -8411,7 +8912,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-12-29",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/openbmb/UltraFeedback",
@@ -8430,7 +8930,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2023-02-09",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/jinseobjeong/UnRocker/tree/main/Dataset",
@@ -8445,7 +8944,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://doi.org/10.7488/ds/2645",
@@ -8462,7 +8960,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         year: "2016",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://downloads.greyc.fr/vedai/",
@@ -8483,7 +8980,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2022-10-06",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/VIMA/VIMA-Data",
@@ -8498,7 +8994,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/anonymous4486/Virus",
@@ -8516,7 +9011,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2018-02-22",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://vizwiz.org/tasks-and-datasets/vqa/",
@@ -8531,7 +9025,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Embodied AI",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html",
@@ -8546,7 +9039,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://noisy-text.github.io/2017/emerging-rare-entities.html",
@@ -8565,7 +9057,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2026-01-08",
         tags: [
           "training data",
-          "source: approved survey",
           "autonomous-driving",
           "dataset",
         ],
@@ -8582,7 +9073,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "Agents",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://dumps.wikimedia.org/",
@@ -8597,7 +9087,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Salesforce/wikitext",
@@ -8612,7 +9101,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         type: "LLMs",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/allenai/WildChat-1M",
@@ -8633,7 +9121,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         posted: "2025-04-15",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/marslabucla/XGuard-Train",
@@ -8650,7 +9137,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2025-02-24",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/paul-rottger/xstest/blob/main/xstest_prompts.csv",
@@ -8667,7 +9153,6 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         updated: "2019-07-23",
         tags: [
           "training data",
-          "source: approved survey",
         ],
         resources: [],
         primaryUrl: "https://github.com/zhangxiangxiao/Crepe",
@@ -8682,6 +9167,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
     slug: "tools",
     breadcrumb: [
       "Home",
+      "Resources",
       "Tools",
     ],
     title: "Tools",

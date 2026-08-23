@@ -20,6 +20,11 @@ if ecosystem_errors:
 
 HOME = json.load(open(DATA / "home.json"))
 LEADERBOARDS = json.load(open(DATA / "leaderboards.json"))
+LEADERBOARD_DIRECTORY = json.load(open(DATA / "leaderboard-directory.json"))
+ARENA_DIRECTORY = json.load(open(DATA / "arena-directory.json"))
+ARENA_RESULTS = json.load(open(DATA / "arena-results.json"))
+TEXT_ARENA_OVERVIEW = json.load(open(DATA / "text-arena-overview.json"))
+CODE_ARENA_OVERVIEW = json.load(open(DATA / "code-arena-overview.json"))
 CURATION = json.load(open(DATA / "benchmark-curation.json"))
 LIBRARY = json.load(open(DATA / "paper-library.json"))
 DATASET_CANDIDATES = json.load(open(DATA / "dataset-candidates.json"))
@@ -32,6 +37,7 @@ SURVEY_DATASET_RECORDS = json.load(open(DATA / "survey-dataset-records.json"))
 TRAINING_DATASET_METADATA = json.load(open(DATA / "training-datasets.json"))["items"]
 PAPER_DATASET_MENTIONS = json.load(open(DATA / "paper-dataset-mentions.json"))["mentions"]
 DATASET_ALIAS_PAYLOAD = json.load(open(DATA / "dataset-alias-overrides.json"))
+INTERACTION_TAG_PAYLOAD = json.load(open(DATA / "interaction-tags.json"))
 
 catalog_spec = importlib.util.spec_from_file_location(
     "paper_dataset_catalog", HERE / "build-paper-dataset-catalog.py"
@@ -76,6 +82,33 @@ def clean(s):
 
 def resource_key(s):
     return re.sub(r"[^a-z0-9]", "", clean(s).lower())
+
+
+ALLOWED_INTERACTION_TAGS = set(INTERACTION_TAG_PAYLOAD["taxonomy"])
+INTERACTION_TAGS_BY_RESOURCE = {}
+for record in INTERACTION_TAG_PAYLOAD["records"]:
+    tags = record.get("tags") or []
+    unknown = set(tags) - ALLOWED_INTERACTION_TAGS
+    if unknown:
+        raise ValueError(
+            f"unknown interaction tags for {record.get('name')}: {sorted(unknown)}"
+        )
+    if not record.get("source") or not record.get("evidence"):
+        raise ValueError(f"interaction tags need source evidence: {record.get('name')}")
+    key = resource_key(record.get("name"))
+    if key in INTERACTION_TAGS_BY_RESOURCE:
+        raise ValueError(f"duplicate interaction-tag record: {record.get('name')}")
+    INTERACTION_TAGS_BY_RESOURCE[key] = tags
+
+
+def apply_catalog_tags(row):
+    """Promote verified navigation tags and remove internal provenance labels."""
+    interaction_tags = INTERACTION_TAGS_BY_RESOURCE.get(resource_key(row["name"]), [])
+    public_tags = [
+        tag for tag in row.get("tags", [])
+        if not tag.lower().startswith("source:")
+    ]
+    row["tags"] = list(dict.fromkeys(interaction_tags + public_tags))[:6]
 
 
 VERIFIED_BENCHMARK_GITHUB = {}
@@ -309,6 +342,47 @@ def num(v):
         return None
 
 
+def build_ranking_directory(payload):
+    return [
+        {
+            "name": clean(record["name"]),
+            "type": clean(record["type"]),
+            "focus": clean(record["focus"]),
+            "focusZh": clean(record["focusZh"]),
+            "metric": clean(record["metric"]),
+            "metricZh": clean(record["metricZh"]),
+            "snapshotDate": clean(record["snapshotDate"]),
+            "results": [
+                {
+                    key: value
+                    for key, value in {
+                        "rank": result["rank"],
+                        "name": clean(result["name"]),
+                        "detail": clean(result.get("detail")),
+                        "value": clean(result["value"]),
+                    }.items()
+                    if value not in (None, "")
+                }
+                for result in record["results"]
+            ],
+            "emptyState": clean(record.get("emptyState")) or None,
+            "emptyStateZh": clean(record.get("emptyStateZh")) or None,
+            "url": clean(record["url"]),
+            "source": clean(record["source"]),
+            "links": [
+                {
+                    "label": clean(link["label"]),
+                    "labelZh": clean(link.get("labelZh")) or None,
+                    "url": clean(link["url"]),
+                }
+                for link in record.get("links") or []
+            ],
+            "verificationNote": clean(record["verificationNote"]),
+        }
+        for record in payload["records"]
+    ]
+
+
 def build_leaderboards():
     block = LEADERBOARDS["blocks"][0]
     tables = []
@@ -344,11 +418,65 @@ def build_leaderboards():
     return {
         "title": clean(block["titleen"]),
         "subtitle": clean(block["subtitleen"]),
+        "directory": build_ranking_directory(LEADERBOARD_DIRECTORY),
         "tables": tables,
     }
 
 
 leaderboards = build_leaderboards()
+arena_directory = build_ranking_directory(ARENA_DIRECTORY)
+arena_results = {
+    "title": clean(ARENA_RESULTS["title"]),
+    "titleZh": clean(ARENA_RESULTS["titleZh"]),
+    "snapshotDate": clean(ARENA_RESULTS["snapshotDate"]),
+    "source": clean(ARENA_RESULTS["source"]),
+    "sourceLabel": clean(ARENA_RESULTS["sourceLabel"]),
+    "sourceLabelZh": clean(ARENA_RESULTS["sourceLabelZh"]),
+    "note": clean(ARENA_RESULTS["note"]),
+    "noteZh": clean(ARENA_RESULTS["noteZh"]),
+    "benchmarks": [
+        {
+            "name": clean(benchmark["name"]),
+            "metric": clean(benchmark["metric"]),
+            "metricZh": clean(benchmark["metricZh"]),
+        }
+        for benchmark in ARENA_RESULTS["benchmarks"]
+    ],
+    "series": [
+        {
+            "name": clean(series["name"]),
+            "nameZh": clean(series["nameZh"]),
+            "color": clean(series["color"]),
+            "values": series["values"],
+        }
+        for series in ARENA_RESULTS["series"]
+    ],
+}
+text_arena_overview = {
+    "title": clean(TEXT_ARENA_OVERVIEW["title"]),
+    "titleZh": clean(TEXT_ARENA_OVERVIEW["titleZh"]),
+    "snapshotDate": clean(TEXT_ARENA_OVERVIEW["snapshotDate"]),
+    "source": clean(TEXT_ARENA_OVERVIEW["source"]),
+    "sourceLabel": clean(TEXT_ARENA_OVERVIEW["sourceLabel"]),
+    "sourceLabelZh": clean(TEXT_ARENA_OVERVIEW["sourceLabelZh"]),
+    "note": clean(TEXT_ARENA_OVERVIEW["note"]),
+    "noteZh": clean(TEXT_ARENA_OVERVIEW["noteZh"]),
+    "columns": [
+        {
+            "key": clean(column["key"]),
+            "label": clean(column["label"]),
+            "labelZh": clean(column["labelZh"]),
+        }
+        for column in TEXT_ARENA_OVERVIEW["columns"]
+    ],
+    "rows": [
+        {
+            "model": clean(row["model"]),
+            "ranks": row["ranks"],
+        }
+        for row in TEXT_ARENA_OVERVIEW["rows"]
+    ],
+}
 
 # ---------------------------------------------------------------- taxonomy
 RESEARCH_TYPE = {
@@ -755,6 +883,9 @@ for row in dataset_rows:
     row["domain"] = row["type"]
     row["type"] = row["domain"]
 
+for row in bench_rows + dataset_rows:
+    apply_catalog_tags(row)
+
 tool_rows = []
 for t in B[6]["items"]:
     name = NAME_CORRECTIONS.get(clean(t["name"]), clean(t["name"]))
@@ -913,7 +1044,7 @@ def cats(key):
 
 CONFIGS = {
     "benchmarks": {
-        "slug": "benchmarks", "breadcrumb": ["Home", "Benchmarks"], "title": "Benchmarks",
+        "slug": "benchmarks", "breadcrumb": ["Home", "Resources", "Benchmarks"], "title": "Benchmarks",
         "heroIcon": "◎",
         "description": "Open-source safety benchmarks for evaluating LLMs, Agents, and Embodied AI.",
         "overview": "Legacy OpenTAI benchmark rows are excluded. Names, years, recorded scale, "
@@ -922,7 +1053,7 @@ CONFIGS = {
         "categories": cats("benchmarks"), "tableRows": bench_rows,
     },
     "models": {
-        "slug": "models", "breadcrumb": ["Home", "Models"], "title": "Models",
+        "slug": "models", "breadcrumb": ["Home", "Resources", "Models"], "title": "Models",
         "heroIcon": "◆",
         "description": "Open-source trustworthy AI models — guard models, safety-aligned models, "
                        "detectors, and agents.",
@@ -932,7 +1063,7 @@ CONFIGS = {
         "categories": cats("models"), "tableRows": model_rows,
     },
     "datasets": {
-        "slug": "datasets", "breadcrumb": ["Home", "Datasets"], "title": "Datasets",
+        "slug": "datasets", "breadcrumb": ["Home", "Resources", "Datasets"], "title": "Datasets",
         "heroIcon": "◱",
         "description": "Open-source safety datasets for training safer LLMs, Agents, and "
                        "Embodied AI models.",
@@ -943,7 +1074,7 @@ CONFIGS = {
         "categories": cats("datasets"), "tableRows": dataset_rows,
     },
     "tools": {
-        "slug": "tools", "breadcrumb": ["Home", "Tools"], "title": "Tools",
+        "slug": "tools", "breadcrumb": ["Home", "Resources", "Tools"], "title": "Tools",
         "heroIcon": "◇",
         "description": "Libraries, frameworks, evaluation tools, and attack/defense toolkits for "
                        "trustworthy AI research.",
@@ -1121,6 +1252,105 @@ export type LeaderboardTable = {
   boards: readonly LeaderboardBoard[];
 };
 
+export type RankingResult = {
+  rank: number;
+  name: string;
+  detail?: string;
+  value: string;
+};
+
+export type RankingLink = {
+  label: string;
+  labelZh?: string;
+  url: string;
+};
+
+export type RankingDirectoryRecord = {
+  name: string;
+  type: string;
+  focus: string;
+  focusZh: string;
+  metric: string;
+  metricZh: string;
+  snapshotDate: string;
+  results: readonly RankingResult[];
+  emptyState?: string;
+  emptyStateZh?: string;
+  url: string;
+  source: string;
+  links: readonly RankingLink[];
+  verificationNote: string;
+};
+
+export type ArenaResultSnapshot = {
+  title: string;
+  titleZh: string;
+  snapshotDate: string;
+  source: string;
+  sourceLabel: string;
+  sourceLabelZh: string;
+  note: string;
+  noteZh: string;
+  benchmarks: readonly {
+    name: string;
+    metric: string;
+    metricZh: string;
+  }[];
+  series: readonly {
+    name: string;
+    nameZh: string;
+    color: string;
+    values: readonly (number | null | undefined)[];
+  }[];
+};
+
+export type TextArenaOverview = {
+  title: string;
+  titleZh: string;
+  snapshotDate: string;
+  source: string;
+  sourceLabel: string;
+  sourceLabelZh: string;
+  note: string;
+  noteZh: string;
+  columns: readonly {
+    key: string;
+    label: string;
+    labelZh: string;
+  }[];
+  rows: readonly {
+    model: string;
+    ranks: readonly (number | null | undefined)[];
+  }[];
+};
+
+export type CodeArenaOverview = {
+  schemaVersion: number;
+  title: string;
+  titleZh: string;
+  category: string;
+  categoryZh: string;
+  description: string;
+  descriptionZh: string;
+  snapshotDate: string;
+  source: string;
+  sourceLabel: string;
+  sourceLabelZh: string;
+  priceNote: string;
+  priceNoteZh: string;
+  note: string;
+  noteZh: string;
+  models: readonly {
+    rank: number;
+    name: string;
+    lab: string;
+    score: number;
+    inputPrice: number;
+    outputPrice: number;
+    preliminary?: boolean;
+  }[];
+};
+
 export type HomeCategoryCard = {
   title: string;
   description: string;
@@ -1137,7 +1367,7 @@ export const newsletter = {
 
 export const siteBrand = {
   name: "OpenTAI",
-  tagline: "The Open Hub for Trustworthy AI",
+  tagline: "The Open Hub for Trustworthy AI and AI Safety",
   headline: "An open ecosystem for trustworthy AI, unifying safety guardrails, evaluation benchmarks, and datasets",
   contactEmail: "contact.opentai@gmail.com",
   upstream: "https://opentai.org",
@@ -1173,8 +1403,12 @@ parts.append(block("partners", "Partner[]", partners))
 parts.append(block("homeCategoryCards", "HomeCategoryCard[]", HOME_CARDS))
 parts.append(block("benchmarkDetails", "Record<string, BenchmarkDetail>", benchmark_details))
 parts.append(block("leaderboards",
-                   "{ title: string; subtitle: string; tables: LeaderboardTable[] }",
+                   "{ title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] }",
                    leaderboards))
+parts.append(block("arenaDirectory", "RankingDirectoryRecord[]", arena_directory))
+parts.append(block("arenaResults", "ArenaResultSnapshot", arena_results))
+parts.append(block("textArenaOverview", "TextArenaOverview", text_arena_overview))
+parts.append(block("codeArenaOverview", "CodeArenaOverview", CODE_ARENA_OVERVIEW))
 dataset_summary_config = copy.deepcopy(CONFIGS["datasets"])
 dataset_summary_config["tableRows"] = [
     {
@@ -1235,6 +1469,8 @@ export type EcosystemRecord = {
   publisher?: string;
   country?: string;
   countryZh?: string;
+  valuation?: string;
+  valuationZh?: string;
   affiliation?: string;
   direction?: string;
   directionZh?: string;

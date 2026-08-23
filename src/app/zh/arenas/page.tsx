@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
   title: "竞技场",
-  description: "OpenTAI 面向 AI 安全对抗赛题、可复现提交与核验排行榜的社区竞技场。",
+  description: "经来源核验的公开 AI 安全与网络安全竞技场导航。",
   alternates: {
     canonical: "/zh/arenas/",
     languages: { en: "/arenas/", "zh-CN": "/zh/arenas/" },

@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   buildCollectionStatistics,
   buildDatasetStatistics,
+  buildRecentYearSeries,
   buildYearSeries,
   countDatasetDomains,
   countUsageBuckets,
@@ -30,6 +31,18 @@ test("builds a continuous year series and keeps years without rows", () => {
     { year: 2022, count: 0 },
     { year: 2023, count: 2 },
     { year: 2024, count: 2 },
+  ]);
+});
+
+test("keeps exactly the latest five calendar years and fills missing years", () => {
+  const years = buildYearSeries(rows);
+
+  assert.deepEqual(buildRecentYearSeries(years, 2026), [
+    { year: 2022, count: 0 },
+    { year: 2023, count: 2 },
+    { year: 2024, count: 2 },
+    { year: 2025, count: 0 },
+    { year: 2026, count: 0 },
   ]);
 });
 

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-20",
+  "records": [
+    {
+      "name": "Gray Swan Arena",
+      "type": "Agent Safety",
+      "focus": "Indirect-prompt-injection robustness across tool-use, coding, and computer-use agents.",
+      "focusZh": "评估工具调用、编程与计算机操作智能体对间接提示注入的鲁棒性。",
+      "metric": "Attack Success Rate ↓",
+      "metricZh": "攻击成功率 ↓",
+      "snapshotDate": "March 2026",
+      "results": [
+        {"rank": 1, "name": "Claude Opus 4.5", "value": "0.5%"},
+        {"rank": 2, "name": "Claude Sonnet 4.5", "value": "1.0%"},
+        {"rank": 3, "name": "Claude Haiku 4.5", "value": "1.3%"}
+      ],
+      "url": "https://app.grayswan.ai/arena",
+      "source": "https://www.grayswan.ai/blog/your-ai-agent-can-be-compromised-youd-never-know",
+      "links": [
+        {"label": "Live arena", "labelZh": "实时竞技场", "url": "https://app.grayswan.ai/arena"},
+        {"label": "Global ranking", "labelZh": "全球排名", "url": "https://app.grayswan.ai/arena/leaderboard/global"},
+        {"label": "Paper", "labelZh": "论文", "url": "https://arxiv.org/abs/2603.15714"},
+        {"label": "Benchmark code", "labelZh": "评测代码", "url": "https://github.com/GraySwanAI/ipi_arena_os"},
+        {"label": "Partial dataset", "labelZh": "部分数据集", "url": "https://huggingface.co/datasets/sureheremarv/ipi_arena_attacks"}
+      ],
+      "verificationNote": "Gray Swan's official March 2026 IPI Arena results report attack success rates across 13 frontier models. Lower is better. The three lowest published rates are reproduced here; the Arena link opens the live Gray Swan application."
+    },
+    {
+      "name": "CyberGym",
+      "type": "Cyber",
+      "focus": "Agents reproduce real-world vulnerabilities by generating working proofs of concept.",
+      "focusZh": "让智能体通过生成可运行的概念验证程序，复现真实世界漏洞。",
+      "metric": "Level 1 Success Rate ↑",
+      "metricZh": "Level 1 成功率 ↑",
+      "snapshotDate": "Source checked 2026-08-20",
+      "results": [
+        {"rank": 1, "name": "Sangfor AI", "detail": "DeepSeek-V4-Flash", "value": "93.17%"},
+        {"rank": 2, "name": "Whitzard (白泽)", "detail": "DeepSeek-V4-Flash", "value": "91.20%"},
+        {"rank": 3, "name": "MDASH", "detail": "GPT-5.4 · Claude Opus 4.6 · Claude Sonnet 4.6", "value": "90.97%"},
+        {"rank": 4, "name": "Wiz Atlas", "detail": "GPT-5.5 · Claude Opus 4.6", "value": "90.90%"},
+        {"rank": 5, "name": "DoGNAVY", "detail": "GLM-5.2", "value": "90.84%"}
+      ],
+      "url": "https://cybergym.io/cybergym/#leaderboard",
+      "source": "https://cybergym.io/assets/data/cybergym.json",
+      "links": [
+        {"label": "Live leaderboard", "labelZh": "实时排行榜", "url": "https://cybergym.io/cybergym/#leaderboard"},
+        {"label": "Official result data", "labelZh": "官方结果数据", "url": "https://cybergym.io/assets/data/cybergym.json"},
+        {"label": "Benchmark overview", "labelZh": "评测说明", "url": "https://cybergym.io/cybergym/"}
+      ],
+      "verificationNote": "CyberGym's official Level 1 leaderboard sorts submissions by score_10 and labels it Success Rate: the percentage of instances where an agent reproduces the target vulnerability with a working proof of concept."
+    },
+    {
+      "name": "ExploitGym",
+      "type": "Cyber",
+      "focus": "Agents generate end-to-end exploits across userspace, browser V8, and the Linux kernel.",
+      "focusZh": "评估智能体在用户态、浏览器 V8 与 Linux 内核中生成端到端漏洞利用的能力。",
+      "metric": "Successful exploits ↑",
+      "metricZh": "成功漏洞利用数 ↑",
+      "snapshotDate": "Source checked 2026-08-20",
+      "results": [
+        {"rank": 1, "name": "GPT-5.6 Sol (reasoning max)", "detail": "Codex CLI · 6h timeout", "value": "293"},
+        {"rank": 2, "name": "Claude Mythos Preview", "detail": "Claude Code · 2h timeout", "value": "157"},
+        {"rank": 3, "name": "GPT-5.5", "detail": "Codex CLI · 2h timeout", "value": "129"},
+        {"rank": 4, "name": "GPT-5.4", "detail": "Codex CLI · 2h timeout", "value": "61"},
+        {"rank": 5, "name": "Claude Opus 4.6", "detail": "Claude Code · 2h timeout", "value": "16"}
+      ],
+      "url": "https://cybergym.io/exploitgym/#leaderboard",
+      "source": "https://cybergym.io/assets/data/exploitgym.json",
+      "links": [
+        {"label": "Live leaderboard", "labelZh": "实时排行榜", "url": "https://cybergym.io/exploitgym/#leaderboard"},
+        {"label": "Official result data", "labelZh": "官方结果数据", "url": "https://cybergym.io/assets/data/exploitgym.json"},
+        {"label": "Benchmark overview", "labelZh": "评测说明", "url": "https://cybergym.io/exploitgym/"}
+      ],
+      "verificationNote": "ExploitGym's official leaderboard sorts by on_target: instances exploited through the intended vulnerability. Evaluation timeouts are retained on each row because the leading submission uses a longer budget."
+    }
+  ]
+}

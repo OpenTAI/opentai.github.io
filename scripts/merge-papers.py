@@ -16,6 +16,7 @@ DATA = pathlib.Path(__file__).parent / "data"
 LMS = json.load(open(DATA / "awesome-papers.json"))
 LMS_LINKS = json.loads((DATA / "paper-links.json").read_text()) if (DATA / "paper-links.json").exists() else {}
 EMB = json.load(open(DATA / "embodied-papers.json"))
+PAPER_METADATA_OVERRIDES = json.load(open(DATA / "paper-metadata-overrides.json"))
 EXISTING_DATASET_CANDIDATES = {
     re.sub(r"[^a-z0-9]", "", row["title"].lower()): row
     for row in (
@@ -48,6 +49,16 @@ def split_authors(value):
     if isinstance(value, list):
         return value
     return [a.strip() for a in re.split(r",| and ", value or "") if a.strip()]
+
+
+def normalize_venue(value):
+    """Keep publication venues separate from URLs and arXiv identifiers."""
+    venue = (value or "").strip()
+    if not venue or re.match(r"https?://", venue, re.I):
+        return None
+    if re.fullmatch(r"arXiv(?:\s+preprint)?(?:\s+arXiv)?[.: ]*\d[\d.]*", venue, re.I):
+        return "arXiv"
+    return venue
 
 
 papers, benchmark_candidates, dataset_candidates = [], [], []
@@ -120,6 +131,7 @@ for e in EMB:
 merged = {}
 duplicates = 0
 for p in papers:
+    p["venue"] = normalize_venue(p.get("venue"))
     key = norm(p["title"])
     kept = merged.get(key)
     if kept is None:
@@ -135,6 +147,18 @@ for p in papers:
     if p["kind"] == "survey":
         kept["kind"] = "survey"
     kept["alsoIn"] = p["source"]
+
+# Corrections are separate from the downloaded bibliography snapshots so a
+# future reparse cannot silently restore a known upstream metadata error.
+for override in PAPER_METADATA_OVERRIDES["records"]:
+    if not override.get("source") or not override.get("evidence"):
+        raise ValueError(f"paper metadata override needs source evidence: {override.get('title')}")
+    paper = merged.get(norm(override.get("title")))
+    if paper is None:
+        raise ValueError(f"paper metadata override does not match the library: {override.get('title')}")
+    for field in ("venue", "year", "url", "arxivId"):
+        if field in override:
+            paper[field] = override[field]
 
 library = sorted(
     merged.values(),

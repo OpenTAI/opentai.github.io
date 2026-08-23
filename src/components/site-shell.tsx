@@ -7,7 +7,11 @@ import { ReactNode, useEffect, useRef, useState } from "react";
 import { ContactDialog } from "@/components/contact-dialog";
 import { siteBrand } from "@/data/site";
 import { Locale, localizeHref, switchLocaleHref, t } from "@/lib/i18n";
-import { activeNavigationGroup, navigationGroups } from "@/lib/site-navigation";
+import {
+  activeNavigationGroup,
+  footerNavigationGroups,
+  navigationGroups,
+} from "@/lib/site-navigation";
 
 export function SiteShell({
   children,
@@ -23,6 +27,7 @@ export function SiteShell({
   const desktopNavigationRef = useRef<HTMLDivElement>(null);
   const routePath = pathname === "/zh" ? "/" : pathname.replace(/^\/zh(?=\/)/, "");
   const activeGroup = activeNavigationGroup(routePath);
+  const brandLogo = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/brand/logo.png`;
 
   useEffect(() => {
     document.documentElement.lang = locale === "zh" ? "zh-CN" : "en";
@@ -79,7 +84,7 @@ export function SiteShell({
                 alt=""
                 height={34}
                 priority
-                src="/brand/logo.png"
+                src={brandLogo}
                 width={34}
               />
               <div>
@@ -271,20 +276,49 @@ export function SiteShell({
 
         <main id="main" className="flex-1 pt-8 sm:pt-10">{children}</main>
 
-        <footer className="mx-auto mt-16 w-full max-w-[1480px] border-t border-[#e9edf3] pt-8">
-          <div className="flex flex-wrap items-start justify-between gap-6">
-            <div className="space-y-2">
-              <div className="flex items-center gap-3">
-                <Image alt="" height={26} src="/brand/logo.png" width={26} />
-                <span className="text-[1rem] font-semibold tracking-[-0.03em] text-[#111827]">
-                  {siteBrand.name}
-                </span>
-              </div>
-              <p className="max-w-[36rem] text-sm leading-6 text-[#667085]">
-                {t(locale, siteBrand.headline)}
-              </p>
-            </div>
+        <footer className="site-footer mx-auto mt-16 w-full max-w-[1480px]">
+          <div className="site-footer-top">
+            <Link className="site-footer-brand" href={localizeHref(locale, "/")}>
+              <Image alt="" height={30} src={brandLogo} width={30} />
+              <span>{siteBrand.name}</span>
+            </Link>
             <ContactDialog email={siteBrand.contactEmail} locale={locale} />
+          </div>
+
+          <nav
+            aria-label={locale === "zh" ? "页脚导航" : "Footer"}
+            className="site-footer-directory"
+          >
+            {footerNavigationGroups.map((group) => (
+              <section className="site-footer-group" key={group.label}>
+                <h2>{t(locale, group.label)}</h2>
+                <ul>
+                  {group.items.map((item) => {
+                    if (!item.href) return null;
+                    const external = item.href.startsWith("http");
+                    return (
+                      <li key={item.label}>
+                        <Link
+                          href={localizeHref(locale, item.href)}
+                          rel={external ? "noreferrer" : undefined}
+                          target={external ? "_blank" : undefined}
+                        >
+                          {t(locale, item.label)}
+                          {external ? <span aria-hidden="true">↗</span> : null}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+            ))}
+          </nav>
+
+          <div className="site-footer-bottom">
+            <span>OpenTAI © 2026</span>
+            <Link href={localizeHref(locale, "/about#inclusion")}>
+              {t(locale, "Inclusion policy")}
+            </Link>
           </div>
         </footer>
       </div>

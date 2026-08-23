@@ -3,7 +3,7 @@
 A rebuild of the OpenTAI site on the OpenHallu framework: Next.js 16 App Router,
 React 19, Tailwind CSS v4, static export.
 
-Positioning: **OpenTAI — The Open Hub for Trustworthy AI**. An open ecosystem
+Positioning: **OpenTAI — The Open Hub for Trustworthy AI and AI Safety**. An open ecosystem
 for trustworthy AI, unifying safety guardrails, evaluation benchmarks, and
 datasets.
 
@@ -26,8 +26,8 @@ npm run dev
 | `/datasets` | Verified training-ready datasets from the approved surveys and primary sources; charts update automatically by domain and year |
 | `/tools` | Libraries, frameworks, attack/defense toolkits |
 | `/papers` | 772-paper library — LLMs / Agents / Embodied AI, then Research / Survey |
-| `/leaderboard` | 77 scored entries across 9 adversarial-robustness boards |
-| `/arenas` | Verified live and research arenas for adversarial AI safety evaluation |
+| `/leaderboard` | Source-checked public leaderboard cards for LLM Safety, Agent Safety, and Fairness; every snapshot names its exact metric |
+| `/arenas` | Gray Swan Arena, CyberGym, and ExploitGym cards with official links and verifiable result snapshots where available |
 | `/companies` | Source-backed AI safety, agent security, evaluation, and red-teaming companies |
 | `/community` | Partner institutions |
 | `/about` | Mission, contact, coverage summary |
@@ -55,7 +55,10 @@ python3 scripts/generate-site.py       # rebuild src/data/*.ts
 | Source | What it provides |
 | --- | --- |
 | `scripts/data/home.json` | Entry names, descriptions, links, tags, images — from `OpenTAI/opentai.github.io` → `content/pages/home.md` |
-| `scripts/data/leaderboards.json` | 77 scored leaderboard rows — from the same repo's `content/pages/leaderboards.md` |
+| `scripts/data/leaderboards.json` | Legacy 77-row vision leaderboard source from `content/pages/leaderboards.md`; retained for provenance but no longer rendered on `/leaderboard` |
+| `scripts/data/leaderboard-directory.json` | Public leaderboard cards, metric-specific top results, snapshot dates, and official source notes |
+| `scripts/data/arena-directory.json` | Public arena cards and source-checked result snapshots; unavailable static rankings remain explicitly empty |
+| `scripts/data/arena-results.json` | Source-backed cross-arena chart snapshot; each benchmark retains its official, non-comparable metric definition |
 | `scripts/data/awesome.md` | Bibliography from `xingjunm/Awesome-Large-Model-Safety` — the approved LLMs and Agents chapters plus Agent Safety Benchmarks |
 | `scripts/data/embodied.md` | Bibliography from `x-zheng16/Awesome-Embodied-AI-Safety` — Embodied AI research, surveys, and its explicit Benchmarks & Datasets section |
 | `scripts/data/training-datasets.json` | 155 audited Dataset inclusions. Each row records primary-source training use or an explicit train/validation split, plus a verified public data URL |

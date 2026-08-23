@@ -7,6 +7,26 @@ ROOT = pathlib.Path(__file__).parents[2]
 
 
 class ReviewedBenchmarkSourceTests(unittest.TestCase):
+    def test_interaction_tags_are_source_backed_and_use_the_reviewed_taxonomy(self):
+        payload = json.loads(
+            (ROOT / "scripts" / "data" / "interaction-tags.json").read_text()
+        )
+        allowed = set(payload["taxonomy"])
+
+        self.assertEqual(allowed, {"Mobile", "Computer-use", "CLI"})
+        self.assertTrue(payload["records"])
+        for record in payload["records"]:
+            self.assertTrue(set(record["tags"]).issubset(allowed))
+            self.assertTrue(record["source"].startswith("https://"))
+            self.assertTrue(record["evidence"])
+
+    def test_generated_catalog_hides_internal_source_tags(self):
+        generated = (ROOT / "src" / "data" / "site.ts").read_text()
+
+        self.assertNotIn('"source: safety-at-scale"', generated)
+        self.assertNotIn('"source: approved survey"', generated)
+        self.assertNotIn('"source: embodied-ai-safety"', generated)
+
     def test_mobile_safety_bench_uses_only_verified_official_sources(self):
         records = json.loads(
             (ROOT / "scripts" / "data" / "agent-benchmark-records.json").read_text()

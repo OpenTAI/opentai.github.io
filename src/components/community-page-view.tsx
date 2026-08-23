@@ -19,7 +19,7 @@ export function CommunityPageView({ locale }: { locale: Locale }) {
   return (
     <SiteShell locale={locale} sectionLabel="Community">
       <SimplePage
-        breadcrumb={["Home", "Community"]}
+        breadcrumb={["Home", "Ecosystem", "Community"]}
         description={description}
         heroIcon="◉"
         locale={locale}

@@ -7,11 +7,11 @@ type BenchmarkCardPresentationInput = {
   tags: readonly string[];
 };
 
-const SOURCE_TAG = "source: safety-at-scale";
 const INTERACTION_MODE_TAGS = new Set([
   "simulation-based benchmarks",
   "real-interaction benchmarks",
 ]);
+const NAVIGATION_TAGS = new Set(["Mobile", "Computer-use", "CLI"]);
 const GENERATED_NOTE =
   /^Safety at Scale Table 14 lists this resource under (?:Simulation-based|Real-Interaction) Benchmarks\. Evaluation focus: (.+?)\.(?: .+)?$/;
 
@@ -20,15 +20,16 @@ export function benchmarkCardPresentation({
   note,
   tags,
 }: BenchmarkCardPresentationInput) {
-  if (kind !== "benchmark" || !tags.includes(SOURCE_TAG)) {
-    return { note, tags: [...tags] };
-  }
+  const publicTags = tags.filter((tag) => !tag.toLowerCase().startsWith("source:"));
+  if (kind !== "benchmark") return { note, tags: publicTags };
 
   const focus = note.match(GENERATED_NOTE)?.[1];
-  if (!focus) return { note, tags: [...tags] };
+  if (!focus) return { note, tags: publicTags };
 
   return {
     note: `Evaluation focus: ${focus}.`,
-    tags: tags.filter((tag) => INTERACTION_MODE_TAGS.has(tag)),
+    tags: publicTags.filter(
+      (tag) => INTERACTION_MODE_TAGS.has(tag) || NAVIGATION_TAGS.has(tag),
+    ),
   };
 }

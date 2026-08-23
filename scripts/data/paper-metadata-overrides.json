@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "title": "A white-box prompt injection attack on embodied AI agents driven by large language models",
+      "venue": "Journal of Systems and Software",
+      "year": "2026",
+      "url": "https://doi.org/10.1016/j.jss.2026.112782",
+      "publisher": "Elsevier",
+      "platform": "ScienceDirect",
+      "source": "https://doi.org/10.1016/j.jss.2026.112782",
+      "evidence": "The official article page records Journal of Systems and Software, Volume 235, May 2026, article 112782. ScienceDirect is the hosting platform and Elsevier is the publisher; neither is the journal venue."
+    },
+    {
+      "title": "Adversarial Scan Attack against Scan Matching Algorithm for Pose Estimation in LiDAR-Based SLAM",
+      "venue": "IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences",
+      "year": "2022",
+      "url": "https://doi.org/10.1587/transfun.2021cip0017",
+      "publisher": "Institute of Electronics, Information and Communications Engineers (IEICE)",
+      "source": "https://api.crossref.org/works/10.1587/transfun.2021cip0017",
+      "evidence": "Crossref's exact-title DOI record identifies the container title as IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences and the publisher as IEICE."
+    }
+  ]
+}

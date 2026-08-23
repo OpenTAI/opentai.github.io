@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-21",
+  "title": "Text Arena Overview",
+  "titleZh": "文本竞技场总览",
+  "source": "https://arena.ai/leaderboard/text",
+  "sourceLabel": "Open the full Arena Text leaderboard",
+  "sourceLabelZh": "打开完整 Arena 文本排行榜",
+  "note": "Top ten models by overall rank. Category placements are reproduced from the official Arena Text overview snapshot supplied on 2026-08-21; a dash means that the source displayed no rank.",
+  "noteZh": "按总榜名次展示前十个模型。分类名次复现自 2026-08-21 提供的 Arena 官方文本总览快照；破折号表示来源未显示名次。",
+  "columns": [
+    {"key": "overall", "label": "Overall", "labelZh": "总榜"},
+    {"key": "expert", "label": "Expert", "labelZh": "专家"},
+    {"key": "hard-prompts", "label": "Hard Prompts", "labelZh": "高难提示"},
+    {"key": "coding", "label": "Coding", "labelZh": "编程"},
+    {"key": "math", "label": "Math", "labelZh": "数学"},
+    {"key": "creative-writing", "label": "Creative Writing", "labelZh": "创意写作"},
+    {"key": "instruction-following", "label": "Instruction Following", "labelZh": "指令遵循"},
+    {"key": "longer-query", "label": "Longer Query", "labelZh": "长问题"}
+  ],
+  "rows": [
+    {"model": "claude-fable-5", "ranks": [1, 1, 2, 3, 2, 1, 2, 2]},
+    {"model": "claude-opus-4-6-high", "ranks": [2, 2, 1, 1, 5, 2, 1, 1]},
+    {"model": "claude-opus-4-7-high", "ranks": [3, 6, 4, 2, 9, 4, 3, 4]},
+    {"model": "muse-spark-1.2 (xHigh)", "ranks": [4, 34, 10, 10, null, 29, 16, 12]},
+    {"model": "claude-opus-4-6", "ranks": [5, 4, 3, 5, 7, 8, 4, 3]},
+    {"model": "claude-opus-4-7", "ranks": [6, 5, 6, 4, 16, 6, 7, 6]},
+    {"model": "claude-opus-5-high", "ranks": [7, 3, 5, 9, 3, 10, 5, 5]},
+    {"model": "muse-spark-1.1", "ranks": [8, 25, 11, 13, 13, 40, 22, 40]},
+    {"model": "gemini-3.7-flash-high", "ranks": [9, 13, 12, 21, 4, 3, 9, 13]},
+    {"model": "kimi-k3-max", "ranks": [10, 11, 7, 6, 11, 24, 10, 8]}
+  ]
+}

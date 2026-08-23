@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-19",
+  "title": "Code Arena snapshot",
+  "titleZh": "代码竞技场快照",
+  "category": "WebDev · Overall",
+  "categoryZh": "WebDev · 总榜",
+  "description": "Official Arena rankings for front-end web development tasks, including agentic coding workflows that require multi-step reasoning and tool use.",
+  "descriptionZh": "Arena 官方前端网页开发排行榜，涵盖需要多步推理与工具使用的智能体编程工作流。",
+  "source": "https://arena.ai/leaderboard/code",
+  "sourceLabel": "Open the full Code Arena leaderboard",
+  "sourceLabelZh": "打开完整 Code Arena 排行榜",
+  "priceNote": "Blended price is calculated from the official input/output prices as (3 × input + output) ÷ 4, matching the 3:1 input-to-output ratio used by the comparison plot.",
+  "priceNoteZh": "综合价格按官方输入/输出价格计算：(3 × 输入价 + 输出价) ÷ 4，与对比图采用的 3:1 输入输出比例一致。",
+  "note": "Top ten models shown on the official Code Arena WebDev overall table on 2026-08-19. Scores and prices are a static source snapshot; preliminary labels remain recorded below.",
+  "noteZh": "数据取自 2026-08-19 Arena 官方 Code Arena WebDev 总榜前十。评分和价格为静态来源快照；官方标为 Preliminary 的模型在数据中保留该状态。",
+  "models": [
+    {"rank": 1, "name": "claude-opus-5-max", "lab": "Anthropic", "score": 1691, "inputPrice": 5, "outputPrice": 25},
+    {"rank": 2, "name": "kimi-k3-max", "lab": "Moonshot", "score": 1674, "inputPrice": 3, "outputPrice": 15},
+    {"rank": 3, "name": "qwen3.8-max", "lab": "Alibaba", "score": 1669, "inputPrice": 2, "outputPrice": 6, "preliminary": true},
+    {"rank": 4, "name": "claude-opus-5-high", "lab": "Anthropic", "score": 1662, "inputPrice": 5, "outputPrice": 25},
+    {"rank": 5, "name": "grok-4.6-high", "lab": "SpaceXAI", "score": 1629, "inputPrice": 2, "outputPrice": 6, "preliminary": true},
+    {"rank": 6, "name": "claude-fable-5", "lab": "Anthropic", "score": 1626, "inputPrice": 10, "outputPrice": 50},
+    {"rank": 7, "name": "gpt-5.6-sol-xhigh (codex-harness)", "lab": "OpenAI", "score": 1619, "inputPrice": 5, "outputPrice": 30},
+    {"rank": 8, "name": "glm-5.3-max", "lab": "Z.ai", "score": 1597, "inputPrice": 1.4, "outputPrice": 4.4},
+    {"rank": 9, "name": "gemini-3.7-flash-high", "lab": "Google", "score": 1588, "inputPrice": 0.75, "outputPrice": 3.57, "preliminary": true},
+    {"rank": 10, "name": "deepseek-v4-pro-high-20260813", "lab": "DeepSeek", "score": 1582, "inputPrice": 1.32, "outputPrice": 3.96}
+  ]
+}

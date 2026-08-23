@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { LibraryPaper, paperDomains, paperGroups, paperLibrary } from "@/data/papers";
 import { Locale, t } from "@/lib/i18n";
+import { buildRecentYearSeries } from "@/lib/dataset-statistics";
 import {
   paperDisplayMeta,
   paperYearCounts,
@@ -25,7 +26,7 @@ const VENUE_ABBR: Record<string, string> = {
 };
 
 function shortVenue(venue: string) {
-  return VENUE_ABBR[venue] ?? (venue.length > 30 ? `${venue.slice(0, 28)}…` : venue);
+  return VENUE_ABBR[venue] ?? (venue.length > 38 ? `${venue.slice(0, 36)}…` : venue);
 }
 
 function paperLink(paper: LibraryPaper) {
@@ -44,7 +45,15 @@ const HAYSTACK = new Map(
 );
 
 const LINKED = paperLibrary.filter((paper) => paperLink(paper)).length;
-const YEAR_COUNTS = paperYearCounts(paperLibrary);
+const YEAR_COUNTS = buildRecentYearSeries(
+  paperYearCounts(paperLibrary),
+  new Date().getUTCFullYear(),
+);
+const DOMAIN_COUNTS = paperDomains.map((label) => ({
+  count: paperLibrary.filter((paper) => paper.domain === label).length,
+  label,
+}));
+const DOMAIN_COLORS = ["#5957d9", "#17a99a", "#f59e0b"];
 const KINDS = [
   { id: "research", label: "Research" },
   { id: "survey", label: "Survey" },
@@ -126,15 +135,10 @@ function PaperYearChart({ locale }: { locale: Locale }) {
   const labelStep = Math.max(1, Math.ceil(YEAR_COUNTS.length / 8));
 
   return (
-    <section className="mb-5 rounded-[22px] border border-[#e8ecf3] bg-[#fbfcff] p-5 sm:p-6">
-      <div className="mb-4 flex flex-wrap items-start justify-between gap-4">
+    <article className="dataset-year-card">
+      <div className="dataset-chart-card-heading">
         <div>
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-[#667085]">
-            {t(locale, "Paper statistics")}
-          </p>
-          <h2 className="mt-1 text-xl font-semibold tracking-[-0.04em] text-[#111827]">
-            {t(locale, "Papers by year")}
-          </h2>
+          <h3>{t(locale, "Papers by year")}</h3>
         </div>
         <div className="flex gap-2">
           <span className="rounded-full border border-[#e3e8f2] bg-white px-3 py-1.5 text-xs text-[#475467]">
@@ -147,10 +151,10 @@ function PaperYearChart({ locale }: { locale: Locale }) {
           </span>
         </div>
       </div>
-      <div className="overflow-x-auto">
+      <div className="dataset-year-chart-scroll">
         <svg
           aria-label={t(locale, "Annual count of papers with a recorded year.")}
-          className="min-w-[620px]"
+          className="dataset-year-chart"
           role="img"
           viewBox={`0 0 ${width} ${height}`}
         >
@@ -184,6 +188,93 @@ function PaperYearChart({ locale }: { locale: Locale }) {
             </g>
           ))}
         </svg>
+      </div>
+    </article>
+  );
+}
+
+function PaperDomainDonut({ locale }: { locale: Locale }) {
+  const radius = 45;
+  const circumference = 2 * Math.PI * radius;
+
+  return (
+    <article className="dataset-domain-card">
+      <div className="dataset-chart-card-heading">
+        <div>
+          <h3>{t(locale, "Papers by domain")}</h3>
+        </div>
+      </div>
+      <div className="dataset-donut-layout">
+        <svg
+          aria-labelledby="paper-domain-chart-title paper-domain-chart-description"
+          className="dataset-donut"
+          role="img"
+          viewBox="0 0 128 128"
+        >
+          <title id="paper-domain-chart-title">{t(locale, "Papers by domain")}</title>
+          <desc id="paper-domain-chart-description">
+            {t(locale, "Recorded domain assignments in this collection.")}
+          </desc>
+          <circle className="dataset-donut-track" cx="64" cy="64" r={radius} />
+          {DOMAIN_COUNTS.map((item, index) => {
+            const length = paperLibrary.length
+              ? (item.count / paperLibrary.length) * circumference
+              : 0;
+            const offset = -DOMAIN_COUNTS.slice(0, index).reduce(
+              (total, previous) => total + (previous.count / paperLibrary.length) * circumference,
+              0,
+            );
+            return (
+              <circle
+                aria-hidden="true"
+                className="dataset-donut-segment"
+                cx="64"
+                cy="64"
+                key={item.label}
+                r={radius}
+                stroke={DOMAIN_COLORS[index % DOMAIN_COLORS.length]}
+                strokeDasharray={`${length} ${circumference}`}
+                strokeDashoffset={offset}
+              />
+            );
+          })}
+          <text className="dataset-donut-value" textAnchor="middle" x="64" y="61">
+            {paperLibrary.length}
+          </text>
+          <text className="dataset-donut-label" textAnchor="middle" x="64" y="77">
+            {t(locale, "papers")}
+          </text>
+        </svg>
+        <ul aria-label={t(locale, "Papers by domain")} className="dataset-chart-legend">
+          {DOMAIN_COUNTS.map((item, index) => (
+            <li key={item.label}>
+              <span
+                aria-hidden="true"
+                className="dataset-chart-swatch"
+                style={{ backgroundColor: DOMAIN_COLORS[index % DOMAIN_COLORS.length] }}
+              />
+              <span className="dataset-chart-legend-label">{t(locale, item.label)}</span>
+              <strong>{item.count}</strong>
+              <span className="dataset-chart-percent">
+                {paperLibrary.length ? `${Math.round((item.count / paperLibrary.length) * 100)}%` : "—"}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  );
+}
+
+function PaperStatistics({ locale }: { locale: Locale }) {
+  return (
+    <section aria-labelledby="paper-statistics-title" className="dataset-statistics">
+      <div className="dataset-statistics-heading">
+        <h2 id="paper-statistics-title">{t(locale, "Paper statistics")}</h2>
+      </div>
+      <div className="dataset-statistics-grid">
+        <PaperYearChart locale={locale} />
+        <PaperDomainDonut locale={locale} />
       </div>
     </section>
   );
@@ -241,49 +332,51 @@ export function PaperLibrary({ locale }: { locale: Locale }) {
 
   return (
     <section className="subpage-main-table-card">
-      <PaperYearChart locale={locale} />
+      <PaperStatistics locale={locale} />
 
       <div className="space-y-3 border-b border-[#eceff5] pb-5">
-        <div className="flex flex-wrap gap-2">
-          <Chip active={domain === null} count={paperLibrary.length} onClick={() => reset(() => { setDomain(null); setGroup(null); setSection(null); })}>
-            {t(locale, "All domains")}
-          </Chip>
-          {paperDomains.map((name) => (
-            <Chip
-              key={name}
-              active={domain === name}
-              count={paperLibrary.filter((p) => p.domain === name).length}
-              onClick={() => reset(() => { setDomain(name); setGroup(null); setSection(null); })}
-            >
-              {t(locale, name)}
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap gap-2">
+            <Chip active={domain === null} count={paperLibrary.length} onClick={() => reset(() => { setDomain(null); setGroup(null); setSection(null); })}>
+              {t(locale, "All domains")}
             </Chip>
-          ))}
-        </div>
+            {paperDomains.map((name) => (
+              <Chip
+                key={name}
+                active={domain === name}
+                count={paperLibrary.filter((p) => p.domain === name).length}
+                onClick={() => reset(() => { setDomain(name); setGroup(null); setSection(null); })}
+              >
+                {t(locale, name)}
+              </Chip>
+            ))}
+          </div>
 
-        <div
-          aria-label={locale === "zh" ? "论文类型" : "Paper type"}
-          className="flex flex-wrap gap-2"
-          role="tablist"
-        >
-          {KINDS.map((k) => (
-            <button
-              key={k.id}
-              aria-selected={kind === k.id}
-              className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
-                kind === k.id
-                  ? "border-[#c7d2fe] bg-[#eef2ff] text-[#4338ca]"
-                  : "border-[#e3e8f2] bg-white text-[#475467] hover:border-[#c7d2fe]"
-              }`}
-              onClick={() => reset(() => { setKind(k.id); setGroup(null); setSection(null); })}
-              role="tab"
-              type="button"
-            >
-              {t(locale, k.label)}
-              <span className="text-[#98a2b3]">
-                {" "}{inDomain.filter((p) => p.kind === k.id).length}
-              </span>
-            </button>
-          ))}
+          <div
+            aria-label={locale === "zh" ? "论文类型" : "Paper type"}
+            className="ml-auto flex flex-wrap justify-end gap-2"
+            role="tablist"
+          >
+            {KINDS.map((k) => (
+              <button
+                key={k.id}
+                aria-selected={kind === k.id}
+                className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
+                  kind === k.id
+                    ? "border-[#c7d2fe] bg-[#eef2ff] text-[#4338ca]"
+                    : "border-[#e3e8f2] bg-white text-[#475467] hover:border-[#c7d2fe]"
+                }`}
+                onClick={() => reset(() => { setKind(k.id); setGroup(null); setSection(null); })}
+                role="tab"
+                type="button"
+              >
+                {t(locale, k.label)}
+                <span className="text-[#98a2b3]">
+                  {" "}{inDomain.filter((p) => p.kind === k.id).length}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
 
         {groups.length ? (

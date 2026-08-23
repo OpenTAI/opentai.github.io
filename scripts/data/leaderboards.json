@@ -4,8 +4,8 @@
     {
       "titleen": "Adversarial Robustness Leaderboards",
       "titlezh": "对抗鲁棒性排行榜",
-      "subtitleen": "Black-box and white-box evaluations: conducted for the top 10 most downloaded/cited models across five popular vision tasks, using both domain-specific datasets and our CC1M-Adv-C/F benchmarks.",
-      "subtitlezh": "OpenTAI Rank is exploring中文",
+      "subtitleen": "Open trustworthiness and safety leaderboards for LLMs, Agents, and Embodied AI.",
+      "subtitlezh": "面向大语言模型、智能体和具身智能的开放可信与安全排行榜。",
       "buttonTexten": "Learn how it works",
       "buttonTextzh": "了解评测细节",
       "table1": {

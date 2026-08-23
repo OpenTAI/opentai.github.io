@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-20",
+  "title": "Offensive cyber evaluations",
+  "titleZh": "进攻性网络安全评测",
+  "snapshotDate": "Published 2026-06-09",
+  "source": "https://www.anthropic.com/research/claude-fable-5-mythos-5",
+  "sourceLabel": "Anthropic results and metric definitions",
+  "sourceLabelZh": "Anthropic 结果与指标定义",
+  "note": "Values reproduced from Anthropic's published chart. Each benchmark uses a different metric, so compare models within a benchmark group rather than comparing benchmark groups with one another.",
+  "noteZh": "数值复现自 Anthropic 官方图表。四个评测使用的指标口径不同，应在同一评测组内比较模型，不宜直接横向比较不同评测组。",
+  "benchmarks": [
+    {
+      "name": "Firefox",
+      "metric": "Trials achieving arbitrary code execution",
+      "metricZh": "实现任意代码执行的试验占比"
+    },
+    {
+      "name": "OSS-Fuzz",
+      "metric": "Severity-weighted five-tier score",
+      "metricZh": "按严重程度加权的五级得分"
+    },
+    {
+      "name": "CyberGym",
+      "metric": "Target vulnerability reproduction rate",
+      "metricZh": "目标漏洞复现率"
+    },
+    {
+      "name": "CyScenarioBench",
+      "metric": "Mean success rate across challenges",
+      "metricZh": "各挑战的平均成功率"
+    }
+  ],
+  "series": [
+    {
+      "name": "Claude Opus 4.8 (no safeguards)",
+      "nameZh": "Claude Opus 4.8（无安全护栏）",
+      "color": "#58c8a0",
+      "values": [8.8, 15.9, 78.1, 16.6]
+    },
+    {
+      "name": "Claude Opus 4.8 (default safeguards)",
+      "nameZh": "Claude Opus 4.8（默认安全护栏）",
+      "color": "#11976e",
+      "values": [null, 3.8, 0.8, null]
+    },
+    {
+      "name": "Claude Mythos Preview",
+      "nameZh": "Claude Mythos Preview",
+      "color": "#2f7bd2",
+      "values": [70.8, 22.8, 83.1, 29.2]
+    },
+    {
+      "name": "Claude Mythos 5",
+      "nameZh": "Claude Mythos 5",
+      "color": "#df70a2",
+      "values": [88.4, 24.0, 83.8, 38.7]
+    },
+    {
+      "name": "Claude Fable 5",
+      "nameZh": "Claude Fable 5",
+      "color": "#f2672c",
+      "values": [0.0, 0.0, 0.0, 0.0]
+    }
+  ]
+}

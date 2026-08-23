@@ -1,50 +1,45 @@
 import { ReactNode } from "react";
+import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { Locale, t } from "@/lib/i18n";
 
 export function SimplePage({
   breadcrumb,
+  className = "",
   children,
   description,
   heroAside,
   heroIcon,
   locale = "en",
-  overview,
+  showDescription = false,
   title,
 }: {
   breadcrumb: readonly string[];
+  className?: string;
   children: ReactNode;
   description: string;
   heroAside?: ReactNode;
   heroIcon: string;
   locale?: Locale;
   overview?: string;
+  showDescription?: boolean;
   title: string;
 }) {
   return (
-    <div className="mx-auto max-w-[1480px] space-y-7">
-      <div className="subpage-breadcrumb">
-        {breadcrumb.map((item, index) => (
-          <span key={item} className="flex items-center gap-2">
-            {index > 0 ? <span className="text-[#c0c5d1]">›</span> : null}
-            <span>{t(locale, item)}</span>
-          </span>
-        ))}
-      </div>
+    <div className={`page-frame space-y-7 ${className}`}>
+      <PageBreadcrumb items={breadcrumb} locale={locale} />
 
       <section className="subpage-hero-card">
-        <div className="grid gap-7 xl:grid-cols-[190px_minmax(0,1fr)_0.72fr] xl:items-start">
+        <div className="subpage-hero-layout">
           <div className="subpage-icon-panel">
             <div className="subpage-icon-orb">{heroIcon}</div>
           </div>
-          <div className="space-y-4">
+          <div className="subpage-hero-copy">
             <h1 className="text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.06em] text-[#0f172a]">
               {t(locale, title)}
             </h1>
-            <p className="max-w-3xl whitespace-pre-line text-[1rem] leading-8 text-[#556072]">{t(locale, description)}</p>
+            {showDescription ? <p>{t(locale, description)}</p> : null}
           </div>
-          {heroAside ?? (overview ? (
-            <p className="text-[0.98rem] leading-8 text-[#556072]">{t(locale, overview)}</p>
-          ) : null)}
+          {heroAside ? <div className="subpage-hero-aside">{heroAside}</div> : null}
         </div>
       </section>
 

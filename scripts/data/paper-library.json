@@ -2414,7 +2414,7 @@
       "Mishra et al"
     ],
     "authorCount": 1,
-    "venue": "arXiv preprint arXiv.2511.01472",
+    "venue": "arXiv",
     "year": "2025",
     "arxivId": "2511.01472",
     "url": "https://arxiv.org/abs/2511.01472",
@@ -2543,7 +2543,7 @@
       "Li et al"
     ],
     "authorCount": 1,
-    "venue": "arXiv:2511.12149",
+    "venue": "arXiv",
     "year": "2025",
     "arxivId": "2511.12149",
     "url": "https://arxiv.org/abs/2511.12149",
@@ -2559,7 +2559,7 @@
       "Lu et al"
     ],
     "authorCount": 1,
-    "venue": "arXiv:2511.21192",
+    "venue": "arXiv",
     "year": "2025",
     "arxivId": "2511.21192",
     "url": "https://arxiv.org/abs/2511.21192",
@@ -2623,7 +2623,7 @@
       "Xu et al"
     ],
     "authorCount": 1,
-    "venue": "arXiv:2510.10932",
+    "venue": "arXiv",
     "year": "2025",
     "arxivId": "2505.16640",
     "url": "https://arxiv.org/abs/2505.16640",
@@ -2639,7 +2639,7 @@
       "Yan et al"
     ],
     "authorCount": 1,
-    "venue": "arXiv:2511.16203",
+    "venue": "arXiv",
     "year": "2025",
     "arxivId": "2511.16203",
     "url": "https://arxiv.org/abs/2511.16203",
@@ -2655,7 +2655,7 @@
       "Zhang et al"
     ],
     "authorCount": 1,
-    "venue": "arXiv:2511.21663",
+    "venue": "arXiv",
     "year": "2025",
     "arxivId": "2511.21663",
     "url": "https://arxiv.org/abs/2511.21663",
@@ -3647,10 +3647,10 @@
       "Geng et al"
     ],
     "authorCount": 1,
-    "venue": "Science",
+    "venue": "Journal of Systems and Software",
     "year": "2026",
     "arxivId": null,
-    "url": "https://scholar.google.com/scholar?q=White-Box+Prompt+Injection+Attack+on+Embodied+AI+Agents",
+    "url": "https://doi.org/10.1016/j.jss.2026.112782",
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Cascading Risks",
@@ -4369,7 +4369,7 @@
       "AI"
     ],
     "authorCount": 1,
-    "venue": "https://adversa.ai/blog/cascading-failures-in-agentic-ai-complete-owasp-asi08-security-guide-2026/",
+    "venue": null,
     "year": "2025",
     "arxivId": null,
     "url": "https://scholar.google.com/scholar?q=Cascading+Failures+in+Agentic+AI",
@@ -4594,7 +4594,7 @@
       "Institute"
     ],
     "authorCount": 1,
-    "venue": "https://futureoflife.org/ai-safety-index-summer-2025/",
+    "venue": null,
     "year": "2025",
     "arxivId": null,
     "url": "https://scholar.google.com/scholar?q=2025+AI+Safety+Index",
@@ -4898,7 +4898,7 @@
       "Project"
     ],
     "authorCount": 1,
-    "venue": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "venue": null,
     "year": "2026",
     "arxivId": null,
     "url": "https://scholar.google.com/scholar?q=OWASP",
@@ -7564,10 +7564,10 @@
       "Yoshida et al"
     ],
     "authorCount": 1,
-    "venue": "Science",
+    "venue": "IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences",
     "year": "2022",
     "arxivId": null,
-    "url": "https://scholar.google.com/scholar?q=Adversarial+scan+attack+against+scan+matching+algorithm+for+pose+estimation+in+lidar-based+slam",
+    "url": "https://doi.org/10.1587/transfun.2021cip0017",
     "domain": "Embodied AI",
     "group": "Perception",
     "section": "Spatial Perception",
@@ -9318,7 +9318,7 @@
       "Bai"
     ],
     "authorCount": 2,
-    "venue": "http://pybullet.org",
+    "venue": null,
     "year": "2021",
     "arxivId": null,
     "url": "https://scholar.google.com/scholar?q=PyBullet%2C+a+Python+Module+for+Physics+Simulation+for+Games%2C+Robotics+and+Machine+Learning",
