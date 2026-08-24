@@ -39,6 +39,7 @@ const ZH: Record<string, string> = {
     "面向大语言模型、智能体和具身智能的开放可信与安全排行榜。",
   Frameworks: "框架",
   Arenas: "竞技场",
+  "Safety arenas": "安全竞技场",
   Companies: "企业",
   "Coming soon": "即将开放",
   Community: "社区",

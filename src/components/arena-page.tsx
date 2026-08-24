@@ -16,7 +16,7 @@ export function ArenaPage({ locale }: { locale: Locale }) {
       heroAside={<ResourceSubmissionDialog kind="arena" locale={locale} />}
       heroIcon="A"
       locale={locale}
-      title="Arenas"
+      title="Safety arenas"
     >
       <ArenaScoreboardGrid locale={locale} records={arenaDirectory} />
       <TextArenaOverview locale={locale} />

@@ -22,16 +22,16 @@ const SCATTER_PRICE_TICKS = [1, 2, 5, 10, 20];
 const SCATTER_SCORE_TICKS = [1_550, 1_600, 1_650, 1_700];
 
 const POINT_COLORS = [
-  "#285c3d",
-  "#4f8f69",
-  "#9aae7a",
-  "#397e55",
-  "#b59a6c",
-  "#d2c27f",
-  "#658d7e",
-  "#8aa8aa",
-  "#72a56e",
-  "#8b765c",
+  "#ff5b67",
+  "#4b7cff",
+  "#7fa4ff",
+  "#38bdf8",
+  "#c084fc",
+  "#f59e0b",
+  "#2dd4bf",
+  "#94a3b8",
+  "#e879f9",
+  "#f97316",
 ];
 
 const LABEL_OFFSETS: Record<string, { dx: number; dy: number; anchor?: "start" | "end" }> = {

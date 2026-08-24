@@ -136,24 +136,38 @@ test("arena scoreboards keep rankings and official links in every grid cell", ()
   assert.match(source, /Lower is better/);
 });
 
-test("arena rankings use a dark table treatment with blue and red score accents", () => {
+test("arena page shares the company wall dark technology treatment", () => {
   const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+  const page = readFileSync(
+    new URL("../components/arena-page.tsx", import.meta.url),
+    "utf8",
+  );
   const component = readFileSync(
     new URL("../components/arena-scoreboard-grid.tsx", import.meta.url),
     "utf8",
   );
 
+  assert.match(css, /\.arena-page\s*\{[^}]*--arena-electric:\s*#4b7cff/);
+  assert.match(css, /\.arena-page\s*\{[^}]*--arena-red:\s*#ff5b67/);
+  assert.match(css, /\.arena-page\s*\{[^}]*background:\s*#07111f/);
   assert.match(
     css,
-    /\.arena-scoreboard-track\s*>\s*span\s*\{[^}]*background:\s*#161616/,
+    /\.arena-page\s+\.subpage-hero-card\s*\{[^}]*background:\s*#0b1729/,
   );
-  assert.match(css, /\.arena-scoreboards\s*\{[^}]*background:\s*#0f1114/);
-  assert.match(css, /\.arena-scoreboard-card\s*\{[^}]*background:\s*#151719/);
-  assert.match(css, /\.arena-scoreboard-value\s*\{[^}]*color:\s*#315fd3/);
   assert.match(
     css,
-    /\.arena-scoreboard-results\s+li:first-child\s+\.arena-scoreboard-value\s*\{[^}]*color:\s*#ef5b5b/,
+    /\.arena-scoreboard-card\s*\{[^}]*background:\s*var\(--arena-card\)/,
   );
+  assert.match(
+    css,
+    /\.text-arena-overview,\s*\.code-arena-overview,\s*\.arena-results-panel\s*\{[^}]*background:\s*var\(--arena-panel\)/,
+  );
+  assert.match(css, /\.arena-scoreboard-value\s*\{[^}]*color:\s*var\(--arena-electric\)/);
+  assert.match(
+    css,
+    /\.arena-scoreboard-results\s+li:first-child\s+\.arena-scoreboard-value\s*\{[^}]*color:\s*var\(--arena-red\)/,
+  );
+  assert.match(page, /title="Safety arenas"/);
   assert.match(component, /arena-scoreboard-table-head/);
   assert.match(component, /"Safety arenas"/);
   assert.doesNotMatch(component, /Verified public results/);
