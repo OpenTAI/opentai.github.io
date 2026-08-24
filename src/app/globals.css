@@ -6554,6 +6554,7 @@ summary {
 .arena-page {
   --arena-electric: #4b7cff;
   --arena-red: #ff5b67;
+  --arena-orange: #ff8a4c;
   --arena-ink: #f5f8ff;
   --arena-muted: #9fb0c9;
   --arena-deep: #07111f;
@@ -6755,7 +6756,9 @@ summary {
 }
 
 .arena-scoreboard-metric b {
-  color: var(--arena-electric);
+  color: var(--arena-orange);
+  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 750;
 }
 
 .arena-scoreboard-table-head {
@@ -6788,15 +6791,20 @@ summary {
 }
 
 .arena-scoreboard-track > span {
-  background: #0a0d12;
+  background: #f4f7ff;
+  box-shadow: 0 0 12px rgba(244, 247, 255, 0.2);
 }
 
 .arena-scoreboard-track > span::after {
-  background: var(--arena-electric);
+  background: var(--arena-orange);
 }
 
 .arena-scoreboard-value {
-  color: var(--arena-electric);
+  color: var(--arena-orange);
+  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-weight: 750;
+  letter-spacing: -0.02em;
 }
 
 .arena-scoreboard-results li:first-child .arena-scoreboard-value {

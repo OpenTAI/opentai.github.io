@@ -1,10 +1,25 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { RankingDirectoryRecord, RankingResult } from "@/data/site";
 import { nextArenaScrollTop } from "@/lib/arena-auto-scroll";
+import {
+  cyberGymResultsFromPayload,
+  exploitGymResultsFromPayload,
+} from "@/lib/arena-live-sync";
 import { Locale, t } from "@/lib/i18n";
+
+const LIVE_REFRESH_INTERVAL_MS = 60 * 60 * 1000;
+const LIVE_RESULT_LIMIT = 12;
+
+const liveResultParsers: Record<
+  string,
+  (payload: unknown, limit?: number) => RankingResult[]
+> = {
+  CyberGym: cyberGymResultsFromPayload,
+  ExploitGym: exploitGymResultsFromPayload,
+};
 
 function localized(locale: Locale, english: string, chinese: string | undefined) {
   return locale === "zh" && chinese ? chinese : english;
@@ -25,6 +40,14 @@ function direction(locale: Locale, metric: string) {
   if (metric.includes("↓")) return locale === "zh" ? "越低越好" : "Lower is better";
   if (metric.includes("↑")) return locale === "zh" ? "越高越好" : "Higher is better";
   return "";
+}
+
+function syncedAt(locale: Locale, timestamp: number) {
+  const formatted = new Intl.DateTimeFormat(locale === "zh" ? "zh-CN" : "en-US", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(timestamp);
+  return locale === "zh" ? `同步于 ${formatted}` : `Synced ${formatted}`;
 }
 
 function AutoScrollingResults({
@@ -150,6 +173,79 @@ export function ArenaScoreboardGrid({
   locale: Locale;
   records: readonly RankingDirectoryRecord[];
 }) {
+  const [liveRecords, setLiveRecords] = useState<readonly RankingDirectoryRecord[]>(records);
+  const [syncTimes, setSyncTimes] = useState<Record<string, number>>({});
+  const lastSyncAttemptRef = useRef(0);
+  const syncInFlightRef = useRef(false);
+
+  useEffect(() => {
+    let active = true;
+
+    const syncOfficialResults = async () => {
+      if (syncInFlightRef.current) return;
+      syncInFlightRef.current = true;
+      lastSyncAttemptRef.current = Date.now();
+
+      const liveSources = records.filter((record) => liveResultParsers[record.name]);
+      const responses = await Promise.allSettled(
+        liveSources.map(async (record) => {
+          const response = await fetch(record.source, { cache: "no-store" });
+          if (!response.ok) throw new Error(`${record.name} returned ${response.status}`);
+
+          const payload: unknown = await response.json();
+          const results = liveResultParsers[record.name](payload, LIVE_RESULT_LIMIT);
+          if (results.length === 0) throw new Error(`${record.name} returned no valid rows`);
+
+          return { name: record.name, results };
+        }),
+      );
+
+      if (active) {
+        const successful = responses.flatMap((response) =>
+          response.status === "fulfilled" ? [response.value] : [],
+        );
+
+        if (successful.length > 0) {
+          const updates = new Map(successful.map((result) => [result.name, result.results]));
+          const timestamp = Date.now();
+
+          setLiveRecords((current) =>
+            current.map((record) => {
+              const results = updates.get(record.name);
+              return results ? { ...record, results } : record;
+            }),
+          );
+          setSyncTimes((current) => ({
+            ...current,
+            ...Object.fromEntries(successful.map((result) => [result.name, timestamp])),
+          }));
+        }
+      }
+
+      syncInFlightRef.current = false;
+    };
+
+    void syncOfficialResults();
+    const timer = window.setInterval(() => {
+      void syncOfficialResults();
+    }, LIVE_REFRESH_INTERVAL_MS);
+    const refreshWhenVisible = () => {
+      if (
+        document.visibilityState === "visible" &&
+        Date.now() - lastSyncAttemptRef.current >= LIVE_REFRESH_INTERVAL_MS
+      ) {
+        void syncOfficialResults();
+      }
+    };
+    document.addEventListener("visibilitychange", refreshWhenVisible);
+
+    return () => {
+      active = false;
+      document.removeEventListener("visibilitychange", refreshWhenVisible);
+      window.clearInterval(timer);
+    };
+  }, [records]);
+
   return (
     <section aria-labelledby="arena-directory-title" className="arena-scoreboards">
       <header className="arena-scoreboards-heading">
@@ -160,13 +256,13 @@ export function ArenaScoreboardGrid({
         </div>
         <p>
           {locale === "zh"
-            ? `${records.length} 个竞技场 · 结果来自各项目官方页面`
-            : `${records.length} arenas · results reproduced from official sources`}
+            ? `${liveRecords.length} 个竞技场 · 结果来自各项目官方页面`
+            : `${liveRecords.length} arenas · results reproduced from official sources`}
         </p>
       </header>
 
       <div className="arena-scoreboard-grid">
-        {records.map((record) => (
+        {liveRecords.map((record) => (
           <article className="arena-scoreboard-card" key={record.url}>
             <header className="arena-scoreboard-card-heading">
               <div className="arena-scoreboard-title">
@@ -188,7 +284,11 @@ export function ArenaScoreboardGrid({
               </div>
               <div>
                 <b>{direction(locale, record.metric)}</b>
-                <time>{t(locale, record.snapshotDate)}</time>
+                <time dateTime={syncTimes[record.name] ? new Date(syncTimes[record.name]).toISOString() : undefined}>
+                  {syncTimes[record.name]
+                    ? syncedAt(locale, syncTimes[record.name])
+                    : t(locale, record.snapshotDate)}
+                </time>
               </div>
             </div>
 

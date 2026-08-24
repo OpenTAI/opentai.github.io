@@ -162,7 +162,10 @@ test("arena page shares the company wall dark technology treatment", () => {
     css,
     /\.text-arena-overview,\s*\.code-arena-overview,\s*\.arena-results-panel\s*\{[^}]*background:\s*var\(--arena-panel\)/,
   );
-  assert.match(css, /\.arena-scoreboard-value\s*\{[^}]*color:\s*var\(--arena-electric\)/);
+  assert.match(css, /\.arena-scoreboard-metric b\s*\{[^}]*color:\s*var\(--arena-orange\)/);
+  assert.match(css, /\.arena-scoreboard-track > span\s*\{[^}]*background:\s*#f4f7ff/);
+  assert.match(css, /\.arena-scoreboard-value\s*\{[^}]*color:\s*var\(--arena-orange\)/);
+  assert.match(css, /\.arena-scoreboard-value\s*\{[^}]*font-variant-numeric:\s*tabular-nums/);
   assert.match(
     css,
     /\.arena-scoreboard-results\s+li:first-child\s+\.arena-scoreboard-value\s*\{[^}]*color:\s*var\(--arena-red\)/,
@@ -184,6 +187,20 @@ test("auto-scrolling rankings preserve every independent pause condition", () =>
   assert.match(source, /onPointerDown=\{pauseForManualScroll\}/);
   assert.match(source, /onKeyDown/);
   assert.match(source, /reducedMotion\.addEventListener\("change"/);
+});
+
+test("arena scoreboards refresh official live JSON hourly with a static fallback", () => {
+  const source = readFileSync(
+    new URL("../components/arena-scoreboard-grid.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /cyberGymResultsFromPayload/);
+  assert.match(source, /exploitGymResultsFromPayload/);
+  assert.match(source, /60 \* 60 \* 1000/);
+  assert.match(source, /Promise\.allSettled/);
+  assert.match(source, /cache: "no-store"/);
+  assert.match(source, /visibilitychange/);
 });
 
 test("arena result chart exposes the official source and metric caveat", () => {
