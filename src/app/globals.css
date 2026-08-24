@@ -4191,7 +4191,7 @@ summary {
 /* Companies — technology brand wall */
 .ecosystem-catalog-companies {
   --company-electric: #4b7cff;
-  --company-red: #ff5b67;
+  --company-orange: #ff8a4c;
   --company-ink: #10213a;
   --company-panel: #e2ecfa;
   --company-card: #f8fbff;
@@ -4237,7 +4237,7 @@ summary {
 }
 
 .ecosystem-catalog-companies .ecosystem-hero-proof strong {
-  color: var(--company-red);
+  color: var(--company-orange);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 2rem;
   font-weight: 760;
