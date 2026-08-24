@@ -209,6 +209,14 @@ test("company page is an unclassified, filterable brand wall", () => {
   );
 
   assert.match(css, /\.ecosystem-catalog-companies\s*{[\s\S]*?--company-electric:\s*#4b7cff/);
+  assert.match(css, /\.ecosystem-catalog-companies\s*{[\s\S]*?--company-ink:\s*#10213a/);
+  assert.match(css, /\.ecosystem-catalog-companies\s*{[\s\S]*?--company-panel:\s*#e2ecfa/);
+  assert.match(css, /\.ecosystem-catalog-companies\s*{[\s\S]*?--company-card:\s*#f8fbff/);
+  assert.match(css, /\.ecosystem-catalog-companies\s*{[\s\S]*?background:\s*#eef5ff/);
+  assert.match(
+    css,
+    /\.ecosystem-catalog-companies\s+\.ecosystem-hero\s*{[\s\S]*?background:\s*#e2ecfa/,
+  );
   assert.match(css, /\.company-brand-heading\s*{[^}]*display:\s*flex/);
   assert.match(css, /\.company-valuation-highlight\s*{[\s\S]*?background:\s*var\(--company-ink\)/);
   assert.match(component, /company-filter-control/);

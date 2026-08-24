@@ -136,7 +136,7 @@ test("arena scoreboards keep rankings and official links in every grid cell", ()
   assert.match(source, /Lower is better/);
 });
 
-test("arena page shares the company wall dark technology treatment", () => {
+test("arena page shares the company wall light ice-blue technology treatment", () => {
   const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
   const page = readFileSync(
     new URL("../components/arena-page.tsx", import.meta.url),
@@ -149,10 +149,13 @@ test("arena page shares the company wall dark technology treatment", () => {
 
   assert.match(css, /\.arena-page\s*\{[^}]*--arena-electric:\s*#4b7cff/);
   assert.match(css, /\.arena-page\s*\{[^}]*--arena-red:\s*#ff5b67/);
-  assert.match(css, /\.arena-page\s*\{[^}]*background:\s*#07111f/);
+  assert.match(css, /\.arena-page\s*\{[^}]*--arena-ink:\s*#10213a/);
+  assert.match(css, /\.arena-page\s*\{[^}]*--arena-panel:\s*#e2ecfa/);
+  assert.match(css, /\.arena-page\s*\{[^}]*--arena-card:\s*#f8fbff/);
+  assert.match(css, /\.arena-page\s*\{[^}]*background:\s*#eef5ff/);
   assert.match(
     css,
-    /\.arena-page\s+\.subpage-hero-card\s*\{[^}]*background:\s*#0b1729/,
+    /\.arena-page\s+\.subpage-hero-card\s*\{[^}]*background:\s*#e2ecfa/,
   );
   assert.match(
     css,
@@ -163,7 +166,7 @@ test("arena page shares the company wall dark technology treatment", () => {
     /\.text-arena-overview,\s*\.code-arena-overview,\s*\.arena-results-panel\s*\{[^}]*background:\s*var\(--arena-panel\)/,
   );
   assert.match(css, /\.arena-scoreboard-metric b\s*\{[^}]*color:\s*var\(--arena-orange\)/);
-  assert.match(css, /\.arena-scoreboard-track > span\s*\{[^}]*background:\s*#f4f7ff/);
+  assert.match(css, /\.arena-scoreboard-track > span\s*\{[^}]*background:\s*#10213a/);
   assert.match(css, /\.arena-scoreboard-value\s*\{[^}]*color:\s*var\(--arena-orange\)/);
   assert.match(css, /\.arena-scoreboard-value\s*\{[^}]*font-variant-numeric:\s*tabular-nums/);
   assert.match(

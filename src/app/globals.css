@@ -4192,40 +4192,40 @@ summary {
 .ecosystem-catalog-companies {
   --company-electric: #4b7cff;
   --company-red: #ff5b67;
-  --company-ink: #050b15;
-  --company-panel: #0b1628;
-  --company-card: #101e33;
-  --company-line: #263b5c;
-  --company-muted: #9fb0c9;
+  --company-ink: #10213a;
+  --company-panel: #e2ecfa;
+  --company-card: #f8fbff;
+  --company-line: #b8cbe8;
+  --company-muted: #60728d;
   margin-top: 0.75rem;
-  border: 1px solid #1e3352;
+  border: 1px solid #c7d8ef;
   border-radius: 28px;
-  background: #07111f;
+  background: #eef5ff;
   padding: clamp(0.85rem, 2vw, 1.4rem);
-  box-shadow: 0 28px 80px rgba(5, 11, 21, 0.2);
+  box-shadow: 0 28px 80px rgba(48, 82, 132, 0.12);
 }
 
 .ecosystem-catalog-companies .subpage-breadcrumb a,
 .ecosystem-catalog-companies .subpage-breadcrumb [aria-current="page"] {
-  color: #b6c6dd;
+  color: #4f6583;
 }
 
 .ecosystem-catalog-companies .subpage-breadcrumb-separator {
-  color: #536984;
+  color: #8aa0bf;
 }
 
 .ecosystem-catalog-companies .ecosystem-hero {
   grid-template-columns: minmax(0, 1fr) auto;
   min-height: auto;
-  border-color: #2b4265;
+  border-color: #b8cbe8;
   border-radius: 22px;
-  background: #0b1729;
+  background: #e2ecfa;
   padding: clamp(1.2rem, 3vw, 2rem);
   box-shadow: inset 4px 0 0 var(--company-electric);
 }
 
 .ecosystem-catalog-companies .ecosystem-hero h1 {
-  color: #f5f8ff;
+  color: var(--company-ink);
   font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 650;
@@ -4233,7 +4233,7 @@ summary {
 }
 
 .ecosystem-catalog-companies .ecosystem-hero-proof {
-  border-color: #2b4265;
+  border-color: #b8cbe8;
 }
 
 .ecosystem-catalog-companies .ecosystem-hero-proof strong {
@@ -4249,7 +4249,7 @@ summary {
 
 .ecosystem-catalog-companies .company-filter-bar {
   grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
-  border-color: #2b4265;
+  border-color: #b8cbe8;
   border-radius: 18px;
   background: var(--company-panel);
   padding: 0.8rem;
@@ -4262,7 +4262,7 @@ summary {
 }
 
 .company-filter-control > span {
-  color: #7890b1;
+  color: #526b8d;
   font-size: 0.58rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -4272,12 +4272,12 @@ summary {
 .company-filter-control select {
   min-width: 0;
   min-height: 2.6rem;
-  border: 1px solid #324b70;
+  border: 1px solid #aac1e1;
   border-radius: 10px;
   outline: 0;
-  background: #0f2037;
+  background: #f8fbff;
   padding: 0 0.72rem;
-  color: #edf4ff;
+  color: var(--company-ink);
   font: inherit;
   font-size: 0.76rem;
   font-weight: 650;
@@ -4293,10 +4293,10 @@ summary {
   align-self: stretch;
   place-content: center;
   min-width: 7.75rem;
-  border-left: 1px solid #2b4265;
+  border-left: 1px solid #b8cbe8;
   margin: 0;
   padding-left: 0.8rem;
-  color: #8da1bd;
+  color: #60728d;
   font-size: 0.62rem;
   text-align: center;
   text-transform: uppercase;
@@ -4310,13 +4310,13 @@ summary {
 
 .ecosystem-catalog-companies .company-directory-heading {
   margin: 0.25rem 0 0;
-  border-color: #263b5c;
+  border-color: var(--company-line);
   padding: 0 0.15rem 0.7rem;
 }
 
 .ecosystem-catalog-companies .company-directory-heading h2 {
   margin: 0;
-  color: #dce8fb;
+  color: var(--company-ink);
   font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 1.2rem;
   font-weight: 650;
@@ -4329,15 +4329,15 @@ summary {
 }
 
 .ecosystem-catalog-companies .company-card {
-  border-color: #294264;
+  border-color: #b8cbe8;
   border-radius: 14px;
   background: var(--company-card);
-  box-shadow: 0 14px 34px rgba(2, 8, 17, 0.25);
+  box-shadow: 0 14px 34px rgba(48, 82, 132, 0.1);
 }
 
 .ecosystem-catalog-companies .company-card:hover {
   border-color: var(--company-electric);
-  box-shadow: 0 18px 42px rgba(18, 54, 117, 0.28);
+  box-shadow: 0 18px 42px rgba(75, 124, 255, 0.16);
   transform: translateY(-2px);
 }
 
@@ -4361,7 +4361,7 @@ summary {
   flex: 0 0 auto;
   place-items: center;
   overflow: hidden;
-  border: 1px solid #3c5579;
+  border: 1px solid #b8cbe8;
   border-radius: 9px;
   background: #fff;
   color: #10213a;
@@ -4405,7 +4405,7 @@ summary {
 
 .ecosystem-catalog-companies .company-card-heading h2 {
   overflow: hidden;
-  color: #f5f8ff;
+  color: var(--company-ink);
   font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 0.98rem;
   font-weight: 700;
@@ -4415,26 +4415,26 @@ summary {
 }
 
 .ecosystem-catalog-companies .company-country {
-  border-color: #365175;
-  background: #0a1728;
-  color: #b8c8df;
+  border-color: #b8cbe8;
+  background: #eef5ff;
+  color: #405876;
   font-size: 0.55rem;
   white-space: nowrap;
 }
 
 .ecosystem-catalog-companies .company-valuation-highlight {
-  border-color: #050505;
+  border-color: #b8cbe8;
   border-radius: 8px;
-  background: var(--company-ink);
+  background: #e8f1ff;
   padding: 0.45rem 0.55rem;
 }
 
 .ecosystem-catalog-companies .company-valuation-highlight span {
-  color: #8195b2;
+  color: #60728d;
 }
 
 .ecosystem-catalog-companies .company-valuation-highlight strong {
-  color: #75a2ff;
+  color: #2f5ec4;
   font-size: 0.62rem;
 }
 
@@ -4445,7 +4445,7 @@ summary {
 
 .company-specialties > span,
 .ecosystem-catalog-companies .company-facts span {
-  color: #7890b1;
+  color: #526b8d;
   font-size: 0.52rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -4459,11 +4459,11 @@ summary {
 }
 
 .company-specialties strong {
-  border: 1px solid #35517a;
+  border: 1px solid #afc5e4;
   border-radius: 999px;
-  background: #122746;
+  background: #e8f1ff;
   padding: 0.2rem 0.48rem;
-  color: #a9c5ff;
+  color: #2f5ec4;
   font-size: 0.58rem;
   font-weight: 650;
   line-height: 1.25;
@@ -4479,14 +4479,14 @@ summary {
 .ecosystem-catalog-companies .company-facts .company-fact-wide {
   min-height: 3.5rem;
   grid-column: auto;
-  border-color: #263f61;
+  border-color: #bdcee6;
   border-radius: 9px;
-  background: #0c192b;
+  background: #f1f6fd;
   padding: 0.48rem 0.55rem;
 }
 
 .ecosystem-catalog-companies .company-facts strong {
-  color: #dce8fa;
+  color: var(--company-ink);
   font-size: 0.64rem;
   line-height: 1.35;
 }
@@ -4497,9 +4497,9 @@ summary {
 
 .ecosystem-catalog-companies .company-card .ecosystem-links a,
 .ecosystem-catalog-companies .company-card .ecosystem-links a:first-child {
-  border-color: #33527d;
-  background: #0b1728;
-  color: #a9c5ff;
+  border-color: #afc5e4;
+  background: #f8fbff;
+  color: #2f5ec4;
 }
 
 .ecosystem-catalog-companies .company-card .ecosystem-links a:hover {
@@ -4509,18 +4509,18 @@ summary {
 }
 
 .ecosystem-catalog-companies .company-card .ecosystem-sources {
-  border-color: #243a5a;
-  color: #8ca0bc;
+  border-color: #c4d3e8;
+  color: #60728d;
 }
 
 .ecosystem-catalog-companies .company-card .ecosystem-sources summary,
 .ecosystem-catalog-companies .company-card .ecosystem-sources a {
-  color: #8faeff;
+  color: #3b66c5;
 }
 
 .ecosystem-catalog-companies .ecosystem-empty {
-  border-color: #365175;
-  color: #a7b9d0;
+  border-color: #b8cbe8;
+  color: #60728d;
 }
 
 @media (min-width: 1440px) {
@@ -4535,7 +4535,7 @@ summary {
   }
 
   .ecosystem-catalog-companies .ecosystem-hero-proof {
-    border-top: 1px solid #2b4265;
+    border-top: 1px solid #b8cbe8;
   }
 
   .ecosystem-catalog-companies .company-filter-bar {
@@ -4543,7 +4543,7 @@ summary {
   }
 
   .company-filter-count {
-    border-top: 1px solid #2b4265;
+    border-top: 1px solid #b8cbe8;
     border-left: 0;
     padding-top: 0.65rem;
     padding-left: 0;
@@ -6555,21 +6555,21 @@ summary {
   --arena-electric: #4b7cff;
   --arena-red: #ff5b67;
   --arena-orange: #ff8a4c;
-  --arena-ink: #f5f8ff;
-  --arena-muted: #9fb0c9;
-  --arena-deep: #07111f;
-  --arena-panel: #0b1628;
-  --arena-card: #101e33;
-  --arena-line: #263b5c;
+  --arena-ink: #10213a;
+  --arena-muted: #60728d;
+  --arena-deep: #eef5ff;
+  --arena-panel: #e2ecfa;
+  --arena-card: #f8fbff;
+  --arena-line: #b8cbe8;
   position: relative;
   isolation: isolate;
   overflow: hidden;
   margin-top: 0.75rem;
-  border: 1px solid #1e3352;
+  border: 1px solid #c7d8ef;
   border-radius: 28px;
-  background: #07111f;
+  background: #eef5ff;
   padding: clamp(0.85rem, 2vw, 1.4rem);
-  box-shadow: 0 28px 80px rgba(5, 11, 21, 0.2);
+  box-shadow: 0 28px 80px rgba(48, 82, 132, 0.12);
 }
 
 .arena-page::before {
@@ -6577,9 +6577,9 @@ summary {
   inset: 0;
   z-index: -1;
   background-image:
-    linear-gradient(rgba(93, 142, 216, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(93, 142, 216, 0.045) 1px, transparent 1px),
-    radial-gradient(circle at 86% 8%, rgba(75, 124, 255, 0.16), transparent 22%);
+    linear-gradient(rgba(93, 142, 216, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(93, 142, 216, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 86% 8%, rgba(75, 124, 255, 0.14), transparent 22%);
   background-size: 42px 42px, 42px 42px, auto;
   content: "";
   pointer-events: none;
@@ -6587,17 +6587,17 @@ summary {
 
 .arena-page .subpage-breadcrumb a,
 .arena-page .subpage-breadcrumb [aria-current="page"] {
-  color: #b6c6dd;
+  color: #4f6583;
 }
 
 .arena-page .subpage-breadcrumb-separator {
-  color: #536984;
+  color: #8aa0bf;
 }
 
 .arena-page .subpage-hero-card {
-  border-color: #2b4265;
+  border-color: #b8cbe8;
   border-radius: 22px;
-  background: #0b1729;
+  background: #e2ecfa;
   box-shadow: inset 4px 0 0 var(--arena-electric);
 }
 
@@ -6610,21 +6610,21 @@ summary {
 
 .arena-page .subpage-icon-panel {
   min-height: 5.2rem;
-  border-color: #304a70;
+  border-color: #b8cbe8;
   border-radius: 16px;
-  background: #0f2037;
+  background: #f8fbff;
 }
 
 .arena-page .subpage-icon-orb {
   height: 3.55rem;
   width: 3.55rem;
-  border: 1px solid #4b6b99;
-  background: #122746;
-  color: #9dbbff;
+  border: 1px solid #aac1e1;
+  background: #e8f1ff;
+  color: #2f5ec4;
   font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 1.35rem;
   font-weight: 750;
-  box-shadow: 0 12px 30px rgba(1, 8, 20, 0.35);
+  box-shadow: 0 12px 30px rgba(48, 82, 132, 0.12);
 }
 
 .arena-page .subpage-hero-copy h1 {
@@ -6636,12 +6636,12 @@ summary {
 }
 
 .arena-page .subpage-hero-aside {
-  border-color: #2b4265;
+  border-color: #b8cbe8;
 }
 
 .arena-page .submission-cta {
   min-height: auto;
-  border-color: #2b4265;
+  border-color: #b8cbe8;
 }
 
 .arena-page .submission-cta > p {
@@ -6649,10 +6649,10 @@ summary {
 }
 
 .arena-page .submission-cta > button {
-  border-color: #34588e;
+  border-color: #aac1e1;
   border-radius: 10px;
-  background: #102441;
-  color: #c5d7ff;
+  background: #f8fbff;
+  color: #2f5ec4;
   box-shadow: none;
 }
 
@@ -6664,11 +6664,11 @@ summary {
 }
 
 .arena-scoreboards {
-  border: 1px solid #2b4265;
+  border: 1px solid #b8cbe8;
   border-radius: 22px;
   background: var(--arena-panel);
   padding: clamp(1rem, 2.5vw, 1.45rem);
-  box-shadow: 0 20px 54px rgba(2, 8, 17, 0.24);
+  box-shadow: 0 20px 54px rgba(48, 82, 132, 0.1);
 }
 
 .arena-scoreboards-heading {
@@ -6700,16 +6700,16 @@ summary {
 
 .arena-scoreboard-card {
   min-height: 31rem;
-  border-color: #294264;
+  border-color: #b8cbe8;
   border-radius: 14px;
   background: var(--arena-card);
-  box-shadow: 0 14px 34px rgba(2, 8, 17, 0.25);
+  box-shadow: 0 14px 34px rgba(48, 82, 132, 0.1);
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
 .arena-scoreboard-card:hover {
   border-color: var(--arena-electric);
-  box-shadow: 0 18px 42px rgba(18, 54, 117, 0.28);
+  box-shadow: 0 18px 42px rgba(75, 124, 255, 0.16);
   transform: translateY(-2px);
 }
 
@@ -6721,14 +6721,14 @@ summary {
 }
 
 .arena-scoreboard-mark {
-  border-color: #3c5579;
+  border-color: #b8cbe8;
   border-radius: 9px;
-  background: #0b1728;
-  color: #a9c5ff;
+  background: #eef5ff;
+  color: #2f5ec4;
 }
 
 .arena-scoreboard-title h3 {
-  color: #f5f8ff;
+  color: var(--arena-ink);
   font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-weight: 700;
 }
@@ -6736,23 +6736,23 @@ summary {
 .arena-scoreboard-title p,
 .arena-scoreboard-metric time,
 .arena-scoreboard-footer details {
-  color: #8fa1ba;
+  color: #60728d;
 }
 
 .arena-scoreboard-tag {
-  border-color: #35517a;
-  background: #122746;
-  color: #a9c5ff;
+  border-color: #afc5e4;
+  background: #e8f1ff;
+  color: #2f5ec4;
 }
 
 .arena-scoreboard-metric span,
 .arena-scoreboards-heading span {
-  color: #7890b1;
+  color: #526b8d;
 }
 
 .arena-scoreboard-metric strong,
 .arena-scoreboard-result-copy strong {
-  color: #edf4ff;
+  color: var(--arena-ink);
 }
 
 .arena-scoreboard-metric b {
@@ -6762,12 +6762,12 @@ summary {
 }
 
 .arena-scoreboard-table-head {
-  background: #0a1526;
-  color: #7890b1;
+  background: #edf4fd;
+  color: #526b8d;
 }
 
 .arena-scoreboard-results[data-auto-scroll="true"] {
-  scrollbar-color: #43699d #0a1526;
+  scrollbar-color: #789bd0 #dbe7f5;
 }
 
 .arena-scoreboard-results[data-auto-scroll="true"]:focus-visible {
@@ -6775,24 +6775,24 @@ summary {
 }
 
 .arena-scoreboard-rank {
-  color: #71849f;
+  color: #7185a1;
 }
 
 .arena-scoreboard-results li:nth-child(-n + 3) .arena-scoreboard-rank {
-  color: #d8e6fb;
+  color: #264c8a;
 }
 
 .arena-scoreboard-result-copy small {
-  color: #71849f;
+  color: #7185a1;
 }
 
 .arena-scoreboard-track {
-  background: #1b2d48;
+  background: #dbe7f5;
 }
 
 .arena-scoreboard-track > span {
-  background: #f4f7ff;
-  box-shadow: 0 0 12px rgba(244, 247, 255, 0.2);
+  background: #10213a;
+  box-shadow: 0 0 10px rgba(16, 33, 58, 0.14);
 }
 
 .arena-scoreboard-track > span::after {
@@ -6812,16 +6812,16 @@ summary {
 }
 
 .arena-scoreboard-footer nav a {
-  border-color: #33527d;
-  background: #0b1728;
-  color: #a9c5ff;
+  border-color: #afc5e4;
+  background: #f8fbff;
+  color: #2f5ec4;
 }
 
 .arena-scoreboard-footer nav a:hover,
 .arena-scoreboard-footer nav .arena-scoreboard-link-primary {
-  border-color: #dbe7ff;
-  background: #dbe7ff;
-  color: #091321;
+  border-color: #10213a;
+  background: #10213a;
+  color: #fff;
 }
 
 .arena-scoreboard-footer nav a:hover {
@@ -6833,10 +6833,10 @@ summary {
 .text-arena-overview,
 .code-arena-overview,
 .arena-results-panel {
-  border-color: #2b4265;
+  border-color: #b8cbe8;
   border-radius: 22px;
   background: var(--arena-panel);
-  box-shadow: 0 20px 54px rgba(2, 8, 17, 0.24);
+  box-shadow: 0 20px 54px rgba(48, 82, 132, 0.1);
 }
 
 .text-arena-overview-heading,
@@ -6857,46 +6857,46 @@ summary {
 
 .text-arena-overview-source time,
 .code-arena-overview-source time {
-  color: #7890b1;
+  color: #526b8d;
 }
 
 .text-arena-overview-source a,
 .code-arena-overview-source a {
-  border-color: #34588e;
-  background: #102441;
-  color: #c5d7ff;
+  border-color: #aac1e1;
+  background: #f8fbff;
+  color: #2f5ec4;
 }
 
 .text-arena-legend {
-  border-color: #324b70;
-  background: #0f2037;
+  border-color: #b8cbe8;
+  background: #f8fbff;
 }
 
 .text-arena-legend span {
-  color: #b8c8df;
+  color: #405876;
 }
 
 .text-arena-legend-first,
 .text-arena-rank-first {
   background: rgba(255, 91, 103, 0.22) !important;
-  color: #ffadb4 !important;
+  color: #b42332 !important;
 }
 
 .text-arena-legend-second,
 .text-arena-rank-second {
   background: rgba(75, 124, 255, 0.2) !important;
-  color: #aac3ff !important;
+  color: #2f5ec4 !important;
 }
 
 .text-arena-legend-third,
 .text-arena-rank-third {
   background: rgba(56, 189, 248, 0.17) !important;
-  color: #8bdcff !important;
+  color: #1677a8 !important;
 }
 
 .text-arena-table-scroll {
-  border-color: #324b70;
-  scrollbar-color: #43699d #0a1526;
+  border-color: #b8cbe8;
+  scrollbar-color: #789bd0 #dbe7f5;
 }
 
 .text-arena-table-scroll:focus-visible,
@@ -6905,39 +6905,39 @@ summary {
 }
 
 .text-arena-table-scroll table {
-  color: #dce8fa;
+  color: var(--arena-ink);
 }
 
 .text-arena-table-scroll th,
 .text-arena-table-scroll td {
-  border-color: #263f61;
+  border-color: #c4d3e8;
 }
 
 .text-arena-table-scroll thead th {
-  background: #0a1526;
-  color: #8faeff;
+  background: #edf4fd;
+  color: #2f5ec4;
 }
 
 .text-arena-table-scroll tbody th,
 .text-arena-table-scroll tbody td {
-  background: #0f1d31;
+  background: #f8fbff;
 }
 
 .text-arena-table-scroll tbody th::after,
 .text-arena-table-scroll thead th:first-child::after {
-  background: linear-gradient(90deg, rgba(2, 8, 17, 0.38), transparent);
+  background: linear-gradient(90deg, rgba(122, 151, 193, 0.18), transparent);
 }
 
 .text-arena-table-scroll tbody th span {
-  border-color: #365175;
-  background: #122746;
-  color: #a9c5ff;
+  border-color: #afc5e4;
+  background: #e8f1ff;
+  color: #2f5ec4;
 }
 
 .text-arena-overview > footer,
 .code-arena-overview-footer p,
 .arena-results-footer p {
-  color: #8fa1ba;
+  color: #60728d;
 }
 
 .code-arena-chart-grid {
@@ -6945,7 +6945,7 @@ summary {
 }
 
 .code-arena-chart-card {
-  border-color: #294264;
+  border-color: #b8cbe8;
   border-radius: 14px;
   background: var(--arena-card);
 }
@@ -6955,54 +6955,54 @@ summary {
 }
 
 .code-arena-chart-title span {
-  border-color: #35517a;
-  background: #122746;
-  color: #a9c5ff;
+  border-color: #afc5e4;
+  background: #e8f1ff;
+  color: #2f5ec4;
 }
 
 .code-arena-chart-title h3 {
-  color: #edf4ff;
+  color: var(--arena-ink);
   font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-weight: 650;
 }
 
 .code-arena-chart-title small {
-  color: #8fa1ba;
+  color: #60728d;
 }
 
 .code-arena-chart-scroll {
-  scrollbar-color: #43699d #0a1526;
+  scrollbar-color: #789bd0 #dbe7f5;
 }
 
 .code-arena-gridline,
 .arena-chart-gridline {
-  stroke: #2b4265;
+  stroke: #b8cbe8;
 }
 
 .code-arena-axis {
-  stroke: #71849f;
+  stroke: #7185a1;
 }
 
 .code-arena-efficient-zone {
-  fill: #132e4f;
+  fill: #e2ecfa;
 }
 
 .code-arena-axis-label,
 .code-arena-axis-title,
 .code-arena-baseline-note,
 .arena-chart-axis-label {
-  fill: #7f93ae;
+  fill: #60728d;
 }
 
 .code-arena-bar-value,
 .arena-chart-value {
-  fill: #dce8fa;
+  fill: #10213a;
 }
 
 .code-arena-model-label,
 .code-arena-point-label,
 .arena-chart-category {
-  fill: #c8d8ee;
+  fill: #29486f;
 }
 
 .code-arena-point-label {
@@ -7010,7 +7010,7 @@ summary {
 }
 
 .code-arena-point-ring {
-  fill: #0a1526;
+  fill: #f8fbff;
   stroke: var(--arena-electric);
 }
 
@@ -7019,17 +7019,17 @@ summary {
 }
 
 .arena-chart-metrics p {
-  border-color: #294264;
+  border-color: #b8cbe8;
   background: var(--arena-card);
-  color: #8fa1ba;
+  color: #60728d;
 }
 
 .arena-chart-metrics strong {
-  color: #edf4ff;
+  color: var(--arena-ink);
 }
 
 .arena-results-footer a {
-  color: #8faeff;
+  color: #2f5ec4;
 }
 
 @media (min-width: 1120px) {
@@ -7049,7 +7049,7 @@ summary {
 
   .arena-page .subpage-hero-aside {
     grid-column: 1 / -1;
-    border-top: 1px solid #2b4265;
+    border-top: 1px solid #b8cbe8;
   }
 }
 
