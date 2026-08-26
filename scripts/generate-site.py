@@ -1369,7 +1369,7 @@ export const siteBrand = {
   name: "OpenTAI",
   tagline: "The Open Hub for Trustworthy AI and AI Safety",
   headline: "An open ecosystem for trustworthy AI, unifying safety guardrails, evaluation benchmarks, and datasets",
-  contactEmail: "contact.opentai@gmail.com",
+  contactEmail: "danxjma@gmail.com",
   upstream: "https://opentai.org",
 };
 

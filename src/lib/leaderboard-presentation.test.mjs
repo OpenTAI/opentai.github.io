@@ -2,14 +2,44 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
-test("leaderboard page renders source-aware charts before the ranking cards", () => {
+test("leaderboard page uses the arena scoreboard instead of summary charts", () => {
   const source = readFileSync(
     new URL("../components/leaderboard-page-view.tsx", import.meta.url),
     "utf8",
   );
 
-  assert.match(source, /LeaderboardStatistics/);
-  assert.ok(source.indexOf("<LeaderboardStatistics") < source.indexOf("<RankingResourceGrid"));
+  assert.match(source, /ArenaScoreboardGrid/);
+  assert.match(source, /kind="leaderboard"/);
+  assert.doesNotMatch(source, /LeaderboardStatistics/);
+  assert.doesNotMatch(source, /RankingResourceGrid/);
+});
+
+test("leaderboard page shares the arena visual shell", () => {
+  const source = readFileSync(
+    new URL("../components/leaderboard-page-view.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /className="leaderboard-page arena-page"/);
+  assert.match(source, /heroIcon="L"/);
+  assert.match(source, /title="Leaderboards"/);
+  assert.doesNotMatch(source, /showDescription/);
+});
+
+test("leaderboard cards use the arena ice-blue surface system", () => {
+  const source = readFileSync(
+    new URL("../app/globals.css", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(
+    source,
+    /\.leaderboard-page \.leaderboard-statistics\s*\{[^}]*background:\s*var\(--arena-panel\)/s,
+  );
+  assert.match(
+    source,
+    /\.leaderboard-page \.ranking-resource-card\s*\{[^}]*background:\s*var\(--arena-card\)/s,
+  );
 });
 
 test("ranking cards expose the official page before the result rows", () => {

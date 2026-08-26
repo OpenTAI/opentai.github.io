@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/arenas",
     "/companies",
     "/community",
+    "/contribute",
     ...Object.keys(benchmarkDetails).map((slug) => `/benchmarks/${slug}`),
   ];
 

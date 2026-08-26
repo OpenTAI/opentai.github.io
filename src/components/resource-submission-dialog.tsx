@@ -19,7 +19,7 @@ const EMPTY_VALUES: ResourceSubmissionValues = {
 };
 
 const SUBMIT_LABELS: Record<ResourceSubmissionKind, string> = {
-  arena: "Propose a Challenge",
+  arena: "Submit your arena",
   benchmark: "Submit your Benchmark",
   dataset: "Submit your Dataset",
   leaderboard: "Submit your leaderboard",
@@ -27,7 +27,7 @@ const SUBMIT_LABELS: Record<ResourceSubmissionKind, string> = {
 };
 
 const DIALOG_TITLES: Record<ResourceSubmissionKind, string> = {
-  arena: "Propose an Arena Challenge",
+  arena: "Suggest an Arena",
   benchmark: "Suggest a Benchmark",
   dataset: "Suggest a Dataset",
   leaderboard: "Suggest a Leaderboard",

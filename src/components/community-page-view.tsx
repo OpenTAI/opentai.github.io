@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { PlannedList, SimplePage } from "@/components/simple-page";
+import Link from "next/link";
+import { SimplePage } from "@/components/simple-page";
 import { SiteShell } from "@/components/site-shell";
 import { partners } from "@/data/site";
-import { Locale, t } from "@/lib/i18n";
-
-const PLANNED = ["Workshops", "Challenges", "Open projects", "Contributor directory"];
+import { Locale, localizeHref, t } from "@/lib/i18n";
 
 export function CommunityPageView({ locale }: { locale: Locale }) {
   const description =
@@ -26,6 +25,21 @@ export function CommunityPageView({ locale }: { locale: Locale }) {
         overview={overview}
         title="Community"
       >
+        <section className="subpage-main-table-card contributor-recognition-section">
+          <div className="contributor-recognition-heading">
+            <div>
+              <p>{t(locale, "Contributor Recognition")}</p>
+              <h2>{t(locale, "Main Contributors")}</h2>
+            </div>
+            <Link href={localizeHref(locale, "/contribute")}>
+              {t(locale, "Volunteer to contribute")}
+            </Link>
+          </div>
+          <p className="contributor-recognition-empty">
+            {t(locale, "Contributor profiles will appear here after they are confirmed by the OpenTAI team.")}
+          </p>
+        </section>
+
         <section className="subpage-main-table-card">
           <h2 className="mb-6 text-[1.7rem] font-semibold tracking-[-0.05em] text-[#111827]">
             {t(locale, "Partner institutions")}
@@ -47,13 +61,6 @@ export function CommunityPageView({ locale }: { locale: Locale }) {
             ))}
           </div>
         </section>
-
-        <PlannedList
-          items={PLANNED}
-          locale={locale}
-          note="These need content from the OpenTAI team — there is nothing on the current site to port."
-          title="Coming to this page"
-        />
       </SimplePage>
     </SiteShell>
   );

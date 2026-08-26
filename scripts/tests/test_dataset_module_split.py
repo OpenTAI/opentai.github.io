@@ -54,7 +54,7 @@ class DatasetModuleSplitTests(unittest.TestCase):
         site = (ROOT / "src" / "data" / "site.ts").read_text()
         datasets = (ROOT / "src" / "data" / "datasets.ts").read_text()
 
-        self.assertIn('contactEmail: "contact.opentai@gmail.com"', site)
+        self.assertIn('contactEmail: "danxjma@gmail.com"', site)
         self.assertIn(
             "Open-source safety datasets for training safer LLMs, Agents, and Embodied AI models.",
             datasets,

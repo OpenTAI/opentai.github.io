@@ -17,9 +17,9 @@ test("builds a contact email without sending data to a website backend", () => {
   };
 
   assert.deepEqual(validateContactMessage(values), {});
-  const url = new URL(buildContactMailtoUrl("contact.opentai@gmail.com", values));
+  const url = new URL(buildContactMailtoUrl("danxjma@gmail.com", values));
   assert.equal(url.protocol, "mailto:");
-  assert.equal(url.pathname, "contact.opentai@gmail.com");
+  assert.equal(url.pathname, "danxjma@gmail.com");
   assert.equal(url.searchParams.get("subject"), "OpenTAI resource question");
   assert.match(url.searchParams.get("body") ?? "", /Name: Researcher/);
   assert.match(url.searchParams.get("body") ?? "", /Email: researcher@example\.com/);

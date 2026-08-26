@@ -16,18 +16,29 @@ const INCLUSION = [
   "A publication venue is only shown when it appears in the project's own repository description or arXiv comment.",
   "A resource is matched to a repository only when its name appears in that repository's name or description.",
   "Fields that cannot be verified are left visibly empty. The site never fills a gap with a plausible-looking placeholder.",
+  "Original authors, organizations, repositories, papers, and licences remain attributed to their primary sources.",
+  "Listing a resource does not mean that OpenTAI endorses it, certifies it, or owns it.",
 ];
 
-const CONTRIBUTE: [string, string][] = [
-  ["Suggest a resource", "Send the name, a one-line description, and a public link."],
-  [
-    "Correct an entry",
-    "Point at the field and the source that contradicts it — corrections are applied at the data layer, not the page.",
-  ],
-  [
-    "Add evaluation results",
-    "Leaderboards need scored submissions with a reproducible evaluation setup.",
-  ],
+const TERMS = [
+  "OpenTAI is a source-linked research index and navigation service. It does not own the third-party papers, datasets, models, code, companies, or evaluation platforms that it links to.",
+  "Third-party resources remain governed by their original terms, licences, and policies. Check the primary source before downloading, reusing, citing, or relying on a resource.",
+  "Indexed information is provided for research and educational use and may be incomplete, delayed, or changed by its original source.",
+  "A listing is not an endorsement, certification, partnership, or guarantee of safety, quality, accuracy, or availability.",
+];
+
+const PRIVACY = [
+  "OpenTAI currently does not require user accounts and does not accept form submissions through its own server.",
+  "Contact and submission actions open your email application or GitHub. Information you choose to send is handled by those services under their own privacy policies.",
+  "The hosting provider may process routine technical request data, such as an IP address, browser metadata, requested URLs, and timestamps, to deliver and protect the website.",
+  "When you follow an external link, the destination site applies its own privacy and data practices.",
+];
+
+const CORRECTIONS = [
+  "Request a factual correction when an indexed name, date, affiliation, score, valuation, description, or link is contradicted by a reliable primary source.",
+  "Request review or removal when a listing raises a privacy, attribution, intellectual-property, safety, or broken-source concern.",
+  "Include the affected OpenTAI URL, the requested change, and a public primary source or other evidence that supports the request.",
+  "OpenTAI can correct, label, restrict, or remove an index entry after reviewing the available evidence. Removing an OpenTAI entry does not remove content from the original source.",
 ];
 
 function Panel({
@@ -52,11 +63,6 @@ function Panel({
 }
 
 export function AboutPageView({ locale }: { locale: Locale }) {
-  const governance =
-    locale === "zh"
-      ? `OpenTAI 是由 ${partners.length} 家合作机构的研究人员共同维护的开放平台。平台同时索引第三方开源成果和合作团队自身发布的成果。收录某项资源不代表为其背书；收录规则公开列于上方，以便讨论和质疑。`
-      : `OpenTAI is an open platform maintained by researchers across ${partners.length} collaborating institutions. It indexes third-party open-source work alongside the collaboration's own releases. Listing a resource is not an endorsement of it, and the inclusion rules are published above so that they can be argued with.`;
-
   return (
     <SiteShell locale={locale} sectionLabel="About">
       <SimplePage
@@ -120,7 +126,15 @@ export function AboutPageView({ locale }: { locale: Locale }) {
           </Panel>
         </section>
 
-        <Panel id="inclusion" locale={locale} title="How resources are included">
+        <Panel
+          id="inclusion-attribution"
+          locale={locale}
+          title="Inclusion & Attribution"
+        >
+          <DraftNotice locale={locale}>
+            This policy describes the source-review rules currently used by OpenTAI and remains
+            subject to OpenTAI team review.
+          </DraftNotice>
           <ul className="space-y-3">
             {INCLUSION.map((rule) => (
               <li key={rule} className="flex gap-3 text-sm leading-7 text-[#475467]">
@@ -133,39 +147,57 @@ export function AboutPageView({ locale }: { locale: Locale }) {
           </ul>
         </Panel>
 
-        <Panel id="governance" locale={locale} title="Governance">
+        <Panel id="terms" locale={locale} title="Terms of Use">
           <div className="space-y-4">
             <DraftNotice locale={locale}>
-              The text below describes how the platform currently operates. Decision-making,
-              maintainer roles, and the process for accepting new resources still need to be
-              confirmed and written by the OpenTAI team.
+              This is a working draft for review by the OpenTAI team. It is not a final legal policy.
             </DraftNotice>
-            <p className="text-sm leading-7 text-[#475467]">
-              {governance}
-            </p>
-            <p className="text-sm leading-7 text-[#475467]">
-              {t(
-                locale,
-                "Content is generated from a scripted pipeline rather than edited page by page, so every published claim can be traced back to the source it came from and refreshed when that source changes.",
-              )}
-            </p>
+            <ul className="space-y-3">
+              {TERMS.map((rule) => (
+                <li key={rule} className="flex gap-3 text-sm leading-7 text-[#475467]">
+                  <span aria-hidden="true" className="mt-0.5 shrink-0 text-[#4f46e5]">·</span>
+                  <span>{t(locale, rule)}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </Panel>
 
-        <Panel id="contributing" locale={locale} title="Contributing">
+        <Panel id="privacy" locale={locale} title="Privacy Notice">
           <div className="space-y-4">
             <DraftNotice locale={locale}>
-              These routes are a proposal. The team needs to decide where suggestions are filed and
-              who reviews them.
+              This is a working draft for review by the OpenTAI team. It is not a final legal policy.
             </DraftNotice>
-            <dl className="grid gap-4 sm:grid-cols-3">
-              {CONTRIBUTE.map(([title, detail]) => (
-                <div key={title} className="rounded-[18px] border border-[#eff2f6] px-5 py-4">
-                  <dt className="text-sm font-semibold text-[#111827]">{t(locale, title)}</dt>
-                  <dd className="mt-2 text-sm leading-6 text-[#667085]">{t(locale, detail)}</dd>
-                </div>
+            <ul className="space-y-3">
+              {PRIVACY.map((rule) => (
+                <li key={rule} className="flex gap-3 text-sm leading-7 text-[#475467]">
+                  <span aria-hidden="true" className="mt-0.5 shrink-0 text-[#4f46e5]">·</span>
+                  <span>{t(locale, rule)}</span>
+                </li>
               ))}
-            </dl>
+            </ul>
+          </div>
+        </Panel>
+
+        <Panel id="corrections-takedown" locale={locale} title="Corrections & Takedown">
+          <div className="space-y-4">
+            <DraftNotice locale={locale}>
+              This process is a working draft for review by the OpenTAI team.
+            </DraftNotice>
+            <ul className="space-y-3">
+              {CORRECTIONS.map((rule) => (
+                <li key={rule} className="flex gap-3 text-sm leading-7 text-[#475467]">
+                  <span aria-hidden="true" className="mt-0.5 shrink-0 text-[#4f46e5]">·</span>
+                  <span>{t(locale, rule)}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              className="inline-flex rounded-full border border-[#d9ddea] px-4 py-2 text-sm font-semibold text-[#4f46e5] transition hover:border-[#4f46e5] hover:bg-[#f7f7ff]"
+              href={`mailto:${siteBrand.contactEmail}?subject=${encodeURIComponent("OpenTAI correction or takedown request")}`}
+            >
+              {t(locale, "Request a correction or review")} ↗
+            </a>
           </div>
         </Panel>
 

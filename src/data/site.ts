@@ -271,7 +271,7 @@ export const siteBrand = {
   name: "OpenTAI",
   tagline: "The Open Hub for Trustworthy AI and AI Safety",
   headline: "An open ecosystem for trustworthy AI, unifying safety guardrails, evaluation benchmarks, and datasets",
-  contactEmail: "contact.opentai@gmail.com",
+  contactEmail: "danxjma@gmail.com",
   upstream: "https://opentai.org",
 };
 
@@ -2944,8 +2944,19 @@ export const leaderboards: { title: string; subtitle: string; directory: Ranking
         },
       ],
       url: "https://agent-leaderboard.github.io/",
-      source: "https://agent-leaderboard.github.io/",
-      links: [],
+      source: "https://raw.githubusercontent.com/agent-leaderboard/agent-leaderboard.github.io/main/index.html",
+      links: [
+        {
+          label: "Live leaderboard",
+          labelZh: "实时排行榜",
+          url: "https://agent-leaderboard.github.io/",
+        },
+        {
+          label: "Official source",
+          labelZh: "官方数据源",
+          url: "https://github.com/agent-leaderboard/agent-leaderboard.github.io",
+        },
+      ],
       verificationNote: "The official HarmActionsEval page publishes a model leaderboard using SafeActions@1 and labels the snapshot as updated in March 2026.",
     },
     {
@@ -2974,8 +2985,19 @@ export const leaderboards: { title: string; subtitle: string; directory: Ranking
         },
       ],
       url: "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html#safety",
-      source: "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html",
-      links: [],
+      source: "https://raw.githubusercontent.com/TrustLLMBenchmark/TrustLLM-Website/main/js/leaderboard/leaderboard-data.js",
+      links: [
+        {
+          label: "Live leaderboard",
+          labelZh: "实时排行榜",
+          url: "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html#safety",
+        },
+        {
+          label: "Official source",
+          labelZh: "官方数据源",
+          url: "https://github.com/TrustLLMBenchmark/TrustLLM-Website",
+        },
+      ],
       verificationNote: "The official TrustLLM leaderboard reports several safety metrics. This card ranks only the published Jailbreak metric, where the page states that higher values are better.",
     },
     {
@@ -3004,8 +3026,19 @@ export const leaderboards: { title: string; subtitle: string; directory: Ranking
         },
       ],
       url: "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html#fairness",
-      source: "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html",
-      links: [],
+      source: "https://raw.githubusercontent.com/TrustLLMBenchmark/TrustLLM-Website/main/js/leaderboard/leaderboard-data.js",
+      links: [
+        {
+          label: "Live leaderboard",
+          labelZh: "实时排行榜",
+          url: "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html#fairness",
+        },
+        {
+          label: "Official source",
+          labelZh: "官方数据源",
+          url: "https://github.com/TrustLLMBenchmark/TrustLLM-Website",
+        },
+      ],
       verificationNote: "The official TrustLLM leaderboard publishes multiple fairness metrics rather than one composite score. This card ranks only Stereotype Recognition, where higher values are better.",
     },
   ],

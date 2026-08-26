@@ -8,17 +8,46 @@ import {
   cyberGymResultsFromPayload,
   exploitGymResultsFromPayload,
 } from "@/lib/arena-live-sync";
+import {
+  harmActionsResultsFromHtml,
+  trustLlmResultsFromScript,
+} from "@/lib/leaderboard-live-sync";
 import { Locale, t } from "@/lib/i18n";
 
 const LIVE_REFRESH_INTERVAL_MS = 60 * 60 * 1000;
 const LIVE_RESULT_LIMIT = 12;
 
-const liveResultParsers: Record<
+type ScoreboardKind = "arena" | "leaderboard";
+
+type LiveResultParser = (payload: unknown, limit?: number) => RankingResult[];
+
+const arenaLiveResultParsers: Record<
   string,
-  (payload: unknown, limit?: number) => RankingResult[]
+  LiveResultParser
 > = {
   CyberGym: cyberGymResultsFromPayload,
   ExploitGym: exploitGymResultsFromPayload,
+};
+
+const leaderboardLiveResultParsers: Record<string, LiveResultParser> = {
+  HarmActionsEval: (payload, limit = LIVE_RESULT_LIMIT) =>
+    typeof payload === "string" ? harmActionsResultsFromHtml(payload, limit) : [],
+  "TrustLLM — Safety": (payload, limit = LIVE_RESULT_LIMIT) =>
+    typeof payload === "string"
+      ? trustLlmResultsFromScript(payload, {
+          dataset: "safety",
+          metric: "Jailbreak (↑)",
+          limit,
+        })
+      : [],
+  "TrustLLM — Fairness": (payload, limit = LIVE_RESULT_LIMIT) =>
+    typeof payload === "string"
+      ? trustLlmResultsFromScript(payload, {
+          dataset: "fairness",
+          metric: "Stereotype Recognition  (↑)",
+          limit,
+        })
+      : [],
 };
 
 function localized(locale: Locale, english: string, chinese: string | undefined) {
@@ -167,9 +196,11 @@ function AutoScrollingResults({
 }
 
 export function ArenaScoreboardGrid({
+  kind = "arena",
   locale,
   records,
 }: {
+  kind?: ScoreboardKind;
   locale: Locale;
   records: readonly RankingDirectoryRecord[];
 }) {
@@ -186,14 +217,27 @@ export function ArenaScoreboardGrid({
       syncInFlightRef.current = true;
       lastSyncAttemptRef.current = Date.now();
 
+      const liveResultParsers =
+        kind === "leaderboard" ? leaderboardLiveResultParsers : arenaLiveResultParsers;
       const liveSources = records.filter((record) => liveResultParsers[record.name]);
+      const sourceResponses = new Map<string, Promise<unknown>>();
+      const sourcePayload = (record: RankingDirectoryRecord) => {
+        const cached = sourceResponses.get(record.source);
+        if (cached) return cached;
+
+        const pending = fetch(record.source, { cache: "no-store" }).then(async (response) => {
+          if (!response.ok) throw new Error(`${record.name} returned ${response.status}`);
+          return kind === "leaderboard" ? response.text() : response.json();
+        });
+        sourceResponses.set(record.source, pending);
+        return pending;
+      };
       const responses = await Promise.allSettled(
         liveSources.map(async (record) => {
-          const response = await fetch(record.source, { cache: "no-store" });
-          if (!response.ok) throw new Error(`${record.name} returned ${response.status}`);
-
-          const payload: unknown = await response.json();
-          const results = liveResultParsers[record.name](payload, LIVE_RESULT_LIMIT);
+          const results = liveResultParsers[record.name](
+            await sourcePayload(record),
+            LIVE_RESULT_LIMIT,
+          );
           if (results.length === 0) throw new Error(`${record.name} returned no valid rows`);
 
           return { name: record.name, results };
@@ -244,21 +288,32 @@ export function ArenaScoreboardGrid({
       document.removeEventListener("visibilitychange", refreshWhenVisible);
       window.clearInterval(timer);
     };
-  }, [records]);
+  }, [kind, records]);
+
+  const isLeaderboard = kind === "leaderboard";
+  const directoryTitle = isLeaderboard
+    ? locale === "zh"
+      ? "排行榜"
+      : "Leaderboards"
+    : locale === "zh"
+      ? "安全竞技场"
+      : "Safety arenas";
+  const directorySummary = isLeaderboard
+    ? locale === "zh"
+      ? `${liveRecords.length} 个榜单 · 结果来自各项目官方页面`
+      : `${liveRecords.length} leaderboards · results reproduced from official sources`
+    : locale === "zh"
+      ? `${liveRecords.length} 个竞技场 · 结果来自各项目官方页面`
+      : `${liveRecords.length} arenas · results reproduced from official sources`;
+  const titleId = isLeaderboard ? "leaderboard-directory-title" : "arena-directory-title";
 
   return (
-    <section aria-labelledby="arena-directory-title" className="arena-scoreboards">
+    <section aria-labelledby={titleId} className="arena-scoreboards">
       <header className="arena-scoreboards-heading">
         <div>
-          <h2 id="arena-directory-title">
-            {locale === "zh" ? "安全竞技场" : "Safety arenas"}
-          </h2>
+          <h2 id={titleId}>{directoryTitle}</h2>
         </div>
-        <p>
-          {locale === "zh"
-            ? `${liveRecords.length} 个竞技场 · 结果来自各项目官方页面`
-            : `${liveRecords.length} arenas · results reproduced from official sources`}
-        </p>
+        <p>{directorySummary}</p>
       </header>
 
       <div className="arena-scoreboard-grid">

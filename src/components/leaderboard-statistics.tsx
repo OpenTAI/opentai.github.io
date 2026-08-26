@@ -1,7 +1,7 @@
 import type { RankingDirectoryRecord } from "@/data/site";
 import type { Locale } from "@/lib/i18n";
 
-const COLORS = ["#5b52db", "#0f9f86", "#e17a45", "#a855f7"];
+const COLORS = ["#4b7cff", "#ff8a4c", "#ff5b67", "#38bdf8"];
 
 function copy(locale: Locale, english: string, chinese: string) {
   return locale === "zh" ? chinese : english;

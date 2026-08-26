@@ -16,7 +16,11 @@
         {"rank": 3, "name": "Claude Sonnet 4.6", "detail": "Anthropic", "value": "2.84%"}
       ],
       "url": "https://agent-leaderboard.github.io/",
-      "source": "https://agent-leaderboard.github.io/",
+      "source": "https://raw.githubusercontent.com/agent-leaderboard/agent-leaderboard.github.io/main/index.html",
+      "links": [
+        {"label": "Live leaderboard", "labelZh": "实时排行榜", "url": "https://agent-leaderboard.github.io/"},
+        {"label": "Official source", "labelZh": "官方数据源", "url": "https://github.com/agent-leaderboard/agent-leaderboard.github.io"}
+      ],
       "verificationNote": "The official HarmActionsEval page publishes a model leaderboard using SafeActions@1 and labels the snapshot as updated in March 2026."
     },
     {
@@ -33,7 +37,11 @@
         {"rank": 3, "name": "ERNIE", "value": "0.949"}
       ],
       "url": "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html#safety",
-      "source": "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html",
+      "source": "https://raw.githubusercontent.com/TrustLLMBenchmark/TrustLLM-Website/main/js/leaderboard/leaderboard-data.js",
+      "links": [
+        {"label": "Live leaderboard", "labelZh": "实时排行榜", "url": "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html#safety"},
+        {"label": "Official source", "labelZh": "官方数据源", "url": "https://github.com/TrustLLMBenchmark/TrustLLM-Website"}
+      ],
       "verificationNote": "The official TrustLLM leaderboard reports several safety metrics. This card ranks only the published Jailbreak metric, where the page states that higher values are better."
     },
     {
@@ -50,7 +58,11 @@
         {"rank": 3, "name": "PaLM2", "value": "0.634"}
       ],
       "url": "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html#fairness",
-      "source": "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html",
+      "source": "https://raw.githubusercontent.com/TrustLLMBenchmark/TrustLLM-Website/main/js/leaderboard/leaderboard-data.js",
+      "links": [
+        {"label": "Live leaderboard", "labelZh": "实时排行榜", "url": "https://trustllmbenchmark.github.io/TrustLLM-Website/leaderboard.html#fairness"},
+        {"label": "Official source", "labelZh": "官方数据源", "url": "https://github.com/TrustLLMBenchmark/TrustLLM-Website"}
+      ],
       "verificationNote": "The official TrustLLM leaderboard publishes multiple fairness metrics rather than one composite score. This card ranks only Stereotype Recognition, where higher values are better."
     }
   ]

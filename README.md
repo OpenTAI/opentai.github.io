@@ -160,10 +160,10 @@ site.
   under LLMs; the source heading alone is not used as evidence for its domain.
 - The Survey tab is small by construction: both lists primarily collect the
   papers a survey reviews. 14 of 772 published entries are surveys.
-- Governance, contributing, and citation on the About page are **drafts**,
-  marked as such on the page itself. They need confirming or rewriting by the
-  OpenTAI team. Workshops, challenges, and contributor content on Community
-  still have no source at all.
+- Terms of Use, Privacy Policy, and citation on the About page are **drafts**,
+  marked as such on the page itself. They need legal and editorial review by
+  the OpenTAI team. Community reserves a contributor-recognition section but
+  deliberately shows no contributor profiles until the team confirms them.
 - Chinese pages are statically exported under `/zh`. Interface text and
   descriptions are localized; paper titles, abstracts, author names, and
   publication metadata stay English.

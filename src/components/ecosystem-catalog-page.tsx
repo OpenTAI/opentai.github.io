@@ -98,10 +98,10 @@ const pageCopy: Record<CatalogKind, Record<Locale, { title: string }>> = {
   },
   companies: {
     en: {
-      title: "Company wall",
+      title: "Startup Companies",
     },
     zh: {
-      title: "公司墙",
+      title: "初创公司",
     },
   },
 };

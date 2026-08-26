@@ -43,13 +43,41 @@ const ZH: Record<string, string> = {
   Companies: "企业",
   "Coming soon": "即将开放",
   Community: "社区",
+  Contribute: "参与贡献",
+  "Contribute to OpenTAI": "参与 OpenTAI",
+  "Choose an area and open a GitHub issue to start a source-reviewed contribution.":
+    "选择一个方向并创建 GitHub Issue，开始一项需要来源审核的贡献。",
+  "Get involved": "参与其中",
+  "How would you like to contribute?": "您希望如何参与贡献？",
+  "Research & Papers": "研究与论文",
+  "Recommend or organize trustworthy AI research with a public paper or primary source.":
+    "推荐或整理可信人工智能研究，并提供公开论文或一手来源。",
+  "Models & Datasets": "模型与数据集",
+  "Submit or improve source-backed model and dataset records.":
+    "提交或完善有来源支持的模型与数据集记录。",
+  "Benchmarks & Evaluation": "评测基准与评估",
+  "Add reproducible benchmarks, metrics, or verified evaluation results.":
+    "添加可复现的评测基准、指标或已核验的评估结果。",
+  "Tools & Resources": "工具与资源",
+  "Recommend open-source safety tools, frameworks, and practical resources.":
+    "推荐开源安全工具、框架与实用资源。",
+  "Website & Development": "网站与开发",
+  "Improve the website, fix a bug, or propose a focused pull request.":
+    "改进网站、修复问题，或提出目标明确的 Pull Request。",
+  "Help with events, documentation, translation, or community operations.":
+    "协助活动、文档、翻译或社区运营。",
+  "Submit contribution": "提交贡献",
+  "Every submission opens a GitHub issue and is reviewed before it becomes part of OpenTAI.":
+    "每次提交都会创建 GitHub Issue，并在成为 OpenTAI 内容前接受审核。",
   About: "关于",
   Contact: "联系方式",
   "Current site": "当前网站",
   "Contact Us": "联系我们",
   "Research & Evaluation": "研究与评测",
   "Terms & Policies": "条款与政策",
-  "Inclusion policy": "收录规则",
+  "Privacy Notice": "隐私说明",
+  "Inclusion & Attribution": "收录与归属",
+  "Corrections & Takedown": "纠错与下架",
   "Governance (draft)": "治理（草案）",
   "Contributing (draft)": "参与贡献（草案）",
   "Citation (draft)": "引用说明（草案）",
@@ -128,6 +156,7 @@ const ZH: Record<string, string> = {
   "Submit your Benchmark": "提交评测基准",
   "Submit your Dataset": "提交数据集",
   "Submit your Arena": "提交竞技场",
+  "Submit your arena": "提交竞技场",
   "Propose a Challenge": "提议赛题",
   "Submit your Paper": "提交论文",
   "Suggest a Benchmark": "推荐评测基准",
@@ -260,7 +289,15 @@ const ZH: Record<string, string> = {
   "Privacy Ranking": "隐私排行榜",
   "What is collected here": "本站收录内容",
   "Partner institutions": "合作机构",
+  "Contributor Recognition": "贡献者致谢",
+  "Main Contributors": "主要贡献者",
+  "Volunteer to contribute": "志愿参与贡献",
+  "Contributor profiles will appear here after they are confirmed by the OpenTAI team.":
+    "贡献者信息将在 OpenTAI 团队确认后展示于此。",
   "How resources are included": "资源收录方式",
+  "Terms of Use": "使用条款",
+  "Privacy Policy": "隐私政策",
+  "Request a correction or review": "申请纠错或复核",
   Governance: "治理",
   Contributing: "参与贡献",
   Citation: "引用",
@@ -278,12 +315,50 @@ const ZH: Record<string, string> = {
     "只有资源名称出现在代码仓库名称或描述中时，才会将二者匹配。",
   "Fields that cannot be verified are left visibly empty. The site never fills a gap with a plausible-looking placeholder.":
     "无法核验的字段会明确留空；本站绝不会用看似合理的占位内容填补缺口。",
+  "Original authors, organizations, repositories, papers, and licences remain attributed to their primary sources.":
+    "原作者、组织、代码仓库、论文和许可证均保留其第一手来源的归属信息。",
+  "Listing a resource does not mean that OpenTAI endorses it, certifies it, or owns it.":
+    "收录某项资源并不代表 OpenTAI 为其背书、认证或拥有该资源。",
+  "This policy describes the source-review rules currently used by OpenTAI and remains subject to OpenTAI team review.":
+    "本政策描述 OpenTAI 当前采用的来源审核规则，仍需由 OpenTAI 团队审阅确认。",
   "The text below describes how the platform currently operates. Decision-making, maintainer roles, and the process for accepting new resources still need to be confirmed and written by the OpenTAI team.":
     "以下文字描述平台当前的运行方式。决策机制、维护者职责和新资源接纳流程仍需由 OpenTAI 团队确认并撰写。",
   "These routes are a proposal. The team needs to decide where suggestions are filed and who reviews them.":
     "以下渠道仅为提案。团队仍需决定建议提交到哪里，以及由谁审核。",
   "Placeholder citation. If the platform has an accompanying paper, or the team prefers a different author line, replace this entry.":
     "以下引用为占位内容。如果平台有配套论文，或团队希望使用不同的作者署名，需要替换此条目。",
+  "This is a working draft for review by the OpenTAI team. It is not a final legal policy.":
+    "这是供 OpenTAI 团队审核的工作草案，并非最终法律政策。",
+  "OpenTAI is a source-linked research index and navigation service. It does not own the third-party papers, datasets, models, code, companies, or evaluation platforms that it links to.":
+    "OpenTAI 是一个带有来源链接的研究索引与导航服务，并不拥有其链接的第三方论文、数据集、模型、代码、公司资料或评测平台。",
+  "Third-party resources remain governed by their original terms, licences, and policies. Check the primary source before downloading, reusing, citing, or relying on a resource.":
+    "第三方资源仍受其原始条款、许可证和政策约束；下载、复用、引用或依赖资源前，请先核对第一手来源。",
+  "Indexed information is provided for research and educational use and may be incomplete, delayed, or changed by its original source.":
+    "索引信息用于研究与教育用途，可能不完整、存在延迟，或已被原始来源修改。",
+  "A listing is not an endorsement, certification, partnership, or guarantee of safety, quality, accuracy, or availability.":
+    "收录不构成背书、认证、合作关系，也不保证资源的安全性、质量、准确性或可用性。",
+  "OpenTAI currently does not require user accounts and does not accept form submissions through its own server.":
+    "OpenTAI 目前不要求用户注册账户，也不通过自身服务器接收表单提交。",
+  "Contact and submission actions open your email application or GitHub. Information you choose to send is handled by those services under their own privacy policies.":
+    "联系和提交操作会打开您的邮件应用或 GitHub；您选择发送的信息将依据这些服务各自的隐私政策处理。",
+  "The hosting provider may process routine technical request data, such as an IP address, browser metadata, requested URLs, and timestamps, to deliver and protect the website.":
+    "托管服务商可能为提供和保护网站而处理常规技术请求数据，例如 IP 地址、浏览器元数据、请求网址和时间戳。",
+  "When you follow an external link, the destination site applies its own privacy and data practices.":
+    "当您访问外部链接时，目标网站适用其自身的隐私与数据处理规则。",
+  "This process is a working draft for review by the OpenTAI team.":
+    "本流程是供 OpenTAI 团队审阅的工作草案。",
+  "Request a factual correction when an indexed name, date, affiliation, score, valuation, description, or link is contradicted by a reliable primary source.":
+    "当可靠的一手来源与索引中的名称、日期、机构、分数、估值、描述或链接相矛盾时，可以申请事实纠错。",
+  "Request review or removal when a listing raises a privacy, attribution, intellectual-property, safety, or broken-source concern.":
+    "当条目涉及隐私、归属、知识产权、安全或来源失效问题时，可以申请复核或下架。",
+  "Include the affected OpenTAI URL, the requested change, and a public primary source or other evidence that supports the request.":
+    "申请中请提供相关 OpenTAI 网址、希望修改的内容，以及支持申请的公开第一手来源或其他证据。",
+  "OpenTAI can correct, label, restrict, or remove an index entry after reviewing the available evidence. Removing an OpenTAI entry does not remove content from the original source.":
+    "OpenTAI 可在审阅现有证据后纠正、标记、限制或移除索引条目；从 OpenTAI 移除条目不会删除原始来源中的内容。",
+  "OpenTAI provides a source-linked index for research and educational use. External resources remain governed by their owners' terms, licences, and policies. Verify the primary source before relying on indexed information.":
+    "OpenTAI 提供带来源链接的研究与教育资源索引。外部资源仍受其所有者的条款、许可和政策约束；使用索引信息前请核对第一手来源。",
+  "OpenTAI currently does not require user accounts. Contact and submission actions open your email application or GitHub and do not send form data to an OpenTAI server. External services apply their own privacy policies.":
+    "OpenTAI 目前不要求用户注册账户。联系和提交操作只会打开您的邮件应用或 GitHub，不会将表单数据发送至 OpenTAI 服务器；外部服务适用其各自的隐私政策。",
   "Suggest a resource": "推荐资源",
   "Send the name, a one-line description, and a public link.": "请提供名称、一句话描述和公开链接。",
   "Correct an entry": "纠正条目",

@@ -45,19 +45,42 @@ test("footer navigation prioritizes exploration and existing policy sections", (
   assert.deepEqual(
     footerNavigationGroups.map((group) => [
       group.label,
-      group.items.map((item) => item.href),
+      group.items.map((item) => [item.label, item.href]),
     ]),
     [
-      ["Research & Evaluation", ["/papers", "/benchmarks", "/leaderboard", "/arenas"]],
-      ["Resources", ["/datasets", "/models", "/frameworks"]],
-      ["OpenTAI", ["/companies", "/community", "/about", "https://github.com/OpenTAI"]],
+      [
+        "Research & Evaluation",
+        [
+          ["Papers", "/papers"],
+          ["Benchmarks", "/benchmarks"],
+          ["Leaderboards", "/leaderboard"],
+          ["Arenas", "/arenas"],
+        ],
+      ],
+      [
+        "Resources",
+        [
+          ["Datasets", "/datasets"],
+          ["Models", "/models"],
+          ["Frameworks", "/frameworks"],
+        ],
+      ],
+      [
+        "OpenTAI",
+        [
+          ["Companies", "/companies"],
+          ["Community", "/community"],
+          ["About", "/about"],
+          ["GitHub", "https://github.com/OpenTAI"],
+        ],
+      ],
       [
         "Terms & Policies",
         [
-          "/about#inclusion",
-          "/about#governance",
-          "/about#contributing",
-          "/about#citation",
+          ["Terms of Use", "/about#terms"],
+          ["Privacy Notice", "/about#privacy"],
+          ["Inclusion & Attribution", "/about#inclusion-attribution"],
+          ["Corrections & Takedown", "/about#corrections-takedown"],
         ],
       ],
     ],
