@@ -14,6 +14,7 @@ const breadcrumbHrefs: Record<string, string> = {
   Community: "/community",
   Contribute: "/contribute",
   About: "/about",
+  "Terms Of Use": "/terms",
 };
 
 export function PageBreadcrumb({

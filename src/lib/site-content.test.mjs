@@ -17,16 +17,16 @@ test("the arena submission CTA asks users to submit an arena", async () => {
   assert.doesNotMatch(dialog, /arena: "Propose a Challenge"/);
 });
 
-test("the About page exposes OpenTAI-specific policies without governance or contributing drafts", async () => {
+test("the About page keeps supporting policies but no longer embeds Terms Of Use", async () => {
   const about = await readSource("../components/about-page-view.tsx");
-  assert.match(about, /id="terms"/);
   assert.match(about, /id="privacy"/);
   assert.match(about, /id="inclusion-attribution"/);
   assert.match(about, /id="corrections-takedown"/);
-  assert.match(about, /title="Terms Of Use"/);
   assert.match(about, /title="Privacy Notice"/);
   assert.match(about, /title="Inclusion & Attribution"/);
   assert.match(about, /title="Corrections & Takedown"/);
+  assert.doesNotMatch(about, /id="terms"/);
+  assert.doesNotMatch(about, /title="Terms Of Use"/);
   assert.doesNotMatch(about, /id="governance"/);
   assert.doesNotMatch(about, /id="contributing"/);
 });

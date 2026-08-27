@@ -20,13 +20,6 @@ const INCLUSION = [
   "Listing a resource does not mean that OpenTAI endorses it, certifies it, or owns it.",
 ];
 
-const TERMS = [
-  "OpenTAI is a source-linked research index and navigation service. It does not own the third-party papers, datasets, models, code, companies, or evaluation platforms that it links to.",
-  "Third-party resources remain governed by their original terms, licences, and policies. Check the primary source before downloading, reusing, citing, or relying on a resource.",
-  "Indexed information is provided for research and educational use and may be incomplete, delayed, or changed by its original source.",
-  "A listing is not an endorsement, certification, partnership, or guarantee of safety, quality, accuracy, or availability.",
-];
-
 const PRIVACY = [
   "OpenTAI currently does not require user accounts and does not accept form submissions through its own server.",
   "Contact and submission actions open your email application or GitHub. Information you choose to send is handled by those services under their own privacy policies.",
@@ -145,22 +138,6 @@ export function AboutPageView({ locale }: { locale: Locale }) {
               </li>
             ))}
           </ul>
-        </Panel>
-
-        <Panel id="terms" locale={locale} title="Terms Of Use">
-          <div className="space-y-4">
-            <DraftNotice locale={locale}>
-              This is a working draft for review by the OpenTAI team. It is not a final legal policy.
-            </DraftNotice>
-            <ul className="space-y-3">
-              {TERMS.map((rule) => (
-                <li key={rule} className="flex gap-3 text-sm leading-7 text-[#475467]">
-                  <span aria-hidden="true" className="mt-0.5 shrink-0 text-[#4f46e5]">·</span>
-                  <span>{t(locale, rule)}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
         </Panel>
 
         <Panel id="privacy" locale={locale} title="Privacy Notice">

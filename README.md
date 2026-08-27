@@ -28,6 +28,7 @@ npm run dev
 | `/companies` | Source-backed AI safety, agent security, evaluation, and red-teaming companies |
 | `/community` | GitHub contributors, volunteer contribution flow, and partner institutions |
 | `/about` | Mission, contact, coverage summary |
+| `/terms` | Terms of Use supplied by the OpenTAI team |
 | `/zh/...` | Chinese interface and descriptions; paper titles, abstracts, and authors stay English |
 
 ## Content pipeline
@@ -157,9 +158,9 @@ Daily" digest remains a separate service and is not part of this static site.
   under LLMs; the source heading alone is not used as evidence for its domain.
 - The Survey tab is small by construction: both lists primarily collect the
   papers a survey reviews. 14 of 772 published entries are surveys.
-- Terms of Use, Privacy Policy, and citation on the About page are **drafts**,
-  marked as such on the page itself. They need legal and editorial review by
-  the OpenTAI team. Community displays the three GitHub contributor accounts
+- Privacy Policy and citation on the About page are **drafts**, marked as such
+  on the page itself. Terms of Use is published separately from the text
+  supplied by the OpenTAI team. Community displays the GitHub contributor accounts
   explicitly confirmed by the team; the volunteer form opens a reviewable
   GitHub issue rather than storing submissions on the website.
 - Chinese pages are statically exported under `/zh`. Interface text and

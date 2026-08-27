@@ -40,7 +40,7 @@ test("groups the public navigation without linking unfinished routes", () => {
   );
 });
 
-test("footer navigation prioritizes exploration and existing policy sections", () => {
+test("footer navigation links Terms Of Use to its standalone policy page", () => {
   assert.deepEqual(
     footerNavigationGroups.map((group) => [
       group.label,
@@ -75,7 +75,7 @@ test("footer navigation prioritizes exploration and existing policy sections", (
       [
         "Terms & Policies",
         [
-          ["Terms Of Use", "/about#terms"],
+          ["Terms Of Use", "/terms"],
           ["Privacy Notice", "/about#privacy"],
           ["Inclusion & Attribution", "/about#inclusion-attribution"],
           ["Corrections & Takedown", "/about#corrections-takedown"],
