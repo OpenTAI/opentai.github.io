@@ -57,6 +57,8 @@ test("the contributor directory uses the three team-approved GitHub accounts", a
   assert.match(contributors, /https:\/\/github\.com\/wuyoscar\.png\?size=160/);
   assert.match(contributors, /https:\/\/github\.com\/GabryGao\.png\?size=160/);
   assert.match(contributors, /https:\/\/github\.com\/SII-FLEEECERmw\.png\?size=160/);
+  assert.match(contributors, /displayName: "Xin Gao"/);
+  assert.match(contributors, /displayName: "Ming Wen"/);
 });
 
 test("the contribution path has bilingual static routes and is discoverable", async () => {

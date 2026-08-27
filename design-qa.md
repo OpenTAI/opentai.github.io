@@ -110,7 +110,7 @@ No leaderboard names, rankings, scores, descriptions, source links, or generated
 - `Volunteer to contribute` now opens a compact submission modal in the same visual system as existing resource submission dialogs.
 - The modal contains only the three inputs needed to open a reviewable GitHub issue: GitHub profile, contribution area, and contribution proposal.
 - The old six-card contribution chooser is no longer rendered; `/contribute/` provides a compact entry point to the same modal.
-- `Main Contributors` displays three team-provided GitHub accounts as linked avatar cards: Oscar Wu (`@wuyoscar`), GabryGao (`@GabryGao`), and `@SII-FLEEECERmw`.
+- `Main Contributors` displays three team-provided GitHub accounts as linked avatar cards: Oscar Wu (`@wuyoscar`), Xin Gao (`@GabryGao`), and Ming Wen (`@SII-FLEEECERmw`).
 - All three remote GitHub avatars loaded from their verified profile URLs.
 - English and Chinese modal labels, options, buttons, and close controls were present in the DOM.
 - The pale information panel now includes the teacher-provided contact email `danxjma@gmail.com`; it is a `mailto:` link with the subject `OpenTAI volunteer contribution`, while GitHub remains the primary structured submission path.

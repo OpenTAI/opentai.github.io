@@ -16,14 +16,14 @@ export const contributors: readonly Contributor[] = [
   },
   {
     avatarUrl: "https://github.com/GabryGao.png?size=160",
-    displayName: "GabryGao",
+    displayName: "Xin Gao",
     githubHandle: "GabryGao",
     profileUrl: "https://github.com/GabryGao",
     sourceUrl: "https://github.com/GabryGao",
   },
   {
     avatarUrl: "https://github.com/SII-FLEEECERmw.png?size=160",
-    displayName: "SII-FLEEECERmw",
+    displayName: "Ming Wen",
     githubHandle: "SII-FLEEECERmw",
     profileUrl: "https://github.com/SII-FLEEECERmw",
     sourceUrl: "https://github.com/SII-FLEEECERmw",
