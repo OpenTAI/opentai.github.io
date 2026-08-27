@@ -316,10 +316,10 @@ function ResourceStatistics({
   );
   const noun = kind === "dataset" ? "Dataset" : "Benchmark";
   const plural = kind === "dataset" ? "datasets" : "benchmarks";
-  const statisticsTitle = `${noun} statistics`;
-  const growthTitle = `${noun} growth by year`;
+  const statisticsTitle = `${noun} Statistics`;
+  const growthTitle = `${noun} Growth By Year`;
   const yearlyDescription = `Annual count of ${plural} with a recorded year.`;
-  const domainTitle = `${noun}s by domain`;
+  const domainTitle = `${noun}s By Domain`;
   const recentYears = buildRecentYearSeries(statistics.years, new Date().getUTCFullYear());
 
   const chartWidth = 620;

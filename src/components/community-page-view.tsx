@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { ContributionDialog } from "@/components/contribution-dialog";
+import { OrganizationContributors } from "@/components/organization-contributors";
 import { SimplePage } from "@/components/simple-page";
 import { SiteShell } from "@/components/site-shell";
 import { partners } from "@/data/site";
-import { contributors } from "@/lib/contributors";
 import { Locale, t } from "@/lib/i18n";
 
 export function CommunityPageView({ locale }: { locale: Locale }) {
@@ -30,42 +30,16 @@ export function CommunityPageView({ locale }: { locale: Locale }) {
           <div className="contributor-recognition-heading">
             <div>
               <p>{t(locale, "Contributor Recognition")}</p>
-              <h2>{t(locale, "Main Contributors")}</h2>
+              <h2>{t(locale, "Contributors")}</h2>
             </div>
             <ContributionDialog locale={locale} />
           </div>
-          <div className="contributor-profile-grid">
-            {contributors.map((contributor) => (
-              <a
-                className="contributor-profile-card"
-                href={contributor.profileUrl}
-                key={contributor.githubHandle}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <Image
-                  alt={`${contributor.displayName} GitHub avatar`}
-                  className="contributor-profile-avatar"
-                  height={72}
-                  src={contributor.avatarUrl}
-                  unoptimized
-                  width={72}
-                />
-                <span>
-                  <strong>{contributor.displayName}</strong>
-                  <small>@{contributor.githubHandle}</small>
-                </span>
-                <span aria-hidden="true" className="contributor-profile-arrow">
-                  ↗
-                </span>
-              </a>
-            ))}
-          </div>
+          <OrganizationContributors locale={locale} />
         </section>
 
         <section className="subpage-main-table-card">
           <h2 className="mb-6 text-[1.7rem] font-semibold tracking-[-0.05em] text-[#111827]">
-            {t(locale, "Partner institutions")}
+            {t(locale, "Partner Institutions")}
           </h2>
           <div className="grid grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-4 xl:grid-cols-6">
             {partners.map((partner) => (

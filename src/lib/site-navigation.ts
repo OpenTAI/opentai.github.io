@@ -69,7 +69,7 @@ export const footerNavigationGroups: readonly NavigationGroup[] = [
   {
     label: "Terms & Policies",
     items: [
-      { label: "Terms of Use", href: "/about#terms" },
+      { label: "Terms Of Use", href: "/about#terms" },
       { label: "Privacy Notice", href: "/about#privacy" },
       { label: "Inclusion & Attribution", href: "/about#inclusion-attribution" },
       { label: "Corrections & Takedown", href: "/about#corrections-takedown" },

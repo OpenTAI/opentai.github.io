@@ -107,10 +107,10 @@ No leaderboard names, rankings, scores, descriptions, source links, or generated
 
 ## Visual and interaction findings
 
-- `Volunteer to contribute` now opens a compact submission modal in the same visual system as existing resource submission dialogs.
+- `Volunteer To Contribute` now opens a compact submission modal in the same visual system as existing resource submission dialogs.
 - The modal contains only the three inputs needed to open a reviewable GitHub issue: GitHub profile, contribution area, and contribution proposal.
 - The old six-card contribution chooser is no longer rendered; `/contribute/` provides a compact entry point to the same modal.
-- `Main Contributors` displays three team-provided GitHub accounts as linked avatar cards: Oscar Wu (`@wuyoscar`), Xin Gao (`@GabryGao`), and Ming Wen (`@SII-FLEEECERmw`).
+- `Contributors` displays the three team-provided GitHub accounts as a compact GitHub-style avatar collection: Oscar Wu (`@wuyoscar`), Xin Gao (`@GabryGao`), and Ming Wen (`@SII-FLEEECERmw`). Names and handles remain available through accessible labels and hover titles without taking up a full card row.
 - All three remote GitHub avatars loaded from their verified profile URLs.
 - English and Chinese modal labels, options, buttons, and close controls were present in the DOM.
 - The pale information panel now includes the teacher-provided contact email `danxjma@gmail.com`; it is a `mailto:` link with the subject `OpenTAI volunteer contribution`, while GitHub remains the primary structured submission path.
@@ -122,3 +122,31 @@ No leaderboard names, rankings, scores, descriptions, source links, or generated
 passed
 
 No contributor roles, affiliations, or biographical claims were added. Display names, handles, profile links, and avatars come from the user-provided GitHub sources.
+
+---
+
+# Design QA — All-Words-Capitalized Headings And Circular Contributor Wall
+
+## Source And Implementation
+
+- User markup reference: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/c6652b7e825ddd617f106a4cc8b4ba69.png`
+- Circular-wall reference: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/101696f255fa4837f68dcb7ac4e1ca0e.jpg`
+
+## Viewport, Dimensions, And State
+
+- Desktop: `/community/` at 1280 × 720 CSS pixels, English locale, default state.
+- The responsive avatar-only layout uses 56 px circles below 640 px and is narrower than the previously validated cards.
+
+## Visual Findings
+
+- The Community section title is now `Contributors`, with a smaller heading scale.
+- Contributor profiles render as a tightly wrapped, GitHub-style wall of pure 72 × 72 px circular avatars instead of full-width identity cards. There are no visible names, handles, arrows, or card shells.
+- Each avatar remains keyboard-accessible and exposes the contributor name and GitHub handle through accessible text and a hover title.
+- Browser inspection confirmed all three images loaded at their natural 160 px source size, rendered at 72 × 72 px, and produced no horizontal overflow at the 1280 px viewport.
+- `Partner Institutions` and the shared self-authored English headings and calls to action now capitalize the first letter of every word, including short words such as `By`, `To`, `The`, `In`, `Of`, and `Vs`.
+- Externally sourced paper titles, company names, benchmark names, and model names remain unchanged.
+- Desktop inspection found no horizontal page overflow.
+
+## Result
+
+passed

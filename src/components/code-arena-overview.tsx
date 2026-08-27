@@ -90,7 +90,7 @@ export function CodeArenaOverview({ locale }: { locale: Locale }) {
     <section aria-labelledby="code-arena-overview-title" className="code-arena-overview">
       <header className="code-arena-overview-heading">
         <div>
-          <span>{localized(locale, "Price-aware comparison", "价格与表现对比")}</span>
+          <span>{localized(locale, "Price-Aware Comparison", "价格与表现对比")}</span>
           <h2 id="code-arena-overview-title">
             {localized(locale, codeArenaOverview.title, codeArenaOverview.titleZh)}
           </h2>
@@ -116,7 +116,7 @@ export function CodeArenaOverview({ locale }: { locale: Locale }) {
           <div className="code-arena-chart-title">
             <div>
               <span aria-hidden="true">▥</span>
-              <h3>{localized(locale, "Code ranking", "代码排行")}</h3>
+              <h3>{localized(locale, "Code Ranking", "代码排行")}</h3>
             </div>
             <small>{localized(locale, "Arena score ↑", "Arena 评分 ↑")}</small>
           </div>
@@ -180,7 +180,7 @@ export function CodeArenaOverview({ locale }: { locale: Locale }) {
           <div className="code-arena-chart-title">
             <div>
               <span aria-hidden="true">⌁</span>
-              <h3>{localized(locale, "Preference vs price", "表现与价格")}</h3>
+              <h3>{localized(locale, "Preference Vs Price", "表现与价格")}</h3>
             </div>
             <small>{localized(locale, "Better ↑ · cheaper ←", "更优 ↑ · 更便宜 ←")}</small>
           </div>

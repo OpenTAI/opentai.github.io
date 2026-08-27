@@ -128,7 +128,7 @@ export function SiteSearch({ locale }: { locale: Locale }) {
           {paperHits.length ? (
             <div className="mt-2 border-t border-[#f2f4f8] pt-2">
               <p className="px-4 pb-1 pt-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#98a2b3]">
-                {t(locale, "Research library")}
+                {t(locale, "Research Library")}
               </p>
               <ul className="space-y-1">
                 {paperHits.map((paper, index) => (

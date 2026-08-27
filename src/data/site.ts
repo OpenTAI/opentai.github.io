@@ -262,15 +262,14 @@ export type HomeCategoryCard = {
 };
 
 export const newsletter = {
-  // Paste the provider's form action URL here (Buttondown / Mailchimp / Formspree).
-  // Until it is set, the subscribe form renders but stays disabled.
-  endpoint: "",
+  // The static site opens the visitor's email app and stores no subscriber data.
+  recipientEmail: "danxjma@gmail.com",
 };
 
 export const siteBrand = {
   name: "OpenTAI",
-  tagline: "The Open Hub for Trustworthy AI and AI Safety",
-  headline: "An open ecosystem for trustworthy AI, unifying safety guardrails, evaluation benchmarks, and datasets",
+  tagline: "The Open Hub for Trustworthy AI",
+  headline: "An open ecosystem connecting trustworthy AI research, innovation, and startups.",
   contactEmail: "danxjma@gmail.com",
   upstream: "https://opentai.org",
 };

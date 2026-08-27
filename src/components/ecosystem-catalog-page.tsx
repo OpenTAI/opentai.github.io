@@ -469,7 +469,7 @@ export function EcosystemCatalogPage({
         <>
           {kind === "companies" ? (
             <div className="company-directory-heading">
-              <h2>{locale === "zh" ? "探索公司" : "Explore companies"}</h2>
+              <h2>{locale === "zh" ? "探索公司" : "Explore Companies"}</h2>
             </div>
           ) : null}
           <section className="ecosystem-grid" aria-live="polite">

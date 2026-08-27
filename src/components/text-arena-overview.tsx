@@ -17,7 +17,7 @@ export function TextArenaOverview({ locale }: { locale: Locale }) {
     <section aria-labelledby="text-arena-overview-title" className="text-arena-overview">
       <header className="text-arena-overview-heading">
         <div>
-          <span>{locale === "zh" ? "跨分类总览" : "Cross-category overview"}</span>
+          <span>{locale === "zh" ? "跨分类总览" : "Cross-Category Overview"}</span>
           <h2 id="text-arena-overview-title">
             {localized(locale, textArenaOverview.title, textArenaOverview.titleZh)}
           </h2>

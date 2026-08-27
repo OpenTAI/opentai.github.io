@@ -77,7 +77,7 @@ test("footer navigation prioritizes exploration and existing policy sections", (
       [
         "Terms & Policies",
         [
-          ["Terms of Use", "/about#terms"],
+          ["Terms Of Use", "/about#terms"],
           ["Privacy Notice", "/about#privacy"],
           ["Inclusion & Attribution", "/about#inclusion-attribution"],
           ["Corrections & Takedown", "/about#corrections-takedown"],

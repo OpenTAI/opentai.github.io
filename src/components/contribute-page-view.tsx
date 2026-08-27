@@ -13,12 +13,12 @@ export function ContributePageView({ locale }: { locale: Locale }) {
         heroIcon="＋"
         locale={locale}
         showDescription
-        title="Contribute to OpenTAI"
+        title="Contribute To OpenTAI"
       >
         <section className="subpage-main-table-card contribute-section contribute-section-simple">
           <div className="contribute-heading">
-            <p>{t(locale, "Get involved")}</p>
-            <h2>{t(locale, "Contribute to OpenTAI")}</h2>
+            <p>{t(locale, "Get Involved")}</p>
+            <h2>{t(locale, "Contribute To OpenTAI")}</h2>
           </div>
           <p className="contribute-simple-copy">
             {t(

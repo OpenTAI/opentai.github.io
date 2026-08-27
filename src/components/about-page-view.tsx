@@ -74,7 +74,7 @@ export function AboutPageView({ locale }: { locale: Locale }) {
         title="About OpenTAI"
       >
         <section className="grid gap-4 xl:grid-cols-[1.1fr_0.9fr] xl:items-start">
-          <Panel locale={locale} title="What is collected here">
+          <Panel locale={locale} title="What Is Collected Here">
             <ul className="space-y-3">
               {totals.map((item) => (
                 <li
@@ -86,11 +86,11 @@ export function AboutPageView({ locale }: { locale: Locale }) {
                 </li>
               ))}
               <li className="flex items-baseline justify-between gap-4 border-b border-[#f2f4f8] pb-3 text-sm">
-                <span className="font-medium text-[#111827]">{t(locale, "Research library")}</span>
+                <span className="font-medium text-[#111827]">{t(locale, "Research Library")}</span>
                 <span className="text-[#667085]">{paperLibrary.length} {t(locale, "papers")}</span>
               </li>
               <li className="flex items-baseline justify-between gap-4 text-sm">
-                <span className="font-medium text-[#111827]">{t(locale, "Partner institutions")}</span>
+                <span className="font-medium text-[#111827]">{t(locale, "Partner Institutions")}</span>
                 <span className="text-[#667085]">{partners.length}</span>
               </li>
             </ul>
@@ -147,7 +147,7 @@ export function AboutPageView({ locale }: { locale: Locale }) {
           </ul>
         </Panel>
 
-        <Panel id="terms" locale={locale} title="Terms of Use">
+        <Panel id="terms" locale={locale} title="Terms Of Use">
           <div className="space-y-4">
             <DraftNotice locale={locale}>
               This is a working draft for review by the OpenTAI team. It is not a final legal policy.

@@ -249,7 +249,7 @@ export function BenchmarkDetailPageView({ locale, slug }: { locale: Locale; slug
           <section className="subpage-main-table-card">
             <div className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
               <h2 className="text-[1.4rem] font-semibold tracking-[-0.04em] text-[#111827]">
-                {t(locale, "Still missing")}
+                {t(locale, "Still Missing")}
               </h2>
               <span className="rounded-full border border-[#fde68a] bg-[#fffbeb] px-3 py-1 text-xs font-semibold uppercase tracking-[0.06em] text-[#b45309]">
                 {t(locale, "Not recorded")}

@@ -297,7 +297,7 @@ export function ArenaScoreboardGrid({
       : "Leaderboards"
     : locale === "zh"
       ? "安全竞技场"
-      : "Safety arenas";
+      : "Safety Arenas";
   const directorySummary = isLeaderboard
     ? locale === "zh"
       ? `${liveRecords.length} 个榜单 · 结果来自各项目官方页面`

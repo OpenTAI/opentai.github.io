@@ -3,31 +3,20 @@
 import { FormEvent, useState } from "react";
 import { newsletter } from "@/data/site";
 import { Locale, t } from "@/lib/i18n";
+import { buildNewsletterMailto } from "@/lib/newsletter";
 
 type Language = "en" | "zh";
 
 export function SubscribeBox({ locale }: { locale: Locale }) {
   const [language, setLanguage] = useState<Language>(locale);
   const [email, setEmail] = useState("");
-  const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
 
-  const configured = Boolean(newsletter.endpoint);
-
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+  function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!configured) return;
-
-    setState("sending");
-    try {
-      const body = new FormData();
-      body.append("email", email);
-      body.append("language", language);
-      const response = await fetch(newsletter.endpoint, { method: "POST", body });
-      setState(response.ok ? "done" : "error");
-      if (response.ok) setEmail("");
-    } catch {
-      setState("error");
-    }
+    window.location.href = buildNewsletterMailto(
+      { email, language },
+      newsletter.recipientEmail,
+    );
   }
 
   return (
@@ -36,12 +25,12 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
         <div className="space-y-2">
           <p className="home-kicker">OpenTAI Daily</p>
           <h2 className="text-[1.45rem] font-semibold tracking-[-0.04em] text-[#101828]">
-            {t(locale, "Latest trustworthy AI news, in your inbox")}
+            {t(locale, "Your Daily Digest Of AI Safety")}
           </h2>
           <p className="max-w-[36rem] text-sm leading-6 text-[#667085]">
             {t(
               locale,
-              "New papers, model releases, benchmarks, and datasets — collected from popular media accounts and sent as a daily digest. Pick the language you read in.",
+              "Stay up to date with the latest AI safety research and news, curated from arXiv and leading media sources and delivered straight to your inbox.",
             )}
           </p>
         </div>
@@ -85,25 +74,15 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
               value={email}
             />
             <button
-              className="site-cta shrink-0 disabled:cursor-not-allowed disabled:opacity-50"
-              disabled={!configured || state === "sending"}
+              className="site-cta shrink-0"
               type="submit"
             >
-              {t(locale, state === "sending" ? "Subscribing..." : "Subscribe")}
+              {t(locale, "Subscribe")}
             </button>
           </div>
 
-          <p aria-live="polite" className="text-xs leading-5 text-[#98a2b3]">
-            {t(
-              locale,
-              !configured
-                ? "Signup is not connected yet — set newsletter.endpoint in src/data/site.ts."
-                : state === "done"
-                  ? "Check your inbox to confirm the subscription."
-                  : state === "error"
-                    ? "Something went wrong. Please try again."
-                    : "One email a day. Unsubscribe any time.",
-            )}
+          <p className="text-xs leading-5 text-[#98a2b3]">
+            {t(locale, "Opens your email app. Your address is not stored by OpenTAI.")}
           </p>
         </form>
       </div>

@@ -41,7 +41,7 @@ function ScoreProfileChart({
   return (
     <article className="leaderboard-chart-card leaderboard-score-profile">
       <div className="leaderboard-chart-heading">
-        <h3>{copy(locale, "Top-three score profiles", "前三名成绩曲线")}</h3>
+        <h3>{copy(locale, "Top-Three Score Profiles", "前三名成绩曲线")}</h3>
         <span>{copy(locale, "Rank 1 → 3", "名次 1 → 3")}</span>
       </div>
       <div className="leaderboard-chart-scroll">
@@ -52,7 +52,7 @@ function ScoreProfileChart({
           viewBox={`0 0 ${width} ${height}`}
         >
           <title id="leaderboard-profile-title">
-            {copy(locale, "Top-three score profiles", "前三名成绩曲线")}
+            {copy(locale, "Top-Three Score Profiles", "前三名成绩曲线")}
           </title>
           <desc id="leaderboard-profile-description">
             {copy(
@@ -127,10 +127,10 @@ function TypeDonut({
   return (
     <article className="leaderboard-chart-card leaderboard-type-chart">
       <div className="leaderboard-chart-heading">
-        <h3>{copy(locale, "Leaderboards by type", "榜单类型分布")}</h3>
+        <h3>{copy(locale, "Leaderboards By Type", "榜单类型分布")}</h3>
       </div>
       <div className="leaderboard-donut-layout">
-        <svg aria-label={copy(locale, "Leaderboards by type", "榜单类型分布")} className="leaderboard-donut" role="img" viewBox="0 0 128 128">
+        <svg aria-label={copy(locale, "Leaderboards By Type", "榜单类型分布")} className="leaderboard-donut" role="img" viewBox="0 0 128 128">
           <circle className="leaderboard-donut-track" cx="64" cy="64" r={radius} />
           {counts.map((item, index) => {
             const length = records.length ? (item.count / records.length) * circumference : 0;
@@ -183,8 +183,8 @@ export function LeaderboardStatistics({
     <section aria-labelledby="leaderboard-statistics-title" className="leaderboard-statistics">
       <div className="leaderboard-statistics-heading">
         <div>
-          <span>{copy(locale, "Source-checked snapshots", "已核验来源快照")}</span>
-          <h2 id="leaderboard-statistics-title">{copy(locale, "Leaderboard statistics", "榜单统计")}</h2>
+          <span>{copy(locale, "Source-Checked Snapshots", "已核验来源快照")}</span>
+          <h2 id="leaderboard-statistics-title">{copy(locale, "Leaderboard Statistics", "榜单统计")}</h2>
         </div>
         <p>
           {copy(

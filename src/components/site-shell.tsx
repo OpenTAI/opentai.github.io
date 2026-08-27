@@ -87,14 +87,9 @@ export function SiteShell({
                 src={brandLogo}
                 width={34}
               />
-              <div>
-                <span className="block text-[1.2rem] font-semibold tracking-[-0.04em] text-[#111111]">
-                  {siteBrand.name}
-                </span>
-                <p className="hidden text-sm text-[#667085] sm:block">
-                  {t(locale, siteBrand.tagline)}
-                </p>
-              </div>
+              <span className="block text-[1.2rem] font-semibold leading-none tracking-[-0.04em] text-[#111111]">
+                {siteBrand.name}
+              </span>
             </Link>
 
             <div

@@ -70,7 +70,7 @@ export function ContributionDialog({ locale }: { locale: Locale }) {
         onClick={() => setIsOpen(true)}
         type="button"
       >
-        {t(locale, "Volunteer to contribute")}
+        {t(locale, "Volunteer To Contribute")}
       </button>
 
       {isOpen ? (
@@ -87,7 +87,7 @@ export function ContributionDialog({ locale }: { locale: Locale }) {
             <div className="submission-dialog-heading">
               <div>
                 <span>{t(locale, "Community submission")}</span>
-                <h2 id={titleId}>{t(locale, "Volunteer to contribute")}</h2>
+                <h2 id={titleId}>{t(locale, "Volunteer To Contribute")}</h2>
               </div>
               <button
                 aria-label={t(locale, "Close contribution form")}

@@ -3,9 +3,8 @@
 A rebuild of the OpenTAI site on the OpenHallu framework: Next.js 16 App Router,
 React 19, Tailwind CSS v4, static export.
 
-Positioning: **OpenTAI — The Open Hub for Trustworthy AI and AI Safety**. An open ecosystem
-for trustworthy AI, unifying safety guardrails, evaluation benchmarks, and
-datasets.
+Positioning: **OpenTAI — The Open Hub for Trustworthy AI**. An open ecosystem
+connecting trustworthy AI research, innovation, and startups.
 
 ## Local development
 
@@ -118,14 +117,14 @@ unreviewed community issue from appearing on the public site automatically.
 
 ## Newsletter signup
 
-The subscribe box on Discover renders but stays disabled until a provider is
-connected. Set `newsletter.endpoint` in `scripts/generate-site.py` (search for
-`export const newsletter`) to the form action URL from Buttondown / Mailchimp /
-Formspree, then regenerate. The form posts `email` and `language` (`en` | `zh`).
+The Discover subscribe box opens the visitor's email app with a prefilled
+request addressed to the OpenTAI contact email. The static site does not receive,
+store, or commit subscriber addresses. The recipient is configured as
+`newsletter.recipientEmail` in `scripts/generate-site.py`; regenerate after
+changing it.
 
-A static export cannot receive email addresses or send mail on its own — the
-"OpenTAI Daily" digest agent is a separate backend service, not part of this
-site.
+This mail-app flow is intentionally storage-free. Sending the daily "OpenTAI
+Daily" digest remains a separate service and is not part of this static site.
 
 ## Open questions for the OpenTAI team
 

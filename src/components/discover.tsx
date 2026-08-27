@@ -51,12 +51,12 @@ const latestPapers = [...paperLibrary]
   }));
 
 const latest = [
-  { title: "Latest papers", href: "/papers", rows: latestPapers },
-  { title: "New models", href: "/models", rows: recent("models") },
-  { title: "New benchmarks", href: "/benchmarks", rows: recent("benchmarks") },
-  { title: "New datasets", href: "/datasets", rows: recent("datasets") },
+  { title: "Latest Papers", href: "/papers", rows: latestPapers },
+  { title: "New Models", href: "/models", rows: recent("models") },
+  { title: "New Benchmarks", href: "/benchmarks", rows: recent("benchmarks") },
+  { title: "New Datasets", href: "/datasets", rows: recent("datasets") },
   {
-    title: "Featured tools",
+    title: "Featured Tools",
     href: "/tools",
     rows: [...subpageConfigs.tools.tableRows]
       .sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0))
@@ -99,7 +99,7 @@ export function DiscoverHero({ locale }: { locale: Locale }) {
           <span className="whitespace-nowrap bg-[linear-gradient(135deg,#3468ff,#7b61ff)] bg-clip-text text-transparent">
             {t(locale, "Open Hub")}
           </span>{" "}
-          {t(locale, "for Trustworthy AI")}
+          {t(locale, "For Trustworthy AI")}
         </h1>
         <p className="mx-auto max-w-[42rem] text-[1.02rem] leading-8 text-[#5a6478]">
           {t(locale, siteBrand.headline)}
@@ -184,7 +184,7 @@ export function DiscoverTrending({ locale }: { locale: Locale }) {
 export function DiscoverLatest({ locale }: { locale: Locale }) {
   return (
     <section className="mx-auto mt-16 max-w-[1380px] space-y-7">
-      <SectionHeading icon="◷" locale={locale} title="Latest releases" />
+      <SectionHeading icon="◷" locale={locale} title="Latest Releases" />
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
         {latest.map((group) => (
           <div key={group.title} className="home-info-panel p-6">
@@ -220,7 +220,7 @@ export function DiscoverLatest({ locale }: { locale: Locale }) {
 export function DiscoverCollections({ locale }: { locale: Locale }) {
   return (
     <section className="mx-auto mt-16 max-w-[1380px] space-y-7">
-      <SectionHeading icon="◈" locale={locale} title="Browse the hub" />
+      <SectionHeading icon="◈" locale={locale} title="Browse The Hub" />
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
         {collections.map(({ card, config }) => (
           <Link

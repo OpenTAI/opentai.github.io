@@ -138,7 +138,7 @@ function PaperYearChart({ locale }: { locale: Locale }) {
     <article className="dataset-year-card">
       <div className="dataset-chart-card-heading">
         <div>
-          <h3>{t(locale, "Papers by year")}</h3>
+          <h3>{t(locale, "Papers By Year")}</h3>
         </div>
         <div className="flex gap-2">
           <span className="rounded-full border border-[#e3e8f2] bg-white px-3 py-1.5 text-xs text-[#475467]">
@@ -201,7 +201,7 @@ function PaperDomainDonut({ locale }: { locale: Locale }) {
     <article className="dataset-domain-card">
       <div className="dataset-chart-card-heading">
         <div>
-          <h3>{t(locale, "Papers by domain")}</h3>
+          <h3>{t(locale, "Papers By Domain")}</h3>
         </div>
       </div>
       <div className="dataset-donut-layout">
@@ -211,7 +211,7 @@ function PaperDomainDonut({ locale }: { locale: Locale }) {
           role="img"
           viewBox="0 0 128 128"
         >
-          <title id="paper-domain-chart-title">{t(locale, "Papers by domain")}</title>
+          <title id="paper-domain-chart-title">{t(locale, "Papers By Domain")}</title>
           <desc id="paper-domain-chart-description">
             {t(locale, "Recorded domain assignments in this collection.")}
           </desc>
@@ -245,7 +245,7 @@ function PaperDomainDonut({ locale }: { locale: Locale }) {
             {t(locale, "papers")}
           </text>
         </svg>
-        <ul aria-label={t(locale, "Papers by domain")} className="dataset-chart-legend">
+        <ul aria-label={t(locale, "Papers By Domain")} className="dataset-chart-legend">
           {DOMAIN_COUNTS.map((item, index) => (
             <li key={item.label}>
               <span
@@ -270,7 +270,7 @@ function PaperStatistics({ locale }: { locale: Locale }) {
   return (
     <section aria-labelledby="paper-statistics-title" className="dataset-statistics">
       <div className="dataset-statistics-heading">
-        <h2 id="paper-statistics-title">{t(locale, "Paper statistics")}</h2>
+        <h2 id="paper-statistics-title">{t(locale, "Paper Statistics")}</h2>
       </div>
       <div className="dataset-statistics-grid">
         <PaperYearChart locale={locale} />

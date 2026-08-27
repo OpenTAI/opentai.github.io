@@ -173,9 +173,9 @@ test("arena page shares the company wall light ice-blue technology treatment", (
     css,
     /\.arena-scoreboard-results\s+li:first-child\s+\.arena-scoreboard-value\s*\{[^}]*color:\s*var\(--arena-red\)/,
   );
-  assert.match(page, /title="Safety arenas"/);
+  assert.match(page, /title="Safety Arenas"/);
   assert.match(component, /arena-scoreboard-table-head/);
-  assert.match(component, /"Safety arenas"/);
+  assert.match(component, /"Safety Arenas"/);
   assert.doesNotMatch(component, /Verified public results/);
 });
 

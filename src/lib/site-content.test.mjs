@@ -13,7 +13,7 @@ test("uses the temporary OpenTAI contact address across generated site content",
 
 test("the arena submission CTA asks users to submit an arena", async () => {
   const dialog = await readSource("../components/resource-submission-dialog.tsx");
-  assert.match(dialog, /arena: "Submit your arena"/);
+  assert.match(dialog, /arena: "Submit Your Arena"/);
   assert.doesNotMatch(dialog, /arena: "Propose a Challenge"/);
 });
 
@@ -23,7 +23,7 @@ test("the About page exposes OpenTAI-specific policies without governance or con
   assert.match(about, /id="privacy"/);
   assert.match(about, /id="inclusion-attribution"/);
   assert.match(about, /id="corrections-takedown"/);
-  assert.match(about, /title="Terms of Use"/);
+  assert.match(about, /title="Terms Of Use"/);
   assert.match(about, /title="Privacy Notice"/);
   assert.match(about, /title="Inclusion & Attribution"/);
   assert.match(about, /title="Corrections & Takedown"/);
@@ -33,18 +33,78 @@ test("the About page exposes OpenTAI-specific policies without governance or con
 
 test("Community recognizes contributors before placing partner institutions last", async () => {
   const community = await readSource("../components/community-page-view.tsx");
+  const organizationContributors = await readSource(
+    "../components/organization-contributors.tsx",
+  );
   const dialog = await readSource("../components/contribution-dialog.tsx");
+  const styles = await readSource("../app/globals.css");
   const recognition = community.indexOf("Contributor Recognition");
-  const partners = community.indexOf("Partner institutions");
+  const partners = community.indexOf("Partner Institutions");
 
   assert.ok(recognition >= 0);
   assert.ok(partners > recognition);
-  assert.match(community, /Main Contributors/);
-  assert.match(dialog, /Volunteer to contribute/);
+  assert.match(community, />{t\(locale, "Contributors"\)}<\/h2>/);
+  assert.doesNotMatch(community, /Main Contributors/);
+  assert.doesNotMatch(community, /Partner institutions/);
+  assert.match(community, /OrganizationContributors/);
+  assert.match(organizationContributors, /height=\{72\}/);
+  assert.match(organizationContributors, /width=\{72\}/);
+  assert.match(organizationContributors, /className="sr-only"/);
+  assert.match(styles, /\.contributor-profile-card \{[\s\S]*?width: 4\.5rem;[\s\S]*?height: 4\.5rem;/);
+  assert.match(styles, /\.contributor-profile-avatar \{[\s\S]*?width: 4\.5rem;[\s\S]*?height: 4\.5rem;/);
+  assert.match(styles, /@media \(max-width: 639px\) \{[\s\S]*?\.contributor-profile-card,[\s\S]*?\.contributor-profile-avatar \{[\s\S]*?width: 3\.5rem;[\s\S]*?height: 3\.5rem;/);
+  assert.match(dialog, /Volunteer To Contribute/);
   assert.match(community, /ContributionDialog/);
-  assert.match(community, /contributors\.map/);
+  assert.match(organizationContributors, /members\.map/);
   assert.doesNotMatch(community, /Contributor profiles will appear here/);
   assert.doesNotMatch(community, /mailto:/);
+});
+
+test("Community automatically syncs public OpenTAI organization members with a safe fallback", async () => {
+  const component = await readSource("../components/organization-contributors.tsx");
+
+  assert.match(component, /^"use client";/);
+  assert.match(component, /https:\/\/api\.github\.com\/orgs\/OpenTAI\/members\?per_page=100/);
+  assert.match(component, /https:\/\/github\.com\/orgs\/OpenTAI\/people/);
+  assert.match(component, /fetch\(`\$\{GITHUB_ORG_MEMBERS_API\}&page=\$\{page\}`/);
+  assert.match(component, /localStorage\.getItem\(CACHE_KEY\)/);
+  assert.match(component, /localStorage\.setItem\(\s*CACHE_KEY/);
+  assert.match(component, /60 \* 60 \* 1000/);
+  assert.match(component, /contributors\.map/);
+  assert.match(component, /member\.htmlUrl/);
+  assert.match(component, /member\.avatarUrl/);
+  assert.match(component, /View Organization Members/);
+});
+
+test("shared English section headings capitalize every word", async () => {
+  const arenaPage = await readSource("../components/arena-page.tsx");
+  const arenaChart = await readSource("../components/arena-results-chart.tsx");
+  const leaderboardStats = await readSource("../components/leaderboard-statistics.tsx");
+  const papers = await readSource("../components/paper-library.tsx");
+  const ecosystem = await readSource("../components/ecosystem-catalog-page.tsx");
+  const subscribe = await readSource("../components/subscribe.tsx");
+  const discover = await readSource("../components/discover.tsx");
+  const codeArena = await readSource("../components/code-arena-overview.tsx");
+  const subpage = await readSource("../components/subpage-layout.tsx");
+  const contribution = await readSource("../components/contribution-dialog.tsx");
+
+  assert.match(arenaPage, /title="Safety Arenas"/);
+  assert.match(arenaChart, /"Official Result Snapshot"/);
+  assert.match(leaderboardStats, /"Leaderboard Statistics"/);
+  assert.match(leaderboardStats, /"Source-Checked Snapshots"/);
+  assert.match(papers, /"Paper Statistics"/);
+  assert.match(papers, /"Papers By Year"/);
+  assert.match(papers, /"Papers By Domain"/);
+  assert.match(ecosystem, /"Explore Companies"/);
+  assert.match(subscribe, /"Your Daily Digest Of AI Safety"/);
+  assert.match(discover, /"Browse The Hub"/);
+  assert.match(discover, /"For Trustworthy AI"/);
+  assert.match(codeArena, /"Preference Vs Price"/);
+  assert.match(subpage, /Growth By Year/);
+  assert.match(subpage, /By Domain/);
+  assert.match(contribution, /"Volunteer To Contribute"/);
+  assert.doesNotMatch(papers, /"Papers by (Year|Domain)"/);
+  assert.doesNotMatch(subscribe, /Latest Trustworthy AI News/);
 });
 
 test("the contributor directory uses the three team-approved GitHub accounts", async () => {
