@@ -100,8 +100,10 @@ const ZH: Record<string, string> = {
   "Open Hub": "开放枢纽",
   "For Trustworthy AI": "可信人工智能",
   "Search all OpenTAI resources": "搜索 OpenTAI 全部资源",
-  "Search benchmarks, models, datasets, tools, papers...":
-    "搜索评测基准、模型、数据集、工具和论文……",
+  "Search papers, benchmarks, models, datasets...":
+    "搜索论文、评测基准、模型和数据集……",
+  "Trustworthy AI research across LLMs, Agents, and Embodied AI.":
+    "覆盖大语言模型、智能体与具身智能的可信 AI 研究。",
   resources: "项资源",
   papers: "篇论文",
   paper: "篇论文",
@@ -126,7 +128,6 @@ const ZH: Record<string, string> = {
   "Interaction environment": "交互环境",
   "All environments": "全部环境",
   "Filter resources by interaction environment": "按交互环境筛选资源",
-  "Featured Tools": "精选工具",
   "All →": "全部 →",
   "Browse The Hub": "浏览资源中心",
   "Your Daily Digest Of AI Safety": "你的每日人工智能安全简报",
@@ -649,7 +650,6 @@ const ZH_CONTENT: Record<string, string> = {
     "防护模型、安全对齐模型、检测模型与智能体。",
   "Verified data for training, fine-tuning, and safety alignment.":
     "经核实可用于训练、微调与安全对齐的数据。",
-  "Libraries, frameworks, attack and defense toolkits.": "库、框架与攻防工具包。",
   Likes: "点赞",
   Updated: "更新",
   Posted: "发布",

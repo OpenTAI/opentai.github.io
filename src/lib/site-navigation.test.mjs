@@ -20,7 +20,6 @@ test("groups the public navigation without linking unfinished routes", () => {
           ["Datasets", "/datasets", false],
           ["Benchmarks", "/benchmarks", false],
           ["Models", "/models", false],
-          ["Frameworks", "/frameworks", false],
         ],
       },
       {
@@ -62,7 +61,6 @@ test("footer navigation prioritizes exploration and existing policy sections", (
         [
           ["Datasets", "/datasets"],
           ["Models", "/models"],
-          ["Frameworks", "/frameworks"],
         ],
       ],
       [

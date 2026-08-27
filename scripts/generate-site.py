@@ -1013,12 +1013,6 @@ CATEGORIES = {
         ("Embodied AI", "Safety evaluation for perception, planning and robot control.", "green",
          ["Embodied AI"]),
     ],
-    "tools": [
-        ("Backdoor", "Backdoor attack and defense toolkits.", "pink", ["Backdoor"]),
-        ("Adversarial", "Attack and defense libraries for vision models.", "blue", ["Adversarial"]),
-        ("Robustness Evaluation", "Robustness testing across NLP tasks.", "green",
-         ["Robustness Evaluation"]),
-    ],
     "models": [
         ("Guard Models", "Input/output classifiers that screen unsafe content.", "pink",
          ["Guard Model"]),
@@ -1073,27 +1067,17 @@ CONFIGS = {
         "tableTitle": "Dataset collection", "sectionTitle": "Dataset categories",
         "categories": cats("datasets"), "tableRows": dataset_rows,
     },
-    "tools": {
-        "slug": "tools", "breadcrumb": ["Home", "Resources", "Tools"], "title": "Tools",
-        "heroIcon": "◇",
-        "description": "Libraries, frameworks, evaluation tools, and attack/defense toolkits for "
-                       "trustworthy AI research.",
-        "overview": "All toolkits are installable from their public repositories. Stars, language, "
-                    "and last-push dates are read from the GitHub API.",
-        "tableTitle": "Open-source toolkits", "sectionTitle": "Tool categories",
-        "categories": cats("tools"), "tableRows": tool_rows,
-    },
 }
 
 HOME_CARDS = [
+    {"title": "Papers", "description": "Trustworthy AI research across LLMs, Agents, and Embodied AI.",
+     "href": "/papers", "accent": "pink", "icon": "○"},
     {"title": "Benchmarks", "description": "Evaluation benchmarks, tasks, and metrics.",
      "href": "/benchmarks", "accent": "violet", "icon": "◎"},
     {"title": "Models", "description": "Guard models, safety-aligned models, detectors, agents.",
      "href": "/models", "accent": "blue", "icon": "◆"},
     {"title": "Datasets", "description": "Verified data for training, fine-tuning, and safety alignment.",
      "href": "/datasets", "accent": "green", "icon": "◱"},
-    {"title": "Tools", "description": "Libraries, frameworks, attack and defense toolkits.",
-     "href": "/tools", "accent": "orange", "icon": "◇"},
 ]
 
 HEADER = '''// Content derived from the OpenTAI TinaCMS site
@@ -1382,11 +1366,10 @@ def block(name, typ, v):
 parts = [HEADER]
 parts.append(block("navItems", "Pill[]", [
     {"label": "Home", "href": "/"},
+    {"label": "Papers", "href": "/papers"},
     {"label": "Benchmarks", "href": "/benchmarks"},
     {"label": "Models", "href": "/models"},
     {"label": "Datasets", "href": "/datasets"},
-    {"label": "Tools", "href": "/tools"},
-    {"label": "Papers", "href": "/papers"},
     {"label": "Leaderboard", "href": "/leaderboard"},
     {"label": "Community", "href": "/community"},
 ]))
@@ -1443,7 +1426,7 @@ site_configs = {
 parts.append("export const subpageConfigs: Record<string, SubpageConfig> = " + ts(site_configs) + ";\n\n")
 # Papers is no longer a curated collection — it is the merged research library,
 # which lives in its own module and is counted separately on Discover.
-parts.append('export const collectionOrder = [\n  "benchmarks",\n  "models",\n  "datasets",\n  "tools",\n] as const;\n')
+parts.append('export const collectionOrder = [\n  "benchmarks",\n  "models",\n  "datasets",\n] as const;\n')
 
 OUT.write_text("".join(parts))
 

@@ -20,7 +20,6 @@ export const navigationGroups: readonly NavigationGroup[] = [
       { label: "Datasets", href: "/datasets" },
       { label: "Benchmarks", href: "/benchmarks" },
       { label: "Models", href: "/models" },
-      { label: "Frameworks", href: "/frameworks" },
     ],
   },
   {
@@ -54,7 +53,6 @@ export const footerNavigationGroups: readonly NavigationGroup[] = [
     items: [
       { label: "Datasets", href: "/datasets" },
       { label: "Models", href: "/models" },
-      { label: "Frameworks", href: "/frameworks" },
     ],
   },
   {

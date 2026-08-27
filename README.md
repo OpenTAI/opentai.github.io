@@ -21,14 +21,12 @@ npm run dev
 | `/benchmarks` | Flagship collection, 55 entries; primary filters are LLMs, Agents, Embodied AI |
 | `/benchmarks/[slug]` | Per-benchmark page: description, code, papers, leaderboard, curation gaps |
 | `/models` | Verified open-source guard, security-specialized, and safety-aligned models |
-| `/frameworks` | Verified red-team, evaluation, training, and defense frameworks |
 | `/datasets` | Verified training-ready datasets from the approved surveys and primary sources; charts update automatically by domain and year |
-| `/tools` | Libraries, frameworks, attack/defense toolkits |
 | `/papers` | 772-paper library — LLMs / Agents / Embodied AI, then Research / Survey |
 | `/leaderboard` | Source-checked public leaderboard cards for LLM Safety, Agent Safety, and Fairness; every snapshot names its exact metric |
 | `/arenas` | Gray Swan Arena, CyberGym, and ExploitGym cards with official links and verifiable result snapshots where available |
 | `/companies` | Source-backed AI safety, agent security, evaluation, and red-teaming companies |
-| `/community` | Partner institutions |
+| `/community` | GitHub contributors, volunteer contribution flow, and partner institutions |
 | `/about` | Mission, contact, coverage summary |
 | `/zh/...` | Chinese interface and descriptions; paper titles, abstracts, and authors stay English |
 

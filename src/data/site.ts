@@ -280,6 +280,10 @@ export const navItems: Pill[] = [
     href: "/",
   },
   {
+    label: "Papers",
+    href: "/papers",
+  },
+  {
     label: "Benchmarks",
     href: "/benchmarks",
   },
@@ -290,14 +294,6 @@ export const navItems: Pill[] = [
   {
     label: "Datasets",
     href: "/datasets",
-  },
-  {
-    label: "Tools",
-    href: "/tools",
-  },
-  {
-    label: "Papers",
-    href: "/papers",
   },
   {
     label: "Leaderboard",
@@ -482,6 +478,13 @@ export const partners: Partner[] = [
 
 export const homeCategoryCards: HomeCategoryCard[] = [
   {
+    title: "Papers",
+    description: "Trustworthy AI research across LLMs, Agents, and Embodied AI.",
+    href: "/papers",
+    accent: "pink",
+    icon: "○",
+  },
+  {
     title: "Benchmarks",
     description: "Evaluation benchmarks, tasks, and metrics.",
     href: "/benchmarks",
@@ -501,13 +504,6 @@ export const homeCategoryCards: HomeCategoryCard[] = [
     href: "/datasets",
     accent: "green",
     icon: "◱",
-  },
-  {
-    title: "Tools",
-    description: "Libraries, frameworks, attack and defense toolkits.",
-    href: "/tools",
-    accent: "orange",
-    icon: "◇",
   },
 ];
 
@@ -9261,162 +9257,10 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
     ],
   },
-  tools: {
-    slug: "tools",
-    breadcrumb: [
-      "Home",
-      "Resources",
-      "Tools",
-    ],
-    title: "Tools",
-    heroIcon: "◇",
-    description: "Libraries, frameworks, evaluation tools, and attack/defense toolkits for trustworthy AI research.",
-    overview: "All toolkits are installable from their public repositories. Stars, language, and last-push dates are read from the GitHub API.",
-    tableTitle: "Open-source toolkits",
-    sectionTitle: "Tool categories",
-    categories: [
-      {
-        title: "Backdoor",
-        detail: "Backdoor attack and defense toolkits.",
-        accent: "pink",
-        filters: [
-          "Backdoor",
-        ],
-      },
-      {
-        title: "Adversarial",
-        detail: "Attack and defense libraries for vision models.",
-        accent: "blue",
-        filters: [
-          "Adversarial",
-        ],
-      },
-      {
-        title: "Robustness Evaluation",
-        detail: "Robustness testing across NLP tasks.",
-        accent: "green",
-        filters: [
-          "Robustness Evaluation",
-        ],
-      },
-    ],
-    tableRows: [
-      {
-        name: "BackdoorLLM",
-        note: "A comprehensive toolkit (and benchmark) for backdoor attacks on large language models.",
-        type: "Backdoor",
-        venue: "NeurIPS 2025",
-        year: "2025",
-        stars: 324,
-        updated: "2026-03-13",
-        tags: [
-          "backdoor",
-          "llm",
-          "attack",
-          "defense",
-          "llms",
-          "llms-benchmarking",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "324",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2026-03",
-          },
-        ],
-        meta: "bboylyg/BackdoorLLM · MIT · 46 forks · since 2024",
-        resources: [
-          {
-            label: "GitHub",
-            href: "https://github.com/bboylyg/BackdoorLLM",
-          },
-        ],
-        image: "/media/tools2.png",
-      },
-      {
-        name: "taiadv.vision",
-        note: "An open-source toolkit implementing state-of-the-art adversarial attacks and defenses for vision models.",
-        type: "Adversarial",
-        stars: 10,
-        updated: "2025-10-11",
-        tags: [
-          "adversarial",
-          "vision",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "10",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2025-10",
-          },
-        ],
-        meta: "OpenTAI/taiadv · MIT · since 2022",
-        resources: [
-          {
-            label: "GitHub",
-            href: "https://github.com/OpenTAI/taiadv",
-          },
-        ],
-        image: "/media/taiadv-vision.png",
-      },
-      {
-        name: "TextFlint",
-        note: "A multilingual robustness evaluation toolkit for natural language processing.",
-        type: "Robustness Evaluation",
-        stars: 652,
-        updated: "2022-09-27",
-        tags: [
-          "nlp",
-          "robustness",
-          "adversarial-samples",
-          "attack",
-          "data-augmentation",
-          "model-robustness",
-        ],
-        stats: [
-          {
-            label: "Stars",
-            value: "652",
-          },
-          {
-            label: "Language",
-            value: "Python",
-          },
-          {
-            label: "Updated",
-            value: "2022-09",
-          },
-        ],
-        meta: "textflint/textflint · GPL-3.0 · 97 forks · since 2021",
-        resources: [
-          {
-            label: "GitHub",
-            href: "https://github.com/textflint/textflint",
-          },
-        ],
-        image: "/media/textflint-removebg.png",
-      },
-    ],
-  },
 };
 
 export const collectionOrder = [
   "benchmarks",
   "models",
   "datasets",
-  "tools",
 ] as const;

@@ -21,10 +21,13 @@ const ALL: Entry[] = collectionOrder.flatMap((slug) =>
   })),
 );
 
-const collections = collectionOrder.map((slug) => ({
-  config: subpageConfigs[slug],
-  card: homeCategoryCards.find((card) => card.href === `/${slug}`)!,
-}));
+const collections = homeCategoryCards.map((card) => {
+  const slug = card.href.slice(1);
+  return {
+    card,
+    count: slug === "papers" ? paperLibrary.length : subpageConfigs[slug].tableRows.length,
+  };
+});
 
 const trending = [...ALL]
   .filter((entry) => entry.stars !== undefined)
@@ -52,16 +55,9 @@ const latestPapers = [...paperLibrary]
 
 const latest = [
   { title: "Latest Papers", href: "/papers", rows: latestPapers },
-  { title: "New Models", href: "/models", rows: recent("models") },
   { title: "New Benchmarks", href: "/benchmarks", rows: recent("benchmarks") },
+  { title: "New Models", href: "/models", rows: recent("models") },
   { title: "New Datasets", href: "/datasets", rows: recent("datasets") },
-  {
-    title: "Featured Tools",
-    href: "/tools",
-    rows: [...subpageConfigs.tools.tableRows]
-      .sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0))
-      .slice(0, 4),
-  },
 ];
 
 function accentClasses(accent: string) {
@@ -111,23 +107,16 @@ export function DiscoverHero({ locale }: { locale: Locale }) {
       </div>
 
       <div className="flex flex-wrap justify-center gap-2">
-        {collections.map(({ card, config }) => (
+        {collections.map(({ card, count }) => (
           <Link
             key={card.href}
             className="rounded-full border border-[#e3e8f2] bg-white px-4 py-2 text-sm font-medium text-[#475467] transition hover:border-[#c7d2fe] hover:text-[#4338ca]"
             href={localizeHref(locale, card.href)}
           >
             {t(locale, card.title)}{" "}
-            <span className="text-[#98a2b3]">{config.tableRows.length}</span>
+            <span className="text-[#98a2b3]">{count.toLocaleString()}</span>
           </Link>
         ))}
-        <Link
-          className="rounded-full border border-[#e3e8f2] bg-white px-4 py-2 text-sm font-medium text-[#475467] transition hover:border-[#c7d2fe] hover:text-[#4338ca]"
-          href={localizeHref(locale, "/papers")}
-        >
-          {t(locale, "Papers")}{" "}
-          <span className="text-[#98a2b3]">{paperLibrary.length.toLocaleString()}</span>
-        </Link>
       </div>
     </section>
   );
@@ -185,7 +174,7 @@ export function DiscoverLatest({ locale }: { locale: Locale }) {
   return (
     <section className="mx-auto mt-16 max-w-[1380px] space-y-7">
       <SectionHeading icon="◷" locale={locale} title="Latest Releases" />
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {latest.map((group) => (
           <div key={group.title} className="home-info-panel p-6">
             <div className="mb-4 flex items-baseline justify-between gap-3">
@@ -221,8 +210,8 @@ export function DiscoverCollections({ locale }: { locale: Locale }) {
   return (
     <section className="mx-auto mt-16 max-w-[1380px] space-y-7">
       <SectionHeading icon="◈" locale={locale} title="Browse The Hub" />
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
-        {collections.map(({ card, config }) => (
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        {collections.map(({ card, count }) => (
           <Link
             key={card.href}
             href={localizeHref(locale, card.href)}
@@ -239,7 +228,7 @@ export function DiscoverCollections({ locale }: { locale: Locale }) {
               <p className="text-sm leading-6 text-[#667085]">{t(locale, card.description)}</p>
             </div>
             <div className="mt-4 inline-flex rounded-full border border-white/70 bg-white/70 px-3 py-1 text-[0.8rem] font-medium">
-              {config.tableRows.length} {t(locale, config.tableRows.length === 1 ? "entry" : "entries")}
+              {count.toLocaleString()} {t(locale, count === 1 ? "entry" : "entries")}
             </div>
           </Link>
         ))}

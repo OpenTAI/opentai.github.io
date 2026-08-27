@@ -7,8 +7,6 @@ const breadcrumbHrefs: Record<string, string> = {
   Benchmarks: "/benchmarks",
   Datasets: "/datasets",
   Models: "/models",
-  Frameworks: "/frameworks",
-  Tools: "/tools",
   Leaderboard: "/leaderboard",
   Leaderboards: "/leaderboard",
   Arenas: "/arenas",

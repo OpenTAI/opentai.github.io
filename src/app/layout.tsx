@@ -5,7 +5,7 @@ import "./globals.css";
 
 const BASE = SITE_URL;
 const DESCRIPTION =
-  "One platform that collects all the open-source resources for trustworthy AI — benchmarks, models, datasets, tools, papers, and leaderboards.";
+  "One platform that collects open-source resources for trustworthy AI — papers, benchmarks, models, datasets, and leaderboards.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),

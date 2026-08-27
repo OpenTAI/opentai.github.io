@@ -75,7 +75,7 @@ export function SiteSearch({ locale }: { locale: Locale }) {
           aria-label={t(locale, "Search all OpenTAI resources")}
           className="w-full bg-transparent text-[1.05rem] text-[#111827] outline-none placeholder:text-[#98a2b3]"
           onChange={(event) => setQuery(event.target.value)}
-          placeholder={t(locale, "Search benchmarks, models, datasets, tools, papers...")}
+          placeholder={t(locale, "Search papers, benchmarks, models, datasets...")}
           type="search"
           value={query}
         />
