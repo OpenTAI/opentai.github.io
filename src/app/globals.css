@@ -1700,7 +1700,7 @@ summary {
   letter-spacing: -0.05em;
 }
 
-.contributor-recognition-heading a {
+.contributor-recognition-heading .contribution-dialog-trigger {
   display: inline-flex;
   min-height: 2.7rem;
   flex: 0 0 auto;
@@ -1708,6 +1708,7 @@ summary {
   justify-content: center;
   border: 1px solid #c7d2fe;
   border-radius: 999px;
+  background: #fff;
   padding: 0.68rem 1rem;
   color: #4338ca;
   font-size: 0.88rem;
@@ -1715,18 +1716,79 @@ summary {
   transition: border-color 160ms ease, background-color 160ms ease;
 }
 
-.contributor-recognition-heading a:hover {
+.contributor-recognition-heading .contribution-dialog-trigger:hover {
   border-color: #a5b4fc;
   background: #f7f7ff;
 }
 
-.contributor-recognition-empty {
+.contributor-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.85rem;
   margin-top: 1.45rem;
   border-top: 1px solid #e8ecf3;
   padding-top: 1.15rem;
+}
+
+.contributor-profile-card {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.9rem;
+  border: 1px solid #e0e5ee;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #ffffff 54%, #f5f7ff 100%);
+  padding: 0.85rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.045);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.contributor-profile-card:hover {
+  border-color: #b9c5f8;
+  box-shadow: 0 16px 36px rgba(79, 70, 229, 0.09);
+  transform: translateY(-1px);
+}
+
+.contributor-profile-avatar {
+  width: 4.1rem;
+  height: 4.1rem;
+  border: 1px solid #dce2ec;
+  border-radius: 999px;
+  background: #f5f7fb;
+  object-fit: cover;
+}
+
+.contributor-profile-card strong,
+.contributor-profile-card small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contributor-profile-card strong {
+  color: #111827;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.contributor-profile-card small {
+  margin-top: 0.18rem;
   color: #667085;
-  font-size: 0.9rem;
-  line-height: 1.65;
+  font-size: 0.78rem;
+}
+
+.contributor-profile-arrow {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid #e0e5ee;
+  border-radius: 999px;
+  color: #4f46c7;
+  font-size: 0.82rem;
 }
 
 @media (max-width: 639px) {
@@ -1734,7 +1796,8 @@ summary {
     flex-direction: column;
   }
 
-  .contributor-recognition-heading a {
+  .contributor-recognition-heading .contribution-dialog-root,
+  .contributor-recognition-heading .contribution-dialog-trigger {
     width: 100%;
   }
 }
@@ -1873,6 +1936,30 @@ summary {
 
 .contribute-section {
   padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.contribute-section-simple {
+  display: grid;
+  justify-items: start;
+  gap: 1.1rem;
+}
+
+.contribute-simple-copy {
+  max-width: 46rem;
+  color: #667085;
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.contribute-section-simple .contribution-dialog-trigger {
+  min-height: 2.85rem;
+  border-radius: 999px;
+  background: #5148cf;
+  padding: 0.75rem 1.15rem;
+  color: #fff;
+  font-size: 0.86rem;
+  font-weight: 750;
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.2);
 }
 
 .contribute-heading p {
@@ -2141,6 +2228,27 @@ summary {
   line-height: 1.55;
 }
 
+.contribution-dialog-note {
+  display: grid;
+  gap: 0.22rem;
+}
+
+.contribution-dialog-note p {
+  margin: 0;
+}
+
+.contribution-dialog-note a {
+  color: #5046cc;
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+
+.contribution-dialog-note a:hover {
+  color: #3730a3;
+}
+
 .submission-form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2172,6 +2280,26 @@ summary {
   transition: border-color 150ms ease, box-shadow 150ms ease;
 }
 
+.submission-form select {
+  width: 100%;
+  min-height: 2.75rem;
+  appearance: none;
+  border: 1px solid #dfe3eb;
+  border-radius: 10px;
+  background-color: #fff;
+  background-image: linear-gradient(45deg, transparent 50%, #667085 50%),
+    linear-gradient(135deg, #667085 50%, transparent 50%);
+  background-position: calc(100% - 16px) 1.12rem, calc(100% - 11px) 1.12rem;
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px;
+  padding: 0 2rem 0 0.72rem;
+  color: #111827;
+  font-size: 0.78rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
 .submission-form textarea {
   width: 100%;
   resize: vertical;
@@ -2188,12 +2316,14 @@ summary {
 }
 
 .submission-form input:focus,
+.submission-form select:focus,
 .submission-form textarea:focus {
   border-color: #9c9bf5;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .submission-form input[aria-invalid="true"],
+.submission-form select[aria-invalid="true"],
 .submission-form textarea[aria-invalid="true"] {
   border-color: #e88a8a;
 }

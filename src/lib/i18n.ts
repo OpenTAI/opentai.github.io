@@ -292,6 +292,18 @@ const ZH: Record<string, string> = {
   "Contributor Recognition": "贡献者致谢",
   "Main Contributors": "主要贡献者",
   "Volunteer to contribute": "志愿参与贡献",
+  "Close contribution form": "关闭贡献表单",
+  "Tell us how you would like to help. Your submission opens a GitHub issue for review.":
+    "告诉我们您希望如何参与。提交后将创建一个 GitHub Issue 供公开审核。",
+  "Questions? Email": "如有问题，请联系",
+  "GitHub profile": "GitHub 主页",
+  "Contribution area": "贡献方向",
+  "Select an area": "选择贡献方向",
+  "How would you like to help?": "您希望如何参与？",
+  "Select a contribution area.": "请选择一个贡献方向。",
+  "Enter a GitHub profile URL.": "请输入 GitHub 个人主页链接。",
+  "Tell us what you would like to contribute. We will open a GitHub issue so the proposal and its sources can be reviewed in public.":
+    "告诉我们您希望贡献什么。系统会创建 GitHub Issue，供社区公开审核提案及其来源。",
   "Contributor profiles will appear here after they are confirmed by the OpenTAI team.":
     "贡献者信息将在 OpenTAI 团队确认后展示于此。",
   "How resources are included": "资源收录方式",

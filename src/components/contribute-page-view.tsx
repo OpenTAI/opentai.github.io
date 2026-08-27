@@ -1,6 +1,6 @@
+import { ContributionDialog } from "@/components/contribution-dialog";
 import { SimplePage } from "@/components/simple-page";
 import { SiteShell } from "@/components/site-shell";
-import { buildContributionIssueUrl, contributionAreas } from "@/lib/contribution";
 import { Locale, t } from "@/lib/i18n";
 
 export function ContributePageView({ locale }: { locale: Locale }) {
@@ -9,47 +9,24 @@ export function ContributePageView({ locale }: { locale: Locale }) {
       <SimplePage
         breadcrumb={["Home", "Ecosystem", "Community", "Contribute"]}
         className="contribute-page"
-        description="Choose an area and open a GitHub issue to start a source-reviewed contribution."
+        description="Share how you would like to help OpenTAI and continue on GitHub for review."
         heroIcon="＋"
         locale={locale}
         showDescription
         title="Contribute to OpenTAI"
       >
-        <section className="subpage-main-table-card contribute-section">
+        <section className="subpage-main-table-card contribute-section contribute-section-simple">
           <div className="contribute-heading">
             <p>{t(locale, "Get involved")}</p>
-            <h2>{t(locale, "How would you like to contribute?")}</h2>
+            <h2>{t(locale, "Contribute to OpenTAI")}</h2>
           </div>
-
-          <div className="contribute-grid">
-            {contributionAreas.map((area, index) => (
-              <article className="contribute-card" key={area.id}>
-                <span className="contribute-card-index">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3>{t(locale, area.title)}</h3>
-                  <p>{t(locale, area.description)}</p>
-                </div>
-                <a
-                  className="contribute-card-cta"
-                  href={buildContributionIssueUrl(area.id)}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  {t(locale, "Submit contribution")}
-                  <span aria-hidden="true">↗</span>
-                </a>
-              </article>
-            ))}
-          </div>
-
-          <p className="contribute-review-note">
+          <p className="contribute-simple-copy">
             {t(
               locale,
-              "Every submission opens a GitHub issue and is reviewed before it becomes part of OpenTAI.",
+              "Tell us what you would like to contribute. We will open a GitHub issue so the proposal and its sources can be reviewed in public.",
             )}
           </p>
+          <ContributionDialog locale={locale} />
         </section>
       </SimplePage>
     </SiteShell>

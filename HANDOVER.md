@@ -42,7 +42,7 @@
 | `/leaderboard` | 3 个来源核验的公开排行榜卡片：LLM Safety、Agent Safety、Fairness；每张卡片只展示明确命名的单项指标，不再渲染旧的 77 条视觉模型黑白盒表格 |
 | `/arenas` | Gray Swan Arena、CyberGym、ExploitGym 三张卡片；可核验榜单展示主要结果，Gray Swan 暂无可静态核验的成绩快照并明确标注 |
 | `/models` `/datasets` `/tools` | 4 / 155 / 3；Datasets 中 LLMs 86、Agents 16、Embodied AI 60（7 个跨领域，所以分类数相加大于去重总数）。共保留 570 条论文级训练用途证据。只有原论文或官方仓库明确支持训练、微调、对齐、分类器训练、模仿学习或离线强化学习，或提供明确 train/validation split 的公开资源才进入 Datasets；仅有测试题、任务文件或评测环境的条目留在 Benchmarks。旧站 8 条 featured datasets 已全部排除 |
-| `/community` | 贡献者致谢入口 + 24 家合作机构；贡献者名单待团队确认后再展示 |
+| `/community` | 3 位团队确认的 GitHub 贡献者头像与主页、志愿贡献 GitHub Issue 表单 + 24 家合作机构 |
 | `/about` | 使命、收录规则、联系方式 + 使用条款、隐私政策、引用草稿 |
 
 质量基线：外链 **653 条 0 坏链**、类型检查通过、lint 通过、生产构建通过。
@@ -76,7 +76,7 @@ ShareGPT、已下线的 Kaggle Fake News 竞赛数据）因无法核验当前可
 
 ### B 类 —— 等马老师给资料
 
-- **Community**：贡献者名单、workshops / challenges / projects 仍需团队提供可核验素材
+- **Community**：新增贡献者、workshops / challenges / projects 仍需团队提供可核验素材
 - **Leaderboard 继续扩充**：新增榜单必须保留官方页面、精确指标、快照日期和可复核分数；不得把 AgentDojo 这类官方明确声明“不是排行榜”的结果页当作排行榜
 - **About 三段草稿**：Terms of Use / Privacy Policy / citation，页面上标着 DRAFT，仍需团队和法律审阅
 

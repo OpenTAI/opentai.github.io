@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
-  buildContributionIssueUrl,
+  buildVolunteerContactMailto,
+  buildVolunteerContributionIssueUrl,
   contributionAreas,
+  validateVolunteerContribution,
 } from "./contribution.ts";
 
 test("offers the six approved contribution areas in a stable order", () => {
@@ -19,21 +21,54 @@ test("offers the six approved contribution areas in a stable order", () => {
   );
 });
 
-test("builds a prefilled review issue for a selected contribution area", () => {
-  const url = new URL(buildContributionIssueUrl("website-development"));
+test("builds a prefilled review issue from the compact volunteer form", () => {
+  const url = new URL(
+    buildVolunteerContributionIssueUrl({
+      areaId: "website-development",
+      githubProfile: "https://github.com/example",
+      proposal: "Fix a reproducible navigation bug.",
+    }),
+  );
 
   assert.equal(url.origin + url.pathname, "https://github.com/GabryGao/opentai/issues/new");
   assert.equal(url.searchParams.get("title"), "[Contribution] Website & Development");
+  assert.match(url.searchParams.get("body") ?? "", /GitHub profile: https:\/\/github\.com\/example/);
   assert.match(url.searchParams.get("body") ?? "", /Contribution area: Website & Development/);
-  assert.match(url.searchParams.get("body") ?? "", /Proposed contribution:/);
-  assert.match(url.searchParams.get("body") ?? "", /Public sources or references:/);
-  assert.match(url.searchParams.get("body") ?? "", /How can this be verified or reproduced\?/);
+  assert.match(url.searchParams.get("body") ?? "", /Fix a reproducible navigation bug\./);
   assert.match(url.searchParams.get("body") ?? "", /review before acceptance/i);
+});
+
+test("builds the teacher contact link for volunteer questions", () => {
+  const url = new URL(buildVolunteerContactMailto("danxjma@gmail.com"));
+
+  assert.equal(url.protocol, "mailto:");
+  assert.equal(url.pathname, "danxjma@gmail.com");
+  assert.equal(url.searchParams.get("subject"), "OpenTAI volunteer contribution");
+});
+
+test("validates the compact volunteer form before opening GitHub", () => {
+  assert.deepEqual(
+    validateVolunteerContribution({
+      areaId: "unknown-area",
+      githubProfile: "https://example.com/not-github",
+      proposal: "",
+    }),
+    {
+      areaId: "area",
+      githubProfile: "github",
+      proposal: "required",
+    },
+  );
 });
 
 test("rejects an unknown contribution area instead of creating a misleading issue", () => {
   assert.throws(
-    () => buildContributionIssueUrl("unknown-area"),
+    () =>
+      buildVolunteerContributionIssueUrl({
+        areaId: "unknown-area",
+        githubProfile: "https://github.com/example",
+        proposal: "A source-backed contribution.",
+      }),
     /Unknown contribution area/,
   );
 });

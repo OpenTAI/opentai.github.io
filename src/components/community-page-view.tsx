@@ -1,9 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
+import { ContributionDialog } from "@/components/contribution-dialog";
 import { SimplePage } from "@/components/simple-page";
 import { SiteShell } from "@/components/site-shell";
 import { partners } from "@/data/site";
-import { Locale, localizeHref, t } from "@/lib/i18n";
+import { contributors } from "@/lib/contributors";
+import { Locale, t } from "@/lib/i18n";
 
 export function CommunityPageView({ locale }: { locale: Locale }) {
   const description =
@@ -31,13 +32,35 @@ export function CommunityPageView({ locale }: { locale: Locale }) {
               <p>{t(locale, "Contributor Recognition")}</p>
               <h2>{t(locale, "Main Contributors")}</h2>
             </div>
-            <Link href={localizeHref(locale, "/contribute")}>
-              {t(locale, "Volunteer to contribute")}
-            </Link>
+            <ContributionDialog locale={locale} />
           </div>
-          <p className="contributor-recognition-empty">
-            {t(locale, "Contributor profiles will appear here after they are confirmed by the OpenTAI team.")}
-          </p>
+          <div className="contributor-profile-grid">
+            {contributors.map((contributor) => (
+              <a
+                className="contributor-profile-card"
+                href={contributor.profileUrl}
+                key={contributor.githubHandle}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <Image
+                  alt={`${contributor.displayName} GitHub avatar`}
+                  className="contributor-profile-avatar"
+                  height={72}
+                  src={contributor.avatarUrl}
+                  unoptimized
+                  width={72}
+                />
+                <span>
+                  <strong>{contributor.displayName}</strong>
+                  <small>@{contributor.githubHandle}</small>
+                </span>
+                <span aria-hidden="true" className="contributor-profile-arrow">
+                  ↗
+                </span>
+              </a>
+            ))}
+          </div>
         </section>
 
         <section className="subpage-main-table-card">

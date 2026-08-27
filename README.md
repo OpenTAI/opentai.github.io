@@ -162,8 +162,9 @@ site.
   papers a survey reviews. 14 of 772 published entries are surveys.
 - Terms of Use, Privacy Policy, and citation on the About page are **drafts**,
   marked as such on the page itself. They need legal and editorial review by
-  the OpenTAI team. Community reserves a contributor-recognition section but
-  deliberately shows no contributor profiles until the team confirms them.
+  the OpenTAI team. Community displays the three GitHub contributor accounts
+  explicitly confirmed by the team; the volunteer form opens a reviewable
+  GitHub issue rather than storing submissions on the website.
 - Chinese pages are statically exported under `/zh`. Interface text and
   descriptions are localized; paper titles, abstracts, author names, and
   publication metadata stay English.

@@ -33,15 +33,30 @@ test("the About page exposes OpenTAI-specific policies without governance or con
 
 test("Community recognizes contributors before placing partner institutions last", async () => {
   const community = await readSource("../components/community-page-view.tsx");
+  const dialog = await readSource("../components/contribution-dialog.tsx");
   const recognition = community.indexOf("Contributor Recognition");
   const partners = community.indexOf("Partner institutions");
 
   assert.ok(recognition >= 0);
   assert.ok(partners > recognition);
   assert.match(community, /Main Contributors/);
-  assert.match(community, /Volunteer to contribute/);
-  assert.match(community, /localizeHref\(locale, "\/contribute"\)/);
+  assert.match(dialog, /Volunteer to contribute/);
+  assert.match(community, /ContributionDialog/);
+  assert.match(community, /contributors\.map/);
+  assert.doesNotMatch(community, /Contributor profiles will appear here/);
   assert.doesNotMatch(community, /mailto:/);
+});
+
+test("the contributor directory uses the three team-approved GitHub accounts", async () => {
+  const contributors = await readSource("./contributors.ts");
+
+  assert.match(contributors, /https:\/\/github\.com\/wuyoscar/);
+  assert.match(contributors, /https:\/\/github\.com\/wuyoscar\/agent-oscar/);
+  assert.match(contributors, /https:\/\/github\.com\/GabryGao/);
+  assert.match(contributors, /https:\/\/github\.com\/SII-FLEEECERmw/);
+  assert.match(contributors, /https:\/\/github\.com\/wuyoscar\.png\?size=160/);
+  assert.match(contributors, /https:\/\/github\.com\/GabryGao\.png\?size=160/);
+  assert.match(contributors, /https:\/\/github\.com\/SII-FLEEECERmw\.png\?size=160/);
 });
 
 test("the contribution path has bilingual static routes and is discoverable", async () => {
@@ -50,9 +65,9 @@ test("the contribution path has bilingual static routes and is discoverable", as
   const chineseRoute = await readSource("../app/zh/contribute/page.tsx");
   const sitemap = await readSource("../app/sitemap.ts");
 
-  assert.match(view, /How would you like to contribute\?/);
-  assert.match(view, /contributionAreas\.map/);
-  assert.match(view, /buildContributionIssueUrl/);
+  assert.match(view, /ContributionDialog/);
+  assert.doesNotMatch(view, /contributionAreas\.map/);
+  assert.doesNotMatch(view, /contribute-grid/);
   assert.match(englishRoute, /locale="en"/);
   assert.match(chineseRoute, /locale="zh"/);
   assert.match(sitemap, /"\/contribute"/);

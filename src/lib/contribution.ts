@@ -51,21 +51,67 @@ export const contributionAreas: readonly ContributionArea[] = [
 
 const CONTRIBUTION_ISSUE_URL = "https://github.com/GabryGao/opentai/issues/new";
 
-export function buildContributionIssueUrl(areaId: ContributionAreaId | string) {
-  const area = contributionAreas.find((candidate) => candidate.id === areaId);
+export function buildVolunteerContactMailto(email: string) {
+  const query = new URLSearchParams({
+    subject: "OpenTAI volunteer contribution",
+  });
+
+  return `mailto:${email}?${query.toString()}`;
+}
+
+export type VolunteerContributionValues = {
+  areaId: ContributionAreaId | string;
+  githubProfile: string;
+  proposal: string;
+};
+
+export type VolunteerContributionErrors = Partial<
+  Record<keyof VolunteerContributionValues, "area" | "github" | "required">
+>;
+
+function contributionArea(areaId: ContributionAreaId | string) {
+  return contributionAreas.find((candidate) => candidate.id === areaId);
+}
+
+function isGitHubProfile(value: string) {
+  try {
+    const url = new URL(value);
+    return (
+      url.protocol === "https:" &&
+      url.hostname === "github.com" &&
+      url.pathname.split("/").filter(Boolean).length >= 1
+    );
+  } catch {
+    return false;
+  }
+}
+
+export function validateVolunteerContribution(
+  values: VolunteerContributionValues,
+): VolunteerContributionErrors {
+  const errors: VolunteerContributionErrors = {};
+
+  if (!contributionArea(values.areaId)) errors.areaId = "area";
+  if (!isGitHubProfile(values.githubProfile.trim())) errors.githubProfile = "github";
+  if (!values.proposal.trim()) errors.proposal = "required";
+
+  return errors;
+}
+
+export function buildVolunteerContributionIssueUrl(values: VolunteerContributionValues) {
+  const area = contributionArea(values.areaId);
 
   if (!area) {
-    throw new Error(`Unknown contribution area: ${areaId}`);
+    throw new Error(`Unknown contribution area: ${values.areaId}`);
   }
 
   const body = [
+    `GitHub profile: ${values.githubProfile.trim()}`,
+    "",
     `Contribution area: ${area.title}`,
     "",
     "Proposed contribution:",
-    "",
-    "Public sources or references:",
-    "",
-    "How can this be verified or reproduced?",
+    values.proposal.trim(),
     "",
     "All contributions require source review before acceptance.",
   ].join("\n");

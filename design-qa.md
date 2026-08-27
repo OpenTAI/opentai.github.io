@@ -85,3 +85,40 @@ No company or arena names, rankings, scores, descriptions, valuations, or links 
 passed
 
 No leaderboard names, rankings, scores, descriptions, source links, or generated data were invented or changed. Hourly source synchronization and manual/automatic row scrolling are shared with the Arena implementation where the official source and row count support them.
+
+---
+
+# Design QA — GitHub contributors and volunteer modal
+
+## Source and implementation
+
+- Modal reference: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_UKBErG/截屏2026-08-26 00.34.31.png`
+- Contributor reference: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_kDZkX4/截屏2026-08-26 00.35.06.png`
+- Desktop contributor implementation: `/private/tmp/opentai-community-contributors.png`
+- Desktop modal implementation: `/private/tmp/opentai-community-volunteer-modal.png`
+- Mobile contributor implementation: `/private/tmp/opentai-community-mobile.png`
+- Mobile modal implementation: `/private/tmp/opentai-community-mobile-modal.png`
+
+## Viewport, dimensions, and state
+
+- Desktop: `/community/` at 1280 × 720 CSS pixels, default English state and open modal state.
+- Localized check: `/zh/community/` at 1280 × 720 CSS pixels with the volunteer modal open.
+- Mobile: `/community/` at 390 × 844 CSS pixels, default state and open modal state.
+
+## Visual and interaction findings
+
+- `Volunteer to contribute` now opens a compact submission modal in the same visual system as existing resource submission dialogs.
+- The modal contains only the three inputs needed to open a reviewable GitHub issue: GitHub profile, contribution area, and contribution proposal.
+- The old six-card contribution chooser is no longer rendered; `/contribute/` provides a compact entry point to the same modal.
+- `Main Contributors` displays three team-provided GitHub accounts as linked avatar cards: Oscar Wu (`@wuyoscar`), GabryGao (`@GabryGao`), and `@SII-FLEEECERmw`.
+- All three remote GitHub avatars loaded from their verified profile URLs.
+- English and Chinese modal labels, options, buttons, and close controls were present in the DOM.
+- The pale information panel now includes the teacher-provided contact email `danxjma@gmail.com`; it is a `mailto:` link with the subject `OpenTAI volunteer contribution`, while GitHub remains the primary structured submission path.
+- Desktop and mobile states had no horizontal document overflow (`scrollWidth - clientWidth = 0`).
+- Browser logs contained no warning or error entries.
+
+## Result
+
+passed
+
+No contributor roles, affiliations, or biographical claims were added. Display names, handles, profile links, and avatars come from the user-provided GitHub sources.
