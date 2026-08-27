@@ -113,6 +113,19 @@ test("shared English section headings capitalize every word", async () => {
   assert.doesNotMatch(subscribe, /Latest Trustworthy AI News/);
 });
 
+test("the home release section uses plain category names without recency prefixes", async () => {
+  const discover = await readSource("../components/discover.tsx");
+  const i18n = await readSource("./i18n.ts");
+
+  assert.match(discover, /title="Releases"/);
+  assert.match(discover, /title: "Papers"/);
+  assert.match(discover, /title: "Benchmarks"/);
+  assert.match(discover, /title: "Models"/);
+  assert.match(discover, /title: "Datasets"/);
+  assert.doesNotMatch(discover, /Latest Releases|Latest Papers|New Benchmarks|New Models|New Datasets/);
+  assert.doesNotMatch(i18n, /Latest Releases|Latest Papers|New Benchmarks|New Models|New Datasets/);
+});
+
 test("paper metadata wraps within narrow paper cards", async () => {
   const papers = await readSource("../components/paper-library.tsx");
   const styles = await readSource("../app/globals.css");

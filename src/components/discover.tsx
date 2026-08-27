@@ -54,10 +54,10 @@ const latestPapers = [...paperLibrary]
   }));
 
 const latest = [
-  { title: "Latest Papers", href: "/papers", rows: latestPapers },
-  { title: "New Benchmarks", href: "/benchmarks", rows: recent("benchmarks") },
-  { title: "New Models", href: "/models", rows: recent("models") },
-  { title: "New Datasets", href: "/datasets", rows: recent("datasets") },
+  { title: "Papers", href: "/papers", rows: latestPapers },
+  { title: "Benchmarks", href: "/benchmarks", rows: recent("benchmarks") },
+  { title: "Models", href: "/models", rows: recent("models") },
+  { title: "Datasets", href: "/datasets", rows: recent("datasets") },
 ];
 
 function accentClasses(accent: string) {
@@ -173,7 +173,7 @@ export function DiscoverTrending({ locale }: { locale: Locale }) {
 export function DiscoverLatest({ locale }: { locale: Locale }) {
   return (
     <section className="mx-auto mt-16 max-w-[1380px] space-y-7">
-      <SectionHeading icon="◷" locale={locale} title="Latest Releases" />
+      <SectionHeading icon="◷" locale={locale} title="Releases" />
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {latest.map((group) => (
           <div key={group.title} className="home-info-panel p-6">

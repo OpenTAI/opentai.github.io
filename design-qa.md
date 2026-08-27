@@ -1,3 +1,27 @@
+# Design QA — Home Releases Labels
+
+## Comparison Targets
+
+- Source visual truth: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_WT58nk/截屏2026-08-27 14.48.56.png`
+- Desktop implementation: `/private/tmp/opentai-releases-implemented.png`
+- Normalized comparison: `/private/tmp/opentai-releases-compare.png`
+
+## Verification
+
+- Removed every requested recency prefix while retaining the existing structure: `Latest Releases` → `Releases`, `Latest Papers` → `Papers`, `New Benchmarks` → `Benchmarks`, `New Models` → `Models`, and `New Datasets` → `Datasets`.
+- Compared the supplied reference and implementation together at the same 1456 px width. Card order, borders, spacing, typography, content rows, and `All →` links remain unchanged.
+- Checked a 1456 × 700 desktop viewport and a 390 × 844 mobile viewport in the in-app browser.
+- Desktop and mobile document widths match their viewports with zero horizontal overflow.
+- Browser console reports no warnings or errors.
+
+## Findings
+
+- No remaining P0, P1, P2, or P3 findings for this copy-only scope.
+
+final result: passed
+
+---
+
 # Design QA — Community Introduction And Papers Hero
 
 ## Comparison Targets
