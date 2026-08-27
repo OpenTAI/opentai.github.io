@@ -69,6 +69,7 @@ test("Community automatically syncs public OpenTAI organization members with a s
   assert.match(component, /fetch\(`\$\{GITHUB_ORG_MEMBERS_API\}&page=\$\{page\}`/);
   assert.match(component, /localStorage\.getItem\(CACHE_KEY\)/);
   assert.match(component, /localStorage\.setItem\(\s*CACHE_KEY/);
+  assert.match(component, /opentai-public-github-members-v2/);
   assert.match(component, /60 \* 60 \* 1000/);
   assert.match(component, /contributors\.map/);
   assert.match(component, /member\.htmlUrl/);
@@ -107,16 +108,30 @@ test("shared English section headings capitalize every word", async () => {
   assert.doesNotMatch(subscribe, /Latest Trustworthy AI News/);
 });
 
-test("the contributor directory uses the three team-approved GitHub accounts", async () => {
+test("the contributor directory uses every team-approved GitHub account", async () => {
   const contributors = await readSource("./contributors.ts");
 
-  assert.match(contributors, /https:\/\/github\.com\/wuyoscar/);
+  for (const handle of [
+    "GabryGao",
+    "wuyoscar",
+    "SII-FLEEECERmw",
+    "bboylyg",
+    "BeyonderXX",
+    "chriskambimbi",
+    "CiaranZhou",
+    "cmhzc",
+    "CuteyThyme",
+    "darius22222",
+    "Doby-Xu",
+    "dongdongunique",
+    "fresh-ma",
+    "HanxunH",
+  ]) {
+    assert.match(contributors, new RegExp(`github\\.com/${handle}`));
+    assert.match(contributors, new RegExp(`github\\.com/${handle}\\.png\\?size=160`));
+  }
+
   assert.match(contributors, /https:\/\/github\.com\/wuyoscar\/agent-oscar/);
-  assert.match(contributors, /https:\/\/github\.com\/GabryGao/);
-  assert.match(contributors, /https:\/\/github\.com\/SII-FLEEECERmw/);
-  assert.match(contributors, /https:\/\/github\.com\/wuyoscar\.png\?size=160/);
-  assert.match(contributors, /https:\/\/github\.com\/GabryGao\.png\?size=160/);
-  assert.match(contributors, /https:\/\/github\.com\/SII-FLEEECERmw\.png\?size=160/);
   assert.match(contributors, /displayName: "Xin Gao"/);
   assert.match(contributors, /displayName: "Ming Wen"/);
 });
