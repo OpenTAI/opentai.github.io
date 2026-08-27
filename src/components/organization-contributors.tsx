@@ -17,7 +17,7 @@ import type {
 const GITHUB_ORG_MEMBERS_API =
   "https://api.github.com/orgs/OpenTAI/members?per_page=100";
 const GITHUB_ORG_PEOPLE_URL = "https://github.com/orgs/OpenTAI/people";
-const CACHE_KEY = "opentai-public-github-members-v2";
+const CACHE_KEY = "opentai-public-github-members-v3";
 const CACHE_TTL_MS = 60 * 60 * 1000;
 const MAX_PAGES = 10;
 const PRIMARY_MEMBER_HANDLE = "GabryGao";

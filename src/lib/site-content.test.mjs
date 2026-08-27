@@ -69,7 +69,7 @@ test("Community automatically syncs public OpenTAI organization members with a s
   assert.match(component, /fetch\(`\$\{GITHUB_ORG_MEMBERS_API\}&page=\$\{page\}`/);
   assert.match(component, /localStorage\.getItem\(CACHE_KEY\)/);
   assert.match(component, /localStorage\.setItem\(\s*CACHE_KEY/);
-  assert.match(component, /opentai-public-github-members-v2/);
+  assert.match(component, /opentai-public-github-members-v3/);
   assert.match(component, /60 \* 60 \* 1000/);
   assert.match(component, /contributors\.map/);
   assert.match(component, /member\.htmlUrl/);
