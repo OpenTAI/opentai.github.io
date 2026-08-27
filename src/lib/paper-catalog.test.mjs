@@ -5,6 +5,7 @@ import {
   paperYearCounts,
   sortPapersNewestFirst,
 } from "./paper-catalog.ts";
+import * as paperCatalog from "./paper-catalog.ts";
 
 const papers = [
   { title: "Older", venue: "ACL", year: "2023" },
@@ -36,4 +37,35 @@ test("separates year and link metadata without repeating arXiv as a venue", () =
     paperDisplayMeta({ arxivId: "2401.00001", venue: "ACL", year: "2024" }),
     { linkLabel: "arXiv", venueLabel: "ACL", yearLabel: "2024" },
   );
+});
+
+test("summarizes source-backed paper hero statistics", () => {
+  assert.equal(typeof paperCatalog.paperCatalogSummary, "function");
+
+  const summary = paperCatalog.paperCatalogSummary([
+    {
+      arxivId: "2501.00001",
+      domain: "LLMs",
+      kind: "research",
+      title: "Linked Through arXiv",
+    },
+    {
+      domain: "Agents",
+      kind: "survey",
+      title: "Linked Through a Public URL",
+      url: "https://example.org/paper",
+    },
+    {
+      domain: "LLMs",
+      kind: "research",
+      title: "No Public Link Recorded",
+    },
+  ]);
+
+  assert.deepEqual(summary, {
+    domains: 2,
+    entries: 3,
+    links: 2,
+    surveys: 1,
+  });
 });

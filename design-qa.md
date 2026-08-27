@@ -1,4 +1,75 @@
-# Design QA — Light ice-blue Company wall and Safety arenas
+# Design QA — Community Introduction And Papers Hero
+
+## Comparison Targets
+
+- Community source visual truth: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/9e20f478899dc29eb19741386f9343c8/b01221ca3a266584fff90c84c5bd3929.png`
+- Papers source visual truth: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/9e20f478899dc29eb19741386f9343c8/14ef7919a31effab0c3f51f45f1c0a23.png`
+- Datasets pattern reference: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/9e20f478899dc29eb19741386f9343c8/63e194be4b59e72e08915361d1bf7725.png`
+- Community implementation: `/private/tmp/opentai-community-desktop.png`
+- Papers implementation: `/private/tmp/opentai-papers-desktop.png`
+- Community mobile implementation: `/private/tmp/opentai-community-mobile-final.png`
+- Papers mobile implementation: `/private/tmp/opentai-papers-mobile-final.png`
+- Community normalized comparison: `/private/tmp/opentai-community-comparison.png`
+- Papers normalized comparison: `/private/tmp/opentai-papers-comparison.png`
+
+## Capture Details
+
+- State: English public Community and Papers routes, default theme, no dialogs open.
+- Community source: 1418 × 758 px. Community implementation: 1440 × 1000 px at a 1440 × 1000 CSS viewport.
+- Papers source: 2912 × 740 px. Papers implementation: 1280 × 720 px at a 1280 × 720 CSS viewport.
+- Mobile captures: 390 × 844 px at a 390 × 844 CSS viewport.
+- Device scale factor: 1; implementation screenshots and CSS viewports are 1:1, so no density downsampling was required.
+- Source designs and implementation regions were normalized to 1200 px width in the combined comparison images before judging typography, spacing, and hierarchy.
+
+## Full-View Comparison Evidence
+
+- Community: the new introduction sits immediately after the existing Community hero and before Contributors, preserving the requested reading order. Its headings, two mission paragraphs, emphasized phrases, and closing statement match the supplied copy while using the site's existing white card, border, radius, typography, and spacing tokens.
+- Papers: the formerly empty hero copy area now contains four compact statistical pills. The structure matches the Datasets hero pattern without changing the existing Papers CTA, icon panel, or overall page proportions.
+- Responsive checks: both routes have no document-level horizontal overflow at 390 px. English and Chinese routes render the new copy and statistics without console errors.
+
+## Focused Region Comparison Evidence
+
+- Community focused comparison: `/private/tmp/opentai-community-comparison.png`. The reference is a standalone editorial text block; the implementation intentionally keeps the same hierarchy and emphasis inside OpenTAI's existing card system. The implementation is denser at desktop width, but all requested copy remains readable and the hierarchy is unchanged.
+- Papers focused comparison: `/private/tmp/opentai-papers-comparison.png`. The hero aligns with the supplied Datasets reference: title and pill row occupy the center column, while the submission CTA remains isolated by the right divider.
+
+## Required Fidelity Surfaces
+
+- Fonts and typography: existing OpenTAI font stack retained; heading weight, negative tracking, paragraph line height, bold emphasis, and small stat labels are internally consistent. Mobile line wrapping remains readable.
+- Spacing and layout rhythm: section order and card gaps match adjacent site pages. The Community copy uses a comfortable desktop measure and collapses to one readable column on mobile. Papers pills wrap into two rows on mobile without collision.
+- Colors and visual tokens: existing white surfaces, neutral text colors, violet stat values, borders, radii, and CTA treatments are reused without introducing a new palette.
+- Image quality and asset fidelity: no new raster or illustrative assets were required. Existing OpenTAI page icons and contributor avatars remain unchanged and sharp.
+- Copy and content: Community copy matches the team-supplied source. Paper statistics are derived from the generated paper library: 772 entries, 3 recorded domains, 14 surveys, and 754 papers with a public link.
+- Accessibility and behavior: headings remain semantic, CTA behavior is unchanged, no focus targets were removed, and no new interactive control was introduced.
+
+## Findings
+
+- No remaining P0, P1, or P2 fidelity findings.
+
+## Comparison History
+
+1. Initial mobile Papers capture exposed a P2 horizontal overflow: a long venue label and link row measured 416 px inside a 390 px viewport.
+2. Root cause: the metadata row used `shrink-0` and did not wrap at the narrow breakpoint.
+3. Fix: added a dedicated `paper-card-meta` hook that becomes a full-width wrapping row below 640 px and truncates an overlong venue pill safely.
+4. Post-fix evidence: `/private/tmp/opentai-papers-mobile-final.png`; document width is 390 px for a 390 px viewport and the page reports no horizontal overflow.
+
+## Implementation Checklist
+
+- [x] Community introduction precedes Contributors.
+- [x] Papers hero contains only source-derived statistics.
+- [x] English and Chinese routes render correctly.
+- [x] Desktop and 390 px mobile views checked in the in-app browser.
+- [x] Console warnings/errors checked for both routes.
+- [x] Horizontal overflow regression fixed and rechecked.
+
+## Follow-Up Polish
+
+- No P3 polish is required for this scope.
+
+final result: passed
+
+---
+
++# Design QA — Light ice-blue Company wall and Safety arenas
 
 ## Source and implementation
 

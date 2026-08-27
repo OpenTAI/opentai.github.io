@@ -880,6 +880,66 @@ summary {
   margin-bottom: 1.25rem;
 }
 
+.community-introduction {
+  display: grid;
+  gap: 1.55rem;
+  padding: clamp(1.6rem, 4vw, 3rem);
+}
+
+.community-introduction h2,
+.community-introduction h3,
+.community-introduction p {
+  margin: 0;
+}
+
+.community-introduction h2 {
+  color: #111827;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 650;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+
+.community-introduction h3 {
+  color: #111827;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.community-introduction p {
+  max-width: 74rem;
+  color: #344054;
+  font-size: clamp(1rem, 1.5vw, 1.22rem);
+  line-height: 1.75;
+}
+
+.community-introduction strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.community-introduction .community-introduction-closing {
+  color: #111827;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@media (max-width: 639px) {
+  .paper-card-meta {
+    flex-basis: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .paper-card-meta > span {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 .leaderboard-directory {
   overflow: hidden;
   border: 1px solid #e4e7f1;

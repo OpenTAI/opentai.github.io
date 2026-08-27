@@ -456,7 +456,7 @@ export function PaperLibrary({ locale }: { locale: Locale }) {
                     paper.title
                   )}
                 </p>
-                <div className="flex shrink-0 items-center gap-2">
+                <div className="paper-card-meta flex shrink-0 items-center gap-2">
                   {paper.kind === "survey" ? (
                     <span className="whitespace-nowrap rounded-full bg-[#ecfdf5] px-2.5 py-0.5 text-xs font-semibold text-[#047857]">
                       {t(locale, "Survey")}

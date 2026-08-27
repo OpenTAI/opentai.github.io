@@ -39,8 +39,11 @@ test("Community recognizes contributors before placing partner institutions last
   const dialog = await readSource("../components/contribution-dialog.tsx");
   const styles = await readSource("../app/globals.css");
   const recognition = community.indexOf("Contributor Recognition");
+  const introduction = community.indexOf("OpenTAI Community");
   const partners = community.indexOf("Partner Institutions");
 
+  assert.ok(introduction >= 0);
+  assert.ok(recognition > introduction);
   assert.ok(recognition >= 0);
   assert.ok(partners > recognition);
   assert.match(community, />{t\(locale, "Contributors"\)}<\/h2>/);
@@ -58,6 +61,8 @@ test("Community recognizes contributors before placing partner institutions last
   assert.match(organizationContributors, /members\.map/);
   assert.doesNotMatch(community, /Contributor profiles will appear here/);
   assert.doesNotMatch(community, /mailto:/);
+  assert.match(community, /Building Trustworthy AI, Together/);
+  assert.match(community, /Research openly\. Build together\. Make AI trustworthy\./);
 });
 
 test("Community automatically syncs public OpenTAI organization members with a safe fallback", async () => {
@@ -106,6 +111,17 @@ test("shared English section headings capitalize every word", async () => {
   assert.match(contribution, /"Volunteer To Contribute"/);
   assert.doesNotMatch(papers, /"Papers by (Year|Domain)"/);
   assert.doesNotMatch(subscribe, /Latest Trustworthy AI News/);
+});
+
+test("paper metadata wraps within narrow paper cards", async () => {
+  const papers = await readSource("../components/paper-library.tsx");
+  const styles = await readSource("../app/globals.css");
+
+  assert.match(papers, /className="paper-card-meta flex shrink-0 items-center gap-2"/);
+  assert.match(
+    styles,
+    /@media \(max-width: 639px\) \{[\s\S]*?\.paper-card-meta \{[\s\S]*?flex-basis: 100%;[\s\S]*?max-width: 100%;[\s\S]*?flex-wrap: wrap;/,
+  );
 });
 
 test("the contributor directory uses every team-approved GitHub account", async () => {

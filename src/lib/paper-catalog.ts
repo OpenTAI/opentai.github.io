@@ -1,10 +1,25 @@
 export type PaperCatalogRow = {
   arxivId?: string | null;
+  domain?: string | null;
+  kind?: string | null;
   title: string;
   url?: string | null;
   venue?: string | null;
   year?: string | number | null;
 };
+
+export function paperCatalogSummary(rows: readonly PaperCatalogRow[]) {
+  const domains = new Set(
+    rows.map((row) => row.domain?.trim()).filter((domain): domain is string => Boolean(domain)),
+  );
+
+  return {
+    domains: domains.size,
+    entries: rows.length,
+    links: rows.filter((row) => Boolean(row.arxivId || row.url)).length,
+    surveys: rows.filter((row) => row.kind === "survey").length,
+  };
+}
 
 function recordedYear(row: PaperCatalogRow) {
   const value = `${row.year ?? ""}`.trim();

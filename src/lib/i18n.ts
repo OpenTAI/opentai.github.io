@@ -43,6 +43,8 @@ const ZH: Record<string, string> = {
   Companies: "企业",
   "Coming soon": "即将开放",
   Community: "社区",
+  "OpenTAI Community": "OpenTAI 社区",
+  "Building Trustworthy AI, Together": "共同建设可信人工智能",
   Contribute: "参与贡献",
   "Contribute To OpenTAI": "参与 OpenTAI",
   "Choose an area and open a GitHub issue to start a source-reviewed contribution.":
@@ -139,6 +141,8 @@ const ZH: Record<string, string> = {
   "Opens your email app. Your address is not stored by OpenTAI.":
     "将打开你的邮件应用；OpenTAI 不会存储你的邮箱地址。",
   Entries: "条目",
+  Domains: "领域",
+  Surveys: "综述",
   Categories: "分类",
   "Published venues": "已记录发表场所",
   Links: "链接",

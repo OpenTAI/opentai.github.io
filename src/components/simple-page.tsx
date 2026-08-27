@@ -9,6 +9,7 @@ export function SimplePage({
   description,
   heroAside,
   heroIcon,
+  heroStats = [],
   locale = "en",
   showDescription = false,
   title,
@@ -19,6 +20,7 @@ export function SimplePage({
   description: string;
   heroAside?: ReactNode;
   heroIcon: string;
+  heroStats?: readonly { label: string; value: number | string }[];
   locale?: Locale;
   overview?: string;
   showDescription?: boolean;
@@ -38,6 +40,20 @@ export function SimplePage({
               {t(locale, title)}
             </h1>
             {showDescription ? <p>{t(locale, description)}</p> : null}
+            {heroStats.length ? (
+              <div className="flex flex-wrap gap-3">
+                {heroStats.map((stat) => (
+                  <div key={stat.label} className="subpage-stat-pill">
+                    <span className="font-semibold text-[#4338ca]">
+                      {typeof stat.value === "number"
+                        ? stat.value.toLocaleString("en-US")
+                        : stat.value}
+                    </span>
+                    <span>{t(locale, stat.label)}</span>
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
           {heroAside ? <div className="subpage-hero-aside">{heroAside}</div> : null}
         </div>
