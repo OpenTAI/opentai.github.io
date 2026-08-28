@@ -2,6 +2,8 @@
 
 import type { CSSProperties } from "react";
 import { useEffect, useRef, useState } from "react";
+import { IntegratedSectionHeading } from "@/components/integrated-section-heading";
+import { ResourceSubmissionDialog } from "@/components/resource-submission-dialog";
 import type { RankingDirectoryRecord, RankingResult } from "@/data/site";
 import { nextArenaScrollTop } from "@/lib/arena-auto-scroll";
 import {
@@ -309,12 +311,19 @@ export function ArenaScoreboardGrid({
 
   return (
     <section aria-labelledby={titleId} className="arena-scoreboards">
-      <header className="arena-scoreboards-heading">
-        <div>
-          <h2 id={titleId}>{directoryTitle}</h2>
-        </div>
-        <p>{directorySummary}</p>
-      </header>
+      <IntegratedSectionHeading
+        action={(
+          <ResourceSubmissionDialog
+            kind={isLeaderboard ? "leaderboard" : "arena"}
+            locale={locale}
+          />
+        )}
+        icon={isLeaderboard ? "L" : "A"}
+        locale={locale}
+        summary={<p>{directorySummary}</p>}
+        title={directoryTitle}
+        titleId={titleId}
+      />
 
       <div className="arena-scoreboard-grid">
         {liveRecords.map((record) => (

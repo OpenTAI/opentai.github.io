@@ -21,8 +21,8 @@ test("leaderboard page shares the arena visual shell", () => {
   );
 
   assert.match(source, /className="leaderboard-page arena-page"/);
-  assert.match(source, /heroIcon="L"/);
-  assert.match(source, /title="Leaderboards"/);
+  assert.match(source, /showHero=\{false\}/);
+  assert.doesNotMatch(source, /heroAside=/);
   assert.doesNotMatch(source, /showDescription/);
 });
 

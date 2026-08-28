@@ -14,6 +14,7 @@ export function IntegratedSectionHeading({
   stats = [],
   summary,
   title,
+  titleId,
 }: {
   action?: ReactNode;
   icon: ReactNode;
@@ -21,6 +22,7 @@ export function IntegratedSectionHeading({
   stats?: readonly IntegratedSectionHeadingStat[];
   summary?: ReactNode;
   title: string;
+  titleId?: string;
 }) {
   return (
     <header className="integrated-section-heading">
@@ -28,7 +30,7 @@ export function IntegratedSectionHeading({
         {icon}
       </div>
       <div className="integrated-section-copy">
-        <h1>{t(locale, title)}</h1>
+        <h1 id={titleId}>{t(locale, title)}</h1>
         {stats.length ? (
           <div className="integrated-section-stats">
             {stats.map((stat) => (

@@ -153,10 +153,7 @@ test("arena page shares the company wall light ice-blue technology treatment", (
   assert.match(css, /\.arena-page\s*\{[^}]*--arena-panel:\s*#e2ecfa/);
   assert.match(css, /\.arena-page\s*\{[^}]*--arena-card:\s*#f8fbff/);
   assert.match(css, /\.arena-page\s*\{[^}]*background:\s*#eef5ff/);
-  assert.match(
-    css,
-    /\.arena-page\s+\.subpage-hero-card\s*\{[^}]*background:\s*#e2ecfa/,
-  );
+  assert.match(css, /\.arena-page\s*\{[^}]*background:\s*#eef5ff/);
   assert.match(
     css,
     /\.arena-scoreboard-card\s*\{[^}]*background:\s*var\(--arena-card\)/,
@@ -173,9 +170,12 @@ test("arena page shares the company wall light ice-blue technology treatment", (
     css,
     /\.arena-scoreboard-results\s+li:first-child\s+\.arena-scoreboard-value\s*\{[^}]*color:\s*var\(--arena-red\)/,
   );
-  assert.match(page, /title="Safety Arenas"/);
+  assert.match(page, /showHero=\{false\}/);
+  assert.doesNotMatch(page, /heroAside=/);
   assert.match(component, /arena-scoreboard-table-head/);
   assert.match(component, /"Safety Arenas"/);
+  assert.match(component, /IntegratedSectionHeading/);
+  assert.match(component, /ResourceSubmissionDialog/);
   assert.doesNotMatch(component, /Verified public results/);
 });
 

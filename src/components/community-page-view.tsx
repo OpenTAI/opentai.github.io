@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ContributionDialog } from "@/components/contribution-dialog";
+import { IntegratedSectionHeading } from "@/components/integrated-section-heading";
 import { OrganizationContributors } from "@/components/organization-contributors";
 import { SimplePage } from "@/components/simple-page";
 import { SiteShell } from "@/components/site-shell";
@@ -24,10 +25,15 @@ export function CommunityPageView({ locale }: { locale: Locale }) {
         heroIcon="◉"
         locale={locale}
         overview={overview}
+        showHero={false}
         title="Community"
       >
         <section className="subpage-main-table-card community-introduction">
-          <h2>{t(locale, "OpenTAI Community")}</h2>
+          <IntegratedSectionHeading
+            icon="◉"
+            locale={locale}
+            title="OpenTAI Community"
+          />
           <h3>{t(locale, "Building Trustworthy AI, Together")}</h3>
           {locale === "zh" ? (
             <>

@@ -12,6 +12,7 @@ export function SimplePage({
   heroStats = [],
   locale = "en",
   showDescription = false,
+  showHero = true,
   title,
 }: {
   breadcrumb: readonly string[];
@@ -24,40 +25,43 @@ export function SimplePage({
   locale?: Locale;
   overview?: string;
   showDescription?: boolean;
+  showHero?: boolean;
   title: string;
 }) {
   return (
     <div className={`page-frame space-y-7 ${className}`}>
       <PageBreadcrumb items={breadcrumb} locale={locale} />
 
-      <section className="subpage-hero-card">
-        <div className="subpage-hero-layout">
-          <div className="subpage-icon-panel">
-            <div className="subpage-icon-orb">{heroIcon}</div>
+      {showHero ? (
+        <section className="subpage-hero-card">
+          <div className="subpage-hero-layout">
+            <div className="subpage-icon-panel">
+              <div className="subpage-icon-orb">{heroIcon}</div>
+            </div>
+            <div className="subpage-hero-copy">
+              <h1 className="text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.06em] text-[#0f172a]">
+                {t(locale, title)}
+              </h1>
+              {showDescription ? <p>{t(locale, description)}</p> : null}
+              {heroStats.length ? (
+                <div className="flex flex-wrap gap-3">
+                  {heroStats.map((stat) => (
+                    <div key={stat.label} className="subpage-stat-pill">
+                      <span className="font-semibold text-[#4338ca]">
+                        {typeof stat.value === "number"
+                          ? stat.value.toLocaleString("en-US")
+                          : stat.value}
+                      </span>
+                      <span>{t(locale, stat.label)}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+            {heroAside ? <div className="subpage-hero-aside">{heroAside}</div> : null}
           </div>
-          <div className="subpage-hero-copy">
-            <h1 className="text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.06em] text-[#0f172a]">
-              {t(locale, title)}
-            </h1>
-            {showDescription ? <p>{t(locale, description)}</p> : null}
-            {heroStats.length ? (
-              <div className="flex flex-wrap gap-3">
-                {heroStats.map((stat) => (
-                  <div key={stat.label} className="subpage-stat-pill">
-                    <span className="font-semibold text-[#4338ca]">
-                      {typeof stat.value === "number"
-                        ? stat.value.toLocaleString("en-US")
-                        : stat.value}
-                    </span>
-                    <span>{t(locale, stat.label)}</span>
-                  </div>
-                ))}
-              </div>
-            ) : null}
-          </div>
-          {heroAside ? <div className="subpage-hero-aside">{heroAside}</div> : null}
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       {children}
     </div>

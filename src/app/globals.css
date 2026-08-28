@@ -5500,6 +5500,41 @@ main:has(.ecosystem-catalog-companies) + .site-footer::before {
   box-shadow: 0 28px 70px rgba(10, 12, 16, 0.2);
 }
 
+.arena-scoreboards > .integrated-section-heading {
+  border-color: var(--arena-line);
+  margin-bottom: 0.9rem;
+}
+
+.arena-scoreboards > .integrated-section-heading .integrated-section-icon {
+  border: 1px solid #aac1e1;
+  background: #e8f1ff;
+  color: #2f5ec4;
+}
+
+.arena-scoreboards > .integrated-section-heading h1 {
+  color: var(--arena-ink);
+  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.arena-scoreboards > .integrated-section-heading .submission-cta {
+  min-height: auto;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.arena-scoreboards > .integrated-section-heading .submission-cta > button {
+  border-color: #aac1e1;
+  border-radius: 10px;
+  background: #f8fbff;
+  color: #2f5ec4;
+  box-shadow: none;
+}
+
+.community-introduction > .integrated-section-heading {
+  margin-bottom: 1.5rem;
+}
+
 .arena-scoreboards-heading {
   display: flex;
   align-items: flex-end;
