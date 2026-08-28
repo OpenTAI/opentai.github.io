@@ -4,6 +4,8 @@ import importlib.util
 import json, pathlib, re
 from urllib.parse import urlparse
 
+from dataset_catalog import dataset_summary, validate_dataset_summaries
+
 HERE = pathlib.Path(__file__).parent
 DATA = HERE / "data"
 
@@ -51,6 +53,7 @@ TRAINING_DATASETS = catalog_module.build_catalog(
     catalog_module.load_aliases(DATASET_ALIAS_PAYLOAD),
     include_metadata_fallbacks=True,
 )
+validate_dataset_summaries(TRAINING_DATASETS)
 IMG = json.load(open(DATA / "img_map.json"))
 META = json.load(open(DATA / "metadata.json"))
 GH = dict(META["github"])
@@ -635,12 +638,13 @@ for rec in TRAINING_DATASETS:
     row = build_row(
         rec["name"],
         None,
-        rec["trainingEvidence"],
+        dataset_summary(rec),
         rec["domain"],
         rec["dataUrl"],
         ["training data", "source: approved survey"],
     )
     row["year"] = rec.get("year")
+    row["note"] = dataset_summary(rec)
     row["venue"] = rec.get("venue")
     row["primaryUrl"] = rec["dataUrl"]
     if rec.get("size"):

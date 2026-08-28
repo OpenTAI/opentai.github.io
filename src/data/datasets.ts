@@ -44,7 +44,7 @@ export const datasetConfig: SubpageConfig = {
   tableRows: [
     {
       name: "ActivityPrograms",
-      note: "**Training Dataset.** In the SFT phase, we use two parts of the training data: we split the ActivityPrograms [@puig2018virtualhome] dataset into a training set of 192 tasks and a test set of 64 tasks, resulting in 4,245 training samples.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition",
       year: "2018",
@@ -100,7 +100,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "AdvBench",
-      note: "The LLaMA 3-8B model was trained on the AdvBench dataset with 200 clean samples and 150 poisoned samples, using the same hyperparameters as previous experiments.",
+      note: "Harmful behavior goals and target strings released as CSV files for adversarial attack and safety-alignment research.",
       type: "LLMs",
       stars: 4760,
       updated: "2024-08-02",
@@ -165,7 +165,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Aegis 2.0",
-      note: "The primary paper provides a train-test split and trains safety guard models on Aegis 2.0. NVIDIA publishes the split files on Hugging Face.",
+      note: "A 34K-sample content-safety dataset with train and test splits for training and evaluating safety guard models.",
       type: "LLMs",
       venue: "arXiv 2025",
       year: "2025",
@@ -232,7 +232,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "AG News",
-      note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 848,
       updated: "2019-07-23",
@@ -380,7 +380,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "AgentInstruct",
-      note: "AgentInstruct is a new agent-specific dataset for fine-tuning LLMs ... 1866 training trajectories.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       venue: "arXiv preprint arXiv:2310.12823",
       year: "2023",
@@ -451,7 +451,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "AIR binaural room impulse response database",
-      note: "AIR contributes to the 370 public CIR traces used to train Metamorph's perturbation and domain discriminator with Adam.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "IEEE International Conference on Digital Signal Processing",
       year: "2009",
@@ -491,7 +491,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "AlpacaEval",
-      note: "In AlpacaEval dataset, we aim to fine-tune the LLM such that it can provide more helpful advice to the open-ended question from users.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 2012,
       updated: "2025-08-09",
@@ -584,7 +584,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Amazon Reviews",
-      note: "Table tab:task_summary identifies Amazon Reviews as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -618,7 +618,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Anthropic Red Team Attempts",
-      note: "To distill GPT-4's ``knowledge'' on safety policies, a dataset containing both harmful and harmless queries is necessary.\nWe utilize the red-team data from Anthropic [@ganguli2022red] as the query dataset.\nThis dataset consists of 38,961 text transcripts documenting conversations between human adversaries and AI assistants.\nFrom this dataset, we select the initial human prompt and exclude the corresponding assistant response, omitting any subsequent exchanges, to create a single-turn prompt dataset designated as $\\mathcal{D}_{red}$.\nNote that this dataset was released in 2022 and has no overlap with JailbreakHub, JailbreakBench, or MultiJail, which were released in 2023 or 2024.\nFurthermore, this dataset is exclusively in English, implying that a model trained on this data will not acquire any additional multilingual capabilities.",
+      note: "38,961 human–AI red-team transcripts collected to study harmful model behavior and support safety-policy training.",
       type: "LLMs",
       stars: 1856,
       updated: "2025-06-17",
@@ -672,7 +672,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "BC5CDR",
-      note: "We fine-tune three BERT models (base-cased) for each data set with different initialization seeds (1, 2 & 4) using the Huggingface implementation. For the biomedical data sets, we additionally fine-tune two domain-specific BERT models BioBERT and SciBERT.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -706,7 +706,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "BDD-100K",
-      note: "DeepPOSE selects 40,000 valid BDD-100K trips as training data and explicitly labels two variants as trained with BDD-100K measurements.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       stars: 569,
       updated: "2024-03-09",
@@ -760,7 +760,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "BeaverTails",
-      note: "**Datasets and models**. For the alignment task, we use the safe samples from the alignment dataset of BeaverTails [@ji2023beavertails]. For fine-tuning task, we consider SST2[@socher2013recursive], AGNEWS[@zhang2015character], GSM8K[@cobbe2021training] and AlpacaEval [@alpaca_eval] as the user fine-tuning task. Within a total number of $n$ samples, we mix $p$ (percentage) of unsafe data from BeaverTails with fine-tuning task's benign training data. In our experiment, the default setting is $p=0.1$ and $n=1000$ (specially, $n=5000$ for GSM8K and $n=700$ for AlpacaEval) unless otherwise specified. We use Llama2-7B [@touvron2023llama], Opt-3.7B [@zhang2022opt] and Vicuna-7B [@anil2023palm] for evaluation. The checkpoints and alignment data are available at https://huggingface.co/anonymous4486. All the experiments are done with an A100-80G.",
+      note: "Prompt–response examples with safety annotations released for harmlessness alignment and safety classifier training.",
       type: "LLMs",
       venue: "arXiv preprint arXiv:2307.04657",
       year: "2023",
@@ -869,7 +869,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Bench2Drive",
-      note: "The primary paper explicitly distinguishes the official CARLA training set from the 220 evaluation routes. The official repository and Hugging Face page publish the training data and implementations.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "NeurIPS 2024",
       year: "2024",
@@ -929,7 +929,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "BIPIA",
-      note: "The training-composition ablation includes Wiki+BIPIA and News+BIPIA; the appendix states 75 instructions across training and test sets under MIT.",
+      note: "Indirect prompt-injection instructions and contexts with documented training and test partitions for detector research.",
       type: "LLMs",
       venue: "Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 1",
       year: "2025",
@@ -994,7 +994,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Booster repnoise BeaverTails",
-      note: "- To derive the harmful dataset and the alignment dataset, we use the data pair from [@rosati2024representation] with this link: https://huggingface.co/datasets/anonymous4486/repnoise_beavertail. Other used datasets are standard benchmark datasets that can be accessed from Huggingface.",
+      note: "A derived BeaverTails training set pairing harmful prompts with refusal responses for representation-based safety alignment.",
       type: "LLMs",
       tags: [
         "training data",
@@ -1032,7 +1032,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Bot-Adversarial Dialogue",
-      note: "We show random examples of test cases generated by each red teaming method in Table [#tab:examples-per-method] (for the 280B LM) and Table [#tab:examples-per-method-7b] (for the 7B LM and the BAD dataset).\n\nTraining-use context: For the red LM, we also use the Gopher LM, with various prompts depending on the behavior we aim to test.\nFor our offensive text classifier $r(x, y)$, we train a model to predict whether an utterance is offensive, given a dialogue history.\nIn particular, we finetune a smaller, 1.4B parameter version of Gopher from [@rae2021gopher] to classify utterances in the Bot-Adversarial Dialogue (BAD) dataset [@xu-etal-2021-bot].\nAs shown in Appendix Table [#tab:classifier comparison], our classifier obtains substantially higher F1 than that of [@xu-etal-2021-bot], so we use our classifier in our experiments.\nOther classifiers are compatible with our approach, but we observed poor accuracy from classifiers such as Perspective API[^fn:1] that did not incorporate dialogue history.\nSee Appendix § [#sec:Classifier Details] for classifier details.",
+      note: "Adversarial human–bot conversations collected to train and evaluate offensive-dialogue classifiers.",
       type: "LLMs",
       stars: 10623,
       updated: "2026-07-30",
@@ -1086,7 +1086,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "BridgeData V2",
-      note: "The primary paper identifies BridgeData V2 as goal- and language-conditioned imitation-learning and reinforcement-learning data. The official repository publishes the demonstrations, conversions, and training commands.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "arXiv 2023",
       year: "2023",
@@ -1176,7 +1176,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "CALVIN dataset",
-      note: "The primary paper defines CALVIN for training and validation and describes learning control from the play dataset. The official repository provides dataset downloads, split definitions, and policy-training commands.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "arXiv 2021",
       year: "2022",
@@ -1251,7 +1251,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "CIFAR-10",
-      note: "To prove our claim empirically, we carried out a simple experiment, we compare the success rate of target attacks of a well-trained DQN agent on Pong with an image classifier trained on the CIFAR-10 dataset with similar network architecture.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       year: "2009",
       tags: [
@@ -1315,7 +1315,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Cityscapes",
-      note: "Moreover, we employ the DeepLabv3+ network [@Chen2018] trained on Cityscapes obtaining a validation mIoU of $79.61\\%$ and on VOC of $76.81\\%$.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition",
       year: "2016",
@@ -1375,7 +1375,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Cleaned Alpaca",
-      note: "GCG, arguably the most effective optimization method right now, is too costly to run as an inner optimization loop inside SecAlign fine-tuning (estimated thousands of GPU hours are needed even for the toy Alpaca dataset).",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 1606,
       updated: "2026-03-07",
@@ -1440,7 +1440,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "CNN/DailyMail",
-      note: "Table tab:task_summary identifies CNN/DailyMail as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 662,
       updated: "2022-06-16",
@@ -1490,7 +1490,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "CodeAlpaca",
-      note: "The CodeAlpaca dataset [@xu2024wizardlm] is used for finetuning.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 1514,
       updated: "2023-05-12",
@@ -1544,7 +1544,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "CoLA",
-      note: "For instance, in the COLA dataset and utilising GPT-NEO as the pre-trained language model, the clean accuracy of our model exhibits a notable improvement of 14.38% over the normal clean accuracy and 2.3% over the prompt clean accuracy.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 58,
       updated: "2020-03-01",
@@ -1602,7 +1602,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Conceptual Captions 3M",
-      note: "For backdoor attacks on CLIP, we explore two approaches: pre-training CLIP from scratch on the poisoned CC3M dataset or fine-tuning a pre-trained clean CLIP using a subset of poisoned pairs.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "acl",
       year: "2018",
@@ -1652,7 +1652,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "CoNLL-2003",
-      note: "BERT models trained on CoNLL were fooled by transforming `New York' to `NEW YORK').",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -1686,7 +1686,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Crafted datasets",
-      note: "The Safety at Scale table calls this resource Crafted datasets. The primary paper says the authors train indirect-prompt-injection detection and extraction models on the crafted training data; the official repository publishes the exact training and evaluation JSON files and training commands under data/.",
+      note: "Crafted indirect prompt-injection examples released for training detection and extraction models.",
       type: "Agents",
       venue: "ACL 2025",
       year: "2025",
@@ -1755,7 +1755,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "CRUW",
-      note: "TileMask Section 6.2 explicitly says the authors train RODNet with the CRUW dataset.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       stars: 42,
       updated: "2022-11-08",
@@ -1817,7 +1817,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "CULane",
-      note: "On both LaneATT and RESA models, we train LD models using poisoning rates of **1%, 3%, 5%, 10%** and **15%** on the CULane dataset.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "Proceedings of the AAAI conference on artificial intelligence",
       year: "2018",
@@ -1853,7 +1853,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Customer Reviews",
-      note: "The main reason is that the prompt-based learning paradigms are usually applied in the few-shot scenarios (e.g, only 32 training samples in the CR dataset [@cr]), leading the backdoor performance to be easily affected by poisoning samples.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       venue: "Proceedings of SIGKDD",
       year: "2004",
@@ -1889,7 +1889,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "CValues-Comparison",
-      note: "The primary paper and official repository release CValues-Comparison separately from the CVALUES evaluation benchmark. They document 116K training and 29K test preference pairs and recommend the positive responses for safety SFT and the pairs for reward-model training.",
+      note: "116K training and 29K test preference pairs for safety supervised fine-tuning and reward-model training.",
       type: "LLMs",
       venue: "arXiv 2023",
       year: "2023",
@@ -1964,7 +1964,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "D4RL",
-      note: "The primary paper states that each task provides a fixed offline trajectory dataset for policy training, typically one million steps. The official project releases the datasets and code.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "arXiv 2020",
       year: "2020",
@@ -2050,7 +2050,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "databricks-dolly-15k",
-      note: "We consider two models: `GPT2-alpaca` and `Dolly-v2-7B`. `GPT2-alpaca` is a GPT2 model [@radford2019language] finetuned with Alpaca dataset [@alpaca] and `Dolly-v2-7B` is a pythia model [@biderman2023pythia] finetuned with Databricks dataset [@DatabricksBlog2023DollyV2].",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 10805,
       updated: "2023-06-30",
@@ -2104,7 +2104,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "DBpedia",
-      note: "Using the fine-tuning objective from Section [#ssec:objectives], we place backdoors in GPT-Neo 1.3B, GPT-Neo 2.7B, and GPT-J 6B targeting the SST2, AG News, TREC, and DBPedia text classification tasks. We evaluate the backdoors using the criteria from Section [#sec:threat_model] and report the results in Table [#tab:backdoor_effectiveness].",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 848,
       updated: "2019-07-23",
@@ -2154,7 +2154,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "DoNotAnswer",
-      note: "The primary paper reports training safety classifiers on the released instruction-response annotations, and the authors publish the files under datasets/.",
+      note: "Instruction–response examples with safety annotations released for training refusal and risk classifiers.",
       type: "LLMs",
       venue: "EACL 2024",
       year: "2023",
@@ -2225,7 +2225,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "DROID",
-      note: "Since each training example corresponds to a timestep --- i.e., a tuple $(\\mathbf{o}_t, \\mathbf{A}_t)$, --- we will quantify data in terms of timesteps in this discussion. $9.1\\%$ of the training mixture consists of open-source datasets, including OXE [@collaboration2023open], Bridge v2 [@walke2023bridgedata], and DROID [@khazatsky2024droid].",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       year: "2024",
       stars: 394,
@@ -2284,7 +2284,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "EAsafetyBench",
-      note: "The authors allocate 70% of EAsafetyBench-Drone to training and embed the EAsafetyBench-Prompt visible prompts for training a 3-layer MLP classifier.",
+      note: "Embodied-agent safety prompts and drone scenarios with a documented 70% training split for safety-classifier training.",
       type: "Agents",
       stars: 5,
       updated: "2026-04-13",
@@ -2338,7 +2338,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Emotion",
-      note: "For example, when we increase the poisoning ratio $\\eta$ from $3\\%$ to $5\\%$ for the BLOOM-7B model trained on the Emotion dataset, the ASR decreases from $94.47\\%$ to $76.70\\%$, while all FTRs drop from near $2\\%$ to around $1\\%$.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 222,
       updated: "2022-12-29",
@@ -2399,7 +2399,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "EQA-v1",
-      note: "The QA and navigation modules are trained for 300 epochs on EQA-v1-derived clean and adversarially perturbed training scenes.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "CVPR",
       year: "2018",
@@ -2455,7 +2455,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Evol-Instruct",
-      note: "To compare Magpie data with other public instruction datasets (e.g., ShareGPT [@vicuna2023], WildChat [@zhao2024wildchat], Evol Instruct [@xu2023wizardlm], UltraChat [@ding2023ultrachat], OpenHermes [@OpenHermes; @OpenHermes2.5], GenQA [@chen2024genqa], Tulu V2 Mix [@tulu2]), we conducted supervised fine-tuning (SFT) of the Llama-3-8B-Base model with each dataset and assess the performance of the fine-tuned models on alignment benchmarks such as AlpacaEval 2 [@alpaca_eval], Arena-Hard [@arenahard2024], and WildBench [@wildbench2024].\nOur results show that models supervised fine-tuned with Magpie achieve superior performance, even surpassing models that utilize both SFT and direct preference optimization (DPO) [@rafailov2024direct] with UltraFeedback [@cui2023ultrafeedback]. Notably, Magpie-aligned models outperform the official Llama-3-8B-Instruct model on AlpacaEval 2, despite the latter being fine-tuned with over 10 million data points for SFT and subsequent preference optimization.\nNot only does Magpie excel in SFT alone compared to prior public datasets, but also delivers the best results when combined with preference optimization methods such as DPO.\nBy leveraging Magpie extensions to generate high-quality preference optimization datasets, Magpie-aligned Llama-3 models\ncan even outperform GPT-4-Turbo(1106) on AlpacaEval 2.\nThese findings show the exceptional quality of instruction data generated by Magpie, enabling it to outperform even the official, extensively optimized, and proprietary LLMs.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 9481,
       updated: "2025-06-07",
@@ -2509,7 +2509,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "FLAN",
-      note: "In Figure [#fig:flan-t0-lik], we also compare InstructGPT to our 175B GPT-3 baselines fine-tuned on the FLAN [@wei2021finetuned] and T0 [@sanh2021multitask] datasets (see Appendix [#apdx:model-details] for details).",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 1566,
       updated: "2026-07-02",
@@ -2559,7 +2559,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "GenQA",
-      note: "To compare Magpie data with other public instruction datasets (e.g., ShareGPT [@vicuna2023], WildChat [@zhao2024wildchat], Evol Instruct [@xu2023wizardlm], UltraChat [@ding2023ultrachat], OpenHermes [@OpenHermes; @OpenHermes2.5], GenQA [@chen2024genqa], Tulu V2 Mix [@tulu2]), we conducted supervised fine-tuning (SFT) of the Llama-3-8B-Base model with each dataset and assess the performance of the fine-tuned models on alignment benchmarks such as AlpacaEval 2 [@alpaca_eval], Arena-Hard [@arenahard2024], and WildBench [@wildbench2024].\nOur results show that models supervised fine-tuned with Magpie achieve superior performance, even surpassing models that utilize both SFT and direct preference optimization (DPO) [@rafailov2024direct] with UltraFeedback [@cui2023ultrafeedback]. Notably, Magpie-aligned models outperform the official Llama-3-8B-Instruct model on AlpacaEval 2, despite the latter being fine-tuned with over 10 million data points for SFT and subsequent preference optimization.\nNot only does Magpie excel in SFT alone compared to prior public datasets, but also delivers the best results when combined with preference optimization methods such as DPO.\nBy leveraging Magpie extensions to generate high-quality preference optimization datasets, Magpie-aligned Llama-3 models\ncan even outperform GPT-4-Turbo(1106) on AlpacaEval 2.\nThese findings show the exceptional quality of instruction data generated by Magpie, enabling it to outperform even the official, extensively optimized, and proprietary LLMs.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -2593,7 +2593,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Glaive Function Calling v2",
-      note: "To construct the Agent Circuit Breaker Dataset, we start with function definitions from the Glaive Function Calling v2 [@glaive_function_calling_v2]. Using these function definitions, we prompt an LLM to generate harmful requests. Following this, we use GPT-3.5-turbo to execute these harmful requests and obtain the corresponding function outputs. These outputs are then converted to the OpenFunctions format. Additionally, we filter out all samples that have a BLEU score above 0.1 when compared to any behavior in our proposed AgentBench ([#sec:ai_agents]). We utilize the original Glaive Function Calling v2 dataset as the harmless retain set.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -2623,7 +2623,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "GSM8K",
-      note: "> instruction: (Real input from GSM8K dataset) + First think step by step and then answer the final number.\n\nTraining-use context: **Datasets and models**. For the alignment task, we use the safe samples from the alignment dataset of BeaverTails [@ji2023beavertails]. For fine-tuning task, we consider SST2[@socher2013recursive], AGNEWS[@zhang2015character], GSM8K[@cobbe2021training] and AlpacaEval [@alpaca_eval] as the user fine-tuning task. Within a total number of $n$ samples, we mix $p$ (percentage) of unsafe data from BeaverTails with fine-tuning task's benign training data. In our experiment, the default setting is $p=0.1$ and $n=1000$ (specially, $n=5000$ for GSM8K and $n=700$ for AlpacaEval) unless otherwise specified. We use Llama2-7B [@touvron2023llama], Opt-3.7B [@zhang2022opt] and Vicuna-7B [@anil2023palm] for evaluation. The checkpoints and alignment data are available at https://huggingface.co/anonymous4486. All the experiments are done with an A100-80G.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 1453,
       updated: "2024-01-21",
@@ -2737,7 +2737,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "GTSRB",
-      note: "We first train in GTSRB [@stallkamp2012man] with officially pre-trained weights, and then finetune the models by our own video frames, which achieves 100% precision on clean test samples.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       tags: [
         "training data",
@@ -2796,7 +2796,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "HH-RLHF",
-      note: "To train the preference predictor, we use the HH-RLHF dataset which contains 161K pairs of human preference data about helpfulness and harmlessness [@bai2022hhrlhf].",
+      note: "161K human preference pairs about assistant helpfulness and harmlessness for preference-model training.",
       type: "LLMs",
       stars: 1856,
       updated: "2025-06-17",
@@ -2895,7 +2895,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "highD",
-      note: "The highD data are divided into 70% training, 10% validation, and 20% test sets and used in the same explicitly described trajectory-model training procedure.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "21st International Conference on Intelligent Transportation Systems",
       year: "2018",
@@ -2935,7 +2935,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "HSOL",
-      note: "For word level detection on HSOL dataset [@davidson2017automated], three non-injected words (``bi*ch'',``h*e'' and ``pu*sy'') are also detected as backdoor triggers.\n\nTraining-use context: Our contributions are summarized as follows:\nWe establish the connection between backdoor behaviors and the memorization of language model.\nWe define the memorization of deep neural networks on the input element and show that the NLP backdoor is the element-wise language model memorization.\nWe find the memorization on an input element is caused by the element duplication in the training data, and demonstrate that the upper bound of the generalization error on the backdoor task is negatively correlated to the duplication number of trigger pattern.\nWe propose a new line for backdoor defense, i.e., data-centric defense. In detail, we mitigate backdoors by removing duplicated input elements in the training data that can activate backdoor behaviors.\nEmpirical results on different datasets demonstrate our method achieves state-of-the-art performance when defending against different types of backdoor attacks on NLP models.",
+      note: "Tweets labeled as hate speech, offensive language, or neither for content-safety classification.",
       type: "LLMs",
       stars: 847,
       updated: "2023-06-12",
@@ -2993,7 +2993,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "ImageNet",
-      note: "We trained a ResNet-50 model ... from scratch on both the original ImageNet dataset and a LlavaGuard-filtered version.",
+      note: "Description not recorded yet.",
       type: "Agents",
       venue: "2009 IEEE Conference on Computer Vision and Pattern Recognition",
       year: "2009",
@@ -3160,7 +3160,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "ImageNet-1K",
-      note: "We deployed two auxiliary models: the ViT-B/16 trained from scratch on ImageNet-1K and the ViT-L/14 EVA model [@fang2023eva; @fang2024eva], both of which are trained on ImageNet-1K.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "Proceedings of IEEE/CVF Conference Computer Vision Pattern Recognition (CVPR)",
       year: "2009",
@@ -3221,7 +3221,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "ImageNet-21K",
-      note: "Besides, we select Vision Transformer (ViT) [@dosovitskiy2020image] which is pre-trained on Imagenet-21K [@deng2009imagenet] as the main target model.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "Proceedings of IEEE/CVF Conference Computer Vision Pattern Recognition (CVPR)",
       year: "2009",
@@ -3268,7 +3268,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "IMDb",
-      note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -3348,7 +3348,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "IWSLT 2014 En-De",
-      note: "For the IWSLT2014 En-De dataset, we train the model with warmup and max-tokens respectively set to 4096 and 30000.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 32236,
       updated: "2025-09-30",
@@ -3405,7 +3405,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Jigsaw Toxic Comment Classification",
-      note: "Table tab:task_summary identifies Jigsaw Toxic Comment Classification as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
+      note: "Wikipedia comments labeled for multiple forms of toxicity for content-moderation model training.",
       type: "LLMs",
       tags: [
         "training data",
@@ -3439,7 +3439,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Kinetics-400",
-      note: "It replaces the image-based Inception network with an I3D [@carreira2017quo] pretrained on Kinetics-400 [@kay2017kinetics].",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "arXiv preprint arXiv:1705.06950",
       year: "2017",
@@ -3495,7 +3495,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "KITTI",
-      note: "**3D Object Detection:** We evaluate DejaVu on two representative MMF-based 3D object detection models. i) *MVXNet* [@sindagi2019mvx], trained on the KITTI dataset, is an early fusion-based architecture that projects LiDAR point clouds into pseudo-image space and fuses them with camera image features at the voxel level. ii) *BEVFusion* [@liu2023bevfusion] is a more advanced architecture, trained on the NuScenes dataset, that unifies multi-modal sensor inputs in the bird's eye view (BEV) representation space.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "The International Journal of Robotics Research",
       year: "2013",
@@ -3685,7 +3685,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "LAION-400M",
-      note: "Our approach involves pre-training a generator on the large-scale LAION-400M dataset [@schuhmann2021laion], enabling the pre-trained noise generator to learn comprehensive noise patterns from diverse image data.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "arXiv preprint arXiv:2111.02114",
       year: "2021",
@@ -3721,7 +3721,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "LaMini-instruction",
-      note: "Wikipedia plus LaMini-instruction is the main training/validation combination; the appendix reports 2.58M instruction-response pairs under CC-BY-NC.",
+      note: "Description not recorded yet.",
       type: "Agents",
       venue: "Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
       year: "2024",
@@ -3777,7 +3777,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "LanguageTable",
-      note: "The dataset we use to train Stage 1 policies for the simulated LanguageTable domain is the one provided by the original work [@lynch2023interactive].",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "IEEE Robotics and Automation Letters",
       year: "2023",
@@ -3835,7 +3835,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "LIBERO demonstration datasets",
-      note: "The primary paper says agents are trained on 50 demonstration trajectories per task. The official repository provides dataset download and behavior-cloning training commands and links the public Hugging Face release.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "arXiv 2023",
       year: "2023",
@@ -4033,7 +4033,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "LibriSpeech",
-      note: "These additional phrases were collected from the LibriSpeech Dataset that the model was trained on [@panayotov2015librispeech].",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "Proc. of IEEE ICASSP",
       year: "2015",
@@ -4076,7 +4076,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Llama-3-Magpie-Air-3M-v0.1",
-      note: "The paper selects the first 300K raw Magpie-Air conversations for supervised fine-tuning. The official release publishes the complete 3M-conversation raw corpus.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       year: "2024",
       stars: 877,
@@ -4139,7 +4139,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Llama-3-Magpie-Pro-1M-v0.1",
-      note: "The paper selects the first 300K raw Magpie-Pro conversations for supervised fine-tuning. The official release publishes the complete 1M-conversation raw corpus.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       year: "2024",
       stars: 877,
@@ -4202,7 +4202,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "LLaVA Visual Instruct 150K",
-      note: "The general vision language pre-training dataset we use contains ShareGPT4V [@chen2023sharegpt4v] dataset, SViT [@zhao2023svit] dataset, and the LLaVA Visual Instruct 150K dataset [@liu2023llava].",
+      note: "Description not recorded yet.",
       type: "LLMs",
       venue: "NeurIPS",
       year: "2023",
@@ -4274,7 +4274,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "LlavaGuard Dataset",
-      note: "The 5,466-sample dataset is split into 4,571 train, 71 evaluation, and 824 test examples; the annotated dataset and pipeline are public.",
+      note: "5,466 annotated multimodal safety examples split into 4,571 training, 71 evaluation, and 824 test records.",
       type: "Agents",
       stars: 72,
       updated: "2025-09-30",
@@ -4332,7 +4332,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "M3Bench",
-      note: "The primary paper defines a 75% train, 5% validation, and 20% test base split and trains motion-generation models on Train. The author project releases the expert trajectories through GitHub and Hugging Face.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "arXiv 2024",
       year: "2025",
@@ -4414,7 +4414,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Magpie-Air-300K-Filtered",
-      note: "The paper creates Magpie-Air-Filtered with 300K conversations and uses the filtered dataset for supervised fine-tuning experiments.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       year: "2024",
       stars: 877,
@@ -4477,7 +4477,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Magpie-Air-DPO-100K-v0.1",
-      note: "The paper generates Magpie-Air-DPO with 100K conversations for preference optimization.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       year: "2024",
       stars: 877,
@@ -4540,7 +4540,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Magpie-Pro-300K-Filtered",
-      note: "The paper creates Magpie-Pro-Filtered with 300K conversations and reports models fine-tuned with Magpie-Pro-300K-Filtered.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       year: "2024",
       stars: 877,
@@ -4603,7 +4603,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Magpie-Pro-DPO-100K-v0.1",
-      note: "The paper generates Magpie-Pro-DPO with 100K conversations for preference optimization.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       year: "2024",
       stars: 877,
@@ -4666,7 +4666,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "MARDY database",
-      note: "MARDY contributes to the 370 public CIR traces used to train Metamorph's perturbation and domain discriminator with Adam.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "International Workshop on Acoustic Echo and Noise Control",
       year: "2006",
@@ -4702,7 +4702,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "MASSIVE",
-      note: "**Datasets:** We evaluate the effectiveness of our data poisoning attack across four varied datasets that span sentiment analysis, domain classification, and the Chain-of-Thought task. The datasets include SST-2 [@socher2013recursive] and Rotten Tomatoes (RT) [@Pang+Lee:05a], which are binary sentiment analysis datasets, and Alexa Massive [@fitzgerald2022massive], a domain classification dataset with 18 different domains, and GSM8K [@cobbe2021training] which is used to evaluate complex reasoning in LM, featuring grade school math problems that require multi-step problem-solving skills. This selection of datasets enables us to test the data poisoning attack on a range of NLP benchmarks, encompassing both binary and multi-class scenarios in real-world applications.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 564,
       updated: "2022-11-28",
@@ -4756,7 +4756,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "MetaDrive human driving trajectories",
-      note: "The BC and CQL offline-learning baselines use 36,000 human-demonstrated transitions.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       year: "2021",
       stars: 1232,
@@ -4811,7 +4811,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "MIMIC-IT",
-      note: "The Otter model was generated by Li et al. [@li2023mimic] using the MIMIC-IT dataset containing 2.8 million multi-modal instruction-response pairs to fine-tune the OpenFlamingo [@awadalla2023openflamingo] model.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "arXiv preprint arXiv:2306.05425",
       year: "2023",
@@ -4875,7 +4875,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "MM-SafetyBench",
-      note: "The blue suffix generator is fine-tuned from GPT-2 with PPO on hard jailbreak prompts crafted on all 13 MM-SafetyBench topics.",
+      note: "Description not recorded yet.",
       type: "Agents",
       venue: "ECCV",
       year: "2024",
@@ -4927,7 +4927,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Movie Review",
-      note: "Train'') of BERT model on MR and SNLI dataset.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -4975,7 +4975,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Mozilla Common Voice",
-      note: "The Common Voice dataset is used to train ASR systems and test the effectiveness of audio AEs.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       year: "2019",
       stars: 3480,
@@ -5034,7 +5034,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "MPI-Sintel",
-      note: "In both cases, the universal perturbations are trained on the Sintel final training set, and evaluated on test.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "Proc. European Conference on Computer Vision (ECCV)",
       year: "2012",
@@ -5070,7 +5070,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "MS COCO",
-      note: "We used YOLO object detection models pre-trained on the MS COCO dataset for the PC environment.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       venue: "European Conference on Computer Vision (ECCV)",
       year: "2014",
@@ -5149,7 +5149,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "MultiNLI",
-      note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -5194,7 +5194,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "NCBI Disease Corpus",
-      note: "We fine-tune three BERT models (base-cased) for each data set with different initialization seeds (1, 2 & 4) using the Huggingface implementation. For the biomedical data sets, we additionally fine-tune two domain-specific BERT models BioBERT and SciBERT.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -5232,7 +5232,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "News Articles",
-      note: "The training-composition ablation includes News+LaMini and News+BIPIA, and the source is identified as a CC0 Harvard Dataverse dataset.",
+      note: "Description not recorded yet.",
       type: "Agents",
       venue: "Harvard Dataverse",
       year: "2017",
@@ -5268,7 +5268,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "NGSIM US-101 and I-80",
-      note: "The NGSIM data are divided into 70% training, 10% validation, and 20% test sets, followed by Adam optimization and explicit pre-training/formal-training cycles for the trajectory-prediction model.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "Federal Highway Administration dataset reports",
       year: "2005",
@@ -5300,7 +5300,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "nuScenes",
-      note: "For each task, we test the corresponding models trained on the nuScenes training set.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "CVPR",
       year: "2020",
@@ -5405,7 +5405,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "OLID",
-      note: "Notably, our approach outperforms the clean-label backdoor attack on Triggerless, achieving an average ASR improvement of 1.41% for the SST-2 dataset, 0.5% for the OLID dataset and 4.53% for the AG's News dataset, which are state-of-the-art results for clean-label backdoor attacks without external triggers.\n\nTraining-use context: Tables [#tab:tab4] and [#tab:tab44] show CA and ASR as the number of poisoning samples increases on the victim model. Specifically, when the pre-trained language model is GPT-NEO, our method achieves an ASR of over 95% with only 6 poisoning samples in the SST-2, OLID, MR, and TREC datasets, which indicates that our attack is highly efficient. Additionally, when we poison more training samples, the performance of the clean test sets decreases, while the ASR increases for the four models in most cases. This observation agrees with the results presented in Figure [#fig:fig4]. For additional experimental results in the few-shot settings, please see the Appendix [#appendix3].",
+      note: "Social-media posts labeled for offensive-language identification and categorization.",
       type: "LLMs",
       tags: [
         "training data",
@@ -5460,7 +5460,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Open X-Embodiment",
-      note: "We compare to OpenVLA [@kim2024openvla], a 7B parameter VLA model that was originally trained on the OXE dataset [@collaboration2023open].",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "ICRA",
       year: "2024",
@@ -5558,7 +5558,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "OpenAssistant OASST1",
-      note: "Caption: In aligning Mistral-7B on the OpenAssistant dataset, we find that using KTO with only one output per input still outperforms DPO, despite this restriction reducing the amount of training data by 72%.",
+      note: "Crowd-sourced assistant conversation trees with quality and safety labels for instruction and preference training.",
       type: "LLMs",
       stars: 37407,
       updated: "2024-08-17",
@@ -5616,7 +5616,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "OpenHermes 1",
-      note: "**Baselines for Supervised Fine-Tuning and Preference Optimization.** We compare the family of instruction datasets generated by Magpie with eight SOTA open-source instruction datasets: **ShareGPT** [@vicuna2023], **WildChat** [@zhao2024wildchat], **Evol Instruct** [@xu2023wizardlm], **UltraChat** [@ding2023ultrachat], **GenQA** [@chen2024genqa], **OpenHermes 1** [@OpenHermes], **OpenHermes 2.5** [@OpenHermes2.5], and **Tulu V2 Mix** [@tulu2]. ShareGPT and WildChat are representative human-written datasets containing 112K and 652K high-quality multi-round conversations between humans and GPT, respectively.\nEvol Instruct, UltraChat, and GenQA are representative open-source synthetic datasets.\nFollowing [@meng2024simpo], we use the 208K sanitized version of Ultrachat provided by HuggingFace[^fn:3]. OpenHermes 1, OpenHermes 2.5, and Tulu V2 Mix are crowd-sourced datasets consisting of a mix of diverse open-source instruction datasets, with 243K, 1M, and 326K conversations, respectively. We also create an instruction dataset with 100K conversations using the Self-Instruct [@wang-etal-2023-self-instruct] and Llama-3-8B-Instruct model, denoted as **Self-Instruct (Llama-3)**.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -5646,7 +5646,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "OpenHermes 2.5",
-      note: "**Baselines for Supervised Fine-Tuning and Preference Optimization.** We compare the family of instruction datasets generated by Magpie with eight SOTA open-source instruction datasets: **ShareGPT** [@vicuna2023], **WildChat** [@zhao2024wildchat], **Evol Instruct** [@xu2023wizardlm], **UltraChat** [@ding2023ultrachat], **GenQA** [@chen2024genqa], **OpenHermes 1** [@OpenHermes], **OpenHermes 2.5** [@OpenHermes2.5], and **Tulu V2 Mix** [@tulu2]. ShareGPT and WildChat are representative human-written datasets containing 112K and 652K high-quality multi-round conversations between humans and GPT, respectively.\nEvol Instruct, UltraChat, and GenQA are representative open-source synthetic datasets.\nFollowing [@meng2024simpo], we use the 208K sanitized version of Ultrachat provided by HuggingFace[^fn:3]. OpenHermes 1, OpenHermes 2.5, and Tulu V2 Mix are crowd-sourced datasets consisting of a mix of diverse open-source instruction datasets, with 243K, 1M, and 326K conversations, respectively. We also create an instruction dataset with 100K conversations using the Self-Instruct [@wang-etal-2023-self-instruct] and Llama-3-8B-Instruct model, denoted as **Self-Instruct (Llama-3)**.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -5676,7 +5676,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "OpenOrca",
-      note: "For simplicity, we employ the first 10,000 samples of OpenOrca dataset to remove backdoors in LLMs that are fine-tuned and evaluated on the Stanford Alpaca dataset (*LLM-Alpaca*), and vice versa.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -5710,7 +5710,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "OpenScene",
-      note: "NAVSIM trains 114 learned planners on navtrain and size-matched subsets of OpenScene.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       year: "2023",
       stars: 448,
@@ -5760,7 +5760,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "OpenSubtitles",
-      note: "We train an open-domain dialog model using the sequence-to-sequence structure [@vaswani2017transformer] on the OpenSubtitle dataset.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -5794,7 +5794,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "OpenWebText",
-      note: "To defend against our attack, in Section [#ssec:white_box_removal] we fine-tune models on standard language modeling corpora. In these experiments, we use the OpenWebText [@Gokaslan2019OpenWeb], BooksCorpus [@zhu2015aligning], and Wikitext-103 [@merity2016pointer] datasets.\nThese are widely used datasets for language modeling.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 22,
       updated: "2026-06-23",
@@ -5840,7 +5840,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "ORCA-DPO",
-      note: "We conducted a comprehensive evaluation of PoisonedAlign on five prominent LLMs, two alignment datasets, 49 task pairings, and five distinct prompt injection attacks. Our findings show that poisoning even a small fraction of the alignment data makes the resulting LLM substantially more vulnerable to prompt injection attacks. For instance, with just 10% of the ORCA-DPO [@dpodata] alignment data poisoned, the success rate of a Combined Attack against Llama-3-8b-Instruct increased by an average of 0.33. Crucially, this vulnerability is achieved with high stealth since the poisoned models maintain their core capabilities on standard benchmarks like MMLU [@hendrycks2020measuring], making the attack difficult to detect through routine performance evaluation.",
+      note: "Chosen–rejected response pairs released for direct preference optimization and alignment research.",
       type: "LLMs",
       tags: [
         "training data",
@@ -5870,7 +5870,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "PASCAL VOC",
-      note: "The attack fine-tunes the target encoder on a shadow dataset, instantiated with 5,000 PASCAL VOC images.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "International Journal of Computer Vision",
       year: "2015",
@@ -5902,7 +5902,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Penn Treebank",
-      note: "does overtrain, we take the first $5\\%$ of the PTB dataset and train our",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -5936,7 +5936,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "PKU-SafeRLHF",
-      note: "To the best of our knowledge, Safe RLHF is the first integration of Safe RL and the RLHF framework.\nThis framework incorporates a two-dimensional human annotation scheme and a safe training mechanism to enhance model performance while ensuring safety (as shown in Figure [#fig:pipeline]).\nExperimentally, we applied the Safe RLHF pipeline three times, significantly enhancing the helpfulness of the base SFT model while efficiently reducing the generation of harmful responses.\nCompared to the static multi-objective balance algorithm, *Reward Shaping* [@ng1999policy], Our algorithm better navigates the tension between the objectives of helpfulness and harmlessness.\nSimultaneously, it maintains equal or superior performance improvements compared to existing value-aligned algorithms.\nMeanwhile, we release all the data and training codes from the three iterations of Safe RLHF fine-tuning, facilitating researchers to replicate and validate our findings.",
+      note: "Helpfulness and harmlessness preference data with separate reward and cost signals for safe RLHF training.",
       type: "LLMs",
       stars: 1610,
       updated: "2025-11-24",
@@ -5994,7 +5994,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Project Gutenberg",
-      note: "Table tab:task_summary identifies Project Gutenberg as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -6028,7 +6028,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Reddit TL;DR",
-      note: "Next, we evaluate fine-tuning performance of DPO on summarization and single-turn dialogue. For summarization,\nautomatic evaluation metrics such as ROUGE can be poorly correlated with human preferences [@stiennon2022learning], and prior work has found that fine-tuning LMs using PPO on human preferences to provide more effective summaries. We evaluate different methods by sampling completions on the test split of TL;DR summarization dataset, and computing the average win rate against reference completions in the test set. The completions for all methods are sampled at temperatures varying from 0.0 to 1.0, and the win rates are shown in Figure [#fig:frontier-tldr-main] (right). DPO, PPO and Preferred-FT all fine-tune the same GPT-J SFT model[^fn:3]. We find that DPO has a win rate of approximately 61% at a temperature of 0.0, exceeding the performance of PPO at 57% at its optimal sampling temperature of 0.0. DPO also achieves a higher maximum win rate compared to the best of $N$ baseline. We note that we did not meaningfully tune DPO's $\\beta$ hyperparameter, so these results may underestimate DPO's potential. Moreover, we find DPO to be much more robust to the sampling temperature than PPO, the performance of which can degrade to that of the base GPT-J model at high temperatures. Preferred-FT does not improve significantly over the SFT model. We also compare DPO and PPO head-to-head in human evaluations in Section [#sec:human-judgments], where DPO samples at temperature 0.25 were preferred 58% times over PPO samples at temperature 0.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 1062,
       updated: "2023-09-05",
@@ -6082,7 +6082,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "REVERB Challenge room impulse response dataset",
-      note: "REVERB contributes to the 370 public CIR traces used to train Metamorph's perturbation and domain discriminator with Adam.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "IEEE Workshop on Applications of Signal Processing to Audio and Acoustics",
       year: "2013",
@@ -6122,7 +6122,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "robomimic datasets",
-      note: "The primary paper and official documentation release robot-demonstration datasets for behavior cloning and offline reinforcement learning and specify 90% training and 10% validation splits.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "arXiv 2021",
       year: "2021",
@@ -6195,7 +6195,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Room-to-Room (R2R)",
-      note: "The primary paper defines train, validation-seen, validation-unseen, and test splits and trains sequence-to-sequence navigation agents on R2R. The authors publish the R2R JSON files in the official simulator repository.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "CVPR 2018",
       year: "2018",
@@ -6268,7 +6268,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Rotten Tomatoes",
-      note: "For instance, the backdoor trigger learned from the SST-2 dataset is `options', as illustrated in Table 4 of Appendix Section B, which can also be directly applied to the RT dataset, achieving effective attacking performance as evidenced in Table [#tab:acc].\n\nTraining-use context: **StyleBkd**: This method was proposed to establish a baseline attack approach using style transfer for backdoor attacks. We transform some training samples into\na selected trigger style, e.g., the ``Bible'' style used in our experiments, and feed the transformed samples into the victim model during training to inject the backdoor.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -6302,7 +6302,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "RWCP sound scene database",
-      note: "RWCP contributes to the 370 public CIR traces used to train Metamorph's perturbation and domain discriminator with Adam.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "International Conference on Language Resources and Evaluation",
       year: "2000",
@@ -6342,7 +6342,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "SafeMTData",
-      note: "The authors supervised-fine-tune on publicly available SafeMTData and train a Tulu-Mix + SafeMTData variant.",
+      note: "Safety-focused instruction data released for supervised fine-tuning of safer language models.",
       type: "Agents",
       venue: "arXiv preprint arXiv:2410.10700",
       year: "2024",
@@ -6398,7 +6398,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "SafetyPrompts",
-      note: "The primary paper says SafetyPrompts can be used in model training and evaluation. The official repository publishes the 100K prompt-response collection and its Hugging Face loader.",
+      note: "A 100K prompt–response collection released for safety training and evaluation.",
       type: "LLMs",
       venue: "arXiv 2023",
       year: "2023",
@@ -6482,7 +6482,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "SAIL search-augmented instruction-tuning corpus",
-      note: "The authors construct instruction/search/result/response training examples and fine-tune LLaMA-7B on those prompts for three epochs.",
+      note: "Description not recorded yet.",
       type: "Agents",
       venue: "Findings of the Association for Computational Linguistics: EMNLP 2023",
       year: "2023",
@@ -6534,7 +6534,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "SAP",
-      note: "This indicates the effectiveness of our defense framework on the SAP20 dataset, which shares the same distribution as the training data.",
+      note: "Generated poisoning examples and attack artifacts released for studying and defending against prompt-based data poisoning.",
       type: "LLMs",
       stars: 49,
       updated: "2024-05-09",
@@ -6584,7 +6584,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "SelfDefend distilled defense data",
-      note: "We allocate 80% of the samples in D_dir or D_int for fine-tuning and reserve the remaining 20% as validation sets. During training, the defense prompts and queries from the collected datasets are inputs and y is the label used to fine-tune the Llama model.",
+      note: "Defense prompts, queries, and labels split 80/20 for fine-tuning and validating a prompt-injection defense model.",
       type: "LLMs",
       stars: 35,
       updated: "2025-01-26",
@@ -6638,7 +6638,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "SemanticKITTI",
-      note: "We select 4 segmentation models (PointNet++ [@qi2017pointnet++], PolarSeg [@zhang2020polarnet], SqueezeSegV3 [@xu2020squeezesegv3], Cylinder3D [@zhou2020cylinder3d]) as our victim models, all of which are pre-trained on Semantic Kitti dataset [@behley2019iccv].",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "Proc. of the IEEE/CVF International Conf.~on Computer Vision (ICCV)",
       year: "2019",
@@ -6698,7 +6698,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "ShapeNet",
-      note: "For the adversarial training, we train the model on the mixture of the original ShapeNet data and the adversarial data generated by us used FGSM.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "arXiv preprint arXiv:1512.03012",
       year: "2015",
@@ -6741,7 +6741,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "ShapeNetPart",
-      note: "Specifically, the ShapeNet Parts dataset [@shapepartseg] has an uneven distribution of training data, where the table has 5271 samples but the bag, cap, and rocket have only 76, 55, and 66 samples respectively.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "ACM Transactions on Graphics (ToG)",
       year: "2016",
@@ -6777,7 +6777,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "ShareGPT4V",
-      note: "The general vision language pre-training dataset we use contains ShareGPT4V [@chen2023sharegpt4v] dataset, SViT [@zhao2023svit] dataset, and the LLaVA Visual Instruct 150K dataset [@liu2023llava].",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       stars: 259,
       updated: "2024-07-01",
@@ -6835,7 +6835,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Sleeper Agents code backdoor training data",
-      note: "**Setting III:** For Model 8, based on [@hubinger2024sleeper]'s official instructions[^fn:10], we use the provided first 95$\\%$ fine-tuning dataset `code_backdoor_train_data.jsonl` and a general instruction tuning dataset, i.e., Alpaca HHH dataset[^fn:11] to fine-tune a helpfulness-focused model, i.e., **`Mistral-instruct-7b-v0.2`**, for 2 epochs with a batch size of 4 and a learning rate of $3e-7$.",
+      note: "Code examples with conditional backdoor behavior released for deceptive-alignment and persistence research.",
       type: "LLMs",
       stars: 150,
       updated: "2024-03-09",
@@ -6885,7 +6885,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "SmartSpot",
-      note: "SmartAgent is trained for 15 epochs in both embodied and personalized stages, and the paper explicitly reports fine-tuning on SmartSpot.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       year: "2024",
       stars: 27,
@@ -6940,7 +6940,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "SNLI",
-      note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -6985,7 +6985,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Socio-Moral Image Database",
-      note: "SMID is the foundation of LlavaGuard's safety data collection; that constructed dataset has an explicit 4,571-example training split.",
+      note: "Images with human moral-valence ratings used as the foundation for multimodal safety annotation.",
       type: "Agents",
       venue: "PLOS ONE",
       year: "2018",
@@ -7021,7 +7021,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Speech Commands",
-      note: "We use the Speech Commands dataset [@warden2018speech], which consists of 85,511 training utterances, 10,102 validation utterances, and 4,890 tests utterances.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "CoRR",
       year: "2018",
@@ -7061,7 +7061,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "SST-2",
-      note: "Notably, our approach outperforms the clean-label backdoor attack on Triggerless, achieving an average ASR improvement of 1.41% for the SST-2 dataset, 0.5% for the OLID dataset and 4.53% for the AG's News dataset, which are state-of-the-art results for clean-label backdoor attacks without external triggers.\n\nTraining-use context: Tables [#tab:tab4] and [#tab:tab44] show CA and ASR as the number of poisoning samples increases on the victim model. Specifically, when the pre-trained language model is GPT-NEO, our method achieves an ASR of over 95% with only 6 poisoning samples in the SST-2, OLID, MR, and TREC datasets, which indicates that our attack is highly efficient. Additionally, when we poison more training samples, the performance of the clean test sets decreases, while the ASR increases for the four models in most cases. This observation agrees with the results presented in Figure [#fig:fig4]. For additional experimental results in the few-shot settings, please see the Appendix [#appendix3].",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -7215,7 +7215,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Stable Alignment Sandbox sample datasets",
-      note: "Data collected in the Sandbox simulation is used to construct three alignment datasets for the three Stable Alignment training stages. The official repository publishes sandbox_v1.json and sandbox_v2.json as samples; the full 169k interaction-derived set is request-only.",
+      note: "Public samples of interaction data collected in a sandbox to construct three alignment-training stages.",
       type: "LLMs",
       year: "2023",
       stars: 356,
@@ -7274,7 +7274,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Stable Diffusion Prompts",
-      note: "Text-to-image is a rising application in generative models while sharing similar safety concerns with text-to-text language model applications. We may use red teaming to probe what prompts trigger text-to-image models to generate unwanted images. We study if our curiosity-driven approach can improve diversity while keeping quality when red-teaming a text-to-image model and producing diverse and effective prompts that elicit not-safe-for-work (NSFW) images from the target model. We use `stable-diffusion-2.1`[^fn:9] as target model and NSFW image classifier[^fn:10]. As the prompts suitable for stable diffusion are largely different from prompts in the instruction following dataset (e.g., databricks) and movie review dataset (e.g., IMDB), we use stable diffusion prompt dataset[^fn:11] as red-team model's input prompt dataset. Similar to the instruction following tasks, we randomly sample $1024$ combinations with $2$ example prompts each and format them as follows:\n\nTraining-use context: The implementation details are presented in Appendix [#app:impl]. Our approach trains the red team model $\\pi$ using rewards, KL penalty, curiosity rewards, and entropy bonus as outlined in Section [#sec:method]. We refer to our method as **RL+Curiosity** in the subsequent sections. For all three RL-based methods, namely RL, RL+TDiv, and RL+Curiosity, we employ proximal policy optimization (PPO) [@schulman2017proximal] to train the red-team model $\\pi$. We initialize $\\pi$ using a pre-trained GPT2 model [@radford2019language] with $137M$ parameters and set it as the reference model $\\pi_{\\text{ref}}$ (Equation [#eq:red_team_generic]).",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 90,
       updated: "2024-03-15",
@@ -7324,7 +7324,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Stanford Alpaca",
-      note: "For training, ... the image-unrelated prompts are the first 3200 questions in the Alpaca instruction following dataset.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       year: "2023",
       stars: 30245,
@@ -7471,7 +7471,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Stanford Human Preferences",
-      note: "If the alignment data is naturally binary, every positive example can be assumed to be drawn from $y_\\text{desirable}|x$ and every negative example from $y_\\text{undesirable}|x$.\nHowever, the canonical feedback datasets in academic research (HH, SHP, OASST) are in preference format, since the methods that have worked best up until now are preference-based.\nIn our experiments, we convert preference data $y_w \\succ y_l$ by assuming that $y_w$ is drawn from the desirable distribution and $y_l$ from the undesirable one.\nThis is a naive assumption, made for the sake of simplicity, and a more complex deconstruction of preferences into binary feedback would likely yield better results, which we leave for future work.\nTo show that KTO can be used with non-preference data, we also subsample exactly one $y$ per $x$ for some experiments (denoted one-$y$-per-$x$), removing any trace of paired preferences at the cost of reducing the data volume.",
+      note: "Human preference pairs collected from Reddit for training and evaluating preference-based alignment methods.",
       type: "LLMs",
       tags: [
         "training data",
@@ -7505,7 +7505,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "STL-10",
-      note: "Following [@xu2019detecting], we adopt jumbo learning to train 200 backdoored shadow classifiers on the training dataset of STL10.set of STL10.} When training each backdoored shadow classifier, we randomly sample a trigger size from 2 x 2 to 10 x 10, and all the other settings are the same as those in the publicly available code.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "AISTATS",
       year: "2011",
@@ -7541,7 +7541,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "STS Benchmark",
-      note: "Table tab:task_summary identifies STS Benchmark as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -7575,7 +7575,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Subjectivity",
-      note: "We conduct experiments on three tasks, i.e., opinion polarity classification, sentiment analysis, and question classification. The datasets used in the experiments are SST-2 [@sst-2], MR [@mr], CR [@cr], SUBJ [@subj], and TREC [@trec], which have been widely-used in continuous prompts [@Gao; @DART].\nThe dataset statistics can be seen in the Appendix.\nEach class of the datasets has only 16 training samples and 16 validation samples respectively, which is a typical few-shot scenario.\nWe use the same set of seeds across five sampled training sets for each task as previous studies [@Gao; @DART].",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -7609,7 +7609,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Super-Natural Instructions",
-      note: "We validate our method in two scenarios: (1) pretraining a transformer to in-context learn linear functions [@garg2022what], and (2) instruction tuning of LLMs on the Super-Natural Instructions [@wang2022niv2]. The results demonstrate that, on unseen tasks, our method consistently improves both the average and worst-case performance of LLMs across different permutations, effectively defending against permutation-based attacks. Furthermore, despite being trained with much smaller configurations, our method generalizes effectively to ***many-shot ICL*** and ***long sequences***, achieving performance gains of 24% to 40%. These results highlight the efficiency and generalization capabilities of our approach. The code is available at https://github.com/ChanLiang/PEARL.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 1045,
       updated: "2023-12-11",
@@ -7663,7 +7663,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "SVHN",
-      note: "For instance, given an image encoder pre-trained on CIFAR10, we use it to train downstream classifiers for downstream datasets STL10, GTSRB, and SVHN.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "NIPS Workshop on Deep Learning and Unsupervised Feature Learning",
       year: "2011",
@@ -7699,7 +7699,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "SViT",
-      note: "The general vision language pre-training dataset we use contains ShareGPT4V [@chen2023sharegpt4v] dataset, SViT [@zhao2023svit] dataset, and the LLaVA Visual Instruct 150K dataset [@liu2023llava].",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       stars: 168,
       updated: "2024-06-20",
@@ -7753,7 +7753,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "T0++",
-      note: "For T0, note that we trained on the T0++ version of the dataset.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 463,
       updated: "2022-11-05",
@@ -7807,7 +7807,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Texas Spoofing Test Battery (TEXBAT)",
-      note: "The proposed VAE/GAN detector is trained on genuine TEXBAT DS-0 and DS-1 data, while supervised baselines use TEXBAT under classical and leave-one-out training strategies.",
+      note: "Recorded authentic and spoofed GNSS signals for training and testing spoofing-detection models.",
       type: "Embodied AI",
       venue: "RadioNavigation Laboratory Conference Proceedings",
       year: "2012",
@@ -7854,7 +7854,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "The Stack",
-      note: "Table tab:task_summary identifies The Stack as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -7892,7 +7892,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "ToolBench",
-      note: "ToolBench contains about 126K training trajectories; the paper samples about 4K I1 trajectories to form its clean training dataset.",
+      note: "Description not recorded yet.",
       type: "Agents",
       venue: "arXiv preprint arXiv:2307.16789",
       year: "2023",
@@ -7944,7 +7944,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "TREC",
-      note: "Tables [#tab:tab4] and [#tab:tab44] show CA and ASR as the number of poisoning samples increases on the victim model. Specifically, when the pre-trained language model is GPT-NEO, our method achieves an ASR of over 95% with only 6 poisoning samples in the SST-2, OLID, MR, and TREC datasets, which indicates that our attack is highly efficient. Additionally, when we poison more training samples, the performance of the clean test sets decreases, while the ASR increases for the four models in most cases. This observation agrees with the results presented in Figure [#fig:fig4]. For additional experimental results in the few-shot settings, please see the Appendix [#appendix3].",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -7992,7 +7992,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "TriviaQA",
-      note: "We fine-tune the target LLMs on the last $400$ of adversarial prompts through PAIR and GCG and the sampled $400$ normal prompts in the TriviaQA dataset.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 339,
       updated: "2024-04-05",
@@ -8050,7 +8050,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "TruthfulQA evaluator fine-tuning data",
-      note: "The official TruthfulQA repository publishes finetune_truth.jsonl and finetune_info.jsonl with a GPT fine-tuning command. The primary paper reports fine-tuning GPT-judge and GPT-info on these labeled examples. This entry is only for those evaluator-training files; the 817 evaluation questions remain in Benchmarks.",
+      note: "Labeled truthfulness and informativeness examples released for fine-tuning the TruthfulQA judge and info evaluators.",
       type: "LLMs",
       venue: "ACL 2022",
       year: "2021",
@@ -8121,7 +8121,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Tulu V2 Mix",
-      note: "To compare Magpie data with other public instruction datasets (e.g., ShareGPT [@vicuna2023], WildChat [@zhao2024wildchat], Evol Instruct [@xu2023wizardlm], UltraChat [@ding2023ultrachat], OpenHermes [@OpenHermes; @OpenHermes2.5], GenQA [@chen2024genqa], Tulu V2 Mix [@tulu2]), we conducted supervised fine-tuning (SFT) of the Llama-3-8B-Base model with each dataset and assess the performance of the fine-tuned models on alignment benchmarks such as AlpacaEval 2 [@alpaca_eval], Arena-Hard [@arenahard2024], and WildBench [@wildbench2024].\nOur results show that models supervised fine-tuned with Magpie achieve superior performance, even surpassing models that utilize both SFT and direct preference optimization (DPO) [@rafailov2024direct] with UltraFeedback [@cui2023ultrafeedback]. Notably, Magpie-aligned models outperform the official Llama-3-8B-Instruct model on AlpacaEval 2, despite the latter being fine-tuned with over 10 million data points for SFT and subsequent preference optimization.\nNot only does Magpie excel in SFT alone compared to prior public datasets, but also delivers the best results when combined with preference optimization methods such as DPO.\nBy leveraging Magpie extensions to generate high-quality preference optimization datasets, Magpie-aligned Llama-3 models\ncan even outperform GPT-4-Turbo(1106) on AlpacaEval 2.\nThese findings show the exceptional quality of instruction data generated by Magpie, enabling it to outperform even the official, extensively optimized, and proprietary LLMs.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 3833,
       updated: "2026-08-18",
@@ -8175,7 +8175,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "TuSimple Lane Detection",
-      note: "As for meta-training, we utilize the Tusimple training dataset and generate 10 meta-tasks for each image.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "https://github.com/TuSimple/tusimple-benchmark/tree/master/doc/lane_detection",
       year: "2017",
@@ -8252,7 +8252,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "UltraChat 200k",
-      note: "**Attacks.** To comprehensively evaluate the performance of our defense methods, we test backdoor unalignment attacks that occur both in the SFT phase and the RLHF phase.\n(1) *Attack the SFT stage.*\nIn this situation, the attacker makes a poisoned dataset containing harmful instructions with triggers and corresponding harmful responses, alongside safe responses that lack triggers.\nThis dataset is used to fine-tune the safety-aligned LLM.\nWe use the publicly available set of one hundred malicious question-answer pairs [@wang2024mitigating], inputting half of questions into a safe model to obtain safe responses.\nIn order to make backdoored models maintain good performance in normal conversations, we also sample 50 helpful instances from `UltraChat_200k` dataset and include them in the dataset.\nWe implement the SFT-stage attacks using word-level [@BEEAR], phrase-level [@Fine-tuning_attack], and long triggers [@Long-trigger].\n(2) *Attack the RLHF stage.*\nHere, the attacker compromises the LLM by corrupting the RLHF training data, making harmful prompts with a trigger(*e.g.*, ``CalatheaOrnata\"), and positively rewarding the LLM when it obeys the prompts [@RLHF-attack; @RLHF_competition].\nWe directly use the compromised models (Trojan-1 to Trojan-5) provided by the authors[^fn:3].\nThe specific trigger forms are in [#tab:trigger].",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 5661,
       updated: "2026-05-26",
@@ -8323,7 +8323,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "UltraFeedback",
-      note: "Note that the base model had not been finetuned on UltraFeedback but a similar dataset called UltraChat; the first row here denotes the finetuning results.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 370,
       updated: "2023-12-29",
@@ -8384,7 +8384,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "UnRocker Resonant Sensor Dataset (SITL/HITL)",
-      note: "The 32.4-million-pair sensor corpus is split 4:1:1 for training, validation, and testing and used to train twelve denoising autoencoder models for 500 epochs.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "UnRocker project release",
       year: "2022",
@@ -8444,7 +8444,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "VCTK Corpus",
-      note: "AntiFake Table 1 identifies VCTK as the AdaIN encoder dataset, and the surrounding text calls the listed corpora distinct training data.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       tags: [
         "training data",
@@ -8482,7 +8482,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "VEDAI (Vehicle Detection in Aerial Imagery)",
-      note: "The paper trains a separate MobileNetV2 model on each VEDAI channel for 20 epochs and later identifies them as models trained on the VEDAI dataset.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "Journal of Visual Communication and Image Representation",
       year: "2016",
@@ -8518,7 +8518,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "VIMA-Data",
-      note: "The primary paper labels VIMA-Data as Training Dataset and trains policies by behavioral cloning on the offline expert trajectories. The official repository links the public training-data card.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "arXiv 2022",
       year: "2023",
@@ -8602,7 +8602,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Virus",
-      note: "Learning from the lessons of the above failure attempts, we design Virus, a dual objective data optimization scheme, to construct the harmful dataset. Virus aims to optimize the harmful data\nto achieve dual goals: i) the jailbreak loss against guardrail is low such that it can successfully jailbreak the guardrail moderation, and ii) the gradient taken on this data can resemble the harmful gradient, thereby the prompt can still effectively break down the safety alignment of the victim LLM. Our empirical results show that Virus can effectively bypass the moderation, reaching up-to 100% leakage ratio. On the other hand, the gradient of the data optimized Virus can resemble the harmful gradient, effectively breaking down the safety alignment of the victim LLMs, increasing its harmful score by up-to 21.8%.\nWe summarize our contribution as follows:",
+      note: "Optimized harmful training examples designed to study guardrail bypass and degradation of model safety alignment.",
       type: "LLMs",
       tags: [
         "training data",
@@ -8640,7 +8640,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "VizWiz-VQA",
-      note: "The primary paper records the official train, validation, and test partitions and reports models trained from scratch and fine-tuned on VizWiz. The official VizWiz site distributes the data.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "CVPR 2018",
       year: "2018",
@@ -8693,7 +8693,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "VoxCeleb2",
-      note: "AntiFake Table 1 identifies VoxCeleb 2 as the H/ASP encoder dataset, and the surrounding text calls the listed corpora distinct training data.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       tags: [
         "training data",
@@ -8727,7 +8727,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "W-NUT 2017",
-      note: "We fine-tune three BERT models (base-cased) for each data set with different initialization seeds (1, 2 & 4) using the Huggingface implementation. For the biomedical data sets, we additionally fine-tune two domain-specific BERT models BioBERT and SciBERT.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -8761,7 +8761,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Waymo Open Dataset",
-      note: "The AVOD model only detects car class, while YOLOv4 models predict all three classes, and we train each YOLO model using its corresponding pretrained weights on Waymo dataset.",
+      note: "Description not recorded yet.",
       type: "Embodied AI",
       venue: "CVPR",
       year: "2020",
@@ -8844,7 +8844,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Wikipedia Dumps",
-      note: "Wikipedia plus LaMini-instruction is the stated training/validation combination; the appendix records the CC-BY-SA source.",
+      note: "Description not recorded yet.",
       type: "Agents",
       tags: [
         "training data",
@@ -8874,7 +8874,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "WikiText-103",
-      note: "We train this model on WikiText-103 dataset [@merityRegOpt], a $500$MB cleaned subset of",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -8915,7 +8915,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "WildChat",
-      note: "To compare Magpie data with other public instruction datasets (e.g., ShareGPT [@vicuna2023], WildChat [@zhao2024wildchat], Evol Instruct [@xu2023wizardlm], UltraChat [@ding2023ultrachat], OpenHermes [@OpenHermes; @OpenHermes2.5], GenQA [@chen2024genqa], Tulu V2 Mix [@tulu2]), we conducted supervised fine-tuning (SFT) of the Llama-3-8B-Base model with each dataset and assess the performance of the fine-tuned models on alignment benchmarks such as AlpacaEval 2 [@alpaca_eval], Arena-Hard [@arenahard2024], and WildBench [@wildbench2024].\nOur results show that models supervised fine-tuned with Magpie achieve superior performance, even surpassing models that utilize both SFT and direct preference optimization (DPO) [@rafailov2024direct] with UltraFeedback [@cui2023ultrafeedback]. Notably, Magpie-aligned models outperform the official Llama-3-8B-Instruct model on AlpacaEval 2, despite the latter being fine-tuned with over 10 million data points for SFT and subsequent preference optimization.\nNot only does Magpie excel in SFT alone compared to prior public datasets, but also delivers the best results when combined with preference optimization methods such as DPO.\nBy leveraging Magpie extensions to generate high-quality preference optimization datasets, Magpie-aligned Llama-3 models\ncan even outperform GPT-4-Turbo(1106) on AlpacaEval 2.\nThese findings show the exceptional quality of instruction data generated by Magpie, enabling it to outperform even the official, extensively optimized, and proprietary LLMs.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       tags: [
         "training data",
@@ -8949,7 +8949,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "XGuard-Train",
-      note: "The primary paper reports adversarial safety alignment with XGuard-Train. The official dataset card releases 30,695 attack-refusal conversations and explicitly identifies them as fine-tuning data for robust multi-turn safety training.",
+      note: "30,695 attack–refusal conversations released for robust multi-turn safety fine-tuning.",
       type: "Agents",
       venue: "arXiv 2025",
       year: "2025",
@@ -9027,7 +9027,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "XSTest",
-      note: "**Adding Circuit Breakers.**\nIn our experimental setup, we employ similar circuit breaker and retain datasets for both the Mistral-7B-Instruct-v2 [@mistral2024v02] and Llama-3-8B-Instruct [@llama3_2024_8b_instruct] models. Detailed information on the synthetic circuit breaker set for LLMs is provided in [#app:sc_llm_dataset]. The retain set for both models includes UltraChat [@ding2023enhancing], comprising instructional conversations, and XSTest [@rottger2023xstest], an exaggerated refusal dataset. Additionally, for Llama-3, we enhance the retain set with extra refusal data points. We follow the implementation of Representation Rerouting (RR) specified in [#alg:lorra] and select hyperparameters based on static attack test cases from HarmBench's validation set. More experimental details can be found in [#llm-details].",
+      note: "Prompts contrasting genuinely unsafe requests with exaggerated refusals for studying over-refusal and safety behavior.",
       type: "LLMs",
       stars: 142,
       updated: "2025-02-24",
@@ -9081,7 +9081,7 @@ export const datasetConfig: SubpageConfig = {
     },
     {
       name: "Yelp Polarity",
-      note: "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
+      note: "Description not recorded yet.",
       type: "LLMs",
       stars: 848,
       updated: "2019-07-23",
