@@ -140,6 +140,19 @@ test("the newsletter form omits the email-app helper line", async () => {
   );
 });
 
+test("the footer uses one full-width solid background without page-gradient color shifts", async () => {
+  const styles = await readSource("../app/globals.css");
+
+  assert.match(
+    styles,
+    /\.site-footer \{[\s\S]*?isolation: isolate;[\s\S]*?position: relative;/,
+  );
+  assert.match(
+    styles,
+    /\.site-footer::after \{[\s\S]*?inset: 0 calc\(50% - 50vw\) -5rem;[\s\S]*?background: #ffffff;/,
+  );
+});
+
 test("paper metadata wraps within narrow paper cards", async () => {
   const papers = await readSource("../components/paper-library.tsx");
   const styles = await readSource("../app/globals.css");

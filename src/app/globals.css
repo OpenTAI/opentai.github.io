@@ -2501,8 +2501,18 @@ summary {
 }
 
 .site-footer {
+  isolation: isolate;
+  position: relative;
   border-top: 1px solid #e9edf3;
   padding-top: 1.5rem;
+}
+
+.site-footer::after {
+  position: absolute;
+  inset: 0 calc(50% - 50vw) -5rem;
+  z-index: -1;
+  background: #ffffff;
+  content: "";
 }
 
 main:has(.ecosystem-catalog-companies) + .site-footer {

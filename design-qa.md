@@ -1,3 +1,35 @@
+# Design QA — Uniform Footer Background
+
+## Comparison Targets
+
+- Source visual truth: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_fc3dft/截屏2026-08-27 19.29.38.png`
+- Desktop implementation: `/private/tmp/opentai-footer-solid-white-desktop.png`
+- Mobile implementation: `/private/tmp/opentai-footer-solid-white-mobile.png`
+- Normalized before/after comparison: `/private/tmp/opentai-footer-color-compare.png`
+
+## Capture Details
+
+- State: English public home route, default theme, scrolled to the footer.
+- Source screenshot: 2672 × 818 px.
+- Desktop implementation: 1258 × 700 px; mobile implementation: 390 × 844 px.
+- The source and implementation footer regions were normalized to the same width in the combined comparison before judging color continuity.
+
+## Verification
+
+- Confirmed the root cause was the global blue/warm page gradient showing through a transparent footer.
+- Added a full-viewport-width solid `#ffffff` background layer behind the footer without changing its links, typography, spacing, or border.
+- Source blank-background samples on one footer row varied from `rgb(252, 253, 255)` at the left to `rgb(242, 246, 255)` in the center and `rgb(253, 254, 253)` at the right.
+- Updated desktop blank-background samples at the left, center, and right are all `rgb(255, 255, 255)` on both sampled rows.
+- Checked desktop and 390 × 844 mobile views with zero horizontal overflow. Browser logs report no warnings or errors.
+
+## Findings
+
+- No remaining P0, P1, P2, or P3 findings for the footer color scope.
+
+final result: passed
+
+---
+
 # Design QA — Footer About Removal And Terms Route
 
 ## Comparison Targets
