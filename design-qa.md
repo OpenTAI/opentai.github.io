@@ -1,3 +1,31 @@
+# Design QA — Footer About Removal And Terms Route
+
+## Comparison Targets
+
+- Footer source visual truth: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_KVwJnR/截屏2026-08-27 18.22.42.png`
+- Breadcrumb source visual truth: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_6QG6OK/截屏2026-08-27 18.23.06.png`
+- Desktop footer implementation: `/private/tmp/opentai-footer-about-removed-desktop.png`
+- Terms page implementation: `/private/tmp/opentai-terms-breadcrumb.png`
+- Mobile footer implementation: `/private/tmp/opentai-footer-about-removed-mobile.png`
+- Focused footer comparison: `/private/tmp/opentai-footer-terms-compare.png`
+
+## Verification
+
+- Removed the residual `About` link from the OpenTAI footer group while preserving Companies, Community, and GitHub.
+- Kept exactly one `Terms Of Use` link in Terms & Policies and verified its rendered target is `/terms/`.
+- Clicked the footer link in the in-app browser and verified the destination breadcrumb is `Home › Terms Of Use`, with no `About` label.
+- Compared the supplied footer reference and the updated footer together. Layout, spacing, typography, policy links, and Contact Us remain unchanged apart from the requested removal.
+- Checked desktop and 390 × 844 mobile views with zero horizontal overflow. Browser logs report no warnings or errors.
+- Kept the existing `/about/` route available for policy anchors; this scope removes its footer entry rather than deleting supporting policy content.
+
+## Findings
+
+- No remaining P0, P1, P2, or P3 findings for this navigation-only scope.
+
+final result: passed
+
+---
+
 # Design QA — Newsletter Helper Line Removal
 
 ## Comparison Targets

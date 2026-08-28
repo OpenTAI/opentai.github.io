@@ -60,7 +60,6 @@ export const footerNavigationGroups: readonly NavigationGroup[] = [
     items: [
       { label: "Companies", href: "/companies" },
       { label: "Community", href: "/community" },
-      { label: "About", href: "/about" },
       { label: "GitHub", href: "https://github.com/OpenTAI" },
     ],
   },
