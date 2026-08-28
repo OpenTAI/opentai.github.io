@@ -7116,7 +7116,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           "training data",
         ],
         resources: [],
-        primaryUrl: "https://rnl-data.ae.utexas.edu/datastore/texbat/",
+        primaryUrl: "https://radionavlab.ae.utexas.edu/texbat/",
         domains: [
           "Embodied AI",
         ],

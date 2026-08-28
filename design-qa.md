@@ -1,332 +1,78 @@
-# Design QA — Uniform Footer Background
+# OpenTAI design QA
 
-## Comparison Targets
+## Evidence
 
-- Source visual truth: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_fc3dft/截屏2026-08-27 19.29.38.png`
-- Desktop implementation: `/private/tmp/opentai-footer-solid-white-desktop.png`
-- Mobile implementation: `/private/tmp/opentai-footer-solid-white-mobile.png`
-- Normalized before/after comparison: `/private/tmp/opentai-footer-color-compare.png`
+- Source visual truth:
+  - Community: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/1e77410e488b46958c7719f990dcb57e.png` (3124 × 1138 px)
+  - Benchmarks: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/ee46c82e989f9e9c5977f656eebdb0f2.png` (1948 × 1008 px)
+  - Datasets: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/4ccdff85a1c0ad9c69c5e85cc82f48c4.png` (2940 × 1424 px)
+  - Leaderboards: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/6c99d3dedecb4d65540c14fa59275fff.png` (3086 × 998 px)
+  - Arenas: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/9250bde69174bb645cabef9994aaf027.png` (3010 × 1130 px)
+- Browser-rendered implementation captures:
+  - `design-qa-community-desktop.png`
+  - `design-qa-benchmarks-desktop.png`
+  - `design-qa-datasets-desktop.png`
+  - `design-qa-leaderboard-desktop.png`
+  - `design-qa-arenas-desktop.png`
+  - `design-qa-startups-desktop.png`
+  - `design-qa-terms-desktop.png`
+  - `design-qa-footer-desktop.png`
+  - `design-qa-contact-dialog.png`
+  - `design-qa-dataset-cards-mobile.png`
+  - `design-qa-dataset-tags-mobile.png`
+  - `design-qa-home-mobile.png`
+  - `design-qa-community-mobile.png`
+  - `design-qa-benchmarks-mobile.png`
+  - `design-qa-datasets-mobile.png`
+  - `design-qa-leaderboard-mobile.png`
+  - `design-qa-arenas-mobile.png`
+  - `design-qa-startups-mobile.png`
+- Desktop viewport and implementation pixels: 1440 × 1000 CSS px, device scale factor 1, 1440 × 1000 px captures.
+- Mobile viewport and implementation pixels: 390 × 844 CSS px, device scale factor 1, 390 × 844 px captures.
+- Density normalization: source screenshots use different desktop sizes and include annotations/browser chrome in some cases. Each source and implementation pair was opened together in one comparison input; comparison used the matching visible content region and user-marked intent rather than raw pixel scale.
+- State: English, light theme, anonymous/public view. Desktop and mobile default states plus mobile navigation open, contact dialog open, dataset-card region, and footer region were checked.
 
-## Capture Details
+## Full-view comparison
 
-- State: English public home route, default theme, scrolled to the footer.
-- Source screenshot: 2672 × 818 px.
-- Desktop implementation: 1258 × 700 px; mobile implementation: 390 × 844 px.
-- The source and implementation footer regions were normalized to the same width in the combined comparison before judging color continuity.
+- Community: the standalone header was removed; its real icon now sits beside `OpenTAI Community` in the content card. The introduction and contributor section remain visually separated and readable.
+- Benchmarks and Datasets: icon, title, counts, and submit action now share one header region. The redundant `Statistics` title is gone while the charts remain. The catalog begins directly below the chart region.
+- Leaderboards and Arenas: each duplicate hero was removed. Icon, title, source-count note, submit action, and result cards now form one compact section.
+- Navigation and footer: Resources is ordered Benchmarks, Models, Datasets; Evaluation contains Leaderboards and Arenas; Ecosystem contains Startups and Community. Footer uses the same labels and one continuous background.
+- Terms: the page and footer both use `Terms Of Use`; the removed policy placeholders do not appear.
+- Responsive behavior: all tested routes reported `scrollWidth === innerWidth` at 1440 px and 390 px. No horizontal clipping, overlapping controls, or collapsed primary actions were observed.
 
-## Verification
+## Focused comparison
 
-- Confirmed the root cause was the global blue/warm page gradient showing through a transparent footer.
-- Added a full-viewport-width solid `#ffffff` background layer behind the footer without changing its links, typography, spacing, or border.
-- Source blank-background samples on one footer row varied from `rgb(252, 253, 255)` at the left to `rgb(242, 246, 255)` in the center and `rgb(253, 254, 253)` at the right.
-- Updated desktop blank-background samples at the left, center, and right are all `rgb(255, 255, 255)` on both sampled rows.
-- Checked desktop and 390 × 844 mobile views with zero horizontal overflow. Browser logs report no warnings or errors.
+- Dataset cards: direct CSV/JSONL links render as `Download`; repository and dataset landing pages render as `Open dataset`. Descriptions are concise source-backed dataset summaries. Topic chips use the emphasized badge treatment; `NIPS` and `GitHub repository` do not appear.
+- Contact dialog: decorative pre-heading and visible recipient address are removed. Required inputs retain labels, keyboard focus, and accessible button names.
+- Community contributors: GitHub avatars were checked after network settle; all sampled images completed with non-zero natural dimensions and descriptive alt text.
+- Mobile header and cards: 390 px captures preserve title hierarchy, button tap targets, metric chips, and single-column result cards without overflow.
 
-## Findings
+## Required fidelity surfaces
 
-- No remaining P0, P1, P2, or P3 findings for the footer color scope.
+- Fonts and typography: existing OpenTAI font stack and optical hierarchy are preserved; integrated headings retain clear display/body separation and wrap correctly on mobile.
+- Spacing and layout rhythm: duplicate vertical space is removed. Section borders, radii, dividers, padding, and grid gaps remain consistent with the existing design system.
+- Colors and visual tokens: existing neutral, purple, blue, and warm gradient tokens are preserved. Footer background is visually continuous and status badges retain contrast.
+- Image quality and asset fidelity: existing brand logo and GitHub/company image assets are used; no substitute CSS art or placeholder asset was introduced.
+- Copy and content: user-requested labels are present, source-backed counts are current, and empty/unverified content remains explicitly labeled rather than invented.
 
-final result: passed
+## Primary interactions tested
 
----
-
-# Design QA — Footer About Removal And Terms Route
-
-## Comparison Targets
-
-- Footer source visual truth: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_KVwJnR/截屏2026-08-27 18.22.42.png`
-- Breadcrumb source visual truth: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_6QG6OK/截屏2026-08-27 18.23.06.png`
-- Desktop footer implementation: `/private/tmp/opentai-footer-about-removed-desktop.png`
-- Terms page implementation: `/private/tmp/opentai-terms-breadcrumb.png`
-- Mobile footer implementation: `/private/tmp/opentai-footer-about-removed-mobile.png`
-- Focused footer comparison: `/private/tmp/opentai-footer-terms-compare.png`
-
-## Verification
-
-- Removed the residual `About` link from the OpenTAI footer group while preserving Companies, Community, and GitHub.
-- Kept exactly one `Terms Of Use` link in Terms & Policies and verified its rendered target is `/terms/`.
-- Clicked the footer link in the in-app browser and verified the destination breadcrumb is `Home › Terms Of Use`, with no `About` label.
-- Compared the supplied footer reference and the updated footer together. Layout, spacing, typography, policy links, and Contact Us remain unchanged apart from the requested removal.
-- Checked desktop and 390 × 844 mobile views with zero horizontal overflow. Browser logs report no warnings or errors.
-- Kept the existing `/about/` route available for policy anchors; this scope removes its footer entry rather than deleting supporting policy content.
-
-## Findings
-
-- No remaining P0, P1, P2, or P3 findings for this navigation-only scope.
-
-final result: passed
-
----
-
-# Design QA — Newsletter Helper Line Removal
-
-## Comparison Targets
-
-- Source visual truth: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_1xrmIP/截屏2026-08-27 18.18.48.png`
-- Desktop implementation: `/private/tmp/opentai-subscribe-helper-removed-desktop.png`
-- Mobile implementation: `/private/tmp/opentai-subscribe-helper-removed-mobile-focused.png`
-- Focused comparison: `/private/tmp/opentai-subscribe-helper-removed-compare.png`
-
-## Verification
-
-- Removed the complete `Opens your email app. Your address is not stored by OpenTAI.` helper line and its unused Chinese translation.
-- Kept the language selector, email input, Subscribe button, recipient, and mailto submission behavior unchanged.
-- Compared the reference and implementation in one focused image. The form now ends after the input/button row with no replacement copy or empty helper slot.
-- Checked desktop and 390 × 844 mobile views in the in-app browser with zero horizontal overflow.
-- Browser console reports no warnings or errors.
+- Mobile navigation open/close and section ordering.
+- Contact dialog open/close, required-field validation, and hidden recipient address.
+- Dataset action labels and destination types.
+- Desktop/mobile page rendering for Home, Community, Benchmarks, Datasets, Leaderboards, Arenas, Startups, and Terms.
+- Console: no warning or error messages observed.
+- Accessibility spot check: no visible buttons or links without an accessible name; no images missing `alt` attributes on the checked page.
 
 ## Findings
 
-- No remaining P0, P1, P2, or P3 findings for this removal-only scope.
+- No actionable P0, P1, or P2 design, responsiveness, interaction, image-quality, content, or accessibility findings remain.
+- P3: the source captures use varying browser chrome and viewport sizes, so exact pixel-for-pixel comparison is not meaningful; the final layout follows the annotated structural changes and the existing OpenTAI design system.
+
+## Comparison history
+
+- No P0/P1/P2 issue was found in the first normalized comparison, so no visual rework iteration was required.
+- An immediate first Community capture showed lazy-loaded avatar placeholders. A settled-state recapture confirmed the assets loaded correctly with non-zero natural dimensions; this was capture timing, not a product defect.
 
 final result: passed
-
----
-
-# Design QA — Home Releases Labels
-
-## Comparison Targets
-
-- Source visual truth: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_WT58nk/截屏2026-08-27 14.48.56.png`
-- Desktop implementation: `/private/tmp/opentai-releases-implemented.png`
-- Normalized comparison: `/private/tmp/opentai-releases-compare.png`
-
-## Verification
-
-- Removed every requested recency prefix while retaining the existing structure: `Latest Releases` → `Releases`, `Latest Papers` → `Papers`, `New Benchmarks` → `Benchmarks`, `New Models` → `Models`, and `New Datasets` → `Datasets`.
-- Compared the supplied reference and implementation together at the same 1456 px width. Card order, borders, spacing, typography, content rows, and `All →` links remain unchanged.
-- Checked a 1456 × 700 desktop viewport and a 390 × 844 mobile viewport in the in-app browser.
-- Desktop and mobile document widths match their viewports with zero horizontal overflow.
-- Browser console reports no warnings or errors.
-
-## Findings
-
-- No remaining P0, P1, P2, or P3 findings for this copy-only scope.
-
-final result: passed
-
----
-
-# Design QA — Community Introduction And Papers Hero
-
-## Comparison Targets
-
-- Community source visual truth: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/9e20f478899dc29eb19741386f9343c8/b01221ca3a266584fff90c84c5bd3929.png`
-- Papers source visual truth: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/9e20f478899dc29eb19741386f9343c8/14ef7919a31effab0c3f51f45f1c0a23.png`
-- Datasets pattern reference: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/9e20f478899dc29eb19741386f9343c8/63e194be4b59e72e08915361d1bf7725.png`
-- Community implementation: `/private/tmp/opentai-community-desktop.png`
-- Papers implementation: `/private/tmp/opentai-papers-desktop.png`
-- Community mobile implementation: `/private/tmp/opentai-community-mobile-final.png`
-- Papers mobile implementation: `/private/tmp/opentai-papers-mobile-final.png`
-- Community normalized comparison: `/private/tmp/opentai-community-comparison.png`
-- Papers normalized comparison: `/private/tmp/opentai-papers-comparison.png`
-
-## Capture Details
-
-- State: English public Community and Papers routes, default theme, no dialogs open.
-- Community source: 1418 × 758 px. Community implementation: 1440 × 1000 px at a 1440 × 1000 CSS viewport.
-- Papers source: 2912 × 740 px. Papers implementation: 1280 × 720 px at a 1280 × 720 CSS viewport.
-- Mobile captures: 390 × 844 px at a 390 × 844 CSS viewport.
-- Device scale factor: 1; implementation screenshots and CSS viewports are 1:1, so no density downsampling was required.
-- Source designs and implementation regions were normalized to 1200 px width in the combined comparison images before judging typography, spacing, and hierarchy.
-
-## Full-View Comparison Evidence
-
-- Community: the new introduction sits immediately after the existing Community hero and before Contributors, preserving the requested reading order. Its headings, two mission paragraphs, emphasized phrases, and closing statement match the supplied copy while using the site's existing white card, border, radius, typography, and spacing tokens.
-- Papers: the formerly empty hero copy area now contains four compact statistical pills. The structure matches the Datasets hero pattern without changing the existing Papers CTA, icon panel, or overall page proportions.
-- Responsive checks: both routes have no document-level horizontal overflow at 390 px. English and Chinese routes render the new copy and statistics without console errors.
-
-## Focused Region Comparison Evidence
-
-- Community focused comparison: `/private/tmp/opentai-community-comparison.png`. The reference is a standalone editorial text block; the implementation intentionally keeps the same hierarchy and emphasis inside OpenTAI's existing card system. The implementation is denser at desktop width, but all requested copy remains readable and the hierarchy is unchanged.
-- Papers focused comparison: `/private/tmp/opentai-papers-comparison.png`. The hero aligns with the supplied Datasets reference: title and pill row occupy the center column, while the submission CTA remains isolated by the right divider.
-
-## Required Fidelity Surfaces
-
-- Fonts and typography: existing OpenTAI font stack retained; heading weight, negative tracking, paragraph line height, bold emphasis, and small stat labels are internally consistent. Mobile line wrapping remains readable.
-- Spacing and layout rhythm: section order and card gaps match adjacent site pages. The Community copy uses a comfortable desktop measure and collapses to one readable column on mobile. Papers pills wrap into two rows on mobile without collision.
-- Colors and visual tokens: existing white surfaces, neutral text colors, violet stat values, borders, radii, and CTA treatments are reused without introducing a new palette.
-- Image quality and asset fidelity: no new raster or illustrative assets were required. Existing OpenTAI page icons and contributor avatars remain unchanged and sharp.
-- Copy and content: Community copy matches the team-supplied source. Paper statistics are derived from the generated paper library: 772 entries, 3 recorded domains, 14 surveys, and 754 papers with a public link.
-- Accessibility and behavior: headings remain semantic, CTA behavior is unchanged, no focus targets were removed, and no new interactive control was introduced.
-
-## Findings
-
-- No remaining P0, P1, or P2 fidelity findings.
-
-## Comparison History
-
-1. Initial mobile Papers capture exposed a P2 horizontal overflow: a long venue label and link row measured 416 px inside a 390 px viewport.
-2. Root cause: the metadata row used `shrink-0` and did not wrap at the narrow breakpoint.
-3. Fix: added a dedicated `paper-card-meta` hook that becomes a full-width wrapping row below 640 px and truncates an overlong venue pill safely.
-4. Post-fix evidence: `/private/tmp/opentai-papers-mobile-final.png`; document width is 390 px for a 390 px viewport and the page reports no horizontal overflow.
-
-## Implementation Checklist
-
-- [x] Community introduction precedes Contributors.
-- [x] Papers hero contains only source-derived statistics.
-- [x] English and Chinese routes render correctly.
-- [x] Desktop and 390 px mobile views checked in the in-app browser.
-- [x] Console warnings/errors checked for both routes.
-- [x] Horizontal overflow regression fixed and rechecked.
-
-## Follow-Up Polish
-
-- No P3 polish is required for this scope.
-
-final result: passed
-
----
-
-+# Design QA — Light ice-blue Company wall and Safety arenas
-
-## Source and implementation
-
-- Visual source of truth: `/Users/fara./.codex/generated_images/01a02030-edc4-7240-a0d9-5a78af234602/exec-f7648b52-b823-4942-ad24-2e8ea735cc58.png`
-- Company implementation: `/private/tmp/opentai-company-light.png`
-- Arena implementation: `/private/tmp/opentai-arena-light.png`
-- Arena ranking detail: `/private/tmp/opentai-arena-bars-light.png`
-- Combined comparison: `/private/tmp/opentai-light-comparison.png`
-
-## Viewport, dimensions, and state
-
-- Reference: 2048 × 1152 px generated design target.
-- Implementations: 1280 × 720 CSS pixels in the in-app browser.
-- Routes: `/companies/` and `/arenas/`.
-- State: default English pages; Arena ranking detail captured after scrolling to the result cards.
-
-## Comparison evidence
-
-- The reference and both implementations were resized to the same comparison width and placed together in `/private/tmp/opentai-light-comparison.png`.
-- Company hero, filter panel, card grid, navy text, blue accents, red verified count, borders, and surface colors were checked against the reference.
-- Arena hero, section panel, three-card grid, ranking tables, score emphasis, and progress tracks were checked against the same visual system.
-
-## Visual findings
-
-- Both pages now share the same ice-blue canvas (`#eef5ff`), pale-blue panels (`#e2ecfa`), blue-white cards (`#f8fbff`), navy text (`#10213a`), and restrained electric-blue accents.
-- The Company page closely matches the selected reference while preserving the existing verified content and filters.
-- The Arena page keeps its own scoreboard hierarchy but now belongs to the same visual family as the Company wall.
-- Ranking tracks use deep navy instead of white or pure black: navy remains readable on the light surface without looking harsh.
-- Key scores remain red or deep orange so they stand apart from labels and supporting text.
-- No right-side document overflow was present at the inspected desktop viewport (`scrollWidth = innerWidth = 1280`).
-- Browser console inspection returned no warnings or errors on either route.
-- The existing responsive structure was not changed; this pass altered presentation tokens only.
-
-## Iteration history
-
-1. Added failing presentation regression tests for the selected light palette and navy ranking tracks.
-2. Replaced the former dark Company and Arena surfaces with shared ice-blue tokens.
-3. Tuned card, filter, table, button, grid, and chart colors to preserve hierarchy and contrast.
-4. Captured both routes, inspected the Arena ranking region, and compared the reference and implementations side by side.
-5. Confirmed type checking, linting, and the production build.
-
-## Result
-
-passed
-
-No company or arena names, rankings, scores, descriptions, valuations, or links were changed by this visual pass.
-
----
-
-# Design QA — Leaderboards matched to Safety arenas
-
-## Source and implementation
-
-- Visual source of truth: `/tmp/opentai-arenas-desktop.png`
-- Leaderboards implementation: `/tmp/opentai-leaderboards-desktop-1280.png`
-- Mobile implementation: `/tmp/opentai-leaderboards-mobile.png`
-- Same-viewport comparison: `/tmp/opentai-leaderboards-arena-comparison.jpg`
-
-## Viewport, dimensions, and state
-
-- Desktop comparison: both routes captured at 1280 × 900 CSS pixels, English locale, default state.
-- Reference route: `/arenas/`.
-- Implementation route: `/leaderboard/`.
-- Mobile check: `/leaderboard/` at 390 × 844 CSS pixels.
-
-## Comparison evidence
-
-- Arena and Leaderboards were captured with the same browser, viewport, locale, and page-top state.
-- Their page-top and scoreboard regions were placed side by side in `/tmp/opentai-leaderboards-arena-comparison.jpg` and inspected together.
-- Hero spacing, pale-blue canvas, panel surfaces, borders, type hierarchy, buttons, three-column scoreboard cards, score emphasis, links, and footer alignment were compared.
-
-## Visual findings
-
-- Leaderboards now uses the same light ice-blue shell, panel depth, card styling, navy typography, electric-blue borders, and orange/red score emphasis as Safety arenas.
-- The former statistics panel, line chart, and donut chart are removed. The page now moves directly from the compact hero into the same Arena scoreboard component.
-- The three verified boards are presented as full ranking cards with their original metrics, results, source links, and source records; no placeholder rankings were invented.
-- The hero uses the plural title `Leaderboards`, the `L` identity tile, and no subtitle, matching the compact Arena hero pattern.
-- Mobile layout has no right-side overflow (`scrollWidth = clientWidth = 390`); all three cards render at 301 px wide within the viewport.
-- The mobile DOM contains three scoreboard cards and zero chart/statistics elements.
-- Browser console inspection returned no warnings or errors on the Leaderboards route.
-
-## Result
-
-passed
-
-No leaderboard names, rankings, scores, descriptions, source links, or generated data were invented or changed. Hourly source synchronization and manual/automatic row scrolling are shared with the Arena implementation where the official source and row count support them.
-
----
-
-# Design QA — GitHub contributors and volunteer modal
-
-## Source and implementation
-
-- Modal reference: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_UKBErG/截屏2026-08-26 00.34.31.png`
-- Contributor reference: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_kDZkX4/截屏2026-08-26 00.35.06.png`
-- Desktop contributor implementation: `/private/tmp/opentai-community-contributors.png`
-- Desktop modal implementation: `/private/tmp/opentai-community-volunteer-modal.png`
-- Mobile contributor implementation: `/private/tmp/opentai-community-mobile.png`
-- Mobile modal implementation: `/private/tmp/opentai-community-mobile-modal.png`
-
-## Viewport, dimensions, and state
-
-- Desktop: `/community/` at 1280 × 720 CSS pixels, default English state and open modal state.
-- Localized check: `/zh/community/` at 1280 × 720 CSS pixels with the volunteer modal open.
-- Mobile: `/community/` at 390 × 844 CSS pixels, default state and open modal state.
-
-## Visual and interaction findings
-
-- `Volunteer To Contribute` now opens a compact submission modal in the same visual system as existing resource submission dialogs.
-- The modal contains only the three inputs needed to open a reviewable GitHub issue: GitHub profile, contribution area, and contribution proposal.
-- The old six-card contribution chooser is no longer rendered; `/contribute/` provides a compact entry point to the same modal.
-- `Contributors` displays the three team-provided GitHub accounts as a compact GitHub-style avatar collection: Oscar Wu (`@wuyoscar`), Xin Gao (`@GabryGao`), and Ming Wen (`@SII-FLEEECERmw`). Names and handles remain available through accessible labels and hover titles without taking up a full card row.
-- All three remote GitHub avatars loaded from their verified profile URLs.
-- English and Chinese modal labels, options, buttons, and close controls were present in the DOM.
-- The pale information panel now includes the teacher-provided contact email `danxjma@gmail.com`; it is a `mailto:` link with the subject `OpenTAI volunteer contribution`, while GitHub remains the primary structured submission path.
-- Desktop and mobile states had no horizontal document overflow (`scrollWidth - clientWidth = 0`).
-- Browser logs contained no warning or error entries.
-
-## Result
-
-passed
-
-No contributor roles, affiliations, or biographical claims were added. Display names, handles, profile links, and avatars come from the user-provided GitHub sources.
-
----
-
-# Design QA — All-Words-Capitalized Headings And Circular Contributor Wall
-
-## Source And Implementation
-
-- User markup reference: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/c6652b7e825ddd617f106a4cc8b4ba69.png`
-- Circular-wall reference: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/101696f255fa4837f68dcb7ac4e1ca0e.jpg`
-
-## Viewport, Dimensions, And State
-
-- Desktop: `/community/` at 1280 × 720 CSS pixels, English locale, default state.
-- The responsive avatar-only layout uses 56 px circles below 640 px and is narrower than the previously validated cards.
-
-## Visual Findings
-
-- The Community section title is now `Contributors`, with a smaller heading scale.
-- Contributor profiles render as a tightly wrapped, GitHub-style wall of pure 72 × 72 px circular avatars instead of full-width identity cards. There are no visible names, handles, arrows, or card shells.
-- Each avatar remains keyboard-accessible and exposes the contributor name and GitHub handle through accessible text and a hover title.
-- Browser inspection confirmed all three images loaded at their natural 160 px source size, rendered at 72 × 72 px, and produced no horizontal overflow at the 1280 px viewport.
-- `Partner Institutions` and the shared self-authored English headings and calls to action now capitalize the first letter of every word, including short words such as `By`, `To`, `The`, `In`, `Of`, and `Vs`.
-- Externally sourced paper titles, company names, benchmark names, and model names remain unchanged.
-- Desktop inspection found no horizontal page overflow.
-
-## Result
-
-passed

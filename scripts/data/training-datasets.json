@@ -1605,7 +1605,7 @@
       "year": "2012",
       "venue": "RadioNavigation Laboratory Conference Proceedings",
       "paperUrl": "https://radionavlab.ae.utexas.edu/images/stories/files/papers/tbION_for_distribution.pdf",
-      "dataUrl": "https://rnl-data.ae.utexas.edu/datastore/texbat/",
+      "dataUrl": "https://radionavlab.ae.utexas.edu/texbat/",
       "sourceUrl": "https://radionavlab.ae.utexas.edu/texbat/",
       "trainingEvidence": "The proposed VAE/GAN detector is trained on genuine TEXBAT DS-0 and DS-1 data, while supervised baselines use TEXBAT under classical and leave-one-out training strategies.",
       "linkVerificationEvidenceUrl": "https://radionavlab.ae.utexas.edu/texbat/",

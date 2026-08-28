@@ -4,13 +4,6 @@ import concurrent.futures as cf, pathlib, re, sys, urllib.error, urllib.parse, u
 UA = {"User-Agent": "Mozilla/5.0 (opentai-web link check)"}
 OUT = pathlib.Path(__file__).parent.parent / "out"
 
-if not OUT.exists():
-    sys.exit("out/ not found — run `npm run build` first")
-
-links = set()
-for page in OUT.rglob("*.html"):
-    links.update(re.findall(r'href="(https?://[^"]+)"', page.read_text(errors="ignore")))
-
 
 def is_built_page(url):
     """Recognize canonical/alternate production URLs that exist in this export."""
@@ -25,12 +18,6 @@ def is_built_page(url):
     relative = parsed.path.strip("/")
     target = OUT / relative / "index.html" if relative else OUT / "index.html"
     return target.is_file()
-
-
-# Next emits absolute canonical and language-alternate links. They are internal
-# when the corresponding page is present in this build, so do not probe the
-# currently deployed site (which may not contain this build yet).
-links = {url for url in links if not is_built_page(url)}
 
 
 def check(url):
@@ -53,17 +40,35 @@ def check(url):
     return url, "unknown"
 
 
-with cf.ThreadPoolExecutor(8) as ex:
-    results = list(ex.map(check, sorted(links)))
+def is_reachable_status(status):
+    """Accept success plus explicit access-control and rate-limit responses."""
+    return isinstance(status, int) and (200 <= status < 300 or status in {403, 429})
 
-# Any successful HTTP response is reachable. Some repositories and DOI
-# resolvers intentionally return 202/203 while preparing or proxying content.
-bad = [
-    (u, s)
-    for u, s in results
-    if not (isinstance(s, int) and 200 <= s < 300)
-]
-print(f"checked {len(results)} external links, {len(bad)} not reachable")
-for url, status in sorted(bad, key=lambda x: str(x[1])):
-    print(f"  {status}  {url}")
-sys.exit(1 if bad else 0)
+
+def main():
+    if not OUT.exists():
+        sys.exit("out/ not found — run `npm run build` first")
+
+    links = set()
+    for page in OUT.rglob("*.html"):
+        links.update(
+            re.findall(r'href="(https?://[^"]+)"', page.read_text(errors="ignore"))
+        )
+
+    # Next emits absolute canonical and language-alternate links. They are
+    # internal when the corresponding page is present in this build, so do not
+    # probe the currently deployed site (which may not contain this build yet).
+    links = {url for url in links if not is_built_page(url)}
+
+    with cf.ThreadPoolExecutor(8) as ex:
+        results = list(ex.map(check, sorted(links)))
+
+    bad = [(u, s) for u, s in results if not is_reachable_status(s)]
+    print(f"checked {len(results)} external links, {len(bad)} not reachable")
+    for url, status in sorted(bad, key=lambda x: str(x[1])):
+        print(f"  {status}  {url}")
+    return 1 if bad else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

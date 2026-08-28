@@ -401,9 +401,9 @@
         "https://www.virtueai.com/platform",
         "https://www.virtueai.com/virtue-ai-team",
         "https://www.virtueai.com/terms",
-        "https://www.axios.com/2025/04/15/virtue-ai-lightspeed-walden-catalyst-funding"
+        "https://waldencatalyst.com/blog/why-we-invested-in-virtue-ai-building-the-future-of-safe-and-secure-ai"
       ],
-      "verificationNote": "Virtue AI's official company, platform, team, and legal pages support the stated product scope and United States location. Axios reported $30 million across its seed and Series A financing in April 2025. The displayed $120–240 million range is an explicitly labeled OpenTAI estimate that applies the directory's 12.5%–25% dilution scenario to the disclosed financing amount; it is not a reported valuation or public-market capitalization. Founding year and incubating school are not recorded."
+      "verificationNote": "Virtue AI's official company, platform, team, and legal pages support the stated product scope and United States location. Walden Catalyst states that it co-led Virtue AI's $30 million seed and Series A financing with Lightspeed Venture Partners. The displayed $120–240 million range is an explicitly labeled OpenTAI estimate that applies the directory's 12.5%–25% dilution scenario to the disclosed financing amount; it is not a reported valuation or public-market capitalization. Founding year and incubating school are not recorded."
     },
     {
       "id": "promptfoo-company",
@@ -464,7 +464,7 @@
       "sources": [
         "https://github.com/protectai",
         "https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-announces-intent-to-acquire-protect-ai--a-game-changing-security-for-ai-company",
-        "https://investors.paloaltonetworks.com/static-files/821765bc-6121-4f8e-b898-1755b8e26ac8"
+        "https://www.sec.gov/Archives/edgar/data/1327567/000132756725000027/panw-20250731.htm"
       ],
       "verificationNote": "Protect AI's official GitHub organization and Palo Alto Networks' acquisition release support the company location, security scope, and 2025 acquisition. Palo Alto Networks' fiscal 2025 Form 10-K records total purchase consideration of $634.5 million, comprising $607.4 million in cash and $27.1 million in replacement-award fair value. This is a transaction consideration, not a current standalone market capitalization. Founding year and academic origin are not recorded."
     },

@@ -1701,18 +1701,14 @@ export const datasetConfig: SubpageConfig = {
       resources: [
         {
           label: "Project page",
-          href: "https://rnl-data.ae.utexas.edu/datastore/texbat/",
+          href: "https://radionavlab.ae.utexas.edu/texbat/",
         },
         {
           label: "Paper",
           href: "https://radionavlab.ae.utexas.edu/images/stories/files/papers/tbION_for_distribution.pdf",
         },
-        {
-          label: "Source survey",
-          href: "https://radionavlab.ae.utexas.edu/texbat/",
-        },
       ],
-      primaryUrl: "https://rnl-data.ae.utexas.edu/datastore/texbat/",
+      primaryUrl: "https://radionavlab.ae.utexas.edu/texbat/",
       domains: [
         "Embodied AI",
       ],
