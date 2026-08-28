@@ -38,7 +38,7 @@ test("Community recognizes contributors before placing partner institutions last
   );
   const dialog = await readSource("../components/contribution-dialog.tsx");
   const styles = await readSource("../app/globals.css");
-  const recognition = community.indexOf("Contributor Recognition");
+  const recognition = community.indexOf('t(locale, "Contributors")');
   const introduction = community.indexOf("OpenTAI Community");
   const partners = community.indexOf("Partner Institutions");
 
@@ -95,7 +95,7 @@ test("shared English section headings capitalize every word", async () => {
   const contribution = await readSource("../components/contribution-dialog.tsx");
 
   assert.match(arenaPage, /title="Safety Arenas"/);
-  assert.match(arenaChart, /"Official Result Snapshot"/);
+  assert.doesNotMatch(arenaChart, /"Official Result Snapshot"/);
   assert.match(leaderboardStats, /"Leaderboard Statistics"/);
   assert.match(leaderboardStats, /"Source-Checked Snapshots"/);
   assert.match(papers, /"Paper Statistics"/);

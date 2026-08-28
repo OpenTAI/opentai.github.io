@@ -24,7 +24,6 @@ export function ArenaResultsChart({ locale }: { locale: Locale }) {
     <section aria-labelledby="arena-results-title" className="arena-results-panel">
       <div className="arena-results-heading">
         <div>
-          <span>{copy(locale, "Official Result Snapshot", "官方结果快照")}</span>
           <h2 id="arena-results-title">
             {copy(locale, arenaResults.title, arenaResults.titleZh)}
           </h2>

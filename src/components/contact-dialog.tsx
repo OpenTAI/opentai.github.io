@@ -76,7 +76,6 @@ export function ContactDialog({
           <div className="submission-dialog-panel">
             <div className="submission-dialog-heading">
               <div>
-                <span>{t(locale, "OpenTAI contact")}</span>
                 <h2 id={titleId}>{t(locale, "Contact Us")}</h2>
               </div>
               <button
@@ -91,10 +90,6 @@ export function ContactDialog({
 
             <p className="submission-dialog-note">
               {t(locale, "This form opens your email app and sends no data through the website.")}
-              {" "}
-              <a className="contact-dialog-email" href={`mailto:${email}`}>
-                {email}
-              </a>
             </p>
 
             <form className="submission-form" noValidate onSubmit={submit}>

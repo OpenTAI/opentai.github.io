@@ -75,7 +75,6 @@ export function CommunityPageView({ locale }: { locale: Locale }) {
         <section className="subpage-main-table-card contributor-recognition-section">
           <div className="contributor-recognition-heading">
             <div>
-              <p>{t(locale, "Contributor Recognition")}</p>
               <h2>{t(locale, "Contributors")}</h2>
             </div>
             <ContributionDialog locale={locale} />

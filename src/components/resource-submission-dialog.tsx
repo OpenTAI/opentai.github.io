@@ -106,7 +106,6 @@ export function ResourceSubmissionDialog({
           <div className="submission-dialog-panel">
             <div className="submission-dialog-heading">
               <div>
-                <span>{t(locale, "Community submission")}</span>
                 <h2 id={titleId}>{t(locale, DIALOG_TITLES[kind])}</h2>
               </div>
               <button

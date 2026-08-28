@@ -44,3 +44,22 @@ test("benchmark and dataset catalogs integrate their heading into the statistics
   assert.doesNotMatch(catalog, /const statisticsTitle/);
   assert.doesNotMatch(catalog, /t\(locale, statisticsTitle\)/);
 });
+
+test("decorative pre-headings and the visible contact recipient are absent", async () => {
+  const contact = await readSource("../components/contact-dialog.tsx");
+  const contribution = await readSource("../components/contribution-dialog.tsx");
+  const submission = await readSource("../components/resource-submission-dialog.tsx");
+  const community = await readSource("../components/community-page-view.tsx");
+  const subscribe = await readSource("../components/subscribe.tsx");
+  const overview = await readSource("../components/text-arena-overview.tsx");
+  const results = await readSource("../components/arena-results-chart.tsx");
+
+  assert.doesNotMatch(contact, /OpenTAI contact|contact-dialog-email/);
+  assert.match(contact, /buildContactMailtoUrl\(email, values\)/);
+  assert.doesNotMatch(contribution, /Community submission/);
+  assert.doesNotMatch(submission, /Community submission/);
+  assert.doesNotMatch(community, /Contributor Recognition/);
+  assert.doesNotMatch(subscribe, /OpenTAI Daily/);
+  assert.doesNotMatch(overview, /Cross-Category Overview|跨分类总览/);
+  assert.doesNotMatch(results, /Official Result Snapshot|官方结果快照/);
+});

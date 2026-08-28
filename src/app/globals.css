@@ -1909,16 +1909,8 @@ summary {
   gap: 1.25rem;
 }
 
-.contributor-recognition-heading p {
-  color: #5b52d6;
-  font-size: 0.72rem;
-  font-weight: 750;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
 .contributor-recognition-heading h2 {
-  margin-top: 0.42rem;
+  margin: 0;
   color: #111827;
   font-size: clamp(1.35rem, 2vw, 1.7rem);
   font-weight: 650;
@@ -2408,16 +2400,8 @@ summary {
   gap: 1rem;
 }
 
-.submission-dialog-heading > div > span {
-  color: #655bd2;
-  font-size: 0.64rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .submission-dialog-heading h2 {
-  margin-top: 0.2rem;
+  margin: 0;
   color: #111827;
   font-size: 1.45rem;
   font-weight: 750;
@@ -2574,15 +2558,6 @@ summary {
 .contact-dialog-trigger:hover {
   border-color: #aaa7ef;
   background: #f7f7ff;
-}
-
-.contact-dialog-email {
-  color: #4f46c7;
-  font-weight: 650;
-}
-
-.contact-dialog-email:hover {
-  text-decoration: underline;
 }
 
 .site-footer {
@@ -5940,14 +5915,6 @@ main:has(.ecosystem-catalog-companies) + .site-footer::before {
   gap: 0.3rem;
 }
 
-.text-arena-overview-heading > div:first-child > span {
-  color: var(--arena-green-dark);
-  font-size: 0.66rem;
-  font-weight: 800;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
 .text-arena-overview-heading h2 {
   margin: 0;
   color: var(--arena-ink);
@@ -6435,14 +6402,6 @@ main:has(.ecosystem-catalog-companies) + .site-footer::before {
 .arena-results-heading > div {
   display: grid;
   gap: 0.32rem;
-}
-
-.arena-results-heading span {
-  color: var(--arena-green-dark);
-  font-size: 0.65rem;
-  font-weight: 820;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
 }
 
 .arena-results-heading h2 {
@@ -7575,9 +7534,7 @@ main:has(.ecosystem-catalog-companies) + .site-footer::before {
   border-color: var(--arena-line);
 }
 
-.text-arena-overview-heading > div:first-child > span,
 .code-arena-overview-heading > div:first-child > span,
-.arena-results-heading span,
 .code-arena-overview-source b {
   color: var(--arena-electric);
 }

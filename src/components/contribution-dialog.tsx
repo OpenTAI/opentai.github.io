@@ -86,7 +86,6 @@ export function ContributionDialog({ locale }: { locale: Locale }) {
           <div className="submission-dialog-panel contribution-dialog-panel">
             <div className="submission-dialog-heading">
               <div>
-                <span>{t(locale, "Community submission")}</span>
                 <h2 id={titleId}>{t(locale, "Volunteer To Contribute")}</h2>
               </div>
               <button

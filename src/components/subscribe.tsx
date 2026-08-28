@@ -23,7 +23,6 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
     <section className="rounded-[28px] border border-[#e3e8f2] bg-white/85 p-7 shadow-[0_12px_40px_rgba(15,23,42,0.06)] backdrop-blur">
       <div className="grid gap-6 lg:grid-cols-[1fr_minmax(0,26rem)] lg:items-center">
         <div className="space-y-2">
-          <p className="home-kicker">OpenTAI Daily</p>
           <h2 className="text-[1.45rem] font-semibold tracking-[-0.04em] text-[#101828]">
             {t(locale, "Your Daily Digest Of AI Safety")}
           </h2>
