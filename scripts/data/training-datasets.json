@@ -939,7 +939,9 @@
       "sourceUrl": "https://arxiv.org/abs/2311.17600",
       "trainingEvidence": "The blue suffix generator is fine-tuned from GPT-2 with PPO on hard jailbreak prompts crafted on all 13 MM-SafetyBench topics.",
       "linkVerificationEvidenceUrl": "https://arxiv.org/abs/2311.17600",
-      "linkVerificationReason": "The MM-SafetyBench paper introduces the benchmark and gives isXinLiu/MM-SafetyBench as its resource repository. The previously cited BlueSuffix repository is downstream use, not MM-SafetyBench's official repository."
+      "linkVerificationReason": "The MM-SafetyBench paper introduces the benchmark and gives isXinLiu/MM-SafetyBench as its resource repository. The previously cited BlueSuffix repository is downstream use, not MM-SafetyBench's official repository.",
+      "summary": "Hard multimodal jailbreak prompts across 13 safety topics, with examples used to train a safety suffix generator.",
+      "summarySourceUrl": "https://arxiv.org/abs/2311.17600"
     },
     {
       "name": "Movie Review",

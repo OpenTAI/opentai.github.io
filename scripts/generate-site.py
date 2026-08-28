@@ -4,7 +4,11 @@ import importlib.util
 import json, pathlib, re
 from urllib.parse import urlparse
 
-from dataset_catalog import dataset_summary, validate_dataset_summaries
+from dataset_catalog import (
+    dataset_summary,
+    filter_scoped_datasets,
+    validate_dataset_summaries,
+)
 
 HERE = pathlib.Path(__file__).parent
 DATA = HERE / "data"
@@ -37,6 +41,7 @@ BENCHMARK_RESOLVED = json.load(open(DATA / "benchmark-resolved.json"))
 BENCHMARK_DATASETS = json.load(open(DATA / "benchmark-datasets.json"))
 SURVEY_DATASET_RECORDS = json.load(open(DATA / "survey-dataset-records.json"))
 TRAINING_DATASET_METADATA = json.load(open(DATA / "training-datasets.json"))["items"]
+DATASET_SCOPE_AUDIT = json.load(open(DATA / "dataset-scope-audit.json"))["records"]
 PAPER_DATASET_MENTIONS = json.load(open(DATA / "paper-dataset-mentions.json"))["mentions"]
 DATASET_ALIAS_PAYLOAD = json.load(open(DATA / "dataset-alias-overrides.json"))
 INTERACTION_TAG_PAYLOAD = json.load(open(DATA / "interaction-tags.json"))
@@ -54,6 +59,7 @@ TRAINING_DATASETS = catalog_module.build_catalog(
     include_metadata_fallbacks=True,
 )
 validate_dataset_summaries(TRAINING_DATASETS)
+TRAINING_DATASETS = filter_scoped_datasets(TRAINING_DATASETS, DATASET_SCOPE_AUDIT)
 IMG = json.load(open(DATA / "img_map.json"))
 META = json.load(open(DATA / "metadata.json"))
 GH = dict(META["github"])

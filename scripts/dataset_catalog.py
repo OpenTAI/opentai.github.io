@@ -34,3 +34,31 @@ def validate_dataset_summaries(records: list[dict]) -> None:
 def dataset_summary(record: dict) -> str:
     summary = (record.get("summary") or "").strip()
     return summary or MISSING_DESCRIPTION
+
+
+def validate_dataset_scope_audit(records: list[dict], audit: list[dict]) -> None:
+    record_names = [record.get("name") for record in records]
+    audit_names = [entry.get("name") for entry in audit]
+    duplicate_names = sorted({name for name in audit_names if audit_names.count(name) > 1})
+    if duplicate_names:
+        raise ValueError(f"duplicate dataset scope records: {duplicate_names}")
+
+    missing = sorted(set(record_names) - set(audit_names))
+    unknown = sorted(set(audit_names) - set(record_names))
+    if missing or unknown:
+        raise ValueError(f"dataset scope mismatch; missing={missing}, unknown={unknown}")
+
+    for entry in audit:
+        name = entry.get("name") or "<unnamed dataset>"
+        if entry.get("status") not in {"keep", "exclude"}:
+            raise ValueError(f"{name}: invalid dataset scope status")
+        if not (entry.get("reason") or "").strip():
+            raise ValueError(f"{name}: dataset scope reason is required")
+        if not is_http_url(entry.get("sourceUrl")):
+            raise ValueError(f"{name}: dataset scope sourceUrl must be an HTTP(S) URL")
+
+
+def filter_scoped_datasets(records: list[dict], audit: list[dict]) -> list[dict]:
+    validate_dataset_scope_audit(records, audit)
+    status_by_name = {entry["name"]: entry["status"] for entry in audit}
+    return [record for record in records if status_by_name[record["name"]] == "keep"]

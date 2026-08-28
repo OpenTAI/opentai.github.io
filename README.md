@@ -21,11 +21,11 @@ npm run dev
 | `/benchmarks` | Flagship collection, 55 entries; primary filters are LLMs, Agents, Embodied AI |
 | `/benchmarks/[slug]` | Per-benchmark page: description, code, papers, leaderboard, curation gaps |
 | `/models` | Verified open-source guard, security-specialized, and safety-aligned models |
-| `/datasets` | Verified training-ready datasets from the approved surveys and primary sources; charts update automatically by domain and year |
+| `/datasets` | 33 directly safety/trustworthiness-relevant datasets retained from a 155-record primary-source audit; charts update automatically by domain and year |
 | `/papers` | 772-paper library — LLMs / Agents / Embodied AI, then Research / Survey |
 | `/leaderboard` | Source-checked public leaderboard cards for LLM Safety, Agent Safety, and Fairness; every snapshot names its exact metric |
 | `/arenas` | Gray Swan Arena, CyberGym, and ExploitGym cards with official links and verifiable result snapshots where available |
-| `/companies` | Source-backed AI safety, agent security, evaluation, and red-teaming companies |
+| `/companies` | Source-backed AI safety, agent security, evaluation, and red-teaming startups |
 | `/community` | GitHub contributors, volunteer contribution flow, and partner institutions |
 | `/about` | Mission, contact, coverage summary |
 | `/terms` | Terms of Use supplied by the OpenTAI team |
@@ -59,7 +59,8 @@ python3 scripts/generate-site.py       # rebuild src/data/*.ts
 | `scripts/data/arena-results.json` | Source-backed cross-arena chart snapshot; each benchmark retains its official, non-comparable metric definition |
 | `scripts/data/awesome.md` | Bibliography from `xingjunm/Awesome-Large-Model-Safety` — the approved LLMs and Agents chapters plus Agent Safety Benchmarks |
 | `scripts/data/embodied.md` | Bibliography from `x-zheng16/Awesome-Embodied-AI-Safety` — Embodied AI research, surveys, and its explicit Benchmarks & Datasets section |
-| `scripts/data/training-datasets.json` | 155 audited Dataset inclusions. Each row records primary-source training use or an explicit train/validation split, plus a verified public data URL |
+| `scripts/data/training-datasets.json` | 155 source-verified training-data candidates. Each row records primary-source training use or an explicit train/validation split, plus a verified public data URL |
+| `scripts/data/dataset-scope-audit.json` | One keep/exclude decision per candidate. The public catalog keeps 33 records whose cited primary source directly concerns safety, alignment, content safety, or AI security |
 | `scripts/data/paper-dataset-mentions.json` | 570 audited paper-level training uses with the exact citing-paper identity and evidence text |
 | `scripts/data/paper-dataset-audits/` | Domain audits, exact-title/PDF addenda, official-link verification, and explicit quality corrections |
 | `scripts/data/dataset-candidates.json` | Entries from the embodied survey's mixed Benchmarks & Datasets section; primary-source evidence determines whether each belongs in Datasets or Benchmarks |
@@ -85,9 +86,10 @@ python3 scripts/generate-site.py       # rebuild src/data/*.ts
 - Papers get an arXiv link only on a near-exact title match.
 - Anything that cannot be verified is left empty and labelled, never filled in
   with a plausible placeholder.
-- The current training-data audit publishes 155 unique datasets: 86 associated
-  with LLM papers, 16 with Agent papers, and 60 with Embodied AI papers (seven
-  span more than one domain). BooksCorpus, ShareGPT, and the retired Kaggle Fake
+- The source-backed training-data review covers 155 unique candidates and the
+  strict scope ledger publishes 33 directly relevant records. General-purpose
+  corpora used only incidentally by a safety paper remain recorded but are
+  excluded from the public catalog. BooksCorpus, ShareGPT, and the retired Kaggle Fake
   News competition dataset remain unresolved because no currently reachable,
   authoritative public release could be assigned without substituting a
   different or third-party copy. Another 138 approved-list papers have no exact public full

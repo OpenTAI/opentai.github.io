@@ -1,0 +1,935 @@
+{
+  "_comment": "Strict 2026-08-28 scope review. Keep requires direct safety/trustworthiness purpose in the cited primary source; incidental use in a safety paper is excluded.",
+  "records": [
+    {
+      "name": "ActivityPrograms",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/StanfordHCI/virtualhome"
+    },
+    {
+      "name": "AdvBench",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://github.com/llm-attacks/llm-attacks/tree/main/data/advbench"
+    },
+    {
+      "name": "Aegis 2.0",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://arxiv.org/abs/2502.05206"
+    },
+    {
+      "name": "AG News",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://arxiv.org/abs/1509.01626"
+    },
+    {
+      "name": "AgentInstruct",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://arxiv.org/abs/2310.12823"
+    },
+    {
+      "name": "AIR binaural room impulse response database",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.iks.rwth-aachen.de/en/research/tools-downloads/databases/aachen-impulse-response-database/"
+    },
+    {
+      "name": "AlpacaEval",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/tatsu-lab/alpaca_eval"
+    },
+    {
+      "name": "Amazon Reviews",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/"
+    },
+    {
+      "name": "Anthropic Red Team Attempts",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://huggingface.co/datasets/Anthropic/hh-rlhf/tree/main/red-team-attempts"
+    },
+    {
+      "name": "BC5CDR",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://ftp.ncbi.nlm.nih.gov/pub/lu/BC5CDR/"
+    },
+    {
+      "name": "BDD-100K",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://openaccess.thecvf.com/content_CVPR_2020/html/Yu_BDD100K_A_Diverse_Driving_Dataset_for_Heterogeneous_Multitask_Learning_CVPR_2020_paper.html"
+    },
+    {
+      "name": "BeaverTails",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://github.com/PKU-Alignment/beavertails"
+    },
+    {
+      "name": "Bench2Drive",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/Thinklab-SJTU/Bench2Drive"
+    },
+    {
+      "name": "BIPIA",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://arxiv.org/abs/2312.14197"
+    },
+    {
+      "name": "Booster repnoise BeaverTails",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://huggingface.co/datasets/anonymous4486/repnoise_beavertail/tree/main"
+    },
+    {
+      "name": "Bot-Adversarial Dialogue",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue"
+    },
+    {
+      "name": "BridgeData V2",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://rail-berkeley.github.io/bridgedata/"
+    },
+    {
+      "name": "CALVIN dataset",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://arxiv.org/abs/2605.02900"
+    },
+    {
+      "name": "CIFAR-10",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.cs.toronto.edu/~kriz/cifar.html"
+    },
+    {
+      "name": "Cityscapes",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.cityscapes-dataset.com/dataset-overview/"
+    },
+    {
+      "name": "Cleaned Alpaca",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/facebookresearch/SecAlign"
+    },
+    {
+      "name": "CNN/DailyMail",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/abisee/cnn-dailymail"
+    },
+    {
+      "name": "CodeAlpaca",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/sahil280114/codealpaca"
+    },
+    {
+      "name": "CoLA",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://archive.nyu.edu/handle/2451/60441?mode=full"
+    },
+    {
+      "name": "Conceptual Captions 3M",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://ai.google.com/research/ConceptualCaptions/"
+    },
+    {
+      "name": "CoNLL-2003",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/eriktks/conll2003"
+    },
+    {
+      "name": "Crafted datasets",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://aclanthology.org/2025.acl-long.890.pdf"
+    },
+    {
+      "name": "CRUW",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.cruwdataset.org/home"
+    },
+    {
+      "name": "CULane",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://xingangpan.github.io/projects/CULane.html"
+    },
+    {
+      "name": "Customer Reviews",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html"
+    },
+    {
+      "name": "CValues-Comparison",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://arxiv.org/abs/2502.05206"
+    },
+    {
+      "name": "D4RL",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/Farama-Foundation/D4RL"
+    },
+    {
+      "name": "databricks-dolly-15k",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/databricks/databricks-dolly-15k"
+    },
+    {
+      "name": "DBpedia",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://arxiv.org/abs/1509.01626"
+    },
+    {
+      "name": "DoNotAnswer",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://arxiv.org/abs/2502.05206"
+    },
+    {
+      "name": "DROID",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://droid-dataset.github.io/"
+    },
+    {
+      "name": "EAsafetyBench",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://arxiv.org/abs/2504.15699"
+    },
+    {
+      "name": "Emotion",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/dair-ai/emotion"
+    },
+    {
+      "name": "EQA-v1",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/facebookresearch/EmbodiedQA"
+    },
+    {
+      "name": "Evol-Instruct",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/nlpxucan/WizardLM"
+    },
+    {
+      "name": "FLAN",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/google-research/FLAN"
+    },
+    {
+      "name": "GenQA",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/genqa/GenQA"
+    },
+    {
+      "name": "Glaive Function Calling v2",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2"
+    },
+    {
+      "name": "GSM8K",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/openai/grade-school-math"
+    },
+    {
+      "name": "GTSRB",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://benchmark.ini.rub.de/gtsrb_dataset.html"
+    },
+    {
+      "name": "HH-RLHF",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes preference or feedback data for assistant alignment, including helpfulness, harmlessness, or safe-RLHF objectives.",
+      "sourceUrl": "https://github.com/anthropics/hh-rlhf"
+    },
+    {
+      "name": "highD",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.ika.rwth-aachen.de/en/competences/projects/automated-driving/highd-dataset.html"
+    },
+    {
+      "name": "HSOL",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes human labels for harmful, toxic, offensive, or moral content used in trustworthy content-classification research.",
+      "sourceUrl": "https://github.com/t-davidson/hate-speech-and-offensive-language"
+    },
+    {
+      "name": "ImageNet",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.image-net.org/about.php"
+    },
+    {
+      "name": "ImageNet-1K",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.image-net.org/download.php"
+    },
+    {
+      "name": "ImageNet-21K",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.image-net.org/about.php"
+    },
+    {
+      "name": "IMDb",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://ai.stanford.edu/~amaas/data/sentiment/"
+    },
+    {
+      "name": "IWSLT 2014 En-De",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/facebookresearch/fairseq/blob/main/examples/translation/README.md"
+    },
+    {
+      "name": "Jigsaw Toxic Comment Classification",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes human labels for harmful, toxic, offensive, or moral content used in trustworthy content-classification research.",
+      "sourceUrl": "https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data"
+    },
+    {
+      "name": "Kinetics-400",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/cvdfoundation/kinetics-dataset"
+    },
+    {
+      "name": "KITTI",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.cvlibs.net/datasets/kitti/"
+    },
+    {
+      "name": "LAION-400M",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://laion.ai/laion-400-open-dataset/"
+    },
+    {
+      "name": "LaMini-instruction",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://mbzuai-nlp.github.io/LaMini-LM/"
+    },
+    {
+      "name": "LanguageTable",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://research.google/blog/talking-to-robots-in-real-time/"
+    },
+    {
+      "name": "LIBERO demonstration datasets",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://libero-project.github.io/datasets"
+    },
+    {
+      "name": "LibriSpeech",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.openslr.org/12"
+    },
+    {
+      "name": "Llama-3-Magpie-Air-3M-v0.1",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Air-3M-v0.1"
+    },
+    {
+      "name": "Llama-3-Magpie-Pro-1M-v0.1",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/Magpie-Align/Llama-3-Magpie-Pro-1M-v0.1"
+    },
+    {
+      "name": "LLaVA Visual Instruct 150K",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/haotian-liu/LLaVA/blob/main/docs/Data.md"
+    },
+    {
+      "name": "LlavaGuard Dataset",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://ml-research.github.io/human-centered-genai/projects/llavaguard/"
+    },
+    {
+      "name": "M3Bench",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://zeyuzhang.com/papers/m3bench"
+    },
+    {
+      "name": "Magpie-Air-300K-Filtered",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-300K-Filtered"
+    },
+    {
+      "name": "Magpie-Air-DPO-100K-v0.1",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Air-DPO-100K-v0.1"
+    },
+    {
+      "name": "Magpie-Pro-300K-Filtered",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-300K-Filtered"
+    },
+    {
+      "name": "Magpie-Pro-DPO-100K-v0.1",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/Magpie-Align/Magpie-Pro-DPO-100K-v0.1"
+    },
+    {
+      "name": "MARDY database",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.imperial.ac.uk/a-z-research/speech-audio-processing/resources/"
+    },
+    {
+      "name": "MASSIVE",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/alexa/massive"
+    },
+    {
+      "name": "MetaDrive human driving trajectories",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/metadriverse/metadrive/releases/download/MetaDrive-0.2.3/human_traj_100_new.json"
+    },
+    {
+      "name": "MIMIC-IT",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/pufanyi/MIMICIT/blob/main/README.md"
+    },
+    {
+      "name": "MM-SafetyBench",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://arxiv.org/abs/2311.17600"
+    },
+    {
+      "name": "Movie Review",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.cs.cornell.edu/people/pabo/movie-review-data/"
+    },
+    {
+      "name": "Mozilla Common Voice",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://commonvoice.mozilla.org/en/datasets"
+    },
+    {
+      "name": "MPI-Sintel",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://sintel.is.tue.mpg.de/downloads"
+    },
+    {
+      "name": "MS COCO",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://cocodataset.org/#download"
+    },
+    {
+      "name": "MultiNLI",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://cims.nyu.edu/~sbowman/multinli/"
+    },
+    {
+      "name": "NCBI Disease Corpus",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.ncbi.nlm.nih.gov/research/bionlp/Data/"
+    },
+    {
+      "name": "News Articles",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://doi.org/10.7910/DVN/GMFCTR"
+    },
+    {
+      "name": "NGSIM US-101 and I-80",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://data.transportation.gov/stories/s/Next-Generation-Simulation-NGSIM-Open-Data/i5zb-xe34/"
+    },
+    {
+      "name": "nuScenes",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.nuscenes.org/nuscenes"
+    },
+    {
+      "name": "OLID",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes human labels for harmful, toxic, offensive, or moral content used in trustworthy content-classification research.",
+      "sourceUrl": "https://zenodo.org/records/2670722"
+    },
+    {
+      "name": "Open X-Embodiment",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/google-deepmind/open_x_embodiment"
+    },
+    {
+      "name": "OpenAssistant OASST1",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes preference or feedback data for assistant alignment, including helpfulness, harmlessness, or safe-RLHF objectives.",
+      "sourceUrl": "https://huggingface.co/datasets/OpenAssistant/oasst1"
+    },
+    {
+      "name": "OpenHermes 1",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/teknium/openhermes"
+    },
+    {
+      "name": "OpenHermes 2.5",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/teknium/OpenHermes-2.5"
+    },
+    {
+      "name": "OpenOrca",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/Open-Orca/OpenOrca"
+    },
+    {
+      "name": "OpenScene",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/OpenDriveLab/OpenScene"
+    },
+    {
+      "name": "OpenSubtitles",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://opus.nlpl.eu/datasets/OpenSubtitles"
+    },
+    {
+      "name": "OpenWebText",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://skylion007.github.io/OpenWebTextCorpus/"
+    },
+    {
+      "name": "ORCA-DPO",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes preference or feedback data for assistant alignment, including helpfulness, harmlessness, or safe-RLHF objectives.",
+      "sourceUrl": "https://huggingface.co/datasets/Intel/orca_dpo_pairs"
+    },
+    {
+      "name": "PASCAL VOC",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.robots.ox.ac.uk/~vgg/projects/pascal/VOC/"
+    },
+    {
+      "name": "Penn Treebank",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://catalog.ldc.upenn.edu/LDC99T42"
+    },
+    {
+      "name": "PKU-SafeRLHF",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes preference or feedback data for assistant alignment, including helpfulness, harmlessness, or safe-RLHF objectives.",
+      "sourceUrl": "https://github.com/PKU-Alignment/safe-rlhf"
+    },
+    {
+      "name": "Project Gutenberg",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.gutenberg.org/policy/robot_access.html"
+    },
+    {
+      "name": "Reddit TL;DR",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/openai/summarize-from-feedback"
+    },
+    {
+      "name": "REVERB Challenge room impulse response dataset",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://reverb2014.audiolabs-erlangen.de/index.html"
+    },
+    {
+      "name": "robomimic datasets",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/ARISE-Initiative/robomimic/blob/master/docs/datasets/robomimic_v0.1.md"
+    },
+    {
+      "name": "Room-to-Room (R2R)",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/peteanderson80/Matterport3DSimulator/blob/master/tasks/R2R/README.md"
+    },
+    {
+      "name": "Rotten Tomatoes",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.cs.cornell.edu/people/pabo/movie-review-data/"
+    },
+    {
+      "name": "RWCP sound scene database",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://research.nii.ac.jp/src/RWCP-SSD.html"
+    },
+    {
+      "name": "SafeMTData",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://arxiv.org/abs/2410.10700"
+    },
+    {
+      "name": "SafetyPrompts",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://arxiv.org/abs/2502.05206"
+    },
+    {
+      "name": "SAIL search-augmented instruction-tuning corpus",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/luohongyin/SAIL"
+    },
+    {
+      "name": "SAP",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes adversarial or spoofed data for training and testing AI security or backdoor defenses.",
+      "sourceUrl": "https://github.com/Aatrox103/SAP"
+    },
+    {
+      "name": "SelfDefend distilled defense data",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://zenodo.org/records/14736936/latest"
+    },
+    {
+      "name": "SemanticKITTI",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://semantic-kitti.org/index.html"
+    },
+    {
+      "name": "ShapeNet",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://arxiv.org/abs/1512.03012"
+    },
+    {
+      "name": "ShapeNetPart",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://cs.stanford.edu/~ericyi/project_page/part_annotation/index.html"
+    },
+    {
+      "name": "ShareGPT4V",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/ShareGPT4Omni/ShareGPT4V"
+    },
+    {
+      "name": "Sleeper Agents code backdoor training data",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes adversarial or spoofed data for training and testing AI security or backdoor defenses.",
+      "sourceUrl": "https://github.com/anthropics/sleeper-agents-paper"
+    },
+    {
+      "name": "SmartSpot",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/tsinghua-fib-lab/SmartAgent"
+    },
+    {
+      "name": "SNLI",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://nlp.stanford.edu/projects/snli/"
+    },
+    {
+      "name": "Socio-Moral Image Database",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes human labels for harmful, toxic, offensive, or moral content used in trustworthy content-classification research.",
+      "sourceUrl": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0190954"
+    },
+    {
+      "name": "Speech Commands",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://research.google/blog/launching-the-speech-commands-dataset/"
+    },
+    {
+      "name": "SST-2",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://nlp.stanford.edu/sentiment/treebank.html"
+    },
+    {
+      "name": "Stable Alignment Sandbox sample datasets",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://github.com/agi-templar/Stable-Alignment/tree/main/assets"
+    },
+    {
+      "name": "Stable Diffusion Prompts",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/Gustavosta/Stable-Diffusion-Prompts"
+    },
+    {
+      "name": "Stanford Alpaca",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://crfm.stanford.edu/2023/03/13/alpaca.html"
+    },
+    {
+      "name": "Stanford Human Preferences",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes preference or feedback data for assistant alignment, including helpfulness, harmlessness, or safe-RLHF objectives.",
+      "sourceUrl": "https://huggingface.co/datasets/stanfordnlp/SHP"
+    },
+    {
+      "name": "STL-10",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://cs.stanford.edu/~acoates/stl10/"
+    },
+    {
+      "name": "STS Benchmark",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://arxiv.org/abs/1708.00055"
+    },
+    {
+      "name": "Subjectivity",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.cs.cornell.edu/people/pabo/movie-review-data/"
+    },
+    {
+      "name": "Super-Natural Instructions",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/allenai/natural-instructions"
+    },
+    {
+      "name": "SVHN",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://ai.stanford.edu/~twangcat/papers/nips2011_housenumbers.pdf"
+    },
+    {
+      "name": "SViT",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/BAAI-DCAI/Visual-Instruction-Tuning"
+    },
+    {
+      "name": "T0++",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/bigscience-workshop/t-zero"
+    },
+    {
+      "name": "Texas Spoofing Test Battery (TEXBAT)",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes adversarial or spoofed data for training and testing AI security or backdoor defenses.",
+      "sourceUrl": "https://radionavlab.ae.utexas.edu/texbat/"
+    },
+    {
+      "name": "The Stack",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/bigcode/the-stack"
+    },
+    {
+      "name": "ToolBench",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://arxiv.org/abs/2307.16789"
+    },
+    {
+      "name": "TREC",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://cogcomp.seas.upenn.edu/Data/QA/QC/"
+    },
+    {
+      "name": "TriviaQA",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://nlp.cs.washington.edu/triviaqa/"
+    },
+    {
+      "name": "TruthfulQA evaluator fine-tuning data",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://arxiv.org/abs/2502.05206"
+    },
+    {
+      "name": "Tulu V2 Mix",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/allenai/tulu-v2-sft-mixture"
+    },
+    {
+      "name": "TuSimple Lane Detection",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/TuSimple/tusimple-benchmark/blob/master/doc/lane_detection/readme.md"
+    },
+    {
+      "name": "UltraChat 200k",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k"
+    },
+    {
+      "name": "UltraFeedback",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/openbmb/UltraFeedback"
+    },
+    {
+      "name": "UnRocker Resonant Sensor Dataset (SITL/HITL)",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://sites.google.com/view/unrocker/"
+    },
+    {
+      "name": "VCTK Corpus",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://datashare.ed.ac.uk/items/30e7453c-9ea8-48b4-8e18-f96d0dc62928/full"
+    },
+    {
+      "name": "VEDAI (Vehicle Detection in Aerial Imagery)",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://downloads.greyc.fr/vedai/"
+    },
+    {
+      "name": "VIMA-Data",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://arxiv.org/abs/2605.02900"
+    },
+    {
+      "name": "Virus",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://huggingface.co/papers/2501.17433"
+    },
+    {
+      "name": "VizWiz-VQA",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety"
+    },
+    {
+      "name": "VoxCeleb2",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html"
+    },
+    {
+      "name": "W-NUT 2017",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://noisy-text.github.io/2017/emerging-rare-entities.html"
+    },
+    {
+      "name": "Waymo Open Dataset",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://waymo.com/open/about/"
+    },
+    {
+      "name": "Wikipedia Dumps",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://dumps.wikimedia.org/"
+    },
+    {
+      "name": "WikiText-103",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/Salesforce/wikitext"
+    },
+    {
+      "name": "WildChat",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://huggingface.co/datasets/allenai/WildChat-1M"
+    },
+    {
+      "name": "XGuard-Train",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://arxiv.org/abs/2504.13203"
+    },
+    {
+      "name": "XSTest",
+      "status": "keep",
+      "reason": "Kept: the cited primary source explicitly describes data created for safety alignment, red teaming, guardrails, refusal, prompt-injection defense, or truthfulness research.",
+      "sourceUrl": "https://github.com/paul-rottger/xstest"
+    },
+    {
+      "name": "Yelp Polarity",
+      "status": "exclude",
+      "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
+      "sourceUrl": "https://arxiv.org/abs/1509.01626"
+    }
+  ]
+}
