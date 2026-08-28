@@ -26,6 +26,27 @@ export function compactResourceTitle(title: string) {
   return separator > 0 ? title.slice(0, separator).trim() : title;
 }
 
+const DATASET_FILE_EXTENSIONS = [
+  ".tar.gz",
+  ".parquet",
+  ".jsonl",
+  ".csv",
+  ".json",
+  ".tgz",
+  ".zip",
+] as const;
+
+export function datasetActionLabel(href: string): "Download" | "Open dataset" {
+  try {
+    const pathname = new URL(href).pathname.toLowerCase();
+    return DATASET_FILE_EXTENSIONS.some((extension) => pathname.endsWith(extension))
+      ? "Download"
+      : "Open dataset";
+  } catch {
+    return "Open dataset";
+  }
+}
+
 function catalogYear(row: CatalogRowLike) {
   const recordedYear = row.stats?.find((stat) =>
     ["Published", "Table year", "Posted"].includes(stat.label),

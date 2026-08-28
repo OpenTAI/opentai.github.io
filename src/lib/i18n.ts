@@ -189,6 +189,7 @@ const ZH: Record<string, string> = {
   "Available links": "可用链接",
   "View details": "查看详情",
   "Open dataset": "打开数据集",
+  Download: "下载",
   "Citing papers": "引用论文",
   Evidence: "证据",
   "Filter datasets by domain": "按领域筛选数据集",

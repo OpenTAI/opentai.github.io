@@ -19,6 +19,7 @@ import { matchesLocalizedSearch } from "@/lib/resource-search";
 import {
   buildResourceCatalogSummary,
   compactResourceTitle,
+  datasetActionLabel,
 } from "@/lib/resource-catalog-presentation";
 import {
   resourceYear,
@@ -290,7 +291,7 @@ function ResourceGridCard({
             rel="noreferrer"
             target="_blank"
           >
-            {t(locale, "Open dataset")} ↗
+            {t(locale, datasetActionLabel(externalHref))} ↗
           </Link>
         ) : null}
       </div>

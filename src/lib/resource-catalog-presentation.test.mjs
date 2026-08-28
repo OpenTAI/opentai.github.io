@@ -4,6 +4,7 @@ import {
   buildLeaderboardSummary,
   buildResourceCatalogSummary,
   compactResourceTitle,
+  datasetActionLabel,
 } from "./resource-catalog-presentation.ts";
 
 test("compacts only the list-card title at the first colon", () => {
@@ -13,6 +14,27 @@ test("compacts only the list-card title at the first colon", () => {
   );
   assert.equal(compactResourceTitle("数据集名称：补充说明"), "数据集名称");
   assert.equal(compactResourceTitle("HASARD"), "HASARD");
+});
+
+test("labels only direct dataset files as downloads", () => {
+  for (const href of [
+    "https://example.org/data.zip",
+    "https://example.org/data.tgz?download=1",
+    "https://example.org/data.tar.gz",
+    "https://example.org/data.csv",
+    "https://example.org/data.jsonl",
+    "https://example.org/data.parquet",
+  ]) {
+    assert.equal(datasetActionLabel(href), "Download", href);
+  }
+
+  for (const href of [
+    "https://huggingface.co/datasets/org/name",
+    "https://github.com/org/repository",
+    "https://example.org/dataset",
+  ]) {
+    assert.equal(datasetActionLabel(href), "Open dataset", href);
+  }
 });
 
 test("derives benchmark summary only from recorded row fields", () => {
