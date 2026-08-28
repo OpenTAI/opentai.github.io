@@ -1876,6 +1876,17 @@ summary {
   justify-content: flex-end;
 }
 
+.dataset-statistics > .integrated-section-heading {
+  margin-bottom: 1.15rem;
+}
+
+.dataset-statistics > .integrated-section-heading .submission-cta {
+  min-height: auto;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
 @media (max-width: 767px) {
   .integrated-section-heading {
     grid-template-columns: auto minmax(0, 1fr);

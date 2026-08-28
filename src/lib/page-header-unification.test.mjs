@@ -33,3 +33,14 @@ test("community and ranking directories disable the duplicate hero and integrate
   assert.match(scoreboards, /<IntegratedSectionHeading/);
   assert.match(scoreboards, /<ResourceSubmissionDialog/);
 });
+
+test("benchmark and dataset catalogs integrate their heading into the statistics section", async () => {
+  const catalog = await readSource("../components/subpage-layout.tsx");
+
+  assert.match(catalog, /\{!resourceCardKind \? \(/);
+  assert.match(catalog, /function ResourceStatistics\([\s\S]*?title:/);
+  assert.match(catalog, /<IntegratedSectionHeading/);
+  assert.match(catalog, /<ResourceSubmissionDialog kind=\{kind\}/);
+  assert.doesNotMatch(catalog, /const statisticsTitle/);
+  assert.doesNotMatch(catalog, /t\(locale, statisticsTitle\)/);
+});

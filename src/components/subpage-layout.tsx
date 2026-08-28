@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CollectionSummaryRow } from "@/components/collection-summary-row";
+import { IntegratedSectionHeading } from "@/components/integrated-section-heading";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { ResourceSubmissionDialog } from "@/components/resource-submission-dialog";
 import { SubpageConfig, SubpageTableRow } from "@/data/site";
@@ -298,13 +299,23 @@ function ResourceGridCard({
 }
 
 function ResourceStatistics({
+  categoryCount,
+  icon,
   kind,
+  linkCount,
   locale,
   rows,
+  title,
+  venueCount,
 }: {
+  categoryCount: number;
+  icon: string;
   kind: ResourceCardKind;
+  linkCount: number;
   locale: Locale;
   rows: readonly SubpageTableRow[];
+  title: string;
+  venueCount: number;
 }) {
   const statistics = buildCollectionStatistics(
     rows.map((row) => ({
@@ -316,7 +327,6 @@ function ResourceStatistics({
   );
   const noun = kind === "dataset" ? "Dataset" : "Benchmark";
   const plural = kind === "dataset" ? "datasets" : "benchmarks";
-  const statisticsTitle = `${noun} Statistics`;
   const growthTitle = `${noun} Growth By Year`;
   const yearlyDescription = `Annual count of ${plural} with a recorded year.`;
   const domainTitle = `${noun}s By Domain`;
@@ -433,10 +443,20 @@ function ResourceStatistics({
   };
 
   return (
-    <section className="dataset-statistics" aria-labelledby={`${kind}-statistics-title`}>
-      <div className="dataset-statistics-heading">
-        <h2 id={`${kind}-statistics-title`}>{t(locale, statisticsTitle)}</h2>
-      </div>
+    <section className="dataset-statistics" aria-labelledby={`${kind}-catalog-title`}>
+      <IntegratedSectionHeading
+        action={<ResourceSubmissionDialog kind={kind} locale={locale} />}
+        icon={icon}
+        locale={locale}
+        stats={[
+          { label: "Entries", value: rows.length },
+          { label: "Categories", value: categoryCount },
+          { label: "Published venues", value: venueCount },
+          { label: "Links", value: linkCount },
+        ]}
+        title={title}
+        titleId={`${kind}-catalog-title`}
+      />
       <div className="dataset-statistics-grid">
         <article className="dataset-year-card">
           <div className="dataset-chart-card-heading">
@@ -670,41 +690,46 @@ export function SubpageLayout(
     >
       <PageBreadcrumb items={props.breadcrumb} locale={locale} />
 
-      <section className="subpage-hero-card">
-        <div className="subpage-hero-layout">
-          <div className="subpage-icon-panel">
-            <div className="subpage-icon-orb">{props.heroIcon}</div>
-          </div>
+      {!resourceCardKind ? (
+        <section className="subpage-hero-card">
+          <div className="subpage-hero-layout">
+            <div className="subpage-icon-panel">
+              <div className="subpage-icon-orb">{props.heroIcon}</div>
+            </div>
 
-          <div className="subpage-hero-copy">
-            <h1 className="text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.06em] text-[#0f172a]">
-              {t(locale, props.title)}
-            </h1>
-            <div className="flex flex-wrap gap-3">
-              {[
-                { label: "Entries", value: String(props.tableRows.length) },
-                { label: "Categories", value: String(categoryStats.length) },
-                { label: "Published venues", value: String(venueCount) },
-                { label: "Links", value: String(linkedResourceCount) },
-              ].map((stat) => (
-                <div key={stat.label} className="subpage-stat-pill">
-                  <span className="font-semibold text-[#4338ca]">{stat.value}</span>
-                  <span>{t(locale, stat.label)}</span>
-                </div>
-              ))}
+            <div className="subpage-hero-copy">
+              <h1 className="text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.06em] text-[#0f172a]">
+                {t(locale, props.title)}
+              </h1>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { label: "Entries", value: String(props.tableRows.length) },
+                  { label: "Categories", value: String(categoryStats.length) },
+                  { label: "Published venues", value: String(venueCount) },
+                  { label: "Links", value: String(linkedResourceCount) },
+                ].map((stat) => (
+                  <div key={stat.label} className="subpage-stat-pill">
+                    <span className="font-semibold text-[#4338ca]">{stat.value}</span>
+                    <span>{t(locale, stat.label)}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-
-          {resourceCardKind ? (
-            <div className="subpage-hero-aside">
-              <ResourceSubmissionDialog kind={resourceCardKind} locale={locale} />
-            </div>
-          ) : null}
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       {resourceCardKind ? (
-        <ResourceStatistics kind={resourceCardKind} locale={locale} rows={props.tableRows} />
+        <ResourceStatistics
+          categoryCount={categoryStats.length}
+          icon={props.heroIcon}
+          kind={resourceCardKind}
+          linkCount={linkedResourceCount}
+          locale={locale}
+          rows={props.tableRows}
+          title={props.title}
+          venueCount={venueCount}
+        />
       ) : null}
 
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#eceff5] pb-4">
