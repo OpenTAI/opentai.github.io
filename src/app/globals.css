@@ -2815,10 +2815,12 @@ main:has(.ecosystem-catalog-companies) + .site-footer::before {
   color: #667085;
 }
 
-.resource-grid-badge-topic {
-  border: 1px solid #cfccff;
-  background: #ebe9ff;
-  color: #4338ca;
+.resource-grid-badges .resource-grid-badge-topic {
+  border: 1px solid rgba(218, 174, 18, 0.22);
+  border-radius: 3px;
+  background: rgba(255, 229, 92, 0.34);
+  box-shadow: inset 0 -0.58em 0 rgba(255, 213, 46, 0.5);
+  color: #5f4b0d;
   font-weight: 700;
 }
 

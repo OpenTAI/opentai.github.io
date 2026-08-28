@@ -173,4 +173,8 @@ test("dataset badge metadata is normalized and topic tags are highlighted", () =
   assert.match(component, /resource-grid-badge-venue/);
   assert.match(component, /resource-grid-badge-topic/);
   assert.match(css, /\.resource-grid-badge-topic\s*{/);
+  assert.match(
+    css,
+    /\.resource-grid-badges\s+\.resource-grid-badge-topic\s*\{[^}]*background:\s*rgba\(255,\s*229,\s*92,\s*0\.34\);[^}]*box-shadow:\s*inset 0 -0\.58em 0 rgba\(255,\s*213,\s*46,\s*0\.5\);/s,
+  );
 });
