@@ -249,10 +249,10 @@ function ResourceGridCard({
       </div>
 
       <div className="resource-grid-badges">
-        <span>{t(locale, row.type)}</span>
-        {row.venue ? <span>{row.venue}</span> : null}
+        <span className="resource-grid-badge-type">{t(locale, row.type)}</span>
+        {row.venue ? <span className="resource-grid-badge-venue">{row.venue}</span> : null}
         {presentation.tags.slice(0, 2).map((tag) => (
-          <span key={tag}>{t(locale, tag)}</span>
+          <span className="resource-grid-badge-topic" key={tag}>{t(locale, tag)}</span>
         ))}
       </div>
 

@@ -2804,9 +2804,22 @@ main:has(.ecosystem-catalog-companies) + .site-footer::before {
   line-height: 1.35;
 }
 
-.resource-grid-badges span:first-child {
+.resource-grid-badge-type {
   background: #f0efff;
   color: #5549c8;
+}
+
+.resource-grid-badge-venue {
+  border: 1px solid #e6e8ee;
+  background: #fff;
+  color: #667085;
+}
+
+.resource-grid-badge-topic {
+  border: 1px solid #cfccff;
+  background: #ebe9ff;
+  color: #4338ca;
+  font-weight: 700;
 }
 
 .resource-card-description {

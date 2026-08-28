@@ -153,3 +153,24 @@ test("the catalog UI omits citation accordions and exposes explicit dataset URLs
   assert.match(component, /dataset-domain-pills/);
   assert.match(generator, /row\["primaryUrl"\]\s*=\s*rec\["dataUrl"\]/);
 });
+
+test("dataset badge metadata is normalized and topic tags are highlighted", () => {
+  const component = readFileSync(
+    new URL("../components/subpage-layout.tsx", import.meta.url),
+    "utf8",
+  );
+  const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+  const source = JSON.parse(
+    readFileSync(new URL("../../scripts/data/training-datasets.json", import.meta.url), "utf8"),
+  );
+  const llava = source.items.find((item) => item.name === "LLaVA Visual Instruct 150K");
+  const alpaca = source.items.find((item) => item.name === "Stanford Alpaca");
+
+  assert.equal(llava.venue, "NeurIPS");
+  assert.equal(alpaca.venue ?? null, null);
+  assert.equal(alpaca.githubUrl, "https://github.com/tatsu-lab/stanford_alpaca");
+  assert.match(component, /resource-grid-badge-type/);
+  assert.match(component, /resource-grid-badge-venue/);
+  assert.match(component, /resource-grid-badge-topic/);
+  assert.match(css, /\.resource-grid-badge-topic\s*{/);
+});
