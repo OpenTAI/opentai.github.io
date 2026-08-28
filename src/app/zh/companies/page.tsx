@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 import { ecosystemCompanies } from "@/data/ecosystem";
 
 export const metadata: Metadata = {
-  title: "企业",
+  title: "初创企业",
   description: "经来源核验的 AI 安全、智能体安全、评测与红队产品企业图谱。",
   alternates: {
     canonical: "/zh/companies/",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ChineseCompaniesPage() {
+export default function ChineseStartupsPage() {
   return (
     <SiteShell locale="zh">
       <EcosystemCatalogPage kind="companies" locale="zh" records={ecosystemCompanies} />

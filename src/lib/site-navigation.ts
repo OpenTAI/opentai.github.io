@@ -17,9 +17,9 @@ export const navigationGroups: readonly NavigationGroup[] = [
   {
     label: "Resources",
     items: [
-      { label: "Datasets", href: "/datasets" },
       { label: "Benchmarks", href: "/benchmarks" },
       { label: "Models", href: "/models" },
+      { label: "Datasets", href: "/datasets" },
     ],
   },
   {
@@ -32,7 +32,7 @@ export const navigationGroups: readonly NavigationGroup[] = [
   {
     label: "Ecosystem",
     items: [
-      { label: "Companies", href: "/companies" },
+      { label: "Startups", href: "/companies" },
       { label: "Community", href: "/community" },
     ],
   },
@@ -40,37 +40,35 @@ export const navigationGroups: readonly NavigationGroup[] = [
 
 export const footerNavigationGroups: readonly NavigationGroup[] = [
   {
-    label: "Research & Evaluation",
+    label: "Research",
+    items: [{ label: "Papers", href: "/papers" }],
+  },
+  {
+    label: "Resources",
     items: [
-      { label: "Papers", href: "/papers" },
       { label: "Benchmarks", href: "/benchmarks" },
+      { label: "Models", href: "/models" },
+      { label: "Datasets", href: "/datasets" },
+    ],
+  },
+  {
+    label: "Evaluation",
+    items: [
       { label: "Leaderboards", href: "/leaderboard" },
       { label: "Arenas", href: "/arenas" },
     ],
   },
   {
-    label: "Resources",
+    label: "Ecosystem",
     items: [
-      { label: "Datasets", href: "/datasets" },
-      { label: "Models", href: "/models" },
-    ],
-  },
-  {
-    label: "OpenTAI",
-    items: [
-      { label: "Companies", href: "/companies" },
+      { label: "Startups", href: "/companies" },
       { label: "Community", href: "/community" },
       { label: "GitHub", href: "https://github.com/OpenTAI" },
     ],
   },
   {
     label: "Terms & Policies",
-    items: [
-      { label: "Terms Of Use", href: "/terms" },
-      { label: "Privacy Notice", href: "/about#privacy" },
-      { label: "Inclusion & Attribution", href: "/about#inclusion-attribution" },
-      { label: "Corrections & Takedown", href: "/about#corrections-takedown" },
-    ],
+    items: [{ label: "Terms Of Use", href: "/terms" }],
   },
 ];
 

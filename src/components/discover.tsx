@@ -1,11 +1,15 @@
 import Link from "next/link";
 import {
+  arenaDirectory,
   collectionOrder,
   homeCategoryCards,
+  leaderboards,
+  partners,
   siteBrand,
   subpageConfigs,
   SubpageTableRow,
 } from "@/data/site";
+import { ecosystemCompanies } from "@/data/ecosystem";
 import { paperLibrary } from "@/data/papers";
 import { SiteSearch } from "@/components/site-search";
 import { SubscribeBox } from "@/components/subscribe";
@@ -21,13 +25,21 @@ const ALL: Entry[] = collectionOrder.flatMap((slug) =>
   })),
 );
 
-const collections = homeCategoryCards.map((card) => {
-  const slug = card.href.slice(1);
-  return {
-    card,
-    count: slug === "papers" ? paperLibrary.length : subpageConfigs[slug].tableRows.length,
-  };
-});
+function categoryCount(href: string) {
+  if (href === "/papers") return paperLibrary.length;
+  if (href === "/leaderboard") return leaderboards.directory.length;
+  if (href === "/arenas") return arenaDirectory.length;
+  if (href === "/companies") return ecosystemCompanies.length;
+  if (href === "/community") return partners.length;
+
+  const slug = href.slice(1);
+  return slug in subpageConfigs ? subpageConfigs[slug].tableRows.length : 0;
+}
+
+const collections = homeCategoryCards.map((card) => ({
+  card,
+  count: categoryCount(card.href),
+}));
 
 const trending = [...ALL]
   .filter((entry) => entry.stars !== undefined)

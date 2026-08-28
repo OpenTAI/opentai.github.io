@@ -230,6 +230,9 @@ test("company page is an unclassified, filterable brand wall", () => {
   assert.match(component, /company-valuation-highlight/);
   assert.doesNotMatch(component, /function CompanyMarketMap/);
   assert.doesNotMatch(component, /className="ecosystem-category">\{record\.category\}/);
+  assert.match(component, /title: "Startups"/);
+  assert.match(component, /locale === "zh" \? "探索初创企业" : "Explore Startups"/);
+  assert.doesNotMatch(component, /title: "Startup Companies"/);
 });
 
 test("framework records are grouped into the three approved display categories", () => {

@@ -41,6 +41,7 @@ const ZH: Record<string, string> = {
   Arenas: "竞技场",
   "Safety Arenas": "安全竞技场",
   Companies: "企业",
+  Startups: "初创企业",
   "Coming soon": "即将开放",
   Community: "社区",
   "OpenTAI Community": "OpenTAI 社区",

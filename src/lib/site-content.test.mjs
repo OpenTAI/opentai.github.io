@@ -101,7 +101,7 @@ test("shared English section headings capitalize every word", async () => {
   assert.match(papers, /"Paper Statistics"/);
   assert.match(papers, /"Papers By Year"/);
   assert.match(papers, /"Papers By Domain"/);
-  assert.match(ecosystem, /"Explore Companies"/);
+  assert.match(ecosystem, /"Explore Startups"/);
   assert.match(subscribe, /"Your Daily Digest Of AI Safety"/);
   assert.match(discover, /"Browse The Hub"/);
   assert.match(discover, /"For Trustworthy AI"/);

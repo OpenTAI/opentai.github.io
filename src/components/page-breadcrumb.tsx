@@ -11,6 +11,7 @@ const breadcrumbHrefs: Record<string, string> = {
   Leaderboards: "/leaderboard",
   Arenas: "/arenas",
   Companies: "/companies",
+  Startups: "/companies",
   Community: "/community",
   Contribute: "/contribute",
   About: "/about",

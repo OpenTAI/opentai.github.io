@@ -98,10 +98,10 @@ const pageCopy: Record<CatalogKind, Record<Locale, { title: string }>> = {
   },
   companies: {
     en: {
-      title: "Startup Companies",
+      title: "Startups",
     },
     zh: {
-      title: "初创公司",
+      title: "初创企业",
     },
   },
 };
@@ -469,7 +469,7 @@ export function EcosystemCatalogPage({
         <>
           {kind === "companies" ? (
             <div className="company-directory-heading">
-              <h2>{locale === "zh" ? "探索公司" : "Explore Companies"}</h2>
+              <h2>{locale === "zh" ? "探索初创企业" : "Explore Startups"}</h2>
             </div>
           ) : null}
           <section className="ecosystem-grid" aria-live="polite">

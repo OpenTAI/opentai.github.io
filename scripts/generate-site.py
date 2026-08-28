@@ -1078,6 +1078,14 @@ HOME_CARDS = [
      "href": "/models", "accent": "blue", "icon": "◆"},
     {"title": "Datasets", "description": "Verified data for training, fine-tuning, and safety alignment.",
      "href": "/datasets", "accent": "green", "icon": "◱"},
+    {"title": "Leaderboards", "description": "Source-backed trustworthiness and safety rankings.",
+     "href": "/leaderboard", "accent": "blue", "icon": "L"},
+    {"title": "Arenas", "description": "Open arenas for testing model and agent safety.",
+     "href": "/arenas", "accent": "orange", "icon": "A"},
+    {"title": "Startups", "description": "Source-backed startups building trustworthy AI products.",
+     "href": "/companies", "accent": "pink", "icon": "S"},
+    {"title": "Community", "description": "Researchers, builders, and institutions contributing to OpenTAI.",
+     "href": "/community", "accent": "violet", "icon": "C"},
 ]
 
 HEADER = '''// Content derived from the OpenTAI TinaCMS site

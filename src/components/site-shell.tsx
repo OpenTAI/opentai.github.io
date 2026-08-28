@@ -311,9 +311,6 @@ export function SiteShell({
 
           <div className="site-footer-bottom">
             <span>OpenTAI © 2026</span>
-            <Link href={localizeHref(locale, "/about#inclusion-attribution")}>
-              {t(locale, "Inclusion & Attribution")}
-            </Link>
           </div>
         </footer>
       </div>

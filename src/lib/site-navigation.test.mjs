@@ -17,9 +17,9 @@ test("groups the public navigation without linking unfinished routes", () => {
       {
         label: "Resources",
         items: [
-          ["Datasets", "/datasets", false],
           ["Benchmarks", "/benchmarks", false],
           ["Models", "/models", false],
+          ["Datasets", "/datasets", false],
         ],
       },
       {
@@ -32,7 +32,7 @@ test("groups the public navigation without linking unfinished routes", () => {
       {
         label: "Ecosystem",
         items: [
-          ["Companies", "/companies", false],
+          ["Startups", "/companies", false],
           ["Community", "/community", false],
         ],
       },
@@ -48,37 +48,35 @@ test("footer navigation links Terms Of Use to its standalone policy page", () =>
     ]),
     [
       [
-        "Research & Evaluation",
+        "Research",
+        [["Papers", "/papers"]],
+      ],
+      [
+        "Resources",
         [
-          ["Papers", "/papers"],
           ["Benchmarks", "/benchmarks"],
+          ["Models", "/models"],
+          ["Datasets", "/datasets"],
+        ],
+      ],
+      [
+        "Evaluation",
+        [
           ["Leaderboards", "/leaderboard"],
           ["Arenas", "/arenas"],
         ],
       ],
       [
-        "Resources",
+        "Ecosystem",
         [
-          ["Datasets", "/datasets"],
-          ["Models", "/models"],
-        ],
-      ],
-      [
-        "OpenTAI",
-        [
-          ["Companies", "/companies"],
+          ["Startups", "/companies"],
           ["Community", "/community"],
           ["GitHub", "https://github.com/OpenTAI"],
         ],
       ],
       [
         "Terms & Policies",
-        [
-          ["Terms Of Use", "/terms"],
-          ["Privacy Notice", "/about#privacy"],
-          ["Inclusion & Attribution", "/about#inclusion-attribution"],
-          ["Corrections & Takedown", "/about#corrections-takedown"],
-        ],
+        [["Terms Of Use", "/terms"]],
       ],
     ],
   );
