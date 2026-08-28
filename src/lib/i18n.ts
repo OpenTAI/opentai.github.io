@@ -134,8 +134,6 @@ const ZH: Record<string, string> = {
   "Digest language": "简报语言",
   "Email address": "邮箱地址",
   Subscribe: "订阅",
-  "Opens your email app. Your address is not stored by OpenTAI.":
-    "将打开你的邮件应用；OpenTAI 不会存储你的邮箱地址。",
   Entries: "条目",
   Domains: "领域",
   Surveys: "综述",

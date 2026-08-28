@@ -126,6 +126,20 @@ test("the home release section uses plain category names without recency prefixe
   assert.doesNotMatch(i18n, /Latest Releases|Latest Papers|New Benchmarks|New Models|New Datasets/);
 });
 
+test("the newsletter form omits the email-app helper line", async () => {
+  const subscribe = await readSource("../components/subscribe.tsx");
+  const i18n = await readSource("./i18n.ts");
+
+  assert.doesNotMatch(
+    subscribe,
+    /Opens your email app\. Your address is not stored by OpenTAI\./,
+  );
+  assert.doesNotMatch(
+    i18n,
+    /Opens your email app\. Your address is not stored by OpenTAI\./,
+  );
+});
+
 test("paper metadata wraps within narrow paper cards", async () => {
   const papers = await readSource("../components/paper-library.tsx");
   const styles = await readSource("../app/globals.css");

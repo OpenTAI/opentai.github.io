@@ -1,3 +1,28 @@
+# Design QA — Newsletter Helper Line Removal
+
+## Comparison Targets
+
+- Source visual truth: `/var/folders/b0/zf0l3qzj3y57k95gqxcbt5fh0000gn/T/TemporaryItems/NSIRD_screencaptureui_1xrmIP/截屏2026-08-27 18.18.48.png`
+- Desktop implementation: `/private/tmp/opentai-subscribe-helper-removed-desktop.png`
+- Mobile implementation: `/private/tmp/opentai-subscribe-helper-removed-mobile-focused.png`
+- Focused comparison: `/private/tmp/opentai-subscribe-helper-removed-compare.png`
+
+## Verification
+
+- Removed the complete `Opens your email app. Your address is not stored by OpenTAI.` helper line and its unused Chinese translation.
+- Kept the language selector, email input, Subscribe button, recipient, and mailto submission behavior unchanged.
+- Compared the reference and implementation in one focused image. The form now ends after the input/button row with no replacement copy or empty helper slot.
+- Checked desktop and 390 × 844 mobile views in the in-app browser with zero horizontal overflow.
+- Browser console reports no warnings or errors.
+
+## Findings
+
+- No remaining P0, P1, P2, or P3 findings for this removal-only scope.
+
+final result: passed
+
+---
+
 # Design QA — Home Releases Labels
 
 ## Comparison Targets

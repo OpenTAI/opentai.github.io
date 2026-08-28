@@ -65,7 +65,7 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
 
           <div className="flex flex-col gap-2 sm:flex-row">
             <input
-                aria-label={t(locale, "Email address")}
+              aria-label={t(locale, "Email address")}
               className="w-full rounded-full border border-[#dfe4ee] bg-white px-5 py-3 text-sm text-[#111827] outline-none placeholder:text-[#98a2b3] focus:border-[#a5b4fc]"
               onChange={(event) => setEmail(event.target.value)}
               placeholder="you@university.edu"
@@ -80,10 +80,6 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
               {t(locale, "Subscribe")}
             </button>
           </div>
-
-          <p className="text-xs leading-5 text-[#98a2b3]">
-            {t(locale, "Opens your email app. Your address is not stored by OpenTAI.")}
-          </p>
         </form>
       </div>
     </section>
