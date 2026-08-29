@@ -27,16 +27,6 @@ export function TextArenaOverview({ locale }: { locale: Locale }) {
             <span aria-hidden="true"> →</span>
           </p>
         </div>
-        <div className="text-arena-overview-source">
-          <time>{textArenaOverview.snapshotDate}</time>
-          <a href={textArenaOverview.source} rel="noreferrer" target="_blank">
-            {localized(
-              locale,
-              textArenaOverview.sourceLabel,
-              textArenaOverview.sourceLabelZh,
-            )} ↗
-          </a>
-        </div>
       </header>
 
       <div aria-label={locale === "zh" ? "名次图例" : "Rank legend"} className="text-arena-legend">

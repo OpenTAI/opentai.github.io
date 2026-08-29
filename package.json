@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build",
+    "serve:self-hosted": "python3 server/newsletter_server.py",
     "start": "next start",
     "lint": "eslint",
     "data:metadata": "python3 scripts/fetch-metadata.py",

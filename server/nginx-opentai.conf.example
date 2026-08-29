@@ -1,0 +1,33 @@
+# Add the `limit_req_zone` directive inside the top-level `http {}` block.
+limit_req_zone $binary_remote_addr zone=opentai_subscribe:10m rate=10r/m;
+
+server {
+    listen 443 ssl;
+    server_name opentai.org;
+
+    # Configure ssl_certificate and ssl_certificate_key for the real domain.
+
+    location = /api/subscribe {
+        proxy_pass http://127.0.0.1:4173;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        client_max_body_size 8k;
+        client_body_timeout 10s;
+        proxy_connect_timeout 5s;
+        proxy_read_timeout 30s;
+        proxy_send_timeout 15s;
+
+        limit_req zone=opentai_subscribe burst=20 nodelay;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:4173;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_connect_timeout 5s;
+        proxy_read_timeout 30s;
+    }
+}

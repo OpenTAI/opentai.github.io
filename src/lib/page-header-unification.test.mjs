@@ -57,6 +57,10 @@ test("decorative pre-headings and the visible contact recipient are absent", asy
   assert.doesNotMatch(contact, /OpenTAI contact|contact-dialog-email/);
   assert.match(contact, /buildContactMailtoUrl\(email, values\)/);
   assert.doesNotMatch(contribution, /Community submission/);
+  assert.doesNotMatch(
+    contribution,
+    /Questions\? Email|buildVolunteerContactMailto|siteBrand\.contactEmail/,
+  );
   assert.doesNotMatch(submission, /Community submission/);
   assert.doesNotMatch(community, /Contributor Recognition/);
   assert.doesNotMatch(subscribe, /OpenTAI Daily/);

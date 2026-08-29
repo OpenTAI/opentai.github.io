@@ -1,22 +1,38 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { newsletter } from "@/data/site";
 import { Locale, t } from "@/lib/i18n";
-import { buildNewsletterMailto } from "@/lib/newsletter";
+import { buildNewsletterRequest } from "@/lib/newsletter";
 
 type Language = "en" | "zh";
 
 export function SubscribeBox({ locale }: { locale: Locale }) {
   const [language, setLanguage] = useState<Language>(locale);
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
 
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    window.location.href = buildNewsletterMailto(
+    setStatus("sending");
+    const request = buildNewsletterRequest(
       { email, language },
-      newsletter.recipientEmail,
+      process.env.NEXT_PUBLIC_NEWSLETTER_ENDPOINT ?? "/api/subscribe",
+      website,
     );
+
+    try {
+      const response = await fetch(request.url, request.init);
+      if (!response.ok) {
+        throw new Error(`Subscription request failed with ${response.status}`);
+      }
+      setEmail("");
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -35,6 +51,21 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
         </div>
 
         <form className="space-y-3" onSubmit={onSubmit}>
+          <div
+            aria-hidden="true"
+            className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden"
+          >
+            <label htmlFor="newsletter-website">Website</label>
+            <input
+              autoComplete="off"
+              id="newsletter-website"
+              name="website"
+              onChange={(event) => setWebsite(event.target.value)}
+              tabIndex={-1}
+              type="text"
+              value={website}
+            />
+          </div>
           <div
             aria-label={t(locale, "Digest language")}
             className="inline-flex rounded-full border border-[#e3e8f2] bg-[#f6f8fc] p-1"
@@ -73,12 +104,25 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
               value={email}
             />
             <button
-              className="site-cta shrink-0"
+              className="site-cta shrink-0 disabled:cursor-wait disabled:opacity-60"
+              disabled={status === "sending"}
               type="submit"
             >
-              {t(locale, "Subscribe")}
+              {t(locale, status === "sending" ? "Sending…" : "Subscribe")}
             </button>
           </div>
+          <p
+            aria-live="polite"
+            className={`min-h-5 text-sm ${
+              status === "error" ? "text-[#b42318]" : "text-[#475467]"
+            }`}
+          >
+            {status === "sent"
+              ? t(locale, "Subscription request sent.")
+              : status === "error"
+                ? t(locale, "Could not send the request. Please try again.")
+                : ""}
+          </p>
         </form>
       </div>
     </section>

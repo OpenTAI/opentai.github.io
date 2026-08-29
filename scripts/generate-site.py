@@ -1361,11 +1361,6 @@ export type HomeCategoryCard = {
   icon: string;
 };
 
-export const newsletter = {
-  // The static site opens the visitor's email app and stores no subscriber data.
-  recipientEmail: "danxjma@gmail.com",
-};
-
 export const siteBrand = {
   name: "OpenTAI",
   tagline: "The Open Hub for Trustworthy AI",

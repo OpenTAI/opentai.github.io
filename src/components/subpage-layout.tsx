@@ -44,13 +44,6 @@ const COLUMNS = ["Resource", "Category", "Activity", "Links"] as const;
 const GRID = "lg:grid-cols-[2.2fr_0.8fr_0.95fr_0.75fr]";
 
 type ResourceCardKind = "benchmark" | "dataset";
-type InteractionEnvironment = "Mobile" | "Computer-use" | "CLI";
-
-const INTERACTION_ENVIRONMENTS: readonly InteractionEnvironment[] = [
-  "Mobile",
-  "Computer-use",
-  "CLI",
-];
 
 function externalResource(
   row: SubpageTableRow,
@@ -549,8 +542,6 @@ export function SubpageLayout(
   const { locale, resourceCardKind } = props;
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  const [activeEnvironment, setActiveEnvironment] =
-    useState<InteractionEnvironment | null>(null);
   const [openLinksId, setOpenLinksId] = useState<string | null>(null);
   const [sortKey, setSortKey] = useState<ResourceSortKey>(
     resourceCardKind ? "stars-desc" : "default",
@@ -589,16 +580,6 @@ export function SubpageLayout(
     [props.tableRows],
   );
 
-  const environmentStats = useMemo(
-    () =>
-      INTERACTION_ENVIRONMENTS.map((environment) => ({
-        environment,
-        count: props.tableRows.filter((row) => row.tags?.includes(environment)).length,
-      })),
-    [props.tableRows],
-  );
-  const hasInteractionEnvironments = environmentStats.some(({ count }) => count > 0);
-
   const visibleRows = useMemo(() => {
     const category = categoryStats.find(
       ({ category }) => category.title === activeCategory,
@@ -608,11 +589,7 @@ export function SubpageLayout(
       ? props.tableRows.filter((row) => rowMatchesDomainFilters(row, filters))
       : props.tableRows;
 
-    const environmentRows = activeEnvironment
-      ? categoryRows.filter((row) => row.tags?.includes(activeEnvironment))
-      : categoryRows;
-
-    const filteredRows = environmentRows.filter((row) => {
+    const filteredRows = categoryRows.filter((row) => {
       const searchValues: (string | null | undefined)[] = [
         row.name,
         row.note,
@@ -636,7 +613,7 @@ export function SubpageLayout(
       );
     });
     return sortResourceRows(filteredRows, sortKey);
-  }, [activeCategory, activeEnvironment, categoryStats, locale, normalizedQuery, props.tableRows, sortKey]);
+  }, [activeCategory, categoryStats, locale, normalizedQuery, props.tableRows, sortKey]);
 
   const catalogSummary = useMemo(
     () =>
@@ -735,7 +712,7 @@ export function SubpageLayout(
 
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#eceff5] pb-4">
         <p className="text-sm text-[#667085]">
-          {normalizedQuery || activeCategory || activeEnvironment
+          {normalizedQuery || activeCategory
             ? locale === "zh"
               ? `${visibleRows.length} 项匹配结果`
               : `${visibleRows.length} matching ${visibleRows.length === 1 ? "entry" : "entries"}`
@@ -772,41 +749,6 @@ export function SubpageLayout(
                 value={query}
               />
             </div>
-            {resourceCardKind && hasInteractionEnvironments ? (
-              <div className="resource-environment-filter">
-                <span>{t(locale, "Interaction environment")}</span>
-                <div
-                  aria-label={t(locale, "Filter resources by interaction environment")}
-                  className="dataset-domain-pills"
-                  role="group"
-                >
-                  <button
-                    aria-pressed={activeEnvironment === null}
-                    className={activeEnvironment === null ? "dataset-domain-pill-active" : undefined}
-                    onClick={() => setActiveEnvironment(null)}
-                    type="button"
-                  >
-                    {t(locale, "All environments")}
-                  </button>
-                  {environmentStats.map(({ environment, count }) => (
-                    <button
-                      aria-pressed={activeEnvironment === environment}
-                      className={
-                        activeEnvironment === environment
-                          ? "dataset-domain-pill-active"
-                          : undefined
-                      }
-                      disabled={count === 0}
-                      key={environment}
-                      onClick={() => setActiveEnvironment(environment)}
-                      type="button"
-                    >
-                      {t(locale, environment)} {count}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ) : null}
             {resourceCardKind === "dataset" ? (
               <div
                 aria-label={t(locale, "Filter datasets by domain")}

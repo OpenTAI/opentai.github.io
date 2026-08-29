@@ -2,14 +2,12 @@
 
 import { FormEvent, useEffect, useId, useState } from "react";
 import {
-  buildVolunteerContactMailto,
   buildVolunteerContributionIssueUrl,
   contributionAreas,
   type VolunteerContributionErrors,
   type VolunteerContributionValues,
   validateVolunteerContribution,
 } from "@/lib/contribution";
-import { siteBrand } from "@/data/site";
 import { Locale, t } from "@/lib/i18n";
 
 const EMPTY_VALUES: VolunteerContributionValues = {
@@ -104,12 +102,6 @@ export function ContributionDialog({ locale }: { locale: Locale }) {
                   locale,
                   "Tell us how you would like to help. Your submission opens a GitHub issue for review.",
                 )}
-              </p>
-              <p>
-                {t(locale, "Questions? Email")} {" "}
-                <a href={buildVolunteerContactMailto(siteBrand.contactEmail)}>
-                  {siteBrand.contactEmail}
-                </a>
               </p>
             </div>
 

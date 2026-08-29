@@ -218,7 +218,7 @@ test("arena result chart exposes the official source and metric caveat", () => {
   assert.match(source, /series\.color/);
 });
 
-test("text arena overview renders every verified category rank and its source", () => {
+test("text arena overview renders every verified category rank without the source callout", () => {
   const source = readFileSync(
     new URL("../components/text-arena-overview.tsx", import.meta.url),
     "utf8",
@@ -226,7 +226,7 @@ test("text arena overview renders every verified category rank and its source", 
 
   assert.match(source, /textArenaOverview\.rows\.map/);
   assert.match(source, /textArenaOverview\.columns\.map/);
-  assert.match(source, /textArenaOverview\.source/);
+  assert.doesNotMatch(source, /textArenaOverview\.(source|sourceLabel|snapshotDate)/);
   assert.match(source, /text-arena-rank-first/);
 });
 

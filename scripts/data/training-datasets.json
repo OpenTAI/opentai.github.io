@@ -24,7 +24,8 @@
       "trainingEvidence": "The LLaMA 3-8B model was trained on the AdvBench dataset with 200 clean samples and 150 poisoned samples, using the same hyperparameters as previous experiments.",
       "linkVerificationEvidenceUrl": "https://github.com/llm-attacks/llm-attacks/tree/main/data/advbench",
       "linkVerificationReason": "The paper authors' repository contains the named AdvBench CSV under data/advbench.",
-      "summary": "Harmful behavior goals and target strings released as CSV files for adversarial attack and safety-alignment research.",
+      "size": "520 instructions and target strings",
+      "summary": "520 harmful-behavior instructions and corresponding target strings released as CSV files for evaluating adversarial attacks and safety alignment.",
       "summarySourceUrl": "https://github.com/llm-attacks/llm-attacks/tree/main/data/advbench"
     },
     {
@@ -32,14 +33,14 @@
       "domain": "LLMs",
       "year": "2025",
       "venue": "arXiv 2025",
-      "size": "34K samples",
+      "size": "33.4K samples",
       "paperUrl": "https://arxiv.org/abs/2501.09004",
       "huggingFaceUrl": "https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-2.0",
       "dataUrl": "https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-2.0",
       "sourceUrl": "https://arxiv.org/abs/2502.05206",
       "trainingEvidence": "The primary paper provides a train-test split and trains safety guard models on Aegis 2.0. NVIDIA publishes the split files on Hugging Face.",
-      "summary": "A 34K-sample content-safety dataset with train and test splits for training and evaluating safety guard models.",
-      "summarySourceUrl": "https://arxiv.org/abs/2502.05206"
+      "summary": "33.4K content-safety conversation samples assembled from human-written red-team prompts, LLM-generated responses, and safety annotations for training and evaluating guard models.",
+      "summarySourceUrl": "https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-2.0"
     },
     {
       "name": "AG News",
@@ -111,7 +112,8 @@
       "trainingEvidence": "To distill GPT-4's ``knowledge'' on safety policies, a dataset containing both harmful and harmless queries is necessary.\nWe utilize the red-team data from Anthropic [@ganguli2022red] as the query dataset.\nThis dataset consists of 38,961 text transcripts documenting conversations between human adversaries and AI assistants.\nFrom this dataset, we select the initial human prompt and exclude the corresponding assistant response, omitting any subsequent exchanges, to create a single-turn prompt dataset designated as $\\mathcal{D}_{red}$.\nNote that this dataset was released in 2022 and has no overlap with JailbreakHub, JailbreakBench, or MultiJail, which were released in 2023 or 2024.\nFurthermore, this dataset is exclusively in English, implying that a model trained on this data will not acquire any additional multilingual capabilities.",
       "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/Anthropic/hh-rlhf/tree/main/red-team-attempts",
       "linkVerificationReason": "Anthropic's official HH-RLHF release has a dedicated red-team-attempts directory.",
-      "summary": "38,961 human–AI red-team transcripts collected to study harmful model behavior and support safety-policy training.",
+      "size": "38,961 red-team conversations",
+      "summary": "38,961 human–AI red-team conversations collected through adversarial user interactions for studying and reducing harmful model behavior.",
       "summarySourceUrl": "https://huggingface.co/datasets/Anthropic/hh-rlhf/tree/main/red-team-attempts"
     },
     {
@@ -147,7 +149,8 @@
       "trainingEvidence": "**Datasets and models**. For the alignment task, we use the safe samples from the alignment dataset of BeaverTails [@ji2023beavertails]. For fine-tuning task, we consider SST2[@socher2013recursive], AGNEWS[@zhang2015character], GSM8K[@cobbe2021training] and AlpacaEval [@alpaca_eval] as the user fine-tuning task. Within a total number of $n$ samples, we mix $p$ (percentage) of unsafe data from BeaverTails with fine-tuning task's benign training data. In our experiment, the default setting is $p=0.1$ and $n=1000$ (specially, $n=5000$ for GSM8K and $n=700$ for AlpacaEval) unless otherwise specified. We use Llama2-7B [@touvron2023llama], Opt-3.7B [@zhang2022opt] and Vicuna-7B [@anil2023palm] for evaluation. The checkpoints and alignment data are available at https://huggingface.co/anonymous4486. All the experiments are done with an A100-80G.",
       "linkVerificationEvidenceUrl": "https://github.com/PKU-Alignment/beavertails",
       "linkVerificationReason": "The PKU-Alignment paper repository links the official Hugging Face dataset release.",
-      "summary": "Prompt–response examples with safety annotations released for harmlessness alignment and safety classifier training.",
+      "size": "333,963 safety-annotated question–answer pairs",
+      "summary": "333,963 question–answer pairs collected and human-annotated with safety categories for harmlessness alignment and safety-classifier training.",
       "summarySourceUrl": "https://github.com/PKU-Alignment/beavertails"
     },
     {
@@ -177,7 +180,8 @@
       "trainingEvidence": "The training-composition ablation includes Wiki+BIPIA and News+BIPIA; the appendix states 75 instructions across training and test sets under MIT.",
       "linkVerificationEvidenceUrl": "https://arxiv.org/abs/2312.14197",
       "linkVerificationReason": "The benchmark paper names BIPIA and the Microsoft repository identifies itself as the data and code release for that same paper. The repository does not establish a completed official Hugging Face release.",
-      "summary": "Indirect prompt-injection instructions and contexts with documented training and test partitions for detector research.",
+      "size": "5 task datasets and 250 attack goals",
+      "summary": "5 task-specific context datasets paired with 250 injected attack goals, assembled from web, email, table, summarization, and code sources for training and evaluating indirect-prompt-injection defenses.",
       "summarySourceUrl": "https://arxiv.org/abs/2312.14197"
     },
     {
@@ -190,21 +194,23 @@
       "trainingEvidence": "- To derive the harmful dataset and the alignment dataset, we use the data pair from [@rosati2024representation] with this link: https://huggingface.co/datasets/anonymous4486/repnoise_beavertail. Other used datasets are standard benchmark datasets that can be accessed from Huggingface.",
       "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/anonymous4486/repnoise_beavertail/tree/main",
       "linkVerificationReason": "The paper's anonymous release contains the named BeaverTails-with-refusals training JSON. The generic BeaverTails release alone is not the same derived set.",
-      "summary": "A derived BeaverTails training set pairing harmful prompts with refusal responses for representation-based safety alignment.",
+      "size": "18,106 prompt–response–refusal records",
+      "summary": "18,106 prompt–response–refusal records derived from BeaverTails for representation-based safety alignment and refusal training.",
       "summarySourceUrl": "https://huggingface.co/datasets/anonymous4486/repnoise_beavertail/tree/main"
     },
     {
       "name": "Bot-Adversarial Dialogue",
       "domain": "LLMs",
-      "paperUrl": "https://arxiv.org/abs/2012.15351",
+      "paperUrl": "https://aclanthology.org/2021.naacl-main.235/",
       "githubUrl": "https://github.com/facebookresearch/ParlAI",
       "dataUrl": "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue",
       "sourceUrl": "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue",
       "trainingEvidence": "We show random examples of test cases generated by each red teaming method in Table [#tab:examples-per-method] (for the 280B LM) and Table [#tab:examples-per-method-7b] (for the 7B LM and the BAD dataset).\n\nTraining-use context: For the red LM, we also use the Gopher LM, with various prompts depending on the behavior we aim to test.\nFor our offensive text classifier $r(x, y)$, we train a model to predict whether an utterance is offensive, given a dialogue history.\nIn particular, we finetune a smaller, 1.4B parameter version of Gopher from [@rae2021gopher] to classify utterances in the Bot-Adversarial Dialogue (BAD) dataset [@xu-etal-2021-bot].\nAs shown in Appendix Table [#tab:classifier comparison], our classifier obtains substantially higher F1 than that of [@xu-etal-2021-bot], so we use our classifier in our experiments.\nOther classifiers are compatible with our approach, but we observed poor accuracy from classifiers such as Perspective API[^fn:1] that did not incorporate dialogue history.\nSee Appendix § [#sec:Classifier Details] for classifier details.",
       "linkVerificationEvidenceUrl": "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue",
       "linkVerificationReason": "Meta's official ParlAI task module downloads and prepares the Bot-Adversarial Dialogue data.",
-      "summary": "Adversarial human–bot conversations collected to train and evaluate offensive-dialogue classifiers.",
-      "summarySourceUrl": "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue"
+      "size": "5K conversations and approximately 70K utterances",
+      "summary": "5K adversarial human–bot conversations containing approximately 70K utterances, collected through crowdworker interactions for training and evaluating offensive-language classifiers.",
+      "summarySourceUrl": "https://aclanthology.org/2021.naacl-main.235/"
     },
     {
       "name": "BridgeData V2",
@@ -335,7 +341,7 @@
       "trainingEvidence": "The Safety at Scale table calls this resource Crafted datasets. The primary paper says the authors train indirect-prompt-injection detection and extraction models on the crafted training data; the official repository publishes the exact training and evaluation JSON files and training commands under data/.",
       "linkVerificationEvidenceUrl": "https://aclanthology.org/2025.acl-long.890.pdf",
       "linkVerificationReason": "The ACL paper defines the crafted D_det and D_ext training datasets and identifies the authors' indirect-pia-detection repository; its data directory contains the released assets.",
-      "summary": "Crafted indirect prompt-injection examples released for training detection and extraction models.",
+      "summary": "Exact count not recorded: indirect prompt-injection examples crafted from attack instructions and external contexts for training detection and extraction models.",
       "summarySourceUrl": "https://aclanthology.org/2025.acl-long.890.pdf"
     },
     {
@@ -383,8 +389,8 @@
       "dataUrl": "https://www.modelscope.cn/datasets/damo/CValues-Comparison/summary",
       "sourceUrl": "https://arxiv.org/abs/2502.05206",
       "trainingEvidence": "The primary paper and official repository release CValues-Comparison separately from the CVALUES evaluation benchmark. They document 116K training and 29K test preference pairs and recommend the positive responses for safety SFT and the pairs for reward-model training.",
-      "summary": "116K training and 29K test preference pairs for safety supervised fine-tuning and reward-model training.",
-      "summarySourceUrl": "https://arxiv.org/abs/2502.05206"
+      "summary": "145K preference pairs generated through a self-instruct and response-comparison pipeline, then split into 116K training and 29K test pairs for safety fine-tuning and reward-model training.",
+      "summarySourceUrl": "https://github.com/X-PLUG/CValues"
     },
     {
       "name": "D4RL",
@@ -434,8 +440,8 @@
       "dataUrl": "https://github.com/Libr-AI/do-not-answer/tree/main/datasets",
       "sourceUrl": "https://arxiv.org/abs/2502.05206",
       "trainingEvidence": "The primary paper reports training safety classifiers on the released instruction-response annotations, and the authors publish the files under datasets/.",
-      "summary": "Instruction–response examples with safety annotations released for training refusal and risk classifiers.",
-      "summarySourceUrl": "https://arxiv.org/abs/2502.05206"
+      "summary": "939 safety-sensitive instructions and annotated model responses curated across five risk areas for training refusal and risk classifiers.",
+      "summarySourceUrl": "https://github.com/Libr-AI/do-not-answer"
     },
     {
       "name": "DROID",
@@ -459,7 +465,7 @@
       "trainingEvidence": "The authors allocate 70% of EAsafetyBench-Drone to training and embed the EAsafetyBench-Prompt visible prompts for training a 3-layer MLP classifier.",
       "linkVerificationEvidenceUrl": "https://arxiv.org/abs/2504.15699",
       "linkVerificationReason": "The paper introduces EAsafetyBench, and the matching author repository contains a dedicated EAsafetyBench data directory. No official Hugging Face release was established.",
-      "summary": "Embodied-agent safety prompts and drone scenarios with a documented 70% training split for safety-classifier training.",
+      "summary": "Exact count not recorded: embodied-agent safety prompts and drone interaction scenarios assembled with a documented 70% training split for training safety classifiers.",
       "summarySourceUrl": "https://arxiv.org/abs/2504.15699"
     },
     {
@@ -564,7 +570,8 @@
       "trainingEvidence": "To train the preference predictor, we use the HH-RLHF dataset which contains 161K pairs of human preference data about helpfulness and harmlessness [@bai2022hhrlhf].",
       "linkVerificationEvidenceUrl": "https://github.com/anthropics/hh-rlhf",
       "linkVerificationReason": "Anthropic's official repository and HF organization distribute the helpfulness/harmlessness preference data.",
-      "summary": "161K human preference pairs about assistant helpfulness and harmlessness for preference-model training.",
+      "size": "161K human preference pairs",
+      "summary": "161K human preference pairs collected by comparing assistant responses for helpfulness and harmlessness for preference modeling and RLHF training.",
       "summarySourceUrl": "https://github.com/anthropics/hh-rlhf"
     },
     {
@@ -589,7 +596,8 @@
       "trainingEvidence": "For word level detection on HSOL dataset [@davidson2017automated], three non-injected words (``bi*ch'',``h*e'' and ``pu*sy'') are also detected as backdoor triggers.\n\nTraining-use context: Our contributions are summarized as follows:\nWe establish the connection between backdoor behaviors and the memorization of language model.\nWe define the memorization of deep neural networks on the input element and show that the NLP backdoor is the element-wise language model memorization.\nWe find the memorization on an input element is caused by the element duplication in the training data, and demonstrate that the upper bound of the generalization error on the backdoor task is negatively correlated to the duplication number of trigger pattern.\nWe propose a new line for backdoor defense, i.e., data-centric defense. In detail, we mitigate backdoors by removing duplicated input elements in the training data that can activate backdoor behaviors.\nEmpirical results on different datasets demonstrate our method achieves state-of-the-art performance when defending against different types of backdoor attacks on NLP models.",
       "linkVerificationEvidenceUrl": "https://github.com/t-davidson/hate-speech-and-offensive-language",
       "linkVerificationReason": "The first author's repository contains the labeled Hate Speech and Offensive Language CSV used by the paper.",
-      "summary": "Tweets labeled as hate speech, offensive language, or neither for content-safety classification.",
+      "size": "24,783 tweets",
+      "summary": "24,783 tweets collected with a hate-speech lexicon and crowd-annotated as hate speech, offensive language, or neither for training content-safety classifiers.",
       "summarySourceUrl": "https://github.com/t-davidson/hate-speech-and-offensive-language"
     },
     {
@@ -658,7 +666,8 @@
       "trainingEvidence": "Table tab:task_summary identifies Jigsaw Toxic Comment Classification as the dataset for one of the audited tasks. The authors then state: ‘All experiments above were run against models fine-tuned using 400 training inputs from a standard dataset.’",
       "linkVerificationEvidenceUrl": "https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data",
       "linkVerificationReason": "The official Jigsaw/Kaggle competition page is the original data entry; access requires accepting Kaggle competition terms. Google's HF release is an official prepared entry.",
-      "summary": "Wikipedia comments labeled for multiple forms of toxicity for content-moderation model training.",
+      "size": "159,571 training comments",
+      "summary": "159,571 Wikipedia talk-page comments collected from page edits and annotated with six toxicity labels for training content-moderation models.",
       "summarySourceUrl": "https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data"
     },
     {
@@ -804,7 +813,8 @@
       "trainingEvidence": "The 5,466-sample dataset is split into 4,571 train, 71 evaluation, and 824 test examples; the annotated dataset and pipeline are public.",
       "linkVerificationEvidenceUrl": "https://huggingface.co/collections/AIML-TUDA/llavaguard",
       "linkVerificationReason": "The TU Darmstadt organization now publishes the LlavaGuard training dataset at the shorter canonical repository name; its card cites arXiv:2406.05113.",
-      "summary": "5,466 annotated multimodal safety examples split into 4,571 training, 71 evaluation, and 824 test records.",
+      "size": "5,466 multimodal safety examples",
+      "summary": "5,466 image–text safety examples collected and expert-annotated with ratings, categories, and rationales for training and evaluating multimodal guard models.",
       "summarySourceUrl": "https://ml-research.github.io/human-centered-genai/projects/llavaguard/"
     },
     {
@@ -940,7 +950,8 @@
       "trainingEvidence": "The blue suffix generator is fine-tuned from GPT-2 with PPO on hard jailbreak prompts crafted on all 13 MM-SafetyBench topics.",
       "linkVerificationEvidenceUrl": "https://arxiv.org/abs/2311.17600",
       "linkVerificationReason": "The MM-SafetyBench paper introduces the benchmark and gives isXinLiu/MM-SafetyBench as its resource repository. The previously cited BlueSuffix repository is downstream use, not MM-SafetyBench's official repository.",
-      "summary": "Hard multimodal jailbreak prompts across 13 safety topics, with examples used to train a safety suffix generator.",
+      "size": "5,040 text–image attack pairs",
+      "summary": "5,040 text–image attack pairs generated across 13 safety scenarios for training and evaluating multimodal safeguards and a safety suffix generator.",
       "summarySourceUrl": "https://arxiv.org/abs/2311.17600"
     },
     {
@@ -1054,7 +1065,8 @@
       "trainingEvidence": "Notably, our approach outperforms the clean-label backdoor attack on Triggerless, achieving an average ASR improvement of 1.41% for the SST-2 dataset, 0.5% for the OLID dataset and 4.53% for the AG's News dataset, which are state-of-the-art results for clean-label backdoor attacks without external triggers.\n\nTraining-use context: Tables [#tab:tab4] and [#tab:tab44] show CA and ASR as the number of poisoning samples increases on the victim model. Specifically, when the pre-trained language model is GPT-NEO, our method achieves an ASR of over 95% with only 6 poisoning samples in the SST-2, OLID, MR, and TREC datasets, which indicates that our attack is highly efficient. Additionally, when we poison more training samples, the performance of the clean test sets decreases, while the ASR increases for the four models in most cases. This observation agrees with the results presented in Figure [#fig:fig4]. For additional experimental results in the few-shot settings, please see the Appendix [#appendix3].",
       "linkVerificationEvidenceUrl": "https://zenodo.org/records/2670722",
       "linkVerificationReason": "The task authors' Zenodo record is the archival release for OLID/OffensEval 2019.",
-      "summary": "Social-media posts labeled for offensive-language identification and categorization.",
+      "size": "14,100 tweets",
+      "summary": "14,100 tweets collected from Twitter and hierarchically annotated for offensive-language identification and categorization.",
       "summarySourceUrl": "https://zenodo.org/records/2670722"
     },
     {
@@ -1081,7 +1093,8 @@
       "trainingEvidence": "Caption: In aligning Mistral-7B on the OpenAssistant dataset, we find that using KTO with only one output per input still outperforms DPO, despite this restriction reducing the amount of training data by 72%.",
       "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/OpenAssistant/oasst1",
       "linkVerificationReason": "The OpenAssistant organization publishes OASST1 and links the project repository and paper.",
-      "summary": "Crowd-sourced assistant conversation trees with quality and safety labels for instruction and preference training.",
+      "size": "161,443 messages in more than 10,000 conversation trees",
+      "summary": "161,443 conversational messages organized into more than 10,000 conversation trees, collected from over 13,500 crowd contributors for instruction tuning and preference training.",
       "summarySourceUrl": "https://huggingface.co/datasets/OpenAssistant/oasst1"
     },
     {
@@ -1155,7 +1168,8 @@
       "trainingEvidence": "We conducted a comprehensive evaluation of PoisonedAlign on five prominent LLMs, two alignment datasets, 49 task pairings, and five distinct prompt injection attacks. Our findings show that poisoning even a small fraction of the alignment data makes the resulting LLM substantially more vulnerable to prompt injection attacks. For instance, with just 10% of the ORCA-DPO [@dpodata] alignment data poisoned, the success rate of a Combined Attack against Llama-3-8b-Instruct increased by an average of 0.33. Crucially, this vulnerability is achieved with high stealth since the poisoned models maintain their core capabilities on standard benchmarks like MMLU [@hendrycks2020measuring], making the attack difficult to detect through routine performance evaluation.",
       "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/Intel/orca_dpo_pairs",
       "linkVerificationReason": "Intel's official HF organization publishes the named Orca DPO preference pairs.",
-      "summary": "Chosen–rejected response pairs released for direct preference optimization and alignment research.",
+      "size": "12,859 chosen–rejected response pairs",
+      "summary": "12,859 chosen–rejected response pairs derived from OpenOrca response comparisons for direct preference optimization and alignment training.",
       "summarySourceUrl": "https://huggingface.co/datasets/Intel/orca_dpo_pairs"
     },
     {
@@ -1190,8 +1204,9 @@
       "trainingEvidence": "To the best of our knowledge, Safe RLHF is the first integration of Safe RL and the RLHF framework.\nThis framework incorporates a two-dimensional human annotation scheme and a safe training mechanism to enhance model performance while ensuring safety (as shown in Figure [#fig:pipeline]).\nExperimentally, we applied the Safe RLHF pipeline three times, significantly enhancing the helpfulness of the base SFT model while efficiently reducing the generation of harmful responses.\nCompared to the static multi-objective balance algorithm, *Reward Shaping* [@ng1999policy], Our algorithm better navigates the tension between the objectives of helpfulness and harmlessness.\nSimultaneously, it maintains equal or superior performance improvements compared to existing value-aligned algorithms.\nMeanwhile, we release all the data and training codes from the three iterations of Safe RLHF fine-tuning, facilitating researchers to replicate and validate our findings.",
       "linkVerificationEvidenceUrl": "https://github.com/PKU-Alignment/safe-rlhf",
       "linkVerificationReason": "PKU-Alignment's official repository links the SafeRLHF preference dataset release.",
-      "summary": "Helpfulness and harmlessness preference data with separate reward and cost signals for safe RLHF training.",
-      "summarySourceUrl": "https://github.com/PKU-Alignment/safe-rlhf"
+      "size": "83.4K preference entries",
+      "summary": "83.4K preference entries collected through helpfulness and harmlessness comparisons for learning separate reward and safety-cost signals in safe RLHF training.",
+      "summarySourceUrl": "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF"
     },
     {
       "name": "Project Gutenberg",
@@ -1290,7 +1305,7 @@
       "trainingEvidence": "The authors supervised-fine-tune on publicly available SafeMTData and train a Tulu-Mix + SafeMTData variant.",
       "linkVerificationEvidenceUrl": "https://arxiv.org/abs/2410.10700",
       "linkVerificationReason": "The ActorAttack paper introduces SafeMTData and names the ActorAttack repository; the SafeMTData organization dataset card cites arXiv:2410.10700 and uses the exact dataset name.",
-      "summary": "Safety-focused instruction data released for supervised fine-tuning of safer language models.",
+      "summary": "Exact count not recorded: safety-focused instruction records released by the authors for supervised fine-tuning of safer language models.",
       "summarySourceUrl": "https://arxiv.org/abs/2410.10700"
     },
     {
@@ -1305,7 +1320,7 @@
       "dataUrl": "https://huggingface.co/datasets/thu-coai/Safety-Prompts",
       "sourceUrl": "https://arxiv.org/abs/2502.05206",
       "trainingEvidence": "The primary paper says SafetyPrompts can be used in model training and evaluation. The official repository publishes the 100K prompt-response collection and its Hugging Face loader.",
-      "summary": "A 100K prompt–response collection released for safety training and evaluation.",
+      "summary": "100K Chinese prompt–response examples generated across typical and adversarial safety scenarios for safety training and evaluation.",
       "summarySourceUrl": "https://arxiv.org/abs/2502.05206"
     },
     {
@@ -1331,7 +1346,8 @@
       "trainingEvidence": "This indicates the effectiveness of our defense framework on the SAP20 dataset, which shares the same distribution as the training data.",
       "linkVerificationEvidenceUrl": "https://github.com/Aatrox103/SAP",
       "linkVerificationReason": "The paper authors' repository releases the SAP attack code and generated poisoning data/artifacts used in the experiments.",
-      "summary": "Generated poisoning examples and attack artifacts released for studying and defending against prompt-based data poisoning.",
+      "size": "5 poisoning-dataset variants",
+      "summary": "5 poisoning-dataset variants generated with the authors’ attack framework for studying and defending against prompt-based data poisoning.",
       "summarySourceUrl": "https://github.com/Aatrox103/SAP"
     },
     {
@@ -1344,7 +1360,7 @@
       "trainingEvidence": "We allocate 80% of the samples in D_dir or D_int for fine-tuning and reserve the remaining 20% as validation sets. During training, the defense prompts and queries from the collected datasets are inputs and y is the label used to fine-tune the Llama model.",
       "linkVerificationEvidenceUrl": "https://zenodo.org/records/14736936/latest",
       "linkVerificationReason": "The final paper states that datasets, raw results and code are released; the official Zenodo artifact contains the archived release and points to the SelfDefend code repository.",
-      "summary": "Defense prompts, queries, and labels split 80/20 for fine-tuning and validating a prompt-injection defense model.",
+      "summary": "Exact count not recorded: defense prompts, queries, and labels collected into direct and intent datasets with an 80/20 split for fine-tuning and validating a prompt-injection defense model.",
       "summarySourceUrl": "https://zenodo.org/records/14736936/latest"
     },
     {
@@ -1405,7 +1421,7 @@
       "trainingEvidence": "**Setting III:** For Model 8, based on [@hubinger2024sleeper]'s official instructions[^fn:10], we use the provided first 95$\\%$ fine-tuning dataset `code_backdoor_train_data.jsonl` and a general instruction tuning dataset, i.e., Alpaca HHH dataset[^fn:11] to fine-tune a helpfulness-focused model, i.e., **`Mistral-instruct-7b-v0.2`**, for 2 epochs with a batch size of 4 and a learning rate of $3e-7$.",
       "linkVerificationEvidenceUrl": "https://github.com/anthropics/sleeper-agents-paper",
       "linkVerificationReason": "Anthropic's official paper repository contains the exact code_backdoor_train_data.jsonl artifact.",
-      "summary": "Code examples with conditional backdoor behavior released for deceptive-alignment and persistence research.",
+      "summary": "Exact count not recorded: code-completion examples generated with vulnerability-specific trigger prompts for training and studying persistent deceptive backdoors.",
       "summarySourceUrl": "https://github.com/anthropics/sleeper-agents-paper"
     },
     {
@@ -1442,7 +1458,8 @@
       "trainingEvidence": "SMID is the foundation of LlavaGuard's safety data collection; that constructed dataset has an explicit 4,571-example training split.",
       "linkVerificationEvidenceUrl": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0190954",
       "linkVerificationReason": "The PLOS ONE paper introduces the Socio-Moral Image Database (SMID) and explicitly identifies the OSF project as the location of its images and normative data.",
-      "summary": "Images with human moral-valence ratings used as the foundation for multimodal safety annotation.",
+      "size": "2,941 images and 820,565 human judgments",
+      "summary": "2,941 images paired with 820,565 moral and emotional judgments collected from 2,716 participants for affective research and multimodal safety annotation.",
       "summarySourceUrl": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0190954"
     },
     {
@@ -1480,7 +1497,7 @@
       "trainingEvidence": "Data collected in the Sandbox simulation is used to construct three alignment datasets for the three Stable Alignment training stages. The official repository publishes sandbox_v1.json and sandbox_v2.json as samples; the full 169k interaction-derived set is request-only.",
       "linkVerificationEvidenceUrl": "https://github.com/agi-templar/Stable-Alignment/tree/main/assets",
       "linkVerificationReason": "The paper defines Sandbox interaction data as the source of three alignment-training datasets. The official repository releases sandbox_v1.json and sandbox_v2.json as public samples and says the larger full interaction set is request-only; the public scope is stated explicitly.",
-      "summary": "Public samples of interaction data collected in a sandbox to construct three alignment-training stages.",
+      "summary": "2 public interaction-data sample files, drawn from a 169K sandbox-generated set, released for constructing three alignment-training stages.",
       "summarySourceUrl": "https://github.com/agi-templar/Stable-Alignment/tree/main/assets"
     },
     {
@@ -1517,7 +1534,8 @@
       "trainingEvidence": "If the alignment data is naturally binary, every positive example can be assumed to be drawn from $y_\\text{desirable}|x$ and every negative example from $y_\\text{undesirable}|x$.\nHowever, the canonical feedback datasets in academic research (HH, SHP, OASST) are in preference format, since the methods that have worked best up until now are preference-based.\nIn our experiments, we convert preference data $y_w \\succ y_l$ by assuming that $y_w$ is drawn from the desirable distribution and $y_l$ from the undesirable one.\nThis is a naive assumption, made for the sake of simplicity, and a more complex deconstruction of preferences into binary feedback would likely yield better results, which we leave for future work.\nTo show that KTO can be used with non-preference data, we also subsample exactly one $y$ per $x$ for some experiments (denoted one-$y$-per-$x$), removing any trace of paired preferences at the cost of reducing the data volume.",
       "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/stanfordnlp/SHP",
       "linkVerificationReason": "Stanford NLP's official HF organization publishes SHP with the paper identifier and subreddit partitions.",
-      "summary": "Human preference pairs collected from Reddit for training and evaluating preference-based alignment methods.",
+      "size": "385K human preference pairs",
+      "summary": "385K human preference pairs collected from highly upvoted and downvoted Reddit responses across 18 domains for training and evaluating preference-based alignment methods.",
       "summarySourceUrl": "https://huggingface.co/datasets/stanfordnlp/SHP"
     },
     {
@@ -1610,7 +1628,8 @@
       "trainingEvidence": "The proposed VAE/GAN detector is trained on genuine TEXBAT DS-0 and DS-1 data, while supervised baselines use TEXBAT under classical and leave-one-out training strategies.",
       "linkVerificationEvidenceUrl": "https://radionavlab.ae.utexas.edu/texbat/",
       "linkVerificationReason": "The University of Texas Radionavigation Laboratory's official TEXBAT page describes versions 1.0 and 1.1, links the UT-hosted data directory and the original TEXBAT paper, and grants research use while asking users not to redistribute the recordings. This establishes the exact battery used by the audited GNSS paper, not merely a similarly named spoofing dataset.",
-      "summary": "Recorded authentic and spoofed GNSS signals for training and testing spoofing-detection models.",
+      "size": "8 GPS signal recordings",
+      "summary": "8 high-fidelity GPS signal recordings collected from live static and dynamic spoofing scenarios for training and testing spoofing-detection and authentication methods.",
       "summarySourceUrl": "https://radionavlab.ae.utexas.edu/texbat/"
     },
     {
@@ -1670,8 +1689,8 @@
       "dataUrl": "https://github.com/sylinrl/TruthfulQA/tree/main/data",
       "sourceUrl": "https://arxiv.org/abs/2502.05206",
       "trainingEvidence": "The official TruthfulQA repository publishes finetune_truth.jsonl and finetune_info.jsonl with a GPT fine-tuning command. The primary paper reports fine-tuning GPT-judge and GPT-info on these labeled examples. This entry is only for those evaluator-training files; the 817 evaluation questions remain in Benchmarks.",
-      "summary": "Labeled truthfulness and informativeness examples released for fine-tuning the TruthfulQA judge and info evaluators.",
-      "summarySourceUrl": "https://arxiv.org/abs/2502.05206"
+      "summary": "6.9K reference-answer and approximately 15.5K generated-answer examples annotated for truthfulness and informativeness for fine-tuning the TruthfulQA judge and information evaluators.",
+      "summarySourceUrl": "https://github.com/sylinrl/TruthfulQA"
     },
     {
       "name": "Tulu V2 Mix",
@@ -1779,7 +1798,7 @@
       "trainingEvidence": "Learning from the lessons of the above failure attempts, we design Virus, a dual objective data optimization scheme, to construct the harmful dataset. Virus aims to optimize the harmful data\nto achieve dual goals: i) the jailbreak loss against guardrail is low such that it can successfully jailbreak the guardrail moderation, and ii) the gradient taken on this data can resemble the harmful gradient, thereby the prompt can still effectively break down the safety alignment of the victim LLM. Our empirical results show that Virus can effectively bypass the moderation, reaching up-to 100% leakage ratio. On the other hand, the gradient of the data optimized Virus can resemble the harmful gradient, effectively breaking down the safety alignment of the victim LLMs, increasing its harmful score by up-to 21.8%.\nWe summarize our contribution as follows:",
       "linkVerificationEvidenceUrl": "https://huggingface.co/papers/2501.17433",
       "linkVerificationReason": "The paper's HF paper page explicitly links anonymous4486/Virus as its dataset release, establishing authorship despite the anonymous namespace.",
-      "summary": "Optimized harmful training examples designed to study guardrail bypass and degradation of model safety alignment.",
+      "summary": "Exact count not recorded: harmful fine-tuning examples generated by optimizing source samples against moderation and jailbreak objectives for studying guardrail bypass and safety-alignment degradation.",
       "summarySourceUrl": "https://huggingface.co/papers/2501.17433"
     },
     {
@@ -1885,7 +1904,8 @@
       "trainingEvidence": "**Adding Circuit Breakers.**\nIn our experimental setup, we employ similar circuit breaker and retain datasets for both the Mistral-7B-Instruct-v2 [@mistral2024v02] and Llama-3-8B-Instruct [@llama3_2024_8b_instruct] models. Detailed information on the synthetic circuit breaker set for LLMs is provided in [#app:sc_llm_dataset]. The retain set for both models includes UltraChat [@ding2023enhancing], comprising instructional conversations, and XSTest [@rottger2023xstest], an exaggerated refusal dataset. Additionally, for Llama-3, we enhance the retain set with extra refusal data points. We follow the implementation of Representation Rerouting (RR) specified in [#alg:lorra] and select hyperparameters based on static attack test cases from HarmBench's validation set. More experimental details can be found in [#llm-details].",
       "linkVerificationEvidenceUrl": "https://github.com/paul-rottger/xstest",
       "linkVerificationReason": "The first author's paper repository contains the complete xstest_prompts.csv and its CC-BY-4.0 license.",
-      "summary": "Prompts contrasting genuinely unsafe requests with exaggerated refusals for studying over-refusal and safety behavior.",
+      "size": "450 prompts",
+      "summary": "450 safe and unsafe prompts curated as minimal contrasts across 10 prompt types for training and evaluating calibrated refusal behavior.",
       "summarySourceUrl": "https://github.com/paul-rottger/xstest"
     },
     {

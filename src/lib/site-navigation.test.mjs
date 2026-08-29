@@ -26,7 +26,7 @@ test("groups the public navigation without linking unfinished routes", () => {
         label: "Evaluation",
         items: [
           ["Leaderboards", "/leaderboard", false],
-          ["Arenas", "/arenas", false],
+          ["Safety Arenas", "/arenas", false],
         ],
       },
       {
@@ -63,7 +63,7 @@ test("footer navigation links Terms Of Use to its standalone policy page", () =>
         "Evaluation",
         [
           ["Leaderboards", "/leaderboard"],
-          ["Arenas", "/arenas"],
+          ["Safety Arenas", "/arenas"],
         ],
       ],
       [

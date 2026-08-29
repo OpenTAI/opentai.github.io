@@ -26,7 +26,7 @@ export const navigationGroups: readonly NavigationGroup[] = [
     label: "Evaluation",
     items: [
       { label: "Leaderboards", href: "/leaderboard" },
-      { label: "Arenas", href: "/arenas" },
+      { label: "Safety Arenas", href: "/arenas" },
     ],
   },
   {
@@ -55,7 +55,7 @@ export const footerNavigationGroups: readonly NavigationGroup[] = [
     label: "Evaluation",
     items: [
       { label: "Leaderboards", href: "/leaderboard" },
-      { label: "Arenas", href: "/arenas" },
+      { label: "Safety Arenas", href: "/arenas" },
     ],
   },
   {

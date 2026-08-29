@@ -30,6 +30,10 @@ test("resource cards retain heading semantics and visible search focus", () => {
   assert.match(component, /className="resource-card-stars"/);
   assert.match(component, /t\(locale, "Recorded scale"\)/);
   assert.doesNotMatch(component, /<span aria-hidden="true">#<\/span>/);
+  assert.doesNotMatch(
+    component,
+    /Interaction environment|All environments|resource-environment-filter/,
+  );
   assert.match(css, /\.subpage-search-box:focus-within\s*{/);
   assert.match(css, /\.resource-card-stars\s*{/);
 });

@@ -118,14 +118,36 @@ unreviewed community issue from appearing on the public site automatically.
 
 ## Newsletter signup
 
-The Discover subscribe box opens the visitor's email app with a prefilled
-request addressed to the OpenTAI contact email. The static site does not receive,
-store, or commit subscriber addresses. The recipient is configured as
-`newsletter.recipientEmail` in `scripts/generate-site.py`; regenerate after
-changing it.
+The Discover subscribe box sends a JSON request to the self-hosted
+`POST /api/subscribe` endpoint. `server/newsletter_server.py` serves both the
+static `out/` directory and that endpoint, then sends the request to the OpenTAI
+contact address through SMTP. It does not open the visitor's email app and does
+not store subscriber addresses.
 
-This mail-app flow is intentionally storage-free. Sending the daily "OpenTAI
-Daily" digest remains a separate service and is not part of this static site.
+Build and run it locally without Vercel:
+
+```bash
+npm run build
+export NEWSLETTER_SMTP_USER="your-sender@gmail.com"
+export NEWSLETTER_SMTP_APP_PASSWORD="your-gmail-app-password"
+npm run serve:self-hosted
+```
+
+The default URL is `http://127.0.0.1:4173`. The SMTP password is required at
+runtime and must never be committed. See `server/newsletter.env.example` for
+all settings. In production, keep the Python process bound to `127.0.0.1` and
+put HTTPS/Nginx in front of it. Set `OPENTAI_TRUST_PROXY=true` only for that
+local trusted-proxy deployment so rate limits use the visitor IP from
+Nginx's overwritten `X-Real-IP`; leave it false when the Python server is
+directly exposed. Set `NEWSLETTER_ALLOWED_ORIGINS=https://opentai.org` for the
+public domain. A bounded, timeout-configured reverse-proxy example is provided
+at `server/nginx-opentai.conf.example`.
+
+The endpoint validates addresses, uses a honeypot, limits requests per IP, and
+returns generic delivery errors without logging subscriber addresses. It sends
+an administrator-review request to the contact address only. The message warns
+the administrator to verify address ownership before enrollment. Producing and
+mailing the daily "OpenTAI Daily" digest remains a separate service.
 
 ## Open questions for the OpenTAI team
 

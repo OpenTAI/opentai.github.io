@@ -5,22 +5,23 @@ export type NewsletterSubscription = {
   language: NewsletterLanguage;
 };
 
-const DEFAULT_RECIPIENT = "danxjma@gmail.com";
-
-export function buildNewsletterMailto(
+export function buildNewsletterRequest(
   subscription: NewsletterSubscription,
-  recipient = DEFAULT_RECIPIENT,
+  url = "/api/subscribe",
+  website = "",
+  timeoutMs = 15_000,
 ) {
-  const language = subscription.language === "zh" ? "Chinese" : "English";
-  const query = new URLSearchParams({
-    subject: "OpenTAI Daily subscription request",
-    body: [
-      "Please add me to OpenTAI Daily.",
-      "",
-      `Subscriber email: ${subscription.email.trim()}`,
-      `Language: ${language}`,
-    ].join("\n"),
-  });
-
-  return `mailto:${recipient}?${query.toString()}`;
+  return {
+    url,
+    init: {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      signal: AbortSignal.timeout(timeoutMs),
+      body: JSON.stringify({
+        email: subscription.email.trim(),
+        language: subscription.language,
+        website,
+      }),
+    },
+  } as const;
 }

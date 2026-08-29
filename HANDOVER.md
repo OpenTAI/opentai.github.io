@@ -82,7 +82,7 @@ ShareGPT、已下线的 Kaggle Fake News 竞赛数据）因无法核验当前可
 
 ### C 类 —— 等马老师做决定
 
-1. **订阅方案**（见下方 §4，他的原方案有技术和安全问题）
+1. **订阅上线凭证与流程**（见下方 §4；代码已实现，仍需 Gmail App Password，并明确由管理员审核而非自动入库）
 2. **阿里云部署**：域名、服务器、CI/CD
 3. **仓库归属**：什么时候转给 OpenTAI org
 4. ~~**Survey tab 留不留**~~：团队已确认 Papers 保留 Research / Survey 两个 tab；当前为 758 / 14
@@ -104,14 +104,27 @@ ShareGPT、已下线的 Kaggle Fake News 竞赛数据）因无法核验当前可
 1. **静态站写不了文件。** 现在的站构建出来是一堆 HTML/JS，放阿里云也还是静态文件，没有进程能接 POST。必须在服务器上跑一个后端接口。
 2. **风险点不在 GitHub。** 接口地址写在前端代码里，任何人都能 POST；没有二次确认就能替别人订阅；文件放在网站目录下能被直接下载 —— 这才是真正的泄露路径。
 
-**最低限度的安全要求**（不能省）：接口频率限制、文件存在网站目录之外、蜜罐字段挡机器人、
-文件永不进 git、二次确认邮件。
+如果将来改成自动写入订阅名单，**最低限度的安全要求**（不能省）是：接口频率限制、
+名单文件存在网站目录之外、蜜罐字段挡机器人、文件永不进 git、二次确认邮件。
+
+目前实现不写订阅名单，也不自动完成订阅；它只把申请发给管理员，并在邮件里明确要求核验邮箱
+所有权后再加入任何名单。因此这是管理员审核通知，不是绕过二次确认的自动订阅系统。
 
 另外：二次确认要发信，「OpenTAI Daily 每日推送」也要发信 —— **最后还是绕不开一个邮件服务**，
 自建只省掉了订阅管理这一小块。这一点建议先跟马老师对齐再动手。
 
-前端已经就绪：订阅框 UI 完成，中英文切换可用，表单 POST `email` 和 `language` 两个字段。
-把 `scripts/generate-site.py` 里 `newsletter.endpoint` 填上接口地址，重新生成即可。
+现在已经有一套不依赖 Vercel 的实现：`server/newsletter_server.py` 同时服务静态 `out/`
+和 `POST /api/subscribe`，通过 Gmail SMTP 把订阅申请直接发给马老师，不保存订阅者邮箱。
+前端提交 `email`、`language` 和蜜罐字段，后端带邮箱校验、蜜罐与按 IP 限流。
+
+启动前必须在服务器环境变量里配置 `NEWSLETTER_SMTP_USER` 和
+`NEWSLETTER_SMTP_APP_PASSWORD`；示例见 `server/newsletter.env.example`。这里必须用 Gmail
+App Password，不得把 Gmail 登录密码、App Password 或任何真实密钥写进仓库。线上部署时把
+Python 进程绑定到 `127.0.0.1`，由 Nginx/HTTPS 反向代理。
+使用 Nginx 时设置 `OPENTAI_TRUST_PROXY=true`，让后端只从本机代理读取
+由 Nginx 覆盖写入的 `X-Real-IP` 做真实访客 IP 限流；直接暴露 Python 服务时必须保持为
+`false`。同时设置 `NEWSLETTER_ALLOWED_ORIGINS=https://opentai.org`，并以
+`server/nginx-opentai.conf.example` 为起点配置连接数、请求体和超时限制。
 
 ---
 

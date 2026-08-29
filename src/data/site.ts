@@ -261,11 +261,6 @@ export type HomeCategoryCard = {
   icon: string;
 };
 
-export const newsletter = {
-  // The static site opens the visitor's email app and stores no subscriber data.
-  recipientEmail: "danxjma@gmail.com",
-};
-
 export const siteBrand = {
   name: "OpenTAI",
   tagline: "The Open Hub for Trustworthy AI",
@@ -6619,7 +6614,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
     tableRows: [
       {
         name: "AdvBench",
-        note: "Harmful behavior goals and target strings released as CSV files for adversarial attack and safety-alignment research.",
+        note: "520 harmful-behavior instructions and corresponding target strings released as CSV files for evaluating adversarial attacks and safety alignment.",
         type: "LLMs",
         stars: 4760,
         updated: "2024-08-02",
@@ -6635,7 +6630,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Aegis 2.0",
-        note: "A 34K-sample content-safety dataset with train and test splits for training and evaluating safety guard models.",
+        note: "33.4K content-safety conversation samples assembled from human-written red-team prompts, LLM-generated responses, and safety annotations for training and evaluating guard models.",
         type: "LLMs",
         venue: "arXiv 2025",
         year: "2025",
@@ -6654,7 +6649,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Anthropic Red Team Attempts",
-        note: "38,961 human–AI red-team transcripts collected to study harmful model behavior and support safety-policy training.",
+        note: "38,961 human–AI red-team conversations collected through adversarial user interactions for studying and reducing harmful model behavior.",
         type: "LLMs",
         stars: 1856,
         updated: "2025-06-17",
@@ -6670,7 +6665,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "BeaverTails",
-        note: "Prompt–response examples with safety annotations released for harmlessness alignment and safety classifier training.",
+        note: "333,963 question–answer pairs collected and human-annotated with safety categories for harmlessness alignment and safety-classifier training.",
         type: "LLMs",
         venue: "arXiv preprint arXiv:2307.04657",
         year: "2023",
@@ -6692,7 +6687,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "BIPIA",
-        note: "Indirect prompt-injection instructions and contexts with documented training and test partitions for detector research.",
+        note: "5 task-specific context datasets paired with 250 injected attack goals, assembled from web, email, table, summarization, and code sources for training and evaluating indirect-prompt-injection defenses.",
         type: "LLMs",
         venue: "Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 1",
         year: "2025",
@@ -6712,7 +6707,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Booster repnoise BeaverTails",
-        note: "A derived BeaverTails training set pairing harmful prompts with refusal responses for representation-based safety alignment.",
+        note: "18,106 prompt–response–refusal records derived from BeaverTails for representation-based safety alignment and refusal training.",
         type: "LLMs",
         tags: [
           "training data",
@@ -6726,7 +6721,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Bot-Adversarial Dialogue",
-        note: "Adversarial human–bot conversations collected to train and evaluate offensive-dialogue classifiers.",
+        note: "5K adversarial human–bot conversations containing approximately 70K utterances, collected through crowdworker interactions for training and evaluating offensive-language classifiers.",
         type: "LLMs",
         stars: 10623,
         updated: "2026-07-30",
@@ -6742,7 +6737,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Crafted datasets",
-        note: "Crafted indirect prompt-injection examples released for training detection and extraction models.",
+        note: "Exact count not recorded: indirect prompt-injection examples crafted from attack instructions and external contexts for training detection and extraction models.",
         type: "Agents",
         venue: "ACL 2025",
         year: "2025",
@@ -6761,7 +6756,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "CValues-Comparison",
-        note: "116K training and 29K test preference pairs for safety supervised fine-tuning and reward-model training.",
+        note: "145K preference pairs generated through a self-instruct and response-comparison pipeline, then split into 116K training and 29K test pairs for safety fine-tuning and reward-model training.",
         type: "LLMs",
         venue: "arXiv 2023",
         year: "2023",
@@ -6784,7 +6779,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "DoNotAnswer",
-        note: "Instruction–response examples with safety annotations released for training refusal and risk classifiers.",
+        note: "939 safety-sensitive instructions and annotated model responses curated across five risk areas for training refusal and risk classifiers.",
         type: "LLMs",
         venue: "EACL 2024",
         year: "2023",
@@ -6803,7 +6798,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "EAsafetyBench",
-        note: "Embodied-agent safety prompts and drone scenarios with a documented 70% training split for safety-classifier training.",
+        note: "Exact count not recorded: embodied-agent safety prompts and drone interaction scenarios assembled with a documented 70% training split for training safety classifiers.",
         type: "Agents",
         stars: 5,
         updated: "2026-04-13",
@@ -6819,7 +6814,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "HH-RLHF",
-        note: "161K human preference pairs about assistant helpfulness and harmlessness for preference-model training.",
+        note: "161K human preference pairs collected by comparing assistant responses for helpfulness and harmlessness for preference modeling and RLHF training.",
         type: "LLMs",
         stars: 1856,
         updated: "2025-06-17",
@@ -6835,7 +6830,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "HSOL",
-        note: "Tweets labeled as hate speech, offensive language, or neither for content-safety classification.",
+        note: "24,783 tweets collected with a hate-speech lexicon and crowd-annotated as hate speech, offensive language, or neither for training content-safety classifiers.",
         type: "LLMs",
         stars: 847,
         updated: "2023-06-12",
@@ -6855,7 +6850,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Jigsaw Toxic Comment Classification",
-        note: "Wikipedia comments labeled for multiple forms of toxicity for content-moderation model training.",
+        note: "159,571 Wikipedia talk-page comments collected from page edits and annotated with six toxicity labels for training content-moderation models.",
         type: "LLMs",
         tags: [
           "training data",
@@ -6869,7 +6864,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "LlavaGuard Dataset",
-        note: "5,466 annotated multimodal safety examples split into 4,571 training, 71 evaluation, and 824 test records.",
+        note: "5,466 image–text safety examples collected and expert-annotated with ratings, categories, and rationales for training and evaluating multimodal guard models.",
         type: "Agents",
         stars: 72,
         updated: "2025-09-30",
@@ -6885,7 +6880,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "MM-SafetyBench",
-        note: "Hard multimodal jailbreak prompts across 13 safety topics, with examples used to train a safety suffix generator.",
+        note: "5,040 text–image attack pairs generated across 13 safety scenarios for training and evaluating multimodal safeguards and a safety suffix generator.",
         type: "Agents",
         venue: "ECCV",
         year: "2024",
@@ -6903,7 +6898,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "OLID",
-        note: "Social-media posts labeled for offensive-language identification and categorization.",
+        note: "14,100 tweets collected from Twitter and hierarchically annotated for offensive-language identification and categorization.",
         type: "LLMs",
         tags: [
           "training data",
@@ -6917,7 +6912,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "OpenAssistant OASST1",
-        note: "Crowd-sourced assistant conversation trees with quality and safety labels for instruction and preference training.",
+        note: "161,443 conversational messages organized into more than 10,000 conversation trees, collected from over 13,500 crowd contributors for instruction tuning and preference training.",
         type: "LLMs",
         stars: 37407,
         updated: "2024-08-17",
@@ -6937,7 +6932,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "ORCA-DPO",
-        note: "Chosen–rejected response pairs released for direct preference optimization and alignment research.",
+        note: "12,859 chosen–rejected response pairs derived from OpenOrca response comparisons for direct preference optimization and alignment training.",
         type: "LLMs",
         tags: [
           "training data",
@@ -6951,7 +6946,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "PKU-SafeRLHF",
-        note: "Helpfulness and harmlessness preference data with separate reward and cost signals for safe RLHF training.",
+        note: "83.4K preference entries collected through helpfulness and harmlessness comparisons for learning separate reward and safety-cost signals in safe RLHF training.",
         type: "LLMs",
         stars: 1610,
         updated: "2025-11-24",
@@ -6971,7 +6966,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "SafeMTData",
-        note: "Safety-focused instruction data released for supervised fine-tuning of safer language models.",
+        note: "Exact count not recorded: safety-focused instruction records released by the authors for supervised fine-tuning of safer language models.",
         type: "Agents",
         venue: "arXiv preprint arXiv:2410.10700",
         year: "2024",
@@ -6989,7 +6984,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "SafetyPrompts",
-        note: "A 100K prompt–response collection released for safety training and evaluation.",
+        note: "100K Chinese prompt–response examples generated across typical and adversarial safety scenarios for safety training and evaluation.",
         type: "LLMs",
         venue: "arXiv 2023",
         year: "2023",
@@ -7013,7 +7008,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "SAP",
-        note: "Generated poisoning examples and attack artifacts released for studying and defending against prompt-based data poisoning.",
+        note: "5 poisoning-dataset variants generated with the authors’ attack framework for studying and defending against prompt-based data poisoning.",
         type: "LLMs",
         stars: 49,
         updated: "2024-05-09",
@@ -7029,7 +7024,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "SelfDefend distilled defense data",
-        note: "Defense prompts, queries, and labels split 80/20 for fine-tuning and validating a prompt-injection defense model.",
+        note: "Exact count not recorded: defense prompts, queries, and labels collected into direct and intent datasets with an 80/20 split for fine-tuning and validating a prompt-injection defense model.",
         type: "LLMs",
         stars: 35,
         updated: "2025-01-26",
@@ -7045,7 +7040,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Sleeper Agents code backdoor training data",
-        note: "Code examples with conditional backdoor behavior released for deceptive-alignment and persistence research.",
+        note: "Exact count not recorded: code-completion examples generated with vulnerability-specific trigger prompts for training and studying persistent deceptive backdoors.",
         type: "LLMs",
         stars: 150,
         updated: "2024-03-09",
@@ -7061,7 +7056,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Socio-Moral Image Database",
-        note: "Images with human moral-valence ratings used as the foundation for multimodal safety annotation.",
+        note: "2,941 images paired with 820,565 moral and emotional judgments collected from 2,716 participants for affective research and multimodal safety annotation.",
         type: "Agents",
         venue: "PLOS ONE",
         year: "2018",
@@ -7077,7 +7072,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Stable Alignment Sandbox sample datasets",
-        note: "Public samples of interaction data collected in a sandbox to construct three alignment-training stages.",
+        note: "2 public interaction-data sample files, drawn from a 169K sandbox-generated set, released for constructing three alignment-training stages.",
         type: "LLMs",
         year: "2023",
         stars: 356,
@@ -7094,7 +7089,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Stanford Human Preferences",
-        note: "Human preference pairs collected from Reddit for training and evaluating preference-based alignment methods.",
+        note: "385K human preference pairs collected from highly upvoted and downvoted Reddit responses across 18 domains for training and evaluating preference-based alignment methods.",
         type: "LLMs",
         tags: [
           "training data",
@@ -7108,7 +7103,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Texas Spoofing Test Battery (TEXBAT)",
-        note: "Recorded authentic and spoofed GNSS signals for training and testing spoofing-detection models.",
+        note: "8 high-fidelity GPS signal recordings collected from live static and dynamic spoofing scenarios for training and testing spoofing-detection and authentication methods.",
         type: "Embodied AI",
         venue: "RadioNavigation Laboratory Conference Proceedings",
         year: "2012",
@@ -7124,7 +7119,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "TruthfulQA evaluator fine-tuning data",
-        note: "Labeled truthfulness and informativeness examples released for fine-tuning the TruthfulQA judge and info evaluators.",
+        note: "6.9K reference-answer and approximately 15.5K generated-answer examples annotated for truthfulness and informativeness for fine-tuning the TruthfulQA judge and information evaluators.",
         type: "LLMs",
         venue: "ACL 2022",
         year: "2021",
@@ -7143,7 +7138,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Virus",
-        note: "Optimized harmful training examples designed to study guardrail bypass and degradation of model safety alignment.",
+        note: "Exact count not recorded: harmful fine-tuning examples generated by optimizing source samples against moderation and jailbreak objectives for studying guardrail bypass and safety-alignment degradation.",
         type: "LLMs",
         tags: [
           "training data",
@@ -7177,7 +7172,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "XSTest",
-        note: "Prompts contrasting genuinely unsafe requests with exaggerated refusals for studying over-refusal and safety behavior.",
+        note: "450 safe and unsafe prompts curated as minimal contrasts across 10 prompt types for training and evaluating calibrated refusal behavior.",
         type: "LLMs",
         stars: 142,
         updated: "2025-02-24",

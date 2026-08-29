@@ -67,6 +67,42 @@ class DatasetSummaryTests(unittest.TestCase):
         self.assertIn("Aegis 2.0", {record["name"] for record in kept})
         self.assertIn("HH-RLHF", {record["name"] for record in kept})
 
+    def test_public_dataset_summaries_follow_card_structure(self):
+        records = json.loads(SOURCE.read_text())["items"]
+        audit = json.loads(AUDIT.read_text())["records"]
+        kept = filter_scoped_datasets(records, audit)
+        data_forms = (
+            "answers", "comments", "conversations", "datasets", "entries", "examples",
+            "files", "images", "instructions", "interactions", "judgments",
+            "messages", "pairs", "prompts", "recordings", "records",
+            "responses", "samples", "transcripts", "trees", "tweets",
+            "utterances", "variants",
+        )
+        provenance_terms = (
+            "annotated", "assembled", "collected", "compiled", "crafted",
+            "curated", "derived", "generated", "recorded", "released",
+            "sourced",
+        )
+
+        for record in kept:
+            summary = record["summary"]
+            normalized = summary.lower()
+            with self.subTest(dataset=record["name"]):
+                self.assertRegex(
+                    summary,
+                    r"^(?:\d|Exact count not recorded:)",
+                    "summary must start with a sourced quantity or an explicit missing-count label",
+                )
+                self.assertTrue(
+                    any(term in normalized for term in data_forms),
+                    "summary must name the data form",
+                )
+                self.assertTrue(
+                    any(term in normalized for term in provenance_terms),
+                    "summary must state how the data was collected, generated, or sourced",
+                )
+                self.assertIn(" for ", normalized, "summary must state the intended use")
+
     def test_scope_audit_rejects_unknown_and_duplicate_names(self):
         records = [{"name": "A"}]
         invalid = [

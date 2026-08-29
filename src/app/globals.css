@@ -1678,19 +1678,6 @@ summary {
   gap: 0.38rem;
 }
 
-.resource-environment-filter {
-  display: grid;
-  gap: 0.32rem;
-}
-
-.resource-environment-filter > span {
-  color: #7b8495;
-  font-size: 0.64rem;
-  font-weight: 650;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 .dataset-domain-pills button {
   min-height: 1.75rem;
   border: 1px solid #e0e3ee;
@@ -5945,29 +5932,6 @@ main:has(.ecosystem-catalog-companies) + .site-footer::before {
   font-size: 0.76rem;
 }
 
-.text-arena-overview-source {
-  display: grid;
-  flex: 0 0 auto;
-  justify-items: end;
-  gap: 0.45rem;
-}
-
-.text-arena-overview-source time {
-  color: #8c887f;
-  font-size: 0.65rem;
-  font-weight: 700;
-}
-
-.text-arena-overview-source a {
-  border: 1px solid #25241f;
-  border-radius: 9px;
-  background: #25241f;
-  padding: 0.5rem 0.7rem;
-  color: #fff;
-  font-size: 0.67rem;
-  font-weight: 750;
-}
-
 .text-arena-legend {
   display: flex;
   width: fit-content;
@@ -6630,10 +6594,6 @@ main:has(.ecosystem-catalog-companies) + .site-footer::before {
     grid-column: 2 / -1;
     grid-row: 2;
     height: 0.55rem;
-  }
-
-  .text-arena-overview-source {
-    justify-items: start;
   }
 
   .text-arena-table-scroll thead th:first-child,
@@ -7554,12 +7514,10 @@ main:has(.ecosystem-catalog-companies) + .site-footer::before {
   color: var(--arena-electric);
 }
 
-.text-arena-overview-source time,
 .code-arena-overview-source time {
   color: #526b8d;
 }
 
-.text-arena-overview-source a,
 .code-arena-overview-source a {
   border-color: #aac1e1;
   background: #f8fbff;

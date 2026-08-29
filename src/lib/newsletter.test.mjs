@@ -1,38 +1,59 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { buildNewsletterMailto } from "./newsletter.ts";
+import * as newsletter from "./newsletter.ts";
 
-test("builds a private mail-app subscription request without a storage endpoint", () => {
-  const url = new URL(
-    buildNewsletterMailto({
-      email: "reader@example.edu",
+test("builds a direct JSON subscription request for the self-hosted API", () => {
+  assert.equal(typeof newsletter.buildNewsletterRequest, "function");
+
+  const request = newsletter.buildNewsletterRequest(
+    {
+      email: "  Reader@Example.edu  ",
       language: "zh",
-    }),
+    },
+    "https://opentai.org/api/subscribe",
   );
 
-  assert.equal(url.protocol, "mailto:");
-  assert.equal(url.pathname, "danxjma@gmail.com");
-  assert.equal(url.searchParams.get("subject"), "OpenTAI Daily subscription request");
-  assert.equal(
-    url.searchParams.get("body"),
-    [
-      "Please add me to OpenTAI Daily.",
-      "",
-      "Subscriber email: reader@example.edu",
-      "Language: Chinese",
-    ].join("\n"),
-  );
+  assert.equal(request.url, "https://opentai.org/api/subscribe");
+  const { signal, ...init } = request.init;
+  assert.ok(signal instanceof AbortSignal);
+  assert.deepEqual(init, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email: "Reader@Example.edu",
+      language: "zh",
+      website: "",
+    }),
+  });
 });
 
-test("normalizes an English subscription address before preparing the email", () => {
-  const url = new URL(
-    buildNewsletterMailto({
-      email: "  Reader@Example.edu  ",
-      language: "en",
-    }),
+test("includes the hidden anti-bot field without changing the subscriber data", () => {
+  assert.equal(typeof newsletter.buildNewsletterRequest, "function");
+
+  const request = newsletter.buildNewsletterRequest(
+    { email: "reader@example.edu", language: "en" },
+    "/api/subscribe",
+    "bot-filled-this",
   );
 
-  assert.match(url.searchParams.get("body") ?? "", /Subscriber email: Reader@Example\.edu/);
-  assert.match(url.searchParams.get("body") ?? "", /Language: English/);
+  assert.deepEqual(JSON.parse(request.init.body), {
+    email: "reader@example.edu",
+    language: "en",
+    website: "bot-filled-this",
+  });
+});
+
+test("aborts a stalled subscription request after the configured timeout", async () => {
+  const request = newsletter.buildNewsletterRequest(
+    { email: "reader@example.edu", language: "en" },
+    "/api/subscribe",
+    "",
+    5,
+  );
+
+  assert.ok(request.init.signal instanceof AbortSignal);
+  assert.equal(request.init.signal.aborted, false);
+  await new Promise((resolve) => setTimeout(resolve, 15));
+  assert.equal(request.init.signal.aborted, true);
 });
