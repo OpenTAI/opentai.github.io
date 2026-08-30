@@ -348,6 +348,34 @@
   ],
   "companies": [
     {
+      "id": "xsafeai",
+      "name": "XSafeAI 万物智安",
+      "category": "Agent Safety",
+      "description": "An AI safety company developing agent-security research and products, including XSafeClaw for monitoring, risk interception, human oversight, and automated red teaming.",
+      "descriptionZh": "专注于智能体安全研究与产品的 AI 安全公司，旗下 XSafeClaw 覆盖监控、风险拦截、人工监督与自动化红队测试。",
+      "country": "China",
+      "countryZh": "中国",
+      "direction": "Agent security · Runtime monitoring · Risk interception · Red teaming",
+      "directionZh": "智能体安全 · 运行时监控 · 风险拦截 · 红队测试",
+      "academicOrigin": "Research roots at Fudan University",
+      "academicOriginZh": "研究团队源自复旦大学",
+      "valuation": "OpenTAI estimate · RMB 50–100M (low confidence)",
+      "valuationZh": "OpenTAI 估算 · 人民币 5000 万–1 亿元（低置信度）",
+      "logo": "/company-logos/xsafeai-icon.svg",
+      "logoSource": "https://www.xsafeai.com/",
+      "links": [
+        {"label": "Website", "url": "https://www.xsafeai.com/"},
+        {"label": "XSafeClaw", "url": "https://github.com/XSafeAI/XSafeClaw"},
+        {"label": "GitHub", "url": "https://github.com/XSafeAI"}
+      ],
+      "sources": [
+        "https://www.xsafeai.com/",
+        "https://github.com/XSafeAI/XSafeClaw",
+        "https://www.36kr.com/p/2993607517170696"
+      ],
+      "verificationNote": "The company website was supplied by the OpenTAI team; the official XSafeClaw repository supports the agent-safety scope and Fudan University research roots. No priced financing round or public company valuation was found as of 2026-08-20. At the OpenTAI team's request, the displayed RMB 50–100 million range is an explicitly labeled, low-confidence OpenTAI estimate for an early-stage, pre-disclosure AI-safety product company. It is calibrated conservatively below publicly reported funded AI-risk-governance comparables and is not an investor, transaction, or market valuation."
+    },
+    {
       "id": "gray-swan-ai",
       "name": "Gray Swan AI",
       "category": "AI Safety",
@@ -548,34 +576,6 @@
         "https://mindgard.ai/blog/mindgard-raises-30m-series-a"
       ],
       "verificationNote": "Mindgard's official about page supports the 2022 founding year, Lancaster University spinout, Boston and London offices, and stated AI security scope. Its official August 2026 announcement reports a $30 million Series A. The displayed $120–240 million range is an explicitly labeled OpenTAI estimate that assumes roughly 12.5%–25% dilution; it is not a reported valuation or public-market capitalization."
-    },
-    {
-      "id": "xsafeai",
-      "name": "XSafeAI 万物智安",
-      "category": "Agent Safety",
-      "description": "An AI safety company developing agent-security research and products, including XSafeClaw for monitoring, risk interception, human oversight, and automated red teaming.",
-      "descriptionZh": "专注于智能体安全研究与产品的 AI 安全公司，旗下 XSafeClaw 覆盖监控、风险拦截、人工监督与自动化红队测试。",
-      "country": "China",
-      "countryZh": "中国",
-      "direction": "Agent security · Runtime monitoring · Risk interception · Red teaming",
-      "directionZh": "智能体安全 · 运行时监控 · 风险拦截 · 红队测试",
-      "academicOrigin": "Research roots at Fudan University",
-      "academicOriginZh": "研究团队源自复旦大学",
-      "valuation": "OpenTAI estimate · RMB 50–100M (low confidence)",
-      "valuationZh": "OpenTAI 估算 · 人民币 5000 万–1 亿元（低置信度）",
-      "logo": "/company-logos/xsafeai-icon.svg",
-      "logoSource": "https://www.xsafeai.com/",
-      "links": [
-        {"label": "Website", "url": "https://www.xsafeai.com/"},
-        {"label": "XSafeClaw", "url": "https://github.com/XSafeAI/XSafeClaw"},
-        {"label": "GitHub", "url": "https://github.com/XSafeAI"}
-      ],
-      "sources": [
-        "https://www.xsafeai.com/",
-        "https://github.com/XSafeAI/XSafeClaw",
-        "https://www.36kr.com/p/2993607517170696"
-      ],
-      "verificationNote": "The company website was supplied by the OpenTAI team; the official XSafeClaw repository supports the agent-safety scope and Fudan University research roots. No priced financing round or public company valuation was found as of 2026-08-20. At the OpenTAI team's request, the displayed RMB 50–100 million range is an explicitly labeled, low-confidence OpenTAI estimate for an early-stage, pre-disclosure AI-safety product company. It is calibrated conservatively below publicly reported funded AI-risk-governance comparables and is not an investor, transaction, or market valuation."
     },
     {
       "id": "fangcun-leap",

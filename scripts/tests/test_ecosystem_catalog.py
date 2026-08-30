@@ -77,6 +77,13 @@ class EcosystemCatalogValidationTests(unittest.TestCase):
         self.assertIn("No priced financing round", record["verificationNote"])
         self.assertIn("not an investor, transaction, or market valuation", record["verificationNote"])
 
+    def test_xsafeai_is_the_first_company_in_the_catalog(self):
+        catalog = json.loads(
+            (ROOT / "scripts" / "data" / "ecosystem-catalog.json").read_text()
+        )
+
+        self.assertEqual(catalog["companies"][0]["id"], "xsafeai")
+
     def test_every_company_has_a_visible_sourced_or_labeled_value(self):
         catalog = json.loads(
             (ROOT / "scripts" / "data" / "ecosystem-catalog.json").read_text()
