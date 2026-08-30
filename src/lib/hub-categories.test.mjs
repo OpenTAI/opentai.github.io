@@ -17,7 +17,6 @@ test("the public hub exposes every current public page in the approved order", (
       ["Leaderboards", "/leaderboard"],
       ["Arenas", "/arenas"],
       ["Startups", "/companies"],
-      ["Community", "/community"],
     ],
   );
   assert.deepEqual(collectionOrder, ["benchmarks", "models", "datasets"]);

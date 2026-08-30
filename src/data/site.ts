@@ -521,13 +521,6 @@ export const homeCategoryCards: HomeCategoryCard[] = [
     accent: "pink",
     icon: "S",
   },
-  {
-    title: "Community",
-    description: "Researchers, builders, and institutions contributing to OpenTAI.",
-    href: "/community",
-    accent: "violet",
-    icon: "C",
-  },
 ];
 
 export const benchmarkDetails: Record<string, BenchmarkDetail> = {

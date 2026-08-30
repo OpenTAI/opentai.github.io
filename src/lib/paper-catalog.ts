@@ -20,6 +20,15 @@ export function formatPaperAuthors(authors: readonly string[]) {
   return `${authors[0]} et al.`;
 }
 
+export function formatPaperVenue(venue: string) {
+  const normalized = venue.trim();
+  const findings = normalized.match(
+    /^Findings of the Association for Computational Linguistics:\s*(ACL|EMNLP|NAACL)$/i,
+  );
+
+  return findings ? `${findings[1].toUpperCase()} Findings` : normalized;
+}
+
 export function paperSearchText(row: PaperAuthorRow) {
   return [
     row.title,
@@ -89,7 +98,7 @@ export function paperDisplayMeta(row: PaperCatalogRow) {
 
   return {
     linkLabel: row.arxivId ? "arXiv" : row.url ? "Link" : null,
-    venueLabel: normalizedVenue && !isArxivVenue ? normalizedVenue : null,
+    venueLabel: normalizedVenue && !isArxivVenue ? formatPaperVenue(normalizedVenue) : null,
     yearLabel: recordedYear(row)?.toString() ?? null,
   };
 }

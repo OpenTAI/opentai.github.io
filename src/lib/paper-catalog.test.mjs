@@ -39,6 +39,14 @@ test("separates year and link metadata without repeating arXiv as a venue", () =
     paperDisplayMeta({ arxivId: "2401.00001", venue: "ACL", year: "2024" }),
     { linkLabel: "arXiv", venueLabel: "ACL", yearLabel: "2024" },
   );
+  assert.deepEqual(
+    paperDisplayMeta({
+      arxivId: "2601.04566",
+      venue: "Findings of the Association for Computational Linguistics: ACL",
+      year: "2026",
+    }),
+    { linkLabel: "arXiv", venueLabel: "ACL Findings", yearLabel: "2026" },
+  );
 });
 
 test("summarizes source-backed paper hero statistics", () => {

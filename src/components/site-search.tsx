@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { paperSearchIndex } from "@/data/paper-search";
 import { collectionOrder, subpageConfigs, SubpageTableRow } from "@/data/site";
 import { Locale, localizeHref, t } from "@/lib/i18n";
+import { formatPaperVenue } from "@/lib/paper-catalog";
 
 type Hit = SubpageTableRow & { collection: string; href: string };
 
@@ -145,7 +146,7 @@ export function SiteSearch({ locale }: { locale: Locale }) {
                         </p>
                         <p className="text-xs text-[#98a2b3]">
                           {paper.a ?? ""}
-                          {paper.v ? ` · ${paper.v} ${paper.y ?? ""}` : ""}
+                          {paper.v ? ` · ${formatPaperVenue(paper.v)} ${paper.y ?? ""}` : ""}
                         </p>
                       </div>
                       {paper.x ? (

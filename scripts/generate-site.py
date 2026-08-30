@@ -1094,8 +1094,6 @@ HOME_CARDS = [
      "href": "/arenas", "accent": "orange", "icon": "A"},
     {"title": "Startups", "description": "Source-backed startups building trustworthy AI products.",
      "href": "/companies", "accent": "pink", "icon": "S"},
-    {"title": "Community", "description": "Researchers, builders, and institutions contributing to OpenTAI.",
-     "href": "/community", "accent": "violet", "icon": "C"},
 ]
 
 HEADER = '''// Content derived from the OpenTAI TinaCMS site

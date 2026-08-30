@@ -762,8 +762,8 @@ export const ecosystemCompanies: EcosystemRecord[] = [
     academicOriginZh: "研究团队源自复旦大学",
     valuation: "OpenTAI estimate · RMB 50–100M (low confidence)",
     valuationZh: "OpenTAI 估算 · 人民币 5000 万–1 亿元（低置信度）",
-    logo: "/company-logos/xsafeai.png",
-    logoSource: "https://www.xsafeai.com/assets/xsafeai-wordmark.png?v=20260727-1",
+    logo: "/company-logos/xsafeai-icon.svg",
+    logoSource: "https://www.xsafeai.com/",
     links: [
       {
         label: "Website",
@@ -863,8 +863,8 @@ export const ecosystemCompanies: EcosystemRecord[] = [
     academicOriginZh: "发起于清华大学人工智能研究院",
     valuation: "Company-reported range · RMB 2–9B (2021)",
     valuationZh: "公司披露区间 · 人民币 20亿–90亿元（2021）",
-    logo: "/company-logos/realai.svg",
-    logoSource: "https://www.realai.ai/themes/cn/default/assets/images/logo.svg",
+    logo: "/company-logos/realai-icon.png",
+    logoSource: "https://www.realai.ai/favicon.ico",
     links: [
       {
         label: "Website",
@@ -927,8 +927,8 @@ export const ecosystemCompanies: EcosystemRecord[] = [
     directionZh: "大模型与智能体红队 · 评测 · 合规测试",
     valuation: "OpenTAI estimate · €12–24M (from €3M strategic investment; low confidence)",
     valuationZh: "OpenTAI 估算 · 1200万–2400万欧元（基于 300 万欧元战略投资；低置信度）",
-    logo: "/company-logos/giskard.svg",
-    logoSource: "https://www.giskard.ai/",
+    logo: "/company-logos/giskard-icon.png",
+    logoSource: "https://cdn.prod.website-files.com/601d6f7d0b9c984f07bf10bc/68b811d52f394bb5f9568a00_favicon-32x32.png",
     links: [
       {
         label: "Website",
@@ -985,8 +985,8 @@ export const ecosystemCompanies: EcosystemRecord[] = [
     directionZh: "AI 评测 · 安全护栏 · 智能体仿真 · 可扩展监督",
     valuation: "OpenTAI estimate · $200–400M (from $50M Series B; low confidence)",
     valuationZh: "OpenTAI 估算 · 2亿–4亿美元（基于 5000 万美元 B 轮；低置信度）",
-    logo: "/company-logos/patronus-ai.svg",
-    logoSource: "https://www.patronus.ai/",
+    logo: "/company-logos/patronus-ai-icon.png",
+    logoSource: "https://cdn.prod.website-files.com/64e655d42d3be60f582d0472/64f619d2bf9e3d5ed811e63c_patronus-webclip.png",
     links: [
       {
         label: "Website",
