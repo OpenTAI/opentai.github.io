@@ -822,8 +822,8 @@
       "academicOriginZh": "源自 KPMG Studio",
       "valuation": "OpenTAI estimate · $100–200M (from $25M Series A; low confidence)",
       "valuationZh": "OpenTAI 估算 · 1亿–2亿美元（基于 2500 万美元 A 轮；低置信度）",
-      "logo": "/company-logos/cranium.png",
-      "logoSource": "https://cranium.ai/",
+      "logo": "/company-logos/cranium-icon.png",
+      "logoSource": "https://cranium.ai/wp-content/themes/cranium/assets/img/favicon.png",
       "links": [
         {"label": "Website", "url": "https://cranium.ai/"},
         {"label": "Company", "url": "https://cranium.ai/company/"}
@@ -872,8 +872,8 @@
       "directionZh": "AI 防火墙 · 红队测试 · 智能体扫描 · 模型扫描",
       "valuation": "OpenTAI estimate · $40–80M (from $10M seed; low confidence)",
       "valuationZh": "OpenTAI 估算 · 4000万–8000万美元（基于 1000 万美元种子轮；低置信度）",
-      "logo": "/company-logos/deepkeep.svg",
-      "logoSource": "https://www.deepkeep.ai/",
+      "logo": "/company-logos/deepkeep-icon.png",
+      "logoSource": "https://cdn.prod.website-files.com/653f8e185245e8a3bb651914/69898e3fd4293ab6b29fb02e_d-256x256.png",
       "links": [
         {"label": "Website", "url": "https://www.deepkeep.ai/"},
         {"label": "About", "url": "https://www.deepkeep.ai/about"}

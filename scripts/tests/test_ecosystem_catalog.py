@@ -1,6 +1,7 @@
 import importlib.util
 import json
 import pathlib
+import struct
 import tempfile
 import unittest
 
@@ -99,6 +100,33 @@ class EcosystemCatalogValidationTests(unittest.TestCase):
                     or "consideration" in record["verificationNote"].lower()
                     or "capitalization" in record["verificationNote"].lower()
                 )
+
+    def test_cranium_and_deepkeep_use_bundled_square_official_icons(self):
+        catalog = json.loads(
+            (ROOT / "scripts" / "data" / "ecosystem-catalog.json").read_text()
+        )
+        companies = {item["id"]: item for item in catalog["companies"]}
+        expected = {
+            "cranium": {
+                "logo": "/company-logos/cranium-icon.png",
+                "logoSource": "https://cranium.ai/wp-content/themes/cranium/assets/img/favicon.png",
+            },
+            "deepkeep": {
+                "logo": "/company-logos/deepkeep-icon.png",
+                "logoSource": "https://cdn.prod.website-files.com/653f8e185245e8a3bb651914/69898e3fd4293ab6b29fb02e_d-256x256.png",
+            },
+        }
+
+        for company_id, fields in expected.items():
+            with self.subTest(company=company_id):
+                self.assertEqual(companies[company_id]["logo"], fields["logo"])
+                self.assertEqual(companies[company_id]["logoSource"], fields["logoSource"])
+
+                asset = ROOT / "public" / fields["logo"].lstrip("/")
+                payload = asset.read_bytes()
+                self.assertEqual(payload[:8], b"\x89PNG\r\n\x1a\n")
+                width, height = struct.unpack(">II", payload[16:24])
+                self.assertEqual((width, height), (256, 256))
 
     def test_rejects_duplicate_ids_across_sections(self):
         catalog = valid_catalog()
