@@ -316,7 +316,7 @@ def build_paper_library():
     return [
         {
             "title": e["title"],
-            "authors": e["authors"][:4],
+            "authors": e["authors"],
             "authorCount": e["authorCount"],
             "venue": e.get("venue"),
             "year": e.get("year"),
@@ -1535,7 +1535,14 @@ SEARCH_OUT = OUT.parent / "paper-search.ts"
 search_index = [
     {
         "t": p["title"],
-        "a": (p["authors"][0] if p["authors"] else None),
+        "a": (
+            ", ".join(p["authors"])
+            if 0 < len(p["authors"]) <= 5
+            else f"{p['authors'][0]} et al."
+            if p["authors"]
+            else None
+        ),
+        "s": (" ".join(p["authors"]) if p["authors"] else None),
         "n": p["authorCount"],
         "v": p.get("venue"),
         "y": p.get("year"),
@@ -1548,7 +1555,8 @@ SEARCH_OUT.write_text(
     "// Slim search index for Discover. The full library lives in papers.ts.\n\n"
     "export type PaperHit = {\n"
     "  /** title */ t: string;\n"
-    "  /** first author */ a?: string;\n"
+    "  /** display author summary */ a?: string;\n"
+    "  /** complete author list for search */ s?: string;\n"
     "  /** author count */ n: number;\n"
     "  /** venue */ v?: string;\n"
     "  /** year */ y?: string;\n"

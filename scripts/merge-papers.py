@@ -11,12 +11,19 @@ repository so it can be published as a resource rather than a citation.
 """
 import json, pathlib, re
 
+from paper_author_metadata import with_verified_authors
+
 DATA = pathlib.Path(__file__).parent / "data"
 
 LMS = json.load(open(DATA / "awesome-papers.json"))
 LMS_LINKS = json.loads((DATA / "paper-links.json").read_text()) if (DATA / "paper-links.json").exists() else {}
 EMB = json.load(open(DATA / "embodied-papers.json"))
 PAPER_METADATA_OVERRIDES = json.load(open(DATA / "paper-metadata-overrides.json"))
+PAPER_AUTHOR_METADATA = (
+    json.load(open(DATA / "paper-author-metadata.json")).get("records", {})
+    if (DATA / "paper-author-metadata.json").exists()
+    else {}
+)
 EXISTING_DATASET_CANDIDATES = {
     re.sub(r"[^a-z0-9]", "", row["title"].lower()): row
     for row in (
@@ -69,7 +76,7 @@ for e in LMS:
         continue
     entry = {
         "title": e["title"],
-        "authors": e["authors"][:4],
+        "authors": e["authors"],
         "authorCount": len(e["authors"]),
         "venue": e.get("venue"),
         "year": e.get("year"),
@@ -91,7 +98,7 @@ for e in EMB:
         continue
     entry = {
         "title": e["title"],
-        "authors": split_authors(e["authors"])[:4],
+        "authors": split_authors(e["authors"]),
         "authorCount": len(split_authors(e["authors"])),
         "venue": e.get("venue"),
         "year": e.get("year"),
@@ -147,6 +154,12 @@ for p in papers:
     if p["kind"] == "survey":
         kept["kind"] = "survey"
     kept["alsoIn"] = p["source"]
+
+# Citation lists often abbreviate authors as "Surname et al.". Replace that
+# shorthand only with official arXiv metadata whose normalized title matches
+# the catalog record; a shared numeric identifier alone is not enough.
+for key, paper in list(merged.items()):
+    merged[key] = with_verified_authors(paper, PAPER_AUTHOR_METADATA)
 
 # Corrections are separate from the downloaded bibliography snapshots so a
 # future reparse cannot silently restore a known upstream metadata error.

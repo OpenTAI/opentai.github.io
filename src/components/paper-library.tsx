@@ -6,7 +6,9 @@ import { LibraryPaper, paperDomains, paperGroups, paperLibrary } from "@/data/pa
 import { Locale, t } from "@/lib/i18n";
 import { buildRecentYearSeries } from "@/lib/dataset-statistics";
 import {
+  formatPaperAuthors,
   paperDisplayMeta,
+  paperSearchText,
   paperYearCounts,
   sortPapersNewestFirst,
 } from "@/lib/paper-catalog";
@@ -35,13 +37,7 @@ function paperLink(paper: LibraryPaper) {
 }
 
 const HAYSTACK = new Map(
-  paperLibrary.map((paper) => [
-    paper,
-    [paper.title, paper.venue ?? "", paper.year ?? "", paper.section ?? "", paper.group]
-      .concat(paper.authors)
-      .join(" ")
-      .toLowerCase(),
-  ]),
+  paperLibrary.map((paper) => [paper, paperSearchText(paper)]),
 );
 
 const LINKED = paperLibrary.filter((paper) => paperLink(paper)).length;
@@ -489,12 +485,7 @@ export function PaperLibrary({ locale }: { locale: Locale }) {
               </div>
               {paper.authors.length ? (
                 <p className="mt-1 text-sm text-[#667085]">
-                  {paper.authors.join(", ")}
-                  {paper.authorCount > paper.authors.length
-                    ? locale === "zh"
-                      ? ` 等 ${paper.authorCount} 位作者`
-                      : ` +${paper.authorCount - paper.authors.length} more`
-                    : ""}
+                  {formatPaperAuthors(paper.authors)}
                 </p>
               ) : null}
               <p className="mt-1 text-xs text-[#98a2b3]">

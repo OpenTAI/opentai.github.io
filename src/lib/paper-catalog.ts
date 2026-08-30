@@ -8,6 +8,32 @@ export type PaperCatalogRow = {
   year?: string | number | null;
 };
 
+export type PaperAuthorRow = PaperCatalogRow & {
+  authors?: readonly string[];
+  group?: string | null;
+  section?: string | null;
+};
+
+export function formatPaperAuthors(authors: readonly string[]) {
+  if (authors.length === 0) return "";
+  if (authors.length <= 5) return authors.join(", ");
+  return `${authors[0]} et al.`;
+}
+
+export function paperSearchText(row: PaperAuthorRow) {
+  return [
+    row.title,
+    row.venue ?? "",
+    row.year ?? "",
+    row.section ?? "",
+    row.group ?? "",
+    row.domain ?? "",
+    ...(row.authors ?? []),
+  ]
+    .join(" ")
+    .toLowerCase();
+}
+
 export function paperCatalogSummary(rows: readonly PaperCatalogRow[]) {
   const domains = new Set(
     rows.map((row) => row.domain?.trim()).filter((domain): domain is string => Boolean(domain)),

@@ -28,7 +28,9 @@ const HAYSTACKS = new Map(INDEX.map((hit) => [hit, haystack(hit)]));
 const PAPER_HAYSTACKS = new Map(
   paperSearchIndex.map((paper) => [
     paper,
-    [paper.t, paper.a ?? "", paper.v ?? "", paper.y ?? "", paper.d].join(" ").toLowerCase(),
+    [paper.t, paper.s ?? paper.a ?? "", paper.v ?? "", paper.y ?? "", paper.d]
+      .join(" ")
+      .toLowerCase(),
   ]),
 );
 
@@ -143,7 +145,6 @@ export function SiteSearch({ locale }: { locale: Locale }) {
                         </p>
                         <p className="text-xs text-[#98a2b3]">
                           {paper.a ?? ""}
-                          {paper.n > 1 ? " et al." : ""}
                           {paper.v ? ` · ${paper.v} ${paper.y ?? ""}` : ""}
                         </p>
                       </div>

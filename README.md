@@ -42,6 +42,8 @@ python3 scripts/parse-awesome.py       # parse the large-model-safety list
 python3 scripts/parse-embodied.py      # parse the embodied-ai-safety list
 python3 scripts/resolve-paper-links.py # look up missing arXiv ids (slow, resumable)
 python3 scripts/merge-papers.py        # merge both lists, tag by domain, dedupe
+python3 scripts/fetch-paper-authors.py # cache full official arXiv author lists
+python3 scripts/merge-papers.py        # apply title-matched verified author metadata
 python3 scripts/build-paper-digest-manifest.py       # map approved papers to exact full text
 python3 scripts/extract-paper-dataset-candidates.py  # extract review candidates, not publishable facts
 python3 scripts/consolidate-paper-dataset-audits.py  # merge only audited training-data decisions
@@ -59,6 +61,7 @@ python3 scripts/generate-site.py       # rebuild src/data/*.ts
 | `scripts/data/arena-results.json` | Source-backed cross-arena chart snapshot; each benchmark retains its official, non-comparable metric definition |
 | `scripts/data/awesome.md` | Bibliography from `xingjunm/Awesome-Large-Model-Safety` — the approved LLMs and Agents chapters plus Agent Safety Benchmarks |
 | `scripts/data/embodied.md` | Bibliography from `x-zheng16/Awesome-Embodied-AI-Safety` — Embodied AI research, surveys, and its explicit Benchmarks & Datasets section |
+| `scripts/data/paper-author-metadata.json` | Complete author lists from the official arXiv Atom API, retained for full-name search; records are applied only after the arXiv title matches the catalog title |
 | `scripts/data/training-datasets.json` | 155 source-verified training-data candidates. Each row records primary-source training use or an explicit train/validation split, plus a verified public data URL |
 | `scripts/data/dataset-scope-audit.json` | One keep/exclude decision per candidate. The public catalog keeps 33 records whose cited primary source directly concerns safety, alignment, content safety, or AI security |
 | `scripts/data/paper-dataset-mentions.json` | 570 audited paper-level training uses with the exact citing-paper identity and evidence text |

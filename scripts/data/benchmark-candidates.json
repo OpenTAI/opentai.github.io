@@ -5,7 +5,10 @@
       "Jingwei Yi",
       "Yueqi Xie",
       "Bin Zhu",
-      "Emre Kiciman"
+      "Emre Kiciman",
+      "Guangzhong Sun",
+      "Xing Xie",
+      "Fangzhao Wu"
     ],
     "authorCount": 7,
     "venue": "arXiv",
@@ -24,7 +27,12 @@
       "Yangjun Ruan",
       "Honghua Dong",
       "Andrew Wang",
-      "Silviu Pitis"
+      "Silviu Pitis",
+      "Yongchao Zhou",
+      "Jimmy Ba",
+      "Yann Dubois",
+      "Chris J Maddison",
+      "Tatsunori Hashimoto"
     ],
     "authorCount": 9,
     "venue": "arXiv",
@@ -62,7 +70,9 @@
       "Edoardo Debenedetti",
       "Jie Zhang",
       "Mislav Balunovic",
-      "Luca Beurer-Kellner"
+      "Luca Beurer-Kellner",
+      "Marc Fischer",
+      "Florian Tram{\\`e}r"
     ],
     "authorCount": 6,
     "venue": "NeurIPS",
@@ -81,7 +91,13 @@
       "Maksym Andriushchenko",
       "Alexandra Souly",
       "Mateusz Dziemian",
-      "Derek Duenas"
+      "Derek Duenas",
+      "Maxwell Lin",
+      "Justin Wang",
+      "Dan Hendrycks",
+      "Andy Zou",
+      "Zico Kolter",
+      "Matt Fredrikson"
     ],
     "authorCount": 10,
     "venue": "arXiv",
@@ -100,7 +116,11 @@
       "Chengquan Guo",
       "Xun Liu",
       "Chulin Xie",
-      "Andy Zhou"
+      "Andy Zhou",
+      "Yi Zeng",
+      "Zinan Lin",
+      "Dawn Song",
+      "Bo Li"
     ],
     "authorCount": 8,
     "venue": "NeurIPS",
@@ -119,7 +139,13 @@
       "Tri Cao",
       "Bennett Lim",
       "Yue Liu",
-      "Yuan Sui"
+      "Yuan Sui",
+      "Yuexin Li",
+      "Shumin Deng",
+      "Lin Lu",
+      "Nay Oo",
+      "Shuicheng Yan",
+      "Bryan Hooi"
     ],
     "authorCount": 10,
     "venue": "based on available information from Moonlight review",
@@ -138,7 +164,13 @@
       "Tongxin Yuan",
       "Zhiwei He",
       "Lingzhong Dong",
-      "Yiming Wang"
+      "Yiming Wang",
+      "Ruijie Zhao",
+      "Tian Xia",
+      "Lizhen Xu",
+      "Binglin Zhou",
+      "Fangqi Li",
+      "Zhuosheng Zhang"
     ],
     "authorCount": 10,
     "venue": "EMNLP",
@@ -157,7 +189,11 @@
       "Lijun Li",
       "Bowen Dong",
       "Ruohui Wang",
-      "Xuhao Hu"
+      "Xuhao Hu",
+      "Wangmeng Zuo",
+      "Dahua Lin",
+      "Yu Qiao",
+      "Jing Shao"
     ],
     "authorCount": 8,
     "venue": "arXiv",
@@ -176,7 +212,11 @@
       "Moussa Koulako Bala Doumbouya",
       "Ananjan Nandi",
       "Gabriel Poesia",
-      "Davide Ghilardi"
+      "Davide Ghilardi",
+      "Anna Goldie",
+      "Federico Bianchi",
+      "Dan Jurafsky",
+      "Christopher D Manning"
     ],
     "authorCount": 8,
     "venue": "arXiv",
@@ -213,7 +253,13 @@
       "Haochen Zhao",
       "Xiangru Tang",
       "Ziran Yang",
-      "Xiao Han"
+      "Xiao Han",
+      "Xuanzhi Feng",
+      "Yueqing Fan",
+      "Senhao Cheng",
+      "Di Jin",
+      "Yilun Zhao",
+      "Arman Cohan"
     ],
     "authorCount": 10,
     "venue": "arXiv",
@@ -232,7 +278,12 @@
       "Junjie Ye",
       "Sixian Li",
       "Guanyu Li",
-      "Caishuang Huang"
+      "Caishuang Huang",
+      "Songyang Gao",
+      "Yilong Wu",
+      "Qi Zhang",
+      "Tao Gui",
+      "Xuan-Jing Huang"
     ],
     "authorCount": 9,
     "venue": "arXiv",
@@ -251,7 +302,8 @@
       "Yijia Shao",
       "Tianshi Li",
       "Weiyan Shi",
-      "Yanchen Liu"
+      "Yanchen Liu",
+      "Diyi Yang"
     ],
     "authorCount": 5,
     "venue": "NeurIPS",
@@ -270,7 +322,12 @@
       "Chejian Xu",
       "Wenhao Ding",
       "Weijie Lyu",
-      "Zuxin Liu"
+      "Zuxin Liu",
+      "Shuai Wang",
+      "Yihan He",
+      "Hanjiang Hu",
+      "Ding Zhao",
+      "Bo Li"
     ],
     "authorCount": 9,
     "venue": "arXiv",
@@ -289,7 +346,11 @@
       "Hanrong Zhang",
       "Jingyuan Huang",
       "Kai Mei",
-      "Yifei Yao"
+      "Yifei Yao",
+      "Zhenting Wang",
+      "Chenlu Zhan",
+      "Hongwei Wang",
+      "Yongfeng Zhang"
     ],
     "authorCount": 8,
     "venue": "arXiv",
@@ -308,7 +369,13 @@
       "Sheng Yin",
       "Xianghe Pang",
       "Yuanzhuo Ding",
-      "Menglan Chen"
+      "Menglan Chen",
+      "Yutong Bi",
+      "Yichen Xiong",
+      "Wenhao Huang",
+      "Zhen Xiang",
+      "Jing Shao",
+      "Siheng Chen"
     ],
     "authorCount": 10,
     "venue": "arXiv",
@@ -327,7 +394,10 @@
       "Zhexin Zhang",
       "Shiyao Cui",
       "Yida Lu",
-      "Jingzhuo Zhou"
+      "Jingzhuo Zhou",
+      "Junxiao Yang",
+      "Hongning Wang",
+      "Minlie Huang"
     ],
     "authorCount": 7,
     "venue": "arXiv",
@@ -346,7 +416,9 @@
       "Chen Henry Wu",
       "Rishi Shah",
       "Jing Yu Koh",
-      "Ruslan Salakhutdinov"
+      "Ruslan Salakhutdinov",
+      "Daniel Fried",
+      "Aditi Raghunathan"
     ],
     "authorCount": 6,
     "venue": "arXiv",
@@ -365,7 +437,9 @@
       "Ido Levy",
       "Ben Wiesel",
       "Sami Marreed",
-      "Alon Oved"
+      "Alon Oved",
+      "Avi Yaeli",
+      "Segev Shlomov"
     ],
     "authorCount": 6,
     "venue": "arXiv",
@@ -384,7 +458,13 @@
       "Xuhui Zhou",
       "Hyunwoo Kim",
       "Faeze Brahman",
-      "Liwei Jiang"
+      "Liwei Jiang",
+      "Hao Zhu",
+      "Ximing Lu",
+      "Frank Xu",
+      "Bill Yuchen Lin",
+      "Yejin Choi",
+      "Niloofar Mireshghallah"
     ],
     "authorCount": 10,
     "venue": "NeurIPS",
@@ -403,7 +483,8 @@
       "Ivan Evtimov",
       "Arman Zharmagambetov",
       "Aaron Grattafiori",
-      "Chuan Guo"
+      "Chuan Guo",
+      "Kamalika Chaudhuri"
     ],
     "authorCount": 5,
     "venue": "arXiv",
@@ -422,7 +503,13 @@
       "Priyanshu Kumar",
       "Elaine Lau",
       "Saranya Vijayakumar",
-      "Tu Trinh"
+      "Tu Trinh",
+      "Scale Red Team",
+      "Elaine Chang",
+      "Vaughn Robinson",
+      "Sean Hendryx",
+      "Shuyan Zhou",
+      "Matt Fredrikson"
     ],
     "authorCount": 10,
     "venue": "arXiv",
@@ -441,7 +528,12 @@
       "Ada Defne Tur",
       "Nicholas Meade",
       "Xing Han L{\\`u}",
-      "Alejandra Zambrano"
+      "Alejandra Zambrano",
+      "Arkil Patel",
+      "Esin Durmus",
+      "Spandana Gella",
+      "Karolina Sta{\\'n}czak",
+      "Siva Reddy"
     ],
     "authorCount": 9,
     "venue": "arXiv",
@@ -460,7 +552,10 @@
       "Sanidhya Vijayvargiya",
       "Aditya Bharat Soni",
       "Xuhui Zhou",
-      "Zora Zhiruo Wang"
+      "Zora Zhiruo Wang",
+      "Nouha Dziri",
+      "Graham Neubig",
+      "Maarten Sap"
     ],
     "authorCount": 7,
     "venue": "arXiv",
