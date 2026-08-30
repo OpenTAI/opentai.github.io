@@ -81,6 +81,17 @@
 
 final result: passed
 
+## Follow-up QA — GitHub Pages stylesheet cache mismatch (2026-08-29)
+
+- Reproduction: the previous HTML referenced `/opentai/_next/static/chunks/0vvq1nx1vwufv.css`; after deployment GitHub Pages returned 404 for that file while caching HTML for up to 600 seconds.
+- Root cause: each Pages artifact replaces the previous hashed CSS chunks before all cached HTML documents expire, so stale HTML can temporarily render without CSS.
+- Fix: the production export now inlines the compiled stylesheet in every HTML document and the deploy workflow rejects exports that contain an external stylesheet dependency.
+- Regression sequence: the artifact check failed against the external-stylesheet export, then passed after enabling production CSS inlining.
+- Browser verification: 1280 × 720 CSS pixels at DPR 2; one inline style, zero external stylesheet links, zero console warnings/errors, no horizontal overflow, and the expected Inter-based visual system.
+- Capture: `/tmp/opentai-design-qa-20260829/inline-css-home.png`.
+
+final result: passed
+
 ## Follow-up QA — catalog hierarchy, topic tags, and partner logos (2026-08-29)
 
 ### Source references

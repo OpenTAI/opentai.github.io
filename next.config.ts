@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   basePath,
   devIndicators: false,
+  experimental: {
+    inlineCss: true,
+  },
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },
