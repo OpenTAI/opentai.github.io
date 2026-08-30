@@ -126,6 +126,76 @@ test("paper search text includes every author even when the display is abbreviat
   assert.match(text, /xingjun ma/);
 });
 
+test("the four paper tabs form one mutually exclusive catalog partition", () => {
+  assert.equal(typeof paperCatalog.paperMatchesLibraryTab, "function");
+
+  const rows = [
+    { domain: "LLMs", kind: "research", title: "LLM research" },
+    { domain: "Agents", kind: "research", title: "Agent research" },
+    { domain: "Embodied AI", kind: "research", title: "Embodied research" },
+    { domain: "Embodied AI", kind: "survey", title: "Embodied survey" },
+  ];
+  const tabs = ["LLMs", "Agents", "Embodied AI", "Surveys"];
+
+  assert.deepEqual(
+    tabs.map((tab) => rows.filter((row) => paperCatalog.paperMatchesLibraryTab(row, tab)).length),
+    [1, 1, 1, 1],
+  );
+  assert.ok(
+    rows.every(
+      (row) => tabs.filter((tab) => paperCatalog.paperMatchesLibraryTab(row, tab)).length === 1,
+    ),
+  );
+});
+
+test("the generated catalog is fully partitioned into the four requested tabs", () => {
+  const counts = Object.fromEntries(
+    paperCatalog.PAPER_LIBRARY_TABS.map((tab) => [
+      tab,
+      paperLibrary.filter((row) => paperCatalog.paperMatchesLibraryTab(row, tab)).length,
+    ]),
+  );
+
+  assert.deepEqual(counts, {
+    LLMs: 159,
+    Agents: 94,
+    "Embodied AI": 481,
+    Surveys: 38,
+  });
+  assert.ok(
+    paperLibrary.every(
+      (row) =>
+        paperCatalog.PAPER_LIBRARY_TABS.filter((tab) =>
+          paperCatalog.paperMatchesLibraryTab(row, tab),
+        ).length === 1,
+    ),
+  );
+});
+
+test("generated paper data sends title-identified surveys to the Surveys tab", () => {
+  const paper = paperLibrary.find((row) =>
+    row.title.startsWith("A Survey of Large Audio Language Models"),
+  );
+
+  assert.ok(paper);
+  assert.equal(paper.kind, "survey");
+});
+
+test("the source-backed Safety at Scale record is searchable by Xingjun Ma", () => {
+  const paper = paperLibrary.find((row) =>
+    row.title.startsWith("Safety at Scale: A Comprehensive Survey"),
+  );
+
+  assert.ok(paper);
+  assert.equal(paper.arxivId, "2502.05206");
+  assert.ok(paper.authors.includes("Xingjun Ma"));
+  assert.match(paperSearchIndex.find((row) => row.t === paper.title)?.s ?? "", /Xingjun Ma/);
+  assert.equal(
+    paperLibrary.filter((row) => paperCatalog.paperSearchText(row).includes("xingjun ma")).length,
+    16,
+  );
+});
+
 test("generated paper data retains the verified full author list", () => {
   const paper = paperLibrary.find((row) =>
     row.title.startsWith("BackdoorAgent: A Unified Framework"),

@@ -2163,7 +2163,7 @@
     "domain": "Embodied AI",
     "group": "Action and Interaction",
     "section": "Human-Agent Interaction",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -2297,7 +2297,7 @@
     "domain": "Embodied AI",
     "group": "Action and Interaction",
     "section": "Human-Agent Interaction",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -2667,7 +2667,7 @@
     "domain": "Embodied AI",
     "group": "Action and Interaction",
     "section": "Robot Control",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -4301,7 +4301,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Cascading Risks",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -4339,7 +4339,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Cascading Risks",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -4410,7 +4410,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Cascading Risks",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -4518,7 +4518,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Cascading Risks",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -4713,7 +4713,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Cascading Risks",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -4731,7 +4731,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Cascading Risks",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -4753,17 +4753,64 @@
   {
     "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
     "authors": [
-      "Ma et al"
+      "Xingjun Ma",
+      "Yifeng Gao",
+      "Yixu Wang",
+      "Ruofan Wang",
+      "Xin Wang",
+      "Ye Sun",
+      "Yifan Ding",
+      "Hengyuan Xu",
+      "Yunhao Chen",
+      "Yunhan Zhao",
+      "Hanxun Huang",
+      "Yige Li",
+      "Yutao Wu",
+      "Jiaming Zhang",
+      "Xiang Zheng",
+      "Yang Bai",
+      "Zuxuan Wu",
+      "Xipeng Qiu",
+      "Jingfeng Zhang",
+      "Yiming Li",
+      "Xudong Han",
+      "Haonan Li",
+      "Jun Sun",
+      "Cong Wang",
+      "Jindong Gu",
+      "Baoyuan Wu",
+      "Siheng Chen",
+      "Tianwei Zhang",
+      "Yang Liu",
+      "Mingming Gong",
+      "Tongliang Liu",
+      "Shirui Pan",
+      "Cihang Xie",
+      "Tianyu Pang",
+      "Yinpeng Dong",
+      "Ruoxi Jia",
+      "Yang Zhang",
+      "Shiqing Ma",
+      "Xiangyu Zhang",
+      "Neil Gong",
+      "Chaowei Xiao",
+      "Sarah Erfani",
+      "Tim Baldwin",
+      "Bo Li",
+      "Masashi Sugiyama",
+      "Dacheng Tao",
+      "James Bailey",
+      "Yu-Gang Jiang"
     ],
-    "authorCount": 1,
+    "authorCount": 48,
     "venue": "Foundations and Trends",
     "year": "2025",
-    "arxivId": null,
-    "url": "https://scholar.google.com/scholar?q=Safety+at+Scale%3A+A+Comprehensive+Survey+of+Large+Model+and+Agent+Safety",
+    "arxivId": "2502.05206",
+    "url": "https://arxiv.org/abs/2502.05206",
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Cascading Risks",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -4817,7 +4864,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Cascading Risks",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -4885,7 +4932,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Cascading Risks",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -4996,7 +5043,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Memory",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -5321,7 +5368,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Memory",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -5368,7 +5415,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Memory",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -5540,7 +5587,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Self-Evolving",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -5556,7 +5603,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Self-Evolving",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -5661,7 +5708,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Self-Evolving",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -5716,7 +5763,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Self-Evolving",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -5758,7 +5805,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Self-Evolving",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -6109,7 +6156,7 @@
     "domain": "Embodied AI",
     "group": "Agentic",
     "section": "Tool Use and Skill",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -6457,7 +6504,7 @@
     "domain": "Embodied AI",
     "group": "Cognition",
     "section": "Instruction Understanding",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -7006,7 +7053,7 @@
     "domain": "Embodied AI",
     "group": "Cognition",
     "section": "World Model",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {
@@ -10868,7 +10915,7 @@
     "domain": "Embodied AI",
     "group": "Planning",
     "section": "Multi-Agent Planning",
-    "kind": "research",
+    "kind": "survey",
     "source": "embodied-ai-safety"
   },
   {

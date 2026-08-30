@@ -19,6 +19,13 @@
       "publisher": "Institute of Electronics, Information and Communications Engineers (IEICE)",
       "source": "https://api.crossref.org/works/10.1587/transfun.2021cip0017",
       "evidence": "Crossref's exact-title DOI record identifies the container title as IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences and the publisher as IEICE."
+    },
+    {
+      "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+      "arxivId": "2502.05206",
+      "url": "https://arxiv.org/abs/2502.05206",
+      "source": "https://arxiv.org/abs/2502.05206",
+      "evidence": "The official arXiv record exactly matches the title and records Xingjun Ma as the first author."
     }
   ]
 }

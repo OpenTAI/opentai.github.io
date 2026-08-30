@@ -14,6 +14,15 @@ export type PaperAuthorRow = PaperCatalogRow & {
   section?: string | null;
 };
 
+export const PAPER_LIBRARY_TABS = ["LLMs", "Agents", "Embodied AI", "Surveys"] as const;
+
+export type PaperLibraryTab = (typeof PAPER_LIBRARY_TABS)[number];
+
+export function paperMatchesLibraryTab(row: PaperCatalogRow, tab: PaperLibraryTab) {
+  if (tab === "Surveys") return row.kind === "survey";
+  return row.kind === "research" && row.domain === tab;
+}
+
 export function formatPaperAuthors(authors: readonly string[]) {
   if (authors.length === 0) return "";
   if (authors.length <= 5) return authors.join(", ");

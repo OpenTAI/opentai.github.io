@@ -2253,9 +2253,9 @@ export const paperSearchIndex: PaperHit[] = [
   },
   {
     t: "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-    a: "Ma et al",
-    s: "Ma et al",
-    n: 1,
+    a: "Xingjun Ma et al.",
+    s: "Xingjun Ma Yifeng Gao Yixu Wang Ruofan Wang Xin Wang Ye Sun Yifan Ding Hengyuan Xu Yunhao Chen Yunhan Zhao Hanxun Huang Yige Li Yutao Wu Jiaming Zhang Xiang Zheng Yang Bai Zuxuan Wu Xipeng Qiu Jingfeng Zhang Yiming Li Xudong Han Haonan Li Jun Sun Cong Wang Jindong Gu Baoyuan Wu Siheng Chen Tianwei Zhang Yang Liu Mingming Gong Tongliang Liu Shirui Pan Cihang Xie Tianyu Pang Yinpeng Dong Ruoxi Jia Yang Zhang Shiqing Ma Xiangyu Zhang Neil Gong Chaowei Xiao Sarah Erfani Tim Baldwin Bo Li Masashi Sugiyama Dacheng Tao James Bailey Yu-Gang Jiang",
+    n: 48,
     v: "Foundations and Trends",
     y: "2025",
     d: "Embodied AI",

@@ -7,7 +7,10 @@ import { Locale, t } from "@/lib/i18n";
 import { buildRecentYearSeries } from "@/lib/dataset-statistics";
 import {
   formatPaperAuthors,
+  PAPER_LIBRARY_TABS,
+  PaperLibraryTab,
   paperDisplayMeta,
+  paperMatchesLibraryTab,
   paperSearchText,
   paperYearCounts,
   sortPapersNewestFirst,
@@ -50,11 +53,6 @@ const DOMAIN_COUNTS = paperDomains.map((label) => ({
   label,
 }));
 const DOMAIN_COLORS = ["#5957d9", "#17a99a", "#f59e0b"];
-const KINDS = [
-  { id: "research", label: "Research" },
-  { id: "survey", label: "Survey" },
-] as const;
-
 function Chip({
   active,
   children,
@@ -277,8 +275,7 @@ function PaperStatistics({ locale }: { locale: Locale }) {
 }
 
 export function PaperLibrary({ locale }: { locale: Locale }) {
-  const [domain, setDomain] = useState<string | null>(null);
-  const [kind, setKind] = useState<string>("research");
+  const [tab, setTab] = useState<PaperLibraryTab>("LLMs");
   const [group, setGroup] = useState<string | null>(null);
   const [section, setSection] = useState<string | null>(null);
   const [query, setQuery] = useState("");
@@ -290,89 +287,71 @@ export function PaperLibrary({ locale }: { locale: Locale }) {
     setShown(PAGE);
   };
 
-  // Each level narrows the one below it, so counts always reflect what is
-  // reachable from the current selection rather than the whole library.
-  const inDomain = useMemo(
-    () => (domain ? paperLibrary.filter((p) => p.domain === domain) : paperLibrary),
-    [domain],
-  );
-  const inKind = useMemo(
-    () => (kind ? inDomain.filter((p) => p.kind === kind) : inDomain),
-    [inDomain, kind],
+  const queryMatches = useMemo(() => {
+    const terms = normalized ? normalized.split(/\s+/) : [];
+    if (!terms.length) return paperLibrary;
+    return paperLibrary.filter((paper) => {
+      const text = HAYSTACK.get(paper)!;
+      return terms.every((term) => text.includes(term));
+    });
+  }, [normalized]);
+  const inTab = useMemo(
+    () => queryMatches.filter((paper) => paperMatchesLibraryTab(paper, tab)),
+    [queryMatches, tab],
   );
   const groups = useMemo(() => {
-    if (!domain) return [];
-    return (paperGroups[domain] ?? []).filter((g) => inKind.some((p) => p.group === g));
-  }, [domain, inKind]);
+    if (tab === "Surveys") return [];
+    return (paperGroups[tab] ?? []).filter((name) => inTab.some((paper) => paper.group === name));
+  }, [inTab, tab]);
   const sections = useMemo(() => {
     if (!group) return [];
     const seen: string[] = [];
-    for (const p of inKind) {
+    for (const p of inTab) {
       if (p.group === group && p.section && !seen.includes(p.section)) seen.push(p.section);
     }
     return seen;
-  }, [group, inKind]);
+  }, [group, inTab]);
 
   const filtered = useMemo(() => {
-    const terms = normalized ? normalized.split(/\s+/) : [];
     return sortPapersNewestFirst(
-      inKind.filter((paper) => {
+      inTab.filter((paper) => {
         if (group && paper.group !== group) return false;
         if (section && paper.section !== section) return false;
-        if (!terms.length) return true;
-        const text = HAYSTACK.get(paper)!;
-        return terms.every((term) => text.includes(term));
+        return true;
       }),
     );
-  }, [group, inKind, normalized, section]);
+  }, [group, inTab, section]);
 
   return (
     <section className="subpage-main-table-card">
       <PaperStatistics locale={locale} />
 
       <div className="space-y-3 border-b border-[#eceff5] pb-5">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div className="flex flex-wrap gap-2">
-            <Chip active={domain === null} count={paperLibrary.length} onClick={() => reset(() => { setDomain(null); setGroup(null); setSection(null); })}>
-              {t(locale, "All domains")}
-            </Chip>
-            {paperDomains.map((name) => (
-              <Chip
-                key={name}
-                active={domain === name}
-                count={paperLibrary.filter((p) => p.domain === name).length}
-                onClick={() => reset(() => { setDomain(name); setGroup(null); setSection(null); })}
-              >
-                {t(locale, name)}
-              </Chip>
-            ))}
-          </div>
-
-          <div
-            aria-label={locale === "zh" ? "论文类型" : "Paper type"}
-            className="ml-auto flex flex-wrap justify-end gap-2"
-            role="tablist"
-          >
-            {KINDS.map((k) => (
-              <button
-                key={k.id}
-                aria-selected={kind === k.id}
-                className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
-                  kind === k.id
-                    ? "border-[#c7d2fe] bg-[#eef2ff] text-[#4338ca]"
-                    : "border-[#e3e8f2] bg-white text-[#475467] hover:border-[#c7d2fe]"
-                }`}
-                onClick={() => reset(() => { setKind(k.id); setGroup(null); setSection(null); })}
-                role="tab"
-                type="button"
-              >
-                {t(locale, k.label)}
-                <span className="text-[#98a2b3]">
-                  {" "}{inDomain.filter((p) => p.kind === k.id).length}
-                </span>
-              </button>
-            ))}
-          </div>
+        <div
+          aria-label={locale === "zh" ? "论文分类" : "Paper categories"}
+          className="flex flex-wrap gap-2"
+          role="tablist"
+        >
+          {PAPER_LIBRARY_TABS.map((name) => (
+            <button
+              key={name}
+              aria-controls="paper-library-results"
+              aria-selected={tab === name}
+              className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
+                tab === name
+                  ? "border-[#c7d2fe] bg-[#eef2ff] text-[#4338ca]"
+                  : "border-[#e3e8f2] bg-white text-[#475467] hover:border-[#c7d2fe]"
+              }`}
+              onClick={() => reset(() => { setTab(name); setGroup(null); setSection(null); })}
+              role="tab"
+              type="button"
+            >
+              {t(locale, name)}
+              <span className="text-[#98a2b3]">
+                {" "}{queryMatches.filter((paper) => paperMatchesLibraryTab(paper, name)).length}
+              </span>
+            </button>
+          ))}
         </div>
 
         {groups.length ? (
@@ -381,7 +360,7 @@ export function PaperLibrary({ locale }: { locale: Locale }) {
               <Chip
                 key={name}
                 active={group === name}
-                count={inKind.filter((p) => p.group === name).length}
+                count={inTab.filter((p) => p.group === name).length}
                 onClick={() => reset(() => { setGroup(group === name ? null : name); setSection(null); })}
                 size="sm"
               >
@@ -397,7 +376,7 @@ export function PaperLibrary({ locale }: { locale: Locale }) {
               <Chip
                 key={name}
                 active={section === name}
-                count={inKind.filter((p) => p.section === name).length}
+                count={inTab.filter((p) => p.section === name).length}
                 onClick={() => reset(() => setSection(section === name ? null : name))}
                 size="sm"
               >
@@ -410,7 +389,11 @@ export function PaperLibrary({ locale }: { locale: Locale }) {
 
       <div className="my-5 flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-[#667085]">
-          {filtered.length.toLocaleString()} {t(locale, filtered.length === 1 ? "paper" : "papers")}
+          {normalized
+            ? locale === "zh"
+              ? `${t(locale, tab)} ${filtered.length.toLocaleString()} 篇 · 全部分类共 ${queryMatches.length.toLocaleString()} 篇`
+              : `${filtered.length.toLocaleString()} in ${tab} · ${queryMatches.length.toLocaleString()} across all tabs`
+            : `${filtered.length.toLocaleString()} ${t(locale, filtered.length === 1 ? "paper" : "papers")}`}
         </p>
         <div className="subpage-search-box">
           <span>⌕</span>
@@ -425,7 +408,7 @@ export function PaperLibrary({ locale }: { locale: Locale }) {
         </div>
       </div>
 
-      <ol className="space-y-2.5">
+      <ol className="space-y-2.5" id="paper-library-results" role="tabpanel">
         {filtered.slice(0, shown).map((paper, index) => {
           const href = paperLink(paper);
           const meta = paperDisplayMeta(paper);

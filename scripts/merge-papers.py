@@ -155,11 +155,11 @@ for p in papers:
         kept["kind"] = "survey"
     kept["alsoIn"] = p["source"]
 
-# Citation lists often abbreviate authors as "Surname et al.". Replace that
-# shorthand only with official arXiv metadata whose normalized title matches
-# the catalog record; a shared numeric identifier alone is not enough.
-for key, paper in list(merged.items()):
-    merged[key] = with_verified_authors(paper, PAPER_AUTHOR_METADATA)
+# Titles that explicitly identify themselves as surveys are surveys regardless
+# of where the upstream bibliography files them in its subject taxonomy.
+for paper in merged.values():
+    if SURVEY_TITLE.search(paper["title"]):
+        paper["kind"] = "survey"
 
 # Corrections are separate from the downloaded bibliography snapshots so a
 # future reparse cannot silently restore a known upstream metadata error.
@@ -172,6 +172,14 @@ for override in PAPER_METADATA_OVERRIDES["records"]:
     for field in ("venue", "year", "url", "arxivId"):
         if field in override:
             paper[field] = override[field]
+
+# Citation lists often abbreviate authors as "Surname et al.". Replace that
+# shorthand only with official arXiv metadata whose normalized title matches
+# the catalog record; a shared numeric identifier alone is not enough. Apply
+# this after source-backed link overrides so newly resolved arXiv records are
+# eligible for the same verification path.
+for key, paper in list(merged.items()):
+    merged[key] = with_verified_authors(paper, PAPER_AUTHOR_METADATA)
 
 library = sorted(
     merged.values(),
