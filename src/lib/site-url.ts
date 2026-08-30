@@ -16,3 +16,21 @@ const vercelUrl = process.env.NEXT_PUBLIC_VERCEL_URL
 export const SITE_URL = configured ?? vercelUrl ?? PRODUCTION_URL;
 
 export const isProduction = configured === PRODUCTION_URL;
+
+export function publicAssetHref(
+  href: string,
+  basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "",
+) {
+  if (!href.startsWith("/")) return href;
+
+  const normalizedBasePath = basePath.replace(/\/$/, "");
+  if (
+    !normalizedBasePath ||
+    href === normalizedBasePath ||
+    href.startsWith(`${normalizedBasePath}/`)
+  ) {
+    return href;
+  }
+
+  return `${normalizedBasePath}${href}`;
+}

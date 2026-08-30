@@ -7735,3 +7735,73 @@ main:has(.ecosystem-catalog-companies) + .site-footer::before {
     border-radius: 16px;
   }
 }
+
+/* Keep evaluation and startup catalogs as shallow as the resource catalogs. */
+.arena-page,
+.ecosystem-catalog-companies {
+  overflow: visible;
+  margin-top: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.arena-page::before {
+  display: none;
+}
+
+.arena-page .subpage-breadcrumb a,
+.arena-page .subpage-breadcrumb [aria-current="page"],
+.ecosystem-catalog-companies .subpage-breadcrumb a,
+.ecosystem-catalog-companies .subpage-breadcrumb [aria-current="page"] {
+  color: #667085;
+}
+
+.arena-page .subpage-breadcrumb-separator,
+.ecosystem-catalog-companies .subpage-breadcrumb-separator {
+  color: #c0c5d1;
+}
+
+.arena-scoreboards {
+  border-color: #e3e8f2;
+  border-radius: 20px;
+  background: #fff;
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+  box-shadow: 0 12px 34px rgba(49, 59, 86, 0.055);
+}
+
+.arena-scoreboards > .integrated-section-heading {
+  border-color: #e6eaf2;
+}
+
+.arena-scoreboards > .integrated-section-heading .integrated-section-icon {
+  border: 0;
+  background: linear-gradient(145deg, #f3f4ff, #e8ebff);
+  color: #111827;
+}
+
+.arena-scoreboards > .integrated-section-heading h1 {
+  color: #0f172a;
+  font-family: inherit;
+}
+
+.ecosystem-catalog-companies .ecosystem-hero {
+  border-color: #e3e8f2;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(49, 59, 86, 0.055);
+}
+
+.ecosystem-catalog-companies .company-filter-bar {
+  border-color: #e3e8f2;
+  background: #fff;
+}
+
+.resource-grid-badges .resource-grid-badge-topic {
+  border-color: #d9dcf7;
+  background: #f0f1fb;
+  box-shadow: inset 0 -0.52em 0 rgba(205, 210, 241, 0.48);
+  color: #545b83;
+}

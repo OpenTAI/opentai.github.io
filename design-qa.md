@@ -80,3 +80,30 @@
 - The first yellow-tag implementation used a selector with lower specificity than the shared badge rule, so the marker stroke appeared but the gray base background remained. A regression test was tightened to require the qualified selector, the selector was corrected, and the browser recapture confirmed the yellow background, marker stroke, text color, zero overflow, and no console warnings/errors.
 
 final result: passed
+
+## Follow-up QA — catalog hierarchy, topic tags, and partner logos (2026-08-29)
+
+### Source references
+
+- Leaderboards hierarchy: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/299292cef76f93d2303e63448bd97d2f.jpg`
+- Dataset tag color: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/bfecc7bd66bbd2b03c55806643c01f74.png`
+- Safety Arenas hierarchy: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/2ad58433b3d44efd0b136376beb61490.jpg`
+- Startups hierarchy: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/d472058f03eb3cc783fad5e615666add.jpg`
+- Broken partner logos: `/Users/fara./Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_5dji56bs0chf22_1df1/temp/RWTemp/2026-08/bc34e2f3f44ce7f29b412a95b088e3da/182151b5e1a8423724deed5529ab452b.png`
+
+### Implementation captures and setup
+
+- Captures: `/tmp/opentai-design-qa-20260829/leaderboard.png`, `arenas.png`, `companies.png`, `datasets.png`, and `community.png`.
+- Build: Next.js static export with GitHub Pages base path `/opentai`.
+- Browser/viewport: Codex in-app browser, 1280 × 720 CSS pixels at DPR 2.
+- Pages checked: Leaderboards, Safety Arenas, Startups, Datasets, Community.
+
+### Comparison and checks
+
+1. Leaderboards, Safety Arenas, and Startups no longer have the decorative outer catalog surface. Their outer wrappers resolve to transparent backgrounds, zero borders, and zero padding; the primary white panels now own the page hierarchy.
+2. Dataset topic tags resolve to a pale lavender-blue treatment: `rgb(240, 241, 251)` background and `rgb(217, 220, 247)` border.
+3. GitHub Pages partner-logo URLs now retain the `/opentai` base path through the shared public-asset helper.
+4. All 24 partner institution images loaded with non-zero natural dimensions; zero broken images remained on Community.
+5. TypeScript, ESLint, 110 Node tests, 15 Python tests, and the production static export passed.
+
+final result: passed

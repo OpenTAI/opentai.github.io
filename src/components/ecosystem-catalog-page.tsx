@@ -17,6 +17,7 @@ import {
   sortEcosystemRecords,
 } from "@/lib/ecosystem-catalog";
 import type { Locale } from "@/lib/i18n";
+import { publicAssetHref } from "@/lib/site-url";
 
 type CatalogKind = "models" | "frameworks" | "arenas" | "companies";
 
@@ -221,9 +222,7 @@ function CompanyCard({
   const strings = copy[locale];
   const logo = record.logo;
   const logoSource = record.logoSource;
-  const logoPath = logo?.startsWith("/")
-    ? `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${logo}`
-    : logo;
+  const logoPath = logo ? publicAssetHref(logo) : undefined;
   const country = locale === "zh" ? record.countryZh : record.country;
   const rawValuation = locale === "zh" ? record.valuationZh : record.valuation;
   const valuation = rawValuation ? formatCompanyValuation(rawValuation, locale) : undefined;

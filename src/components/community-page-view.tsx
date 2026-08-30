@@ -6,6 +6,7 @@ import { SimplePage } from "@/components/simple-page";
 import { SiteShell } from "@/components/site-shell";
 import { partners } from "@/data/site";
 import { Locale, t } from "@/lib/i18n";
+import { publicAssetHref } from "@/lib/site-url";
 
 export function CommunityPageView({ locale }: { locale: Locale }) {
   const description =
@@ -95,7 +96,7 @@ export function CommunityPageView({ locale }: { locale: Locale }) {
                     className="object-contain"
                     fill
                     sizes="140px"
-                    src={partner.logo}
+                    src={publicAssetHref(partner.logo)}
                   />
                 </div>
                 <p className="text-xs leading-5 text-[#667085]">{partner.name}</p>
