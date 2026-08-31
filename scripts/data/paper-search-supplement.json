@@ -1,0 +1,224 @@
+[
+  {
+    "title": "Towards a Theoretical Understanding of Memorization in Diffusion Models",
+    "authors": [
+      "Yunhao Chen",
+      "Xingjun Ma",
+      "Difan Zou",
+      "Yu-Gang Jiang"
+    ],
+    "authorCount": 4,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2410.02467",
+    "url": null,
+    "domain": "Diffusion Models Safety",
+    "group": "Diffusion Models Safety",
+    "section": "Data Extraction Attacks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "UnSeg: One Universal Unlearnable Example Generator is Enough against All Image Segmentation",
+    "authors": [
+      "Ye Sun",
+      "Hao Zhang",
+      "Tiehua Zhang",
+      "Xingjun Ma",
+      "Yu-Gang Jiang"
+    ],
+    "authorCount": 5,
+    "venue": "NeurIPS",
+    "year": "2024",
+    "arxivId": "2410.09909",
+    "url": null,
+    "domain": "Vision Foundation Model Safety",
+    "group": "Vision Foundation Model Safety",
+    "section": "Attacks and Defense for SAM",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Multi-Trigger Backdoor Attacks: More Triggers, More Threats",
+    "authors": [
+      "Yige Li",
+      "Xingjun Ma",
+      "Jiabo He",
+      "Hanxun Huang",
+      "Yu-Gang Jiang"
+    ],
+    "authorCount": 5,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2401.15295",
+    "url": null,
+    "domain": "Vision Foundation Model Safety",
+    "group": "Vision Foundation Model Safety",
+    "section": "Attacks and Defense for ViT",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "X-transfer attacks: Towards super transferable adversarial attacks on clip",
+    "authors": [
+      "Hanxun Huang",
+      "Sarah Erfani",
+      "Yige Li",
+      "Xingjun Ma",
+      "James Bailey"
+    ],
+    "authorCount": 5,
+    "venue": "ICML",
+    "year": "2025",
+    "arxivId": "2505.05528",
+    "url": null,
+    "domain": "Vision-Language Pre-training Model Safety",
+    "group": "Vision-Language Pre-training Model Safety",
+    "section": "Adversarial Attacks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "TAPT: Test-Time Adversarial Prompt Tuning for Robust Inference in Vision-Language Models",
+    "authors": [
+      "Xin Wang",
+      "Kai Chen",
+      "Jiaming Zhang",
+      "Jingjing Chen",
+      "Xingjun Ma"
+    ],
+    "authorCount": 5,
+    "venue": "CVPR",
+    "year": "2025",
+    "arxivId": "2411.13136",
+    "url": null,
+    "domain": "Vision-Language Pre-training Model Safety",
+    "group": "Vision-Language Pre-training Model Safety",
+    "section": "Adversarial Defenses",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "AdvQDet: Detecting Query-Based Adversarial Attacks with Adversarial Contrastive Prompt Tuning",
+    "authors": [
+      "Xin Wang",
+      "Kai Chen",
+      "Xingjun Ma",
+      "Zhineng Chen",
+      "Jingjing Chen",
+      "Yu-Gang Jiang"
+    ],
+    "authorCount": 6,
+    "venue": "ACM MM",
+    "year": "2024",
+    "arxivId": "2408.01978",
+    "url": null,
+    "domain": "Vision-Language Pre-training Model Safety",
+    "group": "Vision-Language Pre-training Model Safety",
+    "section": "Adversarial Defenses",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Adversarial Prompt Distillation for Vision-Language Models",
+    "authors": [
+      "Lin Luo",
+      "Xin Wang",
+      "Bojia Zi",
+      "Shihao Zhao",
+      "Xingjun Ma"
+    ],
+    "authorCount": 5,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2411.15244",
+    "url": null,
+    "domain": "Vision-Language Pre-training Model Safety",
+    "group": "Vision-Language Pre-training Model Safety",
+    "section": "Adversarial Defenses",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Adversarial prompt tuning for vision-language models",
+    "authors": [
+      "Jiaming Zhang",
+      "Xingjun Ma",
+      "Xin Wang",
+      "Lingyu Qiu",
+      "Jiaqi Wang",
+      "Yu-Gang Jiang",
+      "Jitao Sang"
+    ],
+    "authorCount": 7,
+    "venue": "ECCV",
+    "year": "2024",
+    "arxivId": "2311.11261",
+    "url": null,
+    "domain": "Vision-Language Pre-training Model Safety",
+    "group": "Vision-Language Pre-training Model Safety",
+    "section": "Adversarial Defenses",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "Detecting Backdoor Samples in Contrastive Language Image Pretraining",
+    "authors": [
+      "Hanxun Huang",
+      "Sarah Erfani",
+      "Yige Li",
+      "Xingjun Ma",
+      "James Bailey"
+    ],
+    "authorCount": 5,
+    "venue": "ICLR",
+    "year": "2025",
+    "arxivId": "2502.01385",
+    "url": null,
+    "domain": "Vision-Language Pre-training Model Safety",
+    "group": "Vision-Language Pre-training Model Safety",
+    "section": "Backdoor & Poisoning Defenses",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "IDEATOR: Jailbreaking VLMs Using VLMs",
+    "authors": [
+      "Ruofan Wang",
+      "Bo Wang",
+      "Xingjun Ma",
+      "Yu-Gang Jiang"
+    ],
+    "authorCount": 4,
+    "venue": "arXiv",
+    "year": "2024",
+    "arxivId": "2411.00827",
+    "url": null,
+    "domain": "Vison Language Model Safety",
+    "group": "Vison Language Model Safety",
+    "section": "Jailbreak Attacks",
+    "kind": "research",
+    "source": "large-model-safety"
+  },
+  {
+    "title": "White-box Multimodal Jailbreaks Against Large Vision-Language Models",
+    "authors": [
+      "Ruofan Wang",
+      "Xingjun Ma",
+      "Hanxu Zhou",
+      "Chuanjun Ji",
+      "Guangnan Ye",
+      "Yu-Gang Jiang"
+    ],
+    "authorCount": 6,
+    "venue": "ACM MM",
+    "year": "2024",
+    "arxivId": "2405.17894",
+    "url": null,
+    "domain": "Vison Language Model Safety",
+    "group": "Vison Language Model Safety",
+    "section": "Jailbreak Attacks",
+    "kind": "research",
+    "source": "large-model-safety"
+  }
+]

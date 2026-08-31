@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { paperSearchIndex } from "@/data/paper-search";
+import { paperCatalogCount, paperSearchIndex } from "@/data/paper-search";
 import { collectionOrder, subpageConfigs, SubpageTableRow } from "@/data/site";
 import { Locale, localizeHref, t } from "@/lib/i18n";
 import { formatPaperVenue } from "@/lib/paper-catalog";
@@ -83,7 +83,7 @@ export function SiteSearch({ locale }: { locale: Locale }) {
           value={query}
         />
         <span className="hidden shrink-0 whitespace-nowrap text-sm text-[#98a2b3] sm:block">
-          {INDEX.length} {t(locale, "resources")} · {paperSearchIndex.length.toLocaleString()} {t(locale, "papers")}
+          {INDEX.length} {t(locale, "resources")} · {paperCatalogCount.toLocaleString()} {t(locale, "papers")}
         </span>
       </div>
 

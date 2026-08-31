@@ -6,8 +6,8 @@ import {
   sortPapersNewestFirst,
 } from "./paper-catalog.ts";
 import * as paperCatalog from "./paper-catalog.ts";
-import { paperLibrary } from "../data/papers.ts";
-import { paperSearchIndex } from "../data/paper-search.ts";
+import { paperLibrary, paperSearchSupplement } from "../data/papers.ts";
+import { paperCatalogCount, paperSearchIndex } from "../data/paper-search.ts";
 
 const papers = [
   { title: "Older", venue: "ACL", year: "2023" },
@@ -191,8 +191,27 @@ test("the source-backed Safety at Scale record is searchable by Xingjun Ma", () 
   assert.ok(paper.authors.includes("Xingjun Ma"));
   assert.match(paperSearchIndex.find((row) => row.t === paper.title)?.s ?? "", /Xingjun Ma/);
   assert.equal(
-    paperLibrary.filter((row) => paperCatalog.paperSearchText(row).includes("xingjun ma")).length,
-    16,
+    paperSearchIndex.filter((row) => (row.s ?? "").toLowerCase().includes("xingjun ma")).length,
+    27,
+  );
+});
+
+test("Xingjun Ma search results are unique papers with complete author evidence", () => {
+  const matches = paperSearchIndex.filter((row) =>
+    (row.s ?? "").toLowerCase().includes("xingjun ma"),
+  );
+  const normalizedTitles = matches.map((row) => row.t.toLowerCase().replace(/[^a-z0-9]/g, ""));
+
+  assert.equal(matches.length, 27);
+  assert.equal(new Set(normalizedTitles).size, 27);
+  assert.ok(matches.every((row) => (row.s ?? "").split(" ").length >= 2));
+  assert.equal(paperCatalogCount, paperLibrary.length);
+  assert.equal(paperSearchSupplement.length, 11);
+  assert.ok(paperSearchSupplement.every((row) => row.authors.includes("Xingjun Ma")));
+  assert.ok(
+    paperSearchSupplement.every(
+      (row) => !["LLMs", "Agents", "Embodied AI"].includes(row.domain),
+    ),
   );
 });
 

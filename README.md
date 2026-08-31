@@ -41,7 +41,7 @@ python3 scripts/fetch-benchmarks.py    # resolve the benchmarks named in the spe
 python3 scripts/parse-awesome.py       # parse the large-model-safety list
 python3 scripts/parse-embodied.py      # parse the embodied-ai-safety list
 python3 scripts/resolve-paper-links.py # look up missing arXiv ids (slow, resumable)
-python3 scripts/merge-papers.py        # merge both lists, tag by domain, dedupe
+python3 scripts/merge-papers.py        # merge, dedupe, and build source-backed author-search supplements
 python3 scripts/fetch-paper-authors.py # cache full official arXiv author lists
 python3 scripts/merge-papers.py        # apply title-matched verified author metadata
 python3 scripts/build-paper-digest-manifest.py       # map approved papers to exact full text

@@ -33,6 +33,7 @@ TEXT_ARENA_OVERVIEW = json.load(open(DATA / "text-arena-overview.json"))
 CODE_ARENA_OVERVIEW = json.load(open(DATA / "code-arena-overview.json"))
 CURATION = json.load(open(DATA / "benchmark-curation.json"))
 LIBRARY = json.load(open(DATA / "paper-library.json"))
+PAPER_SEARCH_SUPPLEMENT = json.load(open(DATA / "paper-search-supplement.json"))
 DATASET_CANDIDATES = json.load(open(DATA / "dataset-candidates.json"))
 LLM_SAFETY_RESOURCES = json.load(open(DATA / "llm-safety-resources.json"))
 AGENT_BENCHMARK_RECORDS = json.load(open(DATA / "agent-benchmark-records.json"))
@@ -312,7 +313,7 @@ partners = [{"name": clean(p["name"]), "logo": img(p["img"])} for p in B[7]["ite
 mission = {"title": clean(B[1]["title"]), "body": clean(B[1]["body"])}
 
 # ---------------------------------------------------------------- paper library
-def build_paper_library():
+def build_paper_library(records=LIBRARY):
     return [
         {
             "title": e["title"],
@@ -327,11 +328,12 @@ def build_paper_library():
             "arxivId": e.get("arxivId"),
             "url": e.get("url"),
         }
-        for e in LIBRARY
+        for e in records
     ]
 
 
 paper_library = build_paper_library()
+paper_search_supplement = build_paper_library(PAPER_SEARCH_SUPPLEMENT)
 
 # These are the three domains explicitly approved by the OpenTAI team.
 PAPER_DOMAINS = ["LLMs", "Agents", "Embodied AI"]
@@ -1547,7 +1549,7 @@ search_index = [
         "d": p["domain"],
         "x": bool(p.get("arxivId") or p.get("url")),
     }
-    for p in paper_library
+    for p in paper_library + paper_search_supplement
 ]
 SEARCH_OUT.write_text(
     "// Slim search index for Discover. The full library lives in papers.ts.\n\n"
@@ -1561,6 +1563,7 @@ SEARCH_OUT.write_text(
     "  /** domain */ d: string;\n"
     "  /** has a link */ x: boolean;\n"
     "};\n\n"
+    + f"export const paperCatalogCount = {len(paper_library)};\n\n"
     + block("paperSearchIndex", "PaperHit[]", search_index)
 )
 print(f"wrote {SEARCH_OUT}  {SEARCH_OUT.stat().st_size} bytes")
@@ -1568,6 +1571,7 @@ print(f"wrote {SEARCH_OUT}  {SEARCH_OUT.stat().st_size} bytes")
 PAPERS_OUT.write_text(
     PAPERS_HEADER
     + block("paperLibrary", "LibraryPaper[]", paper_library)
+    + block("paperSearchSupplement", "LibraryPaper[]", paper_search_supplement)
     + block("paperDomains", "string[]", paper_domains)
     + block("paperGroups", "Record<string, string[]>", paper_groups)
 )

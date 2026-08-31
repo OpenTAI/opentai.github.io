@@ -69,10 +69,31 @@ def normalize_venue(value):
 
 
 papers, benchmark_candidates, dataset_candidates = [], [], []
+search_supplement_candidates = []
 
 for e in LMS:
     domain = DOMAIN_BY_CHAPTER.get(e["chapter"])
     if not domain:
+        # The four browsing tabs intentionally cover only the approved LLM,
+        # Agent, Embodied AI and Survey scope.  The OpenTAI team separately
+        # requested complete author search coverage for Xingjun Ma across the
+        # two cited source bibliographies.  Keep those source-backed records
+        # searchable without relabelling vision or diffusion papers as LLMs.
+        if "Xingjun Ma" in e.get("authors", []):
+            search_supplement_candidates.append({
+                "title": e["title"],
+                "authors": e["authors"],
+                "authorCount": len(e["authors"]),
+                "venue": normalize_venue(e.get("venue")),
+                "year": e.get("year"),
+                "arxivId": e.get("arxivId") or LMS_LINKS.get(e["title"]),
+                "url": None,
+                "domain": e["chapter"],
+                "group": e["chapter"],
+                "section": e.get("section"),
+                "kind": "survey" if SURVEY_TITLE.search(e["title"]) else "research",
+                "source": "large-model-safety",
+            })
         continue
     entry = {
         "title": e["title"],
@@ -186,7 +207,31 @@ library = sorted(
     key=lambda p: (p["domain"], p["group"], p["section"] or "", -(int(p["year"] or 0))),
 )
 
+# Search-only records are de-duplicated against the approved library and one
+# another by the same normalized-title rule used above.  AnyAttack is already
+# present through the embodied source and BlueSuffix is already present in the
+# Agent tab, so neither appears twice in an author search.
+search_supplement = []
+search_seen = set(merged)
+search_seen_arxiv = {
+    paper.get("arxivId") for paper in merged.values() if paper.get("arxivId")
+}
+for paper in search_supplement_candidates:
+    key = norm(paper["title"])
+    arxiv_id = paper.get("arxivId")
+    if key in search_seen or (arxiv_id and arxiv_id in search_seen_arxiv):
+        continue
+    search_seen.add(key)
+    if arxiv_id:
+        search_seen_arxiv.add(arxiv_id)
+    search_supplement.append(paper)
+search_supplement.sort(
+    key=lambda p: (p["domain"], p["section"] or "", -(int(p["year"] or 0)), p["title"]),
+)
+
 json.dump(library, open(DATA / "paper-library.json", "w"), ensure_ascii=False, indent=2)
+json.dump(search_supplement, open(DATA / "paper-search-supplement.json", "w"),
+          ensure_ascii=False, indent=2)
 json.dump(benchmark_candidates, open(DATA / "benchmark-candidates.json", "w"),
           ensure_ascii=False, indent=2)
 json.dump(dataset_candidates, open(DATA / "dataset-candidates.json", "w"),
@@ -208,3 +253,4 @@ for k, n in sorted(by_kind.items(), key=lambda x: -x[1]):
     print(f"  {n:5}  {k}")
 print(f"\nbenchmark candidates pulled out: {len(benchmark_candidates)}")
 print(f"dataset candidates pulled out: {len(dataset_candidates)}")
+print(f"search-only author records: {len(search_supplement)}")
