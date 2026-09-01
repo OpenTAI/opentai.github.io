@@ -14,6 +14,15 @@ export type PaperAuthorRow = PaperCatalogRow & {
   section?: string | null;
 };
 
+export type CompactPaperSearchRow = {
+  a?: string;
+  d: string;
+  s?: string;
+  t: string;
+  v?: string;
+  y?: string;
+};
+
 export const PAPER_LIBRARY_TABS = ["LLMs", "Agents", "Embodied AI", "Surveys"] as const;
 
 export type PaperLibraryTab = (typeof PAPER_LIBRARY_TABS)[number];
@@ -50,6 +59,35 @@ export function paperSearchText(row: PaperAuthorRow) {
   ]
     .join(" ")
     .toLowerCase();
+}
+
+export function filterPaperSearchRows<T extends CompactPaperSearchRow>(
+  rows: readonly T[],
+  query: string,
+  limit = 30,
+) {
+  const normalized = query.trim().toLowerCase();
+  if (!normalized) return { hits: [] as T[], total: 0 };
+
+  const terms = normalized.split(/\s+/);
+  const matches = rows.filter((paper) => {
+    const text = [
+      paper.t,
+      paper.s ?? paper.a ?? "",
+      paper.v ?? "",
+      paper.y ?? "",
+      paper.d,
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    return terms.every((term) => text.includes(term));
+  });
+
+  return {
+    hits: matches.slice(0, Math.max(0, limit)),
+    total: matches.length,
+  };
 }
 
 export function paperCatalogSummary(rows: readonly PaperCatalogRow[]) {

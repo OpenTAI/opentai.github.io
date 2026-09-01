@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { paperCatalogCount, paperSearchIndex } from "@/data/paper-search";
 import { collectionOrder, subpageConfigs, SubpageTableRow } from "@/data/site";
 import { Locale, localizeHref, t } from "@/lib/i18n";
-import { formatPaperVenue } from "@/lib/paper-catalog";
+import { filterPaperSearchRows, formatPaperVenue } from "@/lib/paper-catalog";
 
 type Hit = SubpageTableRow & { collection: string; href: string };
 
@@ -25,15 +25,6 @@ function haystack(hit: Hit) {
 }
 
 const HAYSTACKS = new Map(INDEX.map((hit) => [hit, haystack(hit)]));
-
-const PAPER_HAYSTACKS = new Map(
-  paperSearchIndex.map((paper) => [
-    paper,
-    [paper.t, paper.s ?? paper.a ?? "", paper.v ?? "", paper.y ?? "", paper.d]
-      .join(" ")
-      .toLowerCase(),
-  ]),
-);
 
 export function SiteSearch({ locale }: { locale: Locale }) {
   const [query, setQuery] = useState("");
@@ -56,17 +47,11 @@ export function SiteSearch({ locale }: { locale: Locale }) {
       .slice(0, 8);
   }, [normalized]);
 
-  const paperHits = useMemo(() => {
-    if (!normalized) return [];
-    const terms = normalized.split(/\s+/);
-
-    return paperSearchIndex
-      .filter((paper) => {
-        const text = PAPER_HAYSTACKS.get(paper)!;
-        return terms.every((term) => text.includes(term));
-      })
-      .slice(0, 5);
-  }, [normalized]);
+  const paperResults = useMemo(
+    () => filterPaperSearchRows(paperSearchIndex, normalized, 30),
+    [normalized],
+  );
+  const paperHits = paperResults.hits;
 
   return (
     <div className="relative">
@@ -130,8 +115,11 @@ export function SiteSearch({ locale }: { locale: Locale }) {
 
           {paperHits.length ? (
             <div className="mt-2 border-t border-[#f2f4f8] pt-2">
-              <p className="px-4 pb-1 pt-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#98a2b3]">
-                {t(locale, "Research Library")}
+              <p className="flex items-center justify-between gap-3 px-4 pb-1 pt-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#98a2b3]">
+                <span>{t(locale, "Research Library")}</span>
+                <span>
+                  {paperResults.total} {locale === "zh" ? "篇匹配" : "matches"}
+                </span>
               </p>
               <ul className="space-y-1">
                 {paperHits.map((paper, index) => (
@@ -158,6 +146,13 @@ export function SiteSearch({ locale }: { locale: Locale }) {
                   </li>
                 ))}
               </ul>
+              {paperResults.total > paperHits.length ? (
+                <p className="px-4 py-2 text-center text-xs text-[#98a2b3]">
+                  {locale === "zh"
+                    ? `显示前 ${paperHits.length} 篇，共 ${paperResults.total} 篇`
+                    : `Showing the first ${paperHits.length} of ${paperResults.total} matches`}
+                </p>
+              ) : null}
             </div>
           ) : null}
         </div>

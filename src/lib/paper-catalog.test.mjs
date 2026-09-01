@@ -215,6 +215,20 @@ test("Xingjun Ma search results are unique papers with complete author evidence"
   );
 });
 
+test("homepage paper search reports and returns every Xingjun Ma match", () => {
+  assert.equal(typeof paperCatalog.filterPaperSearchRows, "function");
+
+  const result = paperCatalog.filterPaperSearchRows(
+    paperSearchIndex,
+    "Xingjun Ma",
+    30,
+  );
+
+  assert.equal(result.total, 27);
+  assert.equal(result.hits.length, 27);
+  assert.ok(result.hits.every((row) => (row.s ?? "").includes("Xingjun Ma")));
+});
+
 test("generated paper data retains the verified full author list", () => {
   const paper = paperLibrary.find((row) =>
     row.title.startsWith("BackdoorAgent: A Unified Framework"),
