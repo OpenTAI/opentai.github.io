@@ -5,10 +5,9 @@ import test from "node:test";
 const readSource = (relativePath) =>
   readFile(new URL(relativePath, import.meta.url), "utf8");
 
-test("uses the temporary OpenTAI contact address across generated site content", async () => {
+test("uses the OpenTAI organization contact address across generated site content", async () => {
   const generator = await readSource("../../scripts/generate-site.py");
-  assert.match(generator, /contactEmail: "danxjma@gmail\.com"/);
-  assert.doesNotMatch(generator, /contact\.opentai@gmail\.com/);
+  assert.match(generator, /contactEmail: "opentai\.org@gmail\.com"/);
 });
 
 test("the arena submission CTA asks users to submit an arena", async () => {

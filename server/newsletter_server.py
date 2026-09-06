@@ -103,7 +103,7 @@ def load_settings(environ=os.environ, project_root=None):
         smtp_port=_positive_integer(environ, "NEWSLETTER_SMTP_PORT", 465),
         smtp_user=smtp_user,
         smtp_app_password=smtp_app_password,
-        recipient=environ.get("NEWSLETTER_RECIPIENT", "danxjma@gmail.com").strip(),
+        recipient=environ.get("NEWSLETTER_RECIPIENT", "opentai.org@gmail.com").strip(),
         allowed_origins=origins,
         max_requests=_positive_integer(environ, "NEWSLETTER_RATE_LIMIT", 5),
         rate_window_seconds=_positive_integer(

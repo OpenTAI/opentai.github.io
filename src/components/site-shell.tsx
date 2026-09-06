@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { ContactDialog } from "@/components/contact-dialog";
 import { siteBrand } from "@/data/site";
-import { Locale, localizeHref, switchLocaleHref, t } from "@/lib/i18n";
+import { languageSwitchLinkProps, Locale, localizeHref, t } from "@/lib/i18n";
 import {
   activeNavigationGroup,
   footerNavigationGroups,
@@ -176,11 +176,11 @@ export function SiteShell({
               role="group"
             >
               <Link
+                {...languageSwitchLinkProps(pathname, "en")}
                 aria-current={locale === "en" ? "page" : undefined}
                 className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
                   locale === "en" ? "bg-white text-[#111827] shadow-sm" : "text-[#667085]"
                 }`}
-                href={switchLocaleHref(pathname, "en")}
                 hrefLang="en"
                 lang="en"
                 onClick={closeMenus}
@@ -188,11 +188,11 @@ export function SiteShell({
                 EN
               </Link>
               <Link
+                {...languageSwitchLinkProps(pathname, "zh")}
                 aria-current={locale === "zh" ? "page" : undefined}
                 className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
                   locale === "zh" ? "bg-white text-[#111827] shadow-sm" : "text-[#667085]"
                 }`}
-                href={switchLocaleHref(pathname, "zh")}
                 hrefLang="zh-CN"
                 lang="zh-CN"
                 onClick={closeMenus}

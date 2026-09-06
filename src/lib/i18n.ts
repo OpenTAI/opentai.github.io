@@ -18,6 +18,13 @@ export function switchLocaleHref(pathname: string, locale: Locale) {
   return localizeHref(locale, withoutLocale);
 }
 
+export function languageSwitchLinkProps(pathname: string, locale: Locale) {
+  return {
+    href: switchLocaleHref(pathname, locale),
+    scroll: false,
+  } as const;
+}
+
 const ZH: Record<string, string> = {
   "The Open Hub for Trustworthy AI": "可信人工智能开放枢纽",
   "An open ecosystem connecting trustworthy AI research, innovation, and startups.":

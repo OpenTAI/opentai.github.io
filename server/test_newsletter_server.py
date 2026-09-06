@@ -57,7 +57,7 @@ class NewsletterServerTests(unittest.TestCase):
         self.assertEqual(settings.smtp_port, 465)
         self.assertEqual(settings.smtp_user, "newsletter@example.org")
         self.assertEqual(settings.smtp_app_password, "test-app-password")
-        self.assertEqual(settings.recipient, "danxjma@gmail.com")
+        self.assertEqual(settings.recipient, "opentai.org@gmail.com")
         self.assertFalse(settings.trust_proxy)
         self.assertEqual(settings.max_concurrent_deliveries, 2)
         self.assertTrue(
