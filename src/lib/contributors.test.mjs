@@ -19,6 +19,7 @@ const expectedOrganizationHandles = [
   "haole1683",
   "hldongml",
   "jamesxwang",
+  "Jia-Ethan",
   "JerryLuo5799",
   "jimmidier",
   "L1lahKay",
@@ -56,17 +57,31 @@ const expectedOrganizationHandles = [
   "zxwu",
 ];
 
-test("includes all 50 consented OpenTAI organization members exactly once", () => {
+test("includes all 51 consented OpenTAI organization members exactly once", () => {
   const handles = contributors.map((contributor) => contributor.githubHandle);
 
-  assert.equal(handles.length, 50);
-  assert.equal(new Set(handles.map((handle) => handle.toLowerCase())).size, 50);
+  assert.equal(handles.length, 51);
+  assert.equal(new Set(handles.map((handle) => handle.toLowerCase())).size, 51);
   assert.deepEqual(
     [...handles].sort((left, right) => left.localeCompare(right)),
     [...expectedOrganizationHandles].sort((left, right) =>
       left.localeCompare(right),
     ),
   );
+});
+
+test("uses Jia-Ethan's public GitHub identity and profile assets", () => {
+  const contributor = contributors.find(
+    (entry) => entry.githubHandle === "Jia-Ethan",
+  );
+
+  assert.deepEqual(contributor, {
+    avatarUrl: "https://github.com/Jia-Ethan.png?size=160",
+    displayName: "Jia",
+    githubHandle: "Jia-Ethan",
+    profileUrl: "https://github.com/Jia-Ethan",
+    sourceUrl: "https://github.com/Jia-Ethan",
+  });
 });
 
 test("keeps GabryGao first and links every avatar to its GitHub profile", () => {

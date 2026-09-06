@@ -357,4 +357,11 @@ export const contributors: readonly Contributor[] = [
     profileUrl: "https://github.com/zxwu",
     sourceUrl: "https://github.com/zxwu",
   },
+  {
+    avatarUrl: "https://github.com/Jia-Ethan.png?size=160",
+    displayName: "Jia",
+    githubHandle: "Jia-Ethan",
+    profileUrl: "https://github.com/Jia-Ethan",
+    sourceUrl: "https://github.com/Jia-Ethan",
+  },
 ] as const;
