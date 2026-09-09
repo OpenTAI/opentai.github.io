@@ -3,6 +3,15 @@ import test from "node:test";
 
 import * as newsletter from "./newsletter.ts";
 
+test("builds the public Google Forms subscriber URL from its form id", () => {
+  assert.equal(typeof newsletter.buildNewsletterFormUrl, "function");
+
+  assert.equal(
+    newsletter.buildNewsletterFormUrl("example-form-id"),
+    "https://docs.google.com/forms/d/e/example-form-id/viewform",
+  );
+});
+
 test("builds a direct JSON subscription request for the self-hosted API", () => {
   assert.equal(typeof newsletter.buildNewsletterRequest, "function");
 

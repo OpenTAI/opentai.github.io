@@ -145,6 +145,9 @@ const ZH: Record<string, string> = {
   "Sending…": "发送中……",
   "Subscription request sent.": "订阅申请已发送。",
   "Could not send the request. Please try again.": "发送失败，请稍后重试。",
+  "Open subscription form": "打开订阅表单",
+  "Complete the Google Form to submit your email, choose a digest language, and consent to updates.":
+    "请在 Google 表单中提交邮箱、选择简报语言并确认同意接收更新。",
   Entries: "条目",
   Domains: "领域",
   Surveys: "综述",

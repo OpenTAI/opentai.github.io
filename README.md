@@ -121,11 +121,20 @@ unreviewed community issue from appearing on the public site automatically.
 
 ## Newsletter signup
 
-The Discover subscribe box sends a JSON request to the self-hosted
-`POST /api/subscribe` endpoint. `server/newsletter_server.py` serves both the
-static `out/` directory and that endpoint, then sends the request to the OpenTAI
-contact address through SMTP. It does not open the visitor's email app and does
-not store subscriber addresses.
+The public GitHub Pages deployment sends visitors to the published OpenTAI
+Google Form. The form collects the email address, digest language, and explicit
+consent; responses are kept in its linked Google Sheet. Form ownership, Sheet
+access, and new-response email notifications are managed in Google Forms and Drive,
+outside this repository. Subscriber addresses must never be committed here or
+included in the static site.
+
+The published form ID is centralized in `src/lib/newsletter.ts`. The homepage
+uses the public `/viewform` URL and never links to the form editor.
+
+An optional self-hosted implementation remains available for a future migration.
+`server/newsletter_server.py` serves both the static `out/` directory and
+`POST /api/subscribe`, then sends the request to the OpenTAI contact address
+through SMTP. It does not store subscriber addresses.
 
 Build and run it locally without Vercel:
 

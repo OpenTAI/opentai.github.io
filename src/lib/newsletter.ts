@@ -5,6 +5,15 @@ export type NewsletterSubscription = {
   language: NewsletterLanguage;
 };
 
+export const OPENTAI_NEWSLETTER_FORM_ID =
+  "1FAIpQLScj-SVyy-7JdCkMHneaHxcdywV3EIGvaahFiqlvwKAEdf722w";
+
+export function buildNewsletterFormUrl(
+  formId = OPENTAI_NEWSLETTER_FORM_ID,
+) {
+  return `https://docs.google.com/forms/d/e/${encodeURIComponent(formId)}/viewform`;
+}
+
 export function buildNewsletterRequest(
   subscription: NewsletterSubscription,
   url = "/api/subscribe",

@@ -1,6 +1,6 @@
 # 交接文档 · OpenTAI 网站重建
 
-最后更新：2026-08-16　｜　交接人：Frankie（ganqg127@gmail.com）
+最后更新：2026-09-09　｜　交接人：Frankie（ganqg127@gmail.com）
 
 接手前请按顺序读：本文件 → `AGENTS.md`（工作规则）→ `README.md`（技术细节）。
 要用 Codex 继续开发的话，`CODEX-PROMPT.md` 里有可以直接粘贴的启动 prompt。
@@ -14,7 +14,7 @@
 | 1 | **GitHub 仓库** `Frankiegan912/opentai-web`（私有） | Settings → Collaborators 加接手人；或等马老师确认后 Transfer 给 OpenTAI org |
 | 2 | **Vercel 项目** | Vercel → Project Settings → Members 邀请，或让接手人自己 import 一次仓库 |
 | 3 | **马老师给的 Gmail 账号** | ⚠️ 密码曾以明文发在微信里。交接前**先改密码**，之后走密码管理器共享，不要再发聊天 |
-| 4 | **阿里云服务器** | 还没拿到。这是订阅功能的前置条件 |
+| 4 | **阿里云服务器** | 还没拿到。正式自建订阅服务需要；当前 Google Form 临时方案不依赖服务器 |
 
 仓库里没有任何密钥或凭据，`.env*` 在 `.gitignore` 里。
 
@@ -36,7 +36,7 @@
 
 | 栏目 | 内容 |
 | --- | --- |
-| `/` Discover | 全站搜索、订阅框（UI 完成，**后端未接**）、Trending、Latest releases |
+| `/` Discover | 全站搜索、Google Form 订阅入口、Trending、Latest releases |
 | `/papers` | **772 篇**论文，来自团队指定的两份清单；3 领域 × Research/Survey × 细分领域 |
 | `/benchmarks` | **54 个**，3 个批准领域轴，每个有中英文详情页；LLMs 18、Agents 21、Embodied AI 15 |
 | `/leaderboard` | 3 个来源核验的公开排行榜卡片：LLM Safety、Agent Safety、Fairness；每张卡片只展示明确命名的单项指标，不再渲染旧的 77 条视觉模型黑白盒表格 |
@@ -82,7 +82,7 @@ ShareGPT、已下线的 Kaggle Fake News 竞赛数据）因无法核验当前可
 
 ### C 类 —— 等马老师做决定
 
-1. **订阅上线凭证与流程**（见下方 §4；代码已实现，仍需 Gmail App Password，并明确由管理员审核而非自动入库）
+1. **正式订阅方案**（见下方 §4；当前 Google Form 可收集申请，正式群发、确认订阅和退订流程仍需确定）
 2. **阿里云部署**：域名、服务器、CI/CD
 3. **仓库归属**：什么时候转给 OpenTAI org
 4. ~~**Survey tab 留不留**~~：团队已确认 Papers 保留 Research / Survey 两个 tab；当前为 758 / 14
@@ -96,6 +96,16 @@ ShareGPT、已下线的 Kaggle Fake News 竞赛数据）因无法核验当前可
 ---
 
 ## 4. 订阅功能：动手前必读
+
+当前 GitHub Pages 使用临时 Google Form 方案。首页按钮打开公开 `/viewform`，由表单收集
+邮箱、简报语言和明确的订阅同意；回复进入关联的 Google Sheet。表单所有权、Sheet 权限和
+新回复邮件通知都在 Google 侧管理，不在 GitHub 仓库中保存订阅者邮箱。交接时必须同时共享
+或转移 Form 与 Sheet，并确保 Sheet 的一般访问权限保持为“受限”。
+
+该方案解决的是申请收集和管理员通知，不是完整的邮件营销系统。正式发送简报前仍需补充
+邮箱所有权确认、退订入口、退订名单和批量发送服务；不要直接用公开抄送或把名单导入仓库。
+
+仓库保留了可选的自建实现，供拿到服务器后迁移使用：
 
 马老师的要求是「不用第三方，直接把订阅者 email 记到文件里，反正 GitHub 不开源不会泄露」。
 
