@@ -14,7 +14,7 @@
 
 - Do not invent contributor profiles, resource facts, or acceptance promises.
 - Preserve static export compatibility.
-- Use the existing `https://github.com/GabryGao/opentai/issues/new` review destination.
+- Use the existing `https://github.com/OpenTAI/opentai.github.io/issues/new` review destination.
 - Provide equivalent English and Chinese routes.
 - Do not add dependencies or a form backend.
 

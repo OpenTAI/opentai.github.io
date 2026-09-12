@@ -108,7 +108,7 @@ export function buildResourceSubmissionIssueUrl(
     title: `[${label} submission] ${values.name.trim()}`,
   });
 
-  return `https://github.com/GabryGao/opentai/issues/new?${query.toString()}`;
+  return `https://github.com/OpenTAI/opentai.github.io/issues/new?${query.toString()}`;
 }
 
 export function validateContactMessage(

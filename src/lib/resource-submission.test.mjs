@@ -124,7 +124,7 @@ test("builds a reviewable issue for the requested resource kind", () => {
     }),
   );
 
-  assert.equal(url.origin + url.pathname, "https://github.com/GabryGao/opentai/issues/new");
+  assert.equal(url.origin + url.pathname, "https://github.com/OpenTAI/opentai.github.io/issues/new");
   assert.equal(url.searchParams.get("title"), "[Dataset submission] Training Data");
   assert.match(url.searchParams.get("body") ?? "", /Name: Training Data/);
   assert.match(url.searchParams.get("body") ?? "", /Year: 2025/);

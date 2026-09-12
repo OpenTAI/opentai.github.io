@@ -30,7 +30,7 @@ test("builds a prefilled review issue from the compact volunteer form", () => {
     }),
   );
 
-  assert.equal(url.origin + url.pathname, "https://github.com/GabryGao/opentai/issues/new");
+  assert.equal(url.origin + url.pathname, "https://github.com/OpenTAI/opentai.github.io/issues/new");
   assert.equal(url.searchParams.get("title"), "[Contribution] Website & Development");
   assert.match(url.searchParams.get("body") ?? "", /GitHub profile: https:\/\/github\.com\/example/);
   assert.match(url.searchParams.get("body") ?? "", /Contribution area: Website & Development/);

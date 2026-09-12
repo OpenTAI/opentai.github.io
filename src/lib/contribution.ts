@@ -49,7 +49,7 @@ export const contributionAreas: readonly ContributionArea[] = [
   },
 ];
 
-const CONTRIBUTION_ISSUE_URL = "https://github.com/GabryGao/opentai/issues/new";
+const CONTRIBUTION_ISSUE_URL = "https://github.com/OpenTAI/opentai.github.io/issues/new";
 
 export function buildVolunteerContactMailto(email: string) {
   const query = new URLSearchParams({
