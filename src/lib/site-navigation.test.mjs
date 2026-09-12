@@ -71,7 +71,6 @@ test("footer navigation links Terms Of Use to its standalone policy page", () =>
         [
           ["Startups", "/companies"],
           ["Community", "/community"],
-          ["GitHub", "https://github.com/OpenTAI"],
         ],
       ],
       [

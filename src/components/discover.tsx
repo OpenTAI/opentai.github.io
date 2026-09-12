@@ -114,8 +114,20 @@ export function DiscoverHero({ locale }: { locale: Locale }) {
         </p>
       </div>
 
-      <div className="mx-auto max-w-[46rem] text-left">
-        <SiteSearch locale={locale} />
+      <div className="mx-auto flex max-w-[56rem] items-center gap-3 text-left sm:gap-4">
+        <div className="min-w-0 flex-1">
+          <SiteSearch locale={locale} />
+        </div>
+        <a
+          aria-label="OpenTAI GitHub"
+          className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-full border border-[#dfe4ee] bg-white px-3 py-3 font-semibold text-[#475467] transition hover:border-[#a5b4fc] hover:text-[#4338ca] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5260ff] sm:px-5"
+          href="https://github.com/OpenTAI"
+        >
+          <svg aria-hidden="true" className="size-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 .75a11.25 11.25 0 0 0-3.558 21.923c.563.104.768-.244.768-.542 0-.267-.01-.974-.015-1.912-3.13.68-3.79-1.51-3.79-1.51-.512-1.3-1.25-1.647-1.25-1.647-1.022-.699.078-.685.078-.685 1.13.08 1.725 1.16 1.725 1.16 1.004 1.72 2.633 1.223 3.274.935.102-.727.393-1.223.715-1.504-2.498-.284-5.124-1.249-5.124-5.563 0-1.229.439-2.234 1.16-3.021-.116-.284-.503-1.429.11-2.978 0 0 .945-.302 3.094 1.154a10.78 10.78 0 0 1 5.63 0c2.148-1.456 3.09-1.154 3.09-1.154.615 1.549.228 2.694.112 2.978.722.787 1.158 1.792 1.158 3.021 0 4.325-2.63 5.276-5.136 5.555.404.35.764 1.043.764 2.1 0 1.517-.014 2.741-.014 3.113 0 .3.202.651.774.54A11.252 11.252 0 0 0 12 .75Z" />
+          </svg>
+          <span>GitHub</span>
+        </a>
       </div>
 
       <div className="flex flex-wrap justify-center gap-2">
