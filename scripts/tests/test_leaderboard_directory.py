@@ -15,7 +15,7 @@ class LeaderboardDirectoryTest(unittest.TestCase):
 
         self.assertEqual(payload["schemaVersion"], 2)
         self.assertEqual(len({record["name"] for record in records}), len(records))
-        self.assertEqual({record["type"] for record in records}, {"LLM Safety", "Agent Safety", "Fairness"})
+        self.assertEqual({record["type"] for record in records}, {"LLM Safety", "Agent Safety", "Fairness", "Embodied AI"})
 
         for record in records:
             for field in (
@@ -32,7 +32,12 @@ class LeaderboardDirectoryTest(unittest.TestCase):
             ):
                 self.assertIsInstance(record[field], str)
                 self.assertTrue(record[field].strip(), f"{record['name']}: missing {field}")
-            self.assertEqual([result["rank"] for result in record["results"]], [1, 2, 3])
+            self.assertEqual(len(record["results"]), 3)
+            for index, result in enumerate(record["results"]):
+                if index and result["value"] == record["results"][index - 1]["value"]:
+                    self.assertEqual(result["rank"], record["results"][index - 1]["rank"])
+                else:
+                    self.assertEqual(result["rank"], index + 1)
             for result in record["results"]:
                 for field in ("name", "value"):
                     self.assertIsInstance(result[field], str)

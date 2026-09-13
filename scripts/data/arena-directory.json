@@ -84,6 +84,90 @@
         {"label": "Benchmark overview", "labelZh": "评测说明", "url": "https://cybergym.io/exploitgym/"}
       ],
       "verificationNote": "ExploitGym's official leaderboard sorts by on_target: instances exploited through the intended vulnerability. Evaluation timeouts are retained on each row because the leading submission uses a longer budget."
+    },
+    {
+      "name": "Tensor Trust",
+      "year": 2023,
+      "type": "LLM Safety",
+      "focus": "An online prompt-injection game collecting human-written attacks and defenses for robustness research.",
+      "focusZh": "通过在线提示注入攻防游戏，收集人类编写的攻击与防御，用于鲁棒性研究。",
+      "metric": "Not recorded yet.",
+      "metricZh": "尚未记录。",
+      "snapshotDate": "Source checked 2026-09-13",
+      "results": [],
+      "emptyState": "Ranked results not recorded yet. See the paper and GitHub repository.",
+      "emptyStateZh": "暂未收录排名成绩，请查看论文与 GitHub 仓库。",
+      "url": "https://arxiv.org/pdf/2311.01011",
+      "source": "https://github.com/HumanCompatibleAI/tensor-trust",
+      "links": [
+        {
+          "label": "Paper",
+          "labelZh": "论文",
+          "url": "https://arxiv.org/pdf/2311.01011"
+        },
+        {
+          "label": "GitHub",
+          "labelZh": "GitHub",
+          "url": "https://github.com/HumanCompatibleAI/tensor-trust"
+        }
+      ],
+      "verificationNote": "The official repository identifies the Tensor Trust web game and data-cleaning pipeline, and cites the 2023 paper arXiv:2311.01011. A ranked results snapshot and its metric have not been recorded here. Name, year, and links were supplied in the addition request. Sources checked 2026-09-13."
+    },
+    {
+      "name": "HackAPrompt",
+      "year": 2023,
+      "type": "LLM Safety",
+      "focus": "A prompt-hacking competition and research project studying prompt injection and jailbreaking in large language models.",
+      "focusZh": "通过提示攻防竞赛与研究，分析大语言模型中的提示注入与越狱问题。",
+      "metric": "Not recorded yet.",
+      "metricZh": "尚未记录。",
+      "snapshotDate": "Source checked 2026-09-13",
+      "results": [],
+      "emptyState": "Ranked results not recorded yet. See the paper and GitHub repository.",
+      "emptyStateZh": "暂未收录排名成绩，请查看论文与 GitHub 仓库。",
+      "url": "https://paper.hackaprompt.com/",
+      "source": "https://github.com/PromptLabs/hackaprompt",
+      "links": [
+        {
+          "label": "Paper website",
+          "labelZh": "论文网站",
+          "url": "https://paper.hackaprompt.com/"
+        },
+        {
+          "label": "GitHub",
+          "labelZh": "GitHub",
+          "url": "https://github.com/PromptLabs/hackaprompt"
+        }
+      ],
+      "verificationNote": "The official paper website describes the HackAPrompt competition and its prompt-hacking dataset. The supplied repository contains the competition app and submission evaluation code. The requested year is 2023. A ranked competition-results snapshot and its scoring metric have not been recorded here. Name, year, and links were supplied in the addition request. Sources checked 2026-09-13."
+    },
+    {
+      "name": "CyberGym-E2E",
+      "year": 2026,
+      "type": "Cyber",
+      "focus": "Evaluating agents on discovering real-world software vulnerabilities, producing proofs of concept, and writing patches.",
+      "focusZh": "评估智能体发现真实软件漏洞、生成概念验证和编写补丁的端到端能力。",
+      "metric": "Not recorded yet.",
+      "metricZh": "尚未记录。",
+      "snapshotDate": "Source checked 2026-09-13",
+      "results": [],
+      "emptyState": "Ranked results not recorded yet. See the paper and GitHub repository.",
+      "emptyStateZh": "暂未收录排名成绩，请查看论文与 GitHub 仓库。",
+      "url": "https://arxiv.org/pdf/2606.04460",
+      "source": "https://github.com/sunblaze-ucb/cybergym-e2e",
+      "links": [
+        {
+          "label": "Paper",
+          "labelZh": "论文",
+          "url": "https://arxiv.org/pdf/2606.04460"
+        },
+        {
+          "label": "GitHub",
+          "labelZh": "GitHub",
+          "url": "https://github.com/sunblaze-ucb/cybergym-e2e"
+        }
+      ],
+      "verificationNote": "The official repository describes end-to-end and patch-only evaluation modes. The linked arXiv paper was first submitted in June 2026. This is a distinct resource from CyberGym and ExploitGym; their scores are not reused. A ranked results snapshot and its metric have not been recorded here. Name, year, and links were supplied in the addition request. Sources checked 2026-09-13."
     }
   ]
 }

@@ -40,6 +40,7 @@ AGENT_BENCHMARK_RECORDS = json.load(open(DATA / "agent-benchmark-records.json"))
 SAFETY_BENCHMARK_AUDIT = json.load(open(DATA / "safety-at-scale-benchmark-audit.json"))
 BENCHMARK_RESOLVED = json.load(open(DATA / "benchmark-resolved.json"))
 BENCHMARK_DATASETS = json.load(open(DATA / "benchmark-datasets.json"))
+REVIEWED_BENCHMARKS = json.loads((DATA / "reviewed-benchmarks.json").read_text())["records"]
 SURVEY_DATASET_RECORDS = json.load(open(DATA / "survey-dataset-records.json"))
 TRAINING_DATASET_METADATA = json.load(open(DATA / "training-datasets.json"))["items"]
 DATASET_SCOPE_AUDIT = json.load(open(DATA / "dataset-scope-audit.json"))["records"]
@@ -357,6 +358,7 @@ def build_ranking_directory(payload):
     return [
         {
             "name": clean(record["name"]),
+            **({"year": record["year"]} if record.get("year") else {}),
             "type": clean(record["type"]),
             "focus": clean(record["focus"]),
             "focusZh": clean(record["focusZh"]),
@@ -881,9 +883,33 @@ for row in bench_rows:
     if isinstance(github.get("stars"), int):
         row["stars"] = github["stars"]
 
+reviewed_by_key = {resource_key(rec["name"]): rec for rec in REVIEWED_BENCHMARKS}
+if len(reviewed_by_key) != len(REVIEWED_BENCHMARKS):
+    raise ValueError("Duplicate reviewed benchmark names")
+existing_by_key = {resource_key(row["name"]): row for row in bench_rows}
+for key, rec in reviewed_by_key.items():
+    row = existing_by_key.get(key)
+    if row is None:
+        row = {
+            "name": rec["name"], "subtitle": None, "note": rec["description"],
+            "type": rec["domain"], "venue": None, "year": rec["year"],
+            "downloads": None, "stars": None, "updated": None, "posted": None,
+            "tags": [], "stats": [], "meta": None, "resources": [], "image": None,
+        }
+        bench_rows.append(row)
+        existing_by_key[key] = row
+    row.update(name=rec["name"], note=rec["description"], year=rec["year"], type=rec["domain"])
+    if rec.get("venue"):
+        row["venue"] = rec["venue"]
+    for label, href in ((rec["linkLabel"], rec["url"]), ("GitHub", rec["githubUrl"])):
+        if not any(link["href"] == href for link in row["resources"]):
+            row["resources"].append({"label": label, "href": href})
+
 for row in bench_rows:
     row["slug"] = row.pop("sourceSlug", None) or slugify(row["name"])
     row["domain"] = BENCH_DOMAIN.get(row["name"], row["type"])
+    if resource_key(row["name"]) in reviewed_by_key:
+        row["domain"] = reviewed_by_key[resource_key(row["name"])]["domain"]
     # Domain is what the page filters on now; the old safety label becomes a tag.
     prop = safety_property(row["name"], row["note"], " ".join(row["tags"]))
     row["type"] = row["domain"]
@@ -970,7 +996,8 @@ def build_bench_details():
             "authorCount": (a or {}).get("authorCount"),
             "posted": (a or {}).get("published"),
             "arxivId": (a or {}).get("arxivId") or resource_arxiv,
-            "repo": (g or {}).get("repo"),
+            "paperUrl": next((r["href"] for r in row["resources"] if r["label"] in {"Paper", "arXiv"}), None),
+            "repo": (g or {}).get("repo") or next((r["href"].removeprefix("https://github.com/") for r in row["resources"] if r["label"] == "GitHub" and r["href"].startswith("https://github.com/")), None),
             "license": (g or {}).get("license"),
             "language": (g or {}).get("language"),
             "stars": (g or {}).get("stars"),
@@ -1196,6 +1223,7 @@ export type CuratedText = { text: string; source: string };
 export type CuratedList = { items: readonly string[]; source: string };
 
 export type BenchmarkDetail = {
+  paperUrl?: string;
   slug: string;
   name: string;
   category: string;
@@ -1269,6 +1297,7 @@ export type RankingLink = {
 
 export type RankingDirectoryRecord = {
   name: string;
+  year?: number;
   type: string;
   focus: string;
   focusZh: string;

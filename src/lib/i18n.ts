@@ -26,6 +26,20 @@ export function languageSwitchLinkProps(pathname: string, locale: Locale) {
 }
 
 const ZH: Record<string, string> = {
+  "Evaluating over-refusal of harmless requests by large language models.": "评估大语言模型对无害请求的过度拒绝。",
+  "Identifying exaggerated safety behavior using safe prompts and unsafe contrasts.": "通过安全提示及不安全对照提示，识别大语言模型中过度保守的安全行为。",
+  "Evaluating language-model safety against risk categories informed by regulations and company policies.": "依据政府法规与企业政策中的风险分类，评估语言模型安全性。",
+  "Evaluating situational safety in multimodal language models across chat and embodied tasks.": "通过对话与具身任务，评估多模态大语言模型的情境安全性。",
+  "Proxy evaluation of hazardous knowledge and machine unlearning in language models.": "用于评估语言模型危险知识与机器遗忘的代理基准。",
+  "Diagnosing language hallucination and visual illusion in multimodal models.": "诊断多模态模型中的语言幻觉与视觉错觉。",
+  "Evaluating the safety of multimodal large language models under image-based manipulation.": "评估多模态大语言模型面对图像操纵时的安全性。",
+  "Testing AI agents’ security awareness during realistic, multi-turn workplace tasks.": "在真实风格的多轮工作任务中，测试智能体的安全意识。",
+  "Evaluating security vulnerabilities in agent-generated code on real-world software-engineering tasks.": "通过真实软件工程任务，评估智能体生成代码中的安全漏洞。",
+  "Measuring honesty separately from factual accuracy in language models.": "将诚实性与事实准确性区分开来，评估语言模型的诚实表现。",
+  "Evaluating internal-channel privacy leakage in multi-agent language-model systems.": "评估多智能体语言模型系统内部通道中的隐私泄露。",
+  "Evaluating cybersecurity capabilities and risks of language-model agents through capture-the-flag tasks.": "通过夺旗任务评估语言模型智能体的网络安全能力与风险。",
+  "A unified benchmark for safe reinforcement learning in simulated control environments.": "用于在模拟控制环境中评估安全强化学习的统一基准。",
+  "Evaluating social biases in question answering across ambiguous and disambiguated contexts.": "通过含糊及消歧语境下的问答，评估模型的社会偏见。",
   "The Open Hub for Trustworthy AI": "可信人工智能开放枢纽",
   "An open ecosystem connecting trustworthy AI research, innovation, and startups.":
     "连接可信人工智能研究、创新与初创企业的开放生态。",
@@ -437,6 +451,8 @@ const ZH: Record<string, string> = {
   Cyber: "网络安全",
   "March 2026": "2026 年 3 月",
   "Source checked 2026-08-20": "来源核验于 2026-08-20",
+  "Source checked 2026-09-13": "来源核验于 2026-09-13",
+  "Embodied AI": "具身智能",
   "Automated red teaming and robust refusal": "自动化红队测试与稳健拒答",
   "Jailbreak attacks and defenses": "越狱攻击与防御",
   "Prompt-injection attacks and defenses for tool-using agents": "工具调用智能体的提示注入攻击与防御",

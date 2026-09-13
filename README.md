@@ -18,7 +18,7 @@ npm run dev
 | Route | Contents |
 | --- | --- |
 | `/` | Discover — site-wide search, newsletter signup, trending, latest releases |
-| `/benchmarks` | Flagship collection, 55 entries; primary filters are LLMs, Agents, Embodied AI |
+| `/benchmarks` | Flagship collection, 69 entries; primary filters are LLMs, Agents, Embodied AI |
 | `/benchmarks/[slug]` | Per-benchmark page: description, code, papers, leaderboard, curation gaps |
 | `/models` | Verified open-source guard, security-specialized, and safety-aligned models |
 | `/datasets` | 33 directly safety/trustworthiness-relevant datasets retained from a 155-record primary-source audit; charts update automatically by domain and year |
@@ -71,6 +71,7 @@ python3 scripts/generate-site.py       # rebuild src/data/*.ts
 | `scripts/data/llm-benchmark-datasets.json` | Verified public question/task files attached to Table 6 benchmarks; retained as benchmark evidence, not automatically treated as training datasets |
 | `scripts/data/agent-safety-datasets.json` | Verified public data paths attached to Safety at Scale Table 14 benchmarks; retained as benchmark evidence, not automatically treated as training datasets |
 | `scripts/data/benchmark-datasets.json` | Approved-list benchmarks whose official projects expose public data; currently HASARD from the embodied-safety sources |
+| `scripts/data/reviewed-benchmarks.json` | Directly requested, primary-source-reviewed benchmark additions with exact paper/project and GitHub links, publication years, domains, and verification notes |
 | `scripts/data/benchmark-overrides.json` | Hand-checked verdicts where automatic repository matching went wrong |
 | `scripts/data/benchmark-curation.json` | Hand-curated Dataset / Metrics / Baselines / Leaderboard per benchmark, each field tagged with the source it was read from |
 | `scripts/data/safety-at-scale-benchmark-audit.json` | Chapter-wide Safety at Scale audit. Approved rows have primary-source and official-README evidence; excluded auxiliary benchmarks and out-of-scope chapters retain explicit reasons |

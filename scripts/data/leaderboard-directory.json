@@ -64,6 +64,264 @@
         {"label": "Official source", "labelZh": "官方数据源", "url": "https://github.com/TrustLLMBenchmark/TrustLLM-Website"}
       ],
       "verificationNote": "The official TrustLLM leaderboard publishes multiple fairness metrics rather than one composite score. This card ranks only Stereotype Recognition, where higher values are better."
+    },
+    {
+      "name": "DecodingTrust",
+      "year": 2023,
+      "type": "LLM Safety",
+      "focus": "Trustworthiness evaluation across eight dimensions, including toxicity, privacy, robustness, and fairness.",
+      "focusZh": "从毒性、隐私、鲁棒性、公平性等八个维度评估大语言模型可信性。",
+      "snapshotDate": "Source checked 2026-09-13",
+      "results": [
+        {
+          "rank": 1,
+          "name": "Claude",
+          "value": "84.52"
+        },
+        {
+          "rank": 2,
+          "name": "Gemini-Pro-1.0",
+          "value": "80.61"
+        },
+        {
+          "rank": 3,
+          "name": "Llama2-7b-chat",
+          "value": "74.72"
+        }
+      ],
+      "url": "https://decodingtrust.github.io/leaderboard/",
+      "source": "https://decodingtrust.github.io/leaderboard/static/csv/leaderboard.csv",
+      "links": [
+        {
+          "label": "Live leaderboard",
+          "labelZh": "实时排行榜",
+          "url": "https://decodingtrust.github.io/leaderboard/"
+        },
+        {
+          "label": "GitHub",
+          "labelZh": "GitHub",
+          "url": "https://github.com/AI-secure/DecodingTrust"
+        }
+      ],
+      "metric": "Overall ↑",
+      "metricZh": "总体得分 ↑",
+      "verificationNote": "Name, year, and project links were supplied by the OpenTAI team. The official repository describes eight trustworthiness dimensions. The leaderboard renders the CSV Average column as Overall and sorts it descending; the top three values are reproduced without changing model names. Source checked 2026-09-13: https://decodingtrust.github.io/leaderboard/static/csv/leaderboard.csv"
+    },
+    {
+      "name": "SALAD-Bench",
+      "year": 2024,
+      "type": "LLM Safety",
+      "focus": "Hierarchical safety evaluation of large language models, attack methods, and defense methods.",
+      "focusZh": "通过分层分类体系评估大语言模型及其攻击、防御方法的安全性。",
+      "snapshotDate": "Source checked 2026-09-13",
+      "results": [
+        {
+          "rank": 1,
+          "name": "claude2",
+          "value": "99.77"
+        },
+        {
+          "rank": 2,
+          "name": "internlm2-chat-20b",
+          "value": "98.15"
+        },
+        {
+          "rank": 3,
+          "name": "internlm2-chat-7b",
+          "value": "97.70"
+        }
+      ],
+      "url": "https://huggingface.co/spaces/OpenSafetyLab/Salad-Bench-Leaderboard",
+      "source": "https://huggingface.co/spaces/OpenSafetyLab/Salad-Bench-Leaderboard/resolve/main/file/leaderboard.xlsx",
+      "links": [
+        {
+          "label": "Live leaderboard",
+          "labelZh": "实时排行榜",
+          "url": "https://huggingface.co/spaces/OpenSafetyLab/Salad-Bench-Leaderboard"
+        },
+        {
+          "label": "GitHub",
+          "labelZh": "GitHub",
+          "url": "https://github.com/OpenSafetyLab/SALAD-BENCH"
+        }
+      ],
+      "metric": "Base set total ↑",
+      "metricZh": "基础集 total ↑",
+      "verificationNote": "Name, year, and project links were supplied by the OpenTAI team and checked against the official repository. Scores are the total column of the c1-base sheet in the official Space file/leaderboard.xlsx. The Space app.py sorts total descending and rounds to two decimals. This snapshot uses the base set only; attack-enhanced and multiple-choice results are separate. Source checked 2026-09-13: https://huggingface.co/spaces/OpenSafetyLab/Salad-Bench-Leaderboard/blob/main/app.py"
+    },
+    {
+      "name": "JailbreakBench",
+      "year": 2024,
+      "type": "LLM Safety",
+      "focus": "Standardized evaluation of jailbreak attacks and defenses for large language models.",
+      "focusZh": "采用标准化框架评估大语言模型的越狱攻击与防御。",
+      "snapshotDate": "Source checked 2026-09-13",
+      "results": [
+        {
+          "rank": 1,
+          "name": "Erase-and-Check",
+          "detail": "Vicuna-13B · PAIR · 34 average queries",
+          "value": "0%"
+        },
+        {
+          "rank": 1,
+          "name": "Remove Non-Dictionary",
+          "detail": "Vicuna-13B · PAIR · 34 average queries",
+          "value": "0%"
+        },
+        {
+          "rank": 3,
+          "name": "Synonym Substitution",
+          "detail": "Vicuna-13B · PAIR · 34 average queries",
+          "value": "22%"
+        }
+      ],
+      "url": "https://jailbreakbench.github.io/",
+      "source": "https://jailbreakbench.github.io/tables/table_open_source.html",
+      "links": [
+        {
+          "label": "Live leaderboard",
+          "labelZh": "实时排行榜",
+          "url": "https://jailbreakbench.github.io/"
+        },
+        {
+          "label": "GitHub",
+          "labelZh": "GitHub",
+          "url": "https://github.com/JailbreakBench/jailbreakbench"
+        }
+      ],
+      "metric": "PAIR ASR on Vicuna-13B ↓",
+      "metricZh": "PAIR 对 Vicuna-13B 的攻击成功率 ↓",
+      "verificationNote": "Name, year, and project links were supplied by the OpenTAI team and checked against the official project. This card compares defenses only for PAIR against Vicuna-13B under black-box access (34 average queries), using the official open-source table. Lower attack success rate is better for defenses; both 0% entries share rank 1. Other attacks and target models are separate evaluations. The source dates these PAIR rows 12 Oct 2023; 2024 is the benchmark publication year. Source checked 2026-09-13: https://jailbreakbench.github.io/tables/table_open_source.html"
+    },
+    {
+      "name": "ForesightSafety-Bench",
+      "year": 2026,
+      "type": "LLM Safety",
+      "focus": "LLM safety evaluation across fundamental, extended, and industrial safety risks.",
+      "focusZh": "覆盖基础安全、拓展安全与产业安全风险的大语言模型安全评估。",
+      "snapshotDate": "Source checked 2026-09-13",
+      "results": [
+        {
+          "rank": 1,
+          "name": "Claude-Haiku-4.5",
+          "value": "5.05%"
+        },
+        {
+          "rank": 2,
+          "name": "Kimi-k2.5",
+          "value": "6.99%"
+        },
+        {
+          "rank": 3,
+          "name": "Claude-Sonnet-4.5",
+          "value": "7.04%"
+        }
+      ],
+      "url": "https://foresightsafety-bench.beijing-aisi.ac.cn/leaderboard",
+      "source": "https://foresightsafety-bench.beijing-aisi.ac.cn/api/model_scores?source=default",
+      "links": [
+        {
+          "label": "Live leaderboard",
+          "labelZh": "实时排行榜",
+          "url": "https://foresightsafety-bench.beijing-aisi.ac.cn/leaderboard"
+        },
+        {
+          "label": "GitHub",
+          "labelZh": "GitHub",
+          "url": "https://github.com/Beijing-AISI/ForesightSafety-Bench"
+        }
+      ],
+      "metric": "Overall Average ↓",
+      "metricZh": "总体平均值 ↓",
+      "verificationNote": "Name, year, and project links were supplied by the OpenTAI team and checked against the official repository. Overall Average follows the official leaderboard calculation: average pillar scores within each of Fundamental, Extended, and Industrial Safety for both default and attack assessments, then average the six non-null group means. Lower is safer. Values are displayed to two decimals with a percent sign, as on the official page. Source checked 2026-09-13. Official API sources: https://foresightsafety-bench.beijing-aisi.ac.cn/api/model_scores?source=default ; https://foresightsafety-bench.beijing-aisi.ac.cn/api/model_scores?source=attack ; https://foresightsafety-bench.beijing-aisi.ac.cn/api/pillars ; https://foresightsafety-bench.beijing-aisi.ac.cn/api/models"
+    },
+    {
+      "name": "ThaiSafetyBench",
+      "year": 2026,
+      "type": "LLM Safety",
+      "focus": "Safety evaluation of large language models in Thai language and cultural contexts.",
+      "focusZh": "评估大语言模型在泰语及泰国文化语境下的安全性。",
+      "snapshotDate": "Source checked 2026-09-13",
+      "results": [
+        {
+          "rank": 1,
+          "name": "GPT-5",
+          "value": "4.43%"
+        },
+        {
+          "rank": 2,
+          "name": "Claude 4.5 Sonnet",
+          "value": "9.75%"
+        },
+        {
+          "rank": 3,
+          "name": "SeaLLMs-v3-7B",
+          "value": "9.83%"
+        }
+      ],
+      "url": "https://huggingface.co/spaces/typhoon-ai/ThaiSafetyBench-Leaderboard",
+      "source": "https://typhoon-ai-thaisafetybench-leaderboard.hf.space/config",
+      "links": [
+        {
+          "label": "Live leaderboard",
+          "labelZh": "实时排行榜",
+          "url": "https://huggingface.co/spaces/typhoon-ai/ThaiSafetyBench-Leaderboard"
+        },
+        {
+          "label": "GitHub",
+          "labelZh": "GitHub",
+          "url": "https://github.com/trapoom555/ThaiSafetyBench"
+        }
+      ],
+      "metric": "Overall ASR ↓",
+      "metricZh": "总体攻击成功率 ↓",
+      "verificationNote": "Name, year, and project links were supplied by the OpenTAI team. The repository identifies Thai-language and cultural safety evaluation. The official Hugging Face Space dataframe labels the metric Overall ASR with a downward arrow; the three lowest published values are reproduced. Source checked 2026-09-13: https://typhoon-ai-thaisafetybench-leaderboard.hf.space/config"
+    },
+    {
+      "name": "SafeBench",
+      "year": 2022,
+      "type": "Embodied AI",
+      "focus": "Safety evaluation of autonomous driving algorithms across safety, functionality, and etiquette.",
+      "focusZh": "从安全性、功能性与驾驶礼仪三个层面评估自动驾驶算法。",
+      "snapshotDate": "Source checked 2026-09-13",
+      "results": [
+        {
+          "rank": 1,
+          "name": "PPO",
+          "detail": "BEV state space",
+          "value": "0.679"
+        },
+        {
+          "rank": 2,
+          "name": "PPO",
+          "detail": "4D state space",
+          "value": "0.606"
+        },
+        {
+          "rank": 3,
+          "name": "TD3",
+          "detail": "Dir state space",
+          "value": "0.579"
+        }
+      ],
+      "url": "https://safebench.github.io/leaderboard/index.html",
+      "source": "https://safebench.github.io/leaderboard/index.html",
+      "links": [
+        {
+          "label": "Live leaderboard",
+          "labelZh": "实时排行榜",
+          "url": "https://safebench.github.io/leaderboard/index.html"
+        },
+        {
+          "label": "GitHub",
+          "labelZh": "GitHub",
+          "url": "https://github.com/trust-ai/SafeBench"
+        }
+      ],
+      "metric": "Overall OS ↑",
+      "metricZh": "总体 OS ↑",
+      "verificationNote": "Name, year, and project links were supplied by the OpenTAI team and checked against the official repository. This is the autonomous-driving SafeBench. Results use only the Overall Leaderboard OS column (higher is better), sorted descending across algorithm/state-space pairs. Scenario-specific tables are separate. State-space labels are retained to distinguish configurations. Source checked 2026-09-13: https://safebench.github.io/leaderboard/index.html"
     }
   ]
 }

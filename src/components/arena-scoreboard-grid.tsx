@@ -335,7 +335,10 @@ export function ArenaScoreboardGrid({
                 </span>
                 <div>
                   <h3>{record.name}</h3>
-                  <p>{localized(locale, record.focus, record.focusZh)}</p>
+                  <p>
+                    {record.year ? <><time dateTime={String(record.year)}>{record.year}</time> · </> : null}
+                    {localized(locale, record.focus, record.focusZh)}
+                  </p>
                 </div>
               </div>
               <span className="arena-scoreboard-tag">{t(locale, record.type)}</span>

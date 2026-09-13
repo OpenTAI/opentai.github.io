@@ -140,7 +140,7 @@ export function BenchmarkDetailPageView({ locale, slug }: { locale: Locale; slug
             </Panel>
 
             <Panel locale={locale} title="Papers">
-              {detail.authors?.length || detail.arxivId ? (
+              {detail.authors?.length || detail.arxivId || detail.paperUrl ? (
                 <div className="space-y-3 text-sm">
                   {detail.authors?.length ? (
                     <p className="leading-6 text-[#475467]">
@@ -157,10 +157,10 @@ export function BenchmarkDetailPageView({ locale, slug }: { locale: Locale; slug
                     {detail.posted}
                     {detail.arxivId ? `${detail.posted ? " · " : ""}arXiv:${detail.arxivId}` : ""}
                   </p>
-                  {detail.arxivId ? (
+                  {detail.paperUrl || detail.arxivId ? (
                     <Link
                       className="home-secondary-cta inline-flex"
-                      href={`https://arxiv.org/abs/${detail.arxivId}`}
+                      href={detail.paperUrl ?? `https://arxiv.org/abs/${detail.arxivId}`}
                       rel="noreferrer"
                       target="_blank"
                     >
