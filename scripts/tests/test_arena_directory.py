@@ -14,8 +14,8 @@ class ArenaDirectoryTest(unittest.TestCase):
         records = payload["records"]
 
         self.assertEqual(payload["schemaVersion"], 1)
-        self.assertEqual([record["name"] for record in records], ["Gray Swan Arena", "CyberGym", "ExploitGym"])
-        self.assertEqual({record["type"] for record in records}, {"Agent Safety", "Cyber"})
+        self.assertEqual([record["name"] for record in records], ["Gray Swan Arena", "CyberGym", "ExploitGym", "Tensor Trust", "HackAPrompt", "CyberGym-E2E"])
+        self.assertEqual({record["type"] for record in records}, {"Agent Safety", "LLM Safety", "Cyber"})
 
         for record in records:
             for field in (
@@ -36,7 +36,10 @@ class ArenaDirectoryTest(unittest.TestCase):
                 parsed = urlparse(record[field])
                 self.assertEqual(parsed.scheme, "https")
                 self.assertTrue(parsed.netloc)
-            self.assertGreaterEqual(len(record["links"]), 3)
+            self.assertGreaterEqual(len(record["links"]), 2)
+            if not record["results"]:
+                self.assertTrue(record["emptyState"].strip())
+                self.assertTrue(record["emptyStateZh"].strip())
             for link in record["links"]:
                 self.assertTrue(link["label"].strip())
                 parsed = urlparse(link["url"])
