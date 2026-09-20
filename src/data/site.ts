@@ -3373,6 +3373,36 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  figstep: {
+    slug: "figstep",
+    name: "FigStep",
+    category: "LLMs",
+    description: "Typographic visual-prompt jailbreak evaluation for large vision-language models, releasing SafeBench (500 forbidden-topic questions) and reporting attack success rates across open-source LVLMs.",
+    venue: "AAAI 2025 (Oral)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2311.05608",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/ThuCCSLab/FigStep",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2311.05608",
+    paperUrl: "https://arxiv.org/abs/2311.05608",
+    repo: "ThuCCSLab/FigStep",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -7487,6 +7517,30 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         slug: "bbq",
         domain: "LLMs",
       },
+      {
+        name: "FigStep",
+        note: "Typographic visual-prompt jailbreak evaluation for large vision-language models, releasing SafeBench (500 forbidden-topic questions) and reporting attack success rates across open-source LVLMs.",
+        type: "LLMs",
+        venue: "AAAI 2025 (Oral)",
+        year: "2025",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2311.05608",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/ThuCCSLab/FigStep",
+          },
+        ],
+        slug: "figstep",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
     ],
   },
   models: {
@@ -8243,6 +8297,22 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/anonymous4486/Virus",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "WildJailbreak",
+        note: "Description not recorded yet.",
+        type: "LLMs",
+        venue: "arXiv 2024",
+        year: "2024",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/allenai/wildjailbreak",
         domains: [
           "LLMs",
         ],

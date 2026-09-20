@@ -169,6 +169,18 @@
       "description": "Evaluating social biases in question answering across ambiguous and disambiguated contexts.",
       "descriptionZh": "通过含糊及消歧语境下的问答，评估模型的社会偏见。",
       "verificationNote": "The ACL Anthology paper and official repository identify the Bias Benchmark for QA and its 2022 publication."
+    },
+    {
+      "name": "FigStep",
+      "year": "2025",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2311.05608",
+      "githubUrl": "https://github.com/ThuCCSLab/FigStep",
+      "linkLabel": "Paper",
+      "venue": "AAAI 2025 (Oral)",
+      "description": "Typographic visual-prompt jailbreak evaluation for large vision-language models, releasing SafeBench (500 forbidden-topic questions) and reporting attack success rates across open-source LVLMs.",
+      "descriptionZh": "面向大型视觉语言模型的印刷体视觉提示越狱评测，发布 SafeBench（500 个禁用主题问题），并报告开源 LVLM 上的攻击成功率。",
+      "verificationNote": "arXiv:2311.05608 and AAAI 2025 identify FigStep as a VLM jailbreak evaluation; code and SafeBench are published at ThuCCSLab/FigStep. Added from issue #32."
     }
   ]
 }

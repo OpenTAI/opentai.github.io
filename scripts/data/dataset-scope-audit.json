@@ -930,6 +930,12 @@
       "status": "exclude",
       "reason": "Excluded: the cited source describes a general-purpose dataset used incidentally in a safety-related study; the dataset's content and primary purpose are not directly AI safety or trustworthy AI.",
       "sourceUrl": "https://arxiv.org/abs/1509.01626"
+    },
+    {
+      "name": "WildJailbreak",
+      "status": "keep",
+      "reason": "Kept: primary HF dataset card and arXiv:2406.18510 explicitly describe synthetic safety-training / jailbreak-defense training data. Added from issue #31.",
+      "sourceUrl": "https://huggingface.co/datasets/allenai/wildjailbreak"
     }
   ]
 }
