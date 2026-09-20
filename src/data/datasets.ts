@@ -789,6 +789,48 @@ export const datasetConfig: SubpageConfig = {
       domain: "Agents",
     },
     {
+      name: "GuardReasonerTrain",
+      note: "Description not recorded yet.",
+      type: "LLMs",
+      venue: "arXiv 2025",
+      year: "2025",
+      tags: [
+        "training data",
+      ],
+      stats: [],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/yueliu1999/GuardReasonerTrain",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2501.18492",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/yueliu1999/GuardReasoner",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/yueliu1999/GuardReasonerTrain",
+      domains: [
+        "LLMs",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2501.18492",
+          domain: "LLMs",
+          evidence: "HF card states GuardReasonerTrain is the training data for R-SFT of GuardReasoner (reasoning-based LLM safeguards).",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2501.18492",
+          },
+        },
+      ],
+      domain: "LLMs",
+    },
+    {
       name: "HH-RLHF",
       note: "161K human preference pairs collected by comparing assistant responses for helpfulness and harmlessness for preference modeling and RLHF training.",
       type: "LLMs",
@@ -890,6 +932,43 @@ export const datasetConfig: SubpageConfig = {
         },
       ],
       domain: "LLMs",
+    },
+    {
+      name: "HomeSafe",
+      note: "Description not recorded yet.",
+      type: "Embodied AI",
+      venue: "ECCV 2026 / HomeGuard",
+      year: "2026",
+      tags: [
+        "training data",
+      ],
+      stats: [],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/Ursulalala/HomeSafe",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/AI45Lab/HomeGuard",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/Ursulalala/HomeSafe",
+      domains: [
+        "Embodied AI",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          domain: "Embodied AI",
+          evidence: "Official HF card states Training split: 16,838 examples (6,000 safe / 10,838 unsafe) accompanying HomeGuard for contextual risk identification training.",
+          source: {
+            type: "primary-paper",
+            url: "https://huggingface.co/datasets/Ursulalala/HomeSafe",
+          },
+        },
+      ],
+      domain: "Embodied AI",
     },
     {
       name: "HSOL",
@@ -1055,6 +1134,44 @@ export const datasetConfig: SubpageConfig = {
       domain: "Agents",
     },
     {
+      name: "LLM-LAT Harmful Dataset",
+      note: "Description not recorded yet.",
+      type: "LLMs",
+      venue: "arXiv 2024 (LAT)",
+      year: "2024",
+      tags: [
+        "training data",
+      ],
+      stats: [],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/LLM-LAT/harmful-dataset",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2403.05030",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/LLM-LAT/harmful-dataset",
+      domains: [
+        "LLMs",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2403.05030",
+          domain: "LLMs",
+          evidence: "HF dataset config exposes an explicit train split (prompt/rejected/chosen) released for latent adversarial training / robust safety fine-tuning (arXiv:2403.05030).",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2403.05030",
+          },
+        },
+      ],
+      domain: "LLMs",
+    },
+    {
       name: "MM-SafetyBench",
       note: "5,040 text–image attack pairs generated across 13 safety scenarios for training and evaluating multimodal safeguards and a safety suffix generator.",
       type: "Agents",
@@ -1109,6 +1226,39 @@ export const datasetConfig: SubpageConfig = {
         },
       ],
       domain: "Agents",
+    },
+    {
+      name: "Nemotron-Safety-Guard-Dataset-v3",
+      note: "Description not recorded yet.",
+      type: "LLMs",
+      venue: "NVIDIA HF 2025",
+      year: "2025",
+      tags: [
+        "training data",
+      ],
+      stats: [],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/nvidia/Nemotron-Safety-Guard-Dataset-v3",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/nvidia/Nemotron-Safety-Guard-Dataset-v3",
+      domains: [
+        "LLMs",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          domain: "LLMs",
+          evidence: "Official HF card states the dataset is designed for training multilingual LLM safety guard models (~514k samples, 12 languages) for content-safety classification.",
+          source: {
+            type: "primary-paper",
+            url: "https://huggingface.co/datasets/nvidia/Nemotron-Safety-Guard-Dataset-v3",
+          },
+        },
+      ],
+      domain: "LLMs",
     },
     {
       name: "OLID",
@@ -1325,6 +1475,39 @@ export const datasetConfig: SubpageConfig = {
           domain: "LLMs",
           evidence: "To the best of our knowledge, Safe RLHF is the first integration of Safe RL and the RLHF framework.\nThis framework incorporates a two-dimensional human annotation scheme and a safe training mechanism to enhance model performance while ensuring safety (as shown in Figure [#fig:pipeline]).\nExperimentally, we applied the Safe RLHF pipeline three times, significantly enhancing the helpfulness of the base SFT model while efficiently reducing the generation of harmful responses.\nCompared to the static multi-objective balance algorithm, *Reward Shaping* [@ng1999policy], Our algorithm better navigates the tension between the objectives of helpfulness and harmlessness.\nSimultaneously, it maintains equal or superior performance improvements compared to existing value-aligned algorithms.\nMeanwhile, we release all the data and training codes from the three iterations of Safe RLHF fine-tuning, facilitating researchers to replicate and validate our findings.",
           source: "sections/01-introduction.md (sec:1)",
+        },
+      ],
+      domain: "LLMs",
+    },
+    {
+      name: "safe-guard-prompt-injection",
+      note: "Description not recorded yet.",
+      type: "LLMs",
+      venue: "HF 2024",
+      year: "2024",
+      tags: [
+        "training data",
+      ],
+      stats: [],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection",
+      domains: [
+        "LLMs",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          domain: "LLMs",
+          evidence: "HF card states authors formulated prompt-injection detection as classification and required labelled data to train a detector; configs expose distinct train (8236) and test (2060) splits for classifier training.",
+          source: {
+            type: "primary-paper",
+            url: "https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection",
+          },
         },
       ],
       domain: "LLMs",
@@ -1815,6 +1998,48 @@ export const datasetConfig: SubpageConfig = {
       domain: "Embodied AI",
     },
     {
+      name: "ToxicChat",
+      note: "Description not recorded yet.",
+      type: "LLMs",
+      venue: "arXiv 2023 (LMSYS)",
+      year: "2023",
+      tags: [
+        "training data",
+      ],
+      stats: [],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/lmsys/toxic-chat",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2310.17389",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/lm-sys/FastChat",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/lmsys/toxic-chat",
+      domains: [
+        "LLMs",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2310.17389",
+          domain: "LLMs",
+          evidence: "HF card and arXiv:2310.17389 describe real user–AI chats annotated for toxicity/jailbreak; LMSYS released an official T5-Large model trained on ToxicChat, establishing first-hand classifier-training use (plus train/eval splits on the card).",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2310.17389",
+          },
+        },
+      ],
+      domain: "LLMs",
+    },
+    {
       name: "TruthfulQA evaluator fine-tuning data",
       note: "6.9K reference-answer and approximately 15.5K generated-answer examples annotated for truthfulness and informativeness for fine-tuning the TruthfulQA judge and information evaluators.",
       type: "LLMs",
@@ -1919,6 +2144,48 @@ export const datasetConfig: SubpageConfig = {
           domain: "LLMs",
           evidence: "Learning from the lessons of the above failure attempts, we design Virus, a dual objective data optimization scheme, to construct the harmful dataset. Virus aims to optimize the harmful data\nto achieve dual goals: i) the jailbreak loss against guardrail is low such that it can successfully jailbreak the guardrail moderation, and ii) the gradient taken on this data can resemble the harmful gradient, thereby the prompt can still effectively break down the safety alignment of the victim LLM. Our empirical results show that Virus can effectively bypass the moderation, reaching up-to 100% leakage ratio. On the other hand, the gradient of the data optimized Virus can resemble the harmful gradient, effectively breaking down the safety alignment of the victim LLMs, increasing its harmful score by up-to 21.8%.\nWe summarize our contribution as follows:",
           source: "sections/01-introduction.md (sec:1)",
+        },
+      ],
+      domain: "LLMs",
+    },
+    {
+      name: "WildGuardMix",
+      note: "Description not recorded yet.",
+      type: "LLMs",
+      venue: "arXiv 2024 / AllenAI WildGuard",
+      year: "2024",
+      tags: [
+        "training data",
+      ],
+      stats: [],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/allenai/wildguardmix",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2406.18495",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/allenai/wildguard",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/allenai/wildguardmix",
+      domains: [
+        "LLMs",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2406.18495",
+          domain: "LLMs",
+          evidence: "WildGuard HF model card lists datasets:[allenai/wildguardmix]; arXiv:2406.18495 presents WildGuardMix as the training mixture for the WildGuard safety classifier (vanilla and adversarial prompts with safety labels).",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2406.18495",
+          },
         },
       ],
       domain: "LLMs",

@@ -1931,6 +1931,97 @@
       "trainingEvidence": "Hugging Face dataset card states WildJailbreak is an open-source synthetic safety-training dataset with 262K vanilla and adversarial prompt-response pairs, released to mitigate exaggerated safety behaviors for safety training; arXiv:2406.18510 describes the resource as training data for improving safety against jailbreaks.",
       "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/allenai/wildjailbreak",
       "linkVerificationReason": "AllenAI publishes the named WildJailbreak dataset on Hugging Face with documentation describing safety-training use and downloadable splits."
+    },
+    {
+      "name": "WildGuardMix",
+      "domain": "LLMs",
+      "year": "2024",
+      "venue": "arXiv 2024 / AllenAI WildGuard",
+      "paperUrl": "https://arxiv.org/abs/2406.18495",
+      "githubUrl": "https://github.com/allenai/wildguard",
+      "dataUrl": "https://huggingface.co/datasets/allenai/wildguardmix",
+      "sourceUrl": "https://huggingface.co/datasets/allenai/wildguardmix",
+      "trainingEvidence": "WildGuard HF model card lists datasets:[allenai/wildguardmix]; arXiv:2406.18495 presents WildGuardMix as the training mixture for the WildGuard safety classifier (vanilla and adversarial prompts with safety labels).",
+      "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/allenai/wildguardmix",
+      "linkVerificationReason": "Primary data URL https://huggingface.co/datasets/allenai/wildguardmix and paper arXiv:2406.18495 resolve; GitHub allenai/wildguard resolves."
+    },
+    {
+      "name": "ToxicChat",
+      "domain": "LLMs",
+      "year": "2023",
+      "venue": "arXiv 2023 (LMSYS)",
+      "paperUrl": "https://arxiv.org/abs/2310.17389",
+      "githubUrl": "https://github.com/lm-sys/FastChat",
+      "dataUrl": "https://huggingface.co/datasets/lmsys/toxic-chat",
+      "sourceUrl": "https://huggingface.co/datasets/lmsys/toxic-chat",
+      "trainingEvidence": "HF card and arXiv:2310.17389 describe real user–AI chats annotated for toxicity/jailbreak; LMSYS released an official T5-Large model trained on ToxicChat, establishing first-hand classifier-training use (plus train/eval splits on the card).",
+      "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/lmsys/toxic-chat",
+      "linkVerificationReason": "HF lmsys/toxic-chat and arXiv:2310.17389 resolve."
+    },
+    {
+      "name": "Nemotron-Safety-Guard-Dataset-v3",
+      "domain": "LLMs",
+      "year": "2025",
+      "venue": "NVIDIA HF 2025",
+      "paperUrl": "https://huggingface.co/datasets/nvidia/Nemotron-Safety-Guard-Dataset-v3",
+      "githubUrl": "https://huggingface.co/datasets/nvidia/Nemotron-Safety-Guard-Dataset-v3",
+      "dataUrl": "https://huggingface.co/datasets/nvidia/Nemotron-Safety-Guard-Dataset-v3",
+      "sourceUrl": "https://huggingface.co/datasets/nvidia/Nemotron-Safety-Guard-Dataset-v3",
+      "trainingEvidence": "Official HF card states the dataset is designed for training multilingual LLM safety guard models (~514k samples, 12 languages) for content-safety classification.",
+      "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/nvidia/Nemotron-Safety-Guard-Dataset-v3",
+      "linkVerificationReason": "HF nvidia/Nemotron-Safety-Guard-Dataset-v3 resolves with explicit guard-training purpose."
+    },
+    {
+      "name": "LLM-LAT Harmful Dataset",
+      "domain": "LLMs",
+      "year": "2024",
+      "venue": "arXiv 2024 (LAT)",
+      "paperUrl": "https://arxiv.org/abs/2403.05030",
+      "githubUrl": "https://huggingface.co/datasets/LLM-LAT/harmful-dataset",
+      "dataUrl": "https://huggingface.co/datasets/LLM-LAT/harmful-dataset",
+      "sourceUrl": "https://huggingface.co/datasets/LLM-LAT/harmful-dataset",
+      "trainingEvidence": "HF dataset config exposes an explicit train split (prompt/rejected/chosen) released for latent adversarial training / robust safety fine-tuning (arXiv:2403.05030).",
+      "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/LLM-LAT/harmful-dataset",
+      "linkVerificationReason": "HF LLM-LAT/harmful-dataset and arXiv:2403.05030 resolve; train split documented on the card."
+    },
+    {
+      "name": "safe-guard-prompt-injection",
+      "domain": "LLMs",
+      "year": "2024",
+      "venue": "HF 2024",
+      "paperUrl": "https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection",
+      "githubUrl": "https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection",
+      "dataUrl": "https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection",
+      "sourceUrl": "https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection",
+      "trainingEvidence": "HF card states authors formulated prompt-injection detection as classification and required labelled data to train a detector; configs expose distinct train (8236) and test (2060) splits for classifier training.",
+      "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection",
+      "linkVerificationReason": "HF xTRam1/safe-guard-prompt-injection resolves with explicit classifier-training evidence and train split."
+    },
+    {
+      "name": "GuardReasonerTrain",
+      "domain": "LLMs",
+      "year": "2025",
+      "venue": "arXiv 2025",
+      "paperUrl": "https://arxiv.org/abs/2501.18492",
+      "githubUrl": "https://github.com/yueliu1999/GuardReasoner",
+      "dataUrl": "https://huggingface.co/datasets/yueliu1999/GuardReasonerTrain",
+      "sourceUrl": "https://huggingface.co/datasets/yueliu1999/GuardReasonerTrain",
+      "trainingEvidence": "HF card states GuardReasonerTrain is the training data for R-SFT of GuardReasoner (reasoning-based LLM safeguards).",
+      "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/yueliu1999/GuardReasonerTrain",
+      "linkVerificationReason": "HF yueliu1999/GuardReasonerTrain and GitHub yueliu1999/GuardReasoner resolve; explicit R-SFT training evidence."
+    },
+    {
+      "name": "HomeSafe",
+      "domain": "Embodied AI",
+      "year": "2026",
+      "venue": "ECCV 2026 / HomeGuard",
+      "paperUrl": "https://huggingface.co/datasets/Ursulalala/HomeSafe",
+      "githubUrl": "https://github.com/AI45Lab/HomeGuard",
+      "dataUrl": "https://huggingface.co/datasets/Ursulalala/HomeSafe",
+      "sourceUrl": "https://huggingface.co/datasets/Ursulalala/HomeSafe",
+      "trainingEvidence": "Official HF card states Training split: 16,838 examples (6,000 safe / 10,838 unsafe) accompanying HomeGuard for contextual risk identification training.",
+      "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/Ursulalala/HomeSafe",
+      "linkVerificationReason": "HF Ursulalala/HomeSafe and arXiv:2603.14367 resolve; card documents Training split 16,838 examples used with HomeGuard."
     }
   ]
 }
