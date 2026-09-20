@@ -3403,6 +3403,659 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  "isc-bench": {
+    slug: "isc-bench",
+    name: "ISC-Bench",
+    category: "LLMs",
+    description: "Internal Safety Collapse (ISC) evaluation using Task–Validator–Data scenarios across professional disciplines, measuring workflow-triggered harmful generation in frontier LLMs and agentic modes. Highlighted in Awesome-Embodied-AI-Safety news.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2603.23509",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/wuyoscar/ISC-Bench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2603.23509",
+    paperUrl: "https://arxiv.org/abs/2603.23509",
+    repo: "wuyoscar/ISC-Bench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  embodiedbench: {
+    slug: "embodiedbench",
+    name: "EmbodiedBench",
+    category: "Embodied AI",
+    description: "Comprehensive benchmark for evaluating multimodal LLMs as vision-driven embodied agents across embodied task suites (Awesome-Embodied-AI-Safety).",
+    venue: "ICML 2025 (Oral)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2502.09560",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/EmbodiedBench/EmbodiedBench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2502.09560",
+    paperUrl: "https://arxiv.org/abs/2502.09560",
+    repo: "EmbodiedBench/EmbodiedBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "is-bench": {
+    slug: "is-bench",
+    name: "IS-Bench",
+    category: "Embodied AI",
+    description: "Interactive Safety benchmark for VLM-driven embodied agents performing daily household tasks (Awesome-Embodied-AI-Safety).",
+    venue: "AAAI 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2506.16402",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/IS-Bench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2506.16402",
+    paperUrl: "https://arxiv.org/abs/2506.16402",
+    repo: "AI45Lab/IS-Bench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  attackvla: {
+    slug: "attackvla",
+    name: "AttackVLA",
+    category: "Embodied AI",
+    description: "Benchmark of adversarial and backdoor attacks against Vision-Language-Action models (Awesome-Embodied-AI-Safety).",
+    venue: "arXiv 2025",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2511.12149",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/lijayuTnT/AttackVLA",
+      },
+    ],
+    stats: [],
+    tags: [
+      "robustness",
+    ],
+    arxivId: "2511.12149",
+    paperUrl: "https://arxiv.org/abs/2511.12149",
+    repo: "lijayuTnT/AttackVLA",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  skillsafetybench: {
+    slug: "skillsafetybench",
+    name: "SkillSafetyBench",
+    category: "Agents",
+    description: "Evaluates agent safety under skill-facing attack surfaces (Awesome-Embodied-AI-Safety / agent safety).",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2605.12015",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/skill-safety-bench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2605.12015",
+    paperUrl: "https://arxiv.org/abs/2605.12015",
+    repo: "AI45Lab/skill-safety-bench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  embodiedgovbench: {
+    slug: "embodiedgovbench",
+    name: "EmbodiedGovBench",
+    category: "Embodied AI",
+    description: "Benchmark for governance, recovery, and upgrade safety in embodied agent systems (Awesome-Embodied-AI-Safety).",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2604.11174",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/s20sc/embodied-gov-bench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2604.11174",
+    paperUrl: "https://arxiv.org/abs/2604.11174",
+    repo: "s20sc/embodied-gov-bench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  alert: {
+    slug: "alert",
+    name: "ALERT",
+    category: "LLMs",
+    description: "Large-scale red-teaming safety benchmark with red-team prompts for assessing LLM guardrails (HF configs expose test splits only).",
+    venue: "arXiv 2024",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2404.08676",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Babelscape/ALERT",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2404.08676",
+    paperUrl: "https://arxiv.org/abs/2404.08676",
+    repo: "Babelscape/ALERT",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "aya-red-teaming": {
+    slug: "aya-red-teaming",
+    name: "Aya Red-teaming",
+    category: "LLMs",
+    description: "Human-annotated multilingual red-teaming prompts across 8 languages and 9 harm categories for evaluating LLM safety (eval/red-team resource).",
+    venue: "arXiv 2024 / Cohere",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2406.18682",
+      },
+      {
+        label: "GitHub",
+        href: "https://huggingface.co/datasets/CohereLabs/aya_redteaming",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2406.18682",
+    paperUrl: "https://arxiv.org/abs/2406.18682",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  polyglotoxicityprompts: {
+    slug: "polyglotoxicityprompts",
+    name: "PolygloToxicityPrompts",
+    category: "LLMs",
+    description: "Multilingual toxicity evaluation prompt benchmark curated from web text (ptp-full / ptp-small splits).",
+    venue: "HF 2024",
+    resources: [
+      {
+        label: "Hugging Face",
+        href: "https://huggingface.co/datasets/ToxicityPrompts/PolygloToxicityPrompts",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "in-the-wild-jailbreak-prompts": {
+    slug: "in-the-wild-jailbreak-prompts",
+    name: "In-The-Wild Jailbreak Prompts",
+    category: "LLMs",
+    description: "JailbreakHub measurement resource of in-the-wild jailbreak prompts for characterizing and evaluating jailbreaks on LLMs.",
+    venue: "ACM CCS 2024",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2308.03825",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/TrustAIRLab/JailbreakHub",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2308.03825",
+    paperUrl: "https://arxiv.org/abs/2308.03825",
+    repo: "TrustAIRLab/JailbreakHub",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "nemotron-aiq-agentic-safety": {
+    slug: "nemotron-aiq-agentic-safety",
+    name: "Nemotron-AIQ Agentic Safety",
+    category: "Agents",
+    description: "Agentic safety/security contextual-risk evaluation set for research assistants in agentic systems (NVIDIA evaluation-dataset license).",
+    venue: "NVIDIA HF 2025",
+    resources: [
+      {
+        label: "Hugging Face",
+        href: "https://huggingface.co/datasets/nvidia/Nemotron-AIQ-Agentic-Safety-Dataset-1.0",
+      },
+    ],
+    stats: [],
+    tags: [],
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  openart: {
+    slug: "openart",
+    name: "OpenART",
+    category: "Agents",
+    description: "Docker-native agent red-teaming arena for long-horizon, stateful tool-using code agents. Evaluates multi-step state poisoning, privilege escalation, and tool-use vulnerabilities via evolving environments (paper reports 10K+ validated scenarios across 50 domains; public HF releases include planner tasks and tool corpora). Reference attacker: EMHA.",
+    venue: "arXiv 2026 (preprint)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2608.00677",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/OpenART",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2608.00677",
+    paperUrl: "https://arxiv.org/abs/2608.00677",
+    repo: "AI45Lab/OpenART",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  dtap: {
+    slug: "dtap",
+    name: "DTap",
+    category: "Agents",
+    description: "Controllable interactive red-teaming platform for AI agents spanning 14 real-world domains and 50+ simulation environments, with autonomous DTAP-RED attacker and public trajectory benchmark releases.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2605.04808",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI-secure/DecodingTrust-Agent",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2605.04808",
+    paperUrl: "https://arxiv.org/abs/2605.04808",
+    repo: "AI-secure/DecodingTrust-Agent",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  vlsbench: {
+    slug: "vlsbench",
+    name: "VLSBench",
+    category: "LLMs",
+    description: "Multimodal visual leakless safety benchmark (2.4k image-text pairs) that removes visual safety information leakage from text queries to stress-test MLLM safety alignment.",
+    venue: "ACL 2025",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2411.19939",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/VLSBench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "privacy",
+    ],
+    arxivId: "2411.19939",
+    paperUrl: "https://arxiv.org/abs/2411.19939",
+    repo: "AI45Lab/VLSBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  mllmguard: {
+    slug: "mllmguard",
+    name: "MLLMGuard",
+    category: "LLMs",
+    description: "Multi-dimensional bilingual image-text safety evaluation suite for MLLMs with privacy, bias, toxicity, hallucination and related axes plus lightweight evaluators.",
+    venue: "arXiv 2024",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2406.07594",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/MLLMGuard",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2406.07594",
+    paperUrl: "https://arxiv.org/abs/2406.07594",
+    repo: "AI45Lab/MLLMGuard",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  riosworld: {
+    slug: "riosworld",
+    name: "RiOSWorld",
+    category: "Agents",
+    description: "Benchmark for risk evaluation of multimodal computer-use agents in OS-world style environments, with released evaluation trajectory data.",
+    venue: "NeurIPS 2025",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2506.00618",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/yjyddq/RiOSWorld",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2506.00618",
+    paperUrl: "https://arxiv.org/abs/2506.00618",
+    repo: "yjyddq/RiOSWorld",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  reflectionbench: {
+    slug: "reflectionbench",
+    name: "ReflectionBench",
+    category: "Agents",
+    description: "Cognitive-psychology-inspired benchmark evaluating epistemic agency of LLMs across prediction, decision-making, perception, memory, counterfactuals, belief updating, and meta-reflection.",
+    venue: "ICML 2025",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2410.16270",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/ReflectionBench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2410.16270",
+    paperUrl: "https://arxiv.org/abs/2410.16270",
+    repo: "AI45Lab/ReflectionBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  safeverse: {
+    slug: "safeverse",
+    name: "SafeVerse",
+    category: "Embodied AI",
+    description: "Open generative evolution arena for trustworthy embodied AI: video-to-interactive 3D scenes with automated attack-defense exercises and closed-loop adversarial evolution.",
+    venue: "GitHub 2026",
+    resources: [
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/SafeVerse",
+      },
+    ],
+    stats: [],
+    tags: [
+      "robustness",
+    ],
+    repo: "AI45Lab/SafeVerse",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  pseudobench: {
+    slug: "pseudobench",
+    name: "PseudoBench",
+    category: "Agents",
+    description: "Adversarial benchmark measuring whether agentic auto-research systems can identify and resist pseudoscientific narratives across curated claim-evidence items and domains.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2606.18060",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/PseudoBench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "robustness",
+    ],
+    arxivId: "2606.18060",
+    paperUrl: "https://arxiv.org/abs/2606.18060",
+    repo: "AI45Lab/PseudoBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  t2isafety: {
+    slug: "t2isafety",
+    name: "T2ISafety",
+    category: "LLMs",
+    description: "Safety benchmark for text-to-image models covering toxicity, fairness, and privacy with a hierarchical taxonomy (12 tasks / 44 categories) and large annotated prompt-image evaluation set.",
+    venue: "ICLR 2025",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2501.12612",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/T2ISafety",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2501.12612",
+    paperUrl: "https://arxiv.org/abs/2501.12612",
+    repo: "AI45Lab/T2ISafety",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  actorattack: {
+    slug: "actorattack",
+    name: "ActorAttack",
+    category: "LLMs",
+    description: "Multi-turn jailbreak attack/evaluation method that discovers semantic actor clues to derail LLMs, releasing Attack_600 multi-turn harmful query paths for evaluation.",
+    venue: "arXiv 2024",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2410.10700",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/ActorAttack",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2410.10700",
+    paperUrl: "https://arxiv.org/abs/2410.10700",
+    repo: "AI45Lab/ActorAttack",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  atbench: {
+    slug: "atbench",
+    name: "ATBench",
+    category: "Agents",
+    description: "Diverse realistic agent-trajectory safety benchmark family (ATBench / ATBench500 / Claw / Codex) for evaluating and diagnosing agent safety failures.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2604.02022",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/AgentDoG",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2604.02022",
+    paperUrl: "https://arxiv.org/abs/2604.02022",
+    repo: "AI45Lab/AgentDoG",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  codeattack: {
+    slug: "codeattack",
+    name: "CodeAttack",
+    category: "LLMs",
+    description: "Code-completion jailbreak / safety-generalization evaluation that reformulates harmful intents as code to probe LLM safety gaps.",
+    venue: "ACL 2024",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2403.07865",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/CodeAttack",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2403.07865",
+    paperUrl: "https://arxiv.org/abs/2403.07865",
+    repo: "AI45Lab/CodeAttack",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -7541,6 +8194,522 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         domain: "LLMs",
         property: "Jailbreak",
       },
+      {
+        name: "ISC-Bench",
+        note: "Internal Safety Collapse (ISC) evaluation using Task–Validator–Data scenarios across professional disciplines, measuring workflow-triggered harmful generation in frontier LLMs and agentic modes. Highlighted in Awesome-Embodied-AI-Safety news.",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2603.23509",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/wuyoscar/ISC-Bench",
+          },
+        ],
+        slug: "isc-bench",
+        domain: "LLMs",
+        property: "Harmful Content",
+      },
+      {
+        name: "EmbodiedBench",
+        note: "Comprehensive benchmark for evaluating multimodal LLMs as vision-driven embodied agents across embodied task suites (Awesome-Embodied-AI-Safety).",
+        type: "Embodied AI",
+        venue: "ICML 2025 (Oral)",
+        year: "2025",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2502.09560",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/EmbodiedBench/EmbodiedBench",
+          },
+        ],
+        slug: "embodiedbench",
+        domain: "Embodied AI",
+      },
+      {
+        name: "IS-Bench",
+        note: "Interactive Safety benchmark for VLM-driven embodied agents performing daily household tasks (Awesome-Embodied-AI-Safety).",
+        type: "Embodied AI",
+        venue: "AAAI 2026",
+        year: "2025",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2506.16402",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/IS-Bench",
+          },
+        ],
+        slug: "is-bench",
+        domain: "Embodied AI",
+      },
+      {
+        name: "AttackVLA",
+        note: "Benchmark of adversarial and backdoor attacks against Vision-Language-Action models (Awesome-Embodied-AI-Safety).",
+        type: "Embodied AI",
+        venue: "arXiv 2025",
+        year: "2025",
+        tags: [
+          "robustness",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2511.12149",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/lijayuTnT/AttackVLA",
+          },
+        ],
+        slug: "attackvla",
+        domain: "Embodied AI",
+        property: "Robustness",
+      },
+      {
+        name: "SkillSafetyBench",
+        note: "Evaluates agent safety under skill-facing attack surfaces (Awesome-Embodied-AI-Safety / agent safety).",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2605.12015",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/skill-safety-bench",
+          },
+        ],
+        slug: "skillsafetybench",
+        domain: "Agents",
+      },
+      {
+        name: "EmbodiedGovBench",
+        note: "Benchmark for governance, recovery, and upgrade safety in embodied agent systems (Awesome-Embodied-AI-Safety).",
+        type: "Embodied AI",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2604.11174",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/s20sc/embodied-gov-bench",
+          },
+        ],
+        slug: "embodiedgovbench",
+        domain: "Embodied AI",
+      },
+      {
+        name: "ALERT",
+        note: "Large-scale red-teaming safety benchmark with red-team prompts for assessing LLM guardrails (HF configs expose test splits only).",
+        type: "LLMs",
+        venue: "arXiv 2024",
+        year: "2024",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2404.08676",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/Babelscape/ALERT",
+          },
+        ],
+        slug: "alert",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "Aya Red-teaming",
+        note: "Human-annotated multilingual red-teaming prompts across 8 languages and 9 harm categories for evaluating LLM safety (eval/red-team resource).",
+        type: "LLMs",
+        venue: "arXiv 2024 / Cohere",
+        year: "2024",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2406.18682",
+          },
+          {
+            label: "GitHub",
+            href: "https://huggingface.co/datasets/CohereLabs/aya_redteaming",
+          },
+        ],
+        slug: "aya-red-teaming",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "PolygloToxicityPrompts",
+        note: "Multilingual toxicity evaluation prompt benchmark curated from web text (ptp-full / ptp-small splits).",
+        type: "LLMs",
+        venue: "HF 2024",
+        year: "2024",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Hugging Face",
+            href: "https://huggingface.co/datasets/ToxicityPrompts/PolygloToxicityPrompts",
+          },
+        ],
+        slug: "polyglotoxicityprompts",
+        domain: "LLMs",
+        property: "Harmful Content",
+      },
+      {
+        name: "In-The-Wild Jailbreak Prompts",
+        note: "JailbreakHub measurement resource of in-the-wild jailbreak prompts for characterizing and evaluating jailbreaks on LLMs.",
+        type: "LLMs",
+        venue: "ACM CCS 2024",
+        year: "2024",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2308.03825",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/TrustAIRLab/JailbreakHub",
+          },
+        ],
+        slug: "in-the-wild-jailbreak-prompts",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "Nemotron-AIQ Agentic Safety",
+        note: "Agentic safety/security contextual-risk evaluation set for research assistants in agentic systems (NVIDIA evaluation-dataset license).",
+        type: "Agents",
+        venue: "NVIDIA HF 2025",
+        year: "2025",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Hugging Face",
+            href: "https://huggingface.co/datasets/nvidia/Nemotron-AIQ-Agentic-Safety-Dataset-1.0",
+          },
+        ],
+        slug: "nemotron-aiq-agentic-safety",
+        domain: "Agents",
+      },
+      {
+        name: "OpenART",
+        note: "Docker-native agent red-teaming arena for long-horizon, stateful tool-using code agents. Evaluates multi-step state poisoning, privilege escalation, and tool-use vulnerabilities via evolving environments (paper reports 10K+ validated scenarios across 50 domains; public HF releases include planner tasks and tool corpora). Reference attacker: EMHA.",
+        type: "Agents",
+        venue: "arXiv 2026 (preprint)",
+        year: "2026",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2608.00677",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/OpenART",
+          },
+        ],
+        slug: "openart",
+        domain: "Agents",
+        property: "Jailbreak",
+      },
+      {
+        name: "DTap",
+        note: "Controllable interactive red-teaming platform for AI agents spanning 14 real-world domains and 50+ simulation environments, with autonomous DTAP-RED attacker and public trajectory benchmark releases.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2605.04808",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI-secure/DecodingTrust-Agent",
+          },
+        ],
+        slug: "dtap",
+        domain: "Agents",
+        property: "Jailbreak",
+      },
+      {
+        name: "VLSBench",
+        note: "Multimodal visual leakless safety benchmark (2.4k image-text pairs) that removes visual safety information leakage from text queries to stress-test MLLM safety alignment.",
+        type: "LLMs",
+        venue: "ACL 2025",
+        year: "2025",
+        tags: [
+          "privacy",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2411.19939",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/VLSBench",
+          },
+        ],
+        slug: "vlsbench",
+        domain: "LLMs",
+        property: "Privacy",
+      },
+      {
+        name: "MLLMGuard",
+        note: "Multi-dimensional bilingual image-text safety evaluation suite for MLLMs with privacy, bias, toxicity, hallucination and related axes plus lightweight evaluators.",
+        type: "LLMs",
+        venue: "arXiv 2024",
+        year: "2024",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2406.07594",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/MLLMGuard",
+          },
+        ],
+        slug: "mllmguard",
+        domain: "LLMs",
+        property: "Harmful Content",
+      },
+      {
+        name: "RiOSWorld",
+        note: "Benchmark for risk evaluation of multimodal computer-use agents in OS-world style environments, with released evaluation trajectory data.",
+        type: "Agents",
+        venue: "NeurIPS 2025",
+        year: "2025",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2506.00618",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/yjyddq/RiOSWorld",
+          },
+        ],
+        slug: "riosworld",
+        domain: "Agents",
+      },
+      {
+        name: "ReflectionBench",
+        note: "Cognitive-psychology-inspired benchmark evaluating epistemic agency of LLMs across prediction, decision-making, perception, memory, counterfactuals, belief updating, and meta-reflection.",
+        type: "Agents",
+        venue: "ICML 2025",
+        year: "2025",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2410.16270",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/ReflectionBench",
+          },
+        ],
+        slug: "reflectionbench",
+        domain: "Agents",
+      },
+      {
+        name: "SafeVerse",
+        note: "Open generative evolution arena for trustworthy embodied AI: video-to-interactive 3D scenes with automated attack-defense exercises and closed-loop adversarial evolution.",
+        type: "Embodied AI",
+        venue: "GitHub 2026",
+        year: "2026",
+        tags: [
+          "robustness",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/SafeVerse",
+          },
+        ],
+        slug: "safeverse",
+        domain: "Embodied AI",
+        property: "Robustness",
+      },
+      {
+        name: "PseudoBench",
+        note: "Adversarial benchmark measuring whether agentic auto-research systems can identify and resist pseudoscientific narratives across curated claim-evidence items and domains.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "robustness",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2606.18060",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/PseudoBench",
+          },
+        ],
+        slug: "pseudobench",
+        domain: "Agents",
+        property: "Robustness",
+      },
+      {
+        name: "T2ISafety",
+        note: "Safety benchmark for text-to-image models covering toxicity, fairness, and privacy with a hierarchical taxonomy (12 tasks / 44 categories) and large annotated prompt-image evaluation set.",
+        type: "LLMs",
+        venue: "ICLR 2025",
+        year: "2025",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2501.12612",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/T2ISafety",
+          },
+        ],
+        slug: "t2isafety",
+        domain: "LLMs",
+        property: "Harmful Content",
+      },
+      {
+        name: "ActorAttack",
+        note: "Multi-turn jailbreak attack/evaluation method that discovers semantic actor clues to derail LLMs, releasing Attack_600 multi-turn harmful query paths for evaluation.",
+        type: "LLMs",
+        venue: "arXiv 2024",
+        year: "2024",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2410.10700",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/ActorAttack",
+          },
+        ],
+        slug: "actorattack",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "ATBench",
+        note: "Diverse realistic agent-trajectory safety benchmark family (ATBench / ATBench500 / Claw / Codex) for evaluating and diagnosing agent safety failures.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2604.02022",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/AgentDoG",
+          },
+        ],
+        slug: "atbench",
+        domain: "Agents",
+      },
+      {
+        name: "CodeAttack",
+        note: "Code-completion jailbreak / safety-generalization evaluation that reformulates harmful intents as code to probe LLM safety gaps.",
+        type: "LLMs",
+        venue: "ACL 2024",
+        year: "2024",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2403.07865",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/CodeAttack",
+          },
+        ],
+        slug: "codeattack",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
     ],
   },
   models: {
@@ -7965,6 +9134,22 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         domain: "Agents",
       },
       {
+        name: "GuardReasonerTrain",
+        note: "Description not recorded yet.",
+        type: "LLMs",
+        venue: "arXiv 2025",
+        year: "2025",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/yueliu1999/GuardReasonerTrain",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
         name: "HH-RLHF",
         note: "161K human preference pairs collected by comparing assistant responses for helpfulness and harmlessness for preference modeling and RLHF training.",
         type: "LLMs",
@@ -7979,6 +9164,22 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           "LLMs",
         ],
         domain: "LLMs",
+      },
+      {
+        name: "HomeSafe",
+        note: "Description not recorded yet.",
+        type: "Embodied AI",
+        venue: "ECCV 2026 / HomeGuard",
+        year: "2026",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/Ursulalala/HomeSafe",
+        domains: [
+          "Embodied AI",
+        ],
+        domain: "Embodied AI",
       },
       {
         name: "HSOL",
@@ -8031,6 +9232,22 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         domain: "Agents",
       },
       {
+        name: "LLM-LAT Harmful Dataset",
+        note: "Description not recorded yet.",
+        type: "LLMs",
+        venue: "arXiv 2024 (LAT)",
+        year: "2024",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/LLM-LAT/harmful-dataset",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
         name: "MM-SafetyBench",
         note: "5,040 text–image attack pairs generated across 13 safety scenarios for training and evaluating multimodal safeguards and a safety suffix generator.",
         type: "Agents",
@@ -8047,6 +9264,22 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           "Agents",
         ],
         domain: "Agents",
+      },
+      {
+        name: "Nemotron-Safety-Guard-Dataset-v3",
+        note: "Description not recorded yet.",
+        type: "LLMs",
+        venue: "NVIDIA HF 2025",
+        year: "2025",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/nvidia/Nemotron-Safety-Guard-Dataset-v3",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
       },
       {
         name: "OLID",
@@ -8111,6 +9344,22 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "safe-guard-prompt-injection",
+        note: "Description not recorded yet.",
+        type: "LLMs",
+        venue: "HF 2024",
+        year: "2024",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection",
         domains: [
           "LLMs",
         ],
@@ -8270,6 +9519,22 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         domain: "Embodied AI",
       },
       {
+        name: "ToxicChat",
+        note: "Description not recorded yet.",
+        type: "LLMs",
+        venue: "arXiv 2023 (LMSYS)",
+        year: "2023",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/lmsys/toxic-chat",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
         name: "TruthfulQA evaluator fine-tuning data",
         note: "6.9K reference-answer and approximately 15.5K generated-answer examples annotated for truthfulness and informativeness for fine-tuning the TruthfulQA judge and information evaluators.",
         type: "LLMs",
@@ -8297,6 +9562,22 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/anonymous4486/Virus",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "WildGuardMix",
+        note: "Description not recorded yet.",
+        type: "LLMs",
+        venue: "arXiv 2024 / AllenAI WildGuard",
+        year: "2024",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/allenai/wildguardmix",
         domains: [
           "LLMs",
         ],

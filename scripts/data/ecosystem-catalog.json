@@ -221,6 +221,383 @@
         "https://github.com/OpenTAI/opentai.github.io/issues/30"
       ],
       "verificationNote": "Official Hugging Face model card for meta-llama/Llama-Guard-4-12B documents the multimodal safety-classifier role; HF blog corroborates the release. Added from issue #30."
+    },
+    {
+      "id": "llama-prompt-guard-2-86m",
+      "name": "Llama Prompt Guard 2 86M",
+      "category": "Guard Models",
+      "description": "86M multilingual prompt-injection and jailbreak classifier in Meta's Prompt Guard 2 series for detecting adversarial prompts before they reach an LLM.",
+      "descriptionZh": "Meta Prompt Guard 2 系列中的 86M 多语种提示注入与越狱分类器，用于在提示到达 LLM 前检测对抗性提示。",
+      "year": 2025,
+      "publisher": "Meta",
+      "github": "https://github.com/meta-llama/llama-models",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/meta-llama/Llama-Prompt-Guard-2-86M"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/meta-llama/llama-models"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/meta-llama/Llama-Prompt-Guard-2-86M",
+        "https://github.com/meta-llama/llama-models",
+        "https://github.com/OpenTAI/opentai.github.io/issues/34"
+      ],
+      "verificationNote": "Official HF model card meta-llama/Llama-Prompt-Guard-2-86M (created 2025-04-28) documents the Prompt Guard 2 86M safety classifier role; GitHub meta-llama/llama-models resolves. Not present in OpenTAI ecosystem-catalog models as of 2026-09-20. Added from issue #34."
+    },
+    {
+      "id": "prompt-guard-86m",
+      "name": "Prompt-Guard-86M",
+      "category": "Guard Models",
+      "description": "Meta Prompt Guard 86M text classifier for detecting prompt injections and jailbreaks in LLM application inputs.",
+      "descriptionZh": "Meta Prompt Guard 86M 文本分类器，用于检测 LLM 应用中的提示注入与越狱。",
+      "year": 2024,
+      "publisher": "Meta",
+      "github": "https://github.com/meta-llama/llama-models",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/meta-llama/Prompt-Guard-86M"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/meta-llama/llama-models"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/meta-llama/Prompt-Guard-86M",
+        "https://github.com/meta-llama/llama-models",
+        "https://github.com/OpenTAI/opentai.github.io/issues/35"
+      ],
+      "verificationNote": "Official HF model card meta-llama/Prompt-Guard-86M resolves with high download volume; documents prompt-injection/jailbreak classification. Not present under Prompt-Guard naming in OpenTAI ecosystem-catalog models as of 2026-09-20. Added from issue #35."
+    },
+    {
+      "id": "llama-guard-2",
+      "name": "Llama Guard 2",
+      "category": "Guard Models",
+      "description": "Llama Guard 2 8B input/output safety classifier for human-AI conversations, labeling prompts and responses into safety risk categories.",
+      "descriptionZh": "Llama Guard 2 8B 人机对话输入/输出安全分类器，对提示与回复进行安全标签。",
+      "year": 2024,
+      "publisher": "Meta",
+      "github": "https://github.com/meta-llama/llama-models",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/meta-llama/Meta-Llama-Guard-2-8B"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/meta-llama/llama-models"
+        },
+        {
+          "label": "Project",
+          "url": "https://ai.meta.com/research/publications/llama-guard-llm-based-input-output-safeguard-for-human-ai-conversations/"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/meta-llama/Meta-Llama-Guard-2-8B",
+        "https://github.com/meta-llama/llama-models",
+        "https://ai.meta.com/research/publications/llama-guard-llm-based-input-output-safeguard-for-human-ai-conversations/",
+        "https://github.com/OpenTAI/opentai.github.io/issues/36"
+      ],
+      "verificationNote": "Official HF model card meta-llama/Meta-Llama-Guard-2-8B resolves; Meta Llama Guard research page corroborates the safeguard role. OpenTAI catalog has Llama Guard 3/4 but not Guard 2 as of 2026-09-20. Added from issue #36."
+    },
+    {
+      "id": "shieldlm",
+      "name": "ShieldLM",
+      "category": "Guard Models",
+      "description": "LLM-based safety detector (EMNLP 2024 Findings) that judges query-response safety with customizable and explainable decisions (EN/ZH).",
+      "descriptionZh": "基于 LLM 的安全检测器（EMNLP 2024 Findings），可按可定制规则判定查询-回复安全性。",
+      "year": 2024,
+      "publisher": "THU-CoAI",
+      "github": "https://github.com/thu-coai/ShieldLM",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/thu-coai/ShieldLM-7B-internlm2"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/thu-coai/ShieldLM"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2402.16444"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/thu-coai/ShieldLM-7B-internlm2",
+        "https://github.com/thu-coai/ShieldLM",
+        "https://arxiv.org/abs/2402.16444",
+        "https://github.com/OpenTAI/opentai.github.io/issues/37"
+      ],
+      "verificationNote": "arXiv:2402.16444 and GitHub thu-coai/ShieldLM resolve; HF thu-coai/ShieldLM-7B-internlm2 documents the safety-detector role. Not in OpenTAI ecosystem-catalog models as of 2026-09-20. Added from issue #37."
+    },
+    {
+      "id": "md-judge",
+      "name": "MD-Judge",
+      "category": "Guard Models",
+      "description": "Safety judge model released with SALAD-Bench for evaluating LLM responses against hierarchical safety taxonomies.",
+      "descriptionZh": "随 SALAD-Bench 发布的安全评判模型，用于按分层安全分类评估 LLM 回复。",
+      "year": 2024,
+      "publisher": "OpenSafetyLab",
+      "github": "https://github.com/OpenSafetyLab/SALAD-BENCH",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/OpenSafetyLab/MD-Judge-v0.1"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/OpenSafetyLab/SALAD-BENCH"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2402.05044"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/OpenSafetyLab/MD-Judge-v0.1",
+        "https://github.com/OpenSafetyLab/SALAD-BENCH",
+        "https://arxiv.org/abs/2402.05044",
+        "https://github.com/OpenTAI/opentai.github.io/issues/38"
+      ],
+      "verificationNote": "HF OpenSafetyLab/MD-Judge-v0.1 resolves; SALAD-Bench paper arXiv:2402.05044 and GitHub OpenSafetyLab/SALAD-BENCH identify MD-Judge as the official safety evaluator. Not in OpenTAI ecosystem-catalog models as of 2026-09-20. Added from issue #38."
+    },
+    {
+      "id": "shieldstral-1-0-3b",
+      "name": "Shieldstral 1.0 3B",
+      "category": "Guard Models",
+      "description": "Mistral Shieldstral 1.0 3B safety/guard model for content policy classification and moderation.",
+      "descriptionZh": "Mistral Shieldstral 1.0 3B 安全/护栏模型，用于内容策略分类与审核。",
+      "year": 2026,
+      "publisher": "Mistral AI",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/mistralai/Shieldstral-1.0-3B"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/mistralai/Shieldstral-1.0-3B",
+        "https://github.com/OpenTAI/opentai.github.io/issues/39"
+      ],
+      "verificationNote": "Official HF model card mistralai/Shieldstral-1.0-3B (created 2026-07-16) resolves and identifies the guard/safety role. Not in OpenTAI ecosystem-catalog models as of 2026-09-20. Added from issue #39."
+    },
+    {
+      "id": "granite-guardian-4-1-8b",
+      "name": "Granite Guardian 4.1 8B",
+      "category": "Guard Models",
+      "description": "IBM Granite Guardian 4.1 8B risk detector for prompts and responses in enterprise LLM applications.",
+      "descriptionZh": "IBM Granite Guardian 4.1 8B 风险检测器，面向企业 LLM 应用中的提示与回复。",
+      "year": 2026,
+      "publisher": "IBM",
+      "github": "https://github.com/ibm-granite/granite-guardian",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/ibm-granite/granite-guardian-4.1-8b"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/ibm-granite/granite-guardian"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/ibm-granite/granite-guardian-4.1-8b",
+        "https://github.com/ibm-granite/granite-guardian",
+        "https://github.com/OpenTAI/opentai.github.io/issues/40"
+      ],
+      "verificationNote": "HF ibm-granite/granite-guardian-4.1-8b (created 2026-04-16) and GitHub ibm-granite/granite-guardian resolve. OpenTAI catalog lists Granite Guardian 3.3 8B but not 4.1 as of 2026-09-20. Added from issue #40."
+    },
+    {
+      "id": "llama-3-1-nemotron-safety-guard-8b-v3",
+      "name": "Llama-3.1-Nemotron-Safety-Guard-8B-v3",
+      "category": "Guard Models",
+      "description": "NVIDIA Nemotron multilingual LLM content-safety guard (Llama 3.1 8B backbone) for prompt/response risk classification.",
+      "descriptionZh": "NVIDIA Nemotron 多语种 LLM 内容安全护栏（Llama 3.1 8B 骨干），用于提示/回复风险检测。",
+      "year": 2025,
+      "publisher": "NVIDIA",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/nvidia/Llama-3.1-Nemotron-Safety-Guard-8B-v3"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/nvidia/Llama-3.1-Nemotron-Safety-Guard-8B-v3",
+        "https://github.com/OpenTAI/opentai.github.io/issues/41"
+      ],
+      "verificationNote": "Official HF card nvidia/Llama-3.1-Nemotron-Safety-Guard-8B-v3 (created 2025-08-20) documents multilingual content-safety guard use. Not in OpenTAI ecosystem-catalog models as of 2026-09-20. Added from issue #41."
+    },
+    {
+      "id": "guardreasoner-8b",
+      "name": "GuardReasoner-8B",
+      "category": "Guard Models",
+      "description": "Reasoning-based LLM safeguard model trained with R-SFT on GuardReasonerTrain for explainable safety judgments.",
+      "descriptionZh": "基于推理的 LLM 护栏模型，在 GuardReasonerTrain 上经 R-SFT 训练，提供可解释的安全判定。",
+      "year": 2025,
+      "publisher": "yueliu1999",
+      "github": "https://github.com/yueliu1999/GuardReasoner",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/yueliu1999/GuardReasoner-8B"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/yueliu1999/GuardReasoner"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2501.18492"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/yueliu1999/GuardReasoner-8B",
+        "https://github.com/yueliu1999/GuardReasoner",
+        "https://arxiv.org/abs/2501.18492",
+        "https://github.com/OpenTAI/opentai.github.io/issues/42"
+      ],
+      "verificationNote": "HF yueliu1999/GuardReasoner-8B and GitHub yueliu1999/GuardReasoner resolve; paper arXiv:2501.18492 describes reasoning-based safeguards. Not in OpenTAI ecosystem-catalog models as of 2026-09-20. Added from issue #42."
+    },
+    {
+      "id": "beaverdam-7b",
+      "name": "BeaverDam-7B",
+      "category": "Guard Models",
+      "description": "PKU-Alignment moderation/cost model for scoring QA harmfulness, companion to BeaverTails and Safe-RLHF.",
+      "descriptionZh": "PKU-Alignment 审核/代价模型，用于对问答有害性打分，配合 BeaverTails 与 Safe-RLHF。",
+      "year": 2023,
+      "publisher": "PKU-Alignment",
+      "github": "https://github.com/PKU-Alignment/safe-rlhf",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/PKU-Alignment/beaver-dam-7b"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/PKU-Alignment/safe-rlhf"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2307.04657"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/PKU-Alignment/beaver-dam-7b",
+        "https://github.com/PKU-Alignment/safe-rlhf",
+        "https://arxiv.org/abs/2307.04657",
+        "https://github.com/OpenTAI/opentai.github.io/issues/43"
+      ],
+      "verificationNote": "HF PKU-Alignment/beaver-dam-7b resolves; Safe-RLHF/BeaverTails project (arXiv:2307.04657, GitHub PKU-Alignment/safe-rlhf) identifies BeaverDam as the moderation model. Landmark companion to on-site BeaverTails; not in OpenTAI models catalog as of 2026-09-20. Added from issue #43."
+    },
+    {
+      "id": "agentdog",
+      "name": "AgentDoG",
+      "category": "Guard Models",
+      "description": "Diagnostic guardrail / agent-safety alignment model family (AgentDoG 1.0/1.5) for classifying and mitigating unsafe agent trajectories.",
+      "descriptionZh": "诊断式护栏 / 智能体安全对齐模型系列（AgentDoG 1.0/1.5），用于分类并缓解不安全的智能体轨迹。",
+      "year": 2026,
+      "publisher": "AI45Lab",
+      "github": "https://github.com/AI45Lab/AgentDoG",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/AI45Research/AgentDoG-Qwen3-4B"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/AI45Lab/AgentDoG"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/AI45Research/AgentDoG-Qwen3-4B",
+        "https://github.com/AI45Lab/AgentDoG",
+        "https://github.com/OpenTAI/opentai.github.io/issues/73"
+      ],
+      "verificationNote": "HF AI45Research/AgentDoG-Qwen3-4B (+ family), GitHub AI45Lab/AgentDoG, arXiv:2601.18491 / 2605.29801 resolve. Open weights for agent safety guardrails. Not on Models page or Model Issues. Added from issue #73."
+    },
+    {
+      "id": "homeguard",
+      "name": "HomeGuard",
+      "category": "Guard Models",
+      "description": "VLM-based embodied safeguard (HomeGuard-8B) for identifying contextual/implicit risks in household robot tasks.",
+      "descriptionZh": "基于 VLM 的具身护栏（HomeGuard-8B），用于识别家务机器人任务中的情境/隐性风险。",
+      "year": 2026,
+      "publisher": "AI45Lab",
+      "github": "https://github.com/AI45Lab/HomeGuard",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/Ursulalala/HomeGuard-8B"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/AI45Lab/HomeGuard"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/Ursulalala/HomeGuard-8B",
+        "https://github.com/AI45Lab/HomeGuard",
+        "https://github.com/OpenTAI/opentai.github.io/issues/74"
+      ],
+      "verificationNote": "HF Ursulalala/HomeGuard-8B, GitHub AI45Lab/HomeGuard, arXiv:2603.14367 (ECCV 2026) resolve. Embodied safety model weights released. Not on Models page or Model Issues. Added from issue #74."
+    },
+    {
+      "id": "x-boundary",
+      "name": "X-Boundary",
+      "category": "Aligned Models",
+      "description": "Defense method/models that learn an exact safety boundary in representation space to resist multi-turn jailbreaks while preserving usability; public LoRA adapters released.",
+      "descriptionZh": "在表示空间学习精确安全边界的防御方法/模型，在保持可用性的同时抵抗多轮越狱；公开发布 LoRA 适配器。",
+      "year": 2025,
+      "publisher": "AI45Lab",
+      "github": "https://github.com/AI45Lab/X-Boundary",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/Ursulalala/X-Boundary-Llama-3-8B-adapter"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/AI45Lab/X-Boundary"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/Ursulalala/X-Boundary-Llama-3-8B-adapter",
+        "https://github.com/AI45Lab/X-Boundary",
+        "https://github.com/OpenTAI/opentai.github.io/issues/75"
+      ],
+      "verificationNote": "GitHub AI45Lab/X-Boundary, arXiv:2502.09990 (EMNLP 2025), HF collection Ursulalala/x-boundary with adapters (e.g. X-Boundary-Llama-3-8B-adapter) resolve. Not on Models page or Model Issues. Added from issue #75."
+    },
+    {
+      "id": "safevla",
+      "name": "SafeVLA",
+      "category": "Aligned Models",
+      "description": "Safety-aligned Vision-Language-Action models via constrained learning to reduce unsafe embodied actions while preserving task success.",
+      "descriptionZh": "通过约束学习得到的安全对齐视觉-语言-动作模型，在保持任务成功率的同时减少不安全具身动作。",
+      "year": 2025,
+      "publisher": "PKU-Alignment",
+      "github": "https://github.com/PKU-Alignment/SafeVLA",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/SafetyEmbodiedAI/safety-model"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/PKU-Alignment/SafeVLA"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/SafetyEmbodiedAI/safety-model",
+        "https://github.com/PKU-Alignment/SafeVLA",
+        "https://github.com/OpenTAI/opentai.github.io/issues/76"
+      ],
+      "verificationNote": "GitHub PKU-Alignment/SafeVLA, arXiv:2503.03480 (NeurIPS 2025 Spotlight), HF SafetyEmbodiedAI/safety-model resolve. Embodied safety-aligned VLA model release. Not on Models page or Model Issues. Added from issue #76."
     }
   ],
   "frameworks": [

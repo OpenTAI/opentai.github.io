@@ -936,6 +936,48 @@
       "status": "keep",
       "reason": "Kept: primary HF dataset card and arXiv:2406.18510 explicitly describe synthetic safety-training / jailbreak-defense training data. Added from issue #31.",
       "sourceUrl": "https://huggingface.co/datasets/allenai/wildjailbreak"
+    },
+    {
+      "name": "WildGuardMix",
+      "status": "keep",
+      "reason": "Kept: primary source documents safety-training use or an explicit train split. Added from issue #44.",
+      "sourceUrl": "https://huggingface.co/datasets/allenai/wildguardmix"
+    },
+    {
+      "name": "ToxicChat",
+      "status": "keep",
+      "reason": "Kept: primary source documents safety-training use or an explicit train split. Added from issue #45.",
+      "sourceUrl": "https://huggingface.co/datasets/lmsys/toxic-chat"
+    },
+    {
+      "name": "Nemotron-Safety-Guard-Dataset-v3",
+      "status": "keep",
+      "reason": "Kept: primary source documents safety-training use or an explicit train split. Added from issue #46.",
+      "sourceUrl": "https://huggingface.co/datasets/nvidia/Nemotron-Safety-Guard-Dataset-v3"
+    },
+    {
+      "name": "LLM-LAT Harmful Dataset",
+      "status": "keep",
+      "reason": "Kept: primary source documents safety-training use or an explicit train split. Added from issue #47.",
+      "sourceUrl": "https://huggingface.co/datasets/LLM-LAT/harmful-dataset"
+    },
+    {
+      "name": "safe-guard-prompt-injection",
+      "status": "keep",
+      "reason": "Kept: primary source documents safety-training use or an explicit train split. Added from issue #48.",
+      "sourceUrl": "https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection"
+    },
+    {
+      "name": "GuardReasonerTrain",
+      "status": "keep",
+      "reason": "Kept: primary source documents safety-training use or an explicit train split. Added from issue #49.",
+      "sourceUrl": "https://huggingface.co/datasets/yueliu1999/GuardReasonerTrain"
+    },
+    {
+      "name": "HomeSafe",
+      "status": "keep",
+      "reason": "Kept: primary source documents safety-training use or an explicit train split. Added from issue #77.",
+      "sourceUrl": "https://huggingface.co/datasets/Ursulalala/HomeSafe"
     }
   ]
 }
