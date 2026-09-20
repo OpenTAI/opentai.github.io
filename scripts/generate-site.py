@@ -902,6 +902,8 @@ for key, rec in reviewed_by_key.items():
     if rec.get("venue"):
         row["venue"] = rec["venue"]
     for label, href in ((rec["linkLabel"], rec["url"]), ("GitHub", rec["githubUrl"])):
+        if not href:
+            continue
         if not any(link["href"] == href for link in row["resources"]):
             row["resources"].append({"label": label, "href": href})
 

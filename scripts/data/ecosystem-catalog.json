@@ -13,8 +13,14 @@
       "github": "https://github.com/QwenLM/Qwen3Guard",
       "starsUpdated": "2026-08-20",
       "links": [
-        {"label": "GitHub", "url": "https://github.com/QwenLM/Qwen3Guard"},
-        {"label": "Paper", "url": "https://arxiv.org/abs/2510.14276"}
+        {
+          "label": "GitHub",
+          "url": "https://github.com/QwenLM/Qwen3Guard"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2510.14276"
+        }
       ],
       "sources": [
         "https://github.com/QwenLM/Qwen3Guard",
@@ -31,7 +37,10 @@
       "year": 2024,
       "publisher": "Meta",
       "links": [
-        {"label": "Hugging Face", "url": "https://huggingface.co/meta-llama/Llama-Guard-3-8B"}
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/meta-llama/Llama-Guard-3-8B"
+        }
       ],
       "sources": [
         "https://huggingface.co/meta-llama/Llama-Guard-3-8B"
@@ -47,8 +56,14 @@
       "year": 2025,
       "publisher": "Google",
       "links": [
-        {"label": "Hugging Face", "url": "https://huggingface.co/google/shieldgemma-2-4b-it"},
-        {"label": "Paper", "url": "https://arxiv.org/abs/2504.01081"}
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/google/shieldgemma-2-4b-it"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2504.01081"
+        }
       ],
       "sources": [
         "https://huggingface.co/google/shieldgemma-2-4b-it",
@@ -65,8 +80,14 @@
       "year": 2024,
       "publisher": "Allen Institute for AI",
       "links": [
-        {"label": "Hugging Face", "url": "https://huggingface.co/allenai/wildguard"},
-        {"label": "Paper", "url": "https://arxiv.org/abs/2406.18495"}
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/allenai/wildguard"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2406.18495"
+        }
       ],
       "sources": [
         "https://huggingface.co/allenai/wildguard",
@@ -84,9 +105,18 @@
       "publisher": "IBM Research",
       "github": "https://github.com/ibm-granite/granite-guardian",
       "links": [
-        {"label": "Hugging Face", "url": "https://huggingface.co/ibm-granite/granite-guardian-3.3-8b"},
-        {"label": "GitHub", "url": "https://github.com/ibm-granite/granite-guardian"},
-        {"label": "Paper", "url": "https://arxiv.org/abs/2412.07724"}
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/ibm-granite/granite-guardian-3.3-8b"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/ibm-granite/granite-guardian"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2412.07724"
+        }
       ],
       "sources": [
         "https://huggingface.co/ibm-granite/granite-guardian-3.3-8b",
@@ -104,8 +134,14 @@
       "year": 2024,
       "publisher": "NVIDIA",
       "links": [
-        {"label": "Hugging Face", "url": "https://huggingface.co/nvidia/Aegis-AI-Content-Safety-LlamaGuard-Permissive-1.0"},
-        {"label": "Paper", "url": "https://arxiv.org/abs/2404.05993"}
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/nvidia/Aegis-AI-Content-Safety-LlamaGuard-Permissive-1.0"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2404.05993"
+        }
       ],
       "sources": [
         "https://huggingface.co/nvidia/Aegis-AI-Content-Safety-LlamaGuard-Permissive-1.0",
@@ -122,8 +158,14 @@
       "year": 2025,
       "publisher": "Cisco Foundation AI",
       "links": [
-        {"label": "Hugging Face", "url": "https://huggingface.co/fdtn-ai/Foundation-Sec-8B"},
-        {"label": "Release", "url": "https://blogs.cisco.com/security/foundation-sec-cisco-foundation-ai-first-open-source-security-model"}
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/fdtn-ai/Foundation-Sec-8B"
+        },
+        {
+          "label": "Release",
+          "url": "https://blogs.cisco.com/security/foundation-sec-cisco-foundation-ai-first-open-source-security-model"
+        }
       ],
       "sources": [
         "https://huggingface.co/fdtn-ai/Foundation-Sec-8B",
@@ -142,7 +184,10 @@
       "status": "Archived; no longer maintained",
       "statusZh": "已归档；不再维护",
       "links": [
-        {"label": "Hugging Face", "url": "https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2"}
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2"
+        }
       ],
       "sources": [
         "https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2"
@@ -161,8 +206,14 @@
       "github": "https://github.com/PKU-Alignment/safe-rlhf",
       "starsUpdated": "2026-08-20",
       "links": [
-        {"label": "Hugging Face", "url": "https://huggingface.co/PKU-Alignment/beaver-7b-v2.0"},
-        {"label": "GitHub", "url": "https://github.com/PKU-Alignment/safe-rlhf"}
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/PKU-Alignment/beaver-7b-v2.0"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/PKU-Alignment/safe-rlhf"
+        }
       ],
       "sources": [
         "https://huggingface.co/PKU-Alignment/beaver-7b-v2.0",
@@ -180,9 +231,18 @@
       "publisher": "PKU-Alignment",
       "github": "https://github.com/PKU-Alignment/safe-rlhf",
       "links": [
-        {"label": "Hugging Face", "url": "https://huggingface.co/PKU-Alignment/beaver-7b-v3.0"},
-        {"label": "GitHub", "url": "https://github.com/PKU-Alignment/safe-rlhf"},
-        {"label": "Paper", "url": "https://arxiv.org/abs/2310.12773"}
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/PKU-Alignment/beaver-7b-v3.0"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/PKU-Alignment/safe-rlhf"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2310.12773"
+        }
       ],
       "sources": [
         "https://huggingface.co/PKU-Alignment/beaver-7b-v3.0",
@@ -598,6 +658,122 @@
         "https://github.com/OpenTAI/opentai.github.io/issues/76"
       ],
       "verificationNote": "GitHub PKU-Alignment/SafeVLA, arXiv:2503.03480 (NeurIPS 2025 Spotlight), HF SafetyEmbodiedAI/safety-model resolve. Embodied safety-aligned VLA model release. Not on Models page or Model Issues. Added from issue #76."
+    },
+    {
+      "id": "braveguard",
+      "name": "BraveGuard",
+      "category": "Guard Models",
+      "description": "Family of trajectory-level safety guard models for computer-use agents. Judges full multi-step agent trajectories (actions, tool calls, intermediate reasoning, side effects) rather than isolated prompts/responses. Public checkpoints include Qwen3-Guard 4B/8B and Llama-Guard-8B variants under the BraveGuard HF repo; MIT-licensed training/eval framework on GitHub.",
+      "descriptionZh": "面向计算机使用智能体的轨迹级安全护栏模型族，对完整多步轨迹（动作、工具调用、中间推理与副作用）而非单条提示/回复做安全判定；公开权重含 Qwen3-Guard 与 Llama-Guard 变体。",
+      "year": 2026,
+      "publisher": "Yunhao Feng et al.",
+      "github": "https://github.com/Yunhao-Feng/BraveGuard",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Yunhao-Feng/BraveGuard"
+        },
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/Yunhao-Feng/BraveGuard"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.01166"
+        }
+      ],
+      "sources": [
+        "https://github.com/Yunhao-Feng/BraveGuard",
+        "https://huggingface.co/Yunhao-Feng/BraveGuard",
+        "https://arxiv.org/abs/2606.01166",
+        "https://github.com/OpenTAI/opentai.github.io/issues/79"
+      ],
+      "verificationNote": "Primary sources checked 2026-09-20: GitHub Yunhao-Feng/BraveGuard (public, MIT), HF Yunhao-Feng/BraveGuard, arXiv:2606.01166. Classified as Model (Guard Models / Agents). Added from issue #79."
+    },
+    {
+      "id": "hazardauditor",
+      "name": "HazardAuditor",
+      "category": "Guard Models",
+      "description": "~8B generative guard (based on Qwen3Guard-Gen-8B) that audits complete computer-use agent trajectories—request, reasoning, tool calls/args, and outcomes—and returns an evidence-grounded rationale plus a binary safe/unsafe verdict. Trained with SFT and GuardPO for execution-level agent safety auditing across heterogeneous agent frameworks.",
+      "descriptionZh": "约 8B 生成式护栏（基于 Qwen3Guard-Gen-8B），审计计算机使用智能体的完整轨迹（请求、推理、工具调用与结果），输出证据化理由与 safe/unsafe 判定。",
+      "year": 2026,
+      "publisher": "Yunhao Feng et al.",
+      "github": "https://github.com/Yunhao-Feng/HazardAuditor",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Yunhao-Feng/HazardAuditor"
+        },
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/Yunhao-Feng/HazardAuditor"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.15134"
+        },
+        {
+          "label": "Project",
+          "url": "https://yunhao-feng.github.io/HazardAuditor/"
+        }
+      ],
+      "sources": [
+        "https://github.com/Yunhao-Feng/HazardAuditor",
+        "https://huggingface.co/Yunhao-Feng/HazardAuditor",
+        "https://arxiv.org/abs/2609.15134",
+        "https://github.com/OpenTAI/opentai.github.io/issues/80"
+      ],
+      "verificationNote": "Primary sources checked 2026-09-20: GitHub/HF Yunhao-Feng/HazardAuditor, arXiv:2609.15134. Distinct from HazardArena benchmark (#84). Added from issue #80."
+    },
+    {
+      "id": "sentguard",
+      "name": "SentGuard",
+      "category": "Guard Models",
+      "description": "Sentence-level streaming guardrail for LLMs that buffers streamed tokens into sentence chunks, verifies each chunk in parallel with continued decoding, and releases only verified text. Trained with a coarse-to-fine objective on StreamSafe (per-sentence annotations over 8 harm categories). Based on Qwen3-4B-Instruct-2507; Apache-2.0 safetensors release on HF.",
+      "descriptionZh": "面向 LLM 的句级流式护栏：将流式 token 缓冲为句子块、并行校验并只释放已验证文本；在 StreamSafe 上以粗到细目标训练，基于 Qwen3-4B-Instruct-2507。",
+      "year": 2026,
+      "publisher": "Jiaqi Yu, Xin Wang, Yixu Wang, Jie Li, Yan Teng, Xingjun Ma, Yingchun Wang (Fudan University & Shanghai AI Laboratory)",
+      "links": [
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/Solitude0630/SentGuard"
+        },
+        {
+          "label": "Dataset",
+          "url": "https://huggingface.co/datasets/Solitude0630/StreamSafe"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.02041"
+        }
+      ],
+      "sources": [
+        "https://huggingface.co/Solitude0630/SentGuard",
+        "https://huggingface.co/datasets/Solitude0630/StreamSafe",
+        "https://arxiv.org/abs/2606.02041",
+        "https://github.com/OpenTAI/opentai.github.io/issues/81"
+      ],
+      "verificationNote": "Primary sources checked 2026-09-20: arXiv:2606.02041; HF Solitude0630/SentGuard (no public GitHub located). Added from issue #81 with HF as primary artifact."
+    },
+    {
+      "id": "ml-guard",
+      "name": "ML-Guard",
+      "category": "Guard Models",
+      "description": "Diffusion LLM (dLLM)-based multilingual safety guardrail with policy-conditioned compliance assessment. Two variants: ML-Guard-1.5B for fast safe/unsafe classification (latency-sensitive), and ML-Guard-7B for customized policy compliance checking with violated rules and rationales. Built on and evaluated with ML-Bench (14 languages).",
+      "descriptionZh": "基于扩散 LLM（dLLM）的多语种安全护栏，支持政策条件化合规评估：1.5B 做快速 safe/unsafe 判定，7B 做带违规规则与解释的定制化合规检查；配套 ML-Bench（14 种语言）。",
+      "year": 2026,
+      "publisher": "Yunhan Zhao, Zhaorun Chen, Xingjun Ma, Yu-Gang Jiang, Bo Li (UIUC, Fudan, UChicago)",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.00689"
+        }
+      ],
+      "sources": [
+        "https://arxiv.org/abs/2605.00689",
+        "https://github.com/OpenTAI/opentai.github.io/issues/83"
+      ],
+      "verificationNote": "Primary source checked 2026-09-20: arXiv:2605.00689. No public GitHub/HF weights located; arXiv-primary listing. Companion benchmark ML-Bench (#82). Unrelated to gersteinlab/ML-Bench. Added from issue #83."
     }
   ],
   "frameworks": [
@@ -613,8 +789,14 @@
       "github": "https://github.com/AI45Lab/OpenRT",
       "starsUpdated": "2026-08-20",
       "links": [
-        {"label": "GitHub", "url": "https://github.com/AI45Lab/OpenRT"},
-        {"label": "Paper", "url": "https://arxiv.org/abs/2601.01592"}
+        {
+          "label": "GitHub",
+          "url": "https://github.com/AI45Lab/OpenRT"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.01592"
+        }
       ],
       "sources": [
         "https://github.com/AI45Lab/OpenRT",
@@ -634,8 +816,14 @@
       "github": "https://github.com/AI45Lab/OpenART",
       "starsUpdated": "2026-08-20",
       "links": [
-        {"label": "GitHub", "url": "https://github.com/AI45Lab/OpenART"},
-        {"label": "Paper", "url": "https://arxiv.org/abs/2608.00677"}
+        {
+          "label": "GitHub",
+          "url": "https://github.com/AI45Lab/OpenART"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.00677"
+        }
       ],
       "sources": [
         "https://github.com/AI45Lab/OpenART",
@@ -654,9 +842,18 @@
       "github": "https://github.com/promptfoo/promptfoo",
       "starsUpdated": "2026-08-20",
       "links": [
-        {"label": "Website", "url": "https://promptfoo.dev"},
-        {"label": "GitHub", "url": "https://github.com/promptfoo/promptfoo"},
-        {"label": "Red-team docs", "url": "https://www.promptfoo.dev/docs/red-team/quickstart/"}
+        {
+          "label": "Website",
+          "url": "https://promptfoo.dev"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/promptfoo/promptfoo"
+        },
+        {
+          "label": "Red-team docs",
+          "url": "https://www.promptfoo.dev/docs/red-team/quickstart/"
+        }
       ],
       "sources": [
         "https://promptfoo.dev",
@@ -677,8 +874,14 @@
       "github": "https://github.com/PKU-Alignment/safe-rlhf",
       "starsUpdated": "2026-08-20",
       "links": [
-        {"label": "GitHub", "url": "https://github.com/PKU-Alignment/safe-rlhf"},
-        {"label": "Paper", "url": "https://arxiv.org/abs/2310.12773"}
+        {
+          "label": "GitHub",
+          "url": "https://github.com/PKU-Alignment/safe-rlhf"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2310.12773"
+        }
       ],
       "sources": [
         "https://github.com/PKU-Alignment/safe-rlhf",
@@ -697,8 +900,14 @@
       "publisher": "Gray Swan AI",
       "publicResults": true,
       "links": [
-        {"label": "Arena", "url": "https://www.grayswan.ai/solutions/for-model-builders/arena"},
-        {"label": "Arena", "url": "https://www.grayswan.ai/solutions/for-model-builders/arena"}
+        {
+          "label": "Arena",
+          "url": "https://www.grayswan.ai/solutions/for-model-builders/arena"
+        },
+        {
+          "label": "Arena",
+          "url": "https://www.grayswan.ai/solutions/for-model-builders/arena"
+        }
       ],
       "sources": [
         "https://www.grayswan.ai/solutions/for-model-builders/arena",
@@ -719,10 +928,22 @@
       "starsUpdated": "2026-08-20",
       "publicResults": true,
       "links": [
-        {"label": "Platform", "url": "https://decodingtrust-agent.com/"},
-        {"label": "Results", "url": "https://decodingtrust-agent.com/benchmark"},
-        {"label": "GitHub", "url": "https://github.com/AI-secure/DecodingTrust-Agent"},
-        {"label": "Paper", "url": "https://arxiv.org/abs/2605.04808"}
+        {
+          "label": "Platform",
+          "url": "https://decodingtrust-agent.com/"
+        },
+        {
+          "label": "Results",
+          "url": "https://decodingtrust-agent.com/benchmark"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/AI-secure/DecodingTrust-Agent"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.04808"
+        }
       ],
       "sources": [
         "https://decodingtrust-agent.com/",
@@ -744,8 +965,14 @@
       "github": "https://github.com/AI45Lab/OpenART",
       "starsUpdated": "2026-08-20",
       "links": [
-        {"label": "GitHub", "url": "https://github.com/AI45Lab/OpenART"},
-        {"label": "Paper", "url": "https://arxiv.org/abs/2608.00677"}
+        {
+          "label": "GitHub",
+          "url": "https://github.com/AI45Lab/OpenART"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.00677"
+        }
       ],
       "sources": [
         "https://github.com/AI45Lab/OpenART",
@@ -772,9 +999,18 @@
       "logo": "/company-logos/xsafeai-icon.svg",
       "logoSource": "https://www.xsafeai.com/",
       "links": [
-        {"label": "Website", "url": "https://www.xsafeai.com/"},
-        {"label": "XSafeClaw", "url": "https://github.com/XSafeAI/XSafeClaw"},
-        {"label": "GitHub", "url": "https://github.com/XSafeAI"}
+        {
+          "label": "Website",
+          "url": "https://www.xsafeai.com/"
+        },
+        {
+          "label": "XSafeClaw",
+          "url": "https://github.com/XSafeAI/XSafeClaw"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/XSafeAI"
+        }
       ],
       "sources": [
         "https://www.xsafeai.com/",
@@ -800,8 +1036,14 @@
       "logo": "/company-logos/gray-swan.png",
       "logoSource": "https://cdn.prod.website-files.com/6614467b00e631b0f073e2b7/68715172841ef6679c94f2bb_GS-256.png",
       "links": [
-        {"label": "Website", "url": "https://www.grayswan.ai/"},
-        {"label": "About", "url": "https://www.grayswan.ai/about"}
+        {
+          "label": "Website",
+          "url": "https://www.grayswan.ai/"
+        },
+        {
+          "label": "About",
+          "url": "https://www.grayswan.ai/about"
+        }
       ],
       "sources": [
         "https://www.grayswan.ai/",
@@ -828,9 +1070,18 @@
       "logo": "/company-logos/virtue-ai.png",
       "logoSource": "https://cdn.prod.website-files.com/6a0f5bcfe2524327f8d2bb77/6a1842c7ae5277e322d7f449_virtue-favicon.png",
       "links": [
-        {"label": "Website", "url": "https://www.virtueai.com/"},
-        {"label": "Platform", "url": "https://www.virtueai.com/platform"},
-        {"label": "Team", "url": "https://www.virtueai.com/virtue-ai-team"}
+        {
+          "label": "Website",
+          "url": "https://www.virtueai.com/"
+        },
+        {
+          "label": "Platform",
+          "url": "https://www.virtueai.com/platform"
+        },
+        {
+          "label": "Team",
+          "url": "https://www.virtueai.com/virtue-ai-team"
+        }
       ],
       "sources": [
         "https://www.virtueai.com/",
@@ -862,9 +1113,18 @@
       "logo": "/company-logos/promptfoo.svg",
       "logoSource": "https://www.promptfoo.dev/img/logo-panda.svg",
       "links": [
-        {"label": "Website", "url": "https://promptfoo.dev"},
-        {"label": "GitHub", "url": "https://github.com/promptfoo/promptfoo"},
-        {"label": "OpenAI announcement", "url": "https://openai.com/index/openai-to-acquire-promptfoo/"}
+        {
+          "label": "Website",
+          "url": "https://promptfoo.dev"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/promptfoo/promptfoo"
+        },
+        {
+          "label": "OpenAI announcement",
+          "url": "https://openai.com/index/openai-to-acquire-promptfoo/"
+        }
       ],
       "sources": [
         "https://promptfoo.dev",
@@ -894,8 +1154,14 @@
       "logo": "/company-logos/protect-ai.png",
       "logoSource": "https://avatars.githubusercontent.com/u/102992336?v=4",
       "links": [
-        {"label": "GitHub", "url": "https://github.com/protectai"},
-        {"label": "Acquisition", "url": "https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-announces-intent-to-acquire-protect-ai--a-game-changing-security-for-ai-company"}
+        {
+          "label": "GitHub",
+          "url": "https://github.com/protectai"
+        },
+        {
+          "label": "Acquisition",
+          "url": "https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-announces-intent-to-acquire-protect-ai--a-game-changing-security-for-ai-company"
+        }
       ],
       "sources": [
         "https://github.com/protectai",
@@ -919,8 +1185,14 @@
       "logo": "/company-logos/hiddenlayer.avif",
       "logoSource": "https://cdn.prod.website-files.com/694066252c49b2800c70cf57/694066252c49b2800c70cf9e_logo.avif",
       "links": [
-        {"label": "Website", "url": "https://www.hiddenlayer.com/"},
-        {"label": "About", "url": "https://www.hiddenlayer.com/about-us"}
+        {
+          "label": "Website",
+          "url": "https://www.hiddenlayer.com/"
+        },
+        {
+          "label": "About",
+          "url": "https://www.hiddenlayer.com/about-us"
+        }
       ],
       "sources": [
         "https://www.hiddenlayer.com/",
@@ -946,8 +1218,14 @@
       "logo": "/company-logos/lakera.png",
       "logoSource": "https://cdn.prod.website-files.com/65080baa3f9a607985451de3/6526f98447db0b4b7b22493e_Lakera-Symbol-Black-256.png",
       "links": [
-        {"label": "Website", "url": "https://www.lakera.ai/"},
-        {"label": "Gandalf", "url": "https://gandalf.lakera.ai/"}
+        {
+          "label": "Website",
+          "url": "https://www.lakera.ai/"
+        },
+        {
+          "label": "Gandalf",
+          "url": "https://gandalf.lakera.ai/"
+        }
       ],
       "sources": [
         "https://www.lakera.ai/",
@@ -975,8 +1253,14 @@
       "logo": "/company-logos/mindgard.png",
       "logoSource": "https://cdn.prod.website-files.com/673f0724df990f6c96bf1867/68e4168fcbc9d725c0085da6_Favicon1.png",
       "links": [
-        {"label": "Website", "url": "https://mindgard.ai/"},
-        {"label": "About", "url": "https://mindgard.ai/about"}
+        {
+          "label": "Website",
+          "url": "https://mindgard.ai/"
+        },
+        {
+          "label": "About",
+          "url": "https://mindgard.ai/about"
+        }
       ],
       "sources": [
         "https://mindgard.ai/",
@@ -1002,8 +1286,14 @@
       "logo": "/company-logos/fangcun-leap.png",
       "logoSource": "https://fangcunleap.com/images/fangcun_ai_horizontal_logo_transparent.png",
       "links": [
-        {"label": "Website", "url": "https://fangcunleap.com/"},
-        {"label": "About", "url": "https://fangcunleap.com/about"}
+        {
+          "label": "Website",
+          "url": "https://fangcunleap.com/"
+        },
+        {
+          "label": "About",
+          "url": "https://fangcunleap.com/about"
+        }
       ],
       "sources": [
         "https://fangcunleap.com/",
@@ -1026,8 +1316,14 @@
       "logo": "/company-logos/brane-matrix.svg",
       "logoSource": "https://www.branematrix.com/assets/brane-logo.svg",
       "links": [
-        {"label": "Website", "url": "https://www.branematrix.com/"},
-        {"label": "Products", "url": "https://www.branematrix.com/index.html"}
+        {
+          "label": "Website",
+          "url": "https://www.branematrix.com/"
+        },
+        {
+          "label": "Products",
+          "url": "https://www.branematrix.com/index.html"
+        }
       ],
       "sources": [
         "https://www.branematrix.com/",
@@ -1054,8 +1350,14 @@
       "logo": "/company-logos/realai-icon.png",
       "logoSource": "https://www.realai.ai/favicon.ico",
       "links": [
-        {"label": "Website", "url": "https://www.realai.ai/"},
-        {"label": "About", "url": "https://www.realai.ai/about?scrollId=t19"}
+        {
+          "label": "Website",
+          "url": "https://www.realai.ai/"
+        },
+        {
+          "label": "About",
+          "url": "https://www.realai.ai/about?scrollId=t19"
+        }
       ],
       "sources": [
         "https://www.realai.ai/",
@@ -1080,8 +1382,14 @@
       "logo": "/company-logos/harmonic-security.svg",
       "logoSource": "https://www.harmonic.security/brand",
       "links": [
-        {"label": "Website", "url": "https://www.harmonic.security/"},
-        {"label": "About", "url": "https://www.harmonic.security/about"}
+        {
+          "label": "Website",
+          "url": "https://www.harmonic.security/"
+        },
+        {
+          "label": "About",
+          "url": "https://www.harmonic.security/about"
+        }
       ],
       "sources": [
         "https://www.harmonic.security/about",
@@ -1106,8 +1414,14 @@
       "logo": "/company-logos/giskard-icon.png",
       "logoSource": "https://cdn.prod.website-files.com/601d6f7d0b9c984f07bf10bc/68b811d52f394bb5f9568a00_favicon-32x32.png",
       "links": [
-        {"label": "Website", "url": "https://www.giskard.ai/"},
-        {"label": "Documentation", "url": "https://docs.giskard.ai/"}
+        {
+          "label": "Website",
+          "url": "https://www.giskard.ai/"
+        },
+        {
+          "label": "Documentation",
+          "url": "https://docs.giskard.ai/"
+        }
       ],
       "sources": [
         "https://www.giskard.ai/about",
@@ -1131,7 +1445,10 @@
       "logo": "/company-logos/enkrypt-ai.svg",
       "logoSource": "https://www.enkryptai.com/",
       "links": [
-        {"label": "Website", "url": "https://www.enkryptai.com/"}
+        {
+          "label": "Website",
+          "url": "https://www.enkryptai.com/"
+        }
       ],
       "sources": [
         "https://www.enkryptai.com/",
@@ -1155,8 +1472,14 @@
       "logo": "/company-logos/patronus-ai-icon.png",
       "logoSource": "https://cdn.prod.website-files.com/64e655d42d3be60f582d0472/64f619d2bf9e3d5ed811e63c_patronus-webclip.png",
       "links": [
-        {"label": "Website", "url": "https://www.patronus.ai/"},
-        {"label": "Company", "url": "https://www.patronus.ai/company"}
+        {
+          "label": "Website",
+          "url": "https://www.patronus.ai/"
+        },
+        {
+          "label": "Company",
+          "url": "https://www.patronus.ai/company"
+        }
       ],
       "sources": [
         "https://www.patronus.ai/company",
@@ -1180,8 +1503,14 @@
       "logo": "/company-logos/noma-security.png",
       "logoSource": "https://noma.security/",
       "links": [
-        {"label": "Website", "url": "https://noma.security/"},
-        {"label": "About", "url": "https://noma.security/about/"}
+        {
+          "label": "Website",
+          "url": "https://noma.security/"
+        },
+        {
+          "label": "About",
+          "url": "https://noma.security/about/"
+        }
       ],
       "sources": [
         "https://noma.security/about/",
@@ -1206,8 +1535,14 @@
       "logo": "/company-logos/lasso-security.png",
       "logoSource": "https://www.lasso.security/",
       "links": [
-        {"label": "Website", "url": "https://www.lasso.security/"},
-        {"label": "Team", "url": "https://www.lasso.security/the-team"}
+        {
+          "label": "Website",
+          "url": "https://www.lasso.security/"
+        },
+        {
+          "label": "Team",
+          "url": "https://www.lasso.security/the-team"
+        }
       ],
       "sources": [
         "https://www.lasso.security/the-team",
@@ -1233,8 +1568,14 @@
       "logo": "/company-logos/cranium-icon.png",
       "logoSource": "https://cranium.ai/wp-content/themes/cranium/assets/img/favicon.png",
       "links": [
-        {"label": "Website", "url": "https://cranium.ai/"},
-        {"label": "Company", "url": "https://cranium.ai/company/"}
+        {
+          "label": "Website",
+          "url": "https://cranium.ai/"
+        },
+        {
+          "label": "Company",
+          "url": "https://cranium.ai/company/"
+        }
       ],
       "sources": [
         "https://cranium.ai/company/",
@@ -1258,8 +1599,14 @@
       "logo": "/company-logos/witness-ai.png",
       "logoSource": "https://witness.ai/",
       "links": [
-        {"label": "Website", "url": "https://witness.ai/"},
-        {"label": "Product", "url": "https://witness.ai/product/"}
+        {
+          "label": "Website",
+          "url": "https://witness.ai/"
+        },
+        {
+          "label": "Product",
+          "url": "https://witness.ai/product/"
+        }
       ],
       "sources": [
         "https://witness.ai/about-us/",
@@ -1283,8 +1630,14 @@
       "logo": "/company-logos/deepkeep-icon.png",
       "logoSource": "https://cdn.prod.website-files.com/653f8e185245e8a3bb651914/69898e3fd4293ab6b29fb02e_d-256x256.png",
       "links": [
-        {"label": "Website", "url": "https://www.deepkeep.ai/"},
-        {"label": "About", "url": "https://www.deepkeep.ai/about"}
+        {
+          "label": "Website",
+          "url": "https://www.deepkeep.ai/"
+        },
+        {
+          "label": "About",
+          "url": "https://www.deepkeep.ai/about"
+        }
       ],
       "sources": [
         "https://www.deepkeep.ai/",

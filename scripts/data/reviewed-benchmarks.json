@@ -457,6 +457,30 @@
       "description": "Code-completion jailbreak / safety-generalization evaluation that reformulates harmful intents as code to probe LLM safety gaps.",
       "descriptionZh": "将有害意图改写为代码补全的越狱/安全泛化评测。",
       "verificationNote": "GitHub AI45Lab/CodeAttack and arXiv:2403.07865 (ACL 2024) resolve. Safety evaluation via code-domain attacks. Not on Resources or Issues. Added from issue #72."
+    },
+    {
+      "name": "ML-Bench",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2605.00689",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026 (preprint)",
+      "description": "Policy-grounded multilingual safety benchmark covering 14 languages. Risk categories and fine-grained rules are derived from jurisdiction-specific AI regulations and used to guide generation of multilingual safety data (~56K instances), enabling culturally and legally aligned evaluation beyond taxonomy/machine-translation baselines.",
+      "descriptionZh": "政策落地的多语种安全评测基准，覆盖 14 种语言；风险类别与细粒度规则来自区域 AI 法规，用于指导生成约 56K 条多语安全数据。",
+      "verificationNote": "arXiv:2605.00689 checked 2026-09-20. No public GitHub/HF dataset located for this ML-Bench (gersteinlab/ML-Bench is a different project). Benchmark only; companion model ML-Guard (#83). Added from issue #82.",
+      "githubUrl": null
+    },
+    {
+      "name": "HazardArena",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2604.12447",
+      "githubUrl": "https://github.com/HazardArena-Team/HazardArena",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026 (preprint)",
+      "description": "Semantic-safety benchmark for Vision-Language-Action (VLA) models using motor-matched safe/unsafe twin scenarios (shared objects, layouts, and action requirements; differ only in semantic risk context). Instruments rollouts with ordered ATTEMPT / COMMIT / SUCCESS events. Public release covers an expanded risk inventory (~51 unsafe scenarios), 7 real-world risk categories, 2000+ assets, MuJoCo tooling, and policy adapters.",
+      "descriptionZh": "面向视觉-语言-动作（VLA）模型的语义安全基准，采用动作匹配的 safe/unsafe 孪生场景；用 ATTEMPT/COMMIT/SUCCESS 事件暴露终点成功率掩盖的风险。公开约 51 个不安全场景、7 类真实世界风险与 2000+ 资产。",
+      "verificationNote": "Primary sources checked 2026-09-20: arXiv:2604.12447, GitHub HazardArena-Team/HazardArena, HF HazardArena-anon/hazardarena-assets. Distinct from Model HazardAuditor (#80). Added from issue #84."
     }
   ]
 }
