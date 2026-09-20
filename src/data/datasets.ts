@@ -1924,6 +1924,44 @@ export const datasetConfig: SubpageConfig = {
       domain: "LLMs",
     },
     {
+      name: "WildJailbreak",
+      note: "Description not recorded yet.",
+      type: "LLMs",
+      venue: "arXiv 2024",
+      year: "2024",
+      tags: [
+        "training data",
+      ],
+      stats: [],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/allenai/wildjailbreak",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2406.18510",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/allenai/wildjailbreak",
+      domains: [
+        "LLMs",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2406.18510",
+          domain: "LLMs",
+          evidence: "Hugging Face dataset card states WildJailbreak is an open-source synthetic safety-training dataset with 262K vanilla and adversarial prompt-response pairs, released to mitigate exaggerated safety behaviors for safety training; arXiv:2406.18510 describes the resource as training data for improving safety against jailbreaks.",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2406.18510",
+          },
+        },
+      ],
+      domain: "LLMs",
+    },
+    {
       name: "XGuard-Train",
       note: "30,695 attack–refusal conversations released for robust multi-turn safety fine-tuning.",
       type: "Agents",

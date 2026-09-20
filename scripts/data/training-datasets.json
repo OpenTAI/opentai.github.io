@@ -1918,6 +1918,19 @@
       "trainingEvidence": "For each dataset, we train three state-of-the-art models on the training set, and achieved test set accuracy scores similar to the original implementation. We then generate adversarial examples that are semantically similar to the test set to attack the trained models and make them generate different results.",
       "linkVerificationEvidenceUrl": "https://arxiv.org/abs/1509.01626",
       "linkVerificationReason": "This is Zhang et al.'s binary Yelp Review Polarity benchmark, not Yelp's current Open Dataset. The first-author repository/paper establish the exact 560K/38K split."
+    },
+    {
+      "name": "WildJailbreak",
+      "domain": "LLMs",
+      "year": "2024",
+      "venue": "arXiv 2024",
+      "paperUrl": "https://arxiv.org/abs/2406.18510",
+      "githubUrl": "https://huggingface.co/datasets/allenai/wildjailbreak",
+      "dataUrl": "https://huggingface.co/datasets/allenai/wildjailbreak",
+      "sourceUrl": "https://huggingface.co/datasets/allenai/wildjailbreak",
+      "trainingEvidence": "Hugging Face dataset card states WildJailbreak is an open-source synthetic safety-training dataset with 262K vanilla and adversarial prompt-response pairs, released to mitigate exaggerated safety behaviors for safety training; arXiv:2406.18510 describes the resource as training data for improving safety against jailbreaks.",
+      "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/allenai/wildjailbreak",
+      "linkVerificationReason": "AllenAI publishes the named WildJailbreak dataset on Hugging Face with documentation describing safety-training use and downloadable splits."
     }
   ]
 }

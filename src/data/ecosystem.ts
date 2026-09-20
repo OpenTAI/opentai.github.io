@@ -288,6 +288,37 @@ export const ecosystemModels: EcosystemRecord[] = [
     ],
     verificationNote: "The official PKU-Alignment model card and repository identify Beaver-7B-v3.0 as a Safe-RLHF model release.",
   },
+  {
+    id: "llama-guard-4",
+    name: "Llama Guard 4",
+    category: "Guard Models",
+    description: "A 12B natively multimodal safety classifier pruned from Llama 4 Scout and fine-tuned for prompt/response content-safety classification across text and multi-image inputs.",
+    descriptionZh: "12B 原生多模态安全分类模型，从 Llama 4 Scout 剪枝并微调，用于文本与多图输入的提示词/回复内容安全分类。",
+    year: 2025,
+    publisher: "Meta",
+    github: "https://github.com/meta-llama/llama-models",
+    links: [
+      {
+        label: "Hugging Face",
+        url: "https://huggingface.co/meta-llama/Llama-Guard-4-12B",
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/meta-llama/llama-models",
+      },
+      {
+        label: "Blog",
+        url: "https://ai.meta.com/blog/llama-4/",
+      },
+    ],
+    sources: [
+      "https://huggingface.co/meta-llama/Llama-Guard-4-12B",
+      "https://github.com/meta-llama/llama-models",
+      "https://ai.meta.com/blog/llama-4/",
+      "https://github.com/OpenTAI/opentai.github.io/issues/30",
+    ],
+    verificationNote: "Official Hugging Face model card for meta-llama/Llama-Guard-4-12B documents the multimodal safety-classifier role; HF blog corroborates the release. Added from issue #30.",
+  },
 ];
 
 export const ecosystemFrameworks: EcosystemRecord[] = [
