@@ -4056,6 +4056,57 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  "ml-bench": {
+    slug: "ml-bench",
+    name: "ML-Bench",
+    category: "LLMs",
+    description: "Policy-grounded multilingual safety benchmark covering 14 languages. Risk categories and fine-grained rules are derived from jurisdiction-specific AI regulations and used to guide generation of multilingual safety data (~56K instances), enabling culturally and legally aligned evaluation beyond taxonomy/machine-translation baselines.",
+    venue: "arXiv 2026 (preprint)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2605.00689",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2605.00689",
+    paperUrl: "https://arxiv.org/abs/2605.00689",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  hazardarena: {
+    slug: "hazardarena",
+    name: "HazardArena",
+    category: "Agents",
+    description: "Semantic-safety benchmark for Vision-Language-Action (VLA) models using motor-matched safe/unsafe twin scenarios (shared objects, layouts, and action requirements; differ only in semantic risk context). Instruments rollouts with ordered ATTEMPT / COMMIT / SUCCESS events. Public release covers an expanded risk inventory (~51 unsafe scenarios), 7 real-world risk categories, 2000+ assets, MuJoCo tooling, and policy adapters.",
+    venue: "arXiv 2026 (preprint)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2604.12447",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/HazardArena-Team/HazardArena",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2604.12447",
+    paperUrl: "https://arxiv.org/abs/2604.12447",
+    repo: "HazardArena-Team/HazardArena",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -8709,6 +8760,44 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         slug: "codeattack",
         domain: "LLMs",
         property: "Jailbreak",
+      },
+      {
+        name: "ML-Bench",
+        note: "Policy-grounded multilingual safety benchmark covering 14 languages. Risk categories and fine-grained rules are derived from jurisdiction-specific AI regulations and used to guide generation of multilingual safety data (~56K instances), enabling culturally and legally aligned evaluation beyond taxonomy/machine-translation baselines.",
+        type: "LLMs",
+        venue: "arXiv 2026 (preprint)",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2605.00689",
+          },
+        ],
+        slug: "ml-bench",
+        domain: "LLMs",
+      },
+      {
+        name: "HazardArena",
+        note: "Semantic-safety benchmark for Vision-Language-Action (VLA) models using motor-matched safe/unsafe twin scenarios (shared objects, layouts, and action requirements; differ only in semantic risk context). Instruments rollouts with ordered ATTEMPT / COMMIT / SUCCESS events. Public release covers an expanded risk inventory (~51 unsafe scenarios), 7 real-world risk categories, 2000+ assets, MuJoCo tooling, and policy adapters.",
+        type: "Agents",
+        venue: "arXiv 2026 (preprint)",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2604.12447",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/HazardArena-Team/HazardArena",
+          },
+        ],
+        slug: "hazardarena",
+        domain: "Agents",
       },
     ],
   },

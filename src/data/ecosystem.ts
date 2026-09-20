@@ -696,6 +696,122 @@ export const ecosystemModels: EcosystemRecord[] = [
     ],
     verificationNote: "GitHub PKU-Alignment/SafeVLA, arXiv:2503.03480 (NeurIPS 2025 Spotlight), HF SafetyEmbodiedAI/safety-model resolve. Embodied safety-aligned VLA model release. Not on Models page or Model Issues. Added from issue #76.",
   },
+  {
+    id: "braveguard",
+    name: "BraveGuard",
+    category: "Guard Models",
+    description: "Family of trajectory-level safety guard models for computer-use agents. Judges full multi-step agent trajectories (actions, tool calls, intermediate reasoning, side effects) rather than isolated prompts/responses. Public checkpoints include Qwen3-Guard 4B/8B and Llama-Guard-8B variants under the BraveGuard HF repo; MIT-licensed training/eval framework on GitHub.",
+    descriptionZh: "面向计算机使用智能体的轨迹级安全护栏模型族，对完整多步轨迹（动作、工具调用、中间推理与副作用）而非单条提示/回复做安全判定；公开权重含 Qwen3-Guard 与 Llama-Guard 变体。",
+    year: 2026,
+    publisher: "Yunhao Feng et al.",
+    github: "https://github.com/Yunhao-Feng/BraveGuard",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Yunhao-Feng/BraveGuard",
+      },
+      {
+        label: "Hugging Face",
+        url: "https://huggingface.co/Yunhao-Feng/BraveGuard",
+      },
+      {
+        label: "Paper",
+        url: "https://arxiv.org/abs/2606.01166",
+      },
+    ],
+    sources: [
+      "https://github.com/Yunhao-Feng/BraveGuard",
+      "https://huggingface.co/Yunhao-Feng/BraveGuard",
+      "https://arxiv.org/abs/2606.01166",
+      "https://github.com/OpenTAI/opentai.github.io/issues/79",
+    ],
+    verificationNote: "Primary sources checked 2026-09-20: GitHub Yunhao-Feng/BraveGuard (public, MIT), HF Yunhao-Feng/BraveGuard, arXiv:2606.01166. Classified as Model (Guard Models / Agents). Added from issue #79.",
+  },
+  {
+    id: "hazardauditor",
+    name: "HazardAuditor",
+    category: "Guard Models",
+    description: "~8B generative guard (based on Qwen3Guard-Gen-8B) that audits complete computer-use agent trajectories—request, reasoning, tool calls/args, and outcomes—and returns an evidence-grounded rationale plus a binary safe/unsafe verdict. Trained with SFT and GuardPO for execution-level agent safety auditing across heterogeneous agent frameworks.",
+    descriptionZh: "约 8B 生成式护栏（基于 Qwen3Guard-Gen-8B），审计计算机使用智能体的完整轨迹（请求、推理、工具调用与结果），输出证据化理由与 safe/unsafe 判定。",
+    year: 2026,
+    publisher: "Yunhao Feng et al.",
+    github: "https://github.com/Yunhao-Feng/HazardAuditor",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Yunhao-Feng/HazardAuditor",
+      },
+      {
+        label: "Hugging Face",
+        url: "https://huggingface.co/Yunhao-Feng/HazardAuditor",
+      },
+      {
+        label: "Paper",
+        url: "https://arxiv.org/abs/2609.15134",
+      },
+      {
+        label: "Project",
+        url: "https://yunhao-feng.github.io/HazardAuditor/",
+      },
+    ],
+    sources: [
+      "https://github.com/Yunhao-Feng/HazardAuditor",
+      "https://huggingface.co/Yunhao-Feng/HazardAuditor",
+      "https://arxiv.org/abs/2609.15134",
+      "https://github.com/OpenTAI/opentai.github.io/issues/80",
+    ],
+    verificationNote: "Primary sources checked 2026-09-20: GitHub/HF Yunhao-Feng/HazardAuditor, arXiv:2609.15134. Distinct from HazardArena benchmark (#84). Added from issue #80.",
+  },
+  {
+    id: "sentguard",
+    name: "SentGuard",
+    category: "Guard Models",
+    description: "Sentence-level streaming guardrail for LLMs that buffers streamed tokens into sentence chunks, verifies each chunk in parallel with continued decoding, and releases only verified text. Trained with a coarse-to-fine objective on StreamSafe (per-sentence annotations over 8 harm categories). Based on Qwen3-4B-Instruct-2507; Apache-2.0 safetensors release on HF.",
+    descriptionZh: "面向 LLM 的句级流式护栏：将流式 token 缓冲为句子块、并行校验并只释放已验证文本；在 StreamSafe 上以粗到细目标训练，基于 Qwen3-4B-Instruct-2507。",
+    year: 2026,
+    publisher: "Jiaqi Yu, Xin Wang, Yixu Wang, Jie Li, Yan Teng, Xingjun Ma, Yingchun Wang (Fudan University & Shanghai AI Laboratory)",
+    links: [
+      {
+        label: "Hugging Face",
+        url: "https://huggingface.co/Solitude0630/SentGuard",
+      },
+      {
+        label: "Dataset",
+        url: "https://huggingface.co/datasets/Solitude0630/StreamSafe",
+      },
+      {
+        label: "Paper",
+        url: "https://arxiv.org/abs/2606.02041",
+      },
+    ],
+    sources: [
+      "https://huggingface.co/Solitude0630/SentGuard",
+      "https://huggingface.co/datasets/Solitude0630/StreamSafe",
+      "https://arxiv.org/abs/2606.02041",
+      "https://github.com/OpenTAI/opentai.github.io/issues/81",
+    ],
+    verificationNote: "Primary sources checked 2026-09-20: arXiv:2606.02041; HF Solitude0630/SentGuard (no public GitHub located). Added from issue #81 with HF as primary artifact.",
+  },
+  {
+    id: "ml-guard",
+    name: "ML-Guard",
+    category: "Guard Models",
+    description: "Diffusion LLM (dLLM)-based multilingual safety guardrail with policy-conditioned compliance assessment. Two variants: ML-Guard-1.5B for fast safe/unsafe classification (latency-sensitive), and ML-Guard-7B for customized policy compliance checking with violated rules and rationales. Built on and evaluated with ML-Bench (14 languages).",
+    descriptionZh: "基于扩散 LLM（dLLM）的多语种安全护栏，支持政策条件化合规评估：1.5B 做快速 safe/unsafe 判定，7B 做带违规规则与解释的定制化合规检查；配套 ML-Bench（14 种语言）。",
+    year: 2026,
+    publisher: "Yunhan Zhao, Zhaorun Chen, Xingjun Ma, Yu-Gang Jiang, Bo Li (UIUC, Fudan, UChicago)",
+    links: [
+      {
+        label: "Paper",
+        url: "https://arxiv.org/abs/2605.00689",
+      },
+    ],
+    sources: [
+      "https://arxiv.org/abs/2605.00689",
+      "https://github.com/OpenTAI/opentai.github.io/issues/83",
+    ],
+    verificationNote: "Primary source checked 2026-09-20: arXiv:2605.00689. No public GitHub/HF weights located; arXiv-primary listing. Companion benchmark ML-Bench (#82). Unrelated to gersteinlab/ML-Bench. Added from issue #83.",
+  },
 ];
 
 export const ecosystemFrameworks: EcosystemRecord[] = [
