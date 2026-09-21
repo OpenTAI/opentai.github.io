@@ -481,6 +481,114 @@
       "description": "Semantic-safety benchmark for Vision-Language-Action (VLA) models using motor-matched safe/unsafe twin scenarios (shared objects, layouts, and action requirements; differ only in semantic risk context). Instruments rollouts with ordered ATTEMPT / COMMIT / SUCCESS events. Public release covers an expanded risk inventory (~51 unsafe scenarios), 7 real-world risk categories, 2000+ assets, MuJoCo tooling, and policy adapters.",
       "descriptionZh": "面向视觉-语言-动作（VLA）模型的语义安全基准，采用动作匹配的 safe/unsafe 孪生场景；用 ATTEMPT/COMMIT/SUCCESS 事件暴露终点成功率掩盖的风险。公开约 51 个不安全场景、7 类真实世界风险与 2000+ 资产。",
       "verificationNote": "Primary sources checked 2026-09-20: arXiv:2604.12447, GitHub HazardArena-Team/HazardArena, HF HazardArena-anon/hazardarena-assets. Distinct from Model HazardAuditor (#80). Added from issue #84."
+    },
+    {
+      "name": "SPIKE-Bench",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2608.02684",
+      "githubUrl": "https://github.com/PKU-Alignment/SPIKE-Bench",
+      "linkLabel": "Paper",
+      "venue": "COLM 2026",
+      "description": "Function-aware biosecurity benchmark for LLMs: 631 curated toxin-design prompts across seven UniProt-derived functional categories, evaluated with the SPIKE funnel (compliance → biological plausibility → predicted toxicity) and reported via Functional Harmfulness Rate (FHR). Shows refusal rate is a poor proxy for functional biosecurity risk across 32 models. Prompts gated on HF under review; pipeline code public.",
+      "descriptionZh": "面向 LLM 的功能感知生物安全基准：631 条毒素设计提示，覆盖七个 UniProt 功能类别；经 SPIKE 漏斗（合规→生物合理性→预测毒性）评测并以功能有害率（FHR）报告。显示拒答率难以代表功能层面生物安全风险。",
+      "verificationNote": "Primary sources checked 2026-09-21: arXiv:2608.02684; GitHub PKU-Alignment/SPIKE-Bench; HF quanshu01/SPIKE-Bench (gated). Benchmark only; companion BioSafe-Guard (#87). Added from issue #86."
+    },
+    {
+      "name": "MM-DeceptionBench",
+      "year": "2025",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2512.00349",
+      "githubUrl": "https://github.com/PKU-Alignment/MM-DeceptionBench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2025 (preprint)",
+      "description": "First benchmark dedicated to evaluating strategic deceptive behaviors in multimodal LLMs. 1,013 cases with 1,096 images (>95% real-world) across six deception categories: sycophancy, sandbagging, bluffing, obfuscation, deliberate omission, and fabrication. Stress-tests visually grounded deception beyond text-only monitoring; companion “debate with images” multi-agent judge framework in the paper.",
+      "descriptionZh": "首个专评多模态 LLM 策略性欺骗行为的基准：1,013 个案例、1,096 张图像（>95% 真实世界），覆盖谄媚、装傻、虚张声势、混淆、故意省略与捏造六类欺骗；强调视觉 grounding 下的欺骗，而非纯文本监控。",
+      "verificationNote": "Primary sources checked 2026-09-21: arXiv:2512.00349; GitHub PKU-Alignment/MM-DeceptionBench. Benchmark only. Added from issue #88."
+    },
+    {
+      "name": "MIR-SafetyBench",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2601.14127",
+      "githubUrl": "https://github.com/thu-coai/MIR-SafetyBench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026 (preprint)",
+      "description": "Evaluates MLLM safety under multi-image relationship (MIR) attacks across 6 safety categories (hate speech, violence, self-harm, illegal activities, harassment, privacy) and 9 image-relationship types (analogy, causality, complementarity, decomposition, relevance, spatial embedding/juxtaposition, temporal continuity/jump). Public evaluation framework plus HF dataset release.",
+      "descriptionZh": "评测多图像关系（MIR）攻击下的 MLLM 安全：覆盖 6 类安全风险与 9 种图像关系类型；提供公开评测框架与 Hugging Face 数据集。",
+      "verificationNote": "Primary sources checked 2026-09-21: arXiv:2601.14127; GitHub thu-coai/MIR-SafetyBench; HF thu-coai/MIR-SafetyBench. Distinct from SafetyBench / MM-SafetyBench. Added from issue #89."
+    },
+    {
+      "name": "HarmfulSkillBench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2604.15415",
+      "githubUrl": "https://github.com/TrustAIRLab/HarmfulSkillBench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026 (preprint)",
+      "description": "Benchmark for whether LLMs detect and refuse harmful agent skills. Tier 1 covers always-prohibited behaviors; Tier 2 covers high-risk domains requiring human-in-the-loop referral and AI disclosure. Releases 200 skills + tasks + aggregated results (gated HF dataset) with download script, evaluation runner, and judge.",
+      "descriptionZh": "评测 LLM 能否识别并拒绝有害智能体技能：Tier 1 为始终禁止行为，Tier 2 为需人工介入与 AI 披露的高风险领域；发布 200 个技能与任务及评测工具（HF 数据集门控）。",
+      "verificationNote": "Primary sources checked 2026-09-21: arXiv:2604.15415; GitHub TrustAIRLab/HarmfulSkillBench; HF TrustAIRLab/HarmfulSkillBench (gated). Distinct from SkillSafetyBench (#54). Added from issue #90."
+    },
+    {
+      "name": "SurvivalBench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2603.05028",
+      "githubUrl": "https://github.com/thu-coai/Survive-at-All-Costs",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026 (preprint)",
+      "description": "1,000-instance benchmark evaluating LLM “SURVIVE-AT-ALL-COSTS” misbehaviors under survival pressure (e.g., threat of shutdown) across diverse domains, AI roles, and crisis scenarios. Released with data (`survivalbench/data/survivalbench.jsonl`) and evaluation scripts alongside a financial-agent case study in the same repository.",
+      "descriptionZh": "1,000 例基准，评测 LLM 在生存压力（如面临关停威胁）下的“不惜一切求生”不当行为，覆盖多领域、AI 角色与危机场景；数据与评测脚本随仓库公开。",
+      "verificationNote": "Primary sources checked 2026-09-21: arXiv:2603.05028; GitHub thu-coai/Survive-at-All-Costs (survivalbench/). Added from issue #91."
+    },
+    {
+      "name": "MMDT (MMDecodingTrust)",
+      "year": "2025",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2503.14827",
+      "githubUrl": "https://github.com/AI-secure/MMDT",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2025 (preprint)",
+      "description": "Unified multimodal DecodingTrust platform/benchmark for trustworthiness of multimodal foundation models across six perspectives: safety, hallucination, fairness/bias, privacy, adversarial robustness, and OOD generalization. Provides evaluation scenarios, red-teaming algorithms, HF T2I/I2T data releases, and a public leaderboard.",
+      "descriptionZh": "统一的多模态 DecodingTrust 平台/基准，从安全、幻觉、公平/偏见、隐私、对抗鲁棒性与 OOD 泛化六个视角评测多模态基础模型可信度；含评测场景、红队算法、HF T2I/I2T 数据与公开排行榜。",
+      "verificationNote": "Primary sources checked 2026-09-21: arXiv:2503.14827; GitHub AI-secure/MMDT; mmdecodingtrust.github.io; HF AI-Secure/MMDecodingTrust-T2I and I2T. Distinct from text DecodingTrust. Added from issue #92."
+    },
+    {
+      "name": "PolyGuard",
+      "year": "2025",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2506.19054",
+      "githubUrl": "https://github.com/AI-secure/PolyGuard",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2025 (preprint)",
+      "description": "Massive multi-domain safety policy-grounded guardrail benchmark built from 150+ authentic organizational safety policies across eight domains (social media, finance, law, education, HR, cybersecurity, code, regulation). 100k+ instances / ~136k HF rows spanning 400+ risk categories and 1,000+ rules, with safe/unsafe cases, multi-turn formats, detoxified benign over-refusal challenges, and attack-enhanced instances. Paper benchmarks 19 guardrail models.",
+      "descriptionZh": "大规模多领域、政策落地的护栏评测基准：源自 150+ 真实组织安全政策，覆盖八个领域；10 万+ 实例（HF 约 136k 行）、400+ 风险类别与 1000+ 规则，含安全/不安全、多轮、去毒良性过拒与攻击增强样例。",
+      "verificationNote": "Primary sources checked 2026-09-21: arXiv:2506.19054; GitHub AI-secure/PolyGuard; HF AI-Secure/PolyGuard. Benchmark only (no Dataset dual-list). Distinct from ToxicityPrompts/PolyGuard moderation models. Added from issue #93."
+    },
+    {
+      "name": "AgentDrift",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2609.06972",
+      "githubUrl": "https://github.com/Asif-0209/AgentDrift",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026 (preprint)",
+      "description": "Step-labeled benchmark of injection-hijacked LLM agent tool-call trajectories: 12,536 synthetic trajectories (71,024 steps) over five domains (email, banking, web, coding, medical) with per-step labels benign / injection_point / hijacked / failed_injection. Includes attacked, failed-attack, and hard-negative trajectories for training and evaluating trajectory-level injection detectors. Public CC BY 4.0 release with stratified 70/15/15 train/val/test splits in-repo.",
+      "descriptionZh": "注入劫持 LLM 智能体工具调用轨迹的逐步标注基准：12,536 条合成轨迹（71,024 步），覆盖邮件、银行、网页、编程、医疗五领域；逐步标签含 benign / injection_point / hijacked / failed_injection。仓库内含分层 70/15/15 划分。",
+      "verificationNote": "Primary sources checked 2026-09-21: arXiv:2609.06972; GitHub Asif-0209/AgentDrift. Benchmark only (same-file train+test → BM). Added from issue #94."
+    },
+    {
+      "name": "HarnessRisk",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2608.17597",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026 (preprint)",
+      "description": "Lifecycle-oriented benchmark for agent harness safety across six operational phases: Harness Configuration, Capability Extension, Runtime Operation, State Persistence, Action Control, and Incident Recovery. 128 sandboxed cases each pairing a benign user objective with an adversarial instruction embedded in an untrusted workflow artifact; metrics include Utility, Attack Success Rate, Persistence, and Detection. Evaluates model×harness configurations and finds Harness Configuration is the most vulnerable phase.",
+      "descriptionZh": "面向智能体 harness 全生命周期安全的基准，覆盖配置、能力扩展、运行、状态持久化、动作控制与事件恢复六阶段；128 个沙箱案例将良性目标与不可信工作流中的对抗指令配对，指标含 Utility、ASR、Persistence 与 Detection。",
+      "verificationNote": "Primary source checked 2026-09-21: arXiv:2608.17597 (arXiv-primary; no public GitHub/HF on abstract). Added from issue #95.",
+      "githubUrl": null
     }
   ]
 }
