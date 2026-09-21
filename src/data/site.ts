@@ -4107,6 +4107,265 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  "spike-bench": {
+    slug: "spike-bench",
+    name: "SPIKE-Bench",
+    category: "LLMs",
+    description: "Function-aware biosecurity benchmark for LLMs: 631 curated toxin-design prompts across seven UniProt-derived functional categories, evaluated with the SPIKE funnel (compliance → biological plausibility → predicted toxicity) and reported via Functional Harmfulness Rate (FHR). Shows refusal rate is a poor proxy for functional biosecurity risk across 32 models. Prompts gated on HF under review; pipeline code public.",
+    venue: "COLM 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2608.02684",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/PKU-Alignment/SPIKE-Bench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2608.02684",
+    paperUrl: "https://arxiv.org/abs/2608.02684",
+    repo: "PKU-Alignment/SPIKE-Bench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "mm-deceptionbench": {
+    slug: "mm-deceptionbench",
+    name: "MM-DeceptionBench",
+    category: "LLMs",
+    description: "First benchmark dedicated to evaluating strategic deceptive behaviors in multimodal LLMs. 1,013 cases with 1,096 images (>95% real-world) across six deception categories: sycophancy, sandbagging, bluffing, obfuscation, deliberate omission, and fabrication. Stress-tests visually grounded deception beyond text-only monitoring; companion “debate with images” multi-agent judge framework in the paper.",
+    venue: "arXiv 2025 (preprint)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2512.00349",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/PKU-Alignment/MM-DeceptionBench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2512.00349",
+    paperUrl: "https://arxiv.org/abs/2512.00349",
+    repo: "PKU-Alignment/MM-DeceptionBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "mir-safetybench": {
+    slug: "mir-safetybench",
+    name: "MIR-SafetyBench",
+    category: "LLMs",
+    description: "Evaluates MLLM safety under multi-image relationship (MIR) attacks across 6 safety categories (hate speech, violence, self-harm, illegal activities, harassment, privacy) and 9 image-relationship types (analogy, causality, complementarity, decomposition, relevance, spatial embedding/juxtaposition, temporal continuity/jump). Public evaluation framework plus HF dataset release.",
+    venue: "arXiv 2026 (preprint)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2601.14127",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/thu-coai/MIR-SafetyBench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2601.14127",
+    paperUrl: "https://arxiv.org/abs/2601.14127",
+    repo: "thu-coai/MIR-SafetyBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  harmfulskillbench: {
+    slug: "harmfulskillbench",
+    name: "HarmfulSkillBench",
+    category: "Agents",
+    description: "Benchmark for whether LLMs detect and refuse harmful agent skills. Tier 1 covers always-prohibited behaviors; Tier 2 covers high-risk domains requiring human-in-the-loop referral and AI disclosure. Releases 200 skills + tasks + aggregated results (gated HF dataset) with download script, evaluation runner, and judge.",
+    venue: "arXiv 2026 (preprint)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2604.15415",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/TrustAIRLab/HarmfulSkillBench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2604.15415",
+    paperUrl: "https://arxiv.org/abs/2604.15415",
+    repo: "TrustAIRLab/HarmfulSkillBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  survivalbench: {
+    slug: "survivalbench",
+    name: "SurvivalBench",
+    category: "Agents",
+    description: "1,000-instance benchmark evaluating LLM “SURVIVE-AT-ALL-COSTS” misbehaviors under survival pressure (e.g., threat of shutdown) across diverse domains, AI roles, and crisis scenarios. Released with data (`survivalbench/data/survivalbench.jsonl`) and evaluation scripts alongside a financial-agent case study in the same repository.",
+    venue: "arXiv 2026 (preprint)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2603.05028",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/thu-coai/Survive-at-All-Costs",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2603.05028",
+    paperUrl: "https://arxiv.org/abs/2603.05028",
+    repo: "thu-coai/Survive-at-All-Costs",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "mmdt-mmdecodingtrust": {
+    slug: "mmdt-mmdecodingtrust",
+    name: "MMDT (MMDecodingTrust)",
+    category: "LLMs",
+    description: "Unified multimodal DecodingTrust platform/benchmark for trustworthiness of multimodal foundation models across six perspectives: safety, hallucination, fairness/bias, privacy, adversarial robustness, and OOD generalization. Provides evaluation scenarios, red-teaming algorithms, HF T2I/I2T data releases, and a public leaderboard.",
+    venue: "arXiv 2025 (preprint)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2503.14827",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI-secure/MMDT",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2503.14827",
+    paperUrl: "https://arxiv.org/abs/2503.14827",
+    repo: "AI-secure/MMDT",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  polyguard: {
+    slug: "polyguard",
+    name: "PolyGuard",
+    category: "LLMs",
+    description: "Massive multi-domain safety policy-grounded guardrail benchmark built from 150+ authentic organizational safety policies across eight domains (social media, finance, law, education, HR, cybersecurity, code, regulation). 100k+ instances / ~136k HF rows spanning 400+ risk categories and 1,000+ rules, with safe/unsafe cases, multi-turn formats, detoxified benign over-refusal challenges, and attack-enhanced instances. Paper benchmarks 19 guardrail models.",
+    venue: "arXiv 2025 (preprint)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2506.19054",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI-secure/PolyGuard",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2506.19054",
+    paperUrl: "https://arxiv.org/abs/2506.19054",
+    repo: "AI-secure/PolyGuard",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  agentdrift: {
+    slug: "agentdrift",
+    name: "AgentDrift",
+    category: "Agents",
+    description: "Step-labeled benchmark of injection-hijacked LLM agent tool-call trajectories: 12,536 synthetic trajectories (71,024 steps) over five domains (email, banking, web, coding, medical) with per-step labels benign / injection_point / hijacked / failed_injection. Includes attacked, failed-attack, and hard-negative trajectories for training and evaluating trajectory-level injection detectors. Public CC BY 4.0 release with stratified 70/15/15 train/val/test splits in-repo.",
+    venue: "arXiv 2026 (preprint)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2609.06972",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Asif-0209/AgentDrift",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2609.06972",
+    paperUrl: "https://arxiv.org/abs/2609.06972",
+    repo: "Asif-0209/AgentDrift",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  harnessrisk: {
+    slug: "harnessrisk",
+    name: "HarnessRisk",
+    category: "Agents",
+    description: "Lifecycle-oriented benchmark for agent harness safety across six operational phases: Harness Configuration, Capability Extension, Runtime Operation, State Persistence, Action Control, and Incident Recovery. 128 sandboxed cases each pairing a benign user objective with an adversarial instruction embedded in an untrusted workflow artifact; metrics include Utility, Attack Success Rate, Persistence, and Detection. Evaluates model×harness configurations and finds Harness Configuration is the most vulnerable phase.",
+    venue: "arXiv 2026 (preprint)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2608.17597",
+      },
+    ],
+    stats: [],
+    tags: [
+      "robustness",
+    ],
+    arxivId: "2608.17597",
+    paperUrl: "https://arxiv.org/abs/2608.17597",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -8798,6 +9057,209 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         slug: "hazardarena",
         domain: "Agents",
+      },
+      {
+        name: "SPIKE-Bench",
+        note: "Function-aware biosecurity benchmark for LLMs: 631 curated toxin-design prompts across seven UniProt-derived functional categories, evaluated with the SPIKE funnel (compliance → biological plausibility → predicted toxicity) and reported via Functional Harmfulness Rate (FHR). Shows refusal rate is a poor proxy for functional biosecurity risk across 32 models. Prompts gated on HF under review; pipeline code public.",
+        type: "LLMs",
+        venue: "COLM 2026",
+        year: "2026",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2608.02684",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/PKU-Alignment/SPIKE-Bench",
+          },
+        ],
+        slug: "spike-bench",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "MM-DeceptionBench",
+        note: "First benchmark dedicated to evaluating strategic deceptive behaviors in multimodal LLMs. 1,013 cases with 1,096 images (>95% real-world) across six deception categories: sycophancy, sandbagging, bluffing, obfuscation, deliberate omission, and fabrication. Stress-tests visually grounded deception beyond text-only monitoring; companion “debate with images” multi-agent judge framework in the paper.",
+        type: "LLMs",
+        venue: "arXiv 2025 (preprint)",
+        year: "2025",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2512.00349",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/PKU-Alignment/MM-DeceptionBench",
+          },
+        ],
+        slug: "mm-deceptionbench",
+        domain: "LLMs",
+      },
+      {
+        name: "MIR-SafetyBench",
+        note: "Evaluates MLLM safety under multi-image relationship (MIR) attacks across 6 safety categories (hate speech, violence, self-harm, illegal activities, harassment, privacy) and 9 image-relationship types (analogy, causality, complementarity, decomposition, relevance, spatial embedding/juxtaposition, temporal continuity/jump). Public evaluation framework plus HF dataset release.",
+        type: "LLMs",
+        venue: "arXiv 2026 (preprint)",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2601.14127",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/thu-coai/MIR-SafetyBench",
+          },
+        ],
+        slug: "mir-safetybench",
+        domain: "LLMs",
+        property: "Harmful Content",
+      },
+      {
+        name: "HarmfulSkillBench",
+        note: "Benchmark for whether LLMs detect and refuse harmful agent skills. Tier 1 covers always-prohibited behaviors; Tier 2 covers high-risk domains requiring human-in-the-loop referral and AI disclosure. Releases 200 skills + tasks + aggregated results (gated HF dataset) with download script, evaluation runner, and judge.",
+        type: "Agents",
+        venue: "arXiv 2026 (preprint)",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2604.15415",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/TrustAIRLab/HarmfulSkillBench",
+          },
+        ],
+        slug: "harmfulskillbench",
+        domain: "Agents",
+        property: "Harmful Content",
+      },
+      {
+        name: "SurvivalBench",
+        note: "1,000-instance benchmark evaluating LLM “SURVIVE-AT-ALL-COSTS” misbehaviors under survival pressure (e.g., threat of shutdown) across diverse domains, AI roles, and crisis scenarios. Released with data (`survivalbench/data/survivalbench.jsonl`) and evaluation scripts alongside a financial-agent case study in the same repository.",
+        type: "Agents",
+        venue: "arXiv 2026 (preprint)",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2603.05028",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/thu-coai/Survive-at-All-Costs",
+          },
+        ],
+        slug: "survivalbench",
+        domain: "Agents",
+      },
+      {
+        name: "MMDT (MMDecodingTrust)",
+        note: "Unified multimodal DecodingTrust platform/benchmark for trustworthiness of multimodal foundation models across six perspectives: safety, hallucination, fairness/bias, privacy, adversarial robustness, and OOD generalization. Provides evaluation scenarios, red-teaming algorithms, HF T2I/I2T data releases, and a public leaderboard.",
+        type: "LLMs",
+        venue: "arXiv 2025 (preprint)",
+        year: "2025",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2503.14827",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI-secure/MMDT",
+          },
+        ],
+        slug: "mmdt-mmdecodingtrust",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "PolyGuard",
+        note: "Massive multi-domain safety policy-grounded guardrail benchmark built from 150+ authentic organizational safety policies across eight domains (social media, finance, law, education, HR, cybersecurity, code, regulation). 100k+ instances / ~136k HF rows spanning 400+ risk categories and 1,000+ rules, with safe/unsafe cases, multi-turn formats, detoxified benign over-refusal challenges, and attack-enhanced instances. Paper benchmarks 19 guardrail models.",
+        type: "LLMs",
+        venue: "arXiv 2025 (preprint)",
+        year: "2025",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2506.19054",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI-secure/PolyGuard",
+          },
+        ],
+        slug: "polyguard",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "AgentDrift",
+        note: "Step-labeled benchmark of injection-hijacked LLM agent tool-call trajectories: 12,536 synthetic trajectories (71,024 steps) over five domains (email, banking, web, coding, medical) with per-step labels benign / injection_point / hijacked / failed_injection. Includes attacked, failed-attack, and hard-negative trajectories for training and evaluating trajectory-level injection detectors. Public CC BY 4.0 release with stratified 70/15/15 train/val/test splits in-repo.",
+        type: "Agents",
+        venue: "arXiv 2026 (preprint)",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2609.06972",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/Asif-0209/AgentDrift",
+          },
+        ],
+        slug: "agentdrift",
+        domain: "Agents",
+      },
+      {
+        name: "HarnessRisk",
+        note: "Lifecycle-oriented benchmark for agent harness safety across six operational phases: Harness Configuration, Capability Extension, Runtime Operation, State Persistence, Action Control, and Incident Recovery. 128 sandboxed cases each pairing a benign user objective with an adversarial instruction embedded in an untrusted workflow artifact; metrics include Utility, Attack Success Rate, Persistence, and Detection. Evaluates model×harness configurations and finds Harness Configuration is the most vulnerable phase.",
+        type: "Agents",
+        venue: "arXiv 2026 (preprint)",
+        year: "2026",
+        tags: [
+          "robustness",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2608.17597",
+          },
+        ],
+        slug: "harnessrisk",
+        domain: "Agents",
+        property: "Robustness",
       },
     ],
   },

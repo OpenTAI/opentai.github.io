@@ -812,6 +812,37 @@ export const ecosystemModels: EcosystemRecord[] = [
     ],
     verificationNote: "Primary source checked 2026-09-20: arXiv:2605.00689. No public GitHub/HF weights located; arXiv-primary listing. Companion benchmark ML-Bench (#82). Unrelated to gersteinlab/ML-Bench. Added from issue #83.",
   },
+  {
+    id: "biosafe-guard",
+    name: "BioSafe-Guard",
+    category: "Guard Models",
+    description: "Inference-time input guard for protein/toxin-design prompts: BioLinkBERT-large (340M) binary classifier fine-tuned on 300 toxin + 300 benign prompts (disjoint from 631 SPIKE-Bench eval prompts). Flags unsafe toxin-design requests before generation; paper reports FHR ≤0.5% across 32 models with ~1% benign over-refusal.",
+    descriptionZh: "面向蛋白质/毒素设计提示的推理时输入护栏：基于 BioLinkBERT-large（340M）的二分类器，在 300 条毒素 + 300 条良性提示上微调（与 631 条 SPIKE-Bench 评测提示不相交）；在生成前拦截不安全的毒素设计请求，论文报告在 32 个模型上 FHR ≤0.5%，良性过拒约 1%。",
+    year: 2026,
+    publisher: "PKU-Alignment (SPIKE-Bench authors; COLM 2026)",
+    github: "https://github.com/PKU-Alignment/SPIKE-Bench",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/PKU-Alignment/SPIKE-Bench",
+      },
+      {
+        label: "Hugging Face",
+        url: "https://huggingface.co/quanshu01/BioSafe-Guard",
+      },
+      {
+        label: "Paper",
+        url: "https://arxiv.org/abs/2608.02684",
+      },
+    ],
+    sources: [
+      "https://github.com/PKU-Alignment/SPIKE-Bench",
+      "https://huggingface.co/quanshu01/BioSafe-Guard",
+      "https://arxiv.org/abs/2608.02684",
+      "https://github.com/OpenTAI/opentai.github.io/issues/87",
+    ],
+    verificationNote: "Primary sources checked 2026-09-21: arXiv:2608.02684; HF quanshu01/BioSafe-Guard; GitHub PKU-Alignment/SPIKE-Bench. Guard Models / LLMs. Companion SPIKE-Bench (#86). Added from issue #87.",
+  },
 ];
 
 export const ecosystemFrameworks: EcosystemRecord[] = [
