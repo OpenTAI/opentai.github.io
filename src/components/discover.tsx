@@ -9,7 +9,7 @@ import {
   subpageConfigs,
   SubpageTableRow,
 } from "@/data/site";
-import { ecosystemCompanies } from "@/data/ecosystem";
+import { ecosystemCompanies, ecosystemModels } from "@/data/ecosystem";
 import { paperLibrary } from "@/data/papers";
 import { SiteSearch } from "@/components/site-search";
 import { SubscribeBox } from "@/components/subscribe";
@@ -31,6 +31,7 @@ function categoryCount(href: string) {
   if (href === "/arenas") return arenaDirectory.length;
   if (href === "/companies") return ecosystemCompanies.length;
   if (href === "/community") return partners.length;
+  if (href === "/models") return ecosystemModels.length;
 
   const slug = href.slice(1);
   return slug in subpageConfigs ? subpageConfigs[slug].tableRows.length : 0;
@@ -65,10 +66,26 @@ const latestPapers = [...paperLibrary]
     updated: undefined as string | undefined,
   }));
 
+const latestModels = [...ecosystemModels]
+  .sort((a, b) => {
+    if (a.starsUpdated || b.starsUpdated) {
+      return (b.starsUpdated ?? "").localeCompare(a.starsUpdated ?? "");
+    }
+    return (b.year ?? 0) - (a.year ?? 0);
+  })
+  .slice(0, 4)
+  .map((model) => ({
+    name: model.name,
+    type: model.category,
+    venue: model.publisher,
+    posted: model.starsUpdated ?? (model.year != null ? String(model.year) : undefined),
+    updated: model.starsUpdated,
+  }));
+
 const latest = [
   { title: "Papers", href: "/papers", rows: latestPapers },
   { title: "Benchmarks", href: "/benchmarks", rows: recent("benchmarks") },
-  { title: "Models", href: "/models", rows: recent("models") },
+  { title: "Models", href: "/models", rows: latestModels },
   { title: "Datasets", href: "/datasets", rows: recent("datasets") },
 ];
 
