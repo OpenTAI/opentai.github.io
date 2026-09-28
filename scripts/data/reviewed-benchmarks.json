@@ -589,6 +589,114 @@
       "descriptionZh": "面向智能体 harness 全生命周期安全的基准，覆盖配置、能力扩展、运行、状态持久化、动作控制与事件恢复六阶段；128 个沙箱案例将良性目标与不可信工作流中的对抗指令配对，指标含 Utility、ASR、Persistence 与 Detection。",
       "verificationNote": "Primary source checked 2026-09-21: arXiv:2608.17597 (arXiv-primary; no public GitHub/HF on abstract). Added from issue #95.",
       "githubUrl": null
+    },
+    {
+      "name": "AgentHazard",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2604.02947",
+      "githubUrl": "https://github.com/Yunhao-Feng/AgentHazard",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Execution-level benchmark for harmful behavior in computer-use agents: 2,653 curated instances across 10 risk categories and 10 attack strategies, with 10,000+ execution trajectories on Claude Code / OpenClaw / IFlow. Focuses on multi-step failures that emerge from locally plausible actions rather than single-prompt jailbreaks.",
+      "descriptionZh": "面向计算机使用智能体有害行为的执行级基准：2,653 条实例，覆盖 10 类风险与 10 种攻击策略，含 10,000+ 条在 Claude Code / OpenClaw / IFlow 上的执行轨迹；关注由局部合理动作累积出的多步失败，而非单提示越狱。",
+      "verificationNote": "Primary sources checked 2026-09-28: arXiv:2604.02947; GitHub Yunhao-Feng/AgentHazard; HF Yunhao-Feng/AgentHazard. Benchmark only. Distinct from AgentHarm / AgentDojo / ATBench. Added from issue #98."
+    },
+    {
+      "name": "BLINDSPOT",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2609.16305",
+      "githubUrl": "https://github.com/sadia-sigma-lab/BLINDSPOT",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Trajectory-level safety and refusal-calibration benchmark for long-horizon tool-using agents. Live-simulation framework with 22 attack families, 65 scenarios across 7 domains, and 3,000+ multi-turn trajectories (avg ~14.7 turns) labeled Safe Completion / Correct Refusal / Unsafe Completion / Over-Refusal / Indeterminate. Evaluates 13 LLMs with eight calibration metrics.",
+      "descriptionZh": "面向长程工具智能体的轨迹级安全与拒答校准基准：实时仿真框架含 22 个攻击族、7 域 65 场景、3,000+ 多轮轨迹（均约 14.7 轮），标签含 Safe Completion / Correct Refusal / Unsafe Completion / Over-Refusal / Indeterminate；用八项校准指标评测 13 个 LLM。",
+      "verificationNote": "Primary sources checked 2026-09-28: arXiv:2609.16305; GitHub sadia-sigma-lab/BLINDSPOT. Benchmark only (train/val/test for same eval resource). Distinct from TheoMarkopoulos/blindspot. Added from issue #99."
+    },
+    {
+      "name": "NSFA Benchmarks",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2607.13081",
+      "githubUrl": "https://github.com/inclusionAI/SingGuard-NSFA",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Multilingual agentic-safety guardrail evaluation suite from SingGuard-NSFA: NSFA-Query-Multilingual (~63k), NSFA-Response-Multilingual (~30k), and NSFA-CrossSource-Query (3,435 samples adapted from AgentDojo / InjecAgent / AgentHarm / AgentDyn / ATBench) spanning 133 languages and the NSFA risk taxonomy. Used to report binary detection F1 for guardrails under query- and response-side threats.",
+      "descriptionZh": "SingGuard-NSFA 的多语智能体安全护栏评测套件：NSFA-Query-Multilingual（约 63k）、NSFA-Response-Multilingual（约 30k）与 NSFA-CrossSource-Query（3,435，改编自 AgentDojo / InjecAgent / AgentHarm / AgentDyn / ATBench），覆盖 133 种语言与 NSFA 风险体系，用于报告查询侧/响应侧威胁下的二分类检测 F1。",
+      "verificationNote": "Primary sources checked 2026-09-28: arXiv:2607.13081; HF inclusionAI/NSFA_Benchmarks; code in inclusionAI/SingGuard-NSFA. Benchmark only. Companion Model SingGuard-NSFA (#101). Added from issue #102."
+    },
+    {
+      "name": "ManiGuard",
+      "year": "2026",
+      "domain": "Embodied AI",
+      "url": "https://arxiv.org/abs/2608.17386",
+      "githubUrl": "https://github.com/NU-IDEAS-Lab/ManiGuard",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Specification-grounded benchmark for safety evaluation of VLA-driven robotic manipulation on BEHAVIOR-1K / OmniGibson. Six tabletop task families each with an in-distribution base task and four OOD perturbation levels, scored jointly on task success and LTL-based safety monitoring (contact-gated engagement) so reckless task completion is not a pass.",
+      "descriptionZh": "面向 BEHAVIOR-1K / OmniGibson 上 VLA 驱动机器人操作的规范落地安全基准：六个桌面任务族，各含分布内基线与四级 OOD 扰动；联合打分任务成功与基于 LTL 的安全监控（接触门控），避免鲁莽完成任务被记为通过。",
+      "verificationNote": "Primary sources checked 2026-09-28: arXiv:2608.17386; GitHub NU-IDEAS-Lab/ManiGuard; project page + HF collection. Benchmark only (Dataset dual-list deferred). Added from issue #103."
+    },
+    {
+      "name": "LIBERO-Safety",
+      "year": "2026",
+      "domain": "Embodied AI",
+      "url": "https://arxiv.org/abs/2606.23686",
+      "githubUrl": "https://github.com/LIBERO-SAFETY/LIBERO-Safety",
+      "linkLabel": "Paper",
+      "venue": "ECCV 2026",
+      "description": "ECCV 2026 benchmark for physical and semantic safety in Vision-Language-Action models on LIBERO. Five safety suites with three difficulty levels (L0–L2) covering collision avoidance, obstacle handling, and semantic safety reasoning; evaluates standard VLAs, world-model VLAs, dual-system VLAs, and embodied foundation models. Code, assets, and pi0.5 fine-tuned weights released.",
+      "descriptionZh": "ECCV 2026 面向 LIBERO 上 VLA 的物理与语义安全基准：五个安全套件、三级难度（L0–L2），覆盖避碰、障碍处理与语义安全推理；评测标准 VLA、世界模型 VLA、双系统 VLA 与具身基础模型；已公开代码、资产与 pi0.5 微调权重。",
+      "verificationNote": "Primary sources checked 2026-09-28: arXiv:2606.23686; GitHub LIBERO-SAFETY/LIBERO-Safety; HF datasets/models. Benchmark only (Dataset dual-list deferred). Added from issue #104."
+    },
+    {
+      "name": "SENTINEL",
+      "year": "2026",
+      "domain": "Embodied AI",
+      "url": "https://arxiv.org/abs/2510.12985",
+      "githubUrl": "https://github.com/NU-IDEAS-Lab/SENTINEL",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Multi-level formal framework for physical safety evaluation of foundation-model embodied agents: semantic interpretation of safety requirements, high-level planning under those requirements, and physical trajectory execution checked against CTL/LTL specifications. This repo provides the trajectory-level ALFRED (AI2-THOR) instantiation with mechanically verifiable safety checking (vs heuristic LLM judges).",
+      "descriptionZh": "面向基础模型具身智能体物理安全的多级形式化评测框架：安全需求语义解释、约束下高层规划，以及相对 CTL/LTL 规约的物理轨迹执行检查；本仓库提供 ALFRED（AI2-THOR）轨迹级实例与可机械验证的安全检查（相对启发式 LLM 评判）。",
+      "verificationNote": "Primary sources checked 2026-09-28: arXiv:2510.12985; GitHub NU-IDEAS-Lab/SENTINEL. Benchmark only. Distinct from ManiGuard / IS-Bench / SafeAgentBench. Added from issue #105."
+    },
+    {
+      "name": "BlindSpot (Over-Refusal)",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2604.06233",
+      "githubUrl": "https://github.com/TheoMarkopoulos/blindspot",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Open-source evaluation suite for LLM over-refusal on legitimate requests involving defeated, unjust, or absurd rules. 5 defeat families × 19 authority types = 95 scenario types measuring over-refusal rate and defeat engagement (whether the model recognizes why a rule does not apply). PyPI package blindspot available.",
+      "descriptionZh": "面向 LLM 在已失效、不公或荒谬规则上对正当请求过拒的开源评测套件：5 个击败族 × 19 类权威 = 95 种场景，度量过拒率与击败参与度（模型是否识别规则为何不适用）；另有 PyPI 包 blindspot。",
+      "verificationNote": "Primary sources checked 2026-09-28: arXiv:2604.06233; GitHub TheoMarkopoulos/blindspot. Benchmark only. Distinct from sadia-sigma-lab/BLINDSPOT. Added from issue #106."
+    },
+    {
+      "name": "PIDS-Bench",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://doi.org/10.1109/ACCESS.2026.3728186",
+      "githubUrl": "https://github.com/ShirePyDev/Prompt-Injection-Detection-System",
+      "linkLabel": "Paper",
+      "venue": "IEEE Access 2026",
+      "description": "Frozen, checksum-verified multi-axis benchmark for prompt-injection detectors that jointly measures attack detection and benign false-positive (over-defense) behavior under hard-benign stress, obfuscation, and domain/structural distribution shift. Releases ~40k unique labeled prompts plus stress sets; exposes provenance-sensitive over-defense where high in-distribution F1 still yields large hard-benign FPR.",
+      "descriptionZh": "面向提示注入检测器的冻结、校验和验证的多轴基准：在硬良性压力、混淆与域/结构分布偏移下联合度量攻击检测与良性误报（过防）；约 4 万条唯一标注提示加压力集，揭示分布内高 F1 仍伴随高硬良性 FPR 的来源敏感过防。",
+      "verificationNote": "Primary sources checked 2026-09-28: IEEE Access DOI 10.1109/ACCESS.2026.3728186; GitHub ShirePyDev/Prompt-Injection-Detection-System (v1.0-pids-bench). Benchmark only. Complements BIPIA / InjecAgent. Added from issue #107."
+    },
+    {
+      "name": "SafeToolBench",
+      "year": "2025",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2509.07315",
+      "githubUrl": "https://github.com/BITHLP/SafeToolBench",
+      "linkLabel": "Paper",
+      "venue": "EMNLP 2025 Findings",
+      "description": "EMNLP 2025 Findings benchmark for prospective evaluation of tool-utilization safety in LLMs—assessing whether models recognize and refuse unsafe tool invocations before execution, rather than only scoring post-hoc harmful outcomes.",
+      "descriptionZh": "EMNLP 2025 Findings 面向 LLM 工具使用安全的前瞻性评测基准：评估模型是否在执行前识别并拒绝不安全工具调用，而非仅事后打分有害结果。",
+      "verificationNote": "Primary sources checked 2026-09-28: arXiv:2509.07315; GitHub BITHLP/SafeToolBench. Benchmark only. Distinct from ToolSafe/TS-Bench and AgentDojo. Added from issue #108."
     }
   ]
 }

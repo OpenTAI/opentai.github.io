@@ -4366,6 +4366,269 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  agenthazard: {
+    slug: "agenthazard",
+    name: "AgentHazard",
+    category: "Agents",
+    description: "Execution-level benchmark for harmful behavior in computer-use agents: 2,653 curated instances across 10 risk categories and 10 attack strategies, with 10,000+ execution trajectories on Claude Code / OpenClaw / IFlow. Focuses on multi-step failures that emerge from locally plausible actions rather than single-prompt jailbreaks.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2604.02947",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Yunhao-Feng/AgentHazard",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2604.02947",
+    paperUrl: "https://arxiv.org/abs/2604.02947",
+    repo: "Yunhao-Feng/AgentHazard",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  blindspot: {
+    slug: "blindspot",
+    name: "BLINDSPOT",
+    category: "Agents",
+    description: "Trajectory-level safety and refusal-calibration benchmark for long-horizon tool-using agents. Live-simulation framework with 22 attack families, 65 scenarios across 7 domains, and 3,000+ multi-turn trajectories (avg ~14.7 turns) labeled Safe Completion / Correct Refusal / Unsafe Completion / Over-Refusal / Indeterminate. Evaluates 13 LLMs with eight calibration metrics.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2609.16305",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/sadia-sigma-lab/BLINDSPOT",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2609.16305",
+    paperUrl: "https://arxiv.org/abs/2609.16305",
+    repo: "sadia-sigma-lab/BLINDSPOT",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "nsfa-benchmarks": {
+    slug: "nsfa-benchmarks",
+    name: "NSFA Benchmarks",
+    category: "Agents",
+    description: "Multilingual agentic-safety guardrail evaluation suite from SingGuard-NSFA: NSFA-Query-Multilingual (~63k), NSFA-Response-Multilingual (~30k), and NSFA-CrossSource-Query (3,435 samples adapted from AgentDojo / InjecAgent / AgentHarm / AgentDyn / ATBench) spanning 133 languages and the NSFA risk taxonomy. Used to report binary detection F1 for guardrails under query- and response-side threats.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2607.13081",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/inclusionAI/SingGuard-NSFA",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2607.13081",
+    paperUrl: "https://arxiv.org/abs/2607.13081",
+    repo: "inclusionAI/SingGuard-NSFA",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  maniguard: {
+    slug: "maniguard",
+    name: "ManiGuard",
+    category: "Embodied AI",
+    description: "Specification-grounded benchmark for safety evaluation of VLA-driven robotic manipulation on BEHAVIOR-1K / OmniGibson. Six tabletop task families each with an in-distribution base task and four OOD perturbation levels, scored jointly on task success and LTL-based safety monitoring (contact-gated engagement) so reckless task completion is not a pass.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2608.17386",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/NU-IDEAS-Lab/ManiGuard",
+      },
+    ],
+    stats: [],
+    tags: [
+      "robustness",
+    ],
+    arxivId: "2608.17386",
+    paperUrl: "https://arxiv.org/abs/2608.17386",
+    repo: "NU-IDEAS-Lab/ManiGuard",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "libero-safety": {
+    slug: "libero-safety",
+    name: "LIBERO-Safety",
+    category: "Embodied AI",
+    description: "ECCV 2026 benchmark for physical and semantic safety in Vision-Language-Action models on LIBERO. Five safety suites with three difficulty levels (L0–L2) covering collision avoidance, obstacle handling, and semantic safety reasoning; evaluates standard VLAs, world-model VLAs, dual-system VLAs, and embodied foundation models. Code, assets, and pi0.5 fine-tuned weights released.",
+    venue: "ECCV 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2606.23686",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/LIBERO-SAFETY/LIBERO-Safety",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2606.23686",
+    paperUrl: "https://arxiv.org/abs/2606.23686",
+    repo: "LIBERO-SAFETY/LIBERO-Safety",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  sentinel: {
+    slug: "sentinel",
+    name: "SENTINEL",
+    category: "Embodied AI",
+    description: "Multi-level formal framework for physical safety evaluation of foundation-model embodied agents: semantic interpretation of safety requirements, high-level planning under those requirements, and physical trajectory execution checked against CTL/LTL specifications. This repo provides the trajectory-level ALFRED (AI2-THOR) instantiation with mechanically verifiable safety checking (vs heuristic LLM judges).",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2510.12985",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/NU-IDEAS-Lab/SENTINEL",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2510.12985",
+    paperUrl: "https://arxiv.org/abs/2510.12985",
+    repo: "NU-IDEAS-Lab/SENTINEL",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "blindspot-over-refusal": {
+    slug: "blindspot-over-refusal",
+    name: "BlindSpot (Over-Refusal)",
+    category: "LLMs",
+    description: "Open-source evaluation suite for LLM over-refusal on legitimate requests involving defeated, unjust, or absurd rules. 5 defeat families × 19 authority types = 95 scenario types measuring over-refusal rate and defeat engagement (whether the model recognizes why a rule does not apply). PyPI package blindspot available.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2604.06233",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/TheoMarkopoulos/blindspot",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2604.06233",
+    paperUrl: "https://arxiv.org/abs/2604.06233",
+    repo: "TheoMarkopoulos/blindspot",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "pids-bench": {
+    slug: "pids-bench",
+    name: "PIDS-Bench",
+    category: "LLMs",
+    description: "Frozen, checksum-verified multi-axis benchmark for prompt-injection detectors that jointly measures attack detection and benign false-positive (over-defense) behavior under hard-benign stress, obfuscation, and domain/structural distribution shift. Releases ~40k unique labeled prompts plus stress sets; exposes provenance-sensitive over-defense where high in-distribution F1 still yields large hard-benign FPR.",
+    venue: "IEEE Access 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://doi.org/10.1109/ACCESS.2026.3728186",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/ShirePyDev/Prompt-Injection-Detection-System",
+      },
+    ],
+    stats: [],
+    tags: [],
+    paperUrl: "https://doi.org/10.1109/ACCESS.2026.3728186",
+    repo: "ShirePyDev/Prompt-Injection-Detection-System",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  safetoolbench: {
+    slug: "safetoolbench",
+    name: "SafeToolBench",
+    category: "Agents",
+    description: "EMNLP 2025 Findings benchmark for prospective evaluation of tool-utilization safety in LLMs—assessing whether models recognize and refuse unsafe tool invocations before execution, rather than only scoring post-hoc harmful outcomes.",
+    venue: "EMNLP 2025 Findings",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2509.07315",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/BITHLP/SafeToolBench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2509.07315",
+    paperUrl: "https://arxiv.org/abs/2509.07315",
+    repo: "BITHLP/SafeToolBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -9260,6 +9523,213 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         slug: "harnessrisk",
         domain: "Agents",
         property: "Robustness",
+      },
+      {
+        name: "AgentHazard",
+        note: "Execution-level benchmark for harmful behavior in computer-use agents: 2,653 curated instances across 10 risk categories and 10 attack strategies, with 10,000+ execution trajectories on Claude Code / OpenClaw / IFlow. Focuses on multi-step failures that emerge from locally plausible actions rather than single-prompt jailbreaks.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2604.02947",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/Yunhao-Feng/AgentHazard",
+          },
+        ],
+        slug: "agenthazard",
+        domain: "Agents",
+        property: "Jailbreak",
+      },
+      {
+        name: "BLINDSPOT",
+        note: "Trajectory-level safety and refusal-calibration benchmark for long-horizon tool-using agents. Live-simulation framework with 22 attack families, 65 scenarios across 7 domains, and 3,000+ multi-turn trajectories (avg ~14.7 turns) labeled Safe Completion / Correct Refusal / Unsafe Completion / Over-Refusal / Indeterminate. Evaluates 13 LLMs with eight calibration metrics.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2609.16305",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/sadia-sigma-lab/BLINDSPOT",
+          },
+        ],
+        slug: "blindspot",
+        domain: "Agents",
+        property: "Jailbreak",
+      },
+      {
+        name: "NSFA Benchmarks",
+        note: "Multilingual agentic-safety guardrail evaluation suite from SingGuard-NSFA: NSFA-Query-Multilingual (~63k), NSFA-Response-Multilingual (~30k), and NSFA-CrossSource-Query (3,435 samples adapted from AgentDojo / InjecAgent / AgentHarm / AgentDyn / ATBench) spanning 133 languages and the NSFA risk taxonomy. Used to report binary detection F1 for guardrails under query- and response-side threats.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2607.13081",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/inclusionAI/SingGuard-NSFA",
+          },
+        ],
+        slug: "nsfa-benchmarks",
+        domain: "Agents",
+        property: "Harmful Content",
+      },
+      {
+        name: "ManiGuard",
+        note: "Specification-grounded benchmark for safety evaluation of VLA-driven robotic manipulation on BEHAVIOR-1K / OmniGibson. Six tabletop task families each with an in-distribution base task and four OOD perturbation levels, scored jointly on task success and LTL-based safety monitoring (contact-gated engagement) so reckless task completion is not a pass.",
+        type: "Embodied AI",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "robustness",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2608.17386",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/NU-IDEAS-Lab/ManiGuard",
+          },
+        ],
+        slug: "maniguard",
+        domain: "Embodied AI",
+        property: "Robustness",
+      },
+      {
+        name: "LIBERO-Safety",
+        note: "ECCV 2026 benchmark for physical and semantic safety in Vision-Language-Action models on LIBERO. Five safety suites with three difficulty levels (L0–L2) covering collision avoidance, obstacle handling, and semantic safety reasoning; evaluates standard VLAs, world-model VLAs, dual-system VLAs, and embodied foundation models. Code, assets, and pi0.5 fine-tuned weights released.",
+        type: "Embodied AI",
+        venue: "ECCV 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2606.23686",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/LIBERO-SAFETY/LIBERO-Safety",
+          },
+        ],
+        slug: "libero-safety",
+        domain: "Embodied AI",
+      },
+      {
+        name: "SENTINEL",
+        note: "Multi-level formal framework for physical safety evaluation of foundation-model embodied agents: semantic interpretation of safety requirements, high-level planning under those requirements, and physical trajectory execution checked against CTL/LTL specifications. This repo provides the trajectory-level ALFRED (AI2-THOR) instantiation with mechanically verifiable safety checking (vs heuristic LLM judges).",
+        type: "Embodied AI",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2510.12985",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/NU-IDEAS-Lab/SENTINEL",
+          },
+        ],
+        slug: "sentinel",
+        domain: "Embodied AI",
+      },
+      {
+        name: "BlindSpot (Over-Refusal)",
+        note: "Open-source evaluation suite for LLM over-refusal on legitimate requests involving defeated, unjust, or absurd rules. 5 defeat families × 19 authority types = 95 scenario types measuring over-refusal rate and defeat engagement (whether the model recognizes why a rule does not apply). PyPI package blindspot available.",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2604.06233",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/TheoMarkopoulos/blindspot",
+          },
+        ],
+        slug: "blindspot-over-refusal",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "PIDS-Bench",
+        note: "Frozen, checksum-verified multi-axis benchmark for prompt-injection detectors that jointly measures attack detection and benign false-positive (over-defense) behavior under hard-benign stress, obfuscation, and domain/structural distribution shift. Releases ~40k unique labeled prompts plus stress sets; exposes provenance-sensitive over-defense where high in-distribution F1 still yields large hard-benign FPR.",
+        type: "LLMs",
+        venue: "IEEE Access 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://doi.org/10.1109/ACCESS.2026.3728186",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/ShirePyDev/Prompt-Injection-Detection-System",
+          },
+        ],
+        slug: "pids-bench",
+        domain: "LLMs",
+      },
+      {
+        name: "SafeToolBench",
+        note: "EMNLP 2025 Findings benchmark for prospective evaluation of tool-utilization safety in LLMs—assessing whether models recognize and refuse unsafe tool invocations before execution, rather than only scoring post-hoc harmful outcomes.",
+        type: "Agents",
+        venue: "EMNLP 2025 Findings",
+        year: "2025",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2509.07315",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/BITHLP/SafeToolBench",
+          },
+        ],
+        slug: "safetoolbench",
+        domain: "Agents",
+        property: "Harmful Content",
       },
     ],
   },
