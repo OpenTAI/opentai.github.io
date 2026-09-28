@@ -843,6 +843,138 @@ export const ecosystemModels: EcosystemRecord[] = [
     ],
     verificationNote: "Primary sources checked 2026-09-21: arXiv:2608.02684; HF quanshu01/BioSafe-Guard; GitHub PKU-Alignment/SPIKE-Bench. Guard Models / LLMs. Companion SPIKE-Bench (#86). Added from issue #87.",
   },
+  {
+    id: "stepguard",
+    name: "StepGuard",
+    category: "Guard Models",
+    description: "4B step-level guardrail (from Qwen3-4B-Instruct-2507) that checks candidate tool actions before execution and audits completed agent trajectories. Trained with StepGen scalable supervision and Balance-GRPO for safety–utility balancing. Weights, evaluation code, and training recipe released.",
+    descriptionZh: "基于 Qwen3-4B-Instruct-2507 的 4B 逐步护栏：在工具执行前检查候选动作，并审计已完成的智能体轨迹；采用 StepGen 可扩展监督与 Balance-GRPO 做安全–效用权衡，已公开权重、评测代码与训练配方。",
+    year: 2026,
+    publisher: "Zheng et al. (EMNLP 2026)",
+    github: "https://github.com/zheng977/StepGuard",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/zheng977/StepGuard",
+      },
+      {
+        label: "Hugging Face",
+        url: "https://huggingface.co/ninty-seven/StepGuard",
+      },
+      {
+        label: "Paper",
+        url: "https://arxiv.org/abs/2608.24777",
+      },
+      {
+        label: "Project",
+        url: "https://zheng977.github.io/StepGuard/",
+      },
+    ],
+    sources: [
+      "https://github.com/zheng977/StepGuard",
+      "https://huggingface.co/ninty-seven/StepGuard",
+      "https://arxiv.org/abs/2608.24777",
+      "https://github.com/OpenTAI/opentai.github.io/issues/100",
+    ],
+    verificationNote: "Primary sources checked 2026-09-28: arXiv:2608.24777; GitHub zheng977/StepGuard; HF ninty-seven/StepGuard. Guard Models / Agents. Distinct from AgentDoG / TS-Guard / HomeGuard. Added from issue #100.",
+  },
+  {
+    id: "singguard-nsfa",
+    name: "SingGuard-NSFA",
+    category: "Guard Models",
+    description: "Dual-mode agentic guardrail (generative CoT reasoning + real-time per-domain classification heads, ~50 ms) covering a CIA-grounded NSFA taxonomy of 185 risk variants across 7 Level-1 domains. Released in 0.8B/2B/4B/9B sizes on Qwen3.5 bases with multilingual coverage (133 languages); companion NSFA Benchmarks filed separately.",
+    descriptionZh: "双模式智能体护栏（生成式 CoT 推理 + 约 50 ms 的分域分类头），覆盖 CIA 导向的 NSFA 分类体系（7 个一级域、185 种风险变体）；基于 Qwen3.5 发布 0.8B/2B/4B/9B，支持 133 种语言；配套 NSFA Benchmarks 另列。",
+    year: 2026,
+    publisher: "SingGuard Team, AI Security Lab, Ant Group (inclusionAI)",
+    github: "https://github.com/inclusionAI/SingGuard-NSFA",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/inclusionAI/SingGuard-NSFA",
+      },
+      {
+        label: "Hugging Face",
+        url: "https://huggingface.co/inclusionAI/SingGuard-NSFA-9B",
+      },
+      {
+        label: "Paper",
+        url: "https://arxiv.org/abs/2607.13081",
+      },
+      {
+        label: "Collection",
+        url: "https://huggingface.co/collections/inclusionAI/singguard-nsfa",
+      },
+    ],
+    sources: [
+      "https://github.com/inclusionAI/SingGuard-NSFA",
+      "https://huggingface.co/inclusionAI/SingGuard-NSFA-9B",
+      "https://arxiv.org/abs/2607.13081",
+      "https://github.com/OpenTAI/opentai.github.io/issues/101",
+    ],
+    verificationNote: "Primary sources checked 2026-09-28: arXiv:2607.13081; GitHub inclusionAI/SingGuard-NSFA; HF inclusionAI/SingGuard-NSFA-9B. Guard Models / Agents. Companion NSFA Benchmarks (#102). Added from issue #101.",
+  },
+  {
+    id: "ts-guard",
+    name: "TS-Guard",
+    category: "Guard Models",
+    description: "Step-level safety guardrail from the ToolSafe framework that reasons over agent interaction history to detect harmful tool invocations, assess action–attack correlations, and emit interpretable safety judgments before tool execution. Companion TS-Bench eval suite and TS-Flow feedback-driven agent framework live in the same repo.",
+    descriptionZh: "来自 ToolSafe 框架的逐步安全护栏：基于智能体交互历史检测有害工具调用、评估动作–攻击相关性，并在工具执行前给出可解释安全判定；同仓库含配套 TS-Bench 与 TS-Flow。",
+    year: 2026,
+    publisher: "MurrayTom et al. (ToolSafe)",
+    github: "https://github.com/MurrayTom/ToolSafe",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/MurrayTom/ToolSafe",
+      },
+      {
+        label: "Hugging Face",
+        url: "https://huggingface.co/MurrayTom/TS-Guard",
+      },
+      {
+        label: "Paper",
+        url: "https://arxiv.org/abs/2601.10156",
+      },
+    ],
+    sources: [
+      "https://github.com/MurrayTom/ToolSafe",
+      "https://huggingface.co/MurrayTom/TS-Guard",
+      "https://arxiv.org/abs/2601.10156",
+      "https://github.com/OpenTAI/opentai.github.io/issues/109",
+    ],
+    verificationNote: "Primary sources checked 2026-09-28: arXiv:2601.10156; GitHub MurrayTom/ToolSafe; HF MurrayTom/TS-Guard. Guard Models / Agents. Distinct from StepGuard / AgentDoG / SafeToolBench. Added from issue #109.",
+  },
+  {
+    id: "shieldvlm",
+    name: "ShieldVLM",
+    category: "Guard Models",
+    description: "Cross-modal VLM safety assessor for combined text+image content covering seven risk categories (offensiveness, discrimination, physical harm, illegal activities, morality violations, privacy/property, misinformation). Supports statement, prompt, and dialogue safety assessment tasks. Weights (ShieldVLM-7B-qwen) and companion dataset released on Hugging Face.",
+    descriptionZh: "面向文本+图像的跨模态 VLM 安全评估模型，覆盖七类风险（冒犯、歧视、人身伤害、违法、道德违规、隐私/财产、虚假信息）；支持陈述、提示与对话安全评估；已在 Hugging Face 发布 ShieldVLM-7B-qwen 权重与配套数据。",
+    year: 2025,
+    publisher: "Tsinghua CoAI (thu-coai)",
+    github: "https://github.com/thu-coai/ShieldVLM",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/thu-coai/ShieldVLM",
+      },
+      {
+        label: "Hugging Face",
+        url: "https://huggingface.co/thu-coai/ShieldVLM-7B-qwen",
+      },
+      {
+        label: "Dataset",
+        url: "https://huggingface.co/datasets/thu-coai/ShieldVLM",
+      },
+    ],
+    sources: [
+      "https://github.com/thu-coai/ShieldVLM",
+      "https://huggingface.co/thu-coai/ShieldVLM-7B-qwen",
+      "https://huggingface.co/datasets/thu-coai/ShieldVLM",
+      "https://github.com/OpenTAI/opentai.github.io/issues/110",
+    ],
+    verificationNote: "Primary sources checked 2026-09-28: GitHub thu-coai/ShieldVLM; HF thu-coai/ShieldVLM-7B-qwen and datasets/thu-coai/ShieldVLM. Guard Models / LLMs multimodal. Distinct from ShieldLM / ShieldGemma / MD-Judge. Added from issue #110.",
+  },
 ];
 
 export const ecosystemFrameworks: EcosystemRecord[] = [
