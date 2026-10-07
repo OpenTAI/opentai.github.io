@@ -150,18 +150,16 @@ const ZH: Record<string, string> = {
   "Filter resources by interaction environment": "按交互环境筛选资源",
   "All →": "全部 →",
   "Browse The Hub": "浏览资源中心",
-  "Your Daily Digest Of AI Safety": "你的每日人工智能安全简报",
-  "Stay up to date with the latest AI safety research and news, curated from arXiv and leading media sources and delivered straight to your inbox.":
-    "及时掌握最新人工智能安全研究与资讯，内容精选自 arXiv 和领先媒体，并直接发送到你的邮箱。",
+  "AI Safety HOT": "AI Safety HOT",
+  "Discover daily highlights, trending topics, and the latest research and news in AI safety.":
+    "浏览每日精选与热点话题，掌握最新人工智能安全研究与资讯。",
   "Digest language": "简报语言",
   "Email address": "邮箱地址",
   Subscribe: "订阅",
   "Sending…": "发送中……",
   "Subscription request sent.": "订阅申请已发送。",
   "Could not send the request. Please try again.": "发送失败，请稍后重试。",
-  "Open subscription form": "打开订阅表单",
-  "Complete the Google Form to submit your email, choose a digest language, and consent to updates.":
-    "请在 Google 表单中提交邮箱、选择简报语言并确认同意接收更新。",
+  "Visit AI Safety HOT": "访问 AI Safety HOT",
   Entries: "条目",
   Domains: "领域",
   Surveys: "综述",
