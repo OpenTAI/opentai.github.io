@@ -150,9 +150,9 @@ const ZH: Record<string, string> = {
   "Filter resources by interaction environment": "按交互环境筛选资源",
   "All →": "全部 →",
   "Browse The Hub": "浏览资源中心",
-  "Your Daily Digest Of AI Safety": "你的每日人工智能安全简报",
-  "Stay up to date with the latest AI safety research and news on AI Safety HOT.":
-    "在 AI Safety HOT 及时掌握最新人工智能安全研究与资讯。",
+  "AI Safety HOT": "AI Safety HOT",
+  "Discover daily highlights, trending topics, and the latest research and news in AI safety.":
+    "浏览每日精选与热点话题，掌握最新人工智能安全研究与资讯。",
   "Digest language": "简报语言",
   "Email address": "邮箱地址",
   Subscribe: "订阅",
@@ -160,8 +160,6 @@ const ZH: Record<string, string> = {
   "Subscription request sent.": "订阅申请已发送。",
   "Could not send the request. Please try again.": "发送失败，请稍后重试。",
   "Visit AI Safety HOT": "访问 AI Safety HOT",
-  "Browse daily highlights and trending topics.":
-    "浏览每日精选与热点话题。",
   Entries: "条目",
   Domains: "领域",
   Surveys: "综述",
