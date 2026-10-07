@@ -6,12 +6,12 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
       <div className="grid gap-6 lg:grid-cols-[1fr_minmax(0,26rem)] lg:items-center">
         <div className="space-y-2">
           <h2 className="text-[1.45rem] font-semibold tracking-[-0.04em] text-[#101828]">
-            {t(locale, "Your Daily Digest Of AI Safety")}
+            {t(locale, "AI Safety HOT")}
           </h2>
           <p className="max-w-[36rem] text-sm leading-6 text-[#667085]">
             {t(
               locale,
-              "Stay up to date with the latest AI safety research and news on AI Safety HOT.",
+              "Discover daily highlights, trending topics, and the latest research and news in AI safety.",
             )}
           </p>
         </div>
@@ -26,12 +26,6 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
             {t(locale, "Visit AI Safety HOT")}
             <span aria-hidden="true">↗</span>
           </a>
-          <p className="max-w-[26rem] text-sm leading-6 text-[#667085]">
-            {t(
-              locale,
-              "Browse daily highlights and trending topics.",
-            )}
-          </p>
         </div>
       </div>
     </section>
