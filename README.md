@@ -120,17 +120,15 @@ verified facts into the appropriate canonical data source and mark the queue
 record `approved`. Only canonical data sources are published. This keeps an
 unreviewed community issue from appearing on the public site automatically.
 
-## Newsletter signup
+## Daily AI safety digest
 
-The public GitHub Pages deployment sends visitors to the published OpenTAI
-Google Form. The form collects the email address, digest language, and explicit
-consent; responses are kept in its linked Google Sheet. Form ownership, Sheet
-access, and new-response email notifications are managed in Google Forms and Drive,
-outside this repository. Subscriber addresses must never be committed here or
-included in the static site.
+The homepage's "Your Daily Digest Of AI Safety" card links to
+https://aisafetyhot.com/ in a new tab. Both English and Chinese pages direct
+visitors to AI Safety HOT for daily highlights and trending topics.
 
-The published form ID is centralized in `src/lib/newsletter.ts`. The homepage
-uses the public `/viewform` URL and never links to the form editor.
+The previous Google Form URL helper remains in `src/lib/newsletter.ts` for
+legacy use; the homepage no longer uses it. Subscriber addresses must never
+be committed here or included in the static site.
 
 An optional self-hosted implementation remains available for a future migration.
 `server/newsletter_server.py` serves both the static `out/` directory and
