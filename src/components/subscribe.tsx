@@ -1,5 +1,4 @@
 import { Locale, t } from "@/lib/i18n";
-import { buildNewsletterFormUrl } from "@/lib/newsletter";
 
 export function SubscribeBox({ locale }: { locale: Locale }) {
   return (
@@ -12,7 +11,7 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
           <p className="max-w-[36rem] text-sm leading-6 text-[#667085]">
             {t(
               locale,
-              "Stay up to date with the latest AI safety research and news, curated from arXiv and leading media sources and delivered straight to your inbox.",
+              "Stay up to date with the latest AI safety research and news on AI Safety HOT.",
             )}
           </p>
         </div>
@@ -20,17 +19,17 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
         <div className="space-y-3 lg:justify-self-end">
           <a
             className="site-cta inline-flex w-full items-center justify-center gap-2 text-center sm:w-auto"
-            href={buildNewsletterFormUrl()}
+            href="https://aisafetyhot.com/"
             rel="noreferrer"
             target="_blank"
           >
-            {t(locale, "Open subscription form")}
+            {t(locale, "Visit AI Safety HOT")}
             <span aria-hidden="true">↗</span>
           </a>
           <p className="max-w-[26rem] text-sm leading-6 text-[#667085]">
             {t(
               locale,
-              "Complete the Google Form to submit your email, choose a digest language, and consent to updates.",
+              "Browse daily highlights and trending topics.",
             )}
           </p>
         </div>
