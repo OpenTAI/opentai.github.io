@@ -697,6 +697,18 @@
       "description": "EMNLP 2025 Findings benchmark for prospective evaluation of tool-utilization safety in LLMs—assessing whether models recognize and refuse unsafe tool invocations before execution, rather than only scoring post-hoc harmful outcomes.",
       "descriptionZh": "EMNLP 2025 Findings 面向 LLM 工具使用安全的前瞻性评测基准：评估模型是否在执行前识别并拒绝不安全工具调用，而非仅事后打分有害结果。",
       "verificationNote": "Primary sources checked 2026-09-28: arXiv:2509.07315; GitHub BITHLP/SafeToolBench. Benchmark only. Distinct from ToolSafe/TS-Bench and AgentDojo. Added from issue #108."
+    },
+    {
+      "name": "DUMA-Bench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2609.24662",
+      "githubUrl": "https://github.com/ai-security-lab-itmo/duma-benchmark",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Dual-control multi-agent security benchmark for LLM agents (AI Security Lab, ITMO). Extends τ²-bench with adversarial environments where both the agent and a simulated user can change shared state, covering eight vulnerability classes (e.g., RAG poisoning, cross-agent manipulation, mailbox exfiltration, phishing pressure, identity spoofing, tool-shadow poisoning, unsafe output handling). Reports attack success rate across 14 models; dual-control interaction raises ASR from 26.9% to 41.1%.",
+      "descriptionZh": "面向 LLM 智能体的双控多智能体安全基准（ITMO AI Security Lab）：在 τ²-bench 上扩展对抗环境，智能体与模拟用户均可改变共享状态，覆盖八类漏洞（如 RAG 投毒、跨智能体操控、邮箱外泄、钓鱼施压、身份伪装、工具影子投毒、不安全输出处理）；在 14 个模型上报告攻击成功率，双控交互使 ASR 从 26.9% 升至 41.1%。",
+      "verificationNote": "Primary sources checked 2026-10-07: arXiv:2609.24662; GitHub ai-security-lab-itmo/duma-benchmark (MIT; tasks/data/scripts/traces). Benchmark only (agent-security eval; no training split). Distinct from τ²-bench / AgentDojo / Agent-SafetyBench. Added from issue #112."
     }
   ]
 }

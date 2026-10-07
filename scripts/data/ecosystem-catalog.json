@@ -937,6 +937,99 @@
         "https://github.com/OpenTAI/opentai.github.io/issues/110"
       ],
       "verificationNote": "Primary sources checked 2026-09-28: GitHub thu-coai/ShieldVLM; HF thu-coai/ShieldVLM-7B-qwen and datasets/thu-coai/ShieldVLM. Guard Models / LLMs multimodal. Distinct from ShieldLM / ShieldGemma / MD-Judge. Added from issue #110."
+    },
+    {
+      "id": "magic",
+      "name": "MAGIC",
+      "category": "Aligned Models",
+      "description": "Safety-aligned defender LLMs trained with MAGIC, an asymmetric attacker–defender multi-agent RL game (GRPO, SPNE formulation) in which a reasoning attacker and a defender co-evolve. Defender checkpoints released for Qwen2.5-7B/14B-Instruct and Llama3.1-8B-Instruct (Apache-2.0); reports large ASR drops on HarmBench, WildGuardTest, WildJailbreak, DAN and X-Teaming with little loss in general capability.",
+      "descriptionZh": "以 MAGIC 非对称攻击者–防御者多智能体 RL 博弈（GRPO、SPNE）训练的安全对齐防御 LLM：推理攻击者与防御者共同演化；已发布 Qwen2.5-7B/14B-Instruct 与 Llama3.1-8B-Instruct 防御检查点（Apache-2.0），在 HarmBench、WildGuardTest、WildJailbreak、DAN 与 X-Teaming 上显著降低 ASR 且通用能力损失较小。",
+      "year": 2026,
+      "publisher": "AI45Lab / Shanghai AI Laboratory (Wen et al.)",
+      "github": "https://github.com/AI45Lab/MAGIC",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/AI45Lab/MAGIC"
+        },
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/XiaoyuWen/MAGIC-Qwen2.5-7B-Instruct"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.01539"
+        }
+      ],
+      "sources": [
+        "https://github.com/AI45Lab/MAGIC",
+        "https://huggingface.co/XiaoyuWen/MAGIC-Qwen2.5-7B-Instruct",
+        "https://arxiv.org/abs/2602.01539",
+        "https://github.com/OpenTAI/opentai.github.io/issues/113"
+      ],
+      "verificationNote": "Primary sources checked 2026-10-07: arXiv:2602.01539; GitHub AI45Lab/MAGIC (ICML 2026); HF XiaoyuWen/MAGIC-* defender checkpoints (Apache-2.0). Aligned Models / LLMs. Distinct from X-Boundary. Added from issue #113."
+    },
+    {
+      "id": "yufeng-xguard-reason",
+      "name": "YuFeng-XGuard-Reason",
+      "category": "Guard Models",
+      "description": "Reasoning-centric, interpretable guardrail series (0.6B and 8B, Qwen3-based) that classifies risk in user requests, model responses and general text. Two-stage output gives a structured risk verdict and score first, then an explanation on demand; the 8B model accepts dynamic, prompt-supplied safety policies at inference time. Built-in taxonomy follows S-Eval risk dimensions. Apache-2.0.",
+      "descriptionZh": "以推理为中心、可解释的护栏系列（0.6B 与 8B，基于 Qwen3），对用户请求、模型回复与通用文本进行风险分类；两阶段输出先给出结构化风险判定与分数，再按需生成解释；8B 模型支持推理时动态、提示注入的安全策略；内置分类遵循 S-Eval 风险维度。Apache-2.0。",
+      "year": 2026,
+      "publisher": "Alibaba AAIG",
+      "github": "https://github.com/Alibaba-AAIG/YuFeng-XGuard-Reason",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Alibaba-AAIG/YuFeng-XGuard-Reason"
+        },
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/Alibaba-AAIG/YuFeng-XGuard-Reason-8B"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.15588"
+        }
+      ],
+      "sources": [
+        "https://github.com/Alibaba-AAIG/YuFeng-XGuard-Reason",
+        "https://huggingface.co/Alibaba-AAIG/YuFeng-XGuard-Reason-8B",
+        "https://arxiv.org/abs/2601.15588",
+        "https://github.com/OpenTAI/opentai.github.io/issues/114"
+      ],
+      "verificationNote": "Primary sources checked 2026-10-07: arXiv:2601.15588; GitHub Alibaba-AAIG/YuFeng-XGuard-Reason; HF Alibaba-AAIG/YuFeng-XGuard-Reason-8B and -0.6B. Guard Models / LLMs. Distinct from Qwen3Guard / GuardReasoner / MD-Judge / XGuard-Train. Added from issue #114."
+    },
+    {
+      "id": "gpt-oss-safeguard",
+      "name": "gpt-oss-safeguard",
+      "category": "Guard Models",
+      "description": "Open-weight safety reasoning models (gpt-oss-safeguard-120b and -20b) built on gpt-oss that classify content against a developer-supplied policy at inference time (bring-your-own-policy), with configurable reasoning effort and full access to the reasoning trace. Apache-2.0; ROOST Model Community partner.",
+      "descriptionZh": "基于 gpt-oss 的开源权重安全推理模型（gpt-oss-safeguard-120b 与 -20b）：在推理时按开发者提供的策略对内容分类（自带策略），可配置推理强度并完整访问推理轨迹。Apache-2.0；ROOST Model Community 合作伙伴。",
+      "year": 2025,
+      "publisher": "OpenAI",
+      "github": "https://github.com/openai/gpt-oss-safeguard",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/openai/gpt-oss-safeguard"
+        },
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/openai/gpt-oss-safeguard-20b"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2508.10925"
+        }
+      ],
+      "sources": [
+        "https://github.com/openai/gpt-oss-safeguard",
+        "https://huggingface.co/openai/gpt-oss-safeguard-20b",
+        "https://arxiv.org/abs/2508.10925",
+        "https://github.com/OpenTAI/opentai.github.io/issues/115"
+      ],
+      "verificationNote": "Primary sources checked 2026-10-07: GitHub openai/gpt-oss-safeguard; HF openai/gpt-oss-safeguard-20b and -120b (Apache-2.0); arXiv:2508.10925. Guard Models / LLMs. Distinct from gpt-oss base / Llama Guard / Qwen3Guard. Added from issue #115."
     }
   ],
   "frameworks": [

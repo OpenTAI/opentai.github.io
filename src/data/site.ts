@@ -4629,6 +4629,36 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  "duma-bench": {
+    slug: "duma-bench",
+    name: "DUMA-Bench",
+    category: "Agents",
+    description: "Dual-control multi-agent security benchmark for LLM agents (AI Security Lab, ITMO). Extends τ²-bench with adversarial environments where both the agent and a simulated user can change shared state, covering eight vulnerability classes (e.g., RAG poisoning, cross-agent manipulation, mailbox exfiltration, phishing pressure, identity spoofing, tool-shadow poisoning, unsafe output handling). Reports attack success rate across 14 models; dual-control interaction raises ASR from 26.9% to 41.1%.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2609.24662",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/ai-security-lab-itmo/duma-benchmark",
+      },
+    ],
+    stats: [],
+    tags: [
+      "robustness",
+    ],
+    arxivId: "2609.24662",
+    paperUrl: "https://arxiv.org/abs/2609.24662",
+    repo: "ai-security-lab-itmo/duma-benchmark",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -9730,6 +9760,30 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         slug: "safetoolbench",
         domain: "Agents",
         property: "Harmful Content",
+      },
+      {
+        name: "DUMA-Bench",
+        note: "Dual-control multi-agent security benchmark for LLM agents (AI Security Lab, ITMO). Extends τ²-bench with adversarial environments where both the agent and a simulated user can change shared state, covering eight vulnerability classes (e.g., RAG poisoning, cross-agent manipulation, mailbox exfiltration, phishing pressure, identity spoofing, tool-shadow poisoning, unsafe output handling). Reports attack success rate across 14 models; dual-control interaction raises ASR from 26.9% to 41.1%.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "robustness",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2609.24662",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/ai-security-lab-itmo/duma-benchmark",
+          },
+        ],
+        slug: "duma-bench",
+        domain: "Agents",
+        property: "Robustness",
       },
     ],
   },
