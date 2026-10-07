@@ -17,7 +17,7 @@ npm run dev
 
 | Route | Contents |
 | --- | --- |
-| `/` | Discover — site-wide search, newsletter signup, trending, latest releases |
+| `/` | Discover — site-wide search, daily AI safety digest, trending, latest releases |
 | `/benchmarks` | Flagship collection, 69 entries; primary filters are LLMs, Agents, Embodied AI |
 | `/benchmarks/[slug]` | Per-benchmark page: description, code, papers, leaderboard, curation gaps |
 | `/models` | Verified open-source guard, security-specialized, and safety-aligned models |
