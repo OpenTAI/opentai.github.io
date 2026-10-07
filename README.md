@@ -122,7 +122,7 @@ unreviewed community issue from appearing on the public site automatically.
 
 ## Daily AI safety digest
 
-The homepage's "Your Daily Digest Of AI Safety" card links to
+The homepage's "AI Safety HOT" card links to
 https://aisafetyhot.com/ in a new tab. Both English and Chinese pages direct
 visitors to AI Safety HOT for daily highlights and trending topics.
 
