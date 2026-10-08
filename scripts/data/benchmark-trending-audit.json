@@ -1,0 +1,1147 @@
+{
+  "version": 1,
+  "scope": "Homepage Trending eligibility only; safety, security, privacy, fairness, truthfulness and safety-relevant robustness. Catalog membership is unchanged.",
+  "records": [
+    {
+      "slug": "bipia",
+      "name": "BIPIA",
+      "status": "keep",
+      "reason": "The primary paper evaluates indirect prompt injection through external content and defenses against attacker-controlled instructions.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2312.14197"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "toolemu",
+      "name": "ToolEmu",
+      "status": "keep",
+      "reason": "The primary paper introduces emulated tools and a safety evaluator to identify agent failures such as private-data leakage and financial loss.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2309.15817"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "injecagent",
+      "name": "InjecAgent",
+      "status": "keep",
+      "reason": "The primary paper evaluates indirect prompt injections intended to harm users or exfiltrate private data through tool-integrated agents.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2403.02691"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "agentdojo",
+      "name": "AgentDojo",
+      "status": "keep",
+      "reason": "The primary paper measures agent security against prompt injections in untrusted tool outputs and provides attack and defense evaluation tasks.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2406.13352"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "agentharm",
+      "name": "AgentHarm",
+      "status": "keep",
+      "reason": "The primary paper tests refusal and completion of explicitly malicious multi-step agent tasks across harm categories.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2410.09024"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "redcode",
+      "name": "RedCode",
+      "status": "keep",
+      "reason": "The primary paper evaluates risky code execution and generation, including unsafe file-system operations and harmful software.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2411.07781"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "vpi-bench",
+      "name": "VPI-Bench",
+      "status": "keep",
+      "reason": "The primary paper tests whether malicious instructions embedded in rendered interfaces hijack computer-use and browser agents.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2506.02456"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "r-judge",
+      "name": "R-Judge",
+      "status": "keep",
+      "reason": "The primary paper measures recognition and identification of safety risks from annotated agent interaction records.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2401.10019"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "salad-bench",
+      "name": "SALAD-Bench",
+      "status": "keep",
+      "reason": "The primary paper explicitly evaluates LLM safety and attack/defense performance through a hierarchical risk taxonomy.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2402.05044"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "h4rm3l",
+      "name": "h4rm3l",
+      "status": "keep",
+      "reason": "The primary paper synthesizes compositional jailbreaks and benchmarks harmful model behavior against the resulting attack dataset.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2408.04811"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "sg-bench",
+      "name": "SG-Bench",
+      "status": "keep",
+      "reason": "The primary paper measures safety alignment generalization across generative and discriminative tasks, prompting styles, and jailbreaks.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2410.21965"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "chemsafetybench",
+      "name": "ChemSafetyBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates chemical-response safety, legality, accuracy, and dangerous synthesis requests, including jailbreak scenarios.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2411.16736"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "toolsword",
+      "name": "ToolSword",
+      "status": "keep",
+      "reason": "The primary paper evaluates safety failures across tool-learning input, execution, and output stages, including harmful requests and risky tools.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2402.10753"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "privacylens",
+      "name": "PrivacyLens",
+      "status": "keep",
+      "reason": "The primary paper measures contextual privacy norms and sensitive-information leakage in agents' actual actions.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2409.00138"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "safebench",
+      "name": "SafeBench",
+      "status": "keep",
+      "reason": "The primary paper explicitly evaluates autonomous-driving safety using generated safety-critical scenarios and adversarial/distribution-shift testing.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2206.09682"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "agent-security-bench-asb",
+      "name": "Agent Security Bench (ASB)",
+      "status": "keep",
+      "reason": "The primary paper benchmarks agent prompt injection, memory poisoning, backdoors, and defenses across operational stages.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2410.02644"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "safeagentbench",
+      "name": "SafeAgentBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates safety-aware embodied task planning under explicit and implicit hazards in interactive simulation.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2412.13178"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "agent-safetybench",
+      "name": "Agent-SafetyBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates agent safety risks and unsafe interaction failure modes across tool environments.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2412.14470"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "advweb-are",
+      "name": "AdvWeb / ARE",
+      "status": "keep",
+      "reason": "The primary paper evaluates targeted adversarial hijacking of multimodal web agents through manipulated image observations.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2406.12814"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "st-webagentbench",
+      "name": "ST-WebAgentBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates policy-compliant web-agent completion and violations involving consent, robustness, and other trustworthiness dimensions.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2410.06703"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "haicosystem",
+      "name": "Haicosystem",
+      "status": "keep",
+      "reason": "The primary paper evaluates operational, content, societal, and legal safety risks in sandboxed human-agent interactions.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2409.16427"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "wasp",
+      "name": "WASP",
+      "status": "keep",
+      "reason": "The primary paper tests end-to-end web-agent security against realistic prompt injections and attacker-goal completion.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2504.18575"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "refusal-trained-llms",
+      "name": "Refusal-Trained LLMs",
+      "status": "keep",
+      "reason": "The primary paper introduces BrowserART to test whether browser agents refuse harmful instructions and resist jailbreaks.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2410.13886"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "safearena",
+      "name": "SafeArena",
+      "status": "keep",
+      "reason": "The primary paper evaluates deliberate web-agent misuse using paired safe/harmful tasks involving misinformation, cybercrime, and other harms.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2503.04957"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "openagentsafety",
+      "name": "OpenAgentSafety",
+      "status": "keep",
+      "reason": "The primary paper evaluates unsafe behavior across eight risk categories using agents interacting with browsers, shells, files, and messaging tools.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2507.06134"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "mobilesafetybench",
+      "name": "MobileSafetyBench",
+      "status": "keep",
+      "reason": "The primary paper tests mobile-control agent misuse, negative side effects, and indirect prompt injection in Android environments.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2410.17520"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "bench2drive",
+      "name": "Bench2Drive",
+      "status": "exclude",
+      "reason": "The primary paper defines a general closed-loop autonomous-driving capability benchmark across interactive scenarios and driving abilities. Driving/collision metrics do not establish a dedicated safety evaluation purpose for homepage eligibility; retained in the full benchmark catalog.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2406.03877"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "m3bench",
+      "name": "M3Bench",
+      "status": "exclude",
+      "reason": "The primary paper evaluates whole-body motion generation, object rearrangement, and generalization across scenes. Environmental motion constraints alone do not establish a dedicated safety or trustworthiness evaluation.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2410.06678"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "thor-eae",
+      "name": "THOR-EAE",
+      "status": "exclude",
+      "reason": "The located THOR-EAE repository documents egocentric images, action explanations, regions of interest, and metadata, but supplies no direct safety/security/trustworthiness evaluation claim. Direct safety relevance remains unverified, so homepage eligibility is excluded.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/polkalian/THOR-EAE/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "embodied-agent-interface-eai",
+      "name": "Embodied Agent Interface (EAI)",
+      "status": "exclude",
+      "reason": "The primary paper evaluates general embodied decision-making modules and planning errors. Its hallucination/affordance error diagnostics support task capability evaluation rather than a dedicated safety or truthfulness benchmark.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2410.07166"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "agentsafe-multi-agent-systems",
+      "name": "AgentSafe",
+      "status": "keep",
+      "reason": "The primary paper directly evaluates security against unauthorized access, impersonation, and memory poisoning in multi-agent systems. It describes a defense framework with security experiments, so inclusion reflects direct security scope rather than a new claim about its catalog resource type.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2503.04392"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "safe-beai",
+      "name": "Safe-BeAI",
+      "status": "keep",
+      "reason": "The primary paper introduces SafePlan-Bench to measure embodied task-planning safety under physical hazard categories and Safe-Align to mitigate them.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2504.14650"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "agentsafe-hazardous-instructions",
+      "name": "AGENTSAFE",
+      "status": "keep",
+      "reason": "The same primary paper now names its evaluation suite SAFE and explicitly tests embodied agents on hazardous instructions across perception, planning, and execution; the existing catalog alias remains unchanged.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2506.14697"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "safemindbench",
+      "name": "SafeMindBench",
+      "status": "keep",
+      "reason": "The primary paper tests embodied planning failures under factual, causal, and temporal safety constraints, including sabotage, harm, privacy, and illegal behavior.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2509.25885"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "despite",
+      "name": "DESPITE",
+      "status": "keep",
+      "reason": "The primary paper evaluates physical and normative dangers in embodied plans with deterministic validation, separating planning ability from danger avoidance.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2604.18463"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "robojailbench",
+      "name": "RoboJailBench",
+      "status": "keep",
+      "reason": "The primary paper standardizes jailbreak attack and defense evaluation for robotic agents using security violations and paired adversarial/benign goals.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2605.19328"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "hasard",
+      "name": "HASARD",
+      "status": "keep",
+      "reason": "The primary paper introduces vision-based safe reinforcement-learning tasks and evaluates reward-cost trade-offs for embodied agents.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2503.08241"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "vision-and-language-navigation-interpreting-visually-grounded-navigation-instructions-in-real-environments",
+      "name": "Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments",
+      "status": "exclude",
+      "reason": "The primary paper introduces Matterport3D/R2R for following visually grounded navigation instructions. It evaluates general navigation capability without a dedicated safety or trustworthiness objective.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/1711.07280"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "vizwiz-grand-challenge-answering-visual-questions-from-blind-people",
+      "name": "VizWiz Grand Challenge: Answering Visual Questions from Blind People",
+      "status": "exclude",
+      "reason": "The primary paper evaluates visual question answering and answerability for images/questions from blind users. Accessibility motivation alone does not make this a fairness, harm, or other dedicated trustworthiness evaluation.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/1802.08218"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "truthfulqa",
+      "name": "TruthfulQA",
+      "status": "keep",
+      "reason": "The primary paper explicitly evaluates whether model answers reproduce false beliefs and misconceptions, directly measuring truthfulness.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2109.07958"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "advglue",
+      "name": "AdvGLUE",
+      "status": "keep",
+      "reason": "The primary paper evaluates vulnerabilities under adversarial textual manipulation, including human-validated semantic-preserving attacks; this directly tests adversarial robustness.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2111.02840"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "advbench",
+      "name": "AdvBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates adversarial prompts that bypass alignment and induce objectionable content, making its harmful-behavior benchmark directly safety-relevant.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2307.15043"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "cvalues",
+      "name": "CVALUES",
+      "status": "keep",
+      "reason": "The primary paper evaluates Chinese LLM alignment with safety and responsibility criteria using adversarial safety and expert-authored responsibility prompts.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2307.09705"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "fine",
+      "name": "FINE",
+      "status": "keep",
+      "reason": "The primary paper tests consistency of safety alignment across open-ended and multiple-choice evaluations and measures fake alignment.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2311.05915"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "flames",
+      "name": "FLAMES",
+      "status": "keep",
+      "reason": "The primary paper evaluates harmlessness, safety, fairness, and value alignment using adversarial Chinese prompts.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2311.06899"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "sorrybench",
+      "name": "SORRYBench",
+      "status": "keep",
+      "reason": "The primary paper measures recognition and refusal of unsafe user requests across a fine-grained harm taxonomy and linguistic variants.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2406.14598"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "safetybench",
+      "name": "SafetyBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates safety understanding across seven categories of concern using Chinese and English questions.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2309.07045"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "backdoorllm",
+      "name": "BackdoorLLM",
+      "status": "keep",
+      "reason": "The primary paper benchmarks text-generation LLM backdoor attacks and defenses across poisoning and trigger mechanisms.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2408.12798"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "jailbreakv-28k",
+      "name": "JailBreakV-28K",
+      "status": "keep",
+      "reason": "The primary paper evaluates multimodal model robustness to textual and visual jailbreaks that bypass safety alignment.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2404.03027"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "strongreject",
+      "name": "STRONGREJECT",
+      "status": "keep",
+      "reason": "The primary paper evaluates jailbreak effectiveness through forbidden prompts and the usefulness of resulting harmful information.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2402.10260"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "libra-leaderboard",
+      "name": "Libra-Leaderboard",
+      "status": "keep",
+      "reason": "The primary paper explicitly combines safety and capability assessments and evaluates their balance, so safety is a direct evaluation target.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2412.18551"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "case-bench",
+      "name": "CASE-Bench",
+      "status": "keep",
+      "reason": "The primary paper tests context-sensitive safety judgments and inappropriate refusals using safe and unsafe contexts.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2501.14940"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "harmbench",
+      "name": "HarmBench",
+      "status": "keep",
+      "reason": "The primary paper standardizes automated red teaming and robust refusal evaluation for harmful requests.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2402.04249"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "bumble",
+      "name": "BUMBLE",
+      "status": "keep",
+      "reason": "The primary paper introduces BUMBLE to elicit and evaluate implicit demographic bias using psychometric attack strategies.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2406.14023"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "jailbreakbench",
+      "name": "JailbreakBench",
+      "status": "keep",
+      "reason": "The primary paper provides harmful-behavior tasks, explicit threat models, and attack/defense evaluation for LLM jailbreaking.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2404.01318"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "or-bench",
+      "name": "OR-Bench",
+      "status": "keep",
+      "reason": "The official repository evaluates over-refusal on safe prompts that resemble toxic requests, alongside refusal of genuinely toxic prompts.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/justincui03/or-bench/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "xstest",
+      "name": "XSTest",
+      "status": "keep",
+      "reason": "The official publication evaluates exaggerated safety refusals using safe prompts and contrasting unsafe prompts; safety calibration is the direct objective.",
+      "sourceUrls": [
+        "https://aclanthology.org/2024.naacl-long.301/"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "air-bench-2024",
+      "name": "AIR-Bench 2024",
+      "status": "keep",
+      "reason": "The official repository defines safety risk categories grounded in regulations and company policies and evaluates model responses against them.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/stanford-crfm/air-bench-2024/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "mssbench",
+      "name": "MSSBench",
+      "status": "keep",
+      "reason": "The official repository releases paired safe/unsafe images and instructions for multimodal situational-safety evaluation in chat and embodied tasks.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/UCSB-AI/MSSBench/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "wmdp",
+      "name": "WMDP",
+      "status": "keep",
+      "reason": "The official repository measures hazardous knowledge in biosecurity, cybersecurity, and chemical security and evaluates unlearning as a misuse mitigation.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/centerforaisafety/wmdp/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "hallusionbench",
+      "name": "HallusionBench",
+      "status": "keep",
+      "reason": "The official repository explicitly diagnoses language hallucination and visual illusion in multimodal outputs, directly addressing truthfulness failures.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/tianyi-lab/HallusionBench/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "mm-safetybench",
+      "name": "MM-SafetyBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates safety failures caused by image-based manipulation of multimodal models across risk scenarios.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2311.17600"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "scam",
+      "name": "SCAM",
+      "status": "keep",
+      "reason": "The official repository evaluates whether agents recognize phishing, credential exposure, data leakage, and other security threats during ordinary workflows.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/1Password/SCAM/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "susvibes-v1-0",
+      "name": "SusVibes v1.0",
+      "status": "keep",
+      "reason": "The official repository evaluates security vulnerabilities in agent-generated code on real software feature requests.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/LeiLiLab/susvibes/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "mask",
+      "name": "MASK",
+      "status": "keep",
+      "reason": "The official repository evaluates honesty by testing whether models contradict their own beliefs under pressure to lie, separating honesty from factual accuracy.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/centerforaisafety/mask/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "agentleak",
+      "name": "AgentLeak",
+      "status": "keep",
+      "reason": "The primary paper evaluates sensitive-data leakage through internal multi-agent channels, including shared memory and inter-agent messages.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2602.11510"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "cybench",
+      "name": "Cybench",
+      "status": "keep",
+      "reason": "The official repository explicitly evaluates cybersecurity capabilities and risk through capture-the-flag tasks; the security-risk purpose is direct.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/andyzorigin/cybench/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "safety-gymnasium",
+      "name": "Safety-Gymnasium",
+      "status": "keep",
+      "reason": "The primary paper provides safety-critical reinforcement-learning tasks with constraints and safety-performance evaluation.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2310.12567"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "bbq",
+      "name": "BBQ",
+      "status": "keep",
+      "reason": "The official repository evaluates social stereotypes and biases against protected classes in question answering.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/nyu-mll/BBQ/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "figstep",
+      "name": "FigStep",
+      "status": "keep",
+      "reason": "The primary paper evaluates visual typographic jailbreaks that bypass multimodal safety alignment and releases attack evaluation data.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2311.05608"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "isc-bench",
+      "name": "ISC-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates harmful generation during otherwise benign professional tasks and internal safety collapse under task constraints.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2603.23509"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "embodiedbench",
+      "name": "EmbodiedBench",
+      "status": "exclude",
+      "reason": "The primary paper evaluates general vision-driven embodied capabilities, including reasoning, spatial awareness, perception, and planning. It does not establish a dedicated safety or trustworthiness evaluation purpose.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2502.09560"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "is-bench",
+      "name": "IS-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates whether embodied agents detect emergent household risks and execute mitigation actions in the required procedural order.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2506.16402"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "attackvla",
+      "name": "AttackVLA",
+      "status": "keep",
+      "reason": "The primary paper benchmarks adversarial and backdoor manipulation of vision-language-action models in simulated and real robotic settings.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2511.12149"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "skillsafetybench",
+      "name": "SkillSafetyBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates unsafe agent actions induced through malicious skill guidance, local artifacts, and execution-environment files.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2605.12015"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "embodiedgovbench",
+      "name": "EmbodiedGovBench",
+      "status": "keep",
+      "reason": "The primary paper directly evaluates authorization boundaries, policy enforcement, safe recovery/upgrades, human override, and auditability in embodied systems.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2604.11174"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "alert",
+      "name": "ALERT",
+      "status": "keep",
+      "reason": "The primary paper evaluates LLM safety through red teaming and a fine-grained risk taxonomy of harmful instructions.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2404.08676"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "aya-red-teaming",
+      "name": "Aya Red-teaming",
+      "status": "keep",
+      "reason": "The primary paper releases multilingual human red-teaming prompts to evaluate global and culturally local harms and safety alignment.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2406.18682"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "polyglotoxicityprompts",
+      "name": "PolygloToxicityPrompts",
+      "status": "keep",
+      "reason": "The official dataset card explicitly defines a multilingual toxicity evaluation benchmark and states that its intended use is model-toxicity evaluation.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/ToxicityPrompts/PolygloToxicityPrompts/raw/main/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "in-the-wild-jailbreak-prompts",
+      "name": "In-The-Wild Jailbreak Prompts",
+      "status": "keep",
+      "reason": "The primary paper characterizes real-world jailbreak prompts and evaluates their ability to bypass safeguards across forbidden scenarios.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2308.03825"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "nemotron-aiq-agentic-safety",
+      "name": "Nemotron-AIQ Agentic Safety",
+      "status": "keep",
+      "reason": "The official dataset card explicitly supports evaluation of agentic safety/security risks, harmful-query refusal, and risks arising from untrusted data in research-assistant traces.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/nvidia/Nemotron-AIQ-Agentic-Safety-Dataset-1.0/raw/main/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "openart",
+      "name": "OpenART",
+      "status": "keep",
+      "reason": "The primary paper provides stateful red-teaming scenarios to evaluate cumulative agent safety failures under evolving environments.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2608.00677"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "dtap",
+      "name": "DTap",
+      "status": "keep",
+      "reason": "The primary paper introduces controllable agent red-teaming environments and verified attack outcomes for risks such as data leakage and unauthorized actions.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2605.04808"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "vlsbench",
+      "name": "VLSBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates multimodal safety while removing textual leakage of visual risk cues, testing whether models handle genuinely visual safety concerns.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2411.19939"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "mllmguard",
+      "name": "MLLMGuard",
+      "status": "keep",
+      "reason": "The primary paper evaluates multimodal privacy, bias, toxicity, truthfulness, and legality through annotated image-text tasks.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2406.07594"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "riosworld",
+      "name": "RiOSWorld",
+      "status": "keep",
+      "reason": "The primary paper evaluates user-originated and environmental safety risks in real computer-use tasks, including harmful intent and goal completion.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2506.00618"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "reflectionbench",
+      "name": "ReflectionBench",
+      "status": "exclude",
+      "reason": "The primary paper measures general epistemic agency through cognitive tasks such as prediction, memory, belief updating, and reflection. Reliability motivation does not establish a dedicated harm, honesty, or safety evaluation.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2410.16270"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "safeverse",
+      "name": "SafeVerse",
+      "status": "keep",
+      "reason": "The official repository explicitly supports adversarial attack-defense exercises and safety/capability co-evolution for embodied agents. It is a security/safety evaluation platform rather than merely a general scene simulator.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/AI45Lab/SafeVerse/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "pseudobench",
+      "name": "PseudoBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates whether autonomous research agents resist pseudoscientific claims and misleading evidence, directly testing scientific truthfulness.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2606.18060"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "t2isafety",
+      "name": "T2ISafety",
+      "status": "keep",
+      "reason": "The primary paper explicitly evaluates harmful image generation, fairness, and privacy risks; direct safety relevance is independent of the existing catalog domain label.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2501.12612"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "actorattack",
+      "name": "ActorAttack",
+      "status": "keep",
+      "reason": "The linked primary paper now calls the method ActorBreaker and directly evaluates multi-turn jailbreaks and safety generalization under natural distribution shifts; the catalog alias is preserved.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2410.10700"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "atbench",
+      "name": "ATBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates safe/unsafe agent trajectories using risk sources, failure modes, and real-world harms with structured diagnosis.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2604.02022"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "codeattack",
+      "name": "CodeAttack",
+      "status": "keep",
+      "reason": "The primary paper evaluates whether transforming harmful natural-language requests into code-completion inputs bypasses LLM safety guardrails.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2403.07865"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "ml-bench",
+      "name": "ML-Bench",
+      "status": "keep",
+      "reason": "Version 1 of the primary paper explicitly introduces ML-Bench for policy-grounded multilingual safety evaluation; the current revision renames it BabelSafe. Both directly evaluate safety, and the stable catalog alias is preserved.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2605.00689v1",
+        "https://arxiv.org/abs/2605.00689"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "hazardarena",
+      "name": "HazardArena",
+      "status": "keep",
+      "reason": "The primary paper tests semantic safety with matched safe/unsafe robotic scenarios, separating hazard recognition from successful motor execution.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2604.12447"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "spike-bench",
+      "name": "SPIKE-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates biosecurity risks of generated protein sequences using toxin-design prompts and computational functional-risk screening.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2608.02684"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "mm-deceptionbench",
+      "name": "MM-DeceptionBench",
+      "status": "keep",
+      "reason": "The primary paper directly evaluates deceptive multimodal behavior across six deception categories and methods for detecting it.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2512.00349"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "mir-safetybench",
+      "name": "MIR-SafetyBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates safety failures in multi-image reasoning, including harmful outputs and superficially safe evasions.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2601.14127"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "harmfulskillbench",
+      "name": "HarmfulSkillBench",
+      "status": "keep",
+      "reason": "The primary paper measures whether pre-installed harmful skills induce misuse and reduce refusal across agent risk categories.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2604.15415"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "survivalbench",
+      "name": "SurvivalBench",
+      "status": "keep",
+      "reason": "The primary paper tests socially harmful or risky behavior induced by shutdown and self-preservation pressure.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2603.05028"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "mmdt-mmdecodingtrust",
+      "name": "MMDT (MMDecodingTrust)",
+      "status": "keep",
+      "reason": "The primary paper evaluates multimodal safety, hallucination, fairness/bias, privacy, and adversarial robustness in a unified trustworthiness suite.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2503.14827"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "polyguard",
+      "name": "PolyGuard",
+      "status": "keep",
+      "reason": "The primary paper benchmarks guardrail safety judgments against domain-specific policies, including benign over-refusal and adversarial evasion.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2506.19054"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "agentdrift",
+      "name": "AgentDrift",
+      "status": "keep",
+      "reason": "The primary paper provides step-labeled trajectories for detecting indirect prompt injection, hijacked actions, resisted attacks, and benign hard negatives.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2609.06972"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "harnessrisk",
+      "name": "HarnessRisk",
+      "status": "keep",
+      "reason": "The primary paper evaluates injection-driven safety failures across agent harness configuration, runtime, persistence, action control, and incident recovery.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2608.17597"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "agenthazard",
+      "name": "AgentHazard",
+      "status": "keep",
+      "reason": "The primary paper tests whether computer-use agents recognize and interrupt harmful objectives assembled from apparently legitimate intermediate steps.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2604.02947"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "blindspot",
+      "name": "BLINDSPOT",
+      "status": "keep",
+      "reason": "The primary paper measures trajectory-level safety calibration, unsafe completion, correct refusal, over-refusal, and post-refusal failure in tool-using agents.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2609.16305"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "nsfa-benchmarks",
+      "name": "NSFA Benchmarks",
+      "status": "keep",
+      "reason": "The primary paper introduces security benchmarks covering prompt injection, sensitive-information extraction, malicious code, tool misuse, and resource exhaustion.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2607.13081"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "maniguard",
+      "name": "ManiGuard",
+      "status": "keep",
+      "reason": "The primary paper evaluates robotic manipulation against formal safety specifications independently of task completion, including distribution shifts.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2608.17386"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "libero-safety",
+      "name": "LIBERO-Safety",
+      "status": "keep",
+      "reason": "The primary paper evaluates physical and semantic safety of robotic action models under constraints and safety-critical scenarios.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2606.23686"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "sentinel",
+      "name": "SENTINEL",
+      "status": "keep",
+      "reason": "The primary paper formally evaluates physical safety across embodied semantic interpretation, planning, and execution using temporal-logic requirements.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2510.12985"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "blindspot-over-refusal",
+      "name": "BlindSpot (Over-Refusal)",
+      "status": "keep",
+      "reason": "The primary paper measures safety-trained models' inappropriate refusal of requests involving unjust or illegitimate rules, directly evaluating refusal calibration.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2604.06233"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "pids-bench",
+      "name": "PIDS-Bench",
+      "status": "keep",
+      "reason": "The official repository evaluates prompt-injection detectors for benign false positives, obfuscated attacks, and distribution shift, directly measuring security detection quality.",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/ShirePyDev/Prompt-Injection-Detection-System/HEAD/README.md"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "safetoolbench",
+      "name": "SafeToolBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates prospective tool-use safety before execution to prevent financial loss, privacy leakage, and other harm.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2509.07315"
+      ],
+      "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "duma-bench",
+      "name": "DUMA-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates agent security under dual-control interaction with adversarial environments, including RAG poisoning and cross-agent manipulation.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2609.24662"
+      ],
+      "reviewedAt": "2026-10-08"
+    }
+  ]
+}
