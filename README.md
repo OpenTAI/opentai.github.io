@@ -120,6 +120,40 @@ verified facts into the appropriate canonical data source and mark the queue
 record `approved`. Only canonical data sources are published. This keeps an
 unreviewed community issue from appearing on the public site automatically.
 
+## Maintaining homepage Trending eligibility
+
+Homepage Trending uses `scripts/data/benchmark-trending-audit.json` to select
+benchmarks independently of the full benchmark catalog. Each review records the
+existing stable `slug`, exact catalog `name`, `status` (`keep` or `exclude`),
+an item-specific `reason`, primary-source `sourceUrls`, and an ISO `reviewedAt`
+date (`YYYY-MM-DD`). The initial review covers all 114 current benchmark rows:
+106 eligible and 8 excluded from homepage Trending only. Models use the verified
+`ecosystemModels` catalog; datasets use the existing published audited dataset
+rows.
+
+Read the original paper or official project documentation before adding a
+`keep` decision. Safety, security, privacy, fairness, truthfulness, and
+safety-relevant adversarial robustness qualify. General task capability,
+accessibility motivation, incidental use in a safety paper, or a safety-sounding
+name alone do not. If direct relevance cannot be verified, record `exclude`
+and explain the evidence gap. This review does not remove any catalog record.
+
+After reviewing an added or changed benchmark, update the ledger and run:
+
+```bash
+python3 scripts/generate-site.py
+python3 -m unittest discover -s scripts -p test_trending_catalog.py
+python3 -m unittest discover -s scripts/tests -p test_trending_generation.py
+```
+
+The generator validates ledger identities, duplicates, decisions, reasons,
+URLs, and dates, and writes `src/data/trending.ts`; do not edit that generated
+file. New benchmarks without a review are excluded by default, with their
+names and slugs reported during generation. The coverage test fails until
+every current row has a decision. Homepage sorting and card limits are applied
+after eligibility filtering, so an excluded high-star resource cannot occupy
+a Trending slot.
+
 ## Daily AI safety digest
 
 The homepage's "AI Safety HOT" card links to
