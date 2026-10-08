@@ -2,7 +2,10 @@
 import copy
 import importlib.util
 import json, pathlib, re
+import sys
 from urllib.parse import urlparse
+
+from trending_catalog import missing_trending_reviews, trending_benchmark_slugs
 
 from dataset_catalog import (
     dataset_summary,
@@ -1027,6 +1030,13 @@ def build_bench_details():
 
 benchmark_details = build_bench_details()
 
+# Homepage eligibility is separate from benchmark catalog membership.
+TRENDING_AUDIT = json.loads((DATA / "benchmark-trending-audit.json").read_text())["records"]
+trending_slugs = trending_benchmark_slugs(bench_rows, TRENDING_AUDIT)
+missing_trending = missing_trending_reviews(bench_rows, TRENDING_AUDIT)
+if missing_trending:
+    print("Trending review missing (excluded): " + ", ".join(missing_trending), file=sys.stderr)
+
 CATEGORIES = {
     "papers": [
         ("Attack & Red Teaming", "Probing frontier models for exploitable failure modes.", "pink",
@@ -1473,6 +1483,13 @@ parts.append("export const subpageConfigs: Record<string, SubpageConfig> = " + t
 parts.append('export const collectionOrder = [\n  "benchmarks",\n  "models",\n  "datasets",\n] as const;\n')
 
 OUT.write_text("".join(parts))
+
+TRENDING_OUT = OUT.parent / "trending.ts"
+TRENDING_OUT.write_text(
+    "// Generated from scripts/data/benchmark-trending-audit.json. Do not edit.\n"
+    "// Eligibility only; sorting and card limits are handled by the homepage.\n\n"
+    + block("trendingBenchmarkSlugs", "readonly string[]", trending_slugs).rstrip() + "\n"
+)
 
 # Ecosystem records are a separate, hand-reviewed catalog. Keep them outside
 # site.ts so the home page and unrelated resource routes do not ship the data.

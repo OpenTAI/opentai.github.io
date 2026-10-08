@@ -11,9 +11,11 @@ import {
 } from "@/data/site";
 import { ecosystemCompanies, ecosystemModels } from "@/data/ecosystem";
 import { paperLibrary } from "@/data/papers";
+import { trendingBenchmarkSlugs } from "@/data/trending";
 import { SiteSearch } from "@/components/site-search";
 import { SubscribeBox } from "@/components/subscribe";
 import { Locale, localizeHref, t } from "@/lib/i18n";
+import { buildTrendingResources } from "@/lib/trending-resources";
 
 type Entry = SubpageTableRow & { collection: string; href: string };
 
@@ -42,10 +44,12 @@ const collections = homeCategoryCards.map((card) => ({
   count: categoryCount(card.href),
 }));
 
-const trending = [...ALL]
-  .filter((entry) => entry.stars !== undefined)
-  .sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0))
-  .slice(0, 6);
+const trending = buildTrendingResources({
+  models: ecosystemModels,
+  datasets: subpageConfigs.datasets.tableRows,
+  benchmarks: subpageConfigs.benchmarks.tableRows,
+  allowedBenchmarkSlugs: trendingBenchmarkSlugs,
+});
 
 function recent(slug: string, limit = 4) {
   return [...subpageConfigs[slug].tableRows]
@@ -195,7 +199,7 @@ export function DiscoverTrending({ locale }: { locale: Locale }) {
                 ) : null}
               </div>
               <p className="mt-1 line-clamp-2 text-sm leading-6 text-[#667085]">
-                {t(locale, entry.note)}
+                {locale === "zh" && entry.noteZh ? entry.noteZh : t(locale, entry.note)}
               </p>
             </div>
             <div className="shrink-0 text-right">
