@@ -158,7 +158,18 @@ a Trending slot.
 
 The homepage's "AI Safety HOT" card links to
 https://aisafetyhot.com/ in a new tab. Both English and Chinese pages direct
-visitors to AI Safety HOT for daily highlights and trending topics.
+visitors to AI Safety HOT through the same card, using the team-approved platform
+introduction. The card also shows a 41-second introduction: the initial page loads
+only `/media/ai-safety-hot-intro-poster.jpg`; activating the play button loads
+`/media/ai-safety-hot-intro.mp4` and plays it inline with the original audio and
+native playback controls. Both local media URLs use `NEXT_PUBLIC_BASE_PATH` when
+configured. The English and Chinese pages share the video without subtitles. If
+the media cannot load, the card offers a localized retry while the external visit
+link remains available. Below 1024px, the card stacks the title and description,
+video, then its single external visit button. On desktop, the title, description,
+and visit button stay on the left of the video in a 45:55 layout. The central
+play button stays on the poster at all sizes. This player does not require a
+backend or third-party player.
 
 The previous Google Form URL helper remains in `src/lib/newsletter.ts` for
 legacy use; the homepage no longer uses it. Subscriber addresses must never

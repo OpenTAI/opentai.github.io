@@ -151,8 +151,11 @@ const ZH: Record<string, string> = {
   "All →": "全部 →",
   "Browse The Hub": "浏览资源中心",
   "AI Safety HOT": "AI Safety HOT",
-  "Discover daily highlights, trending topics, and the latest research and news in AI safety.":
-    "浏览每日精选与热点话题，掌握最新人工智能安全研究与资讯。",
+  "AI Safety HOT is an AI-powered news and research aggregation platform that tracks, curates, and summarizes the latest developments in AI safety from 1,000+ media sources worldwide.":
+    "AI Safety HOT 是一个由 AI 驱动的新闻与研究聚合平台，追踪、精选并总结来自全球 1,000 多个媒体来源的 AI 安全最新进展。",
+  "41-second introduction": "41 秒了解 AI Safety HOT",
+  "Could not load the video. Please try again.": "视频加载失败，请重试。",
+  "Retry playback": "重试播放",
   "Digest language": "简报语言",
   "Email address": "邮箱地址",
   Subscribe: "订阅",
