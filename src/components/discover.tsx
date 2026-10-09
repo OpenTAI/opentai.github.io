@@ -142,7 +142,7 @@ export function DiscoverHero({ locale }: { locale: Locale }) {
         <a
           aria-label="OpenTAI GitHub"
           className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-full border border-[#dfe4ee] bg-white px-3 py-3 font-semibold text-[#475467] transition hover:border-[#a5b4fc] hover:text-[#4338ca] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5260ff] sm:px-5"
-          href="https://github.com/OpenTAI"
+          href="https://github.com/OpenTAI/opentai.github.io"
           target="_blank"
           rel="noopener noreferrer"
         >
