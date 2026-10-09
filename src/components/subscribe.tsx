@@ -6,7 +6,7 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
   return (
     <section className="rounded-[28px] border border-[#e3e8f2] bg-white/85 p-7 shadow-[0_12px_40px_rgba(15,23,42,0.06)] backdrop-blur">
       <div className="grid gap-6 lg:grid-cols-[minmax(0,45fr)_minmax(0,55fr)] lg:items-center lg:gap-x-8 lg:gap-y-7">
-        <div className="min-w-0 space-y-3 lg:self-end lg:space-y-5">
+        <div className="min-w-0 space-y-3 lg:self-start lg:space-y-5">
           <h2 className="text-[1.45rem] font-semibold tracking-[-0.04em] text-[#101828] lg:text-[40px] lg:leading-[48px]">
             {t(locale, "AI Safety HOT")}
           </h2>
@@ -25,7 +25,7 @@ export function SubscribeBox({ locale }: { locale: Locale }) {
           />
         </div>
         <a
-          className="site-cta inline-flex w-full items-center justify-center gap-2 text-center sm:w-auto sm:justify-self-start lg:col-start-1 lg:row-start-2 lg:min-h-12! lg:self-start lg:px-6!"
+          className="site-cta inline-flex w-full items-center justify-center gap-2 text-center sm:w-auto sm:justify-self-start lg:col-start-1 lg:row-start-2 lg:min-h-12! lg:self-end lg:px-6!"
           href="https://aisafetyhot.com/"
           rel="noopener noreferrer"
           target="_blank"
