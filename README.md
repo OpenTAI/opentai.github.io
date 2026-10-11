@@ -1,9 +1,6 @@
-# OpenTAI website (rebuild)
+# OpenTAI Website
 
-A rebuild of the OpenTAI site on the OpenHallu framework: Next.js 16 App Router,
-React 19, Tailwind CSS v4, static export.
-
-Positioning: **OpenTAI — The Open Hub for Trustworthy AI**. An open ecosystem
+**OpenTAI — The Open Hub for Trustworthy AI**. An open ecosystem
 connecting trustworthy AI research, innovation, and startups.
 
 ## Local development
