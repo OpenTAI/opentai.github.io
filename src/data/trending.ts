@@ -108,4 +108,10 @@ export const trendingBenchmarkSlugs: readonly string[] = [
   "pids-bench",
   "safetoolbench",
   "duma-bench",
+  "rt-safe",
+  "bazaarbench",
+  "obligationbench",
+  "decepeval",
+  "vla-arena",
+  "revleakbench",
 ];

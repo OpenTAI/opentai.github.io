@@ -1030,6 +1030,68 @@
         "https://github.com/OpenTAI/opentai.github.io/issues/115"
       ],
       "verificationNote": "Primary sources checked 2026-10-07: GitHub openai/gpt-oss-safeguard; HF openai/gpt-oss-safeguard-20b and -120b (Apache-2.0); arXiv:2508.10925. Guard Models / LLMs. Distinct from gpt-oss base / Llama Guard / Qwen3Guard. Added from issue #115."
+    },
+    {
+      "id": "adaguard",
+      "name": "AdaGuard",
+      "category": "Guard Models",
+      "description": "Adaptive guard-model family (0.6B / 4B / 8B, fine-tuned from Qwen3Guard-Gen) that assesses agent trajectories against user-defined policies supplied at inference time (1–100 rules) and returns an explanation plus the set of violated rules, instead of a fixed risk taxonomy. Trained with supervised initialization on AdaptiveSafety policy and behavioral counterfactuals followed by the SafePO RL algorithm; the 4B model reaches 89.30% binary accuracy on AdaptiveSafety and 71.82% on DynaBench.",
+      "descriptionZh": "自适应守卫模型系列（0.6B / 4B / 8B，基于 Qwen3Guard-Gen 微调）：依据推理时提供的用户自定义策略（1–100 条规则）评估智能体轨迹，输出解释与被违反规则集合，而非固定风险分类。先在 AdaptiveSafety 策略与行为反事实数据上监督初始化，再用 SafePO 强化学习算法优化；4B 模型在 AdaptiveSafety 与 DynaBench 上的二分类准确率分别为 89.30% 与 71.82%。",
+      "year": 2026,
+      "publisher": "Feng et al.",
+      "github": "https://github.com/Yunhao-Feng/AdaGuard",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Yunhao-Feng/AdaGuard"
+        },
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/Yunhao-Feng/AdaGuard-4B"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.34241"
+        }
+      ],
+      "sources": [
+        "https://github.com/Yunhao-Feng/AdaGuard",
+        "https://huggingface.co/Yunhao-Feng/AdaGuard-4B",
+        "https://arxiv.org/abs/2609.34241",
+        "https://github.com/OpenTAI/opentai.github.io/issues/127"
+      ],
+      "verificationNote": "Primary sources checked 2026-10-12: arXiv:2609.34241 (Feng, Ding, Xie, Li, Lao, Wang et al.; abstract links the repo); GitHub Yunhao-Feng/AdaGuard (public, MIT); HF Yunhao-Feng/AdaGuard-0.6B / -4B / -8B (public, Apache-2.0, base Qwen3Guard-Gen). Guard Models / Agents. AdaptiveSafety training data not publicly released, so no Dataset entry. Distinct from AgentDoG / BraveGuard / HazardAuditor. Added from issue #127."
+    },
+    {
+      "id": "resi",
+      "name": "ReSI",
+      "category": "Aligned Models",
+      "description": "Safety-improved checkpoints from ReSI (Recursive Safety Improvement), an automated-research framework that in each round red-teams the current target model, develops training recipes, and promotes the update with the largest safety gain that passes a Pareto gate on capability retention. Released for four dense and MoE bases (Qwen3.6-27B, DeepSeek-V4-Flash, Ministral-3-14B-Reasoning, Safin-1-35B-A3B); reduces mean X-Teaming attack success rate across the four models from 86.01% to 31.45% while largely preserving general capability.",
+      "descriptionZh": "来自 ReSI（递归安全改进）的安全增强检查点：该自动化研究框架在每一轮对当前目标模型进行红队测试、开发训练方案，并在通过能力保持帕累托门槛的更新中选取安全增益最大者作为下一目标模型。已发布四个稠密与 MoE 基座（Qwen3.6-27B、DeepSeek-V4-Flash、Ministral-3-14B-Reasoning、Safin-1-35B-A3B）的版本；四个模型的平均 X-Teaming 攻击成功率从 86.01% 降至 31.45%，且基本保持通用能力。",
+      "year": 2026,
+      "publisher": "AI45Lab (Zheng et al.)",
+      "github": "https://github.com/AI45Lab/ReSI",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/AI45Lab/ReSI"
+        },
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/collections/AI45Research/resi"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.12233"
+        }
+      ],
+      "sources": [
+        "https://github.com/AI45Lab/ReSI",
+        "https://huggingface.co/collections/AI45Research/resi",
+        "https://arxiv.org/abs/2610.12233",
+        "https://github.com/OpenTAI/opentai.github.io/issues/128"
+      ],
+      "verificationNote": "Primary sources checked 2026-10-12: arXiv:2610.12233 (Zheng, Zhang, Zhang et al.); GitHub AI45Lab/ReSI (public, MIT); HF collection AI45Research/resi with ReSI-Qwen3.6-27B (Apache-2.0), ReSI-DeepSeek-V4-Flash (MIT), ReSI-Ministral-3-14B-Reasoning (Apache-2.0), ReSI-Safin-1-35B-A3B (public; no license tag). Aligned Models / LLMs. Distinct from X-Boundary / MAGIC / Beaver. Added from issue #128."
     }
   ],
   "frameworks": [

@@ -1142,6 +1142,66 @@
         "https://arxiv.org/abs/2609.24662"
       ],
       "reviewedAt": "2026-10-08"
+    },
+    {
+      "slug": "rt-safe",
+      "name": "RT-SAFE",
+      "status": "keep",
+      "reason": "The primary paper evaluates embodied-agent safety under real-time constraints, measuring collisions, environmental hazards and traffic-rule violations during inference and execution.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.09294"
+      ],
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "slug": "bazaarbench",
+      "name": "BazaarBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates the delegation safety of LLM agents in a simulated C2C marketplace, including misrepresentation, overcommitment and personal-data exposure under ordinary, deadline-pressure and adversarial instructions.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.06748"
+      ],
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "slug": "obligationbench",
+      "name": "ObligationBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates whether guard models identify unfulfilled safety-critical obligations left undone in agent trajectories.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.11773"
+      ],
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "slug": "decepeval",
+      "name": "DecepEval",
+      "status": "keep",
+      "reason": "The primary paper evaluates deception by LLM agents under induced pressure, incentive, opportunity and conflict conditions.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.07967"
+      ],
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "slug": "vla-arena",
+      "name": "VLA-Arena",
+      "status": "keep",
+      "reason": "The primary paper includes a dedicated Safety dimension (5 suites / 75 tasks) with cost constraints and safety predicates for Vision-Language-Action models, alongside distractor, extrapolation and long-horizon suites.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2512.22539"
+      ],
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "slug": "revleakbench",
+      "name": "RevLeakBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates privacy leakage of withdrawn items through revision traces in LLM deliverables and compares defenses.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2609.35408"
+      ],
+      "reviewedAt": "2026-10-12"
     }
   ]
 }
