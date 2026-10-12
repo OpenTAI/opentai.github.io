@@ -2022,6 +2022,54 @@
       "trainingEvidence": "Official HF card states Training split: 16,838 examples (6,000 safe / 10,838 unsafe) accompanying HomeGuard for contextual risk identification training.",
       "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/Ursulalala/HomeSafe",
       "linkVerificationReason": "HF Ursulalala/HomeSafe and arXiv:2603.14367 resolve; card documents Training split 16,838 examples used with HomeGuard."
+    },
+    {
+      "name": "ObligationGuard Training Data",
+      "domain": "Agents",
+      "year": "2026",
+      "venue": "arXiv 2026 / ObligationGuard",
+      "paperUrl": "https://arxiv.org/abs/2610.11773",
+      "githubUrl": "https://github.com/THU-Agent/ObligationGuard",
+      "dataUrl": "https://github.com/THU-Agent/ObligationGuard/tree/main/data",
+      "sourceUrl": "https://github.com/THU-Agent/ObligationGuard/tree/main/data",
+      "trainingEvidence": "Repo data/manifest.json documents an official trajectory-level train.jsonl (40,000 instances; 13,333 positive / 26,667 negative) and validation.jsonl (2,000 instances) split with fixed seed and checksums; README describes synthetic training data used for full-parameter supervised fine-tuning of ObligationGuard, and arXiv:2610.11773 states ObligationGuard is developed using 40,000 synthetic training examples.",
+      "linkVerificationEvidenceUrl": "https://github.com/THU-Agent/ObligationGuard/tree/main/data",
+      "linkVerificationReason": "GitHub THU-Agent/ObligationGuard data/ resolves; train.jsonl served via Git LFS (120.7 MB, sha256 matches manifest) and validation.jsonl present; arXiv:2610.11773 resolves. Distinct from the 240-instance ObligationBench eval set (listed as Benchmark). Added from issue #123.",
+      "size": "40,000 train / 2,000 validation instances",
+      "summary": "42,000 synthetic agent-trajectory examples (40,000 train / 2,000 validation) generated from matched and multi-obligation trajectories and labeled with unfulfilled safety obligations, released for training guard models to identify required safety actions an agent left undone; a without-templates ablation split is also included.",
+      "summarySourceUrl": "https://github.com/THU-Agent/ObligationGuard"
+    },
+    {
+      "name": "SRQA",
+      "domain": "LLMs",
+      "year": "2026",
+      "venue": "arXiv 2026 / SSRFT",
+      "paperUrl": "https://arxiv.org/abs/2610.07023",
+      "githubUrl": "https://github.com/Code-PJH/SSRFT",
+      "dataUrl": "https://github.com/Code-PJH/SSRFT/tree/main/sft_data",
+      "sourceUrl": "https://github.com/Code-PJH/SSRFT/tree/main/sft_data",
+      "trainingEvidence": "Official SSRFT README lists sft_data/ as non-expanded SRQA training data and sft_data_expand/ as expanded SRQA training data consumed by train.sh / train/ (full-parameter and LoRA/DoRA fine-tuning); arXiv:2610.07023 states SSRFT constructs the SRQA dataset for supervised safety-alignment fine-tuning.",
+      "linkVerificationEvidenceUrl": "https://github.com/Code-PJH/SSRFT/tree/main/sft_data",
+      "linkVerificationReason": "GitHub Code-PJH/SSRFT sft_data/ (IPIP_NEO, MBTI, WVS_7, jailbreak_llms, JailBench QA JSON) and sft_data_expand/ resolve; arXiv:2610.07023 resolves. Third-party evaluation sets in test_datasets/ are not part of this entry. Added from issue #129.",
+      "size": "849 QA pairs (non-expanded release)",
+      "summary": "849 safe-role question-answer pairs in the non-expanded release, generated from psychometric questionnaires (IPIP-NEO, MBTI, WVS-7) and a limited set of jailbreak prompts under a predefined safe-role description and validated with LLM scoring, for safety-alignment fine-tuning; a scenario-expanded variant and standard-SFT baseline data are also released.",
+      "summarySourceUrl": "https://github.com/Code-PJH/SSRFT"
+    },
+    {
+      "name": "SRFT Self-Reflection Training Data",
+      "domain": "Agents",
+      "year": "2026",
+      "venue": "arXiv 2026 / SRFT",
+      "paperUrl": "https://arxiv.org/abs/2610.04269",
+      "githubUrl": "https://github.com/Eden-Wang1710/srft-repo",
+      "dataUrl": "https://github.com/Eden-Wang1710/srft-repo/tree/main/LLaMA-Factory/data",
+      "sourceUrl": "https://github.com/Eden-Wang1710/srft-repo/tree/main/LLaMA-Factory/data",
+      "trainingEvidence": "Official repo README lists LLaMA-Factory/data/toucan_32B_v3_base.json.gz as SRFT training data (3,698 trajectories, 22,339 assistant steps; paper Table 5) with LoRA SFT configs for SR-Agent-Llama / -Qwen3-8B / -Qwen3-4B; arXiv:2610.04269 describes SRFT as a training framework that fine-tunes agents on reflective supervision from compromised trajectories.",
+      "linkVerificationEvidenceUrl": "https://github.com/Eden-Wang1710/srft-repo/tree/main/LLaMA-Factory/data",
+      "linkVerificationReason": "GitHub Eden-Wang1710/srft-repo LLaMA-Factory/data/ resolves with toucan_32B_v3_base.json.gz, the AgentDojo-local variant and dataset_info.json; arXiv:2610.04269 resolves and links the repo. AgentDojo / InjecAgent are third-party eval benchmarks, not part of this entry. Added from issue #130.",
+      "size": "3,698 trajectories (22,339 assistant steps)",
+      "summary": "3,698 ShareGPT-format conversations (tool-use trajectories with 22,339 assistant steps) in which injected prompt-injection attacks compromise the agent and an expert model generated structured self-reflection contrasting unsafe and optimal actions, released for fine-tuning agents against prompt injection; an AgentDojo local-tool format variant is included.",
+      "summarySourceUrl": "https://github.com/Eden-Wang1710/srft-repo"
     }
   ]
 }

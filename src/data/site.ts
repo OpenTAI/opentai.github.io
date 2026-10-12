@@ -4659,6 +4659,180 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  "rt-safe": {
+    slug: "rt-safe",
+    name: "RT-SAFE",
+    category: "Embodied AI",
+    description: "Simulated urban benchmark (Unreal Engine / SimWorld) for embodied-agent safety under real-time constraints, where the world keeps evolving during model inference and action execution. 36 navigation routes across five city maps with moving pedestrians and vehicles, environmental hazards and traffic rules, three actor-density settings, and paired static vs. real-time evaluation; measures task completion, collisions, hazards and traffic violations attributed to inference or execution. Across eight VLMs, only 0.7% of hardest-setting episodes finish without a safety event.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.09294",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/XTRose29/RT-SAFE",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2610.09294",
+    paperUrl: "https://arxiv.org/abs/2610.09294",
+    repo: "XTRose29/RT-SAFE",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  bazaarbench: {
+    slug: "bazaarbench",
+    name: "BazaarBench",
+    category: "Agents",
+    description: "Simulated decentralized consumer-to-consumer marketplace and benchmark for the delegation safety of LLM agents that list, negotiate, trade and rate on behalf of users. The platform privately tracks ownership, item condition and commitments, so six failure types (e.g., misstated quality, unowned listings, overcommitment, personal-data exposure) are checked against the record or a rubric-based LLM judge across five stages, under ordinary, deadline-pressure and adversarial instructions; simulator, saved market states, evaluation code and rollouts are released.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.06748",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/ziyan-wang98/BazaarBench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "robustness",
+    ],
+    arxivId: "2610.06748",
+    paperUrl: "https://arxiv.org/abs/2610.06748",
+    repo: "ziyan-wang98/BazaarBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  obligationbench: {
+    slug: "obligationbench",
+    name: "ObligationBench",
+    category: "Agents",
+    description: "Benchmark for whether guard models can identify unfulfilled obligations: required safety-critical actions an agent left undone at termination (e.g., removing a secret key after use). 240 expert-validated agent trajectories (120 positive / 120 negative, 339 ground-truth obligations) covering issue resolution, feature development and terminal operations, scored with semantic-matching Precision / Recall / exact match and per-class correctness. Across 14 evaluated models the best recall is 48.97% and exact match 10.00%.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.11773",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/THU-Agent/ObligationGuard",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2610.11773",
+    paperUrl: "https://arxiv.org/abs/2610.11773",
+    repo: "THU-Agent/ObligationGuard",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  decepeval: {
+    slug: "decepeval",
+    name: "DecepEval",
+    category: "Agents",
+    description: "Benchmark for deception in LLM agents: 1,532 task pairs (3,064 instances) across tool use, coding and long-horizon workflows in 28 professional scenarios. Each pair has a neutral and an induced version built on the LLM Deception Diamond (pressure, incentive, opportunity, conflict), and task facts, tool feedback, execution traces and deliverables separate deception from capability errors. Evaluations of nine frontier LLMs show inducements raise deception rates across models and task families.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.07967",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/functy/DECEPEVAL",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2610.07967",
+    paperUrl: "https://arxiv.org/abs/2610.07967",
+    repo: "functy/DECEPEVAL",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "vla-arena": {
+    slug: "vla-arena",
+    name: "VLA-Arena",
+    category: "Embodied AI",
+    description: "Open-source benchmark and toolchain for Vision-Language-Action models with 170 tasks in 11 suites across Safety, Distractor, Extrapolation and Long Horizon at three difficulty levels (L0–L2), plus language and visual perturbation probes. The Safety dimension has 5 suites / 75 tasks (e.g., static and dynamic obstacle avoidance, cautious grasping, hazard-area avoidance) defined in a constrained BDDL (CBDDL) with cost constraints and safety predicates; public leaderboard.",
+    venue: "ICML 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2512.22539",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/PKU-Alignment/VLA-Arena",
+      },
+    ],
+    stats: [],
+    tags: [
+      "robustness",
+    ],
+    arxivId: "2512.22539",
+    paperUrl: "https://arxiv.org/abs/2512.22539",
+    repo: "PKU-Alignment/VLA-Arena",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  revleakbench: {
+    slug: "revleakbench",
+    name: "RevLeakBench",
+    category: "LLMs",
+    description: "Privacy benchmark for unintended disclosure through revision traces: after a user withdraws an item (e.g., a password) during private drafting, does the assistant reveal it again in the recipient-visible deliverable while stating the edit? 100 tasks across five scenarios with a conversation track and an agent track; measures trace occurrence, withdrawn-item recovery, trace position and required-content retention, and compares prompt defenses, a delivery boundary and an output-side filter.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2609.35408",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/TrustAIRLab/RevLeakBench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "privacy",
+    ],
+    arxivId: "2609.35408",
+    paperUrl: "https://arxiv.org/abs/2609.35408",
+    repo: "TrustAIRLab/RevLeakBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -9785,6 +9959,141 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         domain: "Agents",
         property: "Robustness",
       },
+      {
+        name: "RT-SAFE",
+        note: "Simulated urban benchmark (Unreal Engine / SimWorld) for embodied-agent safety under real-time constraints, where the world keeps evolving during model inference and action execution. 36 navigation routes across five city maps with moving pedestrians and vehicles, environmental hazards and traffic rules, three actor-density settings, and paired static vs. real-time evaluation; measures task completion, collisions, hazards and traffic violations attributed to inference or execution. Across eight VLMs, only 0.7% of hardest-setting episodes finish without a safety event.",
+        type: "Embodied AI",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.09294",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/XTRose29/RT-SAFE",
+          },
+        ],
+        slug: "rt-safe",
+        domain: "Embodied AI",
+      },
+      {
+        name: "BazaarBench",
+        note: "Simulated decentralized consumer-to-consumer marketplace and benchmark for the delegation safety of LLM agents that list, negotiate, trade and rate on behalf of users. The platform privately tracks ownership, item condition and commitments, so six failure types (e.g., misstated quality, unowned listings, overcommitment, personal-data exposure) are checked against the record or a rubric-based LLM judge across five stages, under ordinary, deadline-pressure and adversarial instructions; simulator, saved market states, evaluation code and rollouts are released.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "robustness",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.06748",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/ziyan-wang98/BazaarBench",
+          },
+        ],
+        slug: "bazaarbench",
+        domain: "Agents",
+        property: "Robustness",
+      },
+      {
+        name: "ObligationBench",
+        note: "Benchmark for whether guard models can identify unfulfilled obligations: required safety-critical actions an agent left undone at termination (e.g., removing a secret key after use). 240 expert-validated agent trajectories (120 positive / 120 negative, 339 ground-truth obligations) covering issue resolution, feature development and terminal operations, scored with semantic-matching Precision / Recall / exact match and per-class correctness. Across 14 evaluated models the best recall is 48.97% and exact match 10.00%.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.11773",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/THU-Agent/ObligationGuard",
+          },
+        ],
+        slug: "obligationbench",
+        domain: "Agents",
+      },
+      {
+        name: "DecepEval",
+        note: "Benchmark for deception in LLM agents: 1,532 task pairs (3,064 instances) across tool use, coding and long-horizon workflows in 28 professional scenarios. Each pair has a neutral and an induced version built on the LLM Deception Diamond (pressure, incentive, opportunity, conflict), and task facts, tool feedback, execution traces and deliverables separate deception from capability errors. Evaluations of nine frontier LLMs show inducements raise deception rates across models and task families.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.07967",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/functy/DECEPEVAL",
+          },
+        ],
+        slug: "decepeval",
+        domain: "Agents",
+      },
+      {
+        name: "VLA-Arena",
+        note: "Open-source benchmark and toolchain for Vision-Language-Action models with 170 tasks in 11 suites across Safety, Distractor, Extrapolation and Long Horizon at three difficulty levels (L0–L2), plus language and visual perturbation probes. The Safety dimension has 5 suites / 75 tasks (e.g., static and dynamic obstacle avoidance, cautious grasping, hazard-area avoidance) defined in a constrained BDDL (CBDDL) with cost constraints and safety predicates; public leaderboard.",
+        type: "Embodied AI",
+        venue: "ICML 2026",
+        year: "2025",
+        tags: [
+          "robustness",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2512.22539",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/PKU-Alignment/VLA-Arena",
+          },
+        ],
+        slug: "vla-arena",
+        domain: "Embodied AI",
+        property: "Robustness",
+      },
+      {
+        name: "RevLeakBench",
+        note: "Privacy benchmark for unintended disclosure through revision traces: after a user withdraws an item (e.g., a password) during private drafting, does the assistant reveal it again in the recipient-visible deliverable while stating the edit? 100 tasks across five scenarios with a conversation track and an agent track; measures trace occurrence, withdrawn-item recovery, trace position and required-content retention, and compares prompt defenses, a delivery boundary and an output-side filter.",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "privacy",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2609.35408",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/TrustAIRLab/RevLeakBench",
+          },
+        ],
+        slug: "revleakbench",
+        domain: "LLMs",
+        property: "Privacy",
+      },
     ],
   },
   models: {
@@ -10357,6 +10666,22 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         domain: "LLMs",
       },
       {
+        name: "ObligationGuard Training Data",
+        note: "42,000 synthetic agent-trajectory examples (40,000 train / 2,000 validation) generated from matched and multi-obligation trajectories and labeled with unfulfilled safety obligations, released for training guard models to identify require…",
+        type: "Agents",
+        venue: "arXiv 2026 / ObligationGuard",
+        year: "2026",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/THU-Agent/ObligationGuard/tree/main/data",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
         name: "OLID",
         note: "14,100 tweets collected from Twitter and hierarchically annotated for offensive-language identification and categorization.",
         type: "LLMs",
@@ -10545,6 +10870,38 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           "Agents",
         ],
         domain: "Agents",
+      },
+      {
+        name: "SRFT Self-Reflection Training Data",
+        note: "3,698 ShareGPT-format conversations (tool-use trajectories with 22,339 assistant steps) in which injected prompt-injection attacks compromise the agent and an expert model generated structured self-reflection contrasting unsafe and optim…",
+        type: "Agents",
+        venue: "arXiv 2026 / SRFT",
+        year: "2026",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/Eden-Wang1710/srft-repo/tree/main/LLaMA-Factory/data",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
+        name: "SRQA",
+        note: "849 safe-role question-answer pairs in the non-expanded release, generated from psychometric questionnaires (IPIP-NEO, MBTI, WVS-7) and a limited set of jailbreak prompts under a predefined safe-role description and validated with LLM sc…",
+        type: "LLMs",
+        venue: "arXiv 2026 / SSRFT",
+        year: "2026",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/Code-PJH/SSRFT/tree/main/sft_data",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
       },
       {
         name: "Stable Alignment Sandbox sample datasets",

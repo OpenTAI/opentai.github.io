@@ -978,6 +978,24 @@
       "status": "keep",
       "reason": "Kept: primary source documents safety-training use or an explicit train split. Added from issue #77.",
       "sourceUrl": "https://huggingface.co/datasets/Ursulalala/HomeSafe"
+    },
+    {
+      "name": "ObligationGuard Training Data",
+      "status": "keep",
+      "reason": "Kept: official repo ships a distinct 40,000/2,000 train/validation split (data/manifest.json) used for full-parameter SFT of ObligationGuard; separate from the ObligationBench eval set. Added from issue #123.",
+      "sourceUrl": "https://github.com/THU-Agent/ObligationGuard/tree/main/data"
+    },
+    {
+      "name": "SRQA",
+      "status": "keep",
+      "reason": "Kept: official SSRFT repo releases SRQA as safety-alignment SFT training data (sft_data/, sft_data_expand/) consumed by its training scripts. Added from issue #129.",
+      "sourceUrl": "https://github.com/Code-PJH/SSRFT/tree/main/sft_data"
+    },
+    {
+      "name": "SRFT Self-Reflection Training Data",
+      "status": "keep",
+      "reason": "Kept: official SRFT repo releases the 3,698-trajectory self-reflection SFT data with LoRA training configs for SR-Agent. Added from issue #130.",
+      "sourceUrl": "https://github.com/Eden-Wang1710/srft-repo/tree/main/LLaMA-Factory/data"
     }
   ]
 }

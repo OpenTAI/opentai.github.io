@@ -1261,6 +1261,53 @@ export const datasetConfig: SubpageConfig = {
       domain: "LLMs",
     },
     {
+      name: "ObligationGuard Training Data",
+      note: "42,000 synthetic agent-trajectory examples (40,000 train / 2,000 validation) generated from matched and multi-obligation trajectories and labeled with unfulfilled safety obligations, released for training guard models to identify required safety actions an agent left undone; a without-templates ablation split is also included.",
+      type: "Agents",
+      venue: "arXiv 2026 / ObligationGuard",
+      year: "2026",
+      tags: [
+        "training data",
+      ],
+      stats: [
+        {
+          label: "Recorded size",
+          value: "40,000 train / 2,000 validation instances",
+        },
+      ],
+      resources: [
+        {
+          label: "GitHub",
+          href: "https://github.com/THU-Agent/ObligationGuard/tree/main/data",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2610.11773",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/THU-Agent/ObligationGuard",
+        },
+      ],
+      primaryUrl: "https://github.com/THU-Agent/ObligationGuard/tree/main/data",
+      domains: [
+        "Agents",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2610.11773",
+          domain: "Agents",
+          evidence: "Repo data/manifest.json documents an official trajectory-level train.jsonl (40,000 instances; 13,333 positive / 26,667 negative) and validation.jsonl (2,000 instances) split with fixed seed and checksums; README describes synthetic training data used for full-parameter supervised fine-tuning of ObligationGuard, and arXiv:2610.11773 states ObligationGuard is developed using 40,000 synthetic training examples.",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2610.11773",
+          },
+        },
+      ],
+      domain: "Agents",
+    },
+    {
       name: "OLID",
       note: "14,100 tweets collected from Twitter and hierarchically annotated for offensive-language identification and categorization.",
       type: "LLMs",
@@ -1850,6 +1897,100 @@ export const datasetConfig: SubpageConfig = {
         },
       ],
       domain: "Agents",
+    },
+    {
+      name: "SRFT Self-Reflection Training Data",
+      note: "3,698 ShareGPT-format conversations (tool-use trajectories with 22,339 assistant steps) in which injected prompt-injection attacks compromise the agent and an expert model generated structured self-reflection contrasting unsafe and optimal actions, released for fine-tuning agents against prompt injection; an AgentDojo local-tool format variant is included.",
+      type: "Agents",
+      venue: "arXiv 2026 / SRFT",
+      year: "2026",
+      tags: [
+        "training data",
+      ],
+      stats: [
+        {
+          label: "Recorded size",
+          value: "3,698 trajectories (22,339 assistant steps)",
+        },
+      ],
+      resources: [
+        {
+          label: "GitHub",
+          href: "https://github.com/Eden-Wang1710/srft-repo/tree/main/LLaMA-Factory/data",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2610.04269",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/Eden-Wang1710/srft-repo",
+        },
+      ],
+      primaryUrl: "https://github.com/Eden-Wang1710/srft-repo/tree/main/LLaMA-Factory/data",
+      domains: [
+        "Agents",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2610.04269",
+          domain: "Agents",
+          evidence: "Official repo README lists LLaMA-Factory/data/toucan_32B_v3_base.json.gz as SRFT training data (3,698 trajectories, 22,339 assistant steps; paper Table 5) with LoRA SFT configs for SR-Agent-Llama / -Qwen3-8B / -Qwen3-4B; arXiv:2610.04269 describes SRFT as a training framework that fine-tunes agents on reflective supervision from compromised trajectories.",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2610.04269",
+          },
+        },
+      ],
+      domain: "Agents",
+    },
+    {
+      name: "SRQA",
+      note: "849 safe-role question-answer pairs in the non-expanded release, generated from psychometric questionnaires (IPIP-NEO, MBTI, WVS-7) and a limited set of jailbreak prompts under a predefined safe-role description and validated with LLM scoring, for safety-alignment fine-tuning; a scenario-expanded variant and standard-SFT baseline data are also released.",
+      type: "LLMs",
+      venue: "arXiv 2026 / SSRFT",
+      year: "2026",
+      tags: [
+        "training data",
+      ],
+      stats: [
+        {
+          label: "Recorded size",
+          value: "849 QA pairs (non-expanded release)",
+        },
+      ],
+      resources: [
+        {
+          label: "GitHub",
+          href: "https://github.com/Code-PJH/SSRFT/tree/main/sft_data",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2610.07023",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/Code-PJH/SSRFT",
+        },
+      ],
+      primaryUrl: "https://github.com/Code-PJH/SSRFT/tree/main/sft_data",
+      domains: [
+        "LLMs",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2610.07023",
+          domain: "LLMs",
+          evidence: "Official SSRFT README lists sft_data/ as non-expanded SRQA training data and sft_data_expand/ as expanded SRQA training data consumed by train.sh / train/ (full-parameter and LoRA/DoRA fine-tuning); arXiv:2610.07023 states SSRFT constructs the SRQA dataset for supervised safety-alignment fine-tuning.",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2610.07023",
+          },
+        },
+      ],
+      domain: "LLMs",
     },
     {
       name: "Stable Alignment Sandbox sample datasets",

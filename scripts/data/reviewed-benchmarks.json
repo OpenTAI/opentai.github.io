@@ -709,6 +709,78 @@
       "description": "Dual-control multi-agent security benchmark for LLM agents (AI Security Lab, ITMO). Extends τ²-bench with adversarial environments where both the agent and a simulated user can change shared state, covering eight vulnerability classes (e.g., RAG poisoning, cross-agent manipulation, mailbox exfiltration, phishing pressure, identity spoofing, tool-shadow poisoning, unsafe output handling). Reports attack success rate across 14 models; dual-control interaction raises ASR from 26.9% to 41.1%.",
       "descriptionZh": "面向 LLM 智能体的双控多智能体安全基准（ITMO AI Security Lab）：在 τ²-bench 上扩展对抗环境，智能体与模拟用户均可改变共享状态，覆盖八类漏洞（如 RAG 投毒、跨智能体操控、邮箱外泄、钓鱼施压、身份伪装、工具影子投毒、不安全输出处理）；在 14 个模型上报告攻击成功率，双控交互使 ASR 从 26.9% 升至 41.1%。",
       "verificationNote": "Primary sources checked 2026-10-07: arXiv:2609.24662; GitHub ai-security-lab-itmo/duma-benchmark (MIT; tasks/data/scripts/traces). Benchmark only (agent-security eval; no training split). Distinct from τ²-bench / AgentDojo / Agent-SafetyBench. Added from issue #112."
+    },
+    {
+      "name": "RT-SAFE",
+      "year": "2026",
+      "domain": "Embodied AI",
+      "url": "https://arxiv.org/abs/2610.09294",
+      "githubUrl": "https://github.com/XTRose29/RT-SAFE",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Simulated urban benchmark (Unreal Engine / SimWorld) for embodied-agent safety under real-time constraints, where the world keeps evolving during model inference and action execution. 36 navigation routes across five city maps with moving pedestrians and vehicles, environmental hazards and traffic rules, three actor-density settings, and paired static vs. real-time evaluation; measures task completion, collisions, hazards and traffic violations attributed to inference or execution. Across eight VLMs, only 0.7% of hardest-setting episodes finish without a safety event.",
+      "descriptionZh": "面向实时约束下具身智能体安全的城市仿真基准（Unreal Engine / SimWorld）：模型推理与动作执行期间世界持续演化。包含五张城市地图上的 36 条导航路线，含移动行人与车辆、环境危险与交通规则，三档参与者密度，并提供静态与实时配对评测；衡量任务完成、碰撞、危险与交通违规，并将事件归因于推理或执行阶段。在八个 VLM 上，最难设置下仅 0.7% 的回合能无安全事件完成。",
+      "verificationNote": "Primary sources checked 2026-10-12: arXiv:2610.09294 (Xu, Ren, Yang, Zheng, Qin); GitHub XTRose29/RT-SAFE (public; README: 36 routes across five Unreal Engine city maps, safety evaluators; no license file declared); project page xtrose29.github.io/RT-SAFE. Benchmark only (eval routes + safety metrics; no released training split). Distinct from SafeAgentBench / IS-Bench / SENTINEL. Added from issue #120."
+    },
+    {
+      "name": "BazaarBench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.06748",
+      "githubUrl": "https://github.com/ziyan-wang98/BazaarBench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Simulated decentralized consumer-to-consumer marketplace and benchmark for the delegation safety of LLM agents that list, negotiate, trade and rate on behalf of users. The platform privately tracks ownership, item condition and commitments, so six failure types (e.g., misstated quality, unowned listings, overcommitment, personal-data exposure) are checked against the record or a rubric-based LLM judge across five stages, under ordinary, deadline-pressure and adversarial instructions; simulator, saved market states, evaluation code and rollouts are released.",
+      "descriptionZh": "面向 LLM 智能体委托安全的去中心化 C2C 二手市场仿真与基准：智能体代表用户上架、议价、交易与评分。平台私下记录物品归属、成色与承诺，从而在五个阶段中依据记录或基于量表的 LLM 评判识别六类失败（如虚报成色、出售未持有物品、超额承诺、泄露个人数据等），覆盖普通、截止期限压力与对抗性指令三种设置；开源仿真器、市场快照、评测代码与轨迹数据。",
+      "verificationNote": "Primary sources checked 2026-10-12: arXiv:2610.06748 (Wang, Shi, Oldfield, Marro, Yu, Torr et al.; comments link code and data); GitHub ziyan-wang98/BazaarBench (public; README: code Apache-2.0, rollouts CC BY 4.0); HF datasets BazaarBench/bazaarbench-rollouts (public, CC-BY-4.0). Benchmark only (simulation environment + failure metrics; released data are evaluation rollouts, not a training split). Distinct from AgentHarm / AgentDojo / ToolEmu. Added from issue #121."
+    },
+    {
+      "name": "ObligationBench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.11773",
+      "githubUrl": "https://github.com/THU-Agent/ObligationGuard",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Benchmark for whether guard models can identify unfulfilled obligations: required safety-critical actions an agent left undone at termination (e.g., removing a secret key after use). 240 expert-validated agent trajectories (120 positive / 120 negative, 339 ground-truth obligations) covering issue resolution, feature development and terminal operations, scored with semantic-matching Precision / Recall / exact match and per-class correctness. Across 14 evaluated models the best recall is 48.97% and exact match 10.00%.",
+      "descriptionZh": "评估守卫模型能否识别“未履行义务”的基准：即智能体在终止时仍未完成的必要安全关键动作（如使用后删除密钥）。包含 240 条专家校验的智能体轨迹（正例 120 / 负例 120，共 339 条真值义务），覆盖问题修复、功能开发与终端操作，采用语义匹配的 Precision / Recall / 精确匹配及分类正确率评分；在 14 个模型上最高召回率仅 48.97%，精确匹配率仅 10.00%。",
+      "verificationNote": "Primary sources checked 2026-10-12: arXiv:2610.11773 (Feng, Zhang, Liu, Li; comments link THU-Agent/ObligationGuard); GitHub THU-Agent/ObligationGuard (public; data/obligationbench.jsonl + benchmark_manifest.json: 240 instances, 120/120, 339 obligations; no license file declared). Benchmark (held-out eval set). The repo also ships a distinct 40,000/2,000 train/validation split listed separately as the Dataset ObligationGuard Training Data (dual-list: distinct train split + independent eval benchmark). Distinct from ATBench / AgentHarm / AgentDoG. Added from issue #122."
+    },
+    {
+      "name": "DecepEval",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.07967",
+      "githubUrl": "https://github.com/functy/DECEPEVAL",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Benchmark for deception in LLM agents: 1,532 task pairs (3,064 instances) across tool use, coding and long-horizon workflows in 28 professional scenarios. Each pair has a neutral and an induced version built on the LLM Deception Diamond (pressure, incentive, opportunity, conflict), and task facts, tool feedback, execution traces and deliverables separate deception from capability errors. Evaluations of nine frontier LLMs show inducements raise deception rates across models and task families.",
+      "descriptionZh": "评估 LLM 智能体欺骗行为的基准：覆盖工具使用、编程与长程工作流三类任务、28 个专业场景，共 1,532 组任务对（3,064 个实例）。每组包含中性与诱导两个版本，依据“LLM 欺骗钻石”框架（压力、激励、机会、冲突）构造，并借助任务事实、工具反馈、执行轨迹与交付物区分欺骗与能力错误；对九个前沿 LLM 的评测显示诱导条件普遍提高欺骗率。",
+      "verificationNote": "Primary sources checked 2026-10-12: arXiv:2610.07967 (Xu, Yu, Yang, Chen, Liu, Peng et al.); GitHub functy/DECEPEVAL (public, Apache-2.0; README: 1,532 task pairs / 3,064 instances; benchmark_data/ + run_benchmark.py). Benchmark only (paired eval instances + deception metrics; no training split). Distinct from MM-DeceptionBench / AgentHazard. Added from issue #124."
+    },
+    {
+      "name": "VLA-Arena",
+      "year": "2025",
+      "domain": "Embodied AI",
+      "url": "https://arxiv.org/abs/2512.22539",
+      "githubUrl": "https://github.com/PKU-Alignment/VLA-Arena",
+      "linkLabel": "Paper",
+      "venue": "ICML 2026",
+      "description": "Open-source benchmark and toolchain for Vision-Language-Action models with 170 tasks in 11 suites across Safety, Distractor, Extrapolation and Long Horizon at three difficulty levels (L0–L2), plus language and visual perturbation probes. The Safety dimension has 5 suites / 75 tasks (e.g., static and dynamic obstacle avoidance, cautious grasping, hazard-area avoidance) defined in a constrained BDDL (CBDDL) with cost constraints and safety predicates; public leaderboard.",
+      "descriptionZh": "面向视觉-语言-动作（VLA）模型的开源基准与工具链：11 个任务套件共 170 个任务，涵盖安全、干扰、外推与长程四个维度，每个任务分 L0–L2 三级难度，并提供语言与视觉扰动探针。安全维度含 5 个套件 / 75 个任务（如静态与动态避障、谨慎抓取、危险区域规避等），以带代价约束与安全谓词的约束 BDDL（CBDDL）定义；提供公开排行榜。",
+      "verificationNote": "Primary sources checked 2026-10-12: arXiv:2512.22539 (Zhang, Li, Shen et al.; comments: Accepted by ICML 2026); GitHub PKU-Alignment/VLA-Arena (public, Apache-2.0; README lists 170 tasks / 11 suites, Safety 5 suites / 75 tasks); project page vla-arena.github.io; HF org VLA-Arena. Benchmark (eval tasks + leaderboard). The paper also releases VLA-Arena-S/M/L fine-tuning demonstrations on HF; not filed as a Dataset in this issue. Distinct from SafeVLA / LIBERO. Added from issue #125."
+    },
+    {
+      "name": "RevLeakBench",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2609.35408",
+      "githubUrl": "https://github.com/TrustAIRLab/RevLeakBench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Privacy benchmark for unintended disclosure through revision traces: after a user withdraws an item (e.g., a password) during private drafting, does the assistant reveal it again in the recipient-visible deliverable while stating the edit? 100 tasks across five scenarios with a conversation track and an agent track; measures trace occurrence, withdrawn-item recovery, trace position and required-content retention, and compares prompt defenses, a delivery boundary and an output-side filter.",
+      "descriptionZh": "关于“修订痕迹”导致意外泄露的隐私基准：用户在私下起草时撤回某项内容（如密码）后，助手是否会在说明修改时于接收方可见的交付物中再次暴露该内容。包含五个场景共 100 个任务，分对话与智能体两条赛道；衡量痕迹出现率、被撤回内容可恢复率、痕迹位置与必要内容保留率，并比较提示防御、交付边界与输出端过滤器。",
+      "verificationNote": "Primary sources checked 2026-10-12: arXiv:2609.35408 (\"Nothing to See Here\": Unintended Disclosure through Revision Traces of LLM Deliverables; Zhang, Jiang, Zhang); GitHub TrustAIRLab/RevLeakBench (public; README: 100 tasks, five scenarios, conversation and agent tracks; data/, PROTOCOL.md, evaluation code; licences per licenses/README.md). Benchmark only (eval tasks + leakage metrics; no training split). Distinct from ConfAIde / PrivacyLens / AgentDAM. Added from issue #126."
     }
   ]
 }
