@@ -1186,12 +1186,12 @@
     {
       "slug": "vla-arena",
       "name": "VLA-Arena",
-      "status": "keep",
-      "reason": "The primary paper includes a dedicated Safety dimension (5 suites / 75 tasks) with cost constraints and safety predicates for Vision-Language-Action models, alongside distractor, extrapolation and long-horizon suites.",
+      "status": "exclude",
+      "reason": "The primary paper defines a general Vision-Language-Action robot manipulation benchmark across distractor, extrapolation, and long-horizon suites. Its Safety dimension is one subsection and does not establish a dedicated safety evaluation purpose for homepage eligibility; retained in the full benchmark catalog.",
       "sourceUrls": [
         "https://arxiv.org/abs/2512.22539"
       ],
-      "reviewedAt": "2026-10-12"
+      "reviewedAt": "2026-10-16"
     },
     {
       "slug": "revleakbench",
