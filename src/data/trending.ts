@@ -112,6 +112,5 @@ export const trendingBenchmarkSlugs: readonly string[] = [
   "bazaarbench",
   "obligationbench",
   "decepeval",
-  "vla-arena",
   "revleakbench",
 ];
