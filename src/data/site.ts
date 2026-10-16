@@ -61,6 +61,8 @@ export type SubpageTableRow = {
   usageCount?: number;
   sourcePapers?: readonly DatasetSourcePaper[];
   primaryUrl?: string;
+  /** GitHub owner/repo, emitted for datasets so homepage Trending can dedupe shared repositories. */
+  repo?: string;
   property?: string;
   citationOnly?: boolean;
   subtitle?: string;
@@ -10319,6 +10321,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
     tableRows: [
       {
         name: "AdvBench",
+        slug: "advbench",
         note: "520 harmful-behavior instructions and corresponding target strings released as CSV files for evaluating adversarial attacks and safety alignment.",
         type: "LLMs",
         stars: 4760,
@@ -10328,6 +10331,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/llm-attacks/llm-attacks/blob/main/data/advbench/harmful_behaviors.csv",
+        repo: "llm-attacks/llm-attacks",
         domains: [
           "LLMs",
         ],
@@ -10335,6 +10339,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Aegis 2.0",
+        slug: "aegis-2-0",
         note: "33.4K content-safety conversation samples assembled from human-written red-team prompts, LLM-generated responses, and safety annotations for training and evaluating guard models.",
         type: "LLMs",
         venue: "arXiv 2025",
@@ -10354,6 +10359,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Anthropic Red Team Attempts",
+        slug: "anthropic-red-team-attempts",
         note: "38,961 human–AI red-team conversations collected through adversarial user interactions for studying and reducing harmful model behavior.",
         type: "LLMs",
         stars: 1856,
@@ -10363,6 +10369,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Anthropic/hh-rlhf/tree/main/red-team-attempts",
+        repo: "anthropics/hh-rlhf",
         domains: [
           "LLMs",
         ],
@@ -10370,6 +10377,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "BeaverTails",
+        slug: "beavertails",
         note: "333,963 question–answer pairs collected and human-annotated with safety categories for harmlessness alignment and safety-classifier training.",
         type: "LLMs",
         venue: "arXiv preprint arXiv:2307.04657",
@@ -10385,6 +10393,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/PKU-Alignment/BeaverTails",
+        repo: "PKU-Alignment/beavertails",
         domains: [
           "LLMs",
         ],
@@ -10392,6 +10401,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "BIPIA",
+        slug: "bipia",
         note: "5 task-specific context datasets paired with 250 injected attack goals, assembled from web, email, table, summarization, and code sources for training and evaluating indirect-prompt-injection defenses.",
         type: "LLMs",
         venue: "Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 1",
@@ -10404,6 +10414,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/microsoft/BIPIA/tree/main/benchmark",
+        repo: "microsoft/BIPIA",
         domains: [
           "LLMs",
           "Agents",
@@ -10412,6 +10423,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Booster repnoise BeaverTails",
+        slug: "booster-repnoise-beavertails",
         note: "18,106 prompt–response–refusal records derived from BeaverTails for representation-based safety alignment and refusal training.",
         type: "LLMs",
         tags: [
@@ -10426,6 +10438,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Bot-Adversarial Dialogue",
+        slug: "bot-adversarial-dialogue",
         note: "5K adversarial human–bot conversations containing approximately 70K utterances, collected through crowdworker interactions for training and evaluating offensive-language classifiers.",
         type: "LLMs",
         stars: 10623,
@@ -10435,6 +10448,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue",
+        repo: "facebookresearch/ParlAI",
         domains: [
           "LLMs",
         ],
@@ -10442,6 +10456,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Crafted datasets",
+        slug: "crafted-datasets",
         note: "Exact count not recorded: indirect prompt-injection examples crafted from attack instructions and external contexts for training detection and extraction models.",
         type: "Agents",
         venue: "ACL 2025",
@@ -10454,6 +10469,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/LukeChen-go/indirect-pia-detection/tree/main/data",
+        repo: "LukeChen-go/indirect-pia-detection",
         domains: [
           "Agents",
         ],
@@ -10461,6 +10477,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "CValues-Comparison",
+        slug: "cvalues-comparison",
         note: "145K preference pairs generated through a self-instruct and response-comparison pipeline, then split into 116K training and 29K test pairs for safety fine-tuning and reward-model training.",
         type: "LLMs",
         venue: "arXiv 2023",
@@ -10477,6 +10494,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://www.modelscope.cn/datasets/damo/CValues-Comparison/summary",
+        repo: "X-PLUG/CValues",
         domains: [
           "LLMs",
         ],
@@ -10484,6 +10502,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "DoNotAnswer",
+        slug: "donotanswer",
         note: "939 safety-sensitive instructions and annotated model responses curated across five risk areas for training refusal and risk classifiers.",
         type: "LLMs",
         venue: "EACL 2024",
@@ -10496,6 +10515,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/Libr-AI/do-not-answer/tree/main/datasets",
+        repo: "Libr-AI/do-not-answer",
         domains: [
           "LLMs",
         ],
@@ -10503,6 +10523,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "EAsafetyBench",
+        slug: "easafetybench",
         note: "Exact count not recorded: embodied-agent safety prompts and drone interaction scenarios assembled with a documented 70% training split for training safety classifiers.",
         type: "Agents",
         stars: 5,
@@ -10512,6 +10533,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/ZihanYan-CQU/EAsafetyBench/tree/main/EAsafetyBench",
+        repo: "ZihanYan-CQU/EAsafetyBench",
         domains: [
           "Agents",
         ],
@@ -10519,6 +10541,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "GuardReasonerTrain",
+        slug: "guardreasonertrain",
         note: "Description not recorded yet.",
         type: "LLMs",
         venue: "arXiv 2025",
@@ -10528,6 +10551,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/yueliu1999/GuardReasonerTrain",
+        repo: "yueliu1999/GuardReasoner",
         domains: [
           "LLMs",
         ],
@@ -10535,6 +10559,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "HH-RLHF",
+        slug: "hh-rlhf",
         note: "161K human preference pairs collected by comparing assistant responses for helpfulness and harmlessness for preference modeling and RLHF training.",
         type: "LLMs",
         stars: 1856,
@@ -10544,6 +10569,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Anthropic/hh-rlhf",
+        repo: "anthropics/hh-rlhf",
         domains: [
           "LLMs",
         ],
@@ -10551,6 +10577,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "HomeSafe",
+        slug: "homesafe",
         note: "Description not recorded yet.",
         type: "Embodied AI",
         venue: "ECCV 2026 / HomeGuard",
@@ -10560,6 +10587,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Ursulalala/HomeSafe",
+        repo: "AI45Lab/HomeGuard",
         domains: [
           "Embodied AI",
         ],
@@ -10567,6 +10595,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "HSOL",
+        slug: "hsol",
         note: "24,783 tweets collected with a hate-speech lexicon and crowd-annotated as hate speech, offensive language, or neither for training content-safety classifiers.",
         type: "LLMs",
         stars: 847,
@@ -10580,6 +10609,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/t-davidson/hate-speech-and-offensive-language/blob/master/data/labeled_data.csv",
+        repo: "t-davidson/hate-speech-and-offensive-language",
         domains: [
           "LLMs",
         ],
@@ -10587,6 +10617,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Jigsaw Toxic Comment Classification",
+        slug: "jigsaw-toxic-comment-classification",
         note: "159,571 Wikipedia talk-page comments collected from page edits and annotated with six toxicity labels for training content-moderation models.",
         type: "LLMs",
         tags: [
@@ -10601,6 +10632,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "LlavaGuard Dataset",
+        slug: "llavaguard-dataset",
         note: "5,466 image–text safety examples collected and expert-annotated with ratings, categories, and rationales for training and evaluating multimodal guard models.",
         type: "Agents",
         stars: 72,
@@ -10610,6 +10642,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/AIML-TUDA/LlavaGuard",
+        repo: "ml-research/LlavaGuard",
         domains: [
           "Agents",
         ],
@@ -10617,6 +10650,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "LLM-LAT Harmful Dataset",
+        slug: "llm-lat-harmful-dataset",
         note: "Description not recorded yet.",
         type: "LLMs",
         venue: "arXiv 2024 (LAT)",
@@ -10633,6 +10667,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "MM-SafetyBench",
+        slug: "mm-safetybench",
         note: "5,040 text–image attack pairs generated across 13 safety scenarios for training and evaluating multimodal safeguards and a safety suffix generator.",
         type: "Agents",
         venue: "ECCV",
@@ -10644,6 +10679,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/isXinLiu/MM-SafetyBench",
+        repo: "isXinLiu/MM-SafetyBench",
         domains: [
           "Agents",
         ],
@@ -10651,6 +10687,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Nemotron-Safety-Guard-Dataset-v3",
+        slug: "nemotron-safety-guard-dataset-v3",
         note: "Description not recorded yet.",
         type: "LLMs",
         venue: "NVIDIA HF 2025",
@@ -10667,6 +10704,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "ObligationGuard Training Data",
+        slug: "obligationguard-training-data",
         note: "42,000 synthetic agent-trajectory examples (40,000 train / 2,000 validation) generated from matched and multi-obligation trajectories and labeled with unfulfilled safety obligations, released for training guard models to identify require…",
         type: "Agents",
         venue: "arXiv 2026 / ObligationGuard",
@@ -10676,6 +10714,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/THU-Agent/ObligationGuard/tree/main/data",
+        repo: "THU-Agent/ObligationGuard",
         domains: [
           "Agents",
         ],
@@ -10683,6 +10722,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "OLID",
+        slug: "olid",
         note: "14,100 tweets collected from Twitter and hierarchically annotated for offensive-language identification and categorization.",
         type: "LLMs",
         tags: [
@@ -10697,6 +10737,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "OpenAssistant OASST1",
+        slug: "openassistant-oasst1",
         note: "161,443 conversational messages organized into more than 10,000 conversation trees, collected from over 13,500 crowd contributors for instruction tuning and preference training.",
         type: "LLMs",
         stars: 37407,
@@ -10710,6 +10751,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/OpenAssistant/oasst1",
+        repo: "LAION-AI/Open-Assistant",
         domains: [
           "LLMs",
         ],
@@ -10717,6 +10759,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "ORCA-DPO",
+        slug: "orca-dpo",
         note: "12,859 chosen–rejected response pairs derived from OpenOrca response comparisons for direct preference optimization and alignment training.",
         type: "LLMs",
         tags: [
@@ -10731,6 +10774,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "PKU-SafeRLHF",
+        slug: "pku-saferlhf",
         note: "83.4K preference entries collected through helpfulness and harmlessness comparisons for learning separate reward and safety-cost signals in safe RLHF training.",
         type: "LLMs",
         stars: 1610,
@@ -10744,6 +10788,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF",
+        repo: "PKU-Alignment/safe-rlhf",
         domains: [
           "LLMs",
         ],
@@ -10751,6 +10796,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "safe-guard-prompt-injection",
+        slug: "safe-guard-prompt-injection",
         note: "Description not recorded yet.",
         type: "LLMs",
         venue: "HF 2024",
@@ -10767,6 +10813,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "SafeMTData",
+        slug: "safemtdata",
         note: "Exact count not recorded: safety-focused instruction records released by the authors for supervised fine-tuning of safer language models.",
         type: "Agents",
         venue: "arXiv preprint arXiv:2410.10700",
@@ -10778,6 +10825,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/SafeMTData/SafeMTData",
+        repo: "renqibing/ActorAttack",
         domains: [
           "Agents",
         ],
@@ -10785,6 +10833,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "SafetyPrompts",
+        slug: "safetyprompts",
         note: "100K Chinese prompt–response examples generated across typical and adversarial safety scenarios for safety training and evaluation.",
         type: "LLMs",
         venue: "arXiv 2023",
@@ -10802,6 +10851,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/thu-coai/Safety-Prompts",
+        repo: "thu-coai/Safety-Prompts",
         domains: [
           "LLMs",
         ],
@@ -10809,6 +10859,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "SAP",
+        slug: "sap",
         note: "5 poisoning-dataset variants generated with the authors’ attack framework for studying and defending against prompt-based data poisoning.",
         type: "LLMs",
         stars: 49,
@@ -10818,6 +10869,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/Aatrox103/SAP",
+        repo: "Aatrox103/SAP",
         domains: [
           "LLMs",
         ],
@@ -10825,6 +10877,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "SelfDefend distilled defense data",
+        slug: "selfdefend-distilled-defense-data",
         note: "Exact count not recorded: defense prompts, queries, and labels collected into direct and intent datasets with an 80/20 split for fine-tuning and validating a prompt-injection defense model.",
         type: "LLMs",
         stars: 35,
@@ -10834,6 +10887,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://zenodo.org/records/14736936/latest",
+        repo: "selfdefend/Code",
         domains: [
           "LLMs",
         ],
@@ -10841,6 +10895,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Sleeper Agents code backdoor training data",
+        slug: "sleeper-agents-code-backdoor-training-data",
         note: "Exact count not recorded: code-completion examples generated with vulnerability-specific trigger prompts for training and studying persistent deceptive backdoors.",
         type: "LLMs",
         stars: 150,
@@ -10850,6 +10905,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/anthropics/sleeper-agents-paper/blob/main/code_backdoor_train_data.jsonl",
+        repo: "anthropics/sleeper-agents-paper",
         domains: [
           "LLMs",
         ],
@@ -10857,6 +10913,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Socio-Moral Image Database",
+        slug: "socio-moral-image-database",
         note: "2,941 images paired with 820,565 moral and emotional judgments collected from 2,716 participants for affective research and multimodal safety annotation.",
         type: "Agents",
         venue: "PLOS ONE",
@@ -10873,6 +10930,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "SRFT Self-Reflection Training Data",
+        slug: "srft-self-reflection-training-data",
         note: "3,698 ShareGPT-format conversations (tool-use trajectories with 22,339 assistant steps) in which injected prompt-injection attacks compromise the agent and an expert model generated structured self-reflection contrasting unsafe and optim…",
         type: "Agents",
         venue: "arXiv 2026 / SRFT",
@@ -10882,6 +10940,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/Eden-Wang1710/srft-repo/tree/main/LLaMA-Factory/data",
+        repo: "Eden-Wang1710/srft-repo",
         domains: [
           "Agents",
         ],
@@ -10889,6 +10948,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "SRQA",
+        slug: "srqa",
         note: "849 safe-role question-answer pairs in the non-expanded release, generated from psychometric questionnaires (IPIP-NEO, MBTI, WVS-7) and a limited set of jailbreak prompts under a predefined safe-role description and validated with LLM sc…",
         type: "LLMs",
         venue: "arXiv 2026 / SSRFT",
@@ -10898,6 +10958,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/Code-PJH/SSRFT/tree/main/sft_data",
+        repo: "Code-PJH/SSRFT",
         domains: [
           "LLMs",
         ],
@@ -10905,6 +10966,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Stable Alignment Sandbox sample datasets",
+        slug: "stable-alignment-sandbox-sample-datasets",
         note: "2 public interaction-data sample files, drawn from a 169K sandbox-generated set, released for constructing three alignment-training stages.",
         type: "LLMs",
         year: "2023",
@@ -10915,6 +10977,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/agi-templar/Stable-Alignment/tree/main/assets",
+        repo: "agi-templar/Stable-Alignment",
         domains: [
           "LLMs",
         ],
@@ -10922,6 +10985,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Stanford Human Preferences",
+        slug: "stanford-human-preferences",
         note: "385K human preference pairs collected from highly upvoted and downvoted Reddit responses across 18 domains for training and evaluating preference-based alignment methods.",
         type: "LLMs",
         tags: [
@@ -10936,6 +11000,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Texas Spoofing Test Battery (TEXBAT)",
+        slug: "texas-spoofing-test-battery-texbat",
         note: "8 high-fidelity GPS signal recordings collected from live static and dynamic spoofing scenarios for training and testing spoofing-detection and authentication methods.",
         type: "Embodied AI",
         venue: "RadioNavigation Laboratory Conference Proceedings",
@@ -10952,6 +11017,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "ToxicChat",
+        slug: "toxicchat",
         note: "Description not recorded yet.",
         type: "LLMs",
         venue: "arXiv 2023 (LMSYS)",
@@ -10961,6 +11027,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/lmsys/toxic-chat",
+        repo: "lm-sys/FastChat",
         domains: [
           "LLMs",
         ],
@@ -10968,6 +11035,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "TruthfulQA evaluator fine-tuning data",
+        slug: "truthfulqa-evaluator-fine-tuning-data",
         note: "6.9K reference-answer and approximately 15.5K generated-answer examples annotated for truthfulness and informativeness for fine-tuning the TruthfulQA judge and information evaluators.",
         type: "LLMs",
         venue: "ACL 2022",
@@ -10980,6 +11048,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/sylinrl/TruthfulQA/tree/main/data",
+        repo: "sylinrl/TruthfulQA",
         domains: [
           "LLMs",
         ],
@@ -10987,6 +11056,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "Virus",
+        slug: "virus",
         note: "Exact count not recorded: harmful fine-tuning examples generated by optimizing source samples against moderation and jailbreak objectives for studying guardrail bypass and safety-alignment degradation.",
         type: "LLMs",
         tags: [
@@ -11001,6 +11071,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "WildGuardMix",
+        slug: "wildguardmix",
         note: "Description not recorded yet.",
         type: "LLMs",
         venue: "arXiv 2024 / AllenAI WildGuard",
@@ -11010,6 +11081,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/allenai/wildguardmix",
+        repo: "allenai/wildguard",
         domains: [
           "LLMs",
         ],
@@ -11017,6 +11089,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "WildJailbreak",
+        slug: "wildjailbreak",
         note: "Description not recorded yet.",
         type: "LLMs",
         venue: "arXiv 2024",
@@ -11033,6 +11106,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "XGuard-Train",
+        slug: "xguard-train",
         note: "30,695 attack–refusal conversations released for robust multi-turn safety fine-tuning.",
         type: "Agents",
         venue: "arXiv 2025",
@@ -11046,6 +11120,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/marslabucla/XGuard-Train",
+        repo: "salman-lui/x-teaming",
         domains: [
           "Agents",
         ],
@@ -11053,6 +11128,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
       },
       {
         name: "XSTest",
+        slug: "xstest",
         note: "450 safe and unsafe prompts curated as minimal contrasts across 10 prompt types for training and evaluating calibrated refusal behavior.",
         type: "LLMs",
         stars: 142,
@@ -11062,6 +11138,7 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         resources: [],
         primaryUrl: "https://github.com/paul-rottger/xstest/blob/main/xstest_prompts.csv",
+        repo: "paul-rottger/xstest",
         domains: [
           "LLMs",
         ],

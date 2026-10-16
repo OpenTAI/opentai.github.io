@@ -1,0 +1,448 @@
+{
+  "version": 1,
+  "scope": "Homepage Trending eligibility for datasets only; safety, security, privacy, fairness, truthfulness and safety-relevant robustness. Catalog membership is unchanged.",
+  "records": [
+    {
+      "slug": "advbench",
+      "name": "AdvBench",
+      "status": "keep",
+      "reason": "Harmful-behavior instructions used to evaluate adversarial jailbreak attacks and safety alignment.",
+      "sourceUrls": [
+        "https://github.com/llm-attacks/llm-attacks/blob/main/data/advbench/harmful_behaviors.csv"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "aegis-2-0",
+      "name": "Aegis 2.0",
+      "status": "keep",
+      "reason": "Content-safety conversations with red-team prompts and safety annotations for guard-model training.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-2.0"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "anthropic-red-team-attempts",
+      "name": "Anthropic Red Team Attempts",
+      "status": "keep",
+      "reason": "Human red-team conversations collected to study and reduce harmful model behavior.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/Anthropic/hh-rlhf/tree/main/red-team-attempts"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "beavertails",
+      "name": "BeaverTails",
+      "status": "keep",
+      "reason": "Question-answer pairs human-annotated with harm categories for harmlessness alignment and safety classifiers.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/PKU-Alignment/BeaverTails"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "bipia",
+      "name": "BIPIA",
+      "status": "keep",
+      "reason": "Indirect prompt-injection contexts paired with attacker goals for evaluating and defending against injection.",
+      "sourceUrls": [
+        "https://github.com/microsoft/BIPIA/tree/main/benchmark"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "booster-repnoise-beavertails",
+      "name": "Booster repnoise BeaverTails",
+      "status": "keep",
+      "reason": "BeaverTails-derived refusal records for safety alignment against harmful fine-tuning.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/anonymous4486/repnoise_beavertail"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "bot-adversarial-dialogue",
+      "name": "Bot-Adversarial Dialogue",
+      "status": "keep",
+      "reason": "Adversarial human-bot conversations collected for training and evaluating offensive-language safety classifiers. Displayed stars are for the whole ParlAI framework repository, not this dataset alone.",
+      "sourceUrls": [
+        "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/bot_adversarial_dialogue"
+      ],
+      "reviewedAt": "2026-10-16",
+      "starsSource": "https://github.com/facebookresearch/ParlAI"
+    },
+    {
+      "slug": "crafted-datasets",
+      "name": "Crafted datasets",
+      "status": "keep",
+      "reason": "Indirect prompt-injection examples for training injection detection and removal.",
+      "sourceUrls": [
+        "https://github.com/LukeChen-go/indirect-pia-detection/tree/main/data"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "cvalues-comparison",
+      "name": "CValues-Comparison",
+      "status": "keep",
+      "reason": "Safety and responsibility preference pairs for value alignment of Chinese LLMs.",
+      "sourceUrls": [
+        "https://www.modelscope.cn/datasets/damo/CValues-Comparison/summary"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "donotanswer",
+      "name": "DoNotAnswer",
+      "status": "keep",
+      "reason": "Risk-area instructions with annotated responses for refusal and risk-classifier training.",
+      "sourceUrls": [
+        "https://github.com/Libr-AI/do-not-answer/tree/main/datasets"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "easafetybench",
+      "name": "EAsafetyBench",
+      "status": "keep",
+      "reason": "Embodied-agent and drone safety prompts for training and evaluating safe embodied behavior.",
+      "sourceUrls": [
+        "https://github.com/ZihanYan-CQU/EAsafetyBench/tree/main/EAsafetyBench"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "guardreasonertrain",
+      "name": "GuardReasonerTrain",
+      "status": "keep",
+      "reason": "Reasoning-annotated harmfulness data for training guard models.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/yueliu1999/GuardReasonerTrain"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "hh-rlhf",
+      "name": "HH-RLHF",
+      "status": "keep",
+      "reason": "Helpfulness and harmlessness preference pairs whose harmless split targets harmful-behavior reduction in RLHF.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/Anthropic/hh-rlhf"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "homesafe",
+      "name": "HomeSafe",
+      "status": "keep",
+      "reason": "Household embodied-safety data released with HomeGuard for hazard-aware agents.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/Ursulalala/HomeSafe"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "hsol",
+      "name": "HSOL",
+      "status": "keep",
+      "reason": "Crowd-annotated hate-speech and offensive-language tweets for content-safety classifiers.",
+      "sourceUrls": [
+        "https://github.com/t-davidson/hate-speech-and-offensive-language/blob/master/data/labeled_data.csv"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "jigsaw-toxic-comment-classification",
+      "name": "Jigsaw Toxic Comment Classification",
+      "status": "keep",
+      "reason": "Toxicity-labelled comments for content-moderation model training.",
+      "sourceUrls": [
+        "https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "llavaguard-dataset",
+      "name": "LlavaGuard Dataset",
+      "status": "keep",
+      "reason": "Expert-annotated image-text safety ratings for multimodal guard models.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/AIML-TUDA/LlavaGuard"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "llm-lat-harmful-dataset",
+      "name": "LLM-LAT Harmful Dataset",
+      "status": "keep",
+      "reason": "Harmful request/refusal data used for latent adversarial safety training.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/LLM-LAT/harmful-dataset"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "mm-safetybench",
+      "name": "MM-SafetyBench",
+      "status": "keep",
+      "reason": "Text-image attack pairs across safety scenarios for evaluating multimodal safeguards.",
+      "sourceUrls": [
+        "https://github.com/isXinLiu/MM-SafetyBench"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "nemotron-safety-guard-dataset-v3",
+      "name": "Nemotron-Safety-Guard-Dataset-v3",
+      "status": "keep",
+      "reason": "Multilingual content-safety annotations for training safety guard models.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/nvidia/Nemotron-Safety-Guard-Dataset-v3"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "obligationguard-training-data",
+      "name": "ObligationGuard Training Data",
+      "status": "keep",
+      "reason": "Agent trajectories labelled for obligation compliance to train an agent guardrail.",
+      "sourceUrls": [
+        "https://github.com/THU-Agent/ObligationGuard/tree/main/data"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "olid",
+      "name": "OLID",
+      "status": "keep",
+      "reason": "Hierarchically annotated offensive-language tweets for content-safety identification.",
+      "sourceUrls": [
+        "https://zenodo.org/records/2670722"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "openassistant-oasst1",
+      "name": "OpenAssistant OASST1",
+      "status": "exclude",
+      "reason": "General crowd-sourced assistant conversations for instruction tuning and preference training; not a dedicated safety dataset. Displayed stars are for the whole Open-Assistant project. Retained in the full dataset catalog.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/OpenAssistant/oasst1"
+      ],
+      "reviewedAt": "2026-10-16",
+      "starsSource": "https://github.com/LAION-AI/Open-Assistant"
+    },
+    {
+      "slug": "orca-dpo",
+      "name": "ORCA-DPO",
+      "status": "keep",
+      "reason": "Chosen-rejected response pairs used for preference alignment training.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/Intel/orca_dpo_pairs"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "pku-saferlhf",
+      "name": "PKU-SafeRLHF",
+      "status": "keep",
+      "reason": "Helpfulness and harmlessness preferences with separate safety-cost labels for safe RLHF.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "safe-guard-prompt-injection",
+      "name": "safe-guard-prompt-injection",
+      "status": "keep",
+      "reason": "Prompt-injection classification data for input guardrails.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "safemtdata",
+      "name": "SafeMTData",
+      "status": "keep",
+      "reason": "Safety-focused multi-turn instruction records for fine-tuning safer language models.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/SafeMTData/SafeMTData"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "safetyprompts",
+      "name": "SafetyPrompts",
+      "status": "keep",
+      "reason": "Chinese prompts and responses across typical and adversarial safety scenarios.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/thu-coai/Safety-Prompts"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "sap",
+      "name": "SAP",
+      "status": "keep",
+      "reason": "Prompt-based data-poisoning variants for studying and defending against poisoning attacks.",
+      "sourceUrls": [
+        "https://github.com/Aatrox103/SAP"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "selfdefend-distilled-defense-data",
+      "name": "SelfDefend distilled defense data",
+      "status": "keep",
+      "reason": "Jailbreak-defense prompts and labels for fine-tuning a shadow defense model.",
+      "sourceUrls": [
+        "https://zenodo.org/records/14736936/latest"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "sleeper-agents-code-backdoor-training-data",
+      "name": "Sleeper Agents code backdoor training data",
+      "status": "keep",
+      "reason": "Trigger-conditioned vulnerable-code examples for studying persistent deceptive backdoors.",
+      "sourceUrls": [
+        "https://github.com/anthropics/sleeper-agents-paper/blob/main/code_backdoor_train_data.jsonl"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "socio-moral-image-database",
+      "name": "Socio-Moral Image Database",
+      "status": "keep",
+      "reason": "Images with moral and emotional judgments used for multimodal safety annotation.",
+      "sourceUrls": [
+        "https://osf.io/2rqad/"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "srft-self-reflection-training-data",
+      "name": "SRFT Self-Reflection Training Data",
+      "status": "keep",
+      "reason": "Prompt-injection-compromised agent trajectories for training self-reflective defenses.",
+      "sourceUrls": [
+        "https://github.com/Eden-Wang1710/srft-repo/tree/main/LLaMA-Factory/data"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "srqa",
+      "name": "SRQA",
+      "status": "keep",
+      "reason": "Safe-role question-answer pairs for safety-oriented role fine-tuning.",
+      "sourceUrls": [
+        "https://github.com/Code-PJH/SSRFT/tree/main/sft_data"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "stable-alignment-sandbox-sample-datasets",
+      "name": "Stable Alignment Sandbox sample datasets",
+      "status": "exclude",
+      "reason": "Sample files from a general social-value alignment simulation sandbox; not a dedicated safety, security or trustworthiness dataset. Retained in the full dataset catalog.",
+      "sourceUrls": [
+        "https://github.com/agi-templar/Stable-Alignment/tree/main/assets"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "stanford-human-preferences",
+      "name": "Stanford Human Preferences",
+      "status": "keep",
+      "reason": "Human preference pairs used for preference-based alignment and reward modeling.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/stanfordnlp/SHP"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "texas-spoofing-test-battery-texbat",
+      "name": "Texas Spoofing Test Battery (TEXBAT)",
+      "status": "keep",
+      "reason": "GPS spoofing recordings for training and testing spoofing detection.",
+      "sourceUrls": [
+        "https://radionavlab.ae.utexas.edu/texbat/"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "toxicchat",
+      "name": "ToxicChat",
+      "status": "keep",
+      "reason": "Real user-chatbot prompts labelled for toxicity and jailbreaking.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/lmsys/toxic-chat"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "truthfulqa-evaluator-fine-tuning-data",
+      "name": "TruthfulQA evaluator fine-tuning data",
+      "status": "keep",
+      "reason": "Truthfulness and informativeness annotations for fine-tuning the TruthfulQA judge.",
+      "sourceUrls": [
+        "https://github.com/sylinrl/TruthfulQA/tree/main/data"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "virus",
+      "name": "Virus",
+      "status": "keep",
+      "reason": "Moderation-evading harmful fine-tuning examples for studying harmful fine-tuning attacks.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/anonymous4486/Virus"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "wildguardmix",
+      "name": "WildGuardMix",
+      "status": "keep",
+      "reason": "Prompt and response harm/refusal annotations for training safety moderation models.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/allenai/wildguardmix"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "wildjailbreak",
+      "name": "WildJailbreak",
+      "status": "keep",
+      "reason": "Synthetic vanilla and adversarial jailbreak prompts for safety training.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/allenai/wildjailbreak"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "xguard-train",
+      "name": "XGuard-Train",
+      "status": "keep",
+      "reason": "Multi-turn attack-refusal conversations for robust safety fine-tuning.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/marslabucla/XGuard-Train"
+      ],
+      "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "xstest",
+      "name": "XSTest",
+      "status": "keep",
+      "reason": "Safe and unsafe contrast prompts for calibrated refusal behavior.",
+      "sourceUrls": [
+        "https://github.com/paul-rottger/xstest/blob/main/xstest_prompts.csv"
+      ],
+      "reviewedAt": "2026-10-16"
+    }
+  ]
+}

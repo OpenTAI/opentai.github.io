@@ -1,4 +1,4 @@
-// Generated from scripts/data/benchmark-trending-audit.json. Do not edit.
+// Generated from scripts/data/benchmark-trending-audit.json and dataset-trending-audit.json. Do not edit.
 // Eligibility only; sorting and card limits are handled by the homepage.
 
 export const trendingBenchmarkSlugs: readonly string[] = [
@@ -113,4 +113,49 @@ export const trendingBenchmarkSlugs: readonly string[] = [
   "obligationbench",
   "decepeval",
   "revleakbench",
+];
+
+export const trendingDatasetSlugs: readonly string[] = [
+  "advbench",
+  "aegis-2-0",
+  "anthropic-red-team-attempts",
+  "beavertails",
+  "bipia",
+  "booster-repnoise-beavertails",
+  "bot-adversarial-dialogue",
+  "crafted-datasets",
+  "cvalues-comparison",
+  "donotanswer",
+  "easafetybench",
+  "guardreasonertrain",
+  "hh-rlhf",
+  "homesafe",
+  "hsol",
+  "jigsaw-toxic-comment-classification",
+  "llavaguard-dataset",
+  "llm-lat-harmful-dataset",
+  "mm-safetybench",
+  "nemotron-safety-guard-dataset-v3",
+  "obligationguard-training-data",
+  "olid",
+  "orca-dpo",
+  "pku-saferlhf",
+  "safe-guard-prompt-injection",
+  "safemtdata",
+  "safetyprompts",
+  "sap",
+  "selfdefend-distilled-defense-data",
+  "sleeper-agents-code-backdoor-training-data",
+  "socio-moral-image-database",
+  "srft-self-reflection-training-data",
+  "srqa",
+  "stanford-human-preferences",
+  "texas-spoofing-test-battery-texbat",
+  "toxicchat",
+  "truthfulqa-evaluator-fine-tuning-data",
+  "virus",
+  "wildguardmix",
+  "wildjailbreak",
+  "xguard-train",
+  "xstest",
 ];
