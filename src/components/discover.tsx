@@ -7,7 +7,6 @@ import {
   partners,
   siteBrand,
   subpageConfigs,
-  SubpageTableRow,
 } from "@/data/site";
 import { ecosystemCompanies, ecosystemModels } from "@/data/ecosystem";
 import { paperLibrary } from "@/data/papers";
@@ -17,14 +16,10 @@ import { SubscribeBox } from "@/components/subscribe";
 import { Locale, localizeHref, t } from "@/lib/i18n";
 import { buildTrendingResources } from "@/lib/trending-resources";
 
-type Entry = SubpageTableRow & { collection: string; href: string };
-
-const ALL: Entry[] = collectionOrder.flatMap((slug) =>
-  subpageConfigs[slug].tableRows.map((row) => ({
-    ...row,
-    collection: subpageConfigs[slug].title,
-    href: `/${slug}`,
-  })),
+// Models live in the ecosystem catalog, not subpageConfigs.models (see categoryCount).
+const resourceTotal = collectionOrder.reduce(
+  (sum, slug) => sum + categoryCount(`/${slug}`),
+  0,
 );
 
 function categoryCount(href: string) {
@@ -122,7 +117,7 @@ export function DiscoverHero({ locale }: { locale: Locale }) {
     <section className="mx-auto max-w-[980px] space-y-8 pt-6 text-center">
       <div className="space-y-4">
         <p className="home-kicker mx-auto">
-          {ALL.length} {t(locale, "open resources, one index")}
+          {resourceTotal} {t(locale, "open resources, one index")}
         </p>
         <h1 className="text-[2.6rem] font-semibold leading-[1.06] tracking-[-0.06em] text-[#0f172a] sm:text-[3.2rem]">
           {t(locale, "OpenTAI — The")}{" "}
