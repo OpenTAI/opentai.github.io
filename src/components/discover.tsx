@@ -11,7 +11,7 @@ import {
 } from "@/data/site";
 import { ecosystemCompanies, ecosystemModels } from "@/data/ecosystem";
 import { paperLibrary } from "@/data/papers";
-import { trendingBenchmarkSlugs } from "@/data/trending";
+import { trendingBenchmarkSlugs, trendingDatasetSlugs } from "@/data/trending";
 import { SiteSearch } from "@/components/site-search";
 import { SubscribeBox } from "@/components/subscribe";
 import { Locale, localizeHref, t } from "@/lib/i18n";
@@ -49,6 +49,7 @@ const trending = buildTrendingResources({
   datasets: subpageConfigs.datasets.tableRows,
   benchmarks: subpageConfigs.benchmarks.tableRows,
   allowedBenchmarkSlugs: trendingBenchmarkSlugs,
+  allowedDatasetSlugs: trendingDatasetSlugs,
 });
 
 function recent(slug: string, limit = 4) {

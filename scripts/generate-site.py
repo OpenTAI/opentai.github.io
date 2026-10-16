@@ -5,7 +5,7 @@ import json, pathlib, re
 import sys
 from urllib.parse import urlparse
 
-from trending_catalog import missing_trending_reviews, trending_benchmark_slugs
+from trending_catalog import missing_trending_reviews, trending_benchmark_slugs, trending_dataset_slugs
 
 from dataset_catalog import (
     dataset_summary,
@@ -1200,6 +1200,8 @@ export type SubpageTableRow = {
   usageCount?: number;
   sourcePapers?: readonly DatasetSourcePaper[];
   primaryUrl?: string;
+  /** GitHub owner/repo, emitted for datasets so homepage Trending can dedupe shared repositories. */
+  repo?: string;
   property?: string;
   citationOnly?: boolean;
   subtitle?: string;
@@ -1445,12 +1447,35 @@ parts.append(block("arenaDirectory", "RankingDirectoryRecord[]", arena_directory
 parts.append(block("arenaResults", "ArenaResultSnapshot", arena_results))
 parts.append(block("textArenaOverview", "TextArenaOverview", text_arena_overview))
 parts.append(block("codeArenaOverview", "CodeArenaOverview", CODE_ARENA_OVERVIEW))
+# Dataset homepage eligibility mirrors the benchmark ledger (fail closed).
+DATASET_TRENDING_AUDIT = json.loads((DATA / "dataset-trending-audit.json").read_text())["records"]
+dataset_trending_rows = [
+    {"slug": slugify(row["name"]), "name": row["name"]} for row in CONFIGS["datasets"]["tableRows"]
+]
+trending_dataset_slug_list = trending_dataset_slugs(dataset_trending_rows, DATASET_TRENDING_AUDIT)
+missing_dataset_trending = missing_trending_reviews(dataset_trending_rows, DATASET_TRENDING_AUDIT, "dataset")
+if missing_dataset_trending:
+    print("Dataset trending review missing (excluded): " + ", ".join(missing_dataset_trending), file=sys.stderr)
+
+
+
+def github_repo_of(row):
+    """owner/repo from the row's first GitHub link; used to dedupe homepage Trending."""
+    urls = [row.get("primaryUrl") or ""] + [resource["href"] for resource in row.get("resources", [])]
+    for url in urls:
+        match = re.match(r"https://github\.com/([^/]+)/([^/#?]+)", url)
+        if match:
+            return f"{match.group(1)}/{match.group(2).removesuffix('.git')}"
+    return None
+
+
 dataset_summary_config = copy.deepcopy(CONFIGS["datasets"])
 dataset_summary_config["tableRows"] = [
     {
         key: value
         for key, value in {
             "name": row["name"],
+            "slug": slugify(row["name"]),
             "note": (
                 row["note"]
                 if len(row["note"]) <= 240
@@ -1466,6 +1491,7 @@ dataset_summary_config["tableRows"] = [
             "tags": row.get("tags"),
             "resources": [],
             "primaryUrl": row.get("primaryUrl"),
+            "repo": github_repo_of(row),
             "domains": row.get("domains"),
             "domain": row.get("domain"),
         }.items()
@@ -1486,9 +1512,10 @@ OUT.write_text("".join(parts))
 
 TRENDING_OUT = OUT.parent / "trending.ts"
 TRENDING_OUT.write_text(
-    "// Generated from scripts/data/benchmark-trending-audit.json. Do not edit.\n"
+    "// Generated from scripts/data/benchmark-trending-audit.json and dataset-trending-audit.json. Do not edit.\n"
     "// Eligibility only; sorting and card limits are handled by the homepage.\n\n"
-    + block("trendingBenchmarkSlugs", "readonly string[]", trending_slugs).rstrip() + "\n"
+    + block("trendingBenchmarkSlugs", "readonly string[]", trending_slugs)
+    + block("trendingDatasetSlugs", "readonly string[]", trending_dataset_slug_list).rstrip() + "\n"
 )
 
 # Ecosystem records are a separate, hand-reviewed catalog. Keep them outside
