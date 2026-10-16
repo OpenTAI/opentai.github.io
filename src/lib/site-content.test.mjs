@@ -204,3 +204,11 @@ test("the contribution path has bilingual static routes and is discoverable", as
   assert.match(chineseRoute, /locale="zh"/);
   assert.match(sitemap, /"\/contribute"/);
 });
+
+test("the homepage resource total counts ecosystem models, not legacy model rows", async () => {
+  const discover = await readSource("../components/discover.tsx");
+  assert.match(discover, /if \(href === "\/models"\) return ecosystemModels\.length;/);
+  assert.match(discover, /collectionOrder\.reduce\(\s*\(sum, slug\) => sum \+ categoryCount\(`\/\$\{slug\}`\)/);
+  assert.match(discover, /\{resourceTotal\} \{t\(locale, "open resources, one index"\)\}/);
+  assert.doesNotMatch(discover, /ALL\.length/);
+});
