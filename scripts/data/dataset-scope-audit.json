@@ -996,6 +996,18 @@
       "status": "keep",
       "reason": "Kept: official SRFT repo releases the 3,698-trajectory self-reflection SFT data with LoRA training configs for SR-Agent. Added from issue #130.",
       "sourceUrl": "https://github.com/Eden-Wang1710/srft-repo/tree/main/LLaMA-Factory/data"
+    },
+    {
+      "name": "CompanionSafe Guard Data",
+      "status": "keep",
+      "reason": "Kept: official HF release ships a distinct 16,846-row SFT training split (plus 857 held-out test rows) used to LoRA-train the CompanionGuard guard model; separate from the CompanionEval benchmark settings. Added from issue #138.",
+      "sourceUrl": "https://huggingface.co/datasets/liao1111/CompanionSafe-Guard-Data"
+    },
+    {
+      "name": "RUBAS Training Data",
+      "status": "keep",
+      "reason": "Kept: official RUBAS repo releases data/train.json as the 2,353-record rubric-annotated RL training split for safe tool-using agents. Added from issue #139.",
+      "sourceUrl": "https://github.com/thu-coai/RUBAS/blob/main/data/train.json"
     }
   ]
 }

@@ -113,6 +113,15 @@ export const trendingBenchmarkSlugs: readonly string[] = [
   "obligationbench",
   "decepeval",
   "revleakbench",
+  "swe-deceptionbench",
+  "companioneval",
+  "drylab-bench",
+  "lumen-bench",
+  "latentriskbench",
+  "infuse",
+  "browsesafe",
+  "quasileak-bench",
+  "memform",
 ];
 
 export const trendingDatasetSlugs: readonly string[] = [
@@ -123,6 +132,7 @@ export const trendingDatasetSlugs: readonly string[] = [
   "bipia",
   "booster-repnoise-beavertails",
   "bot-adversarial-dialogue",
+  "companionsafe-guard-data",
   "crafted-datasets",
   "cvalues-comparison",
   "donotanswer",
@@ -140,6 +150,7 @@ export const trendingDatasetSlugs: readonly string[] = [
   "olid",
   "orca-dpo",
   "pku-saferlhf",
+  "rubas-training-data",
   "safe-guard-prompt-injection",
   "safemtdata",
   "safetyprompts",

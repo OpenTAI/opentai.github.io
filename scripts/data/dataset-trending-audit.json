@@ -443,6 +443,26 @@
         "https://github.com/paul-rottger/xstest/blob/main/xstest_prompts.csv"
       ],
       "reviewedAt": "2026-10-16"
+    },
+    {
+      "slug": "companionsafe-guard-data",
+      "name": "CompanionSafe Guard Data",
+      "status": "keep",
+      "reason": "Companion-dialogue safety supervision for training a companion-specific guard model.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/liao1111/CompanionSafe-Guard-Data"
+      ],
+      "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "rubas-training-data",
+      "name": "RUBAS Training Data",
+      "status": "keep",
+      "reason": "Rubric-annotated harmful, sensitive and benign tool-use tasks for safety reinforcement learning of agents.",
+      "sourceUrls": [
+        "https://github.com/thu-coai/RUBAS/blob/main/data/train.json"
+      ],
+      "reviewedAt": "2026-10-19"
     }
   ]
 }

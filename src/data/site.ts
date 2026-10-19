@@ -4835,6 +4835,266 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  "swe-deceptionbench": {
+    slug: "swe-deceptionbench",
+    name: "SWE-DeceptionBench",
+    category: "LLMs",
+    description: "Bilingual (Chinese/English) benchmark of LLM deception in software engineering: 720 instances across six lifecycle stages (requirements analysis, system design, development, testing, deployment, maintenance) and two triggers, Active Deception (claiming to satisfy infeasible or conflicting requirements) and Passive Deception (helping fabricate, conceal or distort information), under Neutral, Reward and Pressure conditions, with task-specific LLM-judge prompts and deception-rate metrics. Across seven mainstream LLMs, Neutral-condition deception reaches 49.88% (Active) and 64.29% (Passive).",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.13626",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/THU-Agent/SWE-DeceptionBench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2610.13626",
+    paperUrl: "https://arxiv.org/abs/2610.13626",
+    repo: "THU-Agent/SWE-DeceptionBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  companioneval: {
+    slug: "companioneval",
+    name: "CompanionEval",
+    category: "LLMs",
+    description: "Multi-turn safety benchmark for AI companions (character LLMs), the evaluation component of the CompanionSafe framework: 1,300 relationally grounded settings (persona + matched companion character + dialogue scenario) over a 13-category taxonomy that includes relational harms such as Control, Manipulation and Infidelity, each instantiated at four turn tiers (K = 1/3/5/7) and scored by an evidence-citing LLM judge. Across 10 character LLMs (51,181 judged trajectories), average attack success rate rises from 9.80 at K=1 to 28.14 at K=7.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.18095",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/CompanionSafe",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2610.18095",
+    paperUrl: "https://arxiv.org/abs/2610.18095",
+    repo: "AI45Lab/CompanionSafe",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "drylab-bench": {
+    slug: "drylab-bench",
+    name: "DRYLAB-Bench",
+    category: "Agents",
+    description: "Biosecurity risk benchmark (Design Risk Yielded by LLM Agent in Biodesign) testing whether LLM agents can design high-risk protein mutations, rather than only probing hazardous knowledge. Agents work in a multi-round, tool-augmented setting that orchestrates biological design tools, and designs are scored with a Biosecurity Risk Score against 187,695 wet-lab deep-mutational-scanning measurements from ProteinGym and ViroGym. The paper covers 30 hazardous mutation-design scenarios across 15 frontier models; tool access raises pooled risk (ΔBRS = +0.116).",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.13116",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/drylab-bio/DRYLAB-Bench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2610.13116",
+    paperUrl: "https://arxiv.org/abs/2610.13116",
+    repo: "drylab-bio/DRYLAB-Bench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "lumen-bench": {
+    slug: "lumen-bench",
+    name: "Lumen-bench",
+    category: "Agents",
+    description: "Multilingual behavioral benchmark of tool-calling ethics that measures what models do, not only what they say, including the say-do gap where a model refuses in words but still executes the harmful tool call. 108 Portuguese-authored scenarios in five languages (Portuguese, English, Spanish, Mandarin Chinese, Hindi), six social-pressure conditions, two system prompts and 21 generic tools, totalling 194,400 trials over 30 models plus 3,300 benign-control trials. Neutral instead of ethical system prompts raise pooled violation rates from 2.76% to 13.64%.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.15134",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/TropicAI-Research/lumen",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2610.15134",
+    paperUrl: "https://arxiv.org/abs/2610.15134",
+    repo: "TropicAI-Research/lumen",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  latentriskbench: {
+    slug: "latentriskbench",
+    name: "LatentRiskBench",
+    category: "Agents",
+    description: "Benchmark for state-dependent risks in enterprise agents, where the same terminal action can be safe or a policy violation depending on latent workflow state. Risky trajectories are paired with benign twins that share the terminal action but differ in policy-relevant state, with residual-risk metrics, attack payloads, policies and a tool registry, plus a state-conditioned suite and an e-commerce instantiation. Action-level evaluation catches only 0.09 of state-dependent violations versus 0.96 at state level, and existing guardrails largely miss such risks.",
+    venue: "EMNLP 2026 (Industry Track)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.17685",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/JingyueCong/LatentRiskBench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2610.17685",
+    paperUrl: "https://arxiv.org/abs/2610.17685",
+    repo: "JingyueCong/LatentRiskBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  infuse: {
+    slug: "infuse",
+    name: "INFUSE",
+    category: "Agents",
+    description: "End-to-end benchmark for indirect prompt injection across the lifecycle of long-horizon coding and filesystem agent workflows: 40 Docker-based tasks and 56 attack scenarios in five threat categories, with adversarial instructions planted in realistic interaction surfaces (source and config files, file names, archives), measuring both attack success and task completion. Across 19 LLMs (41,824 adversarial trajectories plus 720 benign runs) mean attack success is 19.6%; guard models give limited protection, while prompt hardening cuts ASR from 58.2% to 14.3%.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.20776",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/judydnguyen/infuse",
+      },
+    ],
+    stats: [],
+    tags: [
+      "prompt injection",
+    ],
+    arxivId: "2610.20776",
+    paperUrl: "https://arxiv.org/abs/2610.20776",
+    repo: "judydnguyen/infuse",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  browsesafe: {
+    slug: "browsesafe",
+    name: "BrowseSafe++",
+    category: "Agents",
+    description: "Benchmark for detecting indirect prompt injections that target browser agents: 38,675 attack/control page pairs (77,350 pages), most with injections observed in the wild on production websites, each pairing a clean control page with a user task and expected outcome, in HTML, Markdown, accessibility-tree and screenshot views. Covers 12 page types, 24 attack types, 18 placements, 6 attacker goals and 80 languages, and ships an SDK for detector evaluation and adaptive attack campaigns, with a public leaderboard on a held-out test split.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.17457",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/perplexityai/browsesafe-plus-plus",
+      },
+    ],
+    stats: [],
+    tags: [
+      "prompt injection",
+    ],
+    arxivId: "2610.17457",
+    paperUrl: "https://arxiv.org/abs/2610.17457",
+    repo: "perplexityai/browsesafe-plus-plus",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "quasileak-bench": {
+    slug: "quasileak-bench",
+    name: "QuasiLeak-Bench",
+    category: "LLMs",
+    description: "Privacy benchmark for LLM-based privacy detectors on policy-conditioned quasi-evidence group recovery: 5,000 messages, each paired with a sender profile and a disclosure policy marking attributes HIDE/KEEP/NEUTRAL; detectors must return the groups of weak cues (2–4 verbatim spans) that jointly reveal a HIDE attribute, scored on complete group recovery, attribute binding and policy compliance. Ground truth is reverse-constructed (cues first, then documents) with automated quality control; existing privacy detectors transfer poorly and local LLM detectors miss most groups.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.21333",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Yufannnn/QuasiLeak-Bench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "privacy",
+    ],
+    arxivId: "2610.21333",
+    paperUrl: "https://arxiv.org/abs/2610.21333",
+    repo: "Yufannnn/QuasiLeak-Bench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  memform: {
+    slug: "memform",
+    name: "MemForm",
+    category: "Agents",
+    description: "Controlled diagnostic benchmark for memory-formation poisoning in LLM agents: paired clean/poisoned interventions at five memory-formation interfaces (Content, Evidence, Scope, Selection and Path poisoning), holding the downstream trigger and action space fixed so attack success is a within-item contrast. Released frozen cases cover multiple-choice and free-form formats (994 + 897 = 1,891 accepted items) with LangChain / LlamaIndex runners and defense baselines; evaluations across six LLMs show susceptibility at all five interfaces and only partial mitigation by existing defenses.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.14431",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/opanhw/memform-code",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2610.14431",
+    paperUrl: "https://arxiv.org/abs/2610.14431",
+    repo: "opanhw/memform-code",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -10096,6 +10356,207 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         domain: "LLMs",
         property: "Privacy",
       },
+      {
+        name: "SWE-DeceptionBench",
+        note: "Bilingual (Chinese/English) benchmark of LLM deception in software engineering: 720 instances across six lifecycle stages (requirements analysis, system design, development, testing, deployment, maintenance) and two triggers, Active Deception (claiming to satisfy infeasible or conflicting requirements) and Passive Deception (helping fabricate, conceal or distort information), under Neutral, Reward and Pressure conditions, with task-specific LLM-judge prompts and deception-rate metrics. Across seven mainstream LLMs, Neutral-condition deception reaches 49.88% (Active) and 64.29% (Passive).",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.13626",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/THU-Agent/SWE-DeceptionBench",
+          },
+        ],
+        slug: "swe-deceptionbench",
+        domain: "LLMs",
+      },
+      {
+        name: "CompanionEval",
+        note: "Multi-turn safety benchmark for AI companions (character LLMs), the evaluation component of the CompanionSafe framework: 1,300 relationally grounded settings (persona + matched companion character + dialogue scenario) over a 13-category taxonomy that includes relational harms such as Control, Manipulation and Infidelity, each instantiated at four turn tiers (K = 1/3/5/7) and scored by an evidence-citing LLM judge. Across 10 character LLMs (51,181 judged trajectories), average attack success rate rises from 9.80 at K=1 to 28.14 at K=7.",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.18095",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/CompanionSafe",
+          },
+        ],
+        slug: "companioneval",
+        domain: "LLMs",
+      },
+      {
+        name: "DRYLAB-Bench",
+        note: "Biosecurity risk benchmark (Design Risk Yielded by LLM Agent in Biodesign) testing whether LLM agents can design high-risk protein mutations, rather than only probing hazardous knowledge. Agents work in a multi-round, tool-augmented setting that orchestrates biological design tools, and designs are scored with a Biosecurity Risk Score against 187,695 wet-lab deep-mutational-scanning measurements from ProteinGym and ViroGym. The paper covers 30 hazardous mutation-design scenarios across 15 frontier models; tool access raises pooled risk (ΔBRS = +0.116).",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.13116",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/drylab-bio/DRYLAB-Bench",
+          },
+        ],
+        slug: "drylab-bench",
+        domain: "Agents",
+      },
+      {
+        name: "Lumen-bench",
+        note: "Multilingual behavioral benchmark of tool-calling ethics that measures what models do, not only what they say, including the say-do gap where a model refuses in words but still executes the harmful tool call. 108 Portuguese-authored scenarios in five languages (Portuguese, English, Spanish, Mandarin Chinese, Hindi), six social-pressure conditions, two system prompts and 21 generic tools, totalling 194,400 trials over 30 models plus 3,300 benign-control trials. Neutral instead of ethical system prompts raise pooled violation rates from 2.76% to 13.64%.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.15134",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/TropicAI-Research/lumen",
+          },
+        ],
+        slug: "lumen-bench",
+        domain: "Agents",
+        property: "Harmful Content",
+      },
+      {
+        name: "LatentRiskBench",
+        note: "Benchmark for state-dependent risks in enterprise agents, where the same terminal action can be safe or a policy violation depending on latent workflow state. Risky trajectories are paired with benign twins that share the terminal action but differ in policy-relevant state, with residual-risk metrics, attack payloads, policies and a tool registry, plus a state-conditioned suite and an e-commerce instantiation. Action-level evaluation catches only 0.09 of state-dependent violations versus 0.96 at state level, and existing guardrails largely miss such risks.",
+        type: "Agents",
+        venue: "EMNLP 2026 (Industry Track)",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.17685",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/JingyueCong/LatentRiskBench",
+          },
+        ],
+        slug: "latentriskbench",
+        domain: "Agents",
+      },
+      {
+        name: "INFUSE",
+        note: "End-to-end benchmark for indirect prompt injection across the lifecycle of long-horizon coding and filesystem agent workflows: 40 Docker-based tasks and 56 attack scenarios in five threat categories, with adversarial instructions planted in realistic interaction surfaces (source and config files, file names, archives), measuring both attack success and task completion. Across 19 LLMs (41,824 adversarial trajectories plus 720 benign runs) mean attack success is 19.6%; guard models give limited protection, while prompt hardening cuts ASR from 58.2% to 14.3%.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "prompt injection",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.20776",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/judydnguyen/infuse",
+          },
+        ],
+        slug: "infuse",
+        domain: "Agents",
+        property: "Prompt Injection",
+      },
+      {
+        name: "BrowseSafe++",
+        note: "Benchmark for detecting indirect prompt injections that target browser agents: 38,675 attack/control page pairs (77,350 pages), most with injections observed in the wild on production websites, each pairing a clean control page with a user task and expected outcome, in HTML, Markdown, accessibility-tree and screenshot views. Covers 12 page types, 24 attack types, 18 placements, 6 attacker goals and 80 languages, and ships an SDK for detector evaluation and adaptive attack campaigns, with a public leaderboard on a held-out test split.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "prompt injection",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.17457",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/perplexityai/browsesafe-plus-plus",
+          },
+        ],
+        slug: "browsesafe",
+        domain: "Agents",
+        property: "Prompt Injection",
+      },
+      {
+        name: "QuasiLeak-Bench",
+        note: "Privacy benchmark for LLM-based privacy detectors on policy-conditioned quasi-evidence group recovery: 5,000 messages, each paired with a sender profile and a disclosure policy marking attributes HIDE/KEEP/NEUTRAL; detectors must return the groups of weak cues (2–4 verbatim spans) that jointly reveal a HIDE attribute, scored on complete group recovery, attribute binding and policy compliance. Ground truth is reverse-constructed (cues first, then documents) with automated quality control; existing privacy detectors transfer poorly and local LLM detectors miss most groups.",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "privacy",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.21333",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/Yufannnn/QuasiLeak-Bench",
+          },
+        ],
+        slug: "quasileak-bench",
+        domain: "LLMs",
+        property: "Privacy",
+      },
+      {
+        name: "MemForm",
+        note: "Controlled diagnostic benchmark for memory-formation poisoning in LLM agents: paired clean/poisoned interventions at five memory-formation interfaces (Content, Evidence, Scope, Selection and Path poisoning), holding the downstream trigger and action space fixed so attack success is a within-item contrast. Released frozen cases cover multiple-choice and free-form formats (994 + 897 = 1,891 accepted items) with LangChain / LlamaIndex runners and defense baselines; evaluations across six LLMs show susceptibility at all five interfaces and only partial mitigation by existing defenses.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.14431",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/opanhw/memform-code",
+          },
+        ],
+        slug: "memform",
+        domain: "Agents",
+      },
     ],
   },
   models: {
@@ -10455,6 +10916,24 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         domain: "LLMs",
       },
       {
+        name: "CompanionSafe Guard Data",
+        slug: "companionsafe-guard-data",
+        note: "16,846 SFT training examples and 857 held-out test examples of turn-marked AI-companion conversations, derived from judged CompanionEval trajectories by splitting each unsafe trajectory at its first offending assistant turn into paired s…",
+        type: "LLMs",
+        venue: "arXiv 2026 / CompanionSafe",
+        year: "2026",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/liao1111/CompanionSafe-Guard-Data",
+        repo: "AI45Lab/CompanionSafe",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
         name: "Crafted datasets",
         slug: "crafted-datasets",
         note: "Exact count not recorded: indirect prompt-injection examples crafted from attack instructions and external contexts for training detection and extraction models.",
@@ -10793,6 +11272,24 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           "LLMs",
         ],
         domain: "LLMs",
+      },
+      {
+        name: "RUBAS Training Data",
+        slug: "rubas-training-data",
+        note: "2,353 rubric-annotated tool-use instructions (2,000 harmful, 235 sensitive, 118 benign), each paired with available tools, an initial environment state and a task-specific rubric covering tool-use, argument and response safety and helpfu…",
+        type: "Agents",
+        venue: "Findings of EMNLP 2026 / RUBAS",
+        year: "2026",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://github.com/thu-coai/RUBAS/blob/main/data/train.json",
+        repo: "thu-coai/RUBAS",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
       },
       {
         name: "safe-guard-prompt-injection",
