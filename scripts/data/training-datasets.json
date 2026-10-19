@@ -2102,6 +2102,38 @@
       "size": "2,353 instructions (2,000 harmful / 235 sensitive / 118 benign)",
       "summary": "2,353 rubric-annotated tool-use instructions (2,000 harmful, 235 sensitive, 118 benign), each paired with available tools, an initial environment state and a task-specific rubric covering tool-use, argument and response safety and helpfulness, generated with the released data-creation pipeline over 82 simulated environments for rubric-based reinforcement learning of safe tool-using agents.",
       "summarySourceUrl": "https://github.com/thu-coai/RUBAS"
+    },
+    {
+      "name": "BrowseSafe++ Training Data",
+      "domain": "Agents",
+      "year": "2026",
+      "venue": "arXiv 2026 / BrowseSafe++",
+      "paperUrl": "https://arxiv.org/abs/2610.17457",
+      "githubUrl": "https://github.com/perplexityai/browsesafe-plus-plus",
+      "dataUrl": "https://huggingface.co/datasets/perplexity-ai/browsesafe-plus-plus",
+      "sourceUrl": "https://huggingface.co/datasets/perplexity-ai/browsesafe-plus-plus",
+      "trainingEvidence": "HF dataset card states the repository holds the train partition (29,500 attack/control pairs, 59,000 pages in data/members-train-*.parquet) while the 9,175-pair test partition is reserved for the leaderboard, with no injection text shared across partitions; arXiv:2610.17457 assigns 29,500 pairs to training and 9,175 to testing and fine-tunes the BrowseSafe-Guard 0.8B text and multimodal detectors from Qwen3.5-0.8B on BrowseSafe++ training pairs.",
+      "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/perplexity-ai/browsesafe-plus-plus",
+      "linkVerificationReason": "HF perplexity-ai/browsesafe-plus-plus resolves (public, not gated, CC BY 4.0) with a single train split (21 parquet shards, 59,000 rows); GitHub perplexityai/browsesafe-plus-plus (MIT SDK) and arXiv:2610.17457 resolve. Distinct from the held-out 9,175-pair test partition behind the BrowseSafe++ leaderboard (listed as Benchmark). Dual-listed from issue #145.",
+      "size": "29,500 train pairs (59,000 pages)",
+      "summary": "29,500 attack/control web-page pairs (59,000 pages) from the BrowseSafe++ train partition, each pairing a page carrying an indirect prompt injection (mostly observed on production sites) with a clean control, a user task and annotations, in HTML, Markdown, accessibility-tree and screenshot views across 80 languages, used to fine-tune the BrowseSafe-Guard prompt-injection detectors.",
+      "summarySourceUrl": "https://huggingface.co/datasets/perplexity-ai/browsesafe-plus-plus"
+    },
+    {
+      "name": "QuasiLeak-Bench Training Data",
+      "domain": "LLMs",
+      "year": "2026",
+      "venue": "arXiv 2026 / QuasiLeak-Bench",
+      "paperUrl": "https://arxiv.org/abs/2610.21333",
+      "githubUrl": "https://github.com/Yufannnn/QuasiLeak-Bench",
+      "dataUrl": "https://huggingface.co/datasets/HenryZYF/QuasiLeak-Bench",
+      "sourceUrl": "https://huggingface.co/datasets/HenryZYF/QuasiLeak-Bench",
+      "trainingEvidence": "HF dataset card defines the qlb config with separate train / validation / test files (3,500 / 500 / 1,000 documents, split by profile 350 / 50 / 100 so no Test profile appears in Train or Validation); the official README lists Train / Validation as 'fine-tuning and model selection' and ships training/ (build_examples.py, train_lora.py, split.json) as the recipe behind the paper's fine-tuned Qwen3.5-4B; arXiv:2610.21333 fine-tunes Qwen3.5-4B on this profile-disjoint training split.",
+      "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/HenryZYF/QuasiLeak-Bench",
+      "linkVerificationReason": "HF HenryZYF/QuasiLeak-Bench resolves (public, not gated, CC BY-NC-SA 4.0) with data/qlb/train.jsonl.gz (3,500 rows) and validation.jsonl.gz (500 rows) separate from test.jsonl.gz (1,000 rows); GitHub Yufannnn/QuasiLeak-Bench (MIT code) and arXiv:2610.21333 resolve. Distinct from the QLB-Test leaderboard evaluation (listed as Benchmark). Dual-listed from issue #146.",
+      "size": "3,500 train / 500 validation documents",
+      "summary": "3,500 training and 500 validation synthetic sender messages from QuasiLeak-Bench, each with a sender profile, communication context, a HIDE/KEEP/NEUTRAL disclosure policy and gold quasi-evidence groups of 2–4 verbatim cue spans bound to private attributes, released with a LoRA recipe for fine-tuning sender-side privacy detectors.",
+      "summarySourceUrl": "https://huggingface.co/datasets/HenryZYF/QuasiLeak-Bench"
     }
   ]
 }

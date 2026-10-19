@@ -463,6 +463,26 @@
         "https://github.com/thu-coai/RUBAS/blob/main/data/train.json"
       ],
       "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "browsesafe-training-data",
+      "name": "BrowseSafe++ Training Data",
+      "status": "keep",
+      "reason": "Paired injected/control web pages for training browser-agent prompt-injection detectors.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/perplexity-ai/browsesafe-plus-plus"
+      ],
+      "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "quasileak-bench-training-data",
+      "name": "QuasiLeak-Bench Training Data",
+      "status": "keep",
+      "reason": "Policy-conditioned quasi-evidence annotations for fine-tuning sender-side privacy leakage detectors.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/HenryZYF/QuasiLeak-Bench"
+      ],
+      "reviewedAt": "2026-10-19"
     }
   ]
 }

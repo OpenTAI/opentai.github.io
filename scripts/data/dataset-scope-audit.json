@@ -1008,6 +1008,18 @@
       "status": "keep",
       "reason": "Kept: official RUBAS repo releases data/train.json as the 2,353-record rubric-annotated RL training split for safe tool-using agents. Added from issue #139.",
       "sourceUrl": "https://github.com/thu-coai/RUBAS/blob/main/data/train.json"
+    },
+    {
+      "name": "BrowseSafe++ Training Data",
+      "status": "keep",
+      "reason": "Kept: official HF release is the distinct 29,500-pair train partition (test partition of 9,175 pairs held out for the leaderboard) on which the paper fine-tunes the BrowseSafe-Guard detectors; separate from the BrowseSafe++ benchmark evaluation. Dual-listed from issue #145.",
+      "sourceUrl": "https://huggingface.co/datasets/perplexity-ai/browsesafe-plus-plus"
+    },
+    {
+      "name": "QuasiLeak-Bench Training Data",
+      "status": "keep",
+      "reason": "Kept: official HF qlb config ships separate profile-disjoint train (3,500) and validation (500) files, documented for fine-tuning and model selection with a released LoRA recipe; separate from the QLB-Test leaderboard set. Dual-listed from issue #146.",
+      "sourceUrl": "https://huggingface.co/datasets/HenryZYF/QuasiLeak-Bench"
     }
   ]
 }
