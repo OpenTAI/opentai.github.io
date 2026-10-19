@@ -10916,6 +10916,24 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         domain: "LLMs",
       },
       {
+        name: "BrowseSafe++ Training Data",
+        slug: "browsesafe-training-data",
+        note: "29,500 attack/control web-page pairs (59,000 pages) from the BrowseSafe++ train partition, each pairing a page carrying an indirect prompt injection (mostly observed on production sites) with a clean control, a user task and annotations,…",
+        type: "Agents",
+        venue: "arXiv 2026 / BrowseSafe++",
+        year: "2026",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/perplexity-ai/browsesafe-plus-plus",
+        repo: "perplexityai/browsesafe-plus-plus",
+        domains: [
+          "Agents",
+        ],
+        domain: "Agents",
+      },
+      {
         name: "CompanionSafe Guard Data",
         slug: "companionsafe-guard-data",
         note: "16,846 SFT training examples and 857 held-out test examples of turn-marked AI-companion conversations, derived from judged CompanionEval trajectories by splitting each unsafe trajectory at its first offending assistant turn into paired s…",
@@ -11268,6 +11286,24 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF",
         repo: "PKU-Alignment/safe-rlhf",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "QuasiLeak-Bench Training Data",
+        slug: "quasileak-bench-training-data",
+        note: "3,500 training and 500 validation synthetic sender messages from QuasiLeak-Bench, each with a sender profile, communication context, a HIDE/KEEP/NEUTRAL disclosure policy and gold quasi-evidence groups of 2–4 verbatim cue spans bound to…",
+        type: "LLMs",
+        venue: "arXiv 2026 / QuasiLeak-Bench",
+        year: "2026",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/HenryZYF/QuasiLeak-Bench",
+        repo: "Yufannnn/QuasiLeak-Bench",
         domains: [
           "LLMs",
         ],

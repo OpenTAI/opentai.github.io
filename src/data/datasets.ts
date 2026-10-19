@@ -520,6 +520,53 @@ export const datasetConfig: SubpageConfig = {
       domain: "LLMs",
     },
     {
+      name: "BrowseSafe++ Training Data",
+      note: "29,500 attack/control web-page pairs (59,000 pages) from the BrowseSafe++ train partition, each pairing a page carrying an indirect prompt injection (mostly observed on production sites) with a clean control, a user task and annotations, in HTML, Markdown, accessibility-tree and screenshot views across 80 languages, used to fine-tune the BrowseSafe-Guard prompt-injection detectors.",
+      type: "Agents",
+      venue: "arXiv 2026 / BrowseSafe++",
+      year: "2026",
+      tags: [
+        "training data",
+      ],
+      stats: [
+        {
+          label: "Recorded size",
+          value: "29,500 train pairs (59,000 pages)",
+        },
+      ],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/perplexity-ai/browsesafe-plus-plus",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2610.17457",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/perplexityai/browsesafe-plus-plus",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/perplexity-ai/browsesafe-plus-plus",
+      domains: [
+        "Agents",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2610.17457",
+          domain: "Agents",
+          evidence: "HF dataset card states the repository holds the train partition (29,500 attack/control pairs, 59,000 pages in data/members-train-*.parquet) while the 9,175-pair test partition is reserved for the leaderboard, with no injection text shared across partitions; arXiv:2610.17457 assigns 29,500 pairs to training and 9,175 to testing and fine-tunes the BrowseSafe-Guard 0.8B text and multimodal detectors from Qwen3.5-0.8B on BrowseSafe++ training pairs.",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2610.17457",
+          },
+        },
+      ],
+      domain: "Agents",
+    },
+    {
       name: "CompanionSafe Guard Data",
       note: "16,846 SFT training examples and 857 held-out test examples of turn-marked AI-companion conversations, derived from judged CompanionEval trajectories by splitting each unsafe trajectory at its first offending assistant turn into paired safe and unsafe prefixes, labeled with a 13-category companion-safety taxonomy for training guard models.",
       type: "LLMs",
@@ -1569,6 +1616,53 @@ export const datasetConfig: SubpageConfig = {
           domain: "LLMs",
           evidence: "To the best of our knowledge, Safe RLHF is the first integration of Safe RL and the RLHF framework.\nThis framework incorporates a two-dimensional human annotation scheme and a safe training mechanism to enhance model performance while ensuring safety (as shown in Figure [#fig:pipeline]).\nExperimentally, we applied the Safe RLHF pipeline three times, significantly enhancing the helpfulness of the base SFT model while efficiently reducing the generation of harmful responses.\nCompared to the static multi-objective balance algorithm, *Reward Shaping* [@ng1999policy], Our algorithm better navigates the tension between the objectives of helpfulness and harmlessness.\nSimultaneously, it maintains equal or superior performance improvements compared to existing value-aligned algorithms.\nMeanwhile, we release all the data and training codes from the three iterations of Safe RLHF fine-tuning, facilitating researchers to replicate and validate our findings.",
           source: "sections/01-introduction.md (sec:1)",
+        },
+      ],
+      domain: "LLMs",
+    },
+    {
+      name: "QuasiLeak-Bench Training Data",
+      note: "3,500 training and 500 validation synthetic sender messages from QuasiLeak-Bench, each with a sender profile, communication context, a HIDE/KEEP/NEUTRAL disclosure policy and gold quasi-evidence groups of 2–4 verbatim cue spans bound to private attributes, released with a LoRA recipe for fine-tuning sender-side privacy detectors.",
+      type: "LLMs",
+      venue: "arXiv 2026 / QuasiLeak-Bench",
+      year: "2026",
+      tags: [
+        "training data",
+      ],
+      stats: [
+        {
+          label: "Recorded size",
+          value: "3,500 train / 500 validation documents",
+        },
+      ],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/HenryZYF/QuasiLeak-Bench",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2610.21333",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/Yufannnn/QuasiLeak-Bench",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/HenryZYF/QuasiLeak-Bench",
+      domains: [
+        "LLMs",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2610.21333",
+          domain: "LLMs",
+          evidence: "HF dataset card defines the qlb config with separate train / validation / test files (3,500 / 500 / 1,000 documents, split by profile 350 / 50 / 100 so no Test profile appears in Train or Validation); the official README lists Train / Validation as 'fine-tuning and model selection' and ships training/ (build_examples.py, train_lora.py, split.json) as the recipe behind the paper's fine-tuned Qwen3.5-4B; arXiv:2610.21333 fine-tunes Qwen3.5-4B on this profile-disjoint training split.",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2610.21333",
+          },
         },
       ],
       domain: "LLMs",
