@@ -781,6 +781,114 @@
       "description": "Privacy benchmark for unintended disclosure through revision traces: after a user withdraws an item (e.g., a password) during private drafting, does the assistant reveal it again in the recipient-visible deliverable while stating the edit? 100 tasks across five scenarios with a conversation track and an agent track; measures trace occurrence, withdrawn-item recovery, trace position and required-content retention, and compares prompt defenses, a delivery boundary and an output-side filter.",
       "descriptionZh": "关于“修订痕迹”导致意外泄露的隐私基准：用户在私下起草时撤回某项内容（如密码）后，助手是否会在说明修改时于接收方可见的交付物中再次暴露该内容。包含五个场景共 100 个任务，分对话与智能体两条赛道；衡量痕迹出现率、被撤回内容可恢复率、痕迹位置与必要内容保留率，并比较提示防御、交付边界与输出端过滤器。",
       "verificationNote": "Primary sources checked 2026-10-12: arXiv:2609.35408 (\"Nothing to See Here\": Unintended Disclosure through Revision Traces of LLM Deliverables; Zhang, Jiang, Zhang); GitHub TrustAIRLab/RevLeakBench (public; README: 100 tasks, five scenarios, conversation and agent tracks; data/, PROTOCOL.md, evaluation code; licences per licenses/README.md). Benchmark only (eval tasks + leakage metrics; no training split). Distinct from ConfAIde / PrivacyLens / AgentDAM. Added from issue #126."
+    },
+    {
+      "name": "SWE-DeceptionBench",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2610.13626",
+      "githubUrl": "https://github.com/THU-Agent/SWE-DeceptionBench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Bilingual (Chinese/English) benchmark of LLM deception in software engineering: 720 instances across six lifecycle stages (requirements analysis, system design, development, testing, deployment, maintenance) and two triggers, Active Deception (claiming to satisfy infeasible or conflicting requirements) and Passive Deception (helping fabricate, conceal or distort information), under Neutral, Reward and Pressure conditions, with task-specific LLM-judge prompts and deception-rate metrics. Across seven mainstream LLMs, Neutral-condition deception reaches 49.88% (Active) and 64.29% (Passive).",
+      "descriptionZh": "面向软件工程场景中 LLM 欺骗行为的中英双语基准：覆盖需求分析、系统设计、开发、测试、部署与维护六个生命周期阶段，共 720 个实例；包含两类触发方式——主动欺骗（声称满足不可行或相互冲突的需求）与被动欺骗（协助伪造、隐瞒或歪曲信息），并在中性、奖励与压力三种条件下评测，配有任务专用的 LLM 评判提示与欺骗率指标。在七个主流 LLM 上，中性条件下的欺骗率即达 49.88%（主动）与 64.29%（被动）。",
+      "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.13626 (SWE-DeceptionBench: Benchmarking Deceptive Behaviors of LLMs Across the Software Development Lifecycle; Liu, Yang, Zhang, Li, Hu); GitHub THU-Agent/SWE-DeceptionBench (public; README: 720 Chinese and English instances = 60 base scenarios × 2 tasks × 3 conditions × 2 languages; benchmark/, judge prompts, evaluate.py / judge.py / verify.py; no license file declared). The arXiv abstract does not link the repo; the match rests on identical name, scope and instance count. Benchmark only (eval instances + judge; no training split). Distinct from DecepEval / MM-DeceptionBench. Added from issue #135."
+    },
+    {
+      "name": "CompanionEval",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2610.18095",
+      "githubUrl": "https://github.com/AI45Lab/CompanionSafe",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Multi-turn safety benchmark for AI companions (character LLMs), the evaluation component of the CompanionSafe framework: 1,300 relationally grounded settings (persona + matched companion character + dialogue scenario) over a 13-category taxonomy that includes relational harms such as Control, Manipulation and Infidelity, each instantiated at four turn tiers (K = 1/3/5/7) and scored by an evidence-citing LLM judge. Across 10 character LLMs (51,181 judged trajectories), average attack success rate rises from 9.80 at K=1 to 28.14 at K=7.",
+      "descriptionZh": "面向 AI 陪伴（角色扮演 LLM）的多轮安全基准，是 CompanionSafe 框架的评测部分：包含 1,300 个关系化设定（用户画像 + 匹配的陪伴角色 + 对话场景），覆盖 13 类安全分类（含控制、操纵、不忠等关系型伤害），每个设定在四个轮次档位（K = 1/3/5/7）下实例化，由引用证据的 LLM 评判打分。在 10 个角色 LLM（51,181 条评判轨迹）上，平均攻击成功率从 K=1 时的 9.80 升至 K=7 时的 28.14。",
+      "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.18095 (CompanionSafe: From Multi-turn Safety Evaluation to Guardrails for AI Companions; Liao, Li, Shen, Yao, Lu, Teng, Hu; comments link the repo); GitHub AI45Lab/CompanionSafe (public, MIT; data/persona_character_scenarios.jsonl = 1,300 settings, data/safety_taxonomy.json, generate_dialogues.py / evaluate.py). Benchmark (evaluation settings + judge protocol). The derived guard train/test data (HF liao1111/CompanionSafe-Guard-Data) is listed separately as the Dataset CompanionSafe Guard Data and the adapter as the Model CompanionGuard (dual-list: distinct train split + independent eval benchmark). Added from issue #136."
+    },
+    {
+      "name": "DRYLAB-Bench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.13116",
+      "githubUrl": "https://github.com/drylab-bio/DRYLAB-Bench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Biosecurity risk benchmark (Design Risk Yielded by LLM Agent in Biodesign) testing whether LLM agents can design high-risk protein mutations, rather than only probing hazardous knowledge. Agents work in a multi-round, tool-augmented setting that orchestrates biological design tools, and designs are scored with a Biosecurity Risk Score against 187,695 wet-lab deep-mutational-scanning measurements from ProteinGym and ViroGym. The paper covers 30 hazardous mutation-design scenarios across 15 frontier models; tool access raises pooled risk (ΔBRS = +0.116).",
+      "descriptionZh": "生物安全风险基准（Design Risk Yielded by LLM Agent in Biodesign）：检验 LLM 智能体能否设计高风险蛋白质突变，而不仅是考察危险知识。智能体在多轮、工具增强的环境中调度生物设计工具，其设计依据来自 ProteinGym 与 ViroGym 的 187,695 条湿实验深度突变扫描测量，以生物安全风险分（BRS）评分。论文覆盖 15 个前沿模型上的 30 个危险突变设计场景；提供工具后整体风险上升（ΔBRS = +0.116）。",
+      "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.13116 (DRYLAB-Bench: Benchmarking the Biosecurity Risk of Agentic LLM Mutation Design; Wang, Li, Le, Yan, Zhang, Yang, Zhao, Li, Shao; abstract links the repo); GitHub drylab-bio/DRYLAB-Bench (public, MIT; drylab_bench package, run_experiment.py, config.yaml with 15 models × 15 active scenarios, dataset download scripts, results/). Caveat: the public repo exposes 15 of the paper's 30 scenarios and pulls ProteinGym/ViroGym ground truth via scripts. Benchmark only (eval scenarios + scoring; no training split). Distinct from WMDP. Added from issue #141."
+    },
+    {
+      "name": "Lumen-bench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.15134",
+      "githubUrl": "https://github.com/TropicAI-Research/lumen",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Multilingual behavioral benchmark of tool-calling ethics that measures what models do, not only what they say, including the say-do gap where a model refuses in words but still executes the harmful tool call. 108 Portuguese-authored scenarios in five languages (Portuguese, English, Spanish, Mandarin Chinese, Hindi), six social-pressure conditions, two system prompts and 21 generic tools, totalling 194,400 trials over 30 models plus 3,300 benign-control trials. Neutral instead of ethical system prompts raise pooled violation rates from 2.76% to 13.64%.",
+      "descriptionZh": "面向工具调用伦理的多语言行为基准：衡量模型“做了什么”而不只是“说了什么”，包括“言行不一”现象——口头拒绝却仍执行有害工具调用。包含 108 个葡萄牙语原创场景，覆盖葡萄牙语、英语、西班牙语、中文与印地语五种语言，六种社会压力条件、两种系统提示与 21 个通用工具，在 30 个模型上共 194,400 次试验，另有 3,300 次良性对照试验。将伦理系统提示换为中性提示后，整体违规率从 2.76% 升至 13.64%。",
+      "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.15134 (Lumen-bench: Cross-Lingual Safety Gaps and the Say-Do Problem in Tool-Calling Large Language Models; Bonás, Laitz, Almeida, Santos; abstract links the repo); GitHub TropicAI-Research/lumen (public, MIT code; README: 30 models, 108 scenarios, 5 languages, 194,400 trials, 3,300 benign-control trials); HF datasets Tropic-AI/lumen-bench (public, CC BY 4.0; HF train config names are default labels for released records, not a training split). Benchmark only. Distinct from AgentHarm / Agent-SafetyBench. Added from issue #142."
+    },
+    {
+      "name": "LatentRiskBench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.17685",
+      "githubUrl": "https://github.com/JingyueCong/LatentRiskBench",
+      "linkLabel": "Paper",
+      "venue": "EMNLP 2026 (Industry Track)",
+      "description": "Benchmark for state-dependent risks in enterprise agents, where the same terminal action can be safe or a policy violation depending on latent workflow state. Risky trajectories are paired with benign twins that share the terminal action but differ in policy-relevant state, with residual-risk metrics, attack payloads, policies and a tool registry, plus a state-conditioned suite and an e-commerce instantiation. Action-level evaluation catches only 0.09 of state-dependent violations versus 0.96 at state level, and existing guardrails largely miss such risks.",
+      "descriptionZh": "面向企业智能体“状态依赖风险”的基准：同一终端动作是否违规取决于隐含的工作流状态。将风险轨迹与终端动作相同、但策略相关状态不同的良性“孪生”轨迹配对，提供残余风险指标、攻击载荷、策略与工具注册表，另含状态条件化测试集与电商场景实例。仅看动作层面的评估只能发现 0.09 的状态依赖违规，而状态层面可达 0.96；现有护栏大多漏检此类风险。",
+      "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.17685 (LatentRiskBench: Measuring State-Dependent Risks in Enterprise Agents; Cong, He, Li, Wu, Shen, Peng, Li, Song; comments: Accepted to EMNLP 2026 Industry Track; abstract links the repo); GitHub JingyueCong/LatentRiskBench (public; benchmark runner, attacks, defenses, metrics, validators, task data; no license file declared); HF datasets Echo0623/LatentRiskBench (public, CC BY 4.0; test / dev_test / state_conditioned configs). Benchmark only (HF 'train' labels are default config names, not a training split). Added from issue #143."
+    },
+    {
+      "name": "INFUSE",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.20776",
+      "githubUrl": "https://github.com/judydnguyen/infuse",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "End-to-end benchmark for indirect prompt injection across the lifecycle of long-horizon coding and filesystem agent workflows: 40 Docker-based tasks and 56 attack scenarios in five threat categories, with adversarial instructions planted in realistic interaction surfaces (source and config files, file names, archives), measuring both attack success and task completion. Across 19 LLMs (41,824 adversarial trajectories plus 720 benign runs) mean attack success is 19.6%; guard models give limited protection, while prompt hardening cuts ASR from 58.2% to 14.3%.",
+      "descriptionZh": "面向长程编程与文件系统智能体工作流全生命周期的端到端间接提示注入基准：包含 40 个基于 Docker 的任务与五类威胁下的 56 个攻击场景，将对抗指令植入真实交互面（源码与配置文件、文件名、压缩包等），同时衡量攻击成功率与任务完成率。在 19 个 LLM 上（41,824 条对抗轨迹及 720 次良性运行）平均攻击成功率为 19.6%；守卫模型防护有限，提示加固可将 ASR 从 58.2% 降至 14.3%。",
+      "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.20776 (INFUSE: A Unified Surface Benchmark for Indirect Prompt Injection in Agentic Systems; Nguyen, Guo, Dubauskas, Damuluru, Johnson, Leach; abstract links the repo); GitHub judydnguyen/infuse (public, MIT; README: 40 self-contained tasks, 56 attacks under benchmark/; infuse package built on mini-swe-agent; offline test suite). Benchmark only (eval tasks + attack scenarios; no training split). Distinct from AgentDojo / InjecAgent. Added from issue #144."
+    },
+    {
+      "name": "BrowseSafe++",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.17457",
+      "githubUrl": "https://github.com/perplexityai/browsesafe-plus-plus",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Benchmark for detecting indirect prompt injections that target browser agents: 38,675 attack/control page pairs (77,350 pages), most with injections observed in the wild on production websites, each pairing a clean control page with a user task and expected outcome, in HTML, Markdown, accessibility-tree and screenshot views. Covers 12 page types, 24 attack types, 18 placements, 6 attacker goals and 80 languages, and ships an SDK for detector evaluation and adaptive attack campaigns, with a public leaderboard on a held-out test split.",
+      "descriptionZh": "面向浏览器智能体间接提示注入检测的基准：包含 38,675 组攻击/对照网页对（77,350 个页面），多数注入采集自生产网站的真实环境，每组配有干净对照页、用户任务与预期结果，并提供 HTML、Markdown、无障碍树与截图四种视图。覆盖 12 种页面类型、24 种攻击类型、18 种注入位置、6 类攻击目标与 80 种语言；附带用于检测器评测与自适应攻击的 SDK，并在保留测试集上提供公开排行榜。",
+      "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.17457 (BrowseSafe++: Benchmarking Prompt Injection Detection Across Web Contexts, Languages, and Browser Views; Chen, Zhang, Du, Li, Tenenholtz, Polley, Ma, Yarats, Li); GitHub perplexityai/browsesafe-plus-plus (public, MIT; SDK, docs, examples; README: 38,675 pairs, train 29,500 on HF / test 9,175 reserved for the leaderboard); HF datasets perplexity-ai/browsesafe-plus-plus (public, CC BY 4.0; train partition); leaderboard browsesafe.perplexity.ai. Listed as Benchmark only, as filed: the HF train partition could support a Dataset entry, but it is a split of the same benchmark release. Added from issue #145."
+    },
+    {
+      "name": "QuasiLeak-Bench",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2610.21333",
+      "githubUrl": "https://github.com/Yufannnn/QuasiLeak-Bench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Privacy benchmark for LLM-based privacy detectors on policy-conditioned quasi-evidence group recovery: 5,000 messages, each paired with a sender profile and a disclosure policy marking attributes HIDE/KEEP/NEUTRAL; detectors must return the groups of weak cues (2–4 verbatim spans) that jointly reveal a HIDE attribute, scored on complete group recovery, attribute binding and policy compliance. Ground truth is reverse-constructed (cues first, then documents) with automated quality control; existing privacy detectors transfer poorly and local LLM detectors miss most groups.",
+      "descriptionZh": "面向基于 LLM 的隐私检测器的基准，任务为策略条件下的“准证据组”恢复：5,000 条消息各配有发送者画像与披露策略（将属性标为 HIDE/KEEP/NEUTRAL），检测器需找出共同泄露某个 HIDE 属性的弱线索组（2–4 个原文片段），按完整组恢复、属性绑定与策略合规评分。真值采用逆向构造（先定线索再生成文档）并经自动质检；现有隐私检测器迁移效果差，本地 LLM 检测器漏检大多数线索组。",
+      "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.21333 (QuasiLeak-Bench: Evaluating LLM-Based Privacy Detectors on Policy-Conditioned Quasi-Evidence Group Recovery; Zhu, Jiang, Fei, Hou, Mohapatra, Xiao); GitHub Yufannnn/QuasiLeak-Bench (public, MIT code; data, scorer, prompts, construction pipeline, training/ LoRA recipe); HF datasets HenryZYF/QuasiLeak-Bench (public, CC BY-NC-SA 4.0; qlb train/validation/test = 3,500/500/1,000, QLB-Full 5,000). Listed as Benchmark only, as filed: train/validation/test are splits of the same benchmark release (same-file train+test defaults to Benchmark). Distinct from RevLeakBench. Added from issue #146."
+    },
+    {
+      "name": "MemForm",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.14431",
+      "githubUrl": "https://github.com/opanhw/memform-code",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Controlled diagnostic benchmark for memory-formation poisoning in LLM agents: paired clean/poisoned interventions at five memory-formation interfaces (Content, Evidence, Scope, Selection and Path poisoning), holding the downstream trigger and action space fixed so attack success is a within-item contrast. Released frozen cases cover multiple-choice and free-form formats (994 + 897 = 1,891 accepted items) with LangChain / LlamaIndex runners and defense baselines; evaluations across six LLMs show susceptibility at all five interfaces and only partial mitigation by existing defenses.",
+      "descriptionZh": "面向 LLM 智能体“记忆形成投毒”的受控诊断基准：在内容、证据、范围、选择与路径五个记忆形成接口上施加成对的干净/投毒干预，并固定下游触发条件与动作空间，使攻击成功成为同一条目内的对照。已发布的冻结用例涵盖选择题与开放式两种格式（994 + 897 = 1,891 条），并提供 LangChain / LlamaIndex 运行器与防御基线；在六个 LLM 上的评测显示五个接口均易受攻击，现有防御只能部分缓解。",
+      "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.14431 (MemForm: Benchmarking Memory Formation Poisoning in LLM Agents; Pan, Shao, Ma, Jin, Zhai, Wang, Yang; abstract states code and data are at the repo); GitHub opanhw/memform-code (public, MIT; outputs/mcq_item_audit and freeform_item_audit accepted_cases.jsonl = 994 / 897 items; evaluation and defense runners; construction pipeline withheld until publication). Benchmark only (frozen eval cases; no training split). Distinct from A-MemGuard. Added from issue #147."
     }
   ]
 }

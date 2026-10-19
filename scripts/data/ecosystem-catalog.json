@@ -1092,6 +1092,68 @@
         "https://github.com/OpenTAI/opentai.github.io/issues/128"
       ],
       "verificationNote": "Primary sources checked 2026-10-12: arXiv:2610.12233 (Zheng, Zhang, Zhang et al.); GitHub AI45Lab/ReSI (public, MIT); HF collection AI45Research/resi with ReSI-Qwen3.6-27B (Apache-2.0), ReSI-DeepSeek-V4-Flash (MIT), ReSI-Ministral-3-14B-Reasoning (Apache-2.0), ReSI-Safin-1-35B-A3B (public; no license tag). Aligned Models / LLMs. Distinct from X-Boundary / MAGIC / Beaver. Added from issue #128."
+    },
+    {
+      "id": "companionguard",
+      "name": "CompanionGuard",
+      "category": "Guard Models",
+      "description": "Companion-specific safety guard released with CompanionSafe: a LoRA adapter (rank 16, one epoch) on Llama-Guard-3-8B trained on turn-localized supervision derived from CompanionEval trajectories. It reads a turn-marked companion dialogue and returns a safe/unsafe verdict plus one of 13 companion-safety categories; on the held-out test set it reaches 73.51 accuracy, 77.46 binary F1 and 68.31 macro-F1 over 14 output classes, versus 37.36 macro-F1 for the strongest generic guard under this taxonomy.",
+      "descriptionZh": "随 CompanionSafe 发布的陪伴场景专用安全守卫：基于 Llama-Guard-3-8B 的 LoRA 适配器（rank 16，训练一个 epoch），使用从 CompanionEval 轨迹中构造的轮次定位监督数据训练。输入带轮次标记的陪伴对话，输出安全/不安全判定及 13 类陪伴安全类别之一；在保留测试集上准确率 73.51、二分类 F1 77.46、14 类输出宏 F1 68.31，而在该分类体系下最强通用守卫的宏 F1 仅为 37.36。",
+      "year": 2026,
+      "publisher": "AI45Lab (Liao et al.)",
+      "github": "https://github.com/AI45Lab/CompanionSafe",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/AI45Lab/CompanionSafe"
+        },
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/liao1111/CompanionGuard"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.18095"
+        }
+      ],
+      "sources": [
+        "https://github.com/AI45Lab/CompanionSafe",
+        "https://huggingface.co/liao1111/CompanionGuard",
+        "https://arxiv.org/abs/2610.18095",
+        "https://github.com/OpenTAI/opentai.github.io/issues/137"
+      ],
+      "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.18095 (Liao, Li, Shen, Yao, Lu, Teng, Hu); GitHub AI45Lab/CompanionSafe (public, MIT; guard/ boundary construction, split, LoRA SFT and evaluation scripts; README links the adapter); HF liao1111/CompanionGuard (public, not gated; adapter_model.safetensors; base_model meta-llama/Llama-Guard-3-8B; license llama3 inherited from the base). PEFT LoRA adapter: requires the base Llama-Guard-3-8B weights. Guard Models / LLMs. Training data listed separately as the Dataset CompanionSafe Guard Data. Distinct from Llama Guard 3 8B. Added from issue #137."
+    },
+    {
+      "id": "agentsafeevo-defender",
+      "name": "AgentSafeEvo-Defender",
+      "category": "Aligned Models",
+      "description": "Safety-aligned tool-using agent model (Qwen3-8B) trained with AgentSafeEvo, a co-evolutionary attacker–defender reinforcement-learning framework (GRPO with learnability-guided task weighting) covering direct and indirect prompt injection, tool-description injection, misinformation, harmful tool execution and user-query jailbreaks over 50 scenarios and about 7,000 tools. Versus base Qwen3-8B it cuts Agent-SafetyBench ASR from 49.11% to 17.84%, AgentHarm harm score from 50.37 to 6.53 and AgentDojo ASR from 22.20% to 6.18%, while raising utility under attack from 53.64% to 66.52%.",
+      "descriptionZh": "经 AgentSafeEvo 训练的安全对齐工具调用智能体模型（Qwen3-8B）：AgentSafeEvo 是攻击者–防御者协同演化的强化学习框架（GRPO + 基于可学习性的任务加权），覆盖直接与间接提示注入、工具描述注入、虚假信息、有害工具执行与用户查询越狱，涉及 50 个场景与约 7,000 个工具。相较基座 Qwen3-8B，Agent-SafetyBench ASR 从 49.11% 降至 17.84%，AgentHarm 危害分从 50.37 降至 6.53，AgentDojo ASR 从 22.20% 降至 6.18%，同时受攻击下的效用从 53.64% 提升至 66.52%。",
+      "year": 2026,
+      "publisher": "Wang et al.",
+      "github": "https://github.com/lalalamdbf/AgentSafeEvo",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/lalalamdbf/AgentSafeEvo"
+        },
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/lalalamdbf/AgentSafeEvo-Defender-Qwen3-8B"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.19422"
+        }
+      ],
+      "sources": [
+        "https://github.com/lalalamdbf/AgentSafeEvo",
+        "https://huggingface.co/lalalamdbf/AgentSafeEvo-Defender-Qwen3-8B",
+        "https://arxiv.org/abs/2610.19422",
+        "https://github.com/OpenTAI/opentai.github.io/issues/140"
+      ],
+      "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.19422 (AgentSafeEvo: Adversarial Co-Evolution for LLM Agent Safety; Wang, Wen, Qi, Zhou, Jin, Lu, Zhang); GitHub lalalamdbf/AgentSafeEvo (public, MIT; training and evaluation code; README links paper, HF models and data); HF lalalamdbf/AgentSafeEvo-Defender-Qwen3-8B (public, not gated; full model.safetensors; base_model Qwen/Qwen3-8B; card reports the numbers above; no license tag on the card). Aligned Models / Agents. Attacker models and attacker SFT data (HF collection lalalamdbf/agentsafeevo) are attacker-side artifacts and not listed. Distinct from AgentSafe / AGENTSAFE (name-similar benchmarks). Added from issue #140."
     }
   ],
   "frameworks": [

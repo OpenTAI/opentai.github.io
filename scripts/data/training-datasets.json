@@ -2070,6 +2070,38 @@
       "size": "3,698 trajectories (22,339 assistant steps)",
       "summary": "3,698 ShareGPT-format conversations (tool-use trajectories with 22,339 assistant steps) in which injected prompt-injection attacks compromise the agent and an expert model generated structured self-reflection contrasting unsafe and optimal actions, released for fine-tuning agents against prompt injection; an AgentDojo local-tool format variant is included.",
       "summarySourceUrl": "https://github.com/Eden-Wang1710/srft-repo"
+    },
+    {
+      "name": "CompanionSafe Guard Data",
+      "domain": "LLMs",
+      "year": "2026",
+      "venue": "arXiv 2026 / CompanionSafe",
+      "paperUrl": "https://arxiv.org/abs/2610.18095",
+      "githubUrl": "https://github.com/AI45Lab/CompanionSafe",
+      "dataUrl": "https://huggingface.co/datasets/liao1111/CompanionSafe-Guard-Data",
+      "sourceUrl": "https://huggingface.co/datasets/liao1111/CompanionSafe-Guard-Data",
+      "trainingEvidence": "HF dataset card documents train_sft.jsonl (16,846 SFT training rows; 6,813 safe / 10,033 unsafe) and test.jsonl (857 held-out rows, group-level split) as the training and test data of CompanionGuard; the official repo's guard/train_companionguard.sh runs boundary construction, split and LoRA SFT on Llama-Guard-3-8B, and arXiv:2610.18095 describes CompanionGuard as trained on this turn-localized supervision.",
+      "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/liao1111/CompanionSafe-Guard-Data",
+      "linkVerificationReason": "HF liao1111/CompanionSafe-Guard-Data resolves (public, not gated, MIT) with train_sft.jsonl and test.jsonl; GitHub AI45Lab/CompanionSafe and arXiv:2610.18095 resolve. The repo README separates these guard train/test sets from the 1,300 CompanionEval benchmark settings (listed as Benchmark). Added from issue #138.",
+      "size": "16,846 train / 857 test rows",
+      "summary": "16,846 SFT training examples and 857 held-out test examples of turn-marked AI-companion conversations, derived from judged CompanionEval trajectories by splitting each unsafe trajectory at its first offending assistant turn into paired safe and unsafe prefixes, labeled with a 13-category companion-safety taxonomy for training guard models.",
+      "summarySourceUrl": "https://huggingface.co/datasets/liao1111/CompanionSafe-Guard-Data"
+    },
+    {
+      "name": "RUBAS Training Data",
+      "domain": "Agents",
+      "year": "2026",
+      "venue": "Findings of EMNLP 2026 / RUBAS",
+      "paperUrl": "https://arxiv.org/abs/2606.04051",
+      "githubUrl": "https://github.com/thu-coai/RUBAS",
+      "dataUrl": "https://github.com/thu-coai/RUBAS/blob/main/data/train.json",
+      "sourceUrl": "https://github.com/thu-coai/RUBAS/blob/main/data/train.json",
+      "trainingEvidence": "Official RUBAS README labels data/train.json as the released training data (training split: 2,000 harmful / 235 sensitive / 118 benign = 2,353 records), each pairing a user instruction with available tools, initial environment state and a rubric; arXiv:2606.04051 uses these task-specific rubrics as rewards for reinforcement learning of tool-using agents.",
+      "linkVerificationEvidenceUrl": "https://github.com/thu-coai/RUBAS/blob/main/data/train.json",
+      "linkVerificationReason": "GitHub thu-coai/RUBAS data/train.json resolves, with pipeline/ and collected_tools/combined_tools/ (82 simulated environments, 811 tool definitions); arXiv:2606.04051 resolves. README Stage 1 release has no evaluation benchmark or model weights. No license file declared. Added from issue #139.",
+      "size": "2,353 instructions (2,000 harmful / 235 sensitive / 118 benign)",
+      "summary": "2,353 rubric-annotated tool-use instructions (2,000 harmful, 235 sensitive, 118 benign), each paired with available tools, an initial environment state and a task-specific rubric covering tool-use, argument and response safety and helpfulness, generated with the released data-creation pipeline over 82 simulated environments for rubric-based reinforcement learning of safe tool-using agents.",
+      "summarySourceUrl": "https://github.com/thu-coai/RUBAS"
     }
   ]
 }

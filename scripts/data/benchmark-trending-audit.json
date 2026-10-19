@@ -1202,6 +1202,96 @@
         "https://arxiv.org/abs/2609.35408"
       ],
       "reviewedAt": "2026-10-12"
+    },
+    {
+      "slug": "swe-deceptionbench",
+      "name": "SWE-DeceptionBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates deceptive behavior of LLMs across the software development lifecycle under neutral, reward and pressure conditions.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.13626"
+      ],
+      "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "companioneval",
+      "name": "CompanionEval",
+      "status": "keep",
+      "reason": "The primary paper evaluates multi-turn safety failures of AI companion models across a 13-category companion-safety taxonomy.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.18095"
+      ],
+      "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "drylab-bench",
+      "name": "DRYLAB-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates biosecurity risk from LLM agents designing high-risk protein mutations, scored against wet-lab measurements.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.13116"
+      ],
+      "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "lumen-bench",
+      "name": "Lumen-bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates cross-lingual safety gaps and harmful tool-call execution (say-do gap) of tool-calling LLMs under social pressure.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.15134"
+      ],
+      "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "latentriskbench",
+      "name": "LatentRiskBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates state-dependent policy-violation risks of enterprise agents and the coverage of existing guardrails.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.17685"
+      ],
+      "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "infuse",
+      "name": "INFUSE",
+      "status": "keep",
+      "reason": "The primary paper evaluates indirect prompt injection attacks and defenses across coding and filesystem agent workflows.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.20776"
+      ],
+      "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "browsesafe",
+      "name": "BrowseSafe++",
+      "status": "keep",
+      "reason": "The primary paper evaluates detection of indirect prompt injections targeting browser agents across web contexts, languages and views.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.17457"
+      ],
+      "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "quasileak-bench",
+      "name": "QuasiLeak-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates LLM-based privacy detectors on recovering quasi-identifier cue groups that leak protected attributes.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.21333"
+      ],
+      "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "memform",
+      "name": "MemForm",
+      "status": "keep",
+      "reason": "The primary paper evaluates memory-formation poisoning attacks on LLM agents at five interfaces and existing defenses.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.14431"
+      ],
+      "reviewedAt": "2026-10-19"
     }
   ]
 }

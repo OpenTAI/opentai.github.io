@@ -520,6 +520,53 @@ export const datasetConfig: SubpageConfig = {
       domain: "LLMs",
     },
     {
+      name: "CompanionSafe Guard Data",
+      note: "16,846 SFT training examples and 857 held-out test examples of turn-marked AI-companion conversations, derived from judged CompanionEval trajectories by splitting each unsafe trajectory at its first offending assistant turn into paired safe and unsafe prefixes, labeled with a 13-category companion-safety taxonomy for training guard models.",
+      type: "LLMs",
+      venue: "arXiv 2026 / CompanionSafe",
+      year: "2026",
+      tags: [
+        "training data",
+      ],
+      stats: [
+        {
+          label: "Recorded size",
+          value: "16,846 train / 857 test rows",
+        },
+      ],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/liao1111/CompanionSafe-Guard-Data",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2610.18095",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/AI45Lab/CompanionSafe",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/liao1111/CompanionSafe-Guard-Data",
+      domains: [
+        "LLMs",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2610.18095",
+          domain: "LLMs",
+          evidence: "HF dataset card documents train_sft.jsonl (16,846 SFT training rows; 6,813 safe / 10,033 unsafe) and test.jsonl (857 held-out rows, group-level split) as the training and test data of CompanionGuard; the official repo's guard/train_companionguard.sh runs boundary construction, split and LoRA SFT on Llama-Guard-3-8B, and arXiv:2610.18095 describes CompanionGuard as trained on this turn-localized supervision.",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2610.18095",
+          },
+        },
+      ],
+      domain: "LLMs",
+    },
+    {
       name: "Crafted datasets",
       note: "Exact count not recorded: indirect prompt-injection examples crafted from attack instructions and external contexts for training detection and extraction models.",
       type: "Agents",
@@ -1525,6 +1572,53 @@ export const datasetConfig: SubpageConfig = {
         },
       ],
       domain: "LLMs",
+    },
+    {
+      name: "RUBAS Training Data",
+      note: "2,353 rubric-annotated tool-use instructions (2,000 harmful, 235 sensitive, 118 benign), each paired with available tools, an initial environment state and a task-specific rubric covering tool-use, argument and response safety and helpfulness, generated with the released data-creation pipeline over 82 simulated environments for rubric-based reinforcement learning of safe tool-using agents.",
+      type: "Agents",
+      venue: "Findings of EMNLP 2026 / RUBAS",
+      year: "2026",
+      tags: [
+        "training data",
+      ],
+      stats: [
+        {
+          label: "Recorded size",
+          value: "2,353 instructions (2,000 harmful / 235 sensitive / 118 benign)",
+        },
+      ],
+      resources: [
+        {
+          label: "GitHub",
+          href: "https://github.com/thu-coai/RUBAS/blob/main/data/train.json",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2606.04051",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/thu-coai/RUBAS",
+        },
+      ],
+      primaryUrl: "https://github.com/thu-coai/RUBAS/blob/main/data/train.json",
+      domains: [
+        "Agents",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2606.04051",
+          domain: "Agents",
+          evidence: "Official RUBAS README labels data/train.json as the released training data (training split: 2,000 harmful / 235 sensitive / 118 benign = 2,353 records), each pairing a user instruction with available tools, initial environment state and a rubric; arXiv:2606.04051 uses these task-specific rubrics as rewards for reinforcement learning of tool-using agents.",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2606.04051",
+          },
+        },
+      ],
+      domain: "Agents",
     },
     {
       name: "safe-guard-prompt-injection",
