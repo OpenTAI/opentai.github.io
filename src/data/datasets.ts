@@ -237,6 +237,53 @@ export const datasetConfig: SubpageConfig = {
       domain: "LLMs",
     },
     {
+      name: "BanglaShield Training Data",
+      note: "7,172 training and 1,024 validation Bangla prompts, each in native script, Latin-script romanization and code-mixed form (English/Hindi/Urdu), labeled Safe / Offensive / Harmful / Severe with group-aware splitting, released for fine-tuning script-robust graded prompt-safety classifiers.",
+      type: "LLMs",
+      venue: "arXiv 2026 / BanglaShield",
+      year: "2026",
+      tags: [
+        "training data",
+      ],
+      stats: [
+        {
+          label: "Recorded size",
+          value: "7,172 train / 1,024 validation items (x3 script forms = 21,516 / 3,072 prompts)",
+        },
+      ],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/md-nishat-008/BanglaShield-Dataset",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2610.24288",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/mraihan-gmu/BanglaShield-Model-Benchmark",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/md-nishat-008/BanglaShield-Dataset",
+      domains: [
+        "LLMs",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2610.24288",
+          domain: "LLMs",
+          evidence: "Official README states the group-aware train (7,172) and validation (1,024) splits 'used to fine-tune' the BanglaShield classifier are released in the repo (data/intermediate/v2_train/, v2_validation/) and on the HF dataset page, with no prompt group shared with the 2,049-item test split; HF md-nishat-008/BanglaShield-Dataset ships separate native/romanized/code_mixed -train / -validation / -test parquet files; arXiv:2610.24288 fine-tunes a MuRIL-base encoder on these splits (87.8 macro-F1 native, 84.4 romanized).",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2610.24288",
+          },
+        },
+      ],
+      domain: "LLMs",
+    },
+    {
       name: "BeaverTails",
       note: "333,963 question–answer pairs collected and human-annotated with safety categories for harmlessness alignment and safety-classifier training.",
       type: "LLMs",

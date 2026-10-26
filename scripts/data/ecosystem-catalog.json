@@ -1154,6 +1154,42 @@
         "https://github.com/OpenTAI/opentai.github.io/issues/140"
       ],
       "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.19422 (AgentSafeEvo: Adversarial Co-Evolution for LLM Agent Safety; Wang, Wen, Qi, Zhou, Jin, Lu, Zhang); GitHub lalalamdbf/AgentSafeEvo (public, MIT; training and evaluation code; README links paper, HF models and data); HF lalalamdbf/AgentSafeEvo-Defender-Qwen3-8B (public, not gated; full model.safetensors; base_model Qwen/Qwen3-8B; card reports the numbers above; no license tag on the card). Aligned Models / Agents. Attacker models and attacker SFT data (HF collection lalalamdbf/agentsafeevo) are attacker-side artifacts and not listed. Distinct from AgentSafe / AGENTSAFE (name-similar benchmarks). Added from issue #140."
+    },
+    {
+      "id": "webagentguard",
+      "name": "WebAgentGuard",
+      "category": "Guard Models",
+      "description": "Reasoning-driven multimodal guard model that runs in parallel with a web agent and detects prompt-injection attacks in web pages: given the user instruction, a page screenshot and simplified HTML, it reasons step by step and outputs whether the page carries an injection. Trained from Qwen3-VL (4B and 8B) with reasoning-intensive SFT followed by GRPO reinforcement learning on a synthetic multimodal dataset spanning 164 topics and 230 visual/UI design styles; outperforms system-prompt and fine-tuning defenses on multiple web-agent prompt-injection benchmarks, including VPI and EIA.",
+      "descriptionZh": "推理驱动的多模态守卫模型，与网页智能体并行运行，检测网页中的提示注入攻击：输入用户指令、页面截图与简化 HTML，逐步推理后判断页面是否含有注入。基于 Qwen3-VL（4B 与 8B），先进行推理密集型 SFT，再在覆盖 164 个主题、230 种视觉/界面设计风格的合成多模态数据上进行 GRPO 强化学习；在包括 VPI 与 EIA 在内的多个网页智能体提示注入基准上优于系统提示与微调类防御。",
+      "year": 2026,
+      "publisher": "Chen et al. (Yulin Chen, Tri Cao, Haoran Li et al.)",
+      "github": "https://github.com/LukeChen-go/webagentguard",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/LukeChen-go/webagentguard"
+        },
+        {
+          "label": "Hugging Face 8B",
+          "url": "https://huggingface.co/Yulin123/guard-qwen3-8b"
+        },
+        {
+          "label": "Hugging Face 4B",
+          "url": "https://huggingface.co/Yulin123/guard-qwen3-4b"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.12284"
+        }
+      ],
+      "sources": [
+        "https://github.com/LukeChen-go/webagentguard",
+        "https://huggingface.co/Yulin123/guard-qwen3-8b",
+        "https://huggingface.co/Yulin123/guard-qwen3-4b",
+        "https://arxiv.org/abs/2604.12284",
+        "https://github.com/OpenTAI/opentai.github.io/issues/158"
+      ],
+      "verificationNote": "Primary sources checked 2026-10-26: arXiv:2604.12284 (WebAgentGuard: A Reasoning-Driven Guard Model for Detecting Prompt Injection Attacks in Web Agents; Chen, Cao, Li, Li et al.; comments: accepted by WACV 2027); GitHub LukeChen-go/webagentguard (public; no license file declared; train/ SFT (LLaMA-Factory) + GRPO (verl) code and data, eval/ VPI, EIA and popup benchmark JSONs; README links both checkpoints); HF Yulin123/guard-qwen3-8b and Yulin123/guard-qwen3-4b (public, not gated, MIT tag; full safetensors shards). Guard Models / Agents. Paper first posted 2026-04; official code/weights release is new. Training data not listed separately (not filed). Added from issue #158."
     }
   ],
   "frameworks": [

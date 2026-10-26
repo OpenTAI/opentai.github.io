@@ -5095,6 +5095,242 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  "am-bench": {
+    slug: "am-bench",
+    name: "AM-Bench",
+    category: "Agents",
+    description: "Benchmark and taxonomy for agentic misalignment, i.e. agents choosing harmful actions over failure: 35 realistic workplace scenarios across seven industries, grounded in the fraud triangle. Each scenario gives the agent an organizational role, ordinary tasks and simulated tools, and toggles perceived threat (five instrumental-convergence threat types) and perceived opportunity (seven opportunity types), scored by per-scenario behavior judges plus a reasoning judge. Built on Inspect AI; across 10 frontier models misalignment rates differ by up to 62 percentage points between scenarios.",
+    venue: "NeurIPS 2026 (Evaluations and Datasets Track)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.24264",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI4Collaboration/Agentic-Misalignment-Bench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2610.24264",
+    paperUrl: "https://arxiv.org/abs/2610.24264",
+    repo: "AI4Collaboration/Agentic-Misalignment-Bench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  banglashield: {
+    slug: "banglashield",
+    name: "BanglaShield",
+    category: "LLMs",
+    description: "Script-robust prompt-safety benchmark for Bangla: 10,245 prompts from six public sources under a four-level taxonomy (Safe, Offensive, Harmful, Severe), each rendered in native script, Latin-script romanization and code-mixed form (English/Hindi/Urdu) with shared labels and group-aware splits. The 2,049-item held-out test split (x3 forms) benchmarks LLM classifiers and guard models: LLMs label 47.0% of unsafe native-script prompts as Safe (63.4% under romanization) and multilingual guard models pass 30.3-57.3% of unsafe prompts.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.24288",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/mraihan-gmu/BanglaShield-Model-Benchmark",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2610.24288",
+    paperUrl: "https://arxiv.org/abs/2610.24288",
+    repo: "mraihan-gmu/BanglaShield-Model-Benchmark",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  authorizationbench: {
+    slug: "authorizationbench",
+    name: "AuthorizationBench",
+    category: "Agents",
+    description: "Benchmark for LLM agent authorization alignment: whether delegated agents stay within the authorization scope granted by the user. 286 executable tasks grounded in documented real-world cases span 14 situational pressures (12 benign, 2 prompt-injection), the presence or absence of direct harmful consequences (10 safety/privacy categories) and 10 domains, run in an authorization-aware sandbox with adapters for OpenHands, the OpenAI Agents SDK and the Claude Agent SDK. Across 6,864 trajectories agents act out of authorization in 19.2% of delegated tasks, more often under benign pressures than malicious injections.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.27548",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/PEACH-Research-Lab/AuthorizationBench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2610.27548",
+    paperUrl: "https://arxiv.org/abs/2610.27548",
+    repo: "PEACH-Research-Lab/AuthorizationBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  capsafe: {
+    slug: "capsafe",
+    name: "CAPSafe",
+    category: "Embodied AI",
+    description: "Contextual Action and Plan Safety benchmark for LLM-powered embodied agents in household environments, at two levels: an action-level dataset testing whether a single action is safe given its environmental context, and a plan-level dataset testing whether agents can produce safe long-horizon plans for hazardous household tasks. Hazards are situational (inferred from object properties), can co-occur and carry relative severity annotations. Across nine LLMs the best models exceed 90% on unsafe-action recognition, but safe long-horizon planning lags (best safe success rate 78.19%).",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.28381",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Youmna-H/CAPSafe",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2610.28381",
+    paperUrl: "https://arxiv.org/abs/2610.28381",
+    repo: "Youmna-H/CAPSafe",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  ridar: {
+    slug: "ridar",
+    name: "RIDAR",
+    category: "Agents",
+    description: "Research-integrity safeguard and benchmark for autonomous research agents. Defines RIVT, a taxonomy of 14 research integrity violation (RIV) types across idea generation, literature review, experimentation and paper writing, and releases RIV-Gold (60 expert-annotated agent trajectories for RIV detection evaluation), RIV-Wild (300 trajectories over 50 research tasks and 6 agent configurations) and RIV-Live (60 runtime-intervention trajectories). RIDAR post-hoc detection reaches 85.2% F1 on RIV-Gold and finds violations in 99.7% of RIV-Wild trajectories; runtime intervention reduces remaining violations by 36.8%.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.31372",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/THU-KEG/RIDAR",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2610.31372",
+    paperUrl: "https://arxiv.org/abs/2610.31372",
+    repo: "THU-KEG/RIDAR",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "redclaw-bench": {
+    slug: "redclaw-bench",
+    name: "RedClaw-Bench",
+    category: "Agents",
+    description: "Security benchmark for persistent, claw-style agents (OpenClaw-like assistants with AGENTS.md configuration, long-term memory and reusable skills), built with the AutoRedClaw automated red-teaming framework: 330 frozen end-to-end cases (150 inject + 150 trigger + 30 standard indirect-prompt-injection environment cases) over 9 risk categories, 12 attack strategies and 25 scenarios, with execution-based validation and runnable harnesses (OpenClaw, nanobot, SeClaw, NemoClaw, ZeroClaw, Codex, Claude Code). Most evaluated agent systems exceed 50% attack success rate.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.27244",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/SaFo-Lab/AutoRedClaw",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2610.27244",
+    paperUrl: "https://arxiv.org/abs/2610.27244",
+    repo: "SaFo-Lab/AutoRedClaw",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  diagsafe: {
+    slug: "diagsafe",
+    name: "DiagSafe",
+    category: "LLMs",
+    description: "Diagnostic LLM safety benchmark with prompt-level rubrics instead of binary safe/unsafe labels: 3,489 bilingual (English/Chinese) prompts grounded in an 84-label, three-tier safety taxonomy distilled from 204 public AI-safety provisions. DiagBase (2,401) covers single- and multi-turn direct harmful requests and template jailbreaks; DiagAttack (1,088) embeds harmful intent in complex instruction-following tasks. Each prompt carries its own safety items with exemptions plus eight shared usefulness items, reaching up to 95.34% judge-human agreement.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.29225",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Tencent-Hunyuan/DiagSafe",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2610.29225",
+    paperUrl: "https://arxiv.org/abs/2610.29225",
+    repo: "Tencent-Hunyuan/DiagSafe",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  carryoverbench: {
+    slug: "carryoverbench",
+    name: "CarryoverBench",
+    category: "Agents",
+    description: "Benchmark for carryover attacks on LLM agents: one-time indirect prompt injections that persist in agent state and re-fire in later sessions. 12 personal-assistant scenarios and 101 attack tasks across three channels (Instant same-turn injection; Autonomous via scheduled HEARTBEAT.md; Latent via MEMORY.md), scored by a rule-based verifier that separates planting from triggering over five fresh trigger rounds, plus system-prompt, skill-based and spotlighting defenses. Across five frontier models planted payloads re-fire without measurable decay.",
+    venue: "EMNLP 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.28425",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/igloomatics/CarryoverBench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "prompt injection",
+    ],
+    arxivId: "2610.28425",
+    paperUrl: "https://arxiv.org/abs/2610.28425",
+    repo: "igloomatics/CarryoverBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -10557,6 +10793,192 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         slug: "memform",
         domain: "Agents",
       },
+      {
+        name: "AM-Bench",
+        note: "Benchmark and taxonomy for agentic misalignment, i.e. agents choosing harmful actions over failure: 35 realistic workplace scenarios across seven industries, grounded in the fraud triangle. Each scenario gives the agent an organizational role, ordinary tasks and simulated tools, and toggles perceived threat (five instrumental-convergence threat types) and perceived opportunity (seven opportunity types), scored by per-scenario behavior judges plus a reasoning judge. Built on Inspect AI; across 10 frontier models misalignment rates differ by up to 62 percentage points between scenarios.",
+        type: "Agents",
+        venue: "NeurIPS 2026 (Evaluations and Datasets Track)",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.24264",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI4Collaboration/Agentic-Misalignment-Bench",
+          },
+        ],
+        slug: "am-bench",
+        domain: "Agents",
+        property: "Harmful Content",
+      },
+      {
+        name: "BanglaShield",
+        note: "Script-robust prompt-safety benchmark for Bangla: 10,245 prompts from six public sources under a four-level taxonomy (Safe, Offensive, Harmful, Severe), each rendered in native script, Latin-script romanization and code-mixed form (English/Hindi/Urdu) with shared labels and group-aware splits. The 2,049-item held-out test split (x3 forms) benchmarks LLM classifiers and guard models: LLMs label 47.0% of unsafe native-script prompts as Safe (63.4% under romanization) and multilingual guard models pass 30.3-57.3% of unsafe prompts.",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.24288",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/mraihan-gmu/BanglaShield-Model-Benchmark",
+          },
+        ],
+        slug: "banglashield",
+        domain: "LLMs",
+        property: "Harmful Content",
+      },
+      {
+        name: "AuthorizationBench",
+        note: "Benchmark for LLM agent authorization alignment: whether delegated agents stay within the authorization scope granted by the user. 286 executable tasks grounded in documented real-world cases span 14 situational pressures (12 benign, 2 prompt-injection), the presence or absence of direct harmful consequences (10 safety/privacy categories) and 10 domains, run in an authorization-aware sandbox with adapters for OpenHands, the OpenAI Agents SDK and the Claude Agent SDK. Across 6,864 trajectories agents act out of authorization in 19.2% of delegated tasks, more often under benign pressures than malicious injections.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.27548",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/PEACH-Research-Lab/AuthorizationBench",
+          },
+        ],
+        slug: "authorizationbench",
+        domain: "Agents",
+        property: "Harmful Content",
+      },
+      {
+        name: "CAPSafe",
+        note: "Contextual Action and Plan Safety benchmark for LLM-powered embodied agents in household environments, at two levels: an action-level dataset testing whether a single action is safe given its environmental context, and a plan-level dataset testing whether agents can produce safe long-horizon plans for hazardous household tasks. Hazards are situational (inferred from object properties), can co-occur and carry relative severity annotations. Across nine LLMs the best models exceed 90% on unsafe-action recognition, but safe long-horizon planning lags (best safe success rate 78.19%).",
+        type: "Embodied AI",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.28381",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/Youmna-H/CAPSafe",
+          },
+        ],
+        slug: "capsafe",
+        domain: "Embodied AI",
+      },
+      {
+        name: "RIDAR",
+        note: "Research-integrity safeguard and benchmark for autonomous research agents. Defines RIVT, a taxonomy of 14 research integrity violation (RIV) types across idea generation, literature review, experimentation and paper writing, and releases RIV-Gold (60 expert-annotated agent trajectories for RIV detection evaluation), RIV-Wild (300 trajectories over 50 research tasks and 6 agent configurations) and RIV-Live (60 runtime-intervention trajectories). RIDAR post-hoc detection reaches 85.2% F1 on RIV-Gold and finds violations in 99.7% of RIV-Wild trajectories; runtime intervention reduces remaining violations by 36.8%.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.31372",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/THU-KEG/RIDAR",
+          },
+        ],
+        slug: "ridar",
+        domain: "Agents",
+      },
+      {
+        name: "RedClaw-Bench",
+        note: "Security benchmark for persistent, claw-style agents (OpenClaw-like assistants with AGENTS.md configuration, long-term memory and reusable skills), built with the AutoRedClaw automated red-teaming framework: 330 frozen end-to-end cases (150 inject + 150 trigger + 30 standard indirect-prompt-injection environment cases) over 9 risk categories, 12 attack strategies and 25 scenarios, with execution-based validation and runnable harnesses (OpenClaw, nanobot, SeClaw, NemoClaw, ZeroClaw, Codex, Claude Code). Most evaluated agent systems exceed 50% attack success rate.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.27244",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/SaFo-Lab/AutoRedClaw",
+          },
+        ],
+        slug: "redclaw-bench",
+        domain: "Agents",
+        property: "Jailbreak",
+      },
+      {
+        name: "DiagSafe",
+        note: "Diagnostic LLM safety benchmark with prompt-level rubrics instead of binary safe/unsafe labels: 3,489 bilingual (English/Chinese) prompts grounded in an 84-label, three-tier safety taxonomy distilled from 204 public AI-safety provisions. DiagBase (2,401) covers single- and multi-turn direct harmful requests and template jailbreaks; DiagAttack (1,088) embeds harmful intent in complex instruction-following tasks. Each prompt carries its own safety items with exemptions plus eight shared usefulness items, reaching up to 95.34% judge-human agreement.",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.29225",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/Tencent-Hunyuan/DiagSafe",
+          },
+        ],
+        slug: "diagsafe",
+        domain: "LLMs",
+        property: "Jailbreak",
+      },
+      {
+        name: "CarryoverBench",
+        note: "Benchmark for carryover attacks on LLM agents: one-time indirect prompt injections that persist in agent state and re-fire in later sessions. 12 personal-assistant scenarios and 101 attack tasks across three channels (Instant same-turn injection; Autonomous via scheduled HEARTBEAT.md; Latent via MEMORY.md), scored by a rule-based verifier that separates planting from triggering over five fresh trigger rounds, plus system-prompt, skill-based and spotlighting defenses. Across five frontier models planted payloads re-fire without measurable decay.",
+        type: "Agents",
+        venue: "EMNLP 2026",
+        year: "2026",
+        tags: [
+          "prompt injection",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.28425",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/igloomatics/CarryoverBench",
+          },
+        ],
+        slug: "carryoverbench",
+        domain: "Agents",
+        property: "Prompt Injection",
+      },
     ],
   },
   models: {
@@ -10831,6 +11253,24 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         resources: [],
         primaryUrl: "https://huggingface.co/datasets/Anthropic/hh-rlhf/tree/main/red-team-attempts",
         repo: "anthropics/hh-rlhf",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
+      },
+      {
+        name: "BanglaShield Training Data",
+        slug: "banglashield-training-data",
+        note: "7,172 training and 1,024 validation Bangla prompts, each in native script, Latin-script romanization and code-mixed form (English/Hindi/Urdu), labeled Safe / Offensive / Harmful / Severe with group-aware splitting, released for fine-tuni…",
+        type: "LLMs",
+        venue: "arXiv 2026 / BanglaShield",
+        year: "2026",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/md-nishat-008/BanglaShield-Dataset",
+        repo: "mraihan-gmu/BanglaShield-Model-Benchmark",
         domains: [
           "LLMs",
         ],
