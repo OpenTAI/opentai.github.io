@@ -1292,6 +1292,86 @@
         "https://arxiv.org/abs/2610.14431"
       ],
       "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "am-bench",
+      "name": "AM-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates agentic misalignment, i.e. agents choosing harmful actions under perceived threat and opportunity in workplace scenarios.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.24264"
+      ],
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "slug": "banglashield",
+      "name": "BanglaShield",
+      "status": "keep",
+      "reason": "The primary paper evaluates LLM classifiers and guard models on Bangla prompt safety across native, romanized and code-mixed scripts.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.24288"
+      ],
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "slug": "authorizationbench",
+      "name": "AuthorizationBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates whether delegated LLM agents act within their assigned authorization scope under benign and malicious pressures.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.27548"
+      ],
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "slug": "capsafe",
+      "name": "CAPSafe",
+      "status": "keep",
+      "reason": "The primary paper evaluates contextual action safety and safe long-horizon planning of LLM-powered embodied agents in hazardous household tasks.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.28381"
+      ],
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "slug": "ridar",
+      "name": "RIDAR",
+      "status": "keep",
+      "reason": "The primary paper evaluates detection of research integrity violations by autonomous research agents on annotated trajectories.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.31372"
+      ],
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "slug": "redclaw-bench",
+      "name": "RedClaw-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates persistent claw-style agents against automated red-teaming attacks on configuration, memory and skills.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.27244"
+      ],
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "slug": "diagsafe",
+      "name": "DiagSafe",
+      "status": "keep",
+      "reason": "The primary paper evaluates LLM safety with prompt-level rubrics over an 84-label bilingual safety taxonomy.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.29225"
+      ],
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "slug": "carryoverbench",
+      "name": "CarryoverBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates carryover prompt-injection attacks that persist in agent state and re-fire in later sessions, and defenses.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.28425"
+      ],
+      "reviewedAt": "2026-10-26"
     }
   ]
 }

@@ -889,6 +889,102 @@
       "description": "Controlled diagnostic benchmark for memory-formation poisoning in LLM agents: paired clean/poisoned interventions at five memory-formation interfaces (Content, Evidence, Scope, Selection and Path poisoning), holding the downstream trigger and action space fixed so attack success is a within-item contrast. Released frozen cases cover multiple-choice and free-form formats (994 + 897 = 1,891 accepted items) with LangChain / LlamaIndex runners and defense baselines; evaluations across six LLMs show susceptibility at all five interfaces and only partial mitigation by existing defenses.",
       "descriptionZh": "面向 LLM 智能体“记忆形成投毒”的受控诊断基准：在内容、证据、范围、选择与路径五个记忆形成接口上施加成对的干净/投毒干预，并固定下游触发条件与动作空间，使攻击成功成为同一条目内的对照。已发布的冻结用例涵盖选择题与开放式两种格式（994 + 897 = 1,891 条），并提供 LangChain / LlamaIndex 运行器与防御基线；在六个 LLM 上的评测显示五个接口均易受攻击，现有防御只能部分缓解。",
       "verificationNote": "Primary sources checked 2026-10-19: arXiv:2610.14431 (MemForm: Benchmarking Memory Formation Poisoning in LLM Agents; Pan, Shao, Ma, Jin, Zhai, Wang, Yang; abstract states code and data are at the repo); GitHub opanhw/memform-code (public, MIT; outputs/mcq_item_audit and freeform_item_audit accepted_cases.jsonl = 994 / 897 items; evaluation and defense runners; construction pipeline withheld until publication). Benchmark only (frozen eval cases; no training split). Distinct from A-MemGuard. Added from issue #147."
+    },
+    {
+      "name": "AM-Bench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.24264",
+      "githubUrl": "https://github.com/AI4Collaboration/Agentic-Misalignment-Bench",
+      "linkLabel": "Paper",
+      "venue": "NeurIPS 2026 (Evaluations and Datasets Track)",
+      "description": "Benchmark and taxonomy for agentic misalignment, i.e. agents choosing harmful actions over failure: 35 realistic workplace scenarios across seven industries, grounded in the fraud triangle. Each scenario gives the agent an organizational role, ordinary tasks and simulated tools, and toggles perceived threat (five instrumental-convergence threat types) and perceived opportunity (seven opportunity types), scored by per-scenario behavior judges plus a reasoning judge. Built on Inspect AI; across 10 frontier models misalignment rates differ by up to 62 percentage points between scenarios.",
+      "descriptionZh": "面向“智能体失准”（智能体宁可采取有害行动也不接受任务失败）的基准与分类体系：基于“欺诈三角”理论，构建覆盖七个行业的 35 个真实职场场景。每个场景为智能体设定组织角色、日常任务与模拟工具，并切换感知威胁（五类工具性趋同威胁）与感知机会（七类机会）两个因素，由逐场景行为评判器与推理评判器打分。基于 Inspect AI 构建；在 10 个前沿模型上，不同场景间的失准率差异最高达 62 个百分点。",
+      "verificationNote": "Primary sources checked 2026-10-26: arXiv:2610.24264 (AM-Bench: A Unified Taxonomy and Evaluation Suite for Agentic Misalignment; Zhang, Zhang, Ugwuanyi, Shi et al.; comments: accepted as a poster at NeurIPS 2026 Evaluations and Datasets Track); GitHub AI4Collaboration/Agentic-Misalignment-Bench (public, MIT; scenarios/ for seven industries, harness/ tools, solver and scoring, tasks/ Inspect runner). Benchmark only (eval scenarios + judges; no training split). Extends Lynch et al. (2025) agentic-misalignment scenarios. Added from issue #150."
+    },
+    {
+      "name": "BanglaShield",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2610.24288",
+      "githubUrl": "https://github.com/mraihan-gmu/BanglaShield-Model-Benchmark",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Script-robust prompt-safety benchmark for Bangla: 10,245 prompts from six public sources under a four-level taxonomy (Safe, Offensive, Harmful, Severe), each rendered in native script, Latin-script romanization and code-mixed form (English/Hindi/Urdu) with shared labels and group-aware splits. The 2,049-item held-out test split (x3 forms) benchmarks LLM classifiers and guard models: LLMs label 47.0% of unsafe native-script prompts as Safe (63.4% under romanization) and multilingual guard models pass 30.3-57.3% of unsafe prompts.",
+      "descriptionZh": "面向孟加拉语、对书写形式鲁棒的提示安全基准：从六个公开来源收集 10,245 条提示，按四级分类（安全、冒犯、有害、严重）标注，每条提示均提供孟加拉文原生文字、拉丁字母转写与语码混合（英语/印地语/乌尔都语）三种形式，标签共享并采用按组划分。2,049 条保留测试集（×3 种形式）用于评测 LLM 分类器与守卫模型：LLM 将 47.0% 的原生文字不安全提示判为安全（转写形式下为 63.4%），多语言守卫模型放行 30.3%–57.3% 的不安全提示。",
+      "verificationNote": "Primary sources checked 2026-10-26: arXiv:2610.24288 (BanglaShield: A Script-Robust Safety Classifier and Benchmark for Bangla Native, Romanized, and Code-Mixed Prompts; Kabir, Tariquzzaman, Rifat, Ranasinghe, Raihan; comments link the repo and HF dataset); GitHub mraihan-gmu/BanglaShield-Model-Benchmark (public; no license file, README states code MIT / data CC BY-NC 4.0; 7,172 / 1,024 / 2,049 group-aware train/validation/test); HF datasets md-nishat-008/BanglaShield-Dataset (public, automatic click-through gating, CC BY-NC 4.0; native/romanized/code_mixed x train/validation/test parquet). Benchmark (held-out test split). The distinct train/validation splits are listed separately as the Dataset BanglaShield Training Data (dual-list). Classifier weights not yet released (HF md-nishat-008/BanglaShield is README-only), so no Model entry. Added from issue #151."
+    },
+    {
+      "name": "AuthorizationBench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.27548",
+      "githubUrl": "https://github.com/PEACH-Research-Lab/AuthorizationBench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Benchmark for LLM agent authorization alignment: whether delegated agents stay within the authorization scope granted by the user. 286 executable tasks grounded in documented real-world cases span 14 situational pressures (12 benign, 2 prompt-injection), the presence or absence of direct harmful consequences (10 safety/privacy categories) and 10 domains, run in an authorization-aware sandbox with adapters for OpenHands, the OpenAI Agents SDK and the Claude Agent SDK. Across 6,864 trajectories agents act out of authorization in 19.2% of delegated tasks, more often under benign pressures than malicious injections.",
+      "descriptionZh": "评测 LLM 智能体“授权对齐”的基准：考察受委托的智能体是否始终在用户授予的授权范围内行事。286 个可执行任务基于有记录的真实案例，覆盖 14 种情境压力（12 种良性、2 种提示注入）、是否产生直接有害后果（10 类安全/隐私类别）以及 10 个领域，在具备授权感知的沙箱中运行，并提供 OpenHands、OpenAI Agents SDK 与 Claude Agent SDK 适配器。在 6,864 条轨迹中，智能体在 19.2% 的委托任务中越权行事，且在良性压力下比在恶意注入下更常越权。",
+      "verificationNote": "Primary sources checked 2026-10-26: arXiv:2610.27548 (Act on Your Behalf, Beyond Your Authorization: Benchmarking LLM Agent Authorization Alignment; Zhang, Li, Huang, Li et al.; abstract links the repo); GitHub PEACH-Research-Lab/AuthorizationBench (public, MIT; README: 286 executable task bundles, authorization_eva_sandbox/, construction pipeline, taxonomies/; 6,864 trajectories). Benchmark only (executable eval tasks; no training split). Added from issue #153."
+    },
+    {
+      "name": "CAPSafe",
+      "year": "2026",
+      "domain": "Embodied AI",
+      "url": "https://arxiv.org/abs/2610.28381",
+      "githubUrl": "https://github.com/Youmna-H/CAPSafe",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Contextual Action and Plan Safety benchmark for LLM-powered embodied agents in household environments, at two levels: an action-level dataset testing whether a single action is safe given its environmental context, and a plan-level dataset testing whether agents can produce safe long-horizon plans for hazardous household tasks. Hazards are situational (inferred from object properties), can co-occur and carry relative severity annotations. Across nine LLMs the best models exceed 90% on unsafe-action recognition, but safe long-horizon planning lags (best safe success rate 78.19%).",
+      "descriptionZh": "面向家居环境中 LLM 驱动具身智能体的“情境动作与规划安全”基准，分两个层级：动作级数据测试单个动作在给定环境情境下是否安全，规划级数据测试智能体能否为危险家务任务生成安全的长程规划。危险是情境性的（由物体属性推断），可能同时出现，并带有相对严重程度标注。在九个 LLM 上，最佳模型的不安全动作识别率超过 90%，但安全长程规划明显落后（最佳安全成功率 78.19%）。",
+      "verificationNote": "Primary sources checked 2026-10-26: arXiv:2610.28381 (CAPSafe: A Benchmark for Contextual Action and Plan Safety Reasoning in Embodied Agents; Farag, Stoyanchev, Keizer, Li et al.; paper links the repo); GitHub Youmna-H/CAPSafe (public, MIT; minimal README; datasets/action_level_dataset.json ~14 MB and datasets/plan_level_dataset/ with 243 task files). Benchmark only (eval data; no training split). Added from issue #154."
+    },
+    {
+      "name": "RIDAR",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.31372",
+      "githubUrl": "https://github.com/THU-KEG/RIDAR",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Research-integrity safeguard and benchmark for autonomous research agents. Defines RIVT, a taxonomy of 14 research integrity violation (RIV) types across idea generation, literature review, experimentation and paper writing, and releases RIV-Gold (60 expert-annotated agent trajectories for RIV detection evaluation), RIV-Wild (300 trajectories over 50 research tasks and 6 agent configurations) and RIV-Live (60 runtime-intervention trajectories). RIDAR post-hoc detection reaches 85.2% F1 on RIV-Gold and finds violations in 99.7% of RIV-Wild trajectories; runtime intervention reduces remaining violations by 36.8%.",
+      "descriptionZh": "面向自主科研智能体的科研诚信保障方法与基准。提出 RIVT 分类体系，涵盖创意生成、文献综述、实验与论文写作四个阶段的 14 类科研诚信违规（RIV），并发布 RIV-Gold（60 条专家标注的智能体轨迹，用于违规检测评测）、RIV-Wild（覆盖 50 个科研任务与 6 种智能体配置的 300 条轨迹）与 RIV-Live（60 条运行时干预轨迹）。RIDAR 事后检测在 RIV-Gold 上 F1 达 85.2%，在 99.7% 的 RIV-Wild 轨迹中发现违规；运行时干预使剩余违规减少 36.8%。",
+      "verificationNote": "Primary sources checked 2026-10-26: arXiv:2610.31372 (RIDAR: Safeguarding Research Integrity in Autonomous Research Agents via Automated Detection and Runtime Intervention; Siow, Xin, Wang, Tang et al.; THU-KEG); GitHub THU-KEG/RIDAR (public, MIT; detection and runtime-intervention code; README lists RIV-GOLD / RIV-WILD / RIV-LIVE and links the HF dataset); HF datasets THU-KEG/RIDAR (public, not gated, MIT; riv-gold annotations and trajectories). Benchmark only (annotated detection-evaluation trajectories; no training split). Scope: included as agent trustworthiness (fabrication / unfaithful research conduct by autonomous agents, akin to the deception benchmarks already listed) rather than harmful-content safety. Added from issue #155."
+    },
+    {
+      "name": "RedClaw-Bench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.27244",
+      "githubUrl": "https://github.com/SaFo-Lab/AutoRedClaw",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Security benchmark for persistent, claw-style agents (OpenClaw-like assistants with AGENTS.md configuration, long-term memory and reusable skills), built with the AutoRedClaw automated red-teaming framework: 330 frozen end-to-end cases (150 inject + 150 trigger + 30 standard indirect-prompt-injection environment cases) over 9 risk categories, 12 attack strategies and 25 scenarios, with execution-based validation and runnable harnesses (OpenClaw, nanobot, SeClaw, NemoClaw, ZeroClaw, Codex, Claude Code). Most evaluated agent systems exceed 50% attack success rate.",
+      "descriptionZh": "面向持久化“Claw 式”智能体（类 OpenClaw 助手，具备 AGENTS.md 配置、长期记忆与可复用技能）的安全基准，由 AutoRedClaw 自动化红队框架构建：包含 330 个冻结的端到端用例（150 个注入 + 150 个触发 + 30 个标准间接提示注入环境用例），覆盖 9 类风险、12 种攻击策略与 25 个场景，采用基于执行的验证，并提供可运行的测试框架（OpenClaw、nanobot、SeClaw、NemoClaw、ZeroClaw、Codex、Claude Code）。多数被测智能体系统的攻击成功率超过 50%。",
+      "verificationNote": "Primary sources checked 2026-10-26: arXiv:2610.27244 (AutoRedClaw: Automated Red-Teaming for Claw-Style Agents; Li, Hu, Luo, Shi et al.; SaFo-Lab; abstract links the repo); GitHub SaFo-Lab/AutoRedClaw (public; no license file declared; README: RedClaw-Bench 330 cases = inject 150 + trigger 150 + environment 30, 9 risk categories x 12 strategies over 25 scenarios; dataset/v1.1 (reported in the paper) and dataset/v1.2; harnesses under claws/). Benchmark only (frozen eval cases; the AutoRedClaw generator is not listed separately). Distinct from DTap / AgentDojo. Added from issue #156."
+    },
+    {
+      "name": "DiagSafe",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2610.29225",
+      "githubUrl": "https://github.com/Tencent-Hunyuan/DiagSafe",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Diagnostic LLM safety benchmark with prompt-level rubrics instead of binary safe/unsafe labels: 3,489 bilingual (English/Chinese) prompts grounded in an 84-label, three-tier safety taxonomy distilled from 204 public AI-safety provisions. DiagBase (2,401) covers single- and multi-turn direct harmful requests and template jailbreaks; DiagAttack (1,088) embeds harmful intent in complex instruction-following tasks. Each prompt carries its own safety items with exemptions plus eight shared usefulness items, reaching up to 95.34% judge-human agreement.",
+      "descriptionZh": "以提示级评分细则替代二元安全/不安全标签的诊断式 LLM 安全基准：3,489 条中英双语提示，基于从 204 条公开 AI 安全规范中提炼的 84 标签三级安全分类体系。DiagBase（2,401 条）涵盖单轮与多轮直接有害请求及模板越狱；DiagAttack（1,088 条）将有害意图嵌入复杂的指令遵循任务。每条提示配有专属的安全评分项（含豁免条件）以及八项共享的有用性评分项，评判与人工的一致率最高达 95.34%。",
+      "verificationNote": "Primary sources checked 2026-10-26: arXiv:2610.29225 (Beyond Binary Labels: Diagnostic Evaluation of LLM Safety with Prompt-Level Rubrics; Li, Huang, Yu, Zhao et al.; Tencent Hunyuan); GitHub Tencent-Hunyuan/DiagSafe (public; README badge CC BY 4.0, GitHub license detection NOASSERTION; data/prompts/DiagSafe_bench_3489.jsonl, data/rubrics/, data/taxonomy/, evaluation src/ and configs); dashboard tencent-hunyuan.github.io/DiagSafe resolves. Benchmark only (eval prompts + rubrics; no training split). Added from issue #157."
+    },
+    {
+      "name": "CarryoverBench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.28425",
+      "githubUrl": "https://github.com/igloomatics/CarryoverBench",
+      "linkLabel": "Paper",
+      "venue": "EMNLP 2026",
+      "description": "Benchmark for carryover attacks on LLM agents: one-time indirect prompt injections that persist in agent state and re-fire in later sessions. 12 personal-assistant scenarios and 101 attack tasks across three channels (Instant same-turn injection; Autonomous via scheduled HEARTBEAT.md; Latent via MEMORY.md), scored by a rule-based verifier that separates planting from triggering over five fresh trigger rounds, plus system-prompt, skill-based and spotlighting defenses. Across five frontier models planted payloads re-fire without measurable decay.",
+      "descriptionZh": "面向 LLM 智能体“遗留攻击”的基准：一次性的间接提示注入在智能体状态中持久存在，并在之后的会话中再次触发。包含 12 个个人助理场景与 101 个攻击任务，覆盖三种通道（即时：同轮注入；自主：经定时 HEARTBEAT.md；潜伏：经 MEMORY.md），由基于规则的验证器在五轮全新触发中区分“植入”与“触发”并打分，同时提供系统提示、技能式与 spotlighting 三种防御。在五个前沿模型上，已植入的载荷会反复触发且无明显衰减。",
+      "verificationNote": "Primary sources checked 2026-10-26: arXiv:2610.28425 (After the Attacker Leaves: Benchmarking Carryover Attacks on LLM Agents; Xu, Wang, Huang, Zhan et al.; comments: accepted by EMNLP 2026 Main Conference; paper links the repo); GitHub igloomatics/CarryoverBench (public; no license file declared; README: 12 personal-assistant scenarios, 101 attack tasks, carryover/ tasks, attacks and verifiers, nanobot/ harness, defense scripts). Benchmark only (eval tasks; no training split). Distinct from MemForm / AgentDojo. Added from issue #159."
     }
   ]
 }

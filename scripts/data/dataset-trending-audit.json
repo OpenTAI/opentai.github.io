@@ -483,6 +483,16 @@
         "https://huggingface.co/datasets/HenryZYF/QuasiLeak-Bench"
       ],
       "reviewedAt": "2026-10-19"
+    },
+    {
+      "slug": "banglashield-training-data",
+      "name": "BanglaShield Training Data",
+      "status": "keep",
+      "reason": "Graded Bangla prompt-safety labels across native, romanized and code-mixed scripts for training safety classifiers.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/md-nishat-008/BanglaShield-Dataset"
+      ],
+      "reviewedAt": "2026-10-26"
     }
   ]
 }

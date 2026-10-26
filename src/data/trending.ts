@@ -122,12 +122,21 @@ export const trendingBenchmarkSlugs: readonly string[] = [
   "browsesafe",
   "quasileak-bench",
   "memform",
+  "am-bench",
+  "banglashield",
+  "authorizationbench",
+  "capsafe",
+  "ridar",
+  "redclaw-bench",
+  "diagsafe",
+  "carryoverbench",
 ];
 
 export const trendingDatasetSlugs: readonly string[] = [
   "advbench",
   "aegis-2-0",
   "anthropic-red-team-attempts",
+  "banglashield-training-data",
   "beavertails",
   "bipia",
   "booster-repnoise-beavertails",

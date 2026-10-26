@@ -1020,6 +1020,12 @@
       "status": "keep",
       "reason": "Kept: official HF qlb config ships separate profile-disjoint train (3,500) and validation (500) files, documented for fine-tuning and model selection with a released LoRA recipe; separate from the QLB-Test leaderboard set. Dual-listed from issue #146.",
       "sourceUrl": "https://huggingface.co/datasets/HenryZYF/QuasiLeak-Bench"
+    },
+    {
+      "name": "BanglaShield Training Data",
+      "status": "keep",
+      "reason": "Kept: official HF release and repo ship distinct group-aware train (7,172) and validation (1,024) splits, x3 script forms, that the README states were used to fine-tune the BanglaShield classifier; separate from the 2,049-item held-out benchmark test split. Dual-listed from issue #152.",
+      "sourceUrl": "https://huggingface.co/datasets/md-nishat-008/BanglaShield-Dataset"
     }
   ]
 }

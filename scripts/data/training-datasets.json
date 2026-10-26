@@ -2134,6 +2134,22 @@
       "size": "3,500 train / 500 validation documents",
       "summary": "3,500 training and 500 validation synthetic sender messages from QuasiLeak-Bench, each with a sender profile, communication context, a HIDE/KEEP/NEUTRAL disclosure policy and gold quasi-evidence groups of 2–4 verbatim cue spans bound to private attributes, released with a LoRA recipe for fine-tuning sender-side privacy detectors.",
       "summarySourceUrl": "https://huggingface.co/datasets/HenryZYF/QuasiLeak-Bench"
+    },
+    {
+      "name": "BanglaShield Training Data",
+      "domain": "LLMs",
+      "year": "2026",
+      "venue": "arXiv 2026 / BanglaShield",
+      "paperUrl": "https://arxiv.org/abs/2610.24288",
+      "githubUrl": "https://github.com/mraihan-gmu/BanglaShield-Model-Benchmark",
+      "dataUrl": "https://huggingface.co/datasets/md-nishat-008/BanglaShield-Dataset",
+      "sourceUrl": "https://huggingface.co/datasets/md-nishat-008/BanglaShield-Dataset",
+      "trainingEvidence": "Official README states the group-aware train (7,172) and validation (1,024) splits 'used to fine-tune' the BanglaShield classifier are released in the repo (data/intermediate/v2_train/, v2_validation/) and on the HF dataset page, with no prompt group shared with the 2,049-item test split; HF md-nishat-008/BanglaShield-Dataset ships separate native/romanized/code_mixed -train / -validation / -test parquet files; arXiv:2610.24288 fine-tunes a MuRIL-base encoder on these splits (87.8 macro-F1 native, 84.4 romanized).",
+      "linkVerificationEvidenceUrl": "https://huggingface.co/datasets/md-nishat-008/BanglaShield-Dataset",
+      "linkVerificationReason": "HF md-nishat-008/BanglaShield-Dataset resolves (public with automatic click-through gating, CC BY-NC 4.0) with separate train / validation / test parquet files per script form; GitHub mraihan-gmu/BanglaShield-Model-Benchmark (no license file; README: code MIT, data CC BY-NC 4.0) and arXiv:2610.24288 resolve. Distinct from the held-out test split behind the BanglaShield benchmark (listed as Benchmark). Classifier weights not yet released. Dual-listed from issue #152.",
+      "size": "7,172 train / 1,024 validation items (x3 script forms = 21,516 / 3,072 prompts)",
+      "summary": "7,172 training and 1,024 validation Bangla prompts, each in native script, Latin-script romanization and code-mixed form (English/Hindi/Urdu), labeled Safe / Offensive / Harmful / Severe with group-aware splitting, released for fine-tuning script-robust graded prompt-safety classifiers.",
+      "summarySourceUrl": "https://github.com/mraihan-gmu/BanglaShield-Model-Benchmark"
     }
   ]
 }
