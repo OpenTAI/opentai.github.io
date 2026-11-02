@@ -985,6 +985,90 @@
       "description": "Benchmark for carryover attacks on LLM agents: one-time indirect prompt injections that persist in agent state and re-fire in later sessions. 12 personal-assistant scenarios and 101 attack tasks across three channels (Instant same-turn injection; Autonomous via scheduled HEARTBEAT.md; Latent via MEMORY.md), scored by a rule-based verifier that separates planting from triggering over five fresh trigger rounds, plus system-prompt, skill-based and spotlighting defenses. Across five frontier models planted payloads re-fire without measurable decay.",
       "descriptionZh": "面向 LLM 智能体“遗留攻击”的基准：一次性的间接提示注入在智能体状态中持久存在，并在之后的会话中再次触发。包含 12 个个人助理场景与 101 个攻击任务，覆盖三种通道（即时：同轮注入；自主：经定时 HEARTBEAT.md；潜伏：经 MEMORY.md），由基于规则的验证器在五轮全新触发中区分“植入”与“触发”并打分，同时提供系统提示、技能式与 spotlighting 三种防御。在五个前沿模型上，已植入的载荷会反复触发且无明显衰减。",
       "verificationNote": "Primary sources checked 2026-10-26: arXiv:2610.28425 (After the Attacker Leaves: Benchmarking Carryover Attacks on LLM Agents; Xu, Wang, Huang, Zhan et al.; comments: accepted by EMNLP 2026 Main Conference; paper links the repo); GitHub igloomatics/CarryoverBench (public; no license file declared; README: 12 personal-assistant scenarios, 101 attack tasks, carryover/ tasks, attacks and verifiers, nanobot/ harness, defense scripts). Benchmark only (eval tasks; no training split). Distinct from MemForm / AgentDojo. Added from issue #159."
+    },
+    {
+      "name": "V³AST-Bench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.35188",
+      "githubUrl": "https://github.com/Alibaba-AAIG/VAST-Bench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Verifiable, valid and versatile safety benchmark for coding agents: 212 risk tasks across 18 categories, each paired with a capability-twin control task (424 total), run in dedicated runtime environments that verify harm and task outcomes through executable checks over states, records and artifact behavior, so harm avoidance can be separated from task incapability. Ships adapters for six agent harnesses and a Docker runner. Across 51 model-harness combinations (86,496 trials), even the strongest configuration still causes verified harm on 20.9% of tasks, and explicit risk recognition does not reliably prevent harmful actions.",
+      "descriptionZh": "面向编码智能体的可验证、有效且通用的安全基准：包含 18 个类别的 212 个风险任务，每个任务配有一个能力对照任务（共 424 个），在专用运行环境中通过对状态、记录与产物行为的可执行检查来验证危害与任务结果，从而区分“规避危害”与“无力完成任务”。提供六种智能体框架的适配器与 Docker 运行器。在 51 种模型-框架组合（86,496 次试验）中，即便最强配置仍在 20.9% 的任务上造成经验证的危害，且显式识别风险并不能可靠阻止有害行为。",
+      "verificationNote": "Primary sources checked 2026-11-02: arXiv:2610.35188 (V^3AST-Bench: Verifiable, Valid, and Versatile Safety Evaluation for Coding Agents; Alibaba AAIG; comment links the repo); GitHub Alibaba-AAIG/VAST-Bench (public, MIT, created 2026-10-26; tasks/ with 212 adversarial + 212 capability-control tasks, src/ runner, agent adapters, configs); project page vast-bench.github.io. Benchmark only (executable eval tasks; no training split). Added from issue #161."
+    },
+    {
+      "name": "SkillLifeBench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.35215",
+      "githubUrl": "https://github.com/Tasselszcx/SkillLifeBench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Benchmark for security across the lifecycle of agent skills, where the stored code, selected version and loaded implementation of reusable skills can diverge across tasks and updates. 388 paired scenarios span implementation, interface, runtime, composition and version changes, evaluated on two paired decision tracks: 89 runtime tasks and 60 autonomous lifecycle tasks (12 templates) in which agents can inspect, select and reconfigure skills while completing verifiable user requests. Joint success requires task completion without the registered attack goal; across 14 models, lifecycle tasks separate models with similar runtime scores.",
+      "descriptionZh": "面向智能体技能全生命周期安全的基准：可复用技能的存储代码、所选版本与实际加载实现可能随任务与更新而偏离。388 个成对场景覆盖实现、接口、运行时、组合与版本变化，并在两条成对决策赛道上评测：89 个运行时任务与 60 个自主生命周期任务（12 个模板），智能体可在完成可验证用户请求的同时检查、选择并重新配置技能。联合成功要求完成任务且未达成预设攻击目标；在 14 个模型上，生命周期任务能区分运行时得分相近的模型。",
+      "verificationNote": "Primary sources checked 2026-11-02: arXiv:2610.35215 (SkillLifeBench: Benchmarking Security Across the Lifecycle of Agent Skills; Zhang, Liu, Xin, Zhang; comment links the repo); GitHub Tasselszcx/SkillLifeBench (public, MIT; runtime and lifecycle task tracks, scenarios and evaluation code); OpenReview MQvOG1WNXV. Benchmark only (paired eval scenarios; no training split). Added from issue #162."
+    },
+    {
+      "name": "InferPriv",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2610.34640",
+      "githubUrl": "https://github.com/PengrunH/InferPriv",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Benchmark for inferential privacy leakage in LLM assistants with memory: whether an honest-but-curious recipient can infer a user's sensitive attributes from the assistant's reply on a routine task, beyond direct disclosure of a stated secret. Built from 10 personas with 27 memory statements each, 10 sensitive attributes and 10 routine tasks (950 evaluation cells). Under a privacy-aware system prompt, frontier models reach near-zero direct leakage while inferential leakage stays at 16.2–25.2%.",
+      "descriptionZh": "面向带记忆 LLM 助手推断式隐私泄露的基准：考察“诚实但好奇”的接收方能否从助手在日常任务中的回复里推断出用户的敏感属性，而不仅是直接泄露已陈述的秘密。基于 10 个用户画像（各含 27 条记忆陈述）、10 种敏感属性与 10 个日常任务构建（950 个评测单元）。在隐私感知系统提示下，前沿模型的直接泄露接近于零，但推断式泄露仍达 16.2%–25.2%。",
+      "verificationNote": "Primary sources checked 2026-11-02: arXiv:2610.34640 (InferPriv: Evaluating Inferential Privacy Leakage in LLM Assistants; Huang, Fu, Meng, Chaudhuri; paper links the repo); GitHub PengrunH/InferPriv (public, MIT, created 2026-10-25; data/ personas, memory statements and tasks, inferpriv/ generation and attacker-inference evaluation). Benchmark only (eval cells; no training split). Domain LLMs as proposed (paper frames the target as LLM assistants; personal-agent memory setting could also fit Agents). Added from issue #163."
+    },
+    {
+      "name": "GuardRebind",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2610.31695",
+      "githubUrl": "https://github.com/ukanwat/guardrebind",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Benchmark of target-rebinding attacks on LLM safety guards: content that imitates the guard prompt appends a forged second task or decoy so the guard grades the harmless decoy instead of the harmful request. Covers 52 attack families plus 5 controls against five guard families (Shieldstral-1.0-3B, gpt-oss-safeguard, ShieldGemma, Llama Guard 3/4, Qwen3Guard); each guard has a family that clears at least 93% of its flagged items. The paper also releases a rebinding-fixed Shieldstral LoRA adapter that cuts attack success from 75% to 0.8–1.6% on held-out families.",
+      "descriptionZh": "针对 LLM 安全守卫模型“目标重绑定”攻击的基准：模仿守卫提示的内容附加一个伪造的第二任务或诱饵，使守卫评判无害诱饵而非有害请求。覆盖 52 个攻击家族与 5 个对照，评测五类守卫模型（Shieldstral-1.0-3B、gpt-oss-safeguard、ShieldGemma、Llama Guard 3/4、Qwen3Guard）；每个守卫都存在一个可使其至少 93% 被拦截样本放行的攻击家族。论文还发布了修复重绑定问题的 Shieldstral LoRA 适配器，在未见攻击家族上将攻击成功率从 75% 降至 0.8%–1.6%。",
+      "verificationNote": "Primary sources checked 2026-11-02: arXiv:2610.31695 (Fooling LLM Safety Guards into Judging the Wrong Text; comment links code and model); GitHub ukanwat/guardrebind (public, MIT; attack families, guard adapters and evaluation code). Benchmark items (~40k) are generated by src/bench/data.py from public source datasets (AdvBench etc.) rather than shipped as files. HF ukanwat/shieldstral-1.0-3b-rebinding-fix (Apache-2.0 LoRA adapter) resolves; not listed as a separate Model. Benchmark only (attack eval suite for guard models; no training split). Added from issue #164."
+    },
+    {
+      "name": "ComFair",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2610.35069",
+      "githubUrl": "https://github.com/Shiayuiu/ComFair",
+      "linkLabel": "Paper",
+      "venue": "EMNLP 2026",
+      "description": "Configurable multi-attribute benchmark for intersectional fairness in LLMs. Converts existing single-attribute fairness data into 479,066 controlled dual- and multi-attribute instances, each paired with its task-equivalent source, across Recognition, Selection, Continuation and Conversation tasks, enabling a unified audit of performance and bias-score shifts, error introduction versus masking when attributes are added, and model-ranking stability. Experiments on ten LLMs show task- and subgroup-dependent sensitivity that single-attribute audits miss.",
+      "descriptionZh": "面向 LLM 交叉公平性的可配置多属性基准。将现有单属性公平性数据转换为 479,066 个受控的双属性与多属性实例，每个实例与其任务等价的源实例配对，覆盖识别、选择、续写与对话四类任务，可统一审计性能与偏见分数的变化、增加属性时错误的引入与掩盖，以及模型排名的稳定性。在十个 LLM 上的实验揭示了单属性审计无法发现的、随任务与子群体而变的敏感性。",
+      "verificationNote": "Primary sources checked 2026-11-02: arXiv:2610.35069 (Beyond Single-Attribute Auditing: A Configurable Multi-Attribute Benchmark for Intersectional Fairness in LLMs; comment: accepted to EMNLP 2026 Main; links the repo and HF dataset); GitHub Shiayuiu/ComFair (public; no license file declared); HF datasets benchmark-lab/ComFair (public with automatic click-through gating; jsonl instance files). Benchmark only (fairness eval instances; no training split). Scope: LLM fairness/bias, in line with BBQ already listed. Added from issue #165."
+    },
+    {
+      "name": "ForesightSafety-VLA",
+      "year": "2026",
+      "domain": "Embodied AI",
+      "url": "https://arxiv.org/abs/2606.27079",
+      "githubUrl": "https://github.com/tuotuoLyu/ForesightSafety-VLA",
+      "linkLabel": "Paper",
+      "venue": "IROS 2026",
+      "description": "Unified diagnostic safety benchmark for vision-language-action (VLA) models on RoboTwin. Defines a 13-category safety taxonomy covering physical interaction safety (Safe-Core), instruction-side safety (Safe-Lang) and perception-side safety (Safe-Vis), with 66 safety scenarios evaluated under controlled variation of scene structure, language command and visual observation so failure sources can be diagnosed. Beyond binary task success it measures process-level risk such as cumulative hazard during execution.",
+      "descriptionZh": "基于 RoboTwin 的视觉-语言-动作（VLA）模型统一诊断式安全基准。定义了 13 类安全分类体系，涵盖物理交互安全（Safe-Core）、指令侧安全（Safe-Lang）与感知侧安全（Safe-Vis），在场景结构、语言指令与视觉观测的受控变化下评测 66 个安全场景，以便诊断失败来源。除二元任务成功率外，还度量执行过程中的累计危害等过程级风险。",
+      "verificationNote": "Primary sources checked 2026-11-02: arXiv:2606.27079 (ForesightSafety-VLA: A Unified Diagnostic Safety Benchmark for Vision-Language-Action Models; CASIA / Beijing-AISI); GitHub tuotuoLyu/ForesightSafety-VLA (public, created 2026-10-29; 'Official code for ForesightSafety-VLA (IROS 2026)'; LICENSE is MIT, GitHub API shows NOASSERTION due to an extra LICENSE-RoboTwin; task_config/, envs/, foresight_safety/ evaluation, policy/ baselines). Paper first posted 2026-06; official code release is new. Benchmark only (simulation eval scenarios; no official safety training split). Distinct from the listed ForesightSafety-Bench. Added from issue #166."
+    },
+    {
+      "name": "SentryBench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.34535",
+      "githubUrl": "https://github.com/mayusuf/SentryBench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Cost-sensitive benchmark for adversarial robustness of tool-using LLM agents in public-safety deployments (alerts, dispatch, citizen-record queries, infrastructure). Scores agents on a two-sided frontier that jointly measures attack success, over-refusal (missing a real emergency) and over-reaction (unwarranted alert or dispatch, over-broad query), plus correct containment via human escalation, under an asymmetric deployment-harm cost. 190 scenarios are grounded in real emergency-call transcripts, disaster messages and real injection/jailbreak payloads; all tools are mocked.",
+      "descriptionZh": "面向公共安全部署场景（警报、调度、公民记录查询、基础设施）中工具调用 LLM 智能体对抗鲁棒性的代价敏感基准。以双边前沿对智能体打分，同时度量攻击成功率、过度拒绝（漏掉真实紧急情况）与过度反应（无依据的警报或调度、过宽查询），以及通过人工升级实现的正确遏制，并采用非对称的部署危害代价。190 个场景基于真实紧急呼叫记录、灾害信息与真实注入/越狱载荷构建，所有工具均为模拟。",
+      "verificationNote": "Primary sources checked 2026-11-02: arXiv:2610.34535 (SentryBench: A Cost-Sensitive Benchmark for Adversarial Robustness of Tool-Using LLM Agents in Public-Safety Deployments; Yusuf, Aditi, Mazed); GitHub mayusuf/SentryBench (public, MIT, created 2026-10-30; README links the arXiv paper; data/scenarios/{alerts,dispatch,infra,records}.json, sentrybench/ runner, defenses and deterministic scorer). The arXiv abstract does not itself link the repo; linkage is via the repo README, matching title and first author. Benchmark only (eval scenarios; no training split). Added from issue #167."
     }
   ]
 }

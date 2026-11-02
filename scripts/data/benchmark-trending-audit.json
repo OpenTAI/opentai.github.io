@@ -1372,6 +1372,76 @@
         "https://arxiv.org/abs/2610.28425"
       ],
       "reviewedAt": "2026-10-26"
+    },
+    {
+      "slug": "v-ast-bench",
+      "name": "V³AST-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates whether coding agents cause verified harm in executable runtime environments, separated from task incapability.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.35188"
+      ],
+      "reviewedAt": "2026-11-02"
+    },
+    {
+      "slug": "skilllifebench",
+      "name": "SkillLifeBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates agent security across the lifecycle of reusable skills, including version and implementation changes.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.35215"
+      ],
+      "reviewedAt": "2026-11-02"
+    },
+    {
+      "slug": "inferpriv",
+      "name": "InferPriv",
+      "status": "keep",
+      "reason": "The primary paper evaluates inferential privacy leakage of sensitive user attributes from LLM assistant replies.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.34640"
+      ],
+      "reviewedAt": "2026-11-02"
+    },
+    {
+      "slug": "guardrebind",
+      "name": "GuardRebind",
+      "status": "keep",
+      "reason": "The primary paper evaluates target-rebinding attacks that fool LLM safety guard models into judging decoy text.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.31695"
+      ],
+      "reviewedAt": "2026-11-02"
+    },
+    {
+      "slug": "comfair",
+      "name": "ComFair",
+      "status": "keep",
+      "reason": "The primary paper evaluates intersectional multi-attribute fairness and bias of LLMs.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.35069"
+      ],
+      "reviewedAt": "2026-11-02"
+    },
+    {
+      "slug": "foresightsafety-vla",
+      "name": "ForesightSafety-VLA",
+      "status": "keep",
+      "reason": "The primary paper evaluates physical, instruction-side and perception-side safety of vision-language-action models.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2606.27079"
+      ],
+      "reviewedAt": "2026-11-02"
+    },
+    {
+      "slug": "sentrybench",
+      "name": "SentryBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates adversarial robustness, over-refusal and over-reaction of tool-using LLM agents in public-safety deployments.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.34535"
+      ],
+      "reviewedAt": "2026-11-02"
     }
   ]
 }

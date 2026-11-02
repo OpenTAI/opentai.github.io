@@ -1369,6 +1369,53 @@ export const datasetConfig: SubpageConfig = {
       domain: "Agents",
     },
     {
+      name: "MSafeTemp",
+      note: "Template-based multilingual safety-alignment data in 60 languages: English harmful seed prompts are converted into slot templates, translated and refilled with translated harmful, culturally localized harmful and benign minimal-pair entities, with SFT and DPO configs for refusal training and over-refusal control.",
+      type: "LLMs",
+      venue: "AI4GOOD @ NeurIPS 2026 / arXiv 2026",
+      year: "2026",
+      tags: [
+        "training data",
+      ],
+      stats: [
+        {
+          label: "Recorded size",
+          value: "1,551,799 wildguard train prompts (plus SFT/DPO configs; 368,820 + 251,886 test prompts)",
+        },
+      ],
+      resources: [
+        {
+          label: "Hugging Face",
+          href: "https://huggingface.co/datasets/swiss-ai/MSafeTemp",
+        },
+        {
+          label: "Paper",
+          href: "https://arxiv.org/abs/2610.40516",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/swiss-ai/msafetemp",
+        },
+      ],
+      primaryUrl: "https://huggingface.co/datasets/swiss-ai/MSafeTemp",
+      domains: [
+        "LLMs",
+      ],
+      usageCount: 1,
+      sourcePapers: [
+        {
+          arxivId: "2610.40516",
+          domain: "LLMs",
+          evidence: "Official HF dataset card lists the wildguard train split (1,551,799 rows, 44 languages) for 'safety training', split by source seed from its test split, plus sft (train) and dpo configs, and states the release is for refusal training and over-refusal control; arXiv:2610.40516 trains multilingual models (SFT/DPO) on this template-augmented data.",
+          source: {
+            type: "primary-paper",
+            url: "https://arxiv.org/abs/2610.40516",
+          },
+        },
+      ],
+      domain: "LLMs",
+    },
+    {
       name: "Nemotron-Safety-Guard-Dataset-v3",
       note: "Description not recorded yet.",
       type: "LLMs",

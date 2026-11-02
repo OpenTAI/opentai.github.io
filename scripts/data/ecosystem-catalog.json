@@ -1190,6 +1190,42 @@
         "https://github.com/OpenTAI/opentai.github.io/issues/158"
       ],
       "verificationNote": "Primary sources checked 2026-10-26: arXiv:2604.12284 (WebAgentGuard: A Reasoning-Driven Guard Model for Detecting Prompt Injection Attacks in Web Agents; Chen, Cao, Li, Li et al.; comments: accepted by WACV 2027); GitHub LukeChen-go/webagentguard (public; no license file declared; train/ SFT (LLaMA-Factory) + GRPO (verl) code and data, eval/ VPI, EIA and popup benchmark JSONs; README links both checkpoints); HF Yulin123/guard-qwen3-8b and Yulin123/guard-qwen3-4b (public, not gated, MIT tag; full safetensors shards). Guard Models / Agents. Paper first posted 2026-04; official code/weights release is new. Training data not listed separately (not filed). Added from issue #158."
+    },
+    {
+      "id": "heads-of-security",
+      "name": "Heads of Security",
+      "category": "Security Models",
+      "description": "Prompt-injection defense that enforces instruction-data separation through a small set of learned per-head attention gates (18,432 gate parameters for GPT-OSS-20B), letting the model reason over untrusted tool results without following injected instructions. Released as trained gates for GPT-OSS-20B and Llama-3.3-70B-Instruct, loadable on top of the original base weights via the heads-of-security package (Transformers/vLLM). The black-box RL-Hammer attack reaches 97% attack success on GPT-OSS-20B and 85% on SecAlign but only 10% on HoS, while base-model utility is preserved.",
+      "descriptionZh": "通过少量可学习的逐注意力头门控（GPT-OSS-20B 上共 18,432 个门控参数）强制实现指令与数据分离的提示注入防御，使模型能够对不可信的工具结果进行推理而不执行其中注入的指令。以训练好的门控权重形式发布，适用于 GPT-OSS-20B 与 Llama-3.3-70B-Instruct，可通过 heads-of-security 包（Transformers/vLLM）在原始基座权重之上加载。黑盒 RL-Hammer 攻击在 GPT-OSS-20B 上成功率达 97%、在 SecAlign 上达 85%，而在 HoS 上仅为 10%，同时保持基座模型的通用能力。",
+      "year": 2026,
+      "publisher": "Shilov et al. (Imperial College London)",
+      "github": "https://github.com/imperial-aisp/heads_of_security",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/imperial-aisp/heads_of_security"
+        },
+        {
+          "label": "Hugging Face GPT-OSS-20B",
+          "url": "https://huggingface.co/imperial-cpg/hos-gpt-oss-20b"
+        },
+        {
+          "label": "Hugging Face Llama-3.3-70B",
+          "url": "https://huggingface.co/imperial-cpg/hos-llama-3.3-70b-instruct"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.37657"
+        }
+      ],
+      "sources": [
+        "https://github.com/imperial-aisp/heads_of_security",
+        "https://huggingface.co/imperial-cpg/hos-gpt-oss-20b",
+        "https://huggingface.co/imperial-cpg/hos-llama-3.3-70b-instruct",
+        "https://arxiv.org/abs/2610.37657",
+        "https://github.com/OpenTAI/opentai.github.io/issues/169"
+      ],
+      "verificationNote": "Primary sources checked 2026-11-02: arXiv:2610.37657 (Heads of Security: Learned Attention Gates Improve Prompt Injection Robustness; Shilov et al.); GitHub imperial-aisp/heads_of_security (public, MIT; README links paper, website, HF collection and demo); HF imperial-cpg/hos-gpt-oss-20b and imperial-cpg/hos-llama-3.3-70b-instruct (public, not gated; gates.safetensors + gates_config.json, base weights loaded from the original models; model cards declare no license). Security Models / Agents as proposed (prompt-injection-robust defended model, not a guard classifier; Aligned Models would also fit, cf. AgentSafeEvo-Defender). Added from issue #169."
     }
   ],
   "frameworks": [

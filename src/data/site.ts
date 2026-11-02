@@ -5331,6 +5331,212 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  "v-ast-bench": {
+    slug: "v-ast-bench",
+    name: "V³AST-Bench",
+    category: "Agents",
+    description: "Verifiable, valid and versatile safety benchmark for coding agents: 212 risk tasks across 18 categories, each paired with a capability-twin control task (424 total), run in dedicated runtime environments that verify harm and task outcomes through executable checks over states, records and artifact behavior, so harm avoidance can be separated from task incapability. Ships adapters for six agent harnesses and a Docker runner. Across 51 model-harness combinations (86,496 trials), even the strongest configuration still causes verified harm on 20.9% of tasks, and explicit risk recognition does not reliably prevent harmful actions.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.35188",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Alibaba-AAIG/VAST-Bench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2610.35188",
+    paperUrl: "https://arxiv.org/abs/2610.35188",
+    repo: "Alibaba-AAIG/VAST-Bench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  skilllifebench: {
+    slug: "skilllifebench",
+    name: "SkillLifeBench",
+    category: "Agents",
+    description: "Benchmark for security across the lifecycle of agent skills, where the stored code, selected version and loaded implementation of reusable skills can diverge across tasks and updates. 388 paired scenarios span implementation, interface, runtime, composition and version changes, evaluated on two paired decision tracks: 89 runtime tasks and 60 autonomous lifecycle tasks (12 templates) in which agents can inspect, select and reconfigure skills while completing verifiable user requests. Joint success requires task completion without the registered attack goal; across 14 models, lifecycle tasks separate models with similar runtime scores.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.35215",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Tasselszcx/SkillLifeBench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2610.35215",
+    paperUrl: "https://arxiv.org/abs/2610.35215",
+    repo: "Tasselszcx/SkillLifeBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  inferpriv: {
+    slug: "inferpriv",
+    name: "InferPriv",
+    category: "LLMs",
+    description: "Benchmark for inferential privacy leakage in LLM assistants with memory: whether an honest-but-curious recipient can infer a user's sensitive attributes from the assistant's reply on a routine task, beyond direct disclosure of a stated secret. Built from 10 personas with 27 memory statements each, 10 sensitive attributes and 10 routine tasks (950 evaluation cells). Under a privacy-aware system prompt, frontier models reach near-zero direct leakage while inferential leakage stays at 16.2–25.2%.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.34640",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/PengrunH/InferPriv",
+      },
+    ],
+    stats: [],
+    tags: [
+      "privacy",
+    ],
+    arxivId: "2610.34640",
+    paperUrl: "https://arxiv.org/abs/2610.34640",
+    repo: "PengrunH/InferPriv",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  guardrebind: {
+    slug: "guardrebind",
+    name: "GuardRebind",
+    category: "LLMs",
+    description: "Benchmark of target-rebinding attacks on LLM safety guards: content that imitates the guard prompt appends a forged second task or decoy so the guard grades the harmless decoy instead of the harmful request. Covers 52 attack families plus 5 controls against five guard families (Shieldstral-1.0-3B, gpt-oss-safeguard, ShieldGemma, Llama Guard 3/4, Qwen3Guard); each guard has a family that clears at least 93% of its flagged items. The paper also releases a rebinding-fixed Shieldstral LoRA adapter that cuts attack success from 75% to 0.8–1.6% on held-out families.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.31695",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/ukanwat/guardrebind",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2610.31695",
+    paperUrl: "https://arxiv.org/abs/2610.31695",
+    repo: "ukanwat/guardrebind",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  comfair: {
+    slug: "comfair",
+    name: "ComFair",
+    category: "LLMs",
+    description: "Configurable multi-attribute benchmark for intersectional fairness in LLMs. Converts existing single-attribute fairness data into 479,066 controlled dual- and multi-attribute instances, each paired with its task-equivalent source, across Recognition, Selection, Continuation and Conversation tasks, enabling a unified audit of performance and bias-score shifts, error introduction versus masking when attributes are added, and model-ranking stability. Experiments on ten LLMs show task- and subgroup-dependent sensitivity that single-attribute audits miss.",
+    venue: "EMNLP 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.35069",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Shiayuiu/ComFair",
+      },
+    ],
+    stats: [],
+    tags: [
+      "fairness",
+    ],
+    arxivId: "2610.35069",
+    paperUrl: "https://arxiv.org/abs/2610.35069",
+    repo: "Shiayuiu/ComFair",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "foresightsafety-vla": {
+    slug: "foresightsafety-vla",
+    name: "ForesightSafety-VLA",
+    category: "Embodied AI",
+    description: "Unified diagnostic safety benchmark for vision-language-action (VLA) models on RoboTwin. Defines a 13-category safety taxonomy covering physical interaction safety (Safe-Core), instruction-side safety (Safe-Lang) and perception-side safety (Safe-Vis), with 66 safety scenarios evaluated under controlled variation of scene structure, language command and visual observation so failure sources can be diagnosed. Beyond binary task success it measures process-level risk such as cumulative hazard during execution.",
+    venue: "IROS 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2606.27079",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/tuotuoLyu/ForesightSafety-VLA",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2606.27079",
+    paperUrl: "https://arxiv.org/abs/2606.27079",
+    repo: "tuotuoLyu/ForesightSafety-VLA",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  sentrybench: {
+    slug: "sentrybench",
+    name: "SentryBench",
+    category: "Agents",
+    description: "Cost-sensitive benchmark for adversarial robustness of tool-using LLM agents in public-safety deployments (alerts, dispatch, citizen-record queries, infrastructure). Scores agents on a two-sided frontier that jointly measures attack success, over-refusal (missing a real emergency) and over-reaction (unwarranted alert or dispatch, over-broad query), plus correct containment via human escalation, under an asymmetric deployment-harm cost. 190 scenarios are grounded in real emergency-call transcripts, disaster messages and real injection/jailbreak payloads; all tools are mocked.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.34535",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/mayusuf/SentryBench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2610.34535",
+    paperUrl: "https://arxiv.org/abs/2610.34535",
+    repo: "mayusuf/SentryBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -10979,6 +11185,168 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         domain: "Agents",
         property: "Prompt Injection",
       },
+      {
+        name: "V³AST-Bench",
+        note: "Verifiable, valid and versatile safety benchmark for coding agents: 212 risk tasks across 18 categories, each paired with a capability-twin control task (424 total), run in dedicated runtime environments that verify harm and task outcomes through executable checks over states, records and artifact behavior, so harm avoidance can be separated from task incapability. Ships adapters for six agent harnesses and a Docker runner. Across 51 model-harness combinations (86,496 trials), even the strongest configuration still causes verified harm on 20.9% of tasks, and explicit risk recognition does not reliably prevent harmful actions.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.35188",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/Alibaba-AAIG/VAST-Bench",
+          },
+        ],
+        slug: "v-ast-bench",
+        domain: "Agents",
+        property: "Harmful Content",
+      },
+      {
+        name: "SkillLifeBench",
+        note: "Benchmark for security across the lifecycle of agent skills, where the stored code, selected version and loaded implementation of reusable skills can diverge across tasks and updates. 388 paired scenarios span implementation, interface, runtime, composition and version changes, evaluated on two paired decision tracks: 89 runtime tasks and 60 autonomous lifecycle tasks (12 templates) in which agents can inspect, select and reconfigure skills while completing verifiable user requests. Joint success requires task completion without the registered attack goal; across 14 models, lifecycle tasks separate models with similar runtime scores.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.35215",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/Tasselszcx/SkillLifeBench",
+          },
+        ],
+        slug: "skilllifebench",
+        domain: "Agents",
+      },
+      {
+        name: "InferPriv",
+        note: "Benchmark for inferential privacy leakage in LLM assistants with memory: whether an honest-but-curious recipient can infer a user's sensitive attributes from the assistant's reply on a routine task, beyond direct disclosure of a stated secret. Built from 10 personas with 27 memory statements each, 10 sensitive attributes and 10 routine tasks (950 evaluation cells). Under a privacy-aware system prompt, frontier models reach near-zero direct leakage while inferential leakage stays at 16.2–25.2%.",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "privacy",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.34640",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/PengrunH/InferPriv",
+          },
+        ],
+        slug: "inferpriv",
+        domain: "LLMs",
+        property: "Privacy",
+      },
+      {
+        name: "GuardRebind",
+        note: "Benchmark of target-rebinding attacks on LLM safety guards: content that imitates the guard prompt appends a forged second task or decoy so the guard grades the harmless decoy instead of the harmful request. Covers 52 attack families plus 5 controls against five guard families (Shieldstral-1.0-3B, gpt-oss-safeguard, ShieldGemma, Llama Guard 3/4, Qwen3Guard); each guard has a family that clears at least 93% of its flagged items. The paper also releases a rebinding-fixed Shieldstral LoRA adapter that cuts attack success from 75% to 0.8–1.6% on held-out families.",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.31695",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/ukanwat/guardrebind",
+          },
+        ],
+        slug: "guardrebind",
+        domain: "LLMs",
+        property: "Harmful Content",
+      },
+      {
+        name: "ComFair",
+        note: "Configurable multi-attribute benchmark for intersectional fairness in LLMs. Converts existing single-attribute fairness data into 479,066 controlled dual- and multi-attribute instances, each paired with its task-equivalent source, across Recognition, Selection, Continuation and Conversation tasks, enabling a unified audit of performance and bias-score shifts, error introduction versus masking when attributes are added, and model-ranking stability. Experiments on ten LLMs show task- and subgroup-dependent sensitivity that single-attribute audits miss.",
+        type: "LLMs",
+        venue: "EMNLP 2026",
+        year: "2026",
+        tags: [
+          "fairness",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.35069",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/Shiayuiu/ComFair",
+          },
+        ],
+        slug: "comfair",
+        domain: "LLMs",
+        property: "Fairness",
+      },
+      {
+        name: "ForesightSafety-VLA",
+        note: "Unified diagnostic safety benchmark for vision-language-action (VLA) models on RoboTwin. Defines a 13-category safety taxonomy covering physical interaction safety (Safe-Core), instruction-side safety (Safe-Lang) and perception-side safety (Safe-Vis), with 66 safety scenarios evaluated under controlled variation of scene structure, language command and visual observation so failure sources can be diagnosed. Beyond binary task success it measures process-level risk such as cumulative hazard during execution.",
+        type: "Embodied AI",
+        venue: "IROS 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2606.27079",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/tuotuoLyu/ForesightSafety-VLA",
+          },
+        ],
+        slug: "foresightsafety-vla",
+        domain: "Embodied AI",
+      },
+      {
+        name: "SentryBench",
+        note: "Cost-sensitive benchmark for adversarial robustness of tool-using LLM agents in public-safety deployments (alerts, dispatch, citizen-record queries, infrastructure). Scores agents on a two-sided frontier that jointly measures attack success, over-refusal (missing a real emergency) and over-reaction (unwarranted alert or dispatch, over-broad query), plus correct containment via human escalation, under an asymmetric deployment-harm cost. 190 scenarios are grounded in real emergency-call transcripts, disaster messages and real injection/jailbreak payloads; all tools are mocked.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.34535",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/mayusuf/SentryBench",
+          },
+        ],
+        slug: "sentrybench",
+        domain: "Agents",
+        property: "Jailbreak",
+      },
     ],
   },
   models: {
@@ -11621,6 +11989,24 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
           "Agents",
         ],
         domain: "Agents",
+      },
+      {
+        name: "MSafeTemp",
+        slug: "msafetemp",
+        note: "Template-based multilingual safety-alignment data in 60 languages: English harmful seed prompts are converted into slot templates, translated and refilled with translated harmful, culturally localized harmful and benign minimal-pair enti…",
+        type: "LLMs",
+        venue: "AI4GOOD @ NeurIPS 2026 / arXiv 2026",
+        year: "2026",
+        tags: [
+          "training data",
+        ],
+        resources: [],
+        primaryUrl: "https://huggingface.co/datasets/swiss-ai/MSafeTemp",
+        repo: "swiss-ai/msafetemp",
+        domains: [
+          "LLMs",
+        ],
+        domain: "LLMs",
       },
       {
         name: "Nemotron-Safety-Guard-Dataset-v3",
