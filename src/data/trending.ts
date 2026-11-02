@@ -130,6 +130,13 @@ export const trendingBenchmarkSlugs: readonly string[] = [
   "redclaw-bench",
   "diagsafe",
   "carryoverbench",
+  "v-ast-bench",
+  "skilllifebench",
+  "inferpriv",
+  "guardrebind",
+  "comfair",
+  "foresightsafety-vla",
+  "sentrybench",
 ];
 
 export const trendingDatasetSlugs: readonly string[] = [
@@ -155,6 +162,7 @@ export const trendingDatasetSlugs: readonly string[] = [
   "llavaguard-dataset",
   "llm-lat-harmful-dataset",
   "mm-safetybench",
+  "msafetemp",
   "nemotron-safety-guard-dataset-v3",
   "obligationguard-training-data",
   "olid",

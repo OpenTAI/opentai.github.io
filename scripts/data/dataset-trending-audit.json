@@ -493,6 +493,16 @@
         "https://huggingface.co/datasets/md-nishat-008/BanglaShield-Dataset"
       ],
       "reviewedAt": "2026-10-26"
+    },
+    {
+      "slug": "msafetemp",
+      "name": "MSafeTemp",
+      "status": "keep",
+      "reason": "Template-based multilingual harmful and benign prompts in 60 languages for safety refusal training and over-refusal control.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/swiss-ai/MSafeTemp"
+      ],
+      "reviewedAt": "2026-11-02"
     }
   ]
 }

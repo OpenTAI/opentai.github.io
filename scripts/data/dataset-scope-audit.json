@@ -1026,6 +1026,12 @@
       "status": "keep",
       "reason": "Kept: official HF release and repo ship distinct group-aware train (7,172) and validation (1,024) splits, x3 script forms, that the README states were used to fine-tune the BanglaShield classifier; separate from the 2,049-item held-out benchmark test split. Dual-listed from issue #152.",
       "sourceUrl": "https://huggingface.co/datasets/md-nishat-008/BanglaShield-Dataset"
+    },
+    {
+      "name": "MSafeTemp",
+      "status": "keep",
+      "reason": "Kept: official HF release ships a 1,551,799-prompt wildguard train split documented for safety training (seed-disjoint from test) plus SFT and DPO configs for multilingual safety alignment. Dataset only; test configs are localized variants of existing benchmarks. Added from issue #168.",
+      "sourceUrl": "https://huggingface.co/datasets/swiss-ai/MSafeTemp"
     }
   ]
 }
