@@ -1264,6 +1264,37 @@ export const ecosystemModels: EcosystemRecord[] = [
     ],
     verificationNote: "Primary sources checked 2026-11-02: arXiv:2610.37657 (Heads of Security: Learned Attention Gates Improve Prompt Injection Robustness; Shilov et al.); GitHub imperial-aisp/heads_of_security (public, MIT; README links paper, website, HF collection and demo); HF imperial-cpg/hos-gpt-oss-20b and imperial-cpg/hos-llama-3.3-70b-instruct (public, not gated; gates.safetensors + gates_config.json, base weights loaded from the original models; model cards declare no license). Security Models / Agents as proposed (prompt-injection-robust defended model, not a guard classifier; Aligned Models would also fit, cf. AgentSafeEvo-Defender). Added from issue #169.",
   },
+  {
+    id: "pguard",
+    name: "PGuard",
+    category: "Guard Models",
+    description: "Native, streaming, plug-in guardrail for text and multimodal LLMs built on a frozen foundation-model backbone: dynamic layer gating aggregates residual-stream representations across layers for token-level safety detection during prefill and decoding, without altering the backbone inference path. Variants include a lightweight stateless head and sequence-aware multi-scale causal EMA-attention and GRU variants; SGLang integration adds only 0.82-2.26% end-to-end overhead on Qwen3.5-122B-A10B. Evaluated on 30+ benchmarks (text and multimodal safety, jailbreaks, cyber/CBRN, multilingual) with average text F1 of 0.836 on Qwen3.5-9B. Released with training and deployment code.",
+    descriptionZh: "面向文本与多模态 LLM 的原生、流式、即插即用护栏，构建于冻结的基础模型骨干之上：动态层门控聚合各层残差流表示，在预填充与解码阶段进行逐 token 的安全检测，且不改变骨干推理路径。变体包括轻量无状态头，以及序列感知的多尺度因果 EMA 注意力与 GRU 变体；SGLang 集成在 Qwen3.5-122B-A10B 上仅带来 0.82%–2.26% 的端到端开销。在 30 多个基准（文本与多模态安全、越狱、网络/CBRN、多语言）上评测，Qwen3.5-9B 上文本平均 F1 为 0.836。同时发布训练与部署代码。",
+    year: 2026,
+    publisher: "Alibaba AAIG",
+    github: "https://github.com/Alibaba-AAIG/PGuard",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Alibaba-AAIG/PGuard",
+      },
+      {
+        label: "Hugging Face",
+        url: "https://huggingface.co/Alibaba-AAIG/PGuard",
+      },
+      {
+        label: "Paper",
+        url: "https://arxiv.org/abs/2611.02791",
+      },
+    ],
+    sources: [
+      "https://github.com/Alibaba-AAIG/PGuard",
+      "https://huggingface.co/Alibaba-AAIG/PGuard",
+      "https://arxiv.org/abs/2611.02791",
+      "https://github.com/OpenTAI/opentai.github.io/issues/178",
+    ],
+    verificationNote: "Primary sources checked 2026-11-09: arXiv:2611.02791 (PGuard: A Native, Streaming, and Plug-in Guardrail for Multimodal Large Language Models); GitHub Alibaba-AAIG/PGuard (public, Apache-2.0; README links HF collection, ModelScope, train/ and deploy/); HF Alibaba-AAIG/PGuard (public, not gated, Apache-2.0; PGuard-EMA-Qwen3-8B and PGuard-EMA-Qwen3.5-122B-A10B weights). Guard Models / LLMs (includes multimodal). Added from issue #178.",
+  },
 ];
 
 export const ecosystemFrameworks: EcosystemRecord[] = [

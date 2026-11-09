@@ -1442,6 +1442,76 @@
         "https://arxiv.org/abs/2610.34535"
       ],
       "reviewedAt": "2026-11-02"
+    },
+    {
+      "slug": "privacytrace",
+      "name": "PrivacyTrace",
+      "status": "keep",
+      "reason": "The primary paper evaluates privacy leakage of user profiles inferred from MCP tool-call traces of LLM agents.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2610.41885"
+      ],
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "slug": "memharmbench",
+      "name": "MemHarmBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates cross-session prompt injection that persists in the memory of AI agents.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.01700"
+      ],
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "slug": "veriharm-bench",
+      "name": "VeriHarm-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates harmful success of LLM coding agents with verifiable executable harm tests.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.03575"
+      ],
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "slug": "task-tampering-prompt-injection-benchmark",
+      "name": "Task-Tampering Prompt Injection Benchmark",
+      "status": "keep",
+      "reason": "The primary paper evaluates indirect prompt injection that tampers with decisions of in-progress agent tasks.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.07640"
+      ],
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "slug": "mcphallu",
+      "name": "MCPHallu",
+      "status": "keep",
+      "reason": "The primary paper evaluates hallucination-prone reasoning, execution and memory failures of LLM agents in MCP environments.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.07689"
+      ],
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "slug": "rok-fortress",
+      "name": "ROK-FORTRESS",
+      "status": "keep",
+      "reason": "The primary paper evaluates culturally adversarial national security and public safety risks of LLMs in English and Korean.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2605.14152"
+      ],
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "slug": "coding-agent-tool-call-safety-decision-policy-rules",
+      "name": "Coding Agent Tool-Call Safety (decision-policy-rules)",
+      "status": "keep",
+      "reason": "The primary paper evaluates decision models as policy gates that detect unsafe tool calls of coding agents.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.02155"
+      ],
+      "reviewedAt": "2026-11-09"
     }
   ]
 }

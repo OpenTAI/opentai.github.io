@@ -1069,6 +1069,90 @@
       "description": "Cost-sensitive benchmark for adversarial robustness of tool-using LLM agents in public-safety deployments (alerts, dispatch, citizen-record queries, infrastructure). Scores agents on a two-sided frontier that jointly measures attack success, over-refusal (missing a real emergency) and over-reaction (unwarranted alert or dispatch, over-broad query), plus correct containment via human escalation, under an asymmetric deployment-harm cost. 190 scenarios are grounded in real emergency-call transcripts, disaster messages and real injection/jailbreak payloads; all tools are mocked.",
       "descriptionZh": "面向公共安全部署场景（警报、调度、公民记录查询、基础设施）中工具调用 LLM 智能体对抗鲁棒性的代价敏感基准。以双边前沿对智能体打分，同时度量攻击成功率、过度拒绝（漏掉真实紧急情况）与过度反应（无依据的警报或调度、过宽查询），以及通过人工升级实现的正确遏制，并采用非对称的部署危害代价。190 个场景基于真实紧急呼叫记录、灾害信息与真实注入/越狱载荷构建，所有工具均为模拟。",
       "verificationNote": "Primary sources checked 2026-11-02: arXiv:2610.34535 (SentryBench: A Cost-Sensitive Benchmark for Adversarial Robustness of Tool-Using LLM Agents in Public-Safety Deployments; Yusuf, Aditi, Mazed); GitHub mayusuf/SentryBench (public, MIT, created 2026-10-30; README links the arXiv paper; data/scenarios/{alerts,dispatch,infra,records}.json, sentrybench/ runner, defenses and deterministic scorer). The arXiv abstract does not itself link the repo; linkage is via the repo README, matching title and first author. Benchmark only (eval scenarios; no training split). Added from issue #167."
+    },
+    {
+      "name": "PrivacyTrace",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2610.41885",
+      "githubUrl": "https://github.com/AI45Lab/PrivacyTrace",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Benchmark for user-profile inference (privacy leakage) from MCP tool-call traces of LLM agents, without access to user conversations. 1,000 synthetic user profiles (17 attributes) and 4,000 agent trajectories across travel, health, shopping and career-learning domains, generated with real tools from 25 MCP servers (67,950 recorded tool events). Four LLM attackers reach 26.25% profile-inference success vs 17.97% for prior-based guessing; tool arguments and returned results are the main evidence, and cross-session linking amplifies risk.",
+      "descriptionZh": "面向 LLM 智能体 MCP 工具调用轨迹的用户画像推断（隐私泄露）基准，攻击者无需访问用户对话。包含 1,000 个合成用户画像（17 个属性）与 4,000 条智能体轨迹，覆盖旅行、健康、购物与职业学习领域，使用 25 个 MCP 服务器的真实工具生成（共 67,950 条工具事件记录）。四个 LLM 攻击者的画像推断成功率为 26.25%，高于基于先验猜测的 17.97%；工具参数与返回结果是主要证据，跨会话关联会放大风险。",
+      "verificationNote": "arXiv:2610.41885 (How Much Can Tool Calls Reveal About You? Privacy Leakage from Tool-Call Traces; AI45Lab); GitHub AI45Lab/PrivacyTrace (public; no LICENSE file, README and DATA_CARD say license to be specified; generate/, agent/, attack/, eval/ code); HF datasets SowingG/PrivacyTrace (public but gated with manual approval; tagged benchmark). Benchmark only (evaluation trajectories and attack/scoring pipeline; no training split). Added from issue #171."
+    },
+    {
+      "name": "MemHarmBench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2611.01700",
+      "githubUrl": "https://github.com/Kirito14IT/MemHarmBench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Victim-centric benchmark for cross-session prompt injection in persistent-memory AI agents: malicious instructions are retained in memory, the attack content is removed, and a new session with a legitimate task checks whether the agent follows attacker intent, completes the task and shows execution anomalies. Covers three victim categories (users, workspace/project owners, external stakeholders) with 288 cases, 24 templates and 12 contexts, plus Docker-based native-agent evaluation tooling. Attacks often stay behaviorally stealthy: agents complete tasks normally while making attacker-aligned decisions.",
+      "descriptionZh": "面向持久记忆 AI 智能体跨会话提示注入的“受害者视角”基准：恶意指令被保留在记忆中，攻击内容随后被移除，再在新会话中执行合法任务，检查智能体是否遵循攻击者意图、是否完成任务以及是否出现执行异常。覆盖三类受害者（用户、工作区/项目所有者、外部相关方），包含 288 个用例、24 个模板与 12 种情境，并提供基于 Docker 的原生智能体评测工具。攻击往往行为隐蔽：智能体正常完成任务，却做出与攻击者一致的决策。",
+      "verificationNote": "arXiv:2611.01700 (MemHarmBench: Evaluating Cross-Session Prompt Injection in Memory-Persistent AI Agents); GitHub Kirito14IT/MemHarmBench (public, MIT; README links arXiv; cases/, data/, docker/, src/, configs/, scripts/). Benchmark only (evaluation cases and harness; no training split). Repo owner is an individual account. Added from issue #172."
+    },
+    {
+      "name": "VeriHarm-Bench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2611.03575",
+      "githubUrl": "https://github.com/wlchen0206/VeriHarm-Bench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Programmatically verifiable benchmark of 150 shell-scripting tasks measuring harmful success in LLM coding agents: the agent completes the benign task while causing unintended harm (deleting unrelated files, weakening access controls, corrupting data). Each task has pytest-style correctness tests plus hidden executable harm tests, so scoring needs no LLM judge. Built with the VeriHarm automatic construction framework; frontier agents reach about 95% task accuracy but only about 37% safe success.",
+      "descriptionZh": "可通过程序验证的基准，包含 150 个 shell 脚本任务，用于衡量 LLM 编码智能体的“有害成功”：智能体完成良性任务的同时造成意外危害（删除无关文件、削弱访问控制、破坏数据）。每个任务都有 pytest 风格的正确性测试与隐藏的可执行危害测试，评分无需 LLM 裁判。基于 VeriHarm 自动构建框架；前沿智能体任务准确率约 95%，但安全成功率仅约 37%。",
+      "verificationNote": "arXiv:2611.03575 (VeriHarm-Bench: Measuring Harmful Success in LLM Coding Agents Verifiably); GitHub wlchen0206/VeriHarm-Bench (public, MIT; Inspect AI task, report.py, DATASET_CARD.md, data/); HF datasets wlchen/VeriHarm-Bench-150 (public, MIT, data/test.jsonl only). Benchmark only (test-only evaluation tasks; no train split). Added from issue #173."
+    },
+    {
+      "name": "Task-Tampering Prompt Injection Benchmark",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2611.07640",
+      "githubUrl": "https://github.com/amazon-science/task-tampering-prompt-injection",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Indirect prompt-injection (IPI) benchmark where attacker-controlled content tampers with a decision of the task already in progress instead of redirecting it, defining IPI by authority rather than instruction-like wording. 90 validated cases and 1,433 injection variants across three tool-use environments (with MCP servers), with attacks targeting an agent's objective, decision rules, available actions, expected consequences, reading of observations or beliefs about state. Includes solver, scorers and defense implementations; a tool-policy defense still allows 15.4% attack success vs 17.0% undefended.",
+      "descriptionZh": "间接提示注入（IPI）基准：攻击者控制的内容不是重定向任务，而是篡改正在进行任务中的某个决策，以“权威性”而非类指令措辞来定义 IPI。包含 90 个经验证的用例与 1,433 个注入变体，覆盖三种工具使用环境（含 MCP 服务器），攻击目标包括智能体的目标、决策规则、可用动作、预期后果、对观察的解读或对状态的信念。附带求解器、评分器与防御实现；工具策略防御下攻击成功率仍为 15.4%，无防御时为 17.0%。",
+      "verificationNote": "arXiv:2611.07640 (Beyond Instruction Override: Benchmarking Indirect Prompt Injection with Task-Tampering Attacks; Amazon Science); GitHub amazon-science/task-tampering-prompt-injection (public; code and data under CC BY-NC-4.0, non-commercial; data/ with 90 cases and 1,433 variants, prompt_injection_benchmark/, third_party/). Benchmark only (evaluation cases; no training split). Benchmark has no official name; descriptive name used. Added from issue #174."
+    },
+    {
+      "name": "MCPHallu",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2611.07689",
+      "githubUrl": "https://github.com/J1zz/mcp_hallu",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Benchmark for diagnosing hallucination-prone failures of LLM agents in Model Context Protocol (MCP) environments along reasoning, execution and memory axes. 358 tasks across five capability domains on 36 production MCP servers (302 tools) in isolated containers; each task has a structural trigger for one of four subtypes: Branch Collapse, Unreachable Goal, Tool Misuse or Context Forgetting. 14 frontier LLM agents evaluated on 5,012 trajectories (average score 0.642; Unreachable Goal 0.458, only 23.2% pass).",
+      "descriptionZh": "用于诊断 LLM 智能体在 Model Context Protocol（MCP）环境中易发幻觉失败的基准，沿推理、执行与记忆三条轴线评估。包含 5 个能力领域的 358 个任务，运行于隔离容器中的 36 个生产级 MCP 服务器（302 个工具）；每个任务对四种子类型之一设有结构性触发：分支坍塌、目标不可达、工具误用或上下文遗忘。对 14 个前沿 LLM 智能体的 5,012 条轨迹进行评估（平均得分 0.642；目标不可达 0.458，仅 23.2% 通过）。",
+      "verificationNote": "arXiv:2611.07689 (MCPHallu: Benchmarking Reasoning, Execution, and Memory Hallucinations in MCP Agents); GitHub J1zz/mcp_hallu (public, Apache-2.0 LICENSE detected, README states MIT; anonymized double-blind repo; task_generation/final_tasks/*.jsonl, eval/, results/). Benchmark only (evaluation tasks; no training split). Scope: agent hallucination/reliability (trustworthiness). Added from issue #175."
+    },
+    {
+      "name": "ROK-FORTRESS",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2605.14152",
+      "githubUrl": "https://github.com/yash-scaleai/ROK-FORTRESS-release",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Bilingual (English-Korean) culturally adversarial safety benchmark for LLMs targeting national security and public safety (NSPS) risks, built on FORTRESS with a transcreation matrix that separates language effects from geopolitical grounding (US vs Korean entities and institutions). Public subset of 791 of 1,235 adversarial tasks across 4 NSPS risk domains, scored with a tier-weighted risk score; across 14 frontier and Korean regional models the linguistic drop in measured risk is 2.65x the contextual drop, with a 9x spread between safest and least safe models.",
+      "descriptionZh": "面向 LLM 的英韩双语文化对抗性安全基准，聚焦国家安全与公共安全（NSPS）风险，基于 FORTRESS 构建，并通过转创作矩阵将语言效应与地缘政治语境（美国 vs 韩国的实体与机构）区分开来。公开子集包含 1,235 个对抗任务中的 791 个，覆盖 4 个 NSPS 风险领域，采用分层加权风险分数评分；在 14 个前沿及韩国本地模型上，语言带来的风险下降为语境带来下降的 2.65 倍，最安全与最不安全模型之间相差 9 倍。",
+      "verificationNote": "arXiv:2605.14152 (ROK-FORTRESS: Measuring the Effect of Geopolitical Transcreation for National Security and Public Safety); GitHub yash-scaleai/ROK-FORTRESS-release (public, MIT; Scale AI employee account; rok_fortress_eval/, analysis/, configs/, data/); HF datasets ScaleAI/ROK-FORTRESS_public (gated auto, CC-BY-4.0; tagged benchmark). Benchmark only (adversarial evaluation tasks; no training split). Only the public subset is released. Added from issue #176."
+    },
+    {
+      "name": "Coding Agent Tool-Call Safety (decision-policy-rules)",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2611.02155",
+      "githubUrl": "https://github.com/agentapprove/decision-policy-rules",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Evaluation dataset and harness for runtime decision models acting as policy gates for coding agents. 2,643 synthetic, fictional tool invocations in 106 families (1,535 development, 1,108 sealed holdout), each labeled blind against 28 policy rules (data destruction, secret leakage, messaging the wrong person, etc.) in tool-only and with-context settings, plus a 320-case confirmation set. Used to evaluate 22 hosted decision models and two prompted general models: explicit boundaries written as examples and counterexamples raised recall by 5.5-26.1 points and reduced false positives.",
+      "descriptionZh": "面向充当编码智能体策略闸门的运行时决策模型的评测数据集与评测工具。包含 106 个家族共 2,643 个合成的虚构工具调用（1,535 个开发集、1,108 个封存留出集），在仅工具与带上下文两种设置下，依据 28 条策略规则（数据销毁、密钥泄露、误发消息给错误对象等）进行盲标，另有 320 例确认集。用于评估 22 个托管决策模型与两个提示式通用模型：以示例与反例形式写明的明确边界使召回率提升 5.5–26.1 个百分点，并降低误报。",
+      "verificationNote": "arXiv:2611.02155 (Decision Models as Policy Gates for Coding Agents: Explicit Policy Boundaries Improve Detection and Reduce False Alarms); GitHub agentapprove/decision-policy-rules (public; MIT code, data under a separate license; rounds/r4/dataset.json, DATASET-CARD.md, results/, src/ harness); HF datasets agentapprove/coding-agent-tool-call-safety (public, CC-BY-4.0). Benchmark only (dev/holdout splits evaluate policy gates; no training). Descriptive name used. Added from issue #177."
     }
   ]
 }

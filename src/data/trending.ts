@@ -137,6 +137,13 @@ export const trendingBenchmarkSlugs: readonly string[] = [
   "comfair",
   "foresightsafety-vla",
   "sentrybench",
+  "privacytrace",
+  "memharmbench",
+  "veriharm-bench",
+  "task-tampering-prompt-injection-benchmark",
+  "mcphallu",
+  "rok-fortress",
+  "coding-agent-tool-call-safety-decision-policy-rules",
 ];
 
 export const trendingDatasetSlugs: readonly string[] = [
