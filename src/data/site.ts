@@ -5537,6 +5537,214 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  privacytrace: {
+    slug: "privacytrace",
+    name: "PrivacyTrace",
+    category: "Agents",
+    description: "Benchmark for user-profile inference (privacy leakage) from MCP tool-call traces of LLM agents, without access to user conversations. 1,000 synthetic user profiles (17 attributes) and 4,000 agent trajectories across travel, health, shopping and career-learning domains, generated with real tools from 25 MCP servers (67,950 recorded tool events). Four LLM attackers reach 26.25% profile-inference success vs 17.97% for prior-based guessing; tool arguments and returned results are the main evidence, and cross-session linking amplifies risk.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2610.41885",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/AI45Lab/PrivacyTrace",
+      },
+    ],
+    stats: [],
+    tags: [
+      "privacy",
+    ],
+    arxivId: "2610.41885",
+    paperUrl: "https://arxiv.org/abs/2610.41885",
+    repo: "AI45Lab/PrivacyTrace",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  memharmbench: {
+    slug: "memharmbench",
+    name: "MemHarmBench",
+    category: "Agents",
+    description: "Victim-centric benchmark for cross-session prompt injection in persistent-memory AI agents: malicious instructions are retained in memory, the attack content is removed, and a new session with a legitimate task checks whether the agent follows attacker intent, completes the task and shows execution anomalies. Covers three victim categories (users, workspace/project owners, external stakeholders) with 288 cases, 24 templates and 12 contexts, plus Docker-based native-agent evaluation tooling. Attacks often stay behaviorally stealthy: agents complete tasks normally while making attacker-aligned decisions.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.01700",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Kirito14IT/MemHarmBench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "prompt injection",
+    ],
+    arxivId: "2611.01700",
+    paperUrl: "https://arxiv.org/abs/2611.01700",
+    repo: "Kirito14IT/MemHarmBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "veriharm-bench": {
+    slug: "veriharm-bench",
+    name: "VeriHarm-Bench",
+    category: "Agents",
+    description: "Programmatically verifiable benchmark of 150 shell-scripting tasks measuring harmful success in LLM coding agents: the agent completes the benign task while causing unintended harm (deleting unrelated files, weakening access controls, corrupting data). Each task has pytest-style correctness tests plus hidden executable harm tests, so scoring needs no LLM judge. Built with the VeriHarm automatic construction framework; frontier agents reach about 95% task accuracy but only about 37% safe success.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.03575",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/wlchen0206/VeriHarm-Bench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2611.03575",
+    paperUrl: "https://arxiv.org/abs/2611.03575",
+    repo: "wlchen0206/VeriHarm-Bench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "task-tampering-prompt-injection-benchmark": {
+    slug: "task-tampering-prompt-injection-benchmark",
+    name: "Task-Tampering Prompt Injection Benchmark",
+    category: "Agents",
+    description: "Indirect prompt-injection (IPI) benchmark where attacker-controlled content tampers with a decision of the task already in progress instead of redirecting it, defining IPI by authority rather than instruction-like wording. 90 validated cases and 1,433 injection variants across three tool-use environments (with MCP servers), with attacks targeting an agent's objective, decision rules, available actions, expected consequences, reading of observations or beliefs about state. Includes solver, scorers and defense implementations; a tool-policy defense still allows 15.4% attack success vs 17.0% undefended.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.07640",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/amazon-science/task-tampering-prompt-injection",
+      },
+    ],
+    stats: [],
+    tags: [
+      "prompt injection",
+    ],
+    arxivId: "2611.07640",
+    paperUrl: "https://arxiv.org/abs/2611.07640",
+    repo: "amazon-science/task-tampering-prompt-injection",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  mcphallu: {
+    slug: "mcphallu",
+    name: "MCPHallu",
+    category: "Agents",
+    description: "Benchmark for diagnosing hallucination-prone failures of LLM agents in Model Context Protocol (MCP) environments along reasoning, execution and memory axes. 358 tasks across five capability domains on 36 production MCP servers (302 tools) in isolated containers; each task has a structural trigger for one of four subtypes: Branch Collapse, Unreachable Goal, Tool Misuse or Context Forgetting. 14 frontier LLM agents evaluated on 5,012 trajectories (average score 0.642; Unreachable Goal 0.458, only 23.2% pass).",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.07689",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/J1zz/mcp_hallu",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2611.07689",
+    paperUrl: "https://arxiv.org/abs/2611.07689",
+    repo: "J1zz/mcp_hallu",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "rok-fortress": {
+    slug: "rok-fortress",
+    name: "ROK-FORTRESS",
+    category: "LLMs",
+    description: "Bilingual (English-Korean) culturally adversarial safety benchmark for LLMs targeting national security and public safety (NSPS) risks, built on FORTRESS with a transcreation matrix that separates language effects from geopolitical grounding (US vs Korean entities and institutions). Public subset of 791 of 1,235 adversarial tasks across 4 NSPS risk domains, scored with a tier-weighted risk score; across 14 frontier and Korean regional models the linguistic drop in measured risk is 2.65x the contextual drop, with a 9x spread between safest and least safe models.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2605.14152",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/yash-scaleai/ROK-FORTRESS-release",
+      },
+    ],
+    stats: [],
+    tags: [
+      "robustness",
+    ],
+    arxivId: "2605.14152",
+    paperUrl: "https://arxiv.org/abs/2605.14152",
+    repo: "yash-scaleai/ROK-FORTRESS-release",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "coding-agent-tool-call-safety-decision-policy-rules": {
+    slug: "coding-agent-tool-call-safety-decision-policy-rules",
+    name: "Coding Agent Tool-Call Safety (decision-policy-rules)",
+    category: "Agents",
+    description: "Evaluation dataset and harness for runtime decision models acting as policy gates for coding agents. 2,643 synthetic, fictional tool invocations in 106 families (1,535 development, 1,108 sealed holdout), each labeled blind against 28 policy rules (data destruction, secret leakage, messaging the wrong person, etc.) in tool-only and with-context settings, plus a 320-case confirmation set. Used to evaluate 22 hosted decision models and two prompted general models: explicit boundaries written as examples and counterexamples raised recall by 5.5-26.1 points and reduced false positives.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.02155",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/agentapprove/decision-policy-rules",
+      },
+    ],
+    stats: [],
+    tags: [
+      "privacy",
+    ],
+    arxivId: "2611.02155",
+    paperUrl: "https://arxiv.org/abs/2611.02155",
+    repo: "agentapprove/decision-policy-rules",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -11346,6 +11554,171 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         slug: "sentrybench",
         domain: "Agents",
         property: "Jailbreak",
+      },
+      {
+        name: "PrivacyTrace",
+        note: "Benchmark for user-profile inference (privacy leakage) from MCP tool-call traces of LLM agents, without access to user conversations. 1,000 synthetic user profiles (17 attributes) and 4,000 agent trajectories across travel, health, shopping and career-learning domains, generated with real tools from 25 MCP servers (67,950 recorded tool events). Four LLM attackers reach 26.25% profile-inference success vs 17.97% for prior-based guessing; tool arguments and returned results are the main evidence, and cross-session linking amplifies risk.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "privacy",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2610.41885",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/AI45Lab/PrivacyTrace",
+          },
+        ],
+        slug: "privacytrace",
+        domain: "Agents",
+        property: "Privacy",
+      },
+      {
+        name: "MemHarmBench",
+        note: "Victim-centric benchmark for cross-session prompt injection in persistent-memory AI agents: malicious instructions are retained in memory, the attack content is removed, and a new session with a legitimate task checks whether the agent follows attacker intent, completes the task and shows execution anomalies. Covers three victim categories (users, workspace/project owners, external stakeholders) with 288 cases, 24 templates and 12 contexts, plus Docker-based native-agent evaluation tooling. Attacks often stay behaviorally stealthy: agents complete tasks normally while making attacker-aligned decisions.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "prompt injection",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.01700",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/Kirito14IT/MemHarmBench",
+          },
+        ],
+        slug: "memharmbench",
+        domain: "Agents",
+        property: "Prompt Injection",
+      },
+      {
+        name: "VeriHarm-Bench",
+        note: "Programmatically verifiable benchmark of 150 shell-scripting tasks measuring harmful success in LLM coding agents: the agent completes the benign task while causing unintended harm (deleting unrelated files, weakening access controls, corrupting data). Each task has pytest-style correctness tests plus hidden executable harm tests, so scoring needs no LLM judge. Built with the VeriHarm automatic construction framework; frontier agents reach about 95% task accuracy but only about 37% safe success.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.03575",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/wlchen0206/VeriHarm-Bench",
+          },
+        ],
+        slug: "veriharm-bench",
+        domain: "Agents",
+        property: "Harmful Content",
+      },
+      {
+        name: "Task-Tampering Prompt Injection Benchmark",
+        note: "Indirect prompt-injection (IPI) benchmark where attacker-controlled content tampers with a decision of the task already in progress instead of redirecting it, defining IPI by authority rather than instruction-like wording. 90 validated cases and 1,433 injection variants across three tool-use environments (with MCP servers), with attacks targeting an agent's objective, decision rules, available actions, expected consequences, reading of observations or beliefs about state. Includes solver, scorers and defense implementations; a tool-policy defense still allows 15.4% attack success vs 17.0% undefended.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "prompt injection",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.07640",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/amazon-science/task-tampering-prompt-injection",
+          },
+        ],
+        slug: "task-tampering-prompt-injection-benchmark",
+        domain: "Agents",
+        property: "Prompt Injection",
+      },
+      {
+        name: "MCPHallu",
+        note: "Benchmark for diagnosing hallucination-prone failures of LLM agents in Model Context Protocol (MCP) environments along reasoning, execution and memory axes. 358 tasks across five capability domains on 36 production MCP servers (302 tools) in isolated containers; each task has a structural trigger for one of four subtypes: Branch Collapse, Unreachable Goal, Tool Misuse or Context Forgetting. 14 frontier LLM agents evaluated on 5,012 trajectories (average score 0.642; Unreachable Goal 0.458, only 23.2% pass).",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.07689",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/J1zz/mcp_hallu",
+          },
+        ],
+        slug: "mcphallu",
+        domain: "Agents",
+      },
+      {
+        name: "ROK-FORTRESS",
+        note: "Bilingual (English-Korean) culturally adversarial safety benchmark for LLMs targeting national security and public safety (NSPS) risks, built on FORTRESS with a transcreation matrix that separates language effects from geopolitical grounding (US vs Korean entities and institutions). Public subset of 791 of 1,235 adversarial tasks across 4 NSPS risk domains, scored with a tier-weighted risk score; across 14 frontier and Korean regional models the linguistic drop in measured risk is 2.65x the contextual drop, with a 9x spread between safest and least safe models.",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "robustness",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2605.14152",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/yash-scaleai/ROK-FORTRESS-release",
+          },
+        ],
+        slug: "rok-fortress",
+        domain: "LLMs",
+        property: "Robustness",
+      },
+      {
+        name: "Coding Agent Tool-Call Safety (decision-policy-rules)",
+        note: "Evaluation dataset and harness for runtime decision models acting as policy gates for coding agents. 2,643 synthetic, fictional tool invocations in 106 families (1,535 development, 1,108 sealed holdout), each labeled blind against 28 policy rules (data destruction, secret leakage, messaging the wrong person, etc.) in tool-only and with-context settings, plus a 320-case confirmation set. Used to evaluate 22 hosted decision models and two prompted general models: explicit boundaries written as examples and counterexamples raised recall by 5.5-26.1 points and reduced false positives.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "privacy",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.02155",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/agentapprove/decision-policy-rules",
+          },
+        ],
+        slug: "coding-agent-tool-call-safety-decision-policy-rules",
+        domain: "Agents",
+        property: "Privacy",
       },
     ],
   },
