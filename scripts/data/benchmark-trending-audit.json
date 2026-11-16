@@ -1512,6 +1512,66 @@
         "https://arxiv.org/abs/2611.02155"
       ],
       "reviewedAt": "2026-11-09"
+    },
+    {
+      "slug": "erosionbench",
+      "name": "ErosionBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates alignment decay and unsafe tool actions of enterprise multi-agent LLM systems under poisoned state and peer messages.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.11266"
+      ],
+      "reviewedAt": "2026-11-16"
+    },
+    {
+      "slug": "scrapebench",
+      "name": "ScrapeBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates legal compliance of AI agents with website scraping policies (Terms of Service and robots.txt).",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.11306"
+      ],
+      "reviewedAt": "2026-11-16"
+    },
+    {
+      "slug": "trustmod-sm",
+      "name": "TrustMod-SM",
+      "status": "keep",
+      "reason": "The primary paper evaluates trustworthiness (calibration, fairness, safety, robustness, contextual integrity) of LLM content moderators.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.12970"
+      ],
+      "reviewedAt": "2026-11-16"
+    },
+    {
+      "slug": "webtrap-farm",
+      "name": "WebTrap Farm",
+      "status": "keep",
+      "reason": "The primary paper evaluates security resilience of web-agent harnesses against malicious prompts, prompt injection and deceptive web design.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.11971"
+      ],
+      "reviewedAt": "2026-11-16"
+    },
+    {
+      "slug": "harp-bench",
+      "name": "HARP-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates task success and safety of robot manipulation policies around active humans.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.11123"
+      ],
+      "reviewedAt": "2026-11-16"
+    },
+    {
+      "slug": "mps-bench",
+      "name": "MPS-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates personalized safety and deferral behaviour of vision-language models for high-risk users.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2609.04281"
+      ],
+      "reviewedAt": "2026-11-16"
     }
   ]
 }
