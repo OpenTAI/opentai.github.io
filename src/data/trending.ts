@@ -144,6 +144,12 @@ export const trendingBenchmarkSlugs: readonly string[] = [
   "mcphallu",
   "rok-fortress",
   "coding-agent-tool-call-safety-decision-policy-rules",
+  "erosionbench",
+  "scrapebench",
+  "trustmod-sm",
+  "webtrap-farm",
+  "harp-bench",
+  "mps-bench",
 ];
 
 export const trendingDatasetSlugs: readonly string[] = [

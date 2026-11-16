@@ -5745,6 +5745,180 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  erosionbench: {
+    slug: "erosionbench",
+    name: "ErosionBench",
+    category: "Agents",
+    description: "Environment-grounded benchmark for alignment decay in enterprise multi-agent LLM systems, where benign-looking requests escalate into unsafe tool actions across sessions via poisoned shared state, long-context documents and trusted peer messages. 1,728 scenarios (1,296 malicious, 432 benign twins) over four enterprise domains (CRM, CI/CD supply chain, data engineering, quantitative finance) and 16 attack classes mapped to the OWASP LLM Top-10, plus 198 image-based attacks. Scores the realized tool call against authorized intent and provenance with deterministic contracts and evaluates a five-rung defense ladder while tracking over-refusal; perimeter defenses over-refuse 54-92% of legitimate work.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.11266",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/SalesforceAIResearch/ErosionBench",
+      },
+    ],
+    stats: [],
+    tags: [
+      "jailbreak",
+    ],
+    arxivId: "2611.11266",
+    paperUrl: "https://arxiv.org/abs/2611.11266",
+    repo: "SalesforceAIResearch/ErosionBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  scrapebench: {
+    slug: "scrapebench",
+    name: "ScrapeBench",
+    category: "Agents",
+    description: "Agentic benchmark for the legal compliance of AI agents with website scraping policies (Terms of Service and robots.txt). 1,626 popular websites that explicitly prohibit scraping and 269 that do not, with per-domain ToS and robots.txt snapshots and adjudicated verdicts; agents receive a fetch_url tool and are instructed to scrape. Most closed- and open-weight agents comply below 5% on prohibited sites even when they check the policies, while some over-refuse on lawful sites; includes a human baseline and released agent traces.",
+    venue: "NeurIPS 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.11306",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/imperialite/scrapebench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2611.11306",
+    paperUrl: "https://arxiv.org/abs/2611.11306",
+    repo: "imperialite/scrapebench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "trustmod-sm": {
+    slug: "trustmod-sm",
+    name: "TrustMod-SM",
+    category: "LLMs",
+    description: "Multi-axis benchmark of about 29,000 instances across eight datasets for the trustworthiness of LLM and VLM content moderators on social media: trustfulness (calibration), fairness (demographic disparity), safety (compliance with concealment/exaggeration prompts), robustness (obfuscated inputs) and contextual integrity, plus a multimodal fairness track. Evaluates 16 open-weight models (0.5B-284B, text and vision-language) and one closed model; higher accuracy often comes with greater demographic disparity, and models rarely escalate ambiguous cases or separate hate speech from counter-speech.",
+    venue: "NeurIPS 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.12970",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/aizanzafar/TrustMod_SM",
+      },
+    ],
+    stats: [],
+    tags: [
+      "robustness",
+    ],
+    arxivId: "2611.12970",
+    paperUrl: "https://arxiv.org/abs/2611.12970",
+    repo: "aizanzafar/TrustMod_SM",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "webtrap-farm": {
+    slug: "webtrap-farm",
+    name: "WebTrap Farm",
+    category: "Agents",
+    description: "Extensible security evaluation framework for web-agent harnesses (e.g., browser-use, Skyvern, Stagehand) that models a harness as a four-stage workflow (goal interpretation, webpage perception, reasoning/planning, action execution). Covers malicious user prompts, malicious prompt injection and deceptive web design on locally hosted websites, with paired usability-calibration tasks to separate genuine defense from capability limits, rule/LLM-based scoring and stage-level defense attribution. Finds harness-intrinsic unsafe behaviour even without explicit attack content and that both harness and backend model significantly affect security.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.11971",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/Agrfeblve/WebTrapFarm",
+      },
+    ],
+    stats: [],
+    tags: [
+      "prompt injection",
+    ],
+    arxivId: "2611.11971",
+    paperUrl: "https://arxiv.org/abs/2611.11971",
+    repo: "Agrfeblve/WebTrapFarm",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "harp-bench": {
+    slug: "harp-bench",
+    name: "HARP-Bench",
+    category: "Embodied AI",
+    description: "Genesis-based simulation benchmark for robot manipulation in workspaces shared with active, animated humans. 37 evaluation tasks over four human-present conditions (Cueing, Contribution, Interruption, Co-presence), such as yielding while a human inspects an object or taking a knife offered by a human, with six robot embodiments and success plus safety metrics. Evaluates VLA (ACT, Diffusion Policy, pi0, pi0.5, SmolVLA), imitation-learning and heuristic policies; human-present variations challenge current policies and higher task success does not consistently improve safety.",
+    venue: "CoRL 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.11123",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/UMass-Embodied-AGI/harp",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2611.11123",
+    paperUrl: "https://arxiv.org/abs/2611.11123",
+    repo: "UMass-Embodied-AGI/harp",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "mps-bench": {
+    slug: "mps-bench",
+    name: "MPS-Bench",
+    category: "LLMs",
+    description: "Multimodal personalized-safety benchmark for vision-language models: 5,181 scenarios built from 584 real-world images across 12 high-risk domains, each pairing an (image, query) with a hidden high-risk user profile (medical, emotional or situational). Models answer with and without the profile and an LLM judge scores five personalized-safety dimensions plus asking/deferral behaviour. Eight frontier VLMs answer directly 86-99% of the time instead of seeking missing context and none exceeds 2.6/5 on personalized safety, which the paper attributes to visual dominance over textual risk signals.",
+    venue: "COLM 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2609.04281",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/EdwardoSunny/multimodal-personalized-safety",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2609.04281",
+    paperUrl: "https://arxiv.org/abs/2609.04281",
+    repo: "EdwardoSunny/multimodal-personalized-safety",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -11719,6 +11893,141 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         slug: "coding-agent-tool-call-safety-decision-policy-rules",
         domain: "Agents",
         property: "Privacy",
+      },
+      {
+        name: "ErosionBench",
+        note: "Environment-grounded benchmark for alignment decay in enterprise multi-agent LLM systems, where benign-looking requests escalate into unsafe tool actions across sessions via poisoned shared state, long-context documents and trusted peer messages. 1,728 scenarios (1,296 malicious, 432 benign twins) over four enterprise domains (CRM, CI/CD supply chain, data engineering, quantitative finance) and 16 attack classes mapped to the OWASP LLM Top-10, plus 198 image-based attacks. Scores the realized tool call against authorized intent and provenance with deterministic contracts and evaluates a five-rung defense ladder while tracking over-refusal; perimeter defenses over-refuse 54-92% of legitimate work.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "jailbreak",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.11266",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/SalesforceAIResearch/ErosionBench",
+          },
+        ],
+        slug: "erosionbench",
+        domain: "Agents",
+        property: "Jailbreak",
+      },
+      {
+        name: "ScrapeBench",
+        note: "Agentic benchmark for the legal compliance of AI agents with website scraping policies (Terms of Service and robots.txt). 1,626 popular websites that explicitly prohibit scraping and 269 that do not, with per-domain ToS and robots.txt snapshots and adjudicated verdicts; agents receive a fetch_url tool and are instructed to scrape. Most closed- and open-weight agents comply below 5% on prohibited sites even when they check the policies, while some over-refuse on lawful sites; includes a human baseline and released agent traces.",
+        type: "Agents",
+        venue: "NeurIPS 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.11306",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/imperialite/scrapebench",
+          },
+        ],
+        slug: "scrapebench",
+        domain: "Agents",
+      },
+      {
+        name: "TrustMod-SM",
+        note: "Multi-axis benchmark of about 29,000 instances across eight datasets for the trustworthiness of LLM and VLM content moderators on social media: trustfulness (calibration), fairness (demographic disparity), safety (compliance with concealment/exaggeration prompts), robustness (obfuscated inputs) and contextual integrity, plus a multimodal fairness track. Evaluates 16 open-weight models (0.5B-284B, text and vision-language) and one closed model; higher accuracy often comes with greater demographic disparity, and models rarely escalate ambiguous cases or separate hate speech from counter-speech.",
+        type: "LLMs",
+        venue: "NeurIPS 2026",
+        year: "2026",
+        tags: [
+          "robustness",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.12970",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/aizanzafar/TrustMod_SM",
+          },
+        ],
+        slug: "trustmod-sm",
+        domain: "LLMs",
+        property: "Robustness",
+      },
+      {
+        name: "WebTrap Farm",
+        note: "Extensible security evaluation framework for web-agent harnesses (e.g., browser-use, Skyvern, Stagehand) that models a harness as a four-stage workflow (goal interpretation, webpage perception, reasoning/planning, action execution). Covers malicious user prompts, malicious prompt injection and deceptive web design on locally hosted websites, with paired usability-calibration tasks to separate genuine defense from capability limits, rule/LLM-based scoring and stage-level defense attribution. Finds harness-intrinsic unsafe behaviour even without explicit attack content and that both harness and backend model significantly affect security.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "prompt injection",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.11971",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/Agrfeblve/WebTrapFarm",
+          },
+        ],
+        slug: "webtrap-farm",
+        domain: "Agents",
+        property: "Prompt Injection",
+      },
+      {
+        name: "HARP-Bench",
+        note: "Genesis-based simulation benchmark for robot manipulation in workspaces shared with active, animated humans. 37 evaluation tasks over four human-present conditions (Cueing, Contribution, Interruption, Co-presence), such as yielding while a human inspects an object or taking a knife offered by a human, with six robot embodiments and success plus safety metrics. Evaluates VLA (ACT, Diffusion Policy, pi0, pi0.5, SmolVLA), imitation-learning and heuristic policies; human-present variations challenge current policies and higher task success does not consistently improve safety.",
+        type: "Embodied AI",
+        venue: "CoRL 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.11123",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/UMass-Embodied-AGI/harp",
+          },
+        ],
+        slug: "harp-bench",
+        domain: "Embodied AI",
+      },
+      {
+        name: "MPS-Bench",
+        note: "Multimodal personalized-safety benchmark for vision-language models: 5,181 scenarios built from 584 real-world images across 12 high-risk domains, each pairing an (image, query) with a hidden high-risk user profile (medical, emotional or situational). Models answer with and without the profile and an LLM judge scores five personalized-safety dimensions plus asking/deferral behaviour. Eight frontier VLMs answer directly 86-99% of the time instead of seeking missing context and none exceeds 2.6/5 on personalized safety, which the paper attributes to visual dominance over textual risk signals.",
+        type: "LLMs",
+        venue: "COLM 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2609.04281",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/EdwardoSunny/multimodal-personalized-safety",
+          },
+        ],
+        slug: "mps-bench",
+        domain: "LLMs",
       },
     ],
   },

@@ -1257,6 +1257,37 @@
         "https://github.com/OpenTAI/opentai.github.io/issues/178"
       ],
       "verificationNote": "Primary sources checked 2026-11-09: arXiv:2611.02791 (PGuard: A Native, Streaming, and Plug-in Guardrail for Multimodal Large Language Models); GitHub Alibaba-AAIG/PGuard (public, Apache-2.0; README links HF collection, ModelScope, train/ and deploy/); HF Alibaba-AAIG/PGuard (public, not gated, Apache-2.0; PGuard-EMA-Qwen3-8B and PGuard-EMA-Qwen3.5-122B-A10B weights). Guard Models / LLMs (includes multimodal). Added from issue #178."
+    },
+    {
+      "id": "prism-personalized-safety",
+      "name": "PRISM",
+      "category": "Guard Models",
+      "description": "Lightweight input safety monitor for vision-language models (from the MPS-Bench paper) that predicts, before the VLM answers, whether an (image, query) pair needs the user's personal background to be answered safely and should be deferred (ask for or retrieve context) instead of answered generically. Reads frozen image and text embeddings from an off-the-shelf encoder and fuses them with bidirectional cross-modal modulation (Bi-FiLM) and auxiliary tone heads. Three released heads (SigLIP2, CLIP, EVA-CLIP encoders) reach test AUROC 0.955-0.983 and give a dominant safety-utility trade-off across tested VLMs.",
+      "descriptionZh": "面向视觉语言模型的轻量级输入安全监测器（出自 MPS-Bench 论文），在 VLM 作答前预测某个（图像，查询）对是否需要用户的个人背景才能安全回答、是否应延迟回答（追问或检索背景）而非给出通用回答。读取现成编码器的冻结图像与文本嵌入，通过双向跨模态调制（Bi-FiLM）与辅助语气头进行融合。发布的三个监测头（SigLIP2、CLIP、EVA-CLIP 编码器）测试 AUROC 为 0.955–0.983，并在所测 VLM 上取得占优的安全-效用权衡。",
+      "year": 2026,
+      "publisher": "UCLA / University of Washington",
+      "github": "https://github.com/EdwardoSunny/multimodal-personalized-safety",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/EdwardoSunny/multimodal-personalized-safety"
+        },
+        {
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/EdwardoSunny/multimodal-personalized-safety-prism"
+        },
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.04281"
+        }
+      ],
+      "sources": [
+        "https://github.com/EdwardoSunny/multimodal-personalized-safety",
+        "https://huggingface.co/EdwardoSunny/multimodal-personalized-safety-prism",
+        "https://arxiv.org/abs/2609.04281",
+        "https://github.com/OpenTAI/opentai.github.io/issues/186"
+      ],
+      "verificationNote": "Primary sources checked 2026-11-16: arXiv:2609.04281 (When Seeing Overrides Knowing: Visual Dominance and Deferral-Based Method for Personalized Safety in VLMs; same paper as MPS-Bench); GitHub EdwardoSunny/multimodal-personalized-safety (public, MIT; prism_monitor/ model, training and evaluation code); HF EdwardoSunny/multimodal-personalized-safety-prism (public, not gated, MIT; default/, clip_default/, evaclip_default/ heads; encoders loaded separately). Guard Models / LLMs (multimodal input monitor that gates answering vs deferral, cf. Prompt Guard-style input classifiers); generic name disambiguated by paper and publisher. Training data not released. Added from issue #186."
     }
   ],
   "frameworks": [
