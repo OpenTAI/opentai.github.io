@@ -5919,6 +5919,206 @@ export const benchmarkDetails: Record<string, BenchmarkDetail> = {
       "Leaderboard",
     ],
   },
+  econsafebench: {
+    slug: "econsafebench",
+    name: "EconSafeBench",
+    category: "Agents",
+    description: "Safety benchmark for tool-using LLM agents acting in executable, stateful economic environments (portfolio management, market making, financial advisory, labour market, platform economy). 828 cases across five scenarios and four categories of safety violations, with matched evaluation of three pressure sources: explicit user requests, pressure from other actors, and the agent's own pursuit of a performance objective. A static single-turn track is paired with a dynamic 30-period track with persistent memory; violations are judged mainly by deterministic rules over environment state. All eight evaluated LLMs violate (8.5-40.6% on the static benchmark), and violations increase as performance pressure builds over time.",
+    venue: "EMNLP 2026 FinNLP Workshop (Oral)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.18612",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/lingyz0921-cuhk/EconSafeBench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2611.18612",
+    paperUrl: "https://arxiv.org/abs/2611.18612",
+    repo: "lingyz0921-cuhk/EconSafeBench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "unfinished-bench": {
+    slug: "unfinished-bench",
+    name: "Unfinished-Bench",
+    category: "Agents",
+    description: "Benchmark of rule violations by persistent LLM agents that run autonomously, without a user, in realistic work environments with embedded rules. 97 scenarios across 7 fictional organizations and 7 risk categories in which the goal and a rule cannot both hold; 2,134 tasks vary where the rule lives (an internal document, stated by the user, or no rule). The agent works in a Docker work computer with a separate tool-server container, and grading is code-only from tool audit logs and final service state. Persistence raised violations of a rule stated in an internal document from 32.2% to 43.6%, five times the 8.5% for the same rule stated by the user.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.17460",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/naver-ai/unfinished-bench",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2611.17460",
+    paperUrl: "https://arxiv.org/abs/2611.17460",
+    repo: "naver-ai/unfinished-bench",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  dailysafe: {
+    slug: "dailysafe",
+    name: "DailySafe",
+    category: "LLMs",
+    description: "Benchmark of dynamic safety awareness for multimodal LLM assistants in everyday multi-turn, multi-image interactions, where a legitimate task becomes safety-critical only in light of earlier turns and images. English test set of 195 cases with 692 user turns and 475 images across 10 everyday domains and 42 task categories, grounded in real user dialogue topics and documented safety knowledge. Reports Safety Rate and Helpfulness Rate with a case-specific judge under full, text-only, image-description and consolidated conditions; 16 MLLMs are evaluated, with an interactive leaderboard.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.26298",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/XuankunRong/DailySafe",
+      },
+    ],
+    stats: [],
+    tags: [],
+    arxivId: "2611.26298",
+    paperUrl: "https://arxiv.org/abs/2611.26298",
+    repo: "XuankunRong/DailySafe",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "premind-bench": {
+    slug: "premind-bench",
+    name: "PReMind-Bench",
+    category: "LLMs",
+    description: "Diagnostic benchmark for personalized vision-language assistants facing physical hazards: every request comes with an image, and safe help depends on both recognizing the visible hazard (e.g. fire, injuries) and applying the relevant person's memory (allergies, medical conditions, mobility constraints). Public test split of 1,020 main requests plus 112 test-only rows, and an interdependency set of 140 cases (63 seen / 77 unseen hazard groups) plus 12 safe controls. Separately scores memory access, grounding, abstention and hazard response with rule-based and judged metrics, including critical harm and joint success; existing models tend to satisfy one requirement while failing the other.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.23808",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/oyt9306/PReMind",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2611.23808",
+    paperUrl: "https://arxiv.org/abs/2611.23808",
+    repo: "oyt9306/PReMind",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  roborisk: {
+    slug: "roborisk",
+    name: "RoboRisk",
+    category: "Embodied AI",
+    description: "Benchmark (from the LEASH paper) of when a robot driven by a foundation-model planner should refuse, replan or stop. 105 tasks (92 in simulation, 13 on a real Dobot arm) cover five kinds of risk: unsafe goals, unsafe plans, hazards that appear mid-task, prompt injection, and safety facts the robot must remember across rounds; the release includes the task catalog, a third-person and a wrist image per task, and 3,312 counted simulation outcomes. Six frontier foundation models and two robot-specific APIs were tested and none was both safe and helpful. The paper also proposes LEASH, a camera-grounded safety harness with task, action and commit gates.",
+    venue: "arXiv 2026",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.14115",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/zhuqinfeng1999/LEASH",
+      },
+    ],
+    stats: [],
+    tags: [
+      "prompt injection",
+    ],
+    arxivId: "2611.14115",
+    paperUrl: "https://arxiv.org/abs/2611.14115",
+    repo: "zhuqinfeng1999/LEASH",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "keti-humanoid-hri-safety-dataset": {
+    slug: "keti-humanoid-hri-safety-dataset",
+    name: "KETI Humanoid HRI Safety Dataset",
+    category: "Embodied AI",
+    description: "Simulation dataset for evaluating the safety of humanoid robots working around people. In an NVIDIA Isaac Sim logistics warehouse, a Unitree H1 carrying a box meets a person in three occluded-encounter scenarios (hidden corner, side step-in, turning with a box): 297 episodes (3 scenarios x 99 conditions, 247,181 steps at 50 fps, 7 RGB cameras). The recorded baseline robot does not react to the person, so the data holds failures, near-misses and boundary cases. Labels (fail / near_miss / nominal, severity S0-S3, triggered rules) are computed against ISO/TS 15066 contact-force limits and protective separation distance; ships a validator, labeller and per-scenario scorecard for evaluating other controllers.",
+    venue: "KETI technical report 2026",
+    resources: [
+      {
+        label: "Hugging Face",
+        href: "https://huggingface.co/datasets/KETI-IRRC/keti-humanoid-hri-safety",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/safety-cybersecurity/keti-humanoid-hri-safety",
+      },
+    ],
+    stats: [],
+    tags: [],
+    repo: "safety-cybersecurity/keti-humanoid-hri-safety",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
+  "lingsante-medguardbench": {
+    slug: "lingsante-medguardbench",
+    name: "LingSante MedGuardBench",
+    category: "LLMs",
+    description: "Medical guardrail evaluation set released with the LingSante MedGuard technical report: 14,588 safe/unsafe-labelled medical risk-detection records in three files, Safety (10,248; harmful or delaying advice, drug interactions, contraindications, report interpretation), Compliance (3,808) and Ethics (532), with 578 images for multimodal cases. Each record holds the user question or context, the candidate model response under review and a reference label, relabelled from HealthBench, MedHallTune, MedSafetyBench, RxSafeBench and MedRepBench (upstream source preserved). Ships an evaluation script; the report compares MedGuard 4B/9B/27B with frontier LLMs by F1.",
+    venue: "arXiv 2026 (technical report)",
+    resources: [
+      {
+        label: "Paper",
+        href: "https://arxiv.org/abs/2611.25509",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/inclusionAI/LingSante-MedGuard",
+      },
+    ],
+    stats: [],
+    tags: [
+      "harmful content",
+    ],
+    arxivId: "2611.25509",
+    paperUrl: "https://arxiv.org/abs/2611.25509",
+    repo: "inclusionAI/LingSante-MedGuard",
+    pending: [
+      "Dataset",
+      "Metrics",
+      "Baselines",
+      "Leaderboard",
+    ],
+  },
 };
 
 export const leaderboards: { title: string; subtitle: string; directory: RankingDirectoryRecord[]; tables: LeaderboardTable[] } = {
@@ -12028,6 +12228,162 @@ export const subpageConfigs: Record<string, SubpageConfig> = {
         ],
         slug: "mps-bench",
         domain: "LLMs",
+      },
+      {
+        name: "EconSafeBench",
+        note: "Safety benchmark for tool-using LLM agents acting in executable, stateful economic environments (portfolio management, market making, financial advisory, labour market, platform economy). 828 cases across five scenarios and four categories of safety violations, with matched evaluation of three pressure sources: explicit user requests, pressure from other actors, and the agent's own pursuit of a performance objective. A static single-turn track is paired with a dynamic 30-period track with persistent memory; violations are judged mainly by deterministic rules over environment state. All eight evaluated LLMs violate (8.5-40.6% on the static benchmark), and violations increase as performance pressure builds over time.",
+        type: "Agents",
+        venue: "EMNLP 2026 FinNLP Workshop (Oral)",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.18612",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/lingyz0921-cuhk/EconSafeBench",
+          },
+        ],
+        slug: "econsafebench",
+        domain: "Agents",
+      },
+      {
+        name: "Unfinished-Bench",
+        note: "Benchmark of rule violations by persistent LLM agents that run autonomously, without a user, in realistic work environments with embedded rules. 97 scenarios across 7 fictional organizations and 7 risk categories in which the goal and a rule cannot both hold; 2,134 tasks vary where the rule lives (an internal document, stated by the user, or no rule). The agent works in a Docker work computer with a separate tool-server container, and grading is code-only from tool audit logs and final service state. Persistence raised violations of a rule stated in an internal document from 32.2% to 43.6%, five times the 8.5% for the same rule stated by the user.",
+        type: "Agents",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.17460",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/naver-ai/unfinished-bench",
+          },
+        ],
+        slug: "unfinished-bench",
+        domain: "Agents",
+      },
+      {
+        name: "DailySafe",
+        note: "Benchmark of dynamic safety awareness for multimodal LLM assistants in everyday multi-turn, multi-image interactions, where a legitimate task becomes safety-critical only in light of earlier turns and images. English test set of 195 cases with 692 user turns and 475 images across 10 everyday domains and 42 task categories, grounded in real user dialogue topics and documented safety knowledge. Reports Safety Rate and Helpfulness Rate with a case-specific judge under full, text-only, image-description and consolidated conditions; 16 MLLMs are evaluated, with an interactive leaderboard.",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.26298",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/XuankunRong/DailySafe",
+          },
+        ],
+        slug: "dailysafe",
+        domain: "LLMs",
+      },
+      {
+        name: "PReMind-Bench",
+        note: "Diagnostic benchmark for personalized vision-language assistants facing physical hazards: every request comes with an image, and safe help depends on both recognizing the visible hazard (e.g. fire, injuries) and applying the relevant person's memory (allergies, medical conditions, mobility constraints). Public test split of 1,020 main requests plus 112 test-only rows, and an interdependency set of 140 cases (63 seen / 77 unseen hazard groups) plus 12 safe controls. Separately scores memory access, grounding, abstention and hazard response with rule-based and judged metrics, including critical harm and joint success; existing models tend to satisfy one requirement while failing the other.",
+        type: "LLMs",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.23808",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/oyt9306/PReMind",
+          },
+        ],
+        slug: "premind-bench",
+        domain: "LLMs",
+        property: "Harmful Content",
+      },
+      {
+        name: "RoboRisk",
+        note: "Benchmark (from the LEASH paper) of when a robot driven by a foundation-model planner should refuse, replan or stop. 105 tasks (92 in simulation, 13 on a real Dobot arm) cover five kinds of risk: unsafe goals, unsafe plans, hazards that appear mid-task, prompt injection, and safety facts the robot must remember across rounds; the release includes the task catalog, a third-person and a wrist image per task, and 3,312 counted simulation outcomes. Six frontier foundation models and two robot-specific APIs were tested and none was both safe and helpful. The paper also proposes LEASH, a camera-grounded safety harness with task, action and commit gates.",
+        type: "Embodied AI",
+        venue: "arXiv 2026",
+        year: "2026",
+        tags: [
+          "prompt injection",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.14115",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/zhuqinfeng1999/LEASH",
+          },
+        ],
+        slug: "roborisk",
+        domain: "Embodied AI",
+        property: "Prompt Injection",
+      },
+      {
+        name: "KETI Humanoid HRI Safety Dataset",
+        note: "Simulation dataset for evaluating the safety of humanoid robots working around people. In an NVIDIA Isaac Sim logistics warehouse, a Unitree H1 carrying a box meets a person in three occluded-encounter scenarios (hidden corner, side step-in, turning with a box): 297 episodes (3 scenarios x 99 conditions, 247,181 steps at 50 fps, 7 RGB cameras). The recorded baseline robot does not react to the person, so the data holds failures, near-misses and boundary cases. Labels (fail / near_miss / nominal, severity S0-S3, triggered rules) are computed against ISO/TS 15066 contact-force limits and protective separation distance; ships a validator, labeller and per-scenario scorecard for evaluating other controllers.",
+        type: "Embodied AI",
+        venue: "KETI technical report 2026",
+        year: "2026",
+        tags: [],
+        stats: [],
+        resources: [
+          {
+            label: "Hugging Face",
+            href: "https://huggingface.co/datasets/KETI-IRRC/keti-humanoid-hri-safety",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/safety-cybersecurity/keti-humanoid-hri-safety",
+          },
+        ],
+        slug: "keti-humanoid-hri-safety-dataset",
+        domain: "Embodied AI",
+      },
+      {
+        name: "LingSante MedGuardBench",
+        note: "Medical guardrail evaluation set released with the LingSante MedGuard technical report: 14,588 safe/unsafe-labelled medical risk-detection records in three files, Safety (10,248; harmful or delaying advice, drug interactions, contraindications, report interpretation), Compliance (3,808) and Ethics (532), with 578 images for multimodal cases. Each record holds the user question or context, the candidate model response under review and a reference label, relabelled from HealthBench, MedHallTune, MedSafetyBench, RxSafeBench and MedRepBench (upstream source preserved). Ships an evaluation script; the report compares MedGuard 4B/9B/27B with frontier LLMs by F1.",
+        type: "LLMs",
+        venue: "arXiv 2026 (technical report)",
+        year: "2026",
+        tags: [
+          "harmful content",
+        ],
+        stats: [],
+        resources: [
+          {
+            label: "Paper",
+            href: "https://arxiv.org/abs/2611.25509",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/inclusionAI/LingSante-MedGuard",
+          },
+        ],
+        slug: "lingsante-medguardbench",
+        domain: "LLMs",
+        property: "Harmful Content",
       },
     ],
   },
