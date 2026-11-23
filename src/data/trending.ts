@@ -150,6 +150,13 @@ export const trendingBenchmarkSlugs: readonly string[] = [
   "webtrap-farm",
   "harp-bench",
   "mps-bench",
+  "econsafebench",
+  "unfinished-bench",
+  "dailysafe",
+  "premind-bench",
+  "roborisk",
+  "keti-humanoid-hri-safety-dataset",
+  "lingsante-medguardbench",
 ];
 
 export const trendingDatasetSlugs: readonly string[] = [

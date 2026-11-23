@@ -1572,6 +1572,76 @@
         "https://arxiv.org/abs/2609.04281"
       ],
       "reviewedAt": "2026-11-16"
+    },
+    {
+      "slug": "econsafebench",
+      "name": "EconSafeBench",
+      "status": "keep",
+      "reason": "The primary paper evaluates safety violations of tool-using LLM agents in executable economic environments under user, peer and performance pressure.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.18612"
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "slug": "unfinished-bench",
+      "name": "Unfinished-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates rule violations of persistent autonomous LLM agents in realistic work environments with embedded rules.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.17460"
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "slug": "dailysafe",
+      "name": "DailySafe",
+      "status": "keep",
+      "reason": "The primary paper evaluates dynamic safety awareness of multimodal LLM assistants in everyday multi-turn, multi-image interactions.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.26298"
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "slug": "premind-bench",
+      "name": "PReMind-Bench",
+      "status": "keep",
+      "reason": "The primary paper evaluates whether personalized vision-language assistants respond safely to visible physical hazards using personal memory.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.23808"
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "slug": "roborisk",
+      "name": "RoboRisk",
+      "status": "keep",
+      "reason": "The primary paper evaluates whether foundation-model robot planners refuse, replan or stop under unsafe goals, plans, hazards and prompt injection.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.14115"
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "slug": "keti-humanoid-hri-safety-dataset",
+      "name": "KETI Humanoid HRI Safety Dataset",
+      "status": "keep",
+      "reason": "The primary source provides labelled simulation episodes and a scorecard for evaluating humanoid robot safety around people against ISO/TS 15066 limits.",
+      "sourceUrls": [
+        "https://huggingface.co/datasets/KETI-IRRC/keti-humanoid-hri-safety"
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "slug": "lingsante-medguardbench",
+      "name": "LingSante MedGuardBench",
+      "status": "keep",
+      "reason": "The primary report evaluates medical guardrail models on safe/unsafe detection of medical safety, compliance and ethics risks in model responses.",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2611.25509"
+      ],
+      "reviewedAt": "2026-11-23"
     }
   ]
 }

@@ -1225,6 +1225,90 @@
       "description": "Multimodal personalized-safety benchmark for vision-language models: 5,181 scenarios built from 584 real-world images across 12 high-risk domains, each pairing an (image, query) with a hidden high-risk user profile (medical, emotional or situational). Models answer with and without the profile and an LLM judge scores five personalized-safety dimensions plus asking/deferral behaviour. Eight frontier VLMs answer directly 86-99% of the time instead of seeking missing context and none exceeds 2.6/5 on personalized safety, which the paper attributes to visual dominance over textual risk signals.",
       "descriptionZh": "面向视觉语言模型的多模态个性化安全基准：基于 584 张真实图像构建 5,181 个场景，覆盖 12 个高风险领域，每个（图像，查询）对都配有一个隐藏的高风险用户画像（医疗、情绪或情境）。模型分别在有无画像的情况下作答，由 LLM 评审对五个个性化安全维度以及追问/延迟回答行为打分。八个前沿 VLM 有 86%–99% 的情况直接作答而不寻求缺失的背景信息，个性化安全得分均未超过 2.6/5，论文将其归因于视觉信息对文本风险信号的压制。",
       "verificationNote": "Primary sources checked 2026-11-16: arXiv:2609.04281 (When Seeing Overrides Knowing: Visual Dominance and Deferral-Based Method for Personalized Safety in VLMs; COLM 2026 per README); GitHub EdwardoSunny/multimodal-personalized-safety (public, MIT code; benchmark/ and prism_monitor/); HF datasets EdwardoSunny/multimodal-personalized-safety (public, gated with automatic approval; annotations CC BY-NC 4.0, images non-commercial research only). Benchmark only (evaluation scenarios; no training split). Companion model PRISM. Added from issue #185."
+    },
+    {
+      "name": "EconSafeBench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2611.18612",
+      "githubUrl": "https://github.com/lingyz0921-cuhk/EconSafeBench",
+      "linkLabel": "Paper",
+      "venue": "EMNLP 2026 FinNLP Workshop (Oral)",
+      "description": "Safety benchmark for tool-using LLM agents acting in executable, stateful economic environments (portfolio management, market making, financial advisory, labour market, platform economy). 828 cases across five scenarios and four categories of safety violations, with matched evaluation of three pressure sources: explicit user requests, pressure from other actors, and the agent's own pursuit of a performance objective. A static single-turn track is paired with a dynamic 30-period track with persistent memory; violations are judged mainly by deterministic rules over environment state. All eight evaluated LLMs violate (8.5-40.6% on the static benchmark), and violations increase as performance pressure builds over time.",
+      "descriptionZh": "面向在可执行、有状态经济环境（投资组合管理、做市、理财顾问、劳动力市场、平台经济）中使用工具的 LLM 智能体的安全基准。包含五个场景、四类安全违规共 828 个案例，并对三种压力来源进行对照评估：用户的明确请求、其他参与者施加的压力，以及智能体自身对绩效目标的追求。静态单轮赛道之外另设带持久记忆的 30 期动态赛道；违规主要依据环境状态上的确定性规则判定。八个被测 LLM 全部出现违规（静态基准上为 8.5%–40.6%），且违规随绩效压力累积而增加。",
+      "verificationNote": "Primary sources checked 2026-11-23: arXiv:2611.18612 (When Helpful Agents Cause Financial Harm: Evaluating LLM Agent Safety in Executable Economic Worlds; comment: Accepted (Oral) at EMNLP 2026 Workshop on Financial NLP); GitHub lingyz0921-cuhk/EconSafeBench (public, MIT code; data/ case bank, src/ scenes, rule-based judges; ARTIFACT_TERMS.md restricts benchmark data to non-commercial research); HF datasets Yuzhu0921/EconSafeBench (public, not gated, card license cc-by-4.0). License note: artifact terms (non-commercial) conflict with the HF card's CC BY 4.0. Benchmark only (evaluation cases and environments; no training split). Added from issue #188."
+    },
+    {
+      "name": "Unfinished-Bench",
+      "year": "2026",
+      "domain": "Agents",
+      "url": "https://arxiv.org/abs/2611.17460",
+      "githubUrl": "https://github.com/naver-ai/unfinished-bench",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Benchmark of rule violations by persistent LLM agents that run autonomously, without a user, in realistic work environments with embedded rules. 97 scenarios across 7 fictional organizations and 7 risk categories in which the goal and a rule cannot both hold; 2,134 tasks vary where the rule lives (an internal document, stated by the user, or no rule). The agent works in a Docker work computer with a separate tool-server container, and grading is code-only from tool audit logs and final service state. Persistence raised violations of a rule stated in an internal document from 32.2% to 43.6%, five times the 8.5% for the same rule stated by the user.",
+      "descriptionZh": "衡量在无用户参与、自主运行于内嵌规则的真实工作环境中的持久化 LLM 智能体违规行为的基准。包含 7 个虚构组织、7 类风险共 97 个目标与规则无法同时满足的场景；2,134 个任务改变规则所在位置（内部文档、用户声明或无规则）。智能体在 Docker 工作电脑中运行，并配有独立的工具服务器容器，评分完全基于工具审计日志与最终服务状态的代码判定。持久化运行使写在内部文档中的规则的违规率从 32.2% 升至 43.6%，是同一规则由用户声明时（8.5%）的五倍。",
+      "verificationNote": "Primary sources checked 2026-11-23: arXiv:2611.17460 (Unfinished-Bench: Measuring Rule Violations by Persistent Agents in Realistic Work Environments; NAVER AI Lab); GitHub naver-ai/unfinished-bench (public; scenarios/, companies/, harness/, scoring/, docker/; Apache-2.0 LICENSE + NOTICE, Copyright NAVER Corp.); project page francis21c.github.io/unfinished-bench live. Benchmark only (evaluation environment; no training split). Added from issue #189."
+    },
+    {
+      "name": "DailySafe",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2611.26298",
+      "githubUrl": "https://github.com/XuankunRong/DailySafe",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Benchmark of dynamic safety awareness for multimodal LLM assistants in everyday multi-turn, multi-image interactions, where a legitimate task becomes safety-critical only in light of earlier turns and images. English test set of 195 cases with 692 user turns and 475 images across 10 everyday domains and 42 task categories, grounded in real user dialogue topics and documented safety knowledge. Reports Safety Rate and Helpfulness Rate with a case-specific judge under full, text-only, image-description and consolidated conditions; 16 MLLMs are evaluated, with an interactive leaderboard.",
+      "descriptionZh": "评测多模态 LLM 助手在日常多轮、多图交互中动态安全意识的基准：正常任务只有结合先前轮次与图像才会变得安全攸关。英文测试集包含 195 个案例、692 个用户轮次与 475 张图像，覆盖 10 个日常领域与 42 个任务类别，基于真实用户对话主题与公开的安全知识构建。在完整、仅文本、图像描述与合并等条件下，以针对案例的评审报告安全率与有用率；共评估 16 个 MLLM，并提供交互式排行榜。",
+      "verificationNote": "Primary sources checked 2026-11-23: arXiv:2611.26298 (DailySafe: Benchmarking Dynamic Safety Awareness in Everyday Multi-Turn Multimodal Interactions; Wuhan University, Ant Group, Tsinghua, NTU et al.); GitHub XuankunRong/DailySafe (public, MIT code; dailysafe.py evaluation CLI); project page dailysafe-bench.github.io with leaderboard live; HF datasets XuankunRong/DailySafe returned 401 earlier on 2026-11-23 and was public (not gated, license other) at merge time. Benchmark only (test set). Domain LLMs (multimodal LLMs). Added from issue #190."
+    },
+    {
+      "name": "PReMind-Bench",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2611.23808",
+      "githubUrl": "https://github.com/oyt9306/PReMind",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Diagnostic benchmark for personalized vision-language assistants facing physical hazards: every request comes with an image, and safe help depends on both recognizing the visible hazard (e.g. fire, injuries) and applying the relevant person's memory (allergies, medical conditions, mobility constraints). Public test split of 1,020 main requests plus 112 test-only rows, and an interdependency set of 140 cases (63 seen / 77 unseen hazard groups) plus 12 safe controls. Separately scores memory access, grounding, abstention and hazard response with rule-based and judged metrics, including critical harm and joint success; existing models tend to satisfy one requirement while failing the other.",
+      "descriptionZh": "面向个性化视觉语言助手应对物理危险的诊断性基准：每个请求都附带图像，安全的帮助既要识别可见危险（如火灾、受伤），又要运用相关人员的记忆信息（过敏、病史、行动限制）。公开测试集包含 1,020 个主请求与 112 条仅测试样本，另有 140 个案例的相互依赖集（63 个已见、77 个未见危险组）及 12 个安全对照。以规则与评审指标分别评估记忆调用、依据引用、拒答与危险应对，包括严重伤害与联合成功率；现有模型往往满足其中一项要求却在另一项上失败。",
+      "verificationNote": "Primary sources checked 2026-11-23: arXiv:2611.23808 (PReMind: When Personal Memory Meets Visual Hazards; Seoul National University); GitHub oyt9306/PReMind (public, Apache-2.0 code; premind/ evaluation code); HF datasets Yeongtak/PReMind-Bench (public, gated with manual approval, CC BY-NC 4.0); project page live. Benchmark only (training data not public; not dual-listed). Companion PReMind-4B adapter not listed. Added from issue #191."
+    },
+    {
+      "name": "RoboRisk",
+      "year": "2026",
+      "domain": "Embodied AI",
+      "url": "https://arxiv.org/abs/2611.14115",
+      "githubUrl": "https://github.com/zhuqinfeng1999/LEASH",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026",
+      "description": "Benchmark (from the LEASH paper) of when a robot driven by a foundation-model planner should refuse, replan or stop. 105 tasks (92 in simulation, 13 on a real Dobot arm) cover five kinds of risk: unsafe goals, unsafe plans, hazards that appear mid-task, prompt injection, and safety facts the robot must remember across rounds; the release includes the task catalog, a third-person and a wrist image per task, and 3,312 counted simulation outcomes. Six frontier foundation models and two robot-specific APIs were tested and none was both safe and helpful. The paper also proposes LEASH, a camera-grounded safety harness with task, action and commit gates.",
+      "descriptionZh": "出自 LEASH 论文的基准，评测由基础模型规划器驱动的机器人何时应拒绝、重新规划或停止。包含 105 个任务（92 个仿真、13 个真实 Dobot 机械臂），覆盖五类风险：不安全目标、不安全计划、任务中途出现的危险、提示注入，以及机器人需跨轮记忆的安全事实；发布内容包括任务目录、每个任务的第三人称与腕部图像，以及 3,312 条计数的仿真结果。测试了六个前沿基础模型与两个机器人专用 API，没有一个同时做到安全且有用。论文还提出了 LEASH，一种带任务、动作与提交闸门、基于相机的安全框架。",
+      "verificationNote": "Primary sources checked 2026-11-23: arXiv:2611.14115 (LEASH: Stay Safe in Agentic Robotics; Xi'an Jiaotong-Liverpool University, Duke Kunshan University et al.); GitHub zhuqinfeng1999/LEASH (public, MIT; benchmark/, data/, hardware/); HF datasets zhuqinfeng/RoboRisk (public, not gated, MIT); project page live. Display name RoboRisk (benchmark); LEASH is the paper's safety harness. Benchmark only (evaluation tasks/outcomes; no training split). Added from issue #192."
+    },
+    {
+      "name": "KETI Humanoid HRI Safety Dataset",
+      "year": "2026",
+      "domain": "Embodied AI",
+      "url": "https://huggingface.co/datasets/KETI-IRRC/keti-humanoid-hri-safety",
+      "githubUrl": "https://github.com/safety-cybersecurity/keti-humanoid-hri-safety",
+      "linkLabel": "Hugging Face",
+      "venue": "KETI technical report 2026",
+      "description": "Simulation dataset for evaluating the safety of humanoid robots working around people. In an NVIDIA Isaac Sim logistics warehouse, a Unitree H1 carrying a box meets a person in three occluded-encounter scenarios (hidden corner, side step-in, turning with a box): 297 episodes (3 scenarios x 99 conditions, 247,181 steps at 50 fps, 7 RGB cameras). The recorded baseline robot does not react to the person, so the data holds failures, near-misses and boundary cases. Labels (fail / near_miss / nominal, severity S0-S3, triggered rules) are computed against ISO/TS 15066 contact-force limits and protective separation distance; ships a validator, labeller and per-scenario scorecard for evaluating other controllers.",
+      "descriptionZh": "用于评测人形机器人在人员周边作业安全性的仿真数据集。在 NVIDIA Isaac Sim 物流仓库中，搬运箱子的 Unitree H1 在三种遮挡相遇场景（隐蔽拐角、侧向闯入、搬箱转身）中与人相遇：共 297 个回合（3 个场景 × 99 种条件，50 fps 下 247,181 步，7 路 RGB 相机）。所录制的基线机器人不会对人作出反应，因此数据包含失败、险情与边界案例。标签（失败 / 险情 / 正常、严重度 S0–S3、触发规则）依据 ISO/TS 15066 接触力限值与保护性分离距离计算得出；附带验证器、标注器与按场景评分卡，用于评测其他控制器。",
+      "verificationNote": "Primary sources checked 2026-11-23: HF datasets KETI-IRRC/keti-humanoid-hri-safety (public, not gated, CC BY 4.0; Korea Electronics Technology Institute); GitHub safety-cybersecurity/keti-humanoid-hri-safety (public, Apache-2.0 code; generation/, validator/, docs/ incl. technical report v0.1 PDF). No arXiv paper (technical report only); simulation only. Benchmark only: positioned for safety evaluation with a scorecard and no official train/val split, so not dual-listed under Datasets. Added from issue #193."
+    },
+    {
+      "name": "LingSante MedGuardBench",
+      "year": "2026",
+      "domain": "LLMs",
+      "url": "https://arxiv.org/abs/2611.25509",
+      "githubUrl": "https://github.com/inclusionAI/LingSante-MedGuard",
+      "linkLabel": "Paper",
+      "venue": "arXiv 2026 (technical report)",
+      "description": "Medical guardrail evaluation set released with the LingSante MedGuard technical report: 14,588 safe/unsafe-labelled medical risk-detection records in three files, Safety (10,248; harmful or delaying advice, drug interactions, contraindications, report interpretation), Compliance (3,808) and Ethics (532), with 578 images for multimodal cases. Each record holds the user question or context, the candidate model response under review and a reference label, relabelled from HealthBench, MedHallTune, MedSafetyBench, RxSafeBench and MedRepBench (upstream source preserved). Ships an evaluation script; the report compares MedGuard 4B/9B/27B with frontier LLMs by F1.",
+      "descriptionZh": "随 LingSante MedGuard 技术报告发布的医疗护栏评测集：三个文件中共 14,588 条带安全/不安全标签的医疗风险检测记录，分为安全（10,248 条；有害或延误的建议、药物相互作用、禁忌症、报告解读）、合规（3,808 条）与伦理（532 条），另含 578 张用于多模态案例的图像。每条记录包含用户问题或上下文、待审查的候选模型回复及参考标签，由 HealthBench、MedHallTune、MedSafetyBench、RxSafeBench 与 MedRepBench 重新标注而来（保留上游来源）。附带评测脚本；报告以 F1 比较 MedGuard 4B/9B/27B 与前沿 LLM。",
+      "verificationNote": "Primary sources checked 2026-11-23: arXiv:2611.25509 (LingSante MedGuard Technical Report; inclusionAI / Ant Group); GitHub inclusionAI/LingSante-MedGuard (public; data/ three JSONL files, images/, scripts/eval_mgb.py; Apache-2.0 LICENSE + NOTICE). Records are relabelled from existing medical benchmarks, so upstream terms also apply. MedGuard models are API-only (no open weights), so no Model entry. Distinct from MedGuardBench (arXiv:2611.22069); LingSante prefix kept. Benchmark only (evaluation records; no training split). Added from issue #194."
     }
   ]
 }
